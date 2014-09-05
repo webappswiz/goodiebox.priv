@@ -1,0 +1,270 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+body > .container {
+    margin: 10px auto;
+}
+#profiles,.restore,.remove{
+    cursor: pointer;
+}
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+.row{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    table-layout:fixed;
+    margin: 3px;
+}
+.row_adv{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    float: left;
+    table-layout:fixed;
+    margin: 0px;
+}
+.row:hover{
+    background: lightgray;
+    cursor: pointer;
+}
+.row_adv:hover{
+    background: orange;
+    cursor: pointer;
+}
+.clear{
+    clear: both;
+}
+
+.panel {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0 0 20px 0 #222;
+    -webkit-box-shadow: 0 0 20px 0 #222;
+    -moz-box-shadow: 0 0 20px 0 #222;
+    display: none;
+    height: 500px;
+    width: 860px;
+    padding-top: 15px;
+   padding-right: 10px;
+   padding-left: 10px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-top: -243px; /*half of total height + half of top padding*/
+   margin-left: -425px; /*half of total width + half of left padding*/
+    z-index: 1000;
+}
+
+.squarepanel {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0 0 20px 0 #222;
+    -webkit-box-shadow: 0 0 20px 0 #222;
+    -moz-box-shadow: 0 0 20px 0 #222;
+    display: none;
+    height: 180px;
+   width: 320px;
+   padding-top: 15px;
+   padding-right: 10px;
+   padding-left: 10px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-top: -80px; /*half of total height + half of top padding*/
+   margin-left: -175px; /*half of total width + half of left padding*/
+   z-index: 1000;
+}
+
+.twitter,.instagram{
+    cursor: pointer;
+}
+
+#modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgrey;
+    opacity: .50;
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+#modal-background.active, #search_twitter.active, #search_instagram.active,#square.active {
+    display: block;
+}
+#result_t{
+    overflow-y:auto;
+    height:350px;
+}
+#result_i{
+    overflow-y:auto;
+    height:350px;
+}
+div[id^="tweet_"],div[id^="inst_"]{
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+#twitter_results ul,
+#instagram_results ul,
+.category_users_list ul,
+.cat_list {
+  list-style: none;
+  overflow: auto;
+  max-height: 270px;
+  margin: 0;
+}
+
+#twitter_results ul li,
+#instagram_results ul li,
+.category_users_list ul li{
+    margin-right: 10px;
+}
+#twitter_results ul li hr,
+#instagram_results ul li hr ,
+.category_users_list ul li hr{
+    margin: 0px;
+}
+
+.square {
+    position: relative;
+    width: 300px;
+}
+.network-logo {
+    position: absolute;
+    z-index: 999;
+    width: 300px;
+}
+
+.square .content-with-image,
+.square .user-info-with-image {
+    position: absolute;
+    z-index: 990;
+    width: 300px;
+    padding-left: 2px;
+    background-color: #000000;
+    opacity:0.6;
+    filter:alpha(opacity=60); /* For IE8 and earlier */
+    color: white;
+}
+.square .user-info-with-image {
+    top: 0px;
+}
+.pull-left{
+    padding-right: 2px;
+}
+.square .content-with-image {
+    top: 250px;
+    height: 50px;
+    max-height: 50px;
+    overflow: auto;
+}
+
+.loader{
+    background: url(/assets/img/spinner.gif) no-repeat center center;
+    width: 300px;
+    height: 300px;
+}
+.square ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 300px;
+    max-width: 300px;
+    height: 300px;
+    max-height: 300px;
+    /*word-wrpap */
+    white-space: pre; /* CSS2 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap; /* HP printers */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+ul.wizard,
+ul.user-list{
+    list-style: none;
+}
+ul.wizard li {
+    margin: 10px 35%;
+}
+
+ul.wizard li button {
+    width: 100%;
+    text-align: center;
+}
+
+ul.user-list,
+ul.hash-list{
+    margin: 0px;
+    padding: 0px;
+    height: 200px;
+    overflow:auto;
+}
+
+ul.user-list li,
+ul.hash-list li {
+    position: relative;
+}
+ul.hash-list li hr {
+    margin: 5px;
+}
+
+ul.user-list .user-dialog-check,
+ul.hash-list .user-dialog-check{
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+
+ul.hash-list .user-dialog-check{
+    top: 2px;
+}
+
+img.square-image{
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+}
