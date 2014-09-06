@@ -7,6 +7,7 @@ public function before()
     {
         parent::before();
         $this->set_title('Hogyan');
+        $this->template->active_menu = 'hogyan';
     }
     public function action_index()
     {

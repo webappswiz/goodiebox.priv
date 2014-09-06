@@ -8,11 +8,11 @@ class Controller_Main extends Controller_Core {
     {
         parent::before();
         $this->set_title('Home');
+
     }
 
         public function action_index()
     {
-
     }
 
 }

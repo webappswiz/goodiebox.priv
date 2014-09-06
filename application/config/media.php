@@ -8,7 +8,10 @@ return array(
     ),
     'default' => array(
         'js' => array(
-            'ui_lib'
+            'jquery-1.10.2.min',
+            'jquery.faq',
+            'jquery.quicksilver',
+            'ui_lib',
         ),
         'css' => array(
             'style'=> NULL

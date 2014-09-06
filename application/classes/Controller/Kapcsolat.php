@@ -7,6 +7,7 @@ public function before()
     {
         parent::before();
         $this->set_title('Kapcsolat');
+        $this->template->active_menu = 'kapcsolat';
     }
     public function action_index()
     {

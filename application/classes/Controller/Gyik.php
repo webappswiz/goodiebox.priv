@@ -7,6 +7,7 @@ class Controller_Gyik extends Controller_Core {
     {
         parent::before();
         $this->set_title('Gyik');
+        $this->template->active_menu = 'gyik';
     }
     public function action_index()
     {
