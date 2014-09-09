@@ -74,7 +74,7 @@
                     <li><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" alt="facebook"></a></li>
                     <li><a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" alt="twitter"></a></li>
                     <li><a href="#">
-                            <a href="claim-gift.html"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
+                            <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
                         </a></li>
                 </ul>
                 <script>
