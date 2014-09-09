@@ -37,14 +37,18 @@ $menus = array(
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
+        <a href="<?= URL::base(TRUE, FALSE) ?>order">
         <button type="button" class="rounded">Megrendelem</button>
+        </a>
         <p>a saját kutyusomnak</p>
     </div>
     <div class="center-arrows">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png">
     </div>
     <div class="order-btnright">
+        <a href="<?= URL::base(TRUE, FALSE) ?>order">
         <button type="button" class="rounded">Ajándékozom</button>
+        </a>
         <p>barátom kutyusának</p>
     </div>
 </section> <!--End order place-->
