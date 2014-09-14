@@ -3,7 +3,7 @@
     $('#faqList').simpleFAQ();
   });
 </script>
-
+<?php $session = Session::instance(); print_r($session->as_array());?>
 <nav>
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
@@ -49,12 +49,12 @@
 					<h4>Magyarország</h4>
 					<form>
 						<div style="margin-right:5px;" class="fl">
-					        <label for="last-name">Vezetéknév*</label>
+					        <label for="first-name">Vezetéknév*</label>
 					        <input id="last-name" type="text" value="" name="first-name" class="rounded">
 					    </div>
 
 					    <div style="overflow:hidden;">
-					        <label for="first-name">Keresztnév*</label>
+					        <label for="last-name">Keresztnév*</label>
 					        <input id="" type="text" value="" name="last-name" class="rounded">
 					    </div>
  <div class="clear"></div>

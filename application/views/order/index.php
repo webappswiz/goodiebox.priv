@@ -85,7 +85,7 @@
                             <input type="text" name="alerg_descr" class="rounded" id="">
 
                             <p style="padding-top:20px;">*Kötelező adatok</p>
-
+                            <input type="hidden" name="order" value="1">
                         </form>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                                 <input id="" type="text" value="" name="last-name" class="rounded">
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-
+                            <input type="hidden" name="order" value="1">
                         </form>
                     </div>
                 </div>
@@ -134,6 +134,7 @@
                                 <input type="radio" value="Kutyus neme" class=""> Lány <input type="radio" value="Kutyus neme" class=""> Fiú
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                            <input type="hidden" name="order" value="1">
                         </form>
                     </div>
             </li>

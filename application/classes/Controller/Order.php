@@ -14,14 +14,22 @@ class Controller_Order extends Controller_Core {
     public function action_index()
     {
         $this->set_title('Order - Step 1');
-        $this->redirect('order/step2');
+        print_r($_POST);
+        if(isset($_POST['order'])){
+            Session::instance()->set('step1', $_POST);
+            $this->redirect('order/step2');
+        }
+        //
 
     }
 
     public function action_step2()
     {
         $this->set_title('Order - Step 2');
-        $this->redirect('order/step3');
+        if(isset($_POST['order'])){
+            Session::instance()->set('step2', $_POST);
+            $this->redirect('order/step3');
+        }
     }
 
     public function action_step3()
