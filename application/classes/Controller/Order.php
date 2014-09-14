@@ -14,13 +14,10 @@ class Controller_Order extends Controller_Core {
     public function action_index()
     {
         $this->set_title('Order - Step 1');
-        print_r($_POST);
         if(isset($_POST['order'])){
             Session::instance()->set('step1', $_POST);
             $this->redirect('order/step2');
         }
-        //
-
     }
 
     public function action_step2()
@@ -30,6 +27,12 @@ class Controller_Order extends Controller_Core {
             Session::instance()->set('step2', $_POST);
             $this->redirect('order/step3');
         }
+        $session = Session::instance()->as_array();
+        if(!isset($session['step1'])){
+            Flash::set('alert', 'Please fill the form');
+            $this->redirect('order/index');
+        }
+
     }
 
     public function action_step3()

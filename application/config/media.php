@@ -12,6 +12,7 @@ return array(
             'jquery.faq',
             'jquery.quicksilver',
             'ui_lib',
+            'jquery.validate.min'
         ),
         'css' => array(
             'style'=> NULL

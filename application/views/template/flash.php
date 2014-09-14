@@ -18,23 +18,12 @@ foreach($type_list as $type => $class)
     Flash::clear($type);
 } // type
 
-echo '<div class="flash">', PHP_EOL;
-
 foreach ($messages as $type => $messages_text) {
     foreach($messages_text as $text)
     {
         $class = Arr::get($type_list, $type);
         echo "<div class=\"$class\">", PHP_EOL;
-        echo Form::button(
-            NULL,
-            '×',
-            array(
-                'class' => 'close',
-                'data-dismiss' => 'alert',
-            )
-        );
         echo $text, PHP_EOL;
         echo "</div>", PHP_EOL;
     }
 }
-echo "</div>", PHP_EOL;

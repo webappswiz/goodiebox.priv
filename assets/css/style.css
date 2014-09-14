@@ -542,3 +542,14 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.claim-gift h1{font-size: 36px;}
 }
 	
+.alert-error{
+    background-color:rosybrown;
+    padding: 20px;
+}
+.error{
+    font-size: 10px;
+    color: red;
+}
+input.error{
+    background-color: #eb99ad;
+}
