@@ -3,8 +3,12 @@
         $('#faqList').simpleFAQ({'showOnlyOne': true});
         $('#submit_form').on('click', function() {
             div = $('.answer').filter(':visible');
-
             $('form', div).submit();
+        });
+        $('#selected_size').val($('#size').val());
+        $('input:radio').on('click',function(){
+            console.log($('#selected_size'));
+            $('.selected_size').val($(this).val());
         });
     });
 </script>
@@ -43,9 +47,9 @@
     <h2>Válaszd ki </br>mekkora a kutyus!*</h2>
 
     <ul class="claim-option-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input type="radio" name="group1" value="1" class="" checked> Icipici</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input type="radio" name="group1" value="2" class=""> Éppen jó</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input type="radio" name="group1" value="3" class=""> Igazi óriás</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input type="radio" id="size" name="group1" value="1" class="" checked> Icipici</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input type="radio" id="size" name="group1" value="2" class=""> Éppen jó</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input type="radio" id="size" name="group1" value="3" class=""> Igazi óriás</li>
     </ul>
     <div class="clear"></div>
 
@@ -86,6 +90,7 @@
 
                             <p style="padding-top:20px;">*Kötelező adatok</p>
                             <input type="hidden" name="order" value="1">
+                            <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
                             $(".process-form").validate();
@@ -110,6 +115,7 @@
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order" value="1">
+                            <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
                             $(".process-form1").validate();
@@ -141,6 +147,7 @@
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order" value="1">
+                            <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
                             $(".process-form2").validate();

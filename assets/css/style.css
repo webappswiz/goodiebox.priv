@@ -349,6 +349,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .claim-form-container{position: relative;overflow: hidden;}
 .claim-form{width: 55%;text-align: left; float: left;}
 .claim-form input[type="text"]{width: 206px;}
+.claim-form input[type="password"]{width: 206px;}
 .claim-form h2{text-align: left;padding-bottom: 0;}
 .claim-form h4{font-size: 16px;font-family: 'FranklinGothic-Heavy'; padding-top: 5px;}
 .claim-form > p{font-size: 16px; margin-top: 20px; }
@@ -356,13 +357,14 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .fr{float: right;}
 .claim-form form label,.claim-form2 form label{display: block; margin: 10px 0 3px 0;}
 .add input[type="text"]{width:100% !important; }
+.add input[type="password"]{width:100% !important; }
 .claim-message {width: 40%; position: absolute; top:75px; right: 20px;}
 .claim-message textarea{width: 100%; height: 80px;}
 .claim-option-list{overflow: hidden; text-align: center;font-family: 'franklin_gothic_bookregular';font-size: 18px;}
 .claim-option-list li{max-width:285px;display: inline-block; text-align: center;vertical-align: baseline;margin-right: 60px;}
 .claim-option-list li:last-child{margin-right: 0;}
 .claim-option-list li img{vertical-align: baseline;display: block; margin-bottom: 20px;}
-.claim-option-list li input[type="radio"].{border: 3px solid #330000; width: 21px; height: 21px; background: none; outline:none; 	vertical-align: middle;}
+.claim-option-list li input[type="radio"]{border: 3px solid #330000; width: 21px; height: 21px; background: none; outline:none; 	vertical-align: middle;}
 .claim-form2 {margin-top: 35px; width: 300px;}
 .claim-form2 input[type="text"]{width: 100%;}
 .radio-list input[type="radio"]{margin-left: 70px; width: 28px; }
@@ -394,7 +396,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .step2-btn-container{margin-top: 160px;}
 
 .process-3{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 55px 90px 45px 90px;font-family: 'franklin_gothic_bookregular';font-size: 14px;}
-.process-3 form input[type="text"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
+.process-3 form input[type="text"],input[type="password"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
 .claim-box1{margin-top: 60px;}
 .claim-message label{margin-top: 55px !important;}
 .order-form{max-width: 535px; padding-top: 60px !important; padding-bottom: 35px; margin: 0 auto;}

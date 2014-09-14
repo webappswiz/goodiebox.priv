@@ -11,12 +11,11 @@ class Controller_User_Session extends Controller_Core {
 
         $username = Arr::get($_REQUEST, 'username');
         $password = Arr::get($_REQUEST, 'password');
-
         $ok = Auth::instance()->login($username, $password);
         if ($ok) {
             $requested_url = Cookie::get('auth_required_url');
             Cookie::get('auth_required_url', NULL);
-            $this->redirect($requested_url?:Kohana::$base_url);
+            $this->redirect($requested_url?:Kohana::$base_url.'/user_account');
         }
         else {
             Flash::set('alert', 'Wrong username or password.');

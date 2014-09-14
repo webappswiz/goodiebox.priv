@@ -38,6 +38,10 @@ class Controller_Order extends Controller_Core {
     public function action_step3()
     {
         $this->set_title('Order - Step 3');
+        if(isset($_POST['email'])){
+            echo View::factory('template/thankyou', get_defined_vars())->render();
+            $this->render_nothing();
+        }
     }
 
     public function action_gift()
