@@ -657,3 +657,31 @@
 #7 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #8 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #9 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:1302
+2014-09-15 19:02:24 --- EMERGENCY: Kohana_Exception [ 0 ]: The customer_address property does not exist in the Model_User class ~ MODPATH/orm/classes/Kohana/ORM.php [ 760 ] in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:702
+2014-09-15 19:02:24 --- DEBUG: #0 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(702): Kohana_ORM->set('customer_addres...', 'Kosmicheskaya ')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Order.php(59): Kohana_ORM->__set('customer_addres...', 'Kosmicheskaya ')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:702
+2014-09-15 19:03:19 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Orders' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 19:03:19 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 19:04:09 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Orders' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 19:04:09 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 19:04:10 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Orders' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 19:04:10 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 19:08:23 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: username ~ APPPATH/classes/Controller/Order.php [ 65 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:65
+2014-09-15 19:08:23 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(65): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 65, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:65

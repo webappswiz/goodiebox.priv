@@ -5,7 +5,7 @@
             div = $('.answer').filter(':visible');
             $('form', div).submit();
         });
-        $('#selected_size').val($('#size').val());
+        $('.selected_size').val($('input:radio[id^="size"]:checked').val());
         $('input:radio').on('click',function(){
             $('.selected_size').val($(this).val());
         });
