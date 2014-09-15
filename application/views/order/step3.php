@@ -121,6 +121,7 @@ if (isset($session['step2'])) {
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $('.claim-form').find('input,  button, select').removeAttr('disabled');
+                            $('#shipping').attr('checked','checked');
                         });
                     </script>
                     <div class="fl" style="margin-right:5px;">

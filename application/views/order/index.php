@@ -6,19 +6,19 @@
             $('form', div).submit();
         });
         $('.selected_size').val($('input:radio[id^="size"]:checked').val());
-        $('input:radio').on('click',function(){
+        $('input:radio').on('click', function() {
             $('.selected_size').val($(this).val());
         });
-        $('#email').on('blur',function(){
-           $.post('/api/check',{'email':$(this).val()}).done(function(data) {
-               var i = $.parseJSON(data);
-               if(i.msg==1){
-                   $('#email').val('');
-                   $('#email').focus();
-                   $('#email').css('background-color','rosybrown');
-                   $('#email').after('<label id="email-error" class="error" for="email">Email is already registered. Please login in your account.</label>');
-               }
-           });
+        $('#email').on('blur', function() {
+            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+                var i = $.parseJSON(data);
+                if (i.msg == 1) {
+                    $('#email').val('');
+                    $('#email').focus();
+                    $('#email').css('background-color', 'rosybrown');
+                    $('#email').after('<label id="email-error" class="error" for="email">Email is already registered. Please login in your account.</label>');
+                }
+            });
         });
     });
 </script>
@@ -72,7 +72,7 @@
                     <div class="claim-form2">
                         <form class="process-form" name="order" method="POST">
                             <label for="">E-mail cím*</label>
-                            <input type="text" name="email" class="rounded" id="email" required <?=($current_user)?'value="'.$current_user->email.'"':""; ?> >
+                            <input type="text" name="email" class="rounded" id="email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
 
                             <label for="">Kutyus neve</label>
                             <input type="text" name="puppy_name" class="rounded" id="" required>
@@ -142,14 +142,18 @@
                             <div>
                                 <label for="">Menhely neve*</label>
                                 <select name="option-name" class="rounded option-name" required>
-                                    <option value="name1">select1</option>
-                                    <option value="name2">select2</option>
-                                    <option value="name3">select3</option>
-                                    <option value="name4">select4</option>
+                                    <?php
+                                    $shelters = ORM::factory('Shelter')->find_all();
+                                    foreach ($shelters as $shelter) {
+                                        ?>
+                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                        <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <label for="">Kutyus neve*</label>
-                            <input type="text" name="" class="rounded" id="" required>
+                            <input type="text" name="doggy_name" class="rounded" id="" required>
 
                             <div class="radio-list">
                                 <label for="last-name">Kutyus neme*</label>

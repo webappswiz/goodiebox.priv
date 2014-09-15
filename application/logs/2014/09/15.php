@@ -685,3 +685,168 @@
 #5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:65
+2014-09-15 20:22:49 --- EMERGENCY: ErrorException [ 8 ]: Trying to get property of non-object ~ APPPATH/classes/Controller/Order.php [ 42 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:42
+2014-09-15 20:22:49 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(42): Kohana_Core::error_handler(8, 'Trying to get p...', '/var/www/goodie...', 42, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:42
+2014-09-15 20:23:28 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Puppy' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 20:23:28 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 20:24:02 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: order2 ~ APPPATH/classes/Controller/Order.php [ 47 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:47
+2014-09-15 20:24:02 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(47): Kohana_Core::error_handler(8, 'Undefined index...', '/var/www/goodie...', 47, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:47
+2014-09-15 20:38:00 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Friends' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 20:38:00 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 20:38:25 --- EMERGENCY: Database_Exception [ 1146 ]: Table 'goodiebox.friendses' doesn't exist [ SHOW FULL COLUMNS FROM `friendses` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:38:25 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php(336): Database_MySQLi->query(1, 'SHOW FULL COLUM...', false)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1668): Database_MySQLi->list_columns('friendses')
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(444): Kohana_ORM->list_columns()
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(389): Kohana_ORM->reload_columns()
+#4 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(254): Kohana_ORM->_initialize()
+#5 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): Kohana_ORM->__construct(NULL)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Order.php(94): Kohana_ORM::factory('Friends')
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:43:54 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_User_Shelter' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 20:43:54 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 20:44:35 --- EMERGENCY: Database_Exception [ 1146 ]: Table 'goodiebox.user_shelters' doesn't exist [ SHOW FULL COLUMNS FROM `user_shelters` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:44:35 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php(336): Database_MySQLi->query(1, 'SHOW FULL COLUM...', false)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1668): Database_MySQLi->list_columns('user_shelters')
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(444): Kohana_ORM->list_columns()
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(389): Kohana_ORM->reload_columns()
+#4 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(254): Kohana_ORM->_initialize()
+#5 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): Kohana_ORM->__construct(NULL)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Order.php(100): Kohana_ORM::factory('User_Shelter')
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:47:03 --- EMERGENCY: Database_Exception [ 1146 ]: Table 'goodiebox.user_shelters' doesn't exist [ SHOW FULL COLUMNS FROM `user_shelters` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:47:03 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php(336): Database_MySQLi->query(1, 'SHOW FULL COLUM...', false)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1668): Database_MySQLi->list_columns('user_shelters')
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(444): Kohana_ORM->list_columns()
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(389): Kohana_ORM->reload_columns()
+#4 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(254): Kohana_ORM->_initialize()
+#5 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): Kohana_ORM->__construct(NULL)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Order.php(100): Kohana_ORM::factory('User_Shelter')
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:48:01 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: user ~ APPPATH/classes/Controller/Order.php [ 107 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:107
+2014-09-15 20:48:01 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(107): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 107, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:107
+2014-09-15 20:49:15 --- EMERGENCY: Database_Exception [ 1452 ]: Cannot add or update a child row: a foreign key constraint fails (`goodiebox`.`user_shelter`, CONSTRAINT `user_shelter_ibfk_2` FOREIGN KEY (`shelter_id`) REFERENCES `shelters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) [ INSERT INTO `user_shelter` (`selected_size`, `shelter_id`, `doggy_name`, `selected_box`, `user_id`, `comment`, `last_modified`, `date_purchased`) VALUES ('1', 'name2', 'Kutyus neme', '1', '5', '', '2014-09-15 20:49:15', '2014-09-15 20:49:15') ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-15 20:49:15 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(2, 'INSERT INTO `us...', false, Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1324): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Order.php(109): Kohana_ORM->save()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-15 20:50:10 --- EMERGENCY: Database_Exception [ 1146 ]: Table 'goodiebox.order' doesn't exist [ SHOW FULL COLUMNS FROM `order` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:50:10 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php(336): Database_MySQLi->query(1, 'SHOW FULL COLUM...', false)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1668): Database_MySQLi->list_columns('order')
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(444): Kohana_ORM->list_columns()
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(389): Kohana_ORM->reload_columns()
+#4 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(254): Kohana_ORM->_initialize()
+#5 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): Kohana_ORM->__construct(NULL)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Order.php(78): Kohana_ORM::factory('Order')
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:50:19 --- EMERGENCY: Database_Exception [ 1146 ]: Table 'goodiebox.puppy' doesn't exist [ SHOW FULL COLUMNS FROM `puppy` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:50:19 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php(336): Database_MySQLi->query(1, 'SHOW FULL COLUM...', false)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1668): Database_MySQLi->list_columns('puppy')
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(444): Kohana_ORM->list_columns()
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(389): Kohana_ORM->reload_columns()
+#4 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(254): Kohana_ORM->_initialize()
+#5 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): Kohana_ORM->__construct(NULL)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Order.php(79): Kohana_ORM::factory('Puppy')
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 20:50:34 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: user ~ APPPATH/classes/Controller/Order.php [ 87 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:87
+2014-09-15 20:50:34 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(87): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 87, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:87
+2014-09-15 20:55:07 --- EMERGENCY: Database_Exception [ 1452 ]: Cannot add or update a child row: a foreign key constraint fails (`goodiebox`.`user_shelter`, CONSTRAINT `user_shelter_ibfk_2` FOREIGN KEY (`shelter_id`) REFERENCES `shelters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) [ INSERT INTO `user_shelter` (`selected_size`, `shelter_id`, `doggy_name`, `selected_box`, `user_id`, `comment`, `last_modified`, `date_purchased`) VALUES ('3', '3', 'Kutyus neme', '2', '5', '', '2014-09-15 20:55:07', '2014-09-15 20:55:07') ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-15 20:55:07 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(2, 'INSERT INTO `us...', false, Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1324): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Order.php(102): Kohana_ORM->save()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-15 20:57:55 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Shelters' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 20:57:55 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 21:08:22 --- EMERGENCY: ErrorException [ 8 ]: Trying to get property of non-object ~ APPPATH/classes/Controller/Order.php [ 80 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:80
+2014-09-15 21:08:22 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(80): Kohana_Core::error_handler(8, 'Trying to get p...', '/var/www/goodie...', 80, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:80
+2014-09-15 21:17:47 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: address1 ~ APPPATH/classes/Controller/Order.php [ 106 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:106
+2014-09-15 21:17:47 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(106): Kohana_Core::error_handler(8, 'Undefined index...', '/var/www/goodie...', 106, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:106

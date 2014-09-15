@@ -39,12 +39,6 @@ class Controller_Order extends Controller_Core {
         $session = Session::instance();
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
-        if($step1->order1==1)
-            $order = ORM::factory ('Order');
-        if($step1->order2==1)
-            $order = ORM::factory ('Friends');
-        if($step1->order3==1)
-            $order = ORM::factory ('Friends');
         $this->set_title('Order - Step 3');
         if (isset($_POST['message'])) {
             //User registration for not registered
@@ -70,15 +64,59 @@ class Controller_Order extends Controller_Core {
                     $user->customer_telephone = $_POST['customer_telephone'];
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
-                    Auth::instance()->login($_POST['email'], $_POST['password']);
+                    $current_user = Auth::instance()->login($_POST['email'], $_POST['password']);
+                    $this->current_user = Auth::instance()->get_user();
                 }
-                //ordering
-                print_r($step1);
-                print_r($step2);
-            } else {
-                print_r($step1);
-                print_r($step2);
             }
+            if (isset($step1['order1'])) {
+                $order = ORM::factory('Order');
+                $puppy = ORM::factory('Puppy');
+                $puppy->puppy_name = $step1['puppy_name'];
+                $puppy->gender = $step1['gender'];
+                $puppy->years = $step1['years'];
+                $puppy->months = $step1['months'];
+                $puppy->alerg = $step1['alerg'];
+                $puppy->alerg_descr = $step1['alerg_descr'];
+                $puppy->selected_size = $step1['selected_size'];
+                $puppy->user_id = $this->current_user->id;
+                $puppy->save();
+                $order->puppy_id = $puppy->id;
+            }
+            if (isset($step1['order2'])) {
+                $order = ORM::factory('Friend');
+                $order->friends_email = $step1['email'];
+                $order->friends_name = $step1['first-name'];
+                $order->selected_size = $step1['selected_size'];
+            }
+            if (isset($step1['order3'])) {
+                $order = ORM::factory('User_Shelter');
+                $order->selected_size = $step1['selected_size'];
+                $order->shelter_id = $step1['option-name'];
+                $order->doggy_name = $step1['doggy_name'];
+                $order->doggy_gender = $step1['neme'];
+                $order->selected_size = $step1['selected_size'];
+            }
+            $order->selected_box = $step2['selected_box'];
+            $order->user_id = $this->current_user->id;
+            $order->comment = $_POST['message'];
+            $order->last_modified = date('Y-m-d H:i:s');
+            $order->date_purchased = date('Y-m-d H:i:s');
+
+            if (isset($_POST['customer_firstname'])) {
+                $order->delivery_name = $_POST['customer_firstname'] . ' ' . $_POST['customer_lastname'];
+                $order->delivery_street_address = $_POST['address'] . ' ' . $_POST['address2'];
+                $order->delivery_city = $_POST['customer_city'];
+                $order->delivery_postcode = $_POST['customer_zip'];
+                $order->delivery_telephone = $_POST['customer_telephone'];
+            } else {
+                $order->delivery_name = $this->current_user->customer_firstname.' '.$this->current_user->customer_lastname;
+                $order->delivery_street_address = $this->current_user->customer_address;
+                $order->delivery_city = $this->current_user->customer_city;
+                $order->delivery_postcode = $this->current_user->customer_zip;
+                $order->delivery_telephone = $this->current_user->customer_telephone;
+            }
+
+            $order->save();
             $session->delete('step1');
             $session->delete('step2');
             echo View::factory('template/thankyou', get_defined_vars())->render();

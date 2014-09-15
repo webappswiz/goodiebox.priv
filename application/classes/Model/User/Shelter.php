@@ -2,9 +2,9 @@
 
 defined('SYSPATH') OR die('No direct access allowed.');
 
-class Model_Order extends ORM {
+class Model_User_Shelter extends ORM {
 
-    protected $_table_name = 'orders';
+    protected $_table_name = 'user_shelter';
     protected $_primary_key = 'id';
 
 }
