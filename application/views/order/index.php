@@ -99,7 +99,7 @@
                             <input type="text" name="alerg_descr" class="rounded" id="">
 
                             <p style="padding-top:20px;">*Kötelező adatok</p>
-                            <input type="hidden" name="order" value="1">
+                            <input type="hidden" name="order1" value="1">
                             <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
@@ -124,7 +124,7 @@
                                 <input id="" type="text" value="" name="email"  class="rounded" required>
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                            <input type="hidden" name="order" value="1">
+                            <input type="hidden" name="order2" value="1">
                             <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
@@ -156,7 +156,7 @@
                                 <input type="radio" name="neme" value="Kutyus neme" class="" checked> Lány <input type="radio" name="neme" value="Kutyus neme" class=""> Fiú
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                            <input type="hidden" name="order" value="1">
+                            <input type="hidden" name="order3" value="1">
                             <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
