@@ -38,7 +38,6 @@ class Controller_Order extends Controller_Core {
     {
         $session = Session::instance();
         $this->set_title('Order - Step 3');
-        print_r($_POST);
         if (isset($_POST['message'])) {
             //User registration for not registered
             if (!Auth::instance()->logged_in()) {
@@ -54,20 +53,23 @@ class Controller_Order extends Controller_Core {
                     $user = ORM::factory('User');
                     $user->username = $_POST['email'];
                     $user->email = $_POST['email'];
-                    $user->password = md5($_POST['password']);
+                    $user->password = $_POST['password'];
                     $user->save();
+                    $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
                 }
             }
             foreach ($_POST as $key => $value) {
                 echo $key . ' = ' . $value . '<br/>';
             }
+            $session->delete('step1');
+            $session->delete('step2');
             echo View::factory('template/thankyou', get_defined_vars())->render();
             $this->render_nothing();
         }
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
 
-        if (empty($step1) && empty($step2)) {
+        if (empty($step1) && empty($step2) && !isset($_POST['message'])) {
             Flash::set('alert', 'Please fill the form');
             $this->redirect('order/index');
         }

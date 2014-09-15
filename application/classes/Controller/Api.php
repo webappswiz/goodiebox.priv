@@ -17,7 +17,7 @@ class Controller_API extends Controller_Core {
                     ->where('username', '=', $email)
                     ->or_where('email', '=', $email)
                     ->find();
-            if ($user->loaded() && !Auth::instance()->logged_in()) {
+            if ($user->loaded()) {
                 echo json_encode(array('msg' => '1'));
             } else {
                 echo json_encode(array('msg' => '0'));

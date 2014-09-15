@@ -3,7 +3,7 @@
         $('#faqList').simpleFAQ();
         $('.claim-form').find('input, button, select').attr('disabled', 'disabled');
         $('.claim-form').find('input:checkbox').removeAttr('disabled');
-        $('#password, #password_confirm').removeAttr('disabled');
+        $('#password, #password_confirm, #email').removeAttr('disabled');
         if (!$('#tos').prop(':checked')) {
             $('#submit').attr('disabled', 'disabled');
         }
@@ -23,7 +23,7 @@
             } else {
                 $('.claim-form').find('input, button, select').attr('disabled', 'disabled');
                 $('#shipping').removeAttr('disabled');
-                $('#password #password_confirm').removeAttr('disabled');
+                $('#password, #password_confirm,#email').removeAttr('disabled');
             }
 
         })

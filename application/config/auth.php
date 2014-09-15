@@ -4,7 +4,7 @@ return array(
 
 	'driver'       => 'ORM',
 	'hash_method'  => 'sha256',
-	'hash_key'     => 'klaskladlk892393jjq09jd0jkkJJIOFJOD29392IJDAkladkas',
+	'hash_key'     => 'VasyaPupkin123',
 	'lifetime'     => 1209600,
 	'session_type' => Session::$default,
 	'session_key'  => 'auth_user',

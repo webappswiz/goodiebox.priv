@@ -72,6 +72,7 @@ class Model_Auth_User extends ORM {
 			'username'         => 'username',
 			'email'            => 'email address',
 			'password'         => 'password',
+                        'meta_data'        => 'meta_data',
 		);
 	}
 

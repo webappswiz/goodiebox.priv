@@ -284,3 +284,376 @@
 2014-09-15 12:45:51 --- EMERGENCY: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH/views/order/index.php [ 75 ] in file:line
 2014-09-15 12:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2014-09-15 16:42:08 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: email ~ APPPATH/classes/Controller/Order.php [ 50 ] in /var/www/goodiebox.priv/application/classes/Controller/Order.php:50
+2014-09-15 16:42:08 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Order.php(50): Kohana_Core::error_handler(8, 'Undefined index...', '/var/www/goodie...', 50, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#2 [internal function]: Kohana_Controller->execute()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#7 {main} in /var/www/goodiebox.priv/application/classes/Controller/Order.php:50
+2014-09-15 16:44:32 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: box ~ APPPATH/views/order/step3.php [ 137 ] in /var/www/goodiebox.priv/application/views/order/step3.php:137
+2014-09-15 16:44:32 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/order/step3.php(137): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 137, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/application/views/order/step3.php:137
+2014-09-15 16:44:54 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: box ~ APPPATH/views/order/step3.php [ 137 ] in /var/www/goodiebox.priv/application/views/order/step3.php:137
+2014-09-15 16:44:54 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/order/step3.php(137): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 137, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/application/views/order/step3.php:137
+2014-09-15 16:52:23 --- EMERGENCY: ErrorException [ 2 ]: call_user_func_array() expects parameter 1 to be a valid callback, class 'Auth_ORM' does not have a method 'md5' ~ MODPATH/orm/classes/Kohana/ORM.php [ 1210 ] in file:line
+2014-09-15 16:52:23 --- DEBUG: #0 [internal function]: Kohana_Core::error_handler(2, 'call_user_func_...', '/var/www/goodie...', 1210, Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1210): call_user_func_array(Array, Array)
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(732): Kohana_ORM->run_filter('password', 'admin')
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(702): Kohana_ORM->set('password', 'admin')
+#4 /var/www/goodiebox.priv/application/classes/Controller/Order.php(56): Kohana_ORM->__set('password', 'admin')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#6 [internal function]: Kohana_Controller->execute()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#10 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#11 {main} in file:line
+2014-09-15 17:17:03 --- EMERGENCY: Exception [ 0 ]: Class file '/var/www/goodiebox.priv/application/vendor/Model/role.php' does not exists ~ APPPATH/vendor/ApnsPHP/Autoload.php [ 49 ] in file:line
+2014-09-15 17:17:03 --- DEBUG: #0 [internal function]: ApnsPHP_Autoload('Model_role')
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): spl_autoload_call('Model_role')
+#2 /var/www/goodiebox.priv/application/classes/Controller/Order.php(58): Kohana_ORM::factory('role')
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#9 {main} in file:line
+2014-09-15 17:22:35 --- EMERGENCY: Database_Exception [ 1146 ]: Table 'goodiebox.auth_roles' doesn't exist [ SHOW FULL COLUMNS FROM `auth_roles` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 17:22:35 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php(336): Database_MySQLi->query(1, 'SHOW FULL COLUM...', false)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1668): Database_MySQLi->list_columns('auth_roles')
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(444): Kohana_ORM->list_columns()
+#3 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(389): Kohana_ORM->reload_columns()
+#4 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(254): Kohana_ORM->_initialize()
+#5 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): Kohana_ORM->__construct(Array)
+#6 /var/www/goodiebox.priv/application/classes/Model/User.php(16): Kohana_ORM::factory('Auth_Role', Array)
+#7 /var/www/goodiebox.priv/application/classes/Controller/Order.php(58): Model_User->assign_role('login')
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#9 [internal function]: Kohana_Controller->execute()
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#12 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#13 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#14 {main} in /var/www/goodiebox.priv/modules/database/classes/Database/MySQLi.php:336
+2014-09-15 17:25:06 --- EMERGENCY: Exception [ 0 ]: Class file '/var/www/goodiebox.priv/application/vendor/Model/roles.php' does not exists ~ APPPATH/vendor/ApnsPHP/Autoload.php [ 49 ] in file:line
+2014-09-15 17:25:06 --- DEBUG: #0 [internal function]: ApnsPHP_Autoload('Model_roles')
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): spl_autoload_call('Model_roles')
+#2 /var/www/goodiebox.priv/application/classes/Controller/Order.php(58): Kohana_ORM::factory('roles')
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#9 {main} in file:line
+2014-09-15 17:28:10 --- EMERGENCY: Exception [ 0 ]: Class file '/var/www/goodiebox.priv/application/vendor/Model/roles.php' does not exists ~ APPPATH/vendor/ApnsPHP/Autoload.php [ 49 ] in file:line
+2014-09-15 17:28:10 --- DEBUG: #0 [internal function]: ApnsPHP_Autoload('Model_roles')
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(46): spl_autoload_call('Model_roles')
+#2 /var/www/goodiebox.priv/application/classes/Controller/Order.php(58): Kohana_ORM::factory('roles')
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#9 {main} in file:line
+2014-09-15 17:31:11 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_roles' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 17:31:11 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 17:32:08 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_roles' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-15 17:32:08 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-15 17:41:23 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:23 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:28 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:28 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:48 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:48 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:49 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:41:49 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:43:59 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:43:59 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:43:59 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:43:59 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:00 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:00 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:00 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:00 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:00 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:00 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:01 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:44:01 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:13 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:13 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:13 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:13 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:14 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:14 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:14 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:14 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:15 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:15 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:16 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:46:16 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:05 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:1302
+2014-09-15 17:47:05 --- DEBUG: #0 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /var/www/goodiebox.priv/application/classes/Controller/Order.php(57): Kohana_ORM->save()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#9 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:1302
+2014-09-15 17:47:37 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:37 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:38 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:38 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:39 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:39 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:42 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:47:42 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:48:09 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:48:09 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:48:14 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:48:14 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:48:15 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:48:15 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:49:19 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:49:19 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:53:58 --- EMERGENCY: View_Exception [ 0 ]: The requested view api/test could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:53:58 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('api/test')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-15 17:56:10 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:1302
+2014-09-15 17:56:10 --- DEBUG: #0 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /var/www/goodiebox.priv/application/classes/Controller/Order.php(57): Kohana_ORM->save()
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#9 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:1302
