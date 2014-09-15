@@ -54,12 +54,15 @@ class Controller_Order extends Controller_Core {
                     $user->username = $_POST['email'];
                     $user->email = $_POST['email'];
                     $user->password = $_POST['password'];
+                    $user->customer_firstname = $_POST['customer_firstname'];
+                    $user->customer_lastname = $_POST['customer_lastname'];
+                    //$user->address = $_POST['address'];
+                    $user->customer_city = $_POST['customer_city'];
+                    $user->customer_zip = $_POST['customer_zip'];
+                    $user->customer_telephone = $_POST['customer_telephone'];
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
                 }
-            }
-            foreach ($_POST as $key => $value) {
-                echo $key . ' = ' . $value . '<br/>';
             }
             $session->delete('step1');
             $session->delete('step2');

@@ -106,28 +106,32 @@ if (isset($session['step2'])) {
                     <label for="">Város*</label>
                     <input type="text" name="customer_city" class="rounded" id="" required>
                 </div>
-                <?php if (!Auth::instance()->logged_in()) {?>
-                <div class="fl" style="margin-right:5px;">
-                    <label for="">E-mail cím*</label>
-                    <input type="text" name="email" class="rounded" id="email" required>
-                </div>
+                <?php if (!Auth::instance()->logged_in()) { ?>
+                    <div class="fl" style="margin-right:5px;">
+                        <label for="">E-mail cím*</label>
+                        <input type="text" name="email" class="rounded" id="email" required>
+                    </div>
                 <?php } ?>
                 <div>
                     <label for="">Telefonszám*</label>
                     <input type="text" name="customer_telephone" class="rounded" id="" required>
                 </div>
                 <p style="margin-top:15px;">E-mail cím és jelszó megadása szükséges ahhoz, hogy később bejelentkezhess a Goodiebox fiókodba, követhesd aktuális rendelésed, módosíthasd a már meglévő adataidat vagy ha nincs rá szükséged, törölhesd.</p>
-                <?php if (!Auth::instance()->logged_in()) {?>
-                <div class="fl" style="margin-right:5px;">
-                    <label for="last-name">Jelszó*</label>
-                    <input type="text" name="password" class="rounded" id="password" required>
-                </div>
-                <div>
-                    <label for="last-name">Jelszó megerősítése*</label>
-                    <input type="text" name="password_confirm" class="rounded" id="password_confirm" required>
-                </div>
-                <?php
-                }
+                <?php if (!Auth::instance()->logged_in()) { ?>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $('.claim-form').find('input,  button, select').removeAttr('disabled');
+                        });
+                    </script>
+                    <div class="fl" style="margin-right:5px;">
+                        <label for="last-name">Jelszó*</label>
+                        <input type="text" name="password" class="rounded" id="password" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Jelszó megerősítése*</label>
+                        <input type="text" name="password_confirm" class="rounded" id="password_confirm" required>
+                    </div>
+                    <?php }
                 ?>
                 <div class="claim-message">
                     <span>A szállítási cím nem egyezik?</span><input type="checkbox" name="shipping" id="shipping">
