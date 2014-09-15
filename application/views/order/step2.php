@@ -44,8 +44,8 @@
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
     <ul class="claim-option-list step2-list">
         <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img1.jpg"><p> 1 hónap<input type="radio" class="" name="box" id="box" value="1" checked="checked" required></p></li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img2.jpg"> 3 hónap<input type="radio" name="box" id="box" value="2" class="" required></li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img2.jpg"> 6 hónap<input type="radio" name="box" id="box" value="3" class="" required></li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img2.jpg"> 3 hónap<input type="radio" name="box" id="box" value="2" class="" required disabled></li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img2.jpg"> 6 hónap<input type="radio" name="box" id="box" value="3" class="" required disabled></li>
     </ul>
     <div class="clear"></div>
 
