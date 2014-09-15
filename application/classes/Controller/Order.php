@@ -37,9 +37,14 @@ class Controller_Order extends Controller_Core {
     public function action_step3()
     {
         $session = Session::instance();
-        $order = ORM::factory('Order');
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
+        if($step1->order1==1)
+            $order = ORM::factory ('Order');
+        if($step1->order2==1)
+            $order = ORM::factory ('Friends');
+        if($step1->order3==1)
+            $order = ORM::factory ('Friends');
         $this->set_title('Order - Step 3');
         if (isset($_POST['message'])) {
             //User registration for not registered
