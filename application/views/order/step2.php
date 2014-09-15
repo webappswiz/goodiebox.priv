@@ -60,7 +60,7 @@
         <form method="POST">
             <input type="hidden" name="order" value="1">
             <input type="hidden" name="selected_box" id="selected_box" value="">
-            <input type="submit" id="back" value="VISSZA" class="claim-btn fl">
+            <input type="button" id="back" class="claim-btn fl"  onclick="history.go(-1);return true;" value="VISSZA">
             <input type="submit" name="tovabb" id="next" value="TOVÁBB" class="claim-btn fr">
         </form>
     </div>

@@ -7,8 +7,18 @@
         });
         $('#selected_size').val($('#size').val());
         $('input:radio').on('click',function(){
-            console.log($('#selected_size'));
             $('.selected_size').val($(this).val());
+        });
+        $('#email').on('blur',function(){
+           $.post('/api/check',{'email':$(this).val()}).done(function(data) {
+               var i = $.parseJSON(data);
+               if(i.msg==1){
+                   $('#email').val('');
+                   $('#email').focus();
+                   $('#email').css('background-color','rosybrown');
+                   $('#email').after('<label id="email-error" class="error" for="email">Email is already registered. Please login in your account.</label>');
+               }
+           });
         });
     });
 </script>
@@ -62,7 +72,7 @@
                     <div class="claim-form2">
                         <form class="process-form" name="order" method="POST">
                             <label for="">E-mail cím*</label>
-                            <input type="text" name="email" class="rounded" id="" required>
+                            <input type="text" name="email" class="rounded" id="email" required <?=($current_user)?'value="'.$current_user->email.'"':""; ?> >
 
                             <label for="">Kutyus neve</label>
                             <input type="text" name="puppy_name" class="rounded" id="" required>
@@ -111,7 +121,7 @@
 
                             <div>
                                 <label for="first-name">Barátod e-mail címe*</label>
-                                <input id="" type="text" value="" name="last-name" class="rounded" required>
+                                <input id="" type="text" value="" name="email"  class="rounded" required>
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order" value="1">

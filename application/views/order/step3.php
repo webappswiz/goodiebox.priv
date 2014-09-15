@@ -1,9 +1,32 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#faqList').simpleFAQ();
-        $('#submit').on('click',function(){
+        $('.claim-form').find('input, button, select').attr('disabled', 'disabled');
+        $('.claim-form').find('input:checkbox').removeAttr('disabled');
+        $('#password, #password_confirm').removeAttr('disabled');
+        if (!$('#tos').prop(':checked')) {
+            $('#submit').attr('disabled', 'disabled');
+        }
+        $('#tos').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#submit').removeAttr('disabled');
+            } else {
+                $('#submit').attr('disabled', 'disabled');
+            }
+        })
+        $('#submit').on('click', function() {
             $('form').submit();
         });
+        $('#shipping').on('click', function() {
+            if ($('#shipping').is(':checked')) {
+                $('.claim-form').find('input,  button, select').removeAttr('disabled');
+            } else {
+                $('.claim-form').find('input, button, select').attr('disabled', 'disabled');
+                $('#shipping').removeAttr('disabled');
+                $('#password #password_confirm').removeAttr('disabled');
+            }
+
+        })
     });
 </script>
 <?php
@@ -61,12 +84,12 @@ if (isset($session['step2'])) {
             <form method="POST" action="" id="submit_order">
                 <div style="margin-right:5px;" class="fl">
                     <label for="first-name">Vezetéknév*</label>
-                    <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
+                    <input id="last-name" type="text" value="" name="customer_firstname" class="rounded" required>
                 </div>
 
                 <div style="overflow:hidden;">
                     <label for="last-name">Keresztnév*</label>
-                    <input id="" type="text" value="" name="last-name" class="rounded" required>
+                    <input id="" type="text" value="" name="customer_lastname" class="rounded" required>
                 </div>
                 <div class="clear"></div>
                 <div class="add">
@@ -77,27 +100,37 @@ if (isset($session['step2'])) {
 
                 <div>
                     <label for="zip">Irányítószám*</label>
-                    <input type="text" name="zip" class="rounded" id="" required>
+                    <input type="text" name="customer_zip" class="rounded" id="" required>
                 </div>
                 <div class="add">
                     <label for="">Város*</label>
-                    <input type="text" name="city" class="rounded" id="" required>
+                    <input type="text" name="customer_city" class="rounded" id="" required>
                 </div>
+                <?php if (!Auth::instance()->logged_in()) {?>
                 <div class="fl" style="margin-right:5px;">
                     <label for="">E-mail cím*</label>
-                    <input type="text" name="email" class="rounded" id="" required>
+                    <input type="text" name="email" class="rounded" id="email" required>
                 </div>
+                <?php } ?>
                 <div>
                     <label for="">Telefonszám*</label>
-                    <input type="text" name="telephone" class="rounded" id="" required>
+                    <input type="text" name="customer_telephone" class="rounded" id="" required>
                 </div>
                 <p style="margin-top:15px;">E-mail cím és jelszó megadása szükséges ahhoz, hogy később bejelentkezhess a Goodiebox fiókodba, követhesd aktuális rendelésed, módosíthasd a már meglévő adataidat vagy ha nincs rá szükséged, törölhesd.</p>
-                <div>
+                <?php if (!Auth::instance()->logged_in()) {?>
+                <div class="fl" style="margin-right:5px;">
                     <label for="last-name">Jelszó*</label>
-                    <input type="text" name="password" class="rounded" id="" required>
+                    <input type="text" name="password" class="rounded" id="password" required>
                 </div>
+                <div>
+                    <label for="last-name">Jelszó megerősítése*</label>
+                    <input type="text" name="password_confirm" class="rounded" id="password_confirm" required>
+                </div>
+                <?php
+                }
+                ?>
                 <div class="claim-message">
-                    <span>A szállítási cím nem egyezik?</span><input type="checkbox">
+                    <span>A szállítási cím nem egyezik?</span><input type="checkbox" name="shipping" id="shipping">
                     <label for="message">Megjegyzés</label>
                     <textarea name="message" class="rounded"></textarea>
                 </div>
@@ -105,7 +138,15 @@ if (isset($session['step2'])) {
                 <input type="hidden" name="selected_size" id="selected_size" value="<?= $size ?>">
             </form>
             <script>
-                $("#submit_order").validate();
+                $("#submit_order").validate({
+                    rules: {
+                        password: {
+                            required: true, minlength: 5
+                        },
+                        password_confirm: {
+                            required: true, equalTo: "#password", minlength: 5
+                        }, }
+                });
             </script>
         </div> <!--End claim form-->
     </div><!--End claim form container-->
@@ -143,7 +184,7 @@ if (isset($session['step2'])) {
         </div>
     </div>
     <div class="claim-form-btn">
-        <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" required>
+        <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" id="tos" name="tos" required>
         <input type="submit" value="MEGRENDELEM" name="submit" id="submit" class="claim-btn">
     </div>
     <div class="clear"></div>

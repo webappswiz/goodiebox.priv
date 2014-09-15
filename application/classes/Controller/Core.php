@@ -20,7 +20,7 @@ class Controller_Core extends Controller_Base_Core {
         parent::before();
         $this->template->active_menu = 'home';
         //$this->check_access();
-        //$this->current_user = Auth::instance()->logged_in() ? Auth::instance()->get_user() : NULL;
+        $this->current_user = Auth::instance()->logged_in() ? Auth::instance()->get_user() : NULL;
     }
 
     /**
