@@ -10,9 +10,10 @@ $menus = array(
     '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
 );
 if($auth->logged_in()){
+    $menus['user_account'] = array('Arcél','arcél');
     $menus['user_session/logout'] = array('Logout','logout');
 } else {
-    $menus['user_session/login'] = array('Login','login');
+    $menus['user_session/login'] = array('Belépés','login');
 }
 //}
 if (!$menus)

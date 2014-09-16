@@ -25,7 +25,7 @@
     <div class="donations-btn">
         <p>Illatos út </br>Noé Állatotthon Alapítvány</br>Rex Kutyaotthon Alapítvány</br>HEROSZ Budapesti Állatotthona</p>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrow-dn.jpg">
-        <a href="claim-gift.html"><button type="button" class="top-btn rounded">Ajándékozom</button></a>
+        <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékozom</button></a>
         <p class="donation-bottom-p">menhelyi kutyusnak</p>
     </div>
     <div class="donations-bottom-text">

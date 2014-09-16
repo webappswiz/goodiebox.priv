@@ -42,7 +42,8 @@ class Controller_User_Account extends Controller_Core {
                 Flash::set('notice', 'Your password has been successfully updated');
             }
             $this->redirect('/user_account');
-        }
+        } else
+            $this->redirect('/user_account');
     }
 
 }
