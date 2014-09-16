@@ -13,3 +13,13 @@
 #9 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #10 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #11 {main} in /var/www/goodiebox.priv/system/classes/Kohana/Form.php:252
+2014-09-16 12:19:28 --- EMERGENCY: Kohana_Exception [ 0 ]: The delivery_name property does not exist in the Model_User_Shelter class ~ MODPATH/orm/classes/Kohana/ORM.php [ 760 ] in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:702
+2014-09-16 12:19:28 --- DEBUG: #0 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(702): Kohana_ORM->set('delivery_name', 'Alex Karamushko')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Order.php(112): Kohana_ORM->__set('delivery_name', 'Alex Karamushko')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Order->action_step3()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:702

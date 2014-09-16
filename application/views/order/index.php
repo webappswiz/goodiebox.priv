@@ -1,8 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#faqList').simpleFAQ({'showOnlyOne': true});
         $('#submit_form').on('click', function() {
-            div = $('.answer').filter(':visible');
+            div = $('.content').filter(':visible');
             $('form', div).submit();
         });
         $('.selected_size').val($('input:radio[id^="size"]:checked').val());
@@ -20,10 +19,10 @@
                 }
             });
         });
-        $('.alerg_yes').on('click',function(){
-            $('#alerg_descr').attr('required','required');
+        $('.alerg_yes').on('click', function() {
+            $('#alerg_descr').attr('required', 'required');
         });
-        $('.alerg_no').on('click',function(){
+        $('.alerg_no').on('click', function() {
             $('#alerg_descr').removeAttr('required');
         });
     });
@@ -71,10 +70,10 @@
 
     <h2>Kinek veszed a Goodiebox-ot?</h2>
     <div class="drop-down-form">
-        <ul id="faqList">
-            <li>
-                <p class="question">+ Saját kutyusomnak</p>
-                <div class="answer">
+        <div id="collapse-content">
+            <h3>Saját kutyusomnak</h3>
+            <div>
+                <div class="content">
                     <div class="claim-form2">
                         <form class="process-form" name="order" method="POST">
                             <label for="">E-mail cím*</label>
@@ -97,12 +96,12 @@
                             <label for="last-name">Kutyus születésnapja*</label>
                             <div class="text-shor1 fl">
                                 <?php
-                                echo Form::select('years', $years, '', array('required'));
+                                echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name'));
                                 ?>
                             </div>
                             <div class="text-shor2">
                                 <?php
-                                echo Form::select('months', $months, '', array('required'));
+                                echo Form::select('months', $months, '', array('required', 'class' => 'rounded option-name'));
                                 ?>
                             </div>
 
@@ -123,11 +122,12 @@
                         </script>
                     </div>
                 </div>
-            </li>
+            </div>
 
-            <li>
-                <p class="question">+ Barátom kutyusának</p>
-                <div class="answer">
+
+            <h3>Barátom kutyusának</h3>
+            <div>
+                <div class="content">
                     <div class="process-form-container2">
                         <form class="process-form1" name="order" method="POST">
                             <div>
@@ -148,11 +148,11 @@
                         </script>
                     </div>
                 </div>
-            </li>
+            </div>
 
-            <li>
-                <p class="question">+ Menhelyi kutyusnak</p>
-                <div class="answer">
+            <h3>Menhelyi kutyusnak</h3>
+            <div>
+                <div class="content">
                     <div class="process-form-container2">
                         <form class="process-form2" name="order" method="POST">
                             <div>
@@ -183,12 +183,25 @@
                             $(".process-form2").validate();
                         </script>
                     </div>
-            </li>
-        </ul>
-        <div class="claim-form-btn">
-            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="claim-btn" style="margin-right:20px;">
+                </div>
+            </div>
+            <script>
+                $("#collapse-content").collapse({
+                    accordion: true,
+                    open: function() {
+                        this.addClass("open");
+                        this.css({height: this.children().outerHeight()});
+                    },
+                    close: function() {
+                        this.css({height: "0px"});
+                        this.removeClass("open");
+                    }
+                });
+            </script>
+            <div class="claim-form-btn">
+                <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="claim-btn" style="margin-right:20px;">
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="clear"></div>
     </div>
-</div>
 </section>
