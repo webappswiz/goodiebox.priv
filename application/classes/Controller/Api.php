@@ -26,4 +26,19 @@ class Controller_API extends Controller_Core {
         $this->render_nothing();
     }
 
+    public function action_removePuppy(){
+        $puppy_id = (int)Arr::get($_REQUEST, 'dog_id');
+        $puppy = ORM::factory('Puppy')
+                ->where('id', '=', $puppy_id)
+                ->and_where('user_id', '=', $this->current_user->id)
+                ->find();
+        if($puppy->loaded()){
+            $puppy->delete();
+            echo 0;
+        } else {
+            echo 1;
+        }
+        $this->render_nothing();
+    }
+
 }
