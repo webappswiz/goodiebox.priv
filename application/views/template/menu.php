@@ -1,4 +1,5 @@
 <?php
+$auth = Auth::instance();
 $menus = array();
 $menus = array(
     '/' => array('Fooldal', 'home'),
@@ -8,6 +9,11 @@ $menus = array(
     '/gyik' => array('GYIK', 'gyik'),
     '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
 );
+if($auth->logged_in()){
+    $menus['user_session/logout'] = array('Logout','logout');
+} else {
+    $menus['user_session/login'] = array('Login','login');
+}
 //}
 if (!$menus)
     return;

@@ -20,6 +20,12 @@
                 }
             });
         });
+        $('.alerg_yes').on('click',function(){
+            $('#alerg_descr').attr('required','required');
+        });
+        $('.alerg_no').on('click',function(){
+            $('#alerg_descr').removeAttr('required');
+        });
     });
 </script>
 
@@ -81,22 +87,32 @@
                                 <label for="last-name">Kutyus neme*</label>
                                 <input type="radio" name="gender" value="0" class="" checked> Lány <input name="gender" value="1" type="radio" class=""> Fiú
                             </div>
+                            <?php
+                            for ($i = 1994; $i <= date('Y'); $i++)
+                                $years[$i] = $i;
 
+                            for ($i = 1; $i <= 12; $i++)
+                                $months[$i] = $i;
+                            ?>
                             <label for="last-name">Kutyus születésnapja*</label>
                             <div class="text-shor1 fl">
-                                <input type="text" name="years"  id="" required> év
+                                <?php
+                                echo Form::select('years', $years, '', array('required'));
+                                ?>
                             </div>
                             <div class="text-shor2">
-                                <input type="text" name="months"  id="" required> hónap
+                                <?php
+                                echo Form::select('months', $months, '', array('required'));
+                                ?>
                             </div>
 
                             <div class="radio-list">
                                 <label for="Igen">Allergiás a kutyusod?*</label>
-                                <input type="radio" class="" value="0" name="alerg" checked> Igen <input type="radio" value="1" name="alerg" class=""> Nem
+                                <input type="radio" class="alerg_yes" value="0" name="alerg"> Igen <input type="radio" value="1" name="alerg" class="alerg_no" checked> Nem
                             </div>
 
                             <label for="last-name">Ha igen, mire?</label>
-                            <input type="text" name="alerg_descr" class="rounded" id="">
+                            <input type="text" name="alerg_descr" class="rounded" id="alerg_descr">
 
                             <p style="padding-top:20px;">*Kötelező adatok</p>
                             <input type="hidden" name="order1" value="1">
