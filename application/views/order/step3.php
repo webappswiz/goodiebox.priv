@@ -57,13 +57,13 @@ if (isset($session['step2'])) {
                 <div class="circle-line "> . . . . . . . . . .</div>
             </li>
             <li>
-                <div class="circle">2</div>
+                <div class="circle" style="color:#ff0000;border-color:#ff0000;">2</div>
             </li>
             <li>
                 <div class="circle-line ">. . . . . . . . . .</div>
             </li>
             <li>
-                <div class="circle ">3</div>
+                <div class="circle " style="color:#cc0000;border-color:#cc0000;">3</div>
             </li>
         </ul>
 
@@ -72,10 +72,35 @@ if (isset($session['step2'])) {
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
     <div class="claim-box1">
         <div class="box rounded">
-            <p>Ha van kuponod, itt beválthatod. <span>KLIKK ide!</span></p>
-            <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-i.png">
+            <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-i.png">
+            <div id="collapse-content">
+                <h3>Ha már van regisztrált Goodiebox felhasználói fiókod, jelentkezz be! <span>KLIKK ide!</span></h3>
+                <div>
+                    <div class="content">
+                        <div class="login">
+                            <form>
+                                Ajándékkupon kódom <input type="text" name="e-mail" class="rounded" id="">
+                                <input type="submit" value="OK" class="box-btn rounded">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div> <!--End claim box1-->
+    <script>
+        $("#collapse-content").collapse({
+            accordion: true,
+            open: function() {
+                this.addClass("open");
+                this.css({height: this.children().outerHeight()});
+            },
+            close: function() {
+                this.css({height: "0px"});
+                this.removeClass("open");
+            }
+        });
+    </script>
     <div class="claim-form-container">
         <div class="claim-form">
             <h2>Számlázási adatok</h2>
@@ -121,18 +146,18 @@ if (isset($session['step2'])) {
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $('.claim-form').find('input,  button, select').removeAttr('disabled');
-                            $('#shipping').attr('checked','checked');
+                            $('#shipping').attr('checked', 'checked');
                         });
                     </script>
                     <div class="fl" style="margin-right:5px;">
                         <label for="last-name">Jelszó*</label>
-                        <input type="text" name="password" class="rounded" id="password" required>
+                        <input type="password" name="password" class="rounded" id="password" required>
                     </div>
                     <div>
                         <label for="last-name">Jelszó megerősítése*</label>
-                        <input type="text" name="password_confirm" class="rounded" id="password_confirm" required>
+                        <input type="password" name="password_confirm" class="rounded" id="password_confirm" required>
                     </div>
-                    <?php }
+                <?php }
                 ?>
                 <div class="claim-message">
                     <span>A szállítási cím nem egyezik?</span><input type="checkbox" name="shipping" id="shipping">
@@ -190,7 +215,7 @@ if (isset($session['step2'])) {
     </div>
     <div class="claim-form-btn">
         <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" id="tos" name="tos" required>
-        <input type="submit" value="MEGRENDELEM" name="submit" id="submit" class="claim-btn">
+        <input type="submit" value="MEGRENDELEM" name="submit" id="submit" class="dark-btn claim-btn">
     </div>
     <div class="clear"></div>
 </section>

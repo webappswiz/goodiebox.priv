@@ -29,7 +29,7 @@
                 <div class="circle-line "> . . . . . . . . . .</div>
             </li>
             <li>
-                <div class="circle">2</div>
+                <div class="circle" style="color:#ff0000;border-color:#ff0000;">2</div>
             </li>
             <li>
                 <div class="circle-line c-grey">. . . . . . . . . .</div>
@@ -60,8 +60,8 @@
         <form method="POST">
             <input type="hidden" name="order" value="1">
             <input type="hidden" name="selected_box" id="selected_box" value="">
-            <input type="button" id="back" class="claim-btn fl"  onclick="history.go(-1);return true;" value="VISSZA">
-            <input type="submit" name="tovabb" id="next" value="TOVÁBB" class="claim-btn fr">
+            <input type="button" id="back" class="dark-btn claim-btn fl"  onclick="history.go(-1);return true;" value="VISSZA">
+            <input type="submit" name="tovabb" id="next" value="TOVÁBB" class="dark-btn claim-btn fr">
         </form>
     </div>
     <div class="clear"></div>
