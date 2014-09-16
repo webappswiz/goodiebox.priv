@@ -103,3 +103,28 @@
 #5 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #6 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #7 {main} in /var/www/goodiebox.priv/application/classes/Controller/User/Account.php:25
+2014-09-16 22:58:34 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Address_Book' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-16 22:58:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-16 22:58:47 --- EMERGENCY: View_Exception [ 0 ]: The requested view user_account/editshipping could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-16 22:58:47 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('user_account/ed...')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_User_Account))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-16 22:58:54 --- EMERGENCY: Database_Exception [ 1452 ]: Cannot add or update a child row: a foreign key constraint fails (`goodiebox`.`address_book`, CONSTRAINT `address_book_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) [ INSERT INTO `address_book` (`customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`) VALUES ('Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya          ') ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-16 22:58:54 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(2, 'INSERT INTO `ad...', false, Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1324): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#3 /var/www/goodiebox.priv/application/classes/Controller/User/Account.php(34): Kohana_ORM->save()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_User_Account->action_editShipping()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_User_Account))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251

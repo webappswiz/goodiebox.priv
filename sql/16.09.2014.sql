@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.0-beta2
+-- version 4.0.6
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 16 2014 г., 12:21
+-- Время создания: Сен 16 2014 г., 22:49
 -- Версия сервера: 5.5.37-0ubuntu0.13.10.1
--- Версия PHP: 5.5.3-1ubuntu2
+-- Версия PHP: 5.5.3-1ubuntu2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- База данных: `goodiebox`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `address_book`
+--
+
+CREATE TABLE IF NOT EXISTS `address_book` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `customer_firstname` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `customer_lastname` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `customer_telephone` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `customer_zip` varchar(15) COLLATE utf8_swedish_ci NOT NULL,
+  `customer_city` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `customer_address` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -84,7 +103,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `comment`, `delivery_name`, `delivery_street_address`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `last_modified`, `date_purchased`, `orders_status`) VALUES
-(1, 5, 1, 1, 'asdadsdasdasadsd', '', '', '', '', '', '2014-09-15 20:50:51', '2014-09-15 20:50:51', 0),
 (2, 6, 1, 2, '', '', '', '', '', '', '2014-09-15 21:10:11', '2014-09-15 21:10:11', 0),
 (3, 6, 1, 4, '', '', 'test street gvardiya', 'Kiev', '53440', '380666424353', '2014-09-15 21:18:18', '2014-09-15 21:18:18', 0);
 
@@ -106,14 +124,13 @@ CREATE TABLE IF NOT EXISTS `puppies` (
   `selected_size` int(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `puppies`
 --
 
 INSERT INTO `puppies` (`id`, `user_id`, `puppy_name`, `gender`, `years`, `months`, `alerg`, `alerg_descr`, `selected_size`) VALUES
-(1, 5, 'asdadsasdds', 0, 2, 5, 0, 'adadsads', 1),
 (2, 6, 'asdadsasdds', 0, 2, 5, 0, 'dasadsdas', 2),
 (3, 6, 'asdadsasdds', 0, 2, 5, 0, 'adadsads', 1),
 (4, 6, 'asdadsasdds', 0, 2, 5, 0, 'adadsads', 1);
@@ -215,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `logins`, `last_login`) VALUES
 (1, 'karam@karam.org.ua', '21232f297a57a5a743894a0e4a801fc3', 'karam@karam.org.ua', '', '', '', '', '', '', 7, '1410773856'),
-(5, 'alex@onlamp.info', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya ', 4, '1410859139'),
+(5, 'alex@onlamp.info', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya         ', 7, '1410896661'),
 (6, 'rulana.s@mail.ru', 'e5d3d37de4dc93a6324beeb90bb6f0f0bc2fda120b8144a9edfdcd054752c72f', 'rulana.s@mail.ru', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya ', 1, '1410804502');
 
 -- --------------------------------------------------------
@@ -251,8 +268,8 @@ CREATE TABLE IF NOT EXISTS `user_shelter` (
 --
 
 INSERT INTO `user_shelter` (`id`, `user_id`, `shelter_id`, `doggy_name`, `doggy_gender`, `selected_size`, `selected_box`, `comment`, `delivery_name`, `delivery_street_address`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `last_modified`, `date_purchased`, `orders_status`) VALUES
-(3, 5, 1, '0', 0, 3, 1, '', '', '', '', '', '', '2014-09-15 20:59:40', '2014-09-15 20:59:40', 0),
-(4, 5, 1, '0', 0, 1, 1, '', '', '', '', '', '', '2014-09-15 21:01:21', '2014-09-15 21:01:21', 0),
+(3, 5, 1, 'vasya', 0, 3, 1, '', '', '', '', '', '', '2014-09-15 20:59:40', '2014-09-15 20:59:40', 0),
+(4, 5, 1, 'tuzik', 0, 1, 1, '', '', '', '', '', '', '2014-09-15 21:01:21', '2014-09-15 21:01:21', 0),
 (5, 5, 2, 'dsasaddasdsadsa', 0, 3, 1, '', 'Alex Karamushko', 'Kosmicheskaya ', 'Zaporizhzhya', '69050', '380975231602', '2014-09-16 12:20:19', '2014-09-16 12:20:19', 0);
 
 -- --------------------------------------------------------
@@ -277,6 +294,12 @@ CREATE TABLE IF NOT EXISTS `user_tokens` (
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
+
+--
+-- Ограничения внешнего ключа таблицы `address_book`
+--
+ALTER TABLE `address_book`
+  ADD CONSTRAINT `address_book_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `friend`

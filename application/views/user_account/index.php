@@ -30,30 +30,35 @@
                         <h2>Szállítási adatok</h2>
                         <p>Ország</p>
                         <h4>Magyarország</h4>
-                        <form method="POST" action="/user_account/editShipping">
+                        <?php
+                        $ab = ORM::factory('AddressBook')
+                                ->where('user_id', '=', $current_user->id)
+                                ->find();
+                        ?>
+                        <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
                                 <label for="last-name">Vezetéknév*</label>
-                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= $current_user->customer_firstname ?>">
+                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($ab->loaded()) ? $ab->customer_firstname : $current_user->customer_firstname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
                                 <label for="first-name">Keresztnév*</label>
-                                <input id="" type="text" name="last-name" class="rounded" value="<?= $current_user->customer_lastname ?>">
+                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($ab->loaded()) ? $ab->customer_lastname : $current_user->customer_lastname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
                                 <label for="address">Cím*</label>
-                                <input type="text" name="address" class="rounded" id="" value="<?= $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet">
+                                <input type="text" name="address" class="rounded" id="" value="<?= ($ab->loaded()) ? $ab->customer_address : $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
                                 <input type="text" name="address2" class="rounded" id="">
                             </div>
 
                             <div>
                                 <label for="zip">Irányítószám*</label>
-                                <input type="text" name="zip" class="rounded" id="" value="<?= $current_user->customer_zip ?>">
+                                <input type="text" name="zip" class="rounded" id="" value="<?= ($ab->loaded()) ? $ab->customer_zip : $current_user->customer_zip ?>" required>
                             </div>
                             <div class="add">
                                 <label for="">Város*</label>
-                                <input type="text" name="city" value="<?= $current_user->customer_city ?>" class="rounded" id="">
+                                <input type="text" name="city" value="<?= ($ab->loaded()) ? $ab->customer_city : $current_user->customer_city ?>" class="rounded" id="" required>
                             </div>
                             <div>
                                 <label for="message">Megjegyzés</label>
@@ -68,18 +73,20 @@
                         </div>
                         <div>
                             <label for="last-name">Jelszó*</label>
-                            <input type="password" name="password" class="rounded" id="">
+                            <input type="password" name="password" class="rounded" id="password">
                         </div>
                         <div style="margin-right:0;">
                             <label for="">Telefonszám*</label>
-                            <input type="text" name="telephone" class="rounded" id="" value="<?= $current_user->customer_telephone ?>">
+                            <input type="text" name="telephone" class="rounded" id="" value="<?= ($ab->loaded()) ? $ab->customer_telephone : $current_user->customer_telephone ?>" required>
                         </div>
                         <div style="margin-top:50px;">
                             <input type="submit" name="edit_shipping" value="ADATAIM MENTÉSE" class="dark-btn Szemelyes-btn rounded">
                         </div>
                     </div>
                     </form>
-
+                    <script>
+                        $("#shipping").validate();
+                    </script>
                 </div><!--End claim orm container-->
             </div>
         </div>
