@@ -1,17 +1,3 @@
-<script type="text/javascript">
-    function delete_dog(id) {
-        if (confirm('Do you really want to remove the puppy?')) {
-            $.post('/api/removePuppy', {'dog_id': id}).done(function(data) {
-                if (data == 0) {
-                    $('#puppy' + id).slideUp("slow", function() {
-                        $(this).empty();
-                    });
-                }
-            });
-        }
-    }
-
-</script>
 <nav>
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
@@ -103,14 +89,14 @@
                     $i = 0;
                     foreach ($puppies as $puppy):
                         ?>
-                        <div class="dog-profile-container" id="puppy<?= $puppy->id ?>" <?php
+                        <div class="dog-profile-container" <?php
                         if ($i == 2) {
                             echo 'style="margin-right:0;"';
                             $i = 0;
                         }
                         ?>>
                             <div class="dog-profile rounded">
-                                <a class="delete-btn" style="cursor: pointer;" onclick="delete_dog(<?= $puppy->id ?>);">
+                                <a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?=$puppy->id?>" class="delete-btn" style="cursor: pointer;" onclick="return confirm('Do you really want to remove the puppy?')?true:false;">
                                     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/delete.png"></a>
                                 <h2>PÖTYI</h2>
                                 <div class="dog-prof-img">
