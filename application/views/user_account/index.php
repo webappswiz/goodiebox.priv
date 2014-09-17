@@ -1,10 +1,132 @@
+<style type="text/css">
+    #dialog-form{
+        display:none; /* Hide the DIV */
+        position:fixed;
+        _position:absolute; /* hack for internet explorer 6 */
+        height:550px;
+        width:350px;
+        background:#FFFFFF;
+        margin: 0 auto;
+        z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+        left: 50%;
+        top: 50%;
+        margin-left: -125px;
+        margin-top: -275px;
+
+        /* additional features, can be omitted */
+        border:2px solid #ff0000;
+        padding:15px;
+        font-size:15px;
+        -moz-box-shadow: 0 0 5px #ff0000;
+        -webkit-box-shadow: 0 0 5px #ff0000;
+        box-shadow: 0 0 5px #ff0000;
+    }
+    #popupBoxClose {
+        font-size:20px;
+        line-height:15px;
+        right:5px;
+        top:5px;
+        position:absolute;
+        color:#6fa5e2;
+        font-weight:500;
+        cursor: pointer;
+    }
+</style>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // When site loaded, load the Popupbox First
+        $('#create-dog').on('click', function() {
+            loadPopupBox();
+        });
+
+
+        $('#popupBoxClose').click(function() {
+            unloadPopupBox();
+        });
+
+
+        function unloadPopupBox() {    // TO Unload the Popupbox
+            $('#dialog-form').fadeOut("slow");
+            $("#container").css({// this is just for style
+                "opacity": "1"
+            });
+        }
+
+        function loadPopupBox() {    // To Load the Popupbox
+            $('#dialog-form').fadeIn("slow");
+            $("#container").css({// this is just for style
+                "opacity": "0.3"
+            });
+        }
+    });
+</script>
+<div id="dialog-form" title="Add a new dog">
+    <script>
+        $(".process-form").validate();
+    </script>
+    <div class="claim-form2">
+        <form class="process-form" name="order" method="POST" action="/user_account/addDog">
+            <label for="">Kutyus neve</label>
+            <input type="text" name="puppy_name" class="rounded" id="" required>
+            <div class="radio-list">
+                <label for="last-name">Válaszd ki mekkora a kutyus!*</label>
+                <input type="radio" name="size" value="1" class="" checked> Icipici <input name="size" value="2" type="radio" class=""> Éppen jó
+                <input name="size" value="3" type="radio" class=""> Igazi óriás
+            </div>
+            <div class="radio-list">
+                <label for="last-name">Kutyus neme*</label>
+                <input type="radio" name="gender" value="0" class="" checked> Lány <input name="gender" value="1" type="radio" class=""> Fiú
+            </div>
+            <?php
+            for ($i = 1994; $i <= date('Y'); $i++)
+                $years[$i] = $i;
+
+            for ($i = 1; $i <= 12; $i++)
+                $months[$i] = $i;
+            ?>
+            <label for="last-name">Kutyus születésnapja*</label>
+            <div class="text-shor1 fl">
+                <?php
+                echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name'));
+                ?>
+            </div>
+            <div class="text-shor2">
+                <?php
+                echo Form::select('months', $months, '', array('required', 'class' => 'rounded option-name'));
+                ?>
+            </div>
+
+            <div class="radio-list">
+                <label for="Igen">Allergiás a kutyusod?*</label>
+                <input type="radio" class="alerg_yes" value="0" name="alerg"> Igen <input type="radio" value="1" name="alerg" class="alerg_no" checked> Nem
+            </div>
+
+            <label for="last-name">Ha igen, mire?</label>
+            <input type="text" name="alerg_descr" class="rounded" id="alerg_descr">
+
+            <p style="padding-top:20px;">*Kötelező adatok</p>
+            <input type="hidden" name="order1" value="1">
+            <input type="hidden" name="selected_size" class="selected_size">
+            <div>
+                <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
+            </div>
+        </form>
+        <a id="popupBoxClose"><strong>X</strong></a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+</script>
 <nav>
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>
 </nav>
 <div class="clear"></div>
-<section class="claim-gift" class="rounded">
+<section class="claim-gift" class="rounded" id="container">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/profile-icon.png" class="badge" style="top:-65px;">
     <h1>Saját profilom</h1>
     <div id="collapse-content">
@@ -96,7 +218,7 @@
                         }
                         ?>>
                             <div class="dog-profile rounded">
-                                <a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?=$puppy->id?>" class="delete-btn" style="cursor: pointer;" onclick="return confirm('Do you really want to remove the puppy?')?true:false;">
+                                <a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?= $puppy->id ?>" class="delete-btn" style="cursor: pointer;" onclick="return confirm('Do you really want to remove the puppy?') ? true : false;">
                                     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/delete.png"></a>
                                 <h2><?= $puppy->puppy_name ?></h2>
                                 <div class="dog-prof-img">
@@ -128,10 +250,10 @@
                                 <?php } ?>
                             </div> <!--End dog profile-->
 
-                            <div>
-                                <label for="">Kuponbeváltás</label>
-                                <input type="text" name="" class="rounded" id="">
-                            </div>
+                            <!-- <div>
+                                 <label for="">Kuponbeváltás</label>
+                                 <input type="text" name="" class="rounded" id="">
+                             </div> -->
                             <div>
                                 <label for="">Ajándékbeváltás</label>
                                 <input type="text" name="" class="rounded" id="">
@@ -139,13 +261,15 @@
                             <div>
                                 <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
                             </div>
-
                         </div>  <!--End dog profile container-->
                         <?php
                         $i++;
                     endforeach;
                 endif;
                 ?>
+                <div>
+                    <input type="button" value="Van egy" id="create-dog" class="dark-btn dog-prof-btn rounded">
+                </div>
             </div>
         </div>
 

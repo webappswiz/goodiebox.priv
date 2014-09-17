@@ -13,10 +13,14 @@ return array(
             'jquery.quicksilver',
             'ui_lib',
             'jquery.validate.min',
-            'jquery.collapse'
+            'jquery.collapse',
+            'jquery-ui.min'
         ),
         'css' => array(
-            'style'=> NULL
+            'style'=> NULL,
+            'jquery-ui.min'=> NULL,
+            'jquery-ui.structure.min'=> NULL,
+            'jquery-ui.theme.min'=> NULL
         ),
     ),
 );
