@@ -110,7 +110,16 @@
                                     ?>
 
                                 </div>
-                                <p><?= $puppy->puppy_name ?></p>
+                                <p>
+                                    <?php
+                                    if ($puppy->selected_size == 1)
+                                        echo 'Icipici';
+                                    if ($puppy->selected_size == 2)
+                                        echo 'Éppen jó';
+                                    if ($puppy->selected_size == 3)
+                                        echo 'Igazi óriás';
+                                    ?>
+                                </p>
                                 <p><?= ($puppy->gender == 0) ? 'Lány' : 'Fiú' ?></p>
                                 <p><?= $puppy->years . '.' . $puppy->months ?></p>
                                 <?php if ($puppy->alerg == 1) { ?>
