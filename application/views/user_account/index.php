@@ -98,7 +98,7 @@
                             <div class="dog-profile rounded">
                                 <a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?=$puppy->id?>" class="delete-btn" style="cursor: pointer;" onclick="return confirm('Do you really want to remove the puppy?')?true:false;">
                                     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/delete.png"></a>
-                                <h2>PÖTYI</h2>
+                                <h2><?= $puppy->puppy_name ?></h2>
                                 <div class="dog-prof-img">
                                     <?php
                                     if ($puppy->selected_size == 1)
