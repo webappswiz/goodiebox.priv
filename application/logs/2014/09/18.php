@@ -164,3 +164,74 @@
 2014-09-18 16:38:25 --- EMERGENCY: ErrorException [ 1 ]: Cannot use object of type Model_Puppy as array ~ APPPATH/classes/Controller/User/Account.php [ 85 ] in file:line
 2014-09-18 16:38:25 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2014-09-18 18:29:27 --- EMERGENCY: ErrorException [ 1 ]: Call to undefined method Model_User::is_admin() ~ APPPATH/classes/Controller/Admin.php [ 7 ] in file:line
+2014-09-18 18:29:27 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-18 18:33:44 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/index could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:33:44 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/index')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:35:01 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/core could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/system/classes/Kohana/View.php:137
+2014-09-18 18:35:01 --- DEBUG: #0 /var/www/goodiebox.priv/system/classes/Kohana/View.php(137): Kohana_View->set_filename('admin/core')
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(30): Kohana_View->__construct('admin/core', NULL)
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller/Template.php(33): Kohana_View::factory('admin/core')
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(72): Kohana_Controller_Template->before()
+#4 /var/www/goodiebox.priv/application/classes/Controller/Core.php(20): Controller_Base_Core->before()
+#5 /var/www/goodiebox.priv/application/classes/Controller/Admin.php(8): Controller_Core->before()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(69): Controller_Admin->before()
+#7 [internal function]: Kohana_Controller->execute()
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin))
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#12 {main} in /var/www/goodiebox.priv/system/classes/Kohana/View.php:137
+2014-09-18 18:35:34 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/index could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:35:34 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/index')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:38:01 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/core could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/system/classes/Kohana/View.php:137
+2014-09-18 18:38:01 --- DEBUG: #0 /var/www/goodiebox.priv/system/classes/Kohana/View.php(137): Kohana_View->set_filename('admin/core')
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(30): Kohana_View->__construct('admin/core', NULL)
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller/Template.php(33): Kohana_View::factory('admin/core')
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(72): Kohana_Controller_Template->before()
+#4 /var/www/goodiebox.priv/application/classes/Controller/Core.php(20): Controller_Base_Core->before()
+#5 /var/www/goodiebox.priv/application/classes/Controller/Admin.php(8): Controller_Core->before()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(69): Controller_Admin->before()
+#7 [internal function]: Kohana_Controller->execute()
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin))
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#12 {main} in /var/www/goodiebox.priv/system/classes/Kohana/View.php:137
+2014-09-18 18:42:08 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/index could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:42:08 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/index')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:42:36 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/index could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-18 18:42:36 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/index')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545

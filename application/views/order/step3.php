@@ -37,6 +37,7 @@ if ($auth->logged_in())
         });
         $('#submit').on('click', function() {
             if($('#shipping').is(':checked')){
+                $('#shipping_form').valid();
                 $.each ( $('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function ( i, obj ) {
                     $('<input type="hidden">').prop( obj ).appendTo( $('#billing_form') );
                 });
@@ -214,37 +215,34 @@ if (isset($session['step2'])) {
                     <h4>Magyarország</h4>
                     <div style="margin-right:5px;" class="fl">
                         <label for="delivery_firstname">Vezetéknév*</label>
-                        <input id="delivery_firstname" type="text" value="" name="delivery_firstname" class="rounded" >
+                        <input id="delivery_firstname" type="text" value="" name="delivery_firstname" class="rounded" required>
                     </div>
 
                     <div style="overflow:hidden;">
                         <label for="delivery_lastname">Keresztnév*</label>
-                        <input id="delivery_lastname" type="text" value="" name="delivery_lastname" class="rounded">
+                        <input id="delivery_lastname" type="text" value="" name="delivery_lastname" class="rounded" required>
                     </div>
                     <div class="clear"></div>
                     <div class="add">
                         <label for="delivery_address">Cím*</label>
-                        <input type="text" name="delivery_address" class="rounded" id="delivery_address" value="" placeholder="Utca, házszám, ajtó, emelet">
+                        <input type="text" name="delivery_address" class="rounded" id="delivery_address" value="" placeholder="Utca, házszám, ajtó, emelet" required>
                         <input type="text" name="delivery_address2" class="rounded" id="delivery_address2" value="">
                     </div>
 
                     <div>
                         <label for="delivery_zip">Irányítószám*</label>
-                        <input type="text" name="delivery_zip" class="rounded" id="delivery_zip" value="">
+                        <input type="text" name="delivery_zip" class="rounded" id="delivery_zip" value="" required>
                     </div>
                     <div class="add">
                         <label for="delivery_city">Város*</label>
-                        <input type="text" name="delivery_city" class="rounded" id="delivery_city" value="">
+                        <input type="text" name="delivery_city" class="rounded" id="delivery_city" value="" required>
                     </div>
-                    <div>
-                        <label for="delivery_telephone">Telefonszám*</label>
-                        <input type="text" name="delivery_telephone" class="rounded" id="delivery_telephone" value="" required>
-                    </div>
-                    <div style="margin-top:80px;">
+
+                </form>
+                <div style="margin-top:80px;">
                         <label for="message">Megjegyzés</label>
                         <textarea name="message" class="rounded"></textarea>
                     </div>
-                </form>
                 <script>
 
             </script>

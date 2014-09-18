@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 18 2014 г., 16:06
+-- Время создания: Сен 18 2014 г., 17:36
 -- Версия сервера: 5.5.37-0ubuntu0.13.10.1
 -- Версия PHP: 5.5.3-1ubuntu2.6
 
@@ -68,19 +68,21 @@ CREATE TABLE IF NOT EXISTS `friend` (
   `delivery_city` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `delivery_postcode` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `delivery_telephone` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `coupon_code` varchar(50) COLLATE utf8_swedish_ci NOT NULL,
   `last_modified` datetime DEFAULT NULL,
   `date_purchased` datetime DEFAULT NULL,
   `orders_status` int(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `friend`
 --
 
-INSERT INTO `friend` (`id`, `user_id`, `friends_email`, `friends_name`, `selected_size`, `selected_box`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `last_modified`, `date_purchased`, `orders_status`) VALUES
-(4, 10, 'rulana.s@mail.ru', 'Alex', 3, 1, 'Vasya', 'Pupkin', 'Malinovskogo 19', '', 'Kiev', '69034', '+380975231602', '2014-09-18 15:39:16', '2014-09-18 15:39:16', 0);
+INSERT INTO `friend` (`id`, `user_id`, `friends_email`, `friends_name`, `selected_size`, `selected_box`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `coupon_code`, `last_modified`, `date_purchased`, `orders_status`) VALUES
+(4, 10, 'rulana.s@mail.ru', 'Alex', 3, 1, 'Vasya', 'Pupkin', 'Malinovskogo 19', '', 'Kiev', '69034', '+380975231602', '', '2014-09-18 15:39:16', '2014-09-18 15:39:16', 0),
+(5, 10, 'info@wingporium.ca', 'Alex', 1, 1, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', 'karam2014', '2014-09-18 17:14:45', '2014-09-18 17:14:45', 0);
 
 -- --------------------------------------------------------
 
@@ -100,20 +102,22 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `delivery_city` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `delivery_postcode` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `delivery_telephone` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `coupon_code` varchar(50) COLLATE utf8_swedish_ci NOT NULL,
   `last_modified` datetime DEFAULT NULL,
   `date_purchased` datetime DEFAULT NULL,
   `orders_status` int(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `puppy_id` (`puppy_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=11 ;
 
 --
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `last_modified`, `date_purchased`, `orders_status`) VALUES
-(9, 10, 1, 23, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '2014-09-18 15:33:05', '2014-09-18 15:33:05', 0);
+INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `coupon_code`, `last_modified`, `date_purchased`, `orders_status`) VALUES
+(9, 10, 1, 23, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '2014-09-18 15:33:05', '2014-09-18 15:33:05', 0),
+(10, 10, 1, 28, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '2014-09-18 16:39:09', '2014-09-18 16:39:09', 0);
 
 -- --------------------------------------------------------
 
@@ -133,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `puppies` (
   `selected_size` int(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=29 ;
 
 --
 -- Дамп данных таблицы `puppies`
@@ -143,7 +147,8 @@ INSERT INTO `puppies` (`id`, `user_id`, `puppy_name`, `gender`, `years`, `months
 (23, 10, 'Bobik', 1, 1994, 1, 1, '', 1),
 (24, 10, 'Tuzik', 1, 1994, 1, 1, '', 2),
 (26, 10, 'Giraf', 1, 1994, 1, 0, '', 3),
-(27, 10, 'asasdsa', 1, 1994, 1, 0, 'sahsh,sajdja, sajasj', 2);
+(27, 10, 'asasdsa', 1, 1994, 1, 0, 'sahsh,sajdja, sajasj', 2),
+(28, 10, 'Giraf', 1, 1994, 1, 0, '', 3);
 
 -- --------------------------------------------------------
 
@@ -241,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `customer_company`, `customer_taxcode`, `logins`, `last_login`) VALUES
-(10, 'alex@onlamp.info', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33', '', '', '', 1, '1411043585');
+(10, 'alex@onlamp.info', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33', '', '', '', 2, '1411045921');
 
 -- --------------------------------------------------------
 
@@ -264,6 +269,7 @@ CREATE TABLE IF NOT EXISTS `user_shelter` (
   `delivery_city` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `delivery_postcode` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `delivery_telephone` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `coupon_code` varchar(50) COLLATE utf8_swedish_ci NOT NULL,
   `last_modified` datetime DEFAULT NULL,
   `date_purchased` datetime DEFAULT NULL,
   `orders_status` int(5) NOT NULL,

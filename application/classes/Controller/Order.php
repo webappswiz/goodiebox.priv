@@ -131,7 +131,6 @@ class Controller_Order extends Controller_Core {
                 $order->delivery_address2 = $_POST['delivery_address2'];
                 $order->delivery_city = $_POST['delivery_city'];
                 $order->delivery_postcode = $_POST['delivery_zip'];
-                $order->delivery_telephone = $_POST['delivery_telephone'];
                 $address = ORM::factory('AddressBook',$this->current_user->id);
                 if(!$address->loaded()){
                     $address = ORM::factory('AddressBook');
@@ -139,7 +138,6 @@ class Controller_Order extends Controller_Core {
                 $address->user_id = $this->current_user->id;
                 $address->customer_firstname = $_POST['delivery_firstname'];
                 $address->customer_lastname = $_POST['delivery_lastname'];
-                $address->customer_telephone = $_POST['delivery_telephone'];
                 $address->customer_zip = $_POST['delivery_zip'];
                 $address->customer_city = $_POST['delivery_city'];
                 $address->customer_address = $_POST['delivery_address'];

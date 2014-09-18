@@ -10,4 +10,7 @@ class Model_User extends Model_Auth_User {
         'user_tokens' => array('model' => 'User_Token'),
         'roles' => array('model' => 'Role', 'through' => 'roles_users'),
     );
+    public function is_admin() {
+        return (bool) $this->roles->where('name', '=', 'admin')->count_all();
+    }
 }
