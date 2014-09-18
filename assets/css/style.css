@@ -403,7 +403,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .claim-gift .img-left-top {position: absolute; top:-60px; left: -40px;}
 .claim-gift label{font-size: 14px;}
 .claim-gift form input[type="text"],.claim-gift form textarea,.process-1 input[type="text"],.bottom-text-field div input[type="text"],.dog-profile-container input[type="text"]{border: 3px solid #330000; padding: 5px; outline: none;}
-.box{max-width: 772px; border: 3px solid #330000; border-top: 10px solid #330000; position: relative;}
+.box{max-width: 772px;margin: 0 auto; border: 3px solid #330000; border-top: 10px solid #330000; position: relative;}
 .box p{padding: 14px 0 14px 56px; }
 .box img{position: absolute; top:-8px; left: 23px;}
 .login{margin: 10px 0; padding-left: 20px;}
@@ -412,7 +412,6 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .claim-form-container{position: relative;overflow: hidden;}
 .claim-form{width: 57%;text-align: left; float: left;}
 .claim-form input[type="text"]{width: 206px;}
-.claim-form input[type="password"]{width: 206px;}
 .claim-form h2{text-align: left;padding-bottom: 0;}
 .claim-form h4{font-size: 16px;font-family: 'FranklinGothic-Heavy'; padding-top: 5px;}
 .claim-form > p{font-size: 16px; margin-top: 20px; }
@@ -420,8 +419,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .fr{float: right;}
 .claim-form form label,.claim-form2 form label{display: block; margin: 10px 0 3px 0;}
 .add input[type="text"]{width:100% !important; }
-.add input[type="password"]{width:100% !important; }
-.claim-message {width: 40%; position: absolute; top:75px; right: 20px;}
+.claim-message {width: 40%; position: absolute; top:75px; right: 10px;}
 .claim-message textarea{width: 100%; height: 80px;}
 .claim-option-list{overflow: hidden; text-align: center;font-family: 'franklin_gothic_bookregular';font-size: 18px;}
 .claim-option-list li{max-width:285px;display: inline-block; text-align: center;vertical-align: baseline;margin-right: 60px;}
@@ -472,10 +470,15 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 /*******************************
 	PROCESS PAGE 3 CSS
 ********************************/
-.process-3{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 55px 90px 45px 90px;font-family: 'franklin_gothic_bookregular';font-size: 14px;}
-.process-3 form input[type="text"],input[type="password"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
+.process-3{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 55px 40px 45px 40px;font-family: 'franklin_gothic_bookregular';font-size: 14px;}
+.process-3 form input[type="text"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
 .claim-box1{margin-top: 60px;}
+.claim-form-right{position: absolute; top: 40px; right: 0; width: 40%;}
+.claim-form-right form input[type="text"] {width: 170px;}
+.claim-form-right textarea{width: 100%; height: 100px;}
+.process3-form-msg{top:130px;}
 .claim-message label{margin-top: 55px !important;}
+.process3-form-msg label{margin-top: 40px !important }
 .order-form{max-width: 535px; padding-top: 60px !important; padding-bottom: 35px; margin: 0 auto;}
 .order-form > h2{padding: 0; text-align: left;}
 .order-container{border: 2px solid #330000; overflow: hidden;}
@@ -504,13 +507,19 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .dog-profile-container{float:left; margin-right:15px;width: 235px;font-family: 'franklin_gothic_bookregular';font-size: 16px; overflow: hidden;}
 .dog-profile-container input[type="text"]{width: 235px }
 .dog-profile-container div {margin-top: 20px; text-align: center;}
-.dog-profile{width: 235px; border: 3px solid #330000; height: 370px; text-align: center; position: relative;}
+.dog-profile{position: relative; width: 235px; border: 3px solid #330000; height: 370px; text-align: center; position: relative;}
 .delete-btn{position: absolute; top: 5px; right: 5px;}
 .dog-profile > h2{font-size: 16px; font-family: 'FranklinGothic-Heavy'; padding: 25px 0;}
 .dog-profile > p{padding: 5px 0;}
 .dog-prof-img {width: 100%; height: 140px; position: relative;}
 .dog-prof-img img {vertical-align: bottom; position: absolute;bottom: 0; left: 1px;}
 .dog-prof-btn{padding: 10px 15px; margin-top: 20px;}
+.dog-btn{margin-top: 20px; font-family: 'franklin_gothic_bookregular';float: left; font-size: 20px; padding: 12px 20px;color: #ffffff !important;}
+.dog-btn p{font-size: 16px; margin-top: 10px;}
+.delete-dog a{color: #ffffff !important;}
+.delete-dog{position: absolute; z-index: 9999; top: 20px;left: 25px; width: 180px;font-size: 16px; font-family: 'FranklinGothic-Heavy'; color: #ffffff;}
+.delete-box1,.delete-box2,.delete-box3{background: #d11947; padding: 20px; line-height: 20px;}
+.delete-box2,.delete-box3{float:left; margin-left: 7px; width: 80px; cursor: pointer;}
 .Szemelyes-btn{padding: 15px 30px;}
 .sub-heading{font-family: 'franklin_gothic_bookregular';font-size: 14px; margin-top: 5px;}
 
@@ -539,6 +548,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.circles img,.claim-option-list li img {position: static; text-align: center;margin-left: auto;margin-right: auto; display: block;}
 	.how-it-works > img,.faq img{width: 100%; height: auto;}
 	.login{padding-left: 0;}
+	.claim-gift{padding-left: 70px; padding-right: 70px;}
 	.claim-message{position: static; float: none;width: 100%;}
 	.claim-form{width: 65%;margin-left: auto; margin-right: auto;float: none;}
 	.nav-right,.post-text> h1,.claim-form > h2,.claim-form > p,.claim-form h4{text-align: center;}
@@ -546,6 +556,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.claim-form2,.claim-form-btn,.process-form-container2{margin-left: auto;margin-right: auto;}
 	.claim-form-btn{float: none;text-align: center; margin-top: 20px;}
 	.claim-btn{margin-top: 20px;margin-left: 0;}
+	.claim-form-right{position: static; margin-top: 40px;}
 	.bottom-text-field div{display: block; float: none; text-align: center; margin-right: 0;}
 	.bottom-text-field{width: 100%;}
 }
@@ -560,7 +571,6 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
 	.contact-cont-right{float: none;display: block;}
 	.claim-message {margin-top: 20px;}
-	#faq img{width: 100%; height:auto;}
 }
 	@media only screen and (max-width: 767px)
 {
@@ -570,9 +580,11 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.contact-cont-left,.contact-cont-right{float: none; text-align: center;}
 	.contact-us-form{margin-left: auto; margin-right: auto; text-align: left;}
 	.login form input[type="text"],.claim-form form input[type="text"],.client-acct-msg{width: 100%;}
+	.coupon input[type="text"]{width: 200px !important;}
 	.claim-form form div { float:none; }
 	.process-3{padding-left:50px; padding-right:50px;}
 	.bottom-text-field div input[type="text"] {width: 65%;}
+	.dog-btn{margin-left: 10px;}
 }
 	@media only screen and (max-width: 640px)
 {
@@ -625,7 +637,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.claim-gift h1{font-size: 36px;}
 	#collapse-content .content {padding-left: 0; padding-right: 5px;}
 }
-	
+.claim-form input[type="password"]{width: 206px;}
+.add input[type="password"]{width:100% !important; }
+.process-3 form input[type="text"],input[type="password"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
 .alert-error{
     background-color:rosybrown;
     padding: 20px;

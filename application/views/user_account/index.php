@@ -41,7 +41,12 @@
             loadPopupBox();
         });
 
-
+        $('.alerg_yes').on('click', function() {
+            $('#alerg_descr').attr('required', 'required');
+        });
+        $('.alerg_no').on('click', function() {
+            $('#alerg_descr').removeAttr('required');
+        });
         $('#popupBoxClose').click(function() {
             unloadPopupBox();
         });
@@ -60,6 +65,12 @@
                 "opacity": "0.3"
             });
         }
+        $('.delete-btn').on('click',function(){
+            $(this).closest('.dog-profile').find('.delete-dog').show('slow');
+        });
+        $('.cancel').on('click',function(){
+            $(this).closest('.dog-profile').find('.delete-dog').slideUp();
+        });
     });
 </script>
 <div id="dialog-form" title="Add a new dog">
@@ -138,35 +149,32 @@
                         <h2>Szállítási adatok</h2>
                         <p>Ország</p>
                         <h4>Magyarország</h4>
-                        <?php
-                        $ab = ORM::factory('AddressBook')
-                                ->where('user_id', '=', $current_user->id)
-                                ->find();
-                        ?>
+
+
                         <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
                                 <label for="last-name">Vezetéknév*</label>
-                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($ab->loaded()) ? $ab->customer_firstname : $current_user->customer_firstname ?>" required>
+                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= $current_user->customer_firstname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
                                 <label for="first-name">Keresztnév*</label>
-                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($ab->loaded()) ? $ab->customer_lastname : $current_user->customer_lastname ?>" required>
+                                <input id="" type="text" name="last-name" class="rounded" value="<?= $current_user->customer_lastname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
                                 <label for="address">Cím*</label>
-                                <input type="text" name="address" class="rounded" id="" value="<?= ($ab->loaded()) ? $ab->customer_address : $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
+                                <input type="text" name="address" class="rounded" id="" value="<?= $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
                                 <input type="text" name="address2" class="rounded" id="">
                             </div>
 
                             <div>
                                 <label for="zip">Irányítószám*</label>
-                                <input type="text" name="zip" class="rounded" id="" value="<?= ($ab->loaded()) ? $ab->customer_zip : $current_user->customer_zip ?>" required>
+                                <input type="text" name="zip" class="rounded" id="" value="<?= $current_user->customer_zip ?>" required>
                             </div>
                             <div class="add">
                                 <label for="">Város*</label>
-                                <input type="text" name="city" value="<?= ($ab->loaded()) ? $ab->customer_city : $current_user->customer_city ?>" class="rounded" id="" required>
+                                <input type="text" name="city" value="<?= $current_user->customer_city ?>" class="rounded" id="" required>
                             </div>
                             <div>
                                 <label for="message">Megjegyzés</label>
@@ -185,7 +193,7 @@
                         </div>
                         <div style="margin-right:0;">
                             <label for="">Telefonszám*</label>
-                            <input type="text" name="telephone" class="rounded" id="" value="<?= ($ab->loaded()) ? $ab->customer_telephone : $current_user->customer_telephone ?>" required>
+                            <input type="text" name="telephone" class="rounded" id="" value="<?= $current_user->customer_telephone ?>" required>
                         </div>
                         <div style="margin-top:50px;">
                             <input type="submit" name="edit_shipping" value="ADATAIM MENTÉSE" class="dark-btn Szemelyes-btn rounded">
@@ -218,7 +226,7 @@
                         }
                         ?>>
                             <div class="dog-profile rounded">
-                                <a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?= $puppy->id ?>" class="delete-btn" style="cursor: pointer;" onclick="return confirm('Do you really want to remove the puppy?') ? true : false;">
+                                <a class="delete-btn" style="cursor: pointer;">
                                     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/delete.png"></a>
                                 <h2><?= $puppy->puppy_name ?></h2>
                                 <div class="dog-prof-img">
@@ -248,6 +256,11 @@
                                     <p>Allergiás:</p>
                                     <p><?= $puppy->alerg_descr ?></p>
                                 <?php } ?>
+                                <div class="delete-dog" style="display: none">
+                                    <div class="delete-box1 rounded">Törölni szeretnéda kutyus profilját?</div>
+                                    <div class="delete-box2 rounded"><a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?= $puppy->id ?>">Igen</a></div>
+                                    <div class="delete-box3 rounded"><a class="cancel" style="cursor:pointer">Mégse</a></div>
+                                </div>
                             </div> <!--End dog profile-->
 
                             <!-- <div>
@@ -267,9 +280,9 @@
                     endforeach;
                 endif;
                 ?>
-                <div>
-                    <input type="button" value="Van egy" id="create-dog" class="dark-btn dog-prof-btn rounded">
-                </div>
+                        <div class="dog-profile-container" style="margin-right:0;">
+							<a href="#" id="create-dog" class="rounded dog-btn dark-btn">Van egy új kutyusom!<p>Új kutyus profil létrehozása</p></a>
+						</div>
             </div>
         </div>
 

@@ -70,6 +70,7 @@ class Controller_User_Account extends Controller_Core {
             $puppy->alerg_descr = $_POST['alerg_descr'];
             $puppy->selected_size = $_POST['size'];
             $puppy->save();
+            Flash::set('notice', 'The puppy has been successfully added');
             $this->redirect('/user_account');
         }
     }
