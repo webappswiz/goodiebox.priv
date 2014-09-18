@@ -65,10 +65,10 @@
                 "opacity": "0.3"
             });
         }
-        $('.delete-btn').on('click',function(){
+        $('.delete-btn').on('click', function() {
             $(this).closest('.dog-profile').find('.delete-dog').show('slow');
         });
-        $('.cancel').on('click',function(){
+        $('.cancel').on('click', function() {
             $(this).closest('.dog-profile').find('.delete-dog').slideUp();
         });
     });
@@ -267,22 +267,25 @@
                                  <label for="">Kuponbeváltás</label>
                                  <input type="text" name="" class="rounded" id="">
                              </div> -->
-                            <div>
-                                <label for="">Ajándékbeváltás</label>
-                                <input type="text" name="" class="rounded" id="">
-                            </div>
-                            <div>
-                                <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
-                            </div>
+                            <form action="/user_account/order" method="POST">
+                                <div>
+                                    <label for="">Ajándékbeváltás</label>
+                                    <input type="text" name="gift" class="rounded" id="">
+                                </div>
+                                <input type="hidden" name="puppy_id" value="<?=$puppy->id?>">
+                                <div>
+                                    <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
+                                </div>
+                            </form>
                         </div>  <!--End dog profile container-->
                         <?php
                         $i++;
                     endforeach;
                 endif;
                 ?>
-                        <div class="dog-profile-container" style="margin-right:0;">
-							<a href="#" id="create-dog" class="rounded dog-btn dark-btn">Van egy új kutyusom!<p>Új kutyus profil létrehozása</p></a>
-						</div>
+                <div class="dog-profile-container" style="margin-right:0;">
+                    <a href="#" id="create-dog" class="rounded dog-btn dark-btn">Van egy új kutyusom!<p>Új kutyus profil létrehozása</p></a>
+                </div>
             </div>
         </div>
 

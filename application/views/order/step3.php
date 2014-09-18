@@ -150,10 +150,13 @@ if (isset($session['step2'])) {
                         <label for="customer_city">Város*</label>
                         <input type="text" name="customer_city" class="rounded" id="customer_city" value="<?= ($current_user) ? $current_user->customer_city : ''; ?>" required>
                     </div>
-                    <?php if (!$auth->logged_in()): ?>
+                    <?php if (!$auth->logged_in()):
+                        $email = $session['step1']['email'];
+
+                        ?>
                         <div class="fl" style="margin-right:5px;">
                             <label for="customer_email">E-mail cím*</label>
-                            <input type="text" name="customer_email" class="rounded" id="customer_email" required>
+                            <input type="text" name="customer_email" class="rounded" value="<?=$email?>" id="customer_email" required>
                         </div>
                     <?php endif; ?>
                     <div>
