@@ -88,6 +88,7 @@ class Controller_Order extends Controller_Core {
                 $order->friends_email = $step1['email'];
                 $order->friends_name = $step1['first-name'];
                 $order->selected_size = $step1['selected_size'];
+
             }
             if (isset($step1['order3'])) {
                 $order = ORM::factory('User_Shelter');
@@ -97,6 +98,7 @@ class Controller_Order extends Controller_Core {
                 $order->doggy_gender = $step1['neme'];
                 $order->selected_size = $step1['selected_size'];
             }
+            $order->coupon_code = $_POST['coupon_code'];
             $order->selected_box = $step2['selected_box'];
             $order->user_id = $this->current_user->id;
             $order->last_modified = date('Y-m-d H:i:s');

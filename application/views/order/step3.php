@@ -6,7 +6,6 @@ if ($auth->logged_in())
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
-
         $('#customer_email').on('blur', function() {
             $.post('/api/check', {'email': $(this).val()}).done(function(data) {
                 var i = $.parseJSON(data);
@@ -46,6 +45,14 @@ if ($auth->logged_in())
                 $('#billing_form').submit();
             }
         });
+
+        $('#apply_coupon').on('click', function(){
+            if($('#coupon_id').val()!=''){
+                $('#coupon_code').val($('#coupon_id').val());
+                $('.box.rounded').hide();
+            }
+        });
+
     });
 </script>
 <?php
@@ -98,8 +105,8 @@ if (isset($session['step2'])) {
                     <div class="content">
                         <div class="login">
                             <form class="coupon">
-                                Ajándékkupon kódom <input type="text" name="e-mail" class="rounded" id="">
-                                <input type="submit" value="OK" class="box-btn rounded">
+                                Ajándékkupon kódom <input type="text" id="coupon_id" name="coupon" class="rounded" id="">
+                                <input type="button" id="apply_coupon" value="OK" class="box-btn rounded">
                             </form>
                         </div>
                     </div>
@@ -173,6 +180,7 @@ if (isset($session['step2'])) {
                             <input type="password" name="password_confirm" class="rounded" id="password_confirm" required>
                         </div>
                     <?php endif; ?>
+                        <input type="hidden" name="coupon_code" id="coupon_code" value="">
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
