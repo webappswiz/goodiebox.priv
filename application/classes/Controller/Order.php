@@ -82,13 +82,15 @@ class Controller_Order extends Controller_Core {
                 $puppy->user_id = $this->current_user->id;
                 $puppy->save();
                 $order->puppy_id = $puppy->id;
+                $order->last_modified = date('Y-m-d H:i:s');
             }
             if (isset($step1['order2'])) {
+                echo '1';
                 $order = ORM::factory('Friend');
                 $order->friends_email = $step1['email'];
                 $order->friends_name = $step1['first-name'];
-                $order->selected_size = $step1['selected_size'];
-
+                $order->selected_box = $step2['selected_box'];
+                $order->coupon_code = $this->generateRandomString();
             }
             if (isset($step1['order3'])) {
                 $order = ORM::factory('User_Shelter');
@@ -97,31 +99,33 @@ class Controller_Order extends Controller_Core {
                 $order->doggy_name = $step1['doggy_name'];
                 $order->doggy_gender = $step1['neme'];
                 $order->selected_size = $step1['selected_size'];
+                $order->selected_box = $step2['selected_box'];
+                $order->last_modified = date('Y-m-d H:i:s');
             }
-            $order->coupon_code = $_POST['coupon_code'];
-            $order->selected_box = $step2['selected_box'];
+
             $order->user_id = $this->current_user->id;
-            $order->last_modified = date('Y-m-d H:i:s');
+
             $order->date_purchased = date('Y-m-d H:i:s');
             //shipping not filled
+            /*
             if (isset($_POST['customer_firstname']) && !isset($_POST['shipping'])) {
                 $order->delivery_firstname = $_POST['customer_firstname'];
-                $order->delivery_lastname =  $_POST['customer_lastname'];
+                $order->delivery_lastname = $_POST['customer_lastname'];
                 $order->delivery_address = $_POST['customer_address'];
                 $order->delivery_address2 = $_POST['customer_address2'];
                 $order->delivery_city = $_POST['customer_city'];
                 $order->delivery_postcode = $_POST['customer_zip'];
                 $order->delivery_telephone = $_POST['customer_telephone'];
-            } elseif(!isset($_POST['customer_firstname']) && !isset($_POST['shipping'])) {
+            } elseif (!isset($_POST['customer_firstname']) && !isset($_POST['shipping'])) {
                 $order->delivery_firstname = $this->current_user->customer_firstname;
-                $order->delivery_lastname =  $this->current_user->customer_lastname;
+                $order->delivery_lastname = $this->current_user->customer_lastname;
                 $order->delivery_address = $this->current_user->customer_address;
                 $order->delivery_address2 = $this->current_user->customer_address2;
                 $order->delivery_city = $this->current_user->customer_city;
                 $order->delivery_postcode = $this->current_user->customer_zip;
                 $order->delivery_telephone = $this->current_user->customer_telephone;
-            } elseif(isset ($_POST['shipping'])){
-                if(empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])){
+            } elseif (isset($_POST['shipping'])) {
+                if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])) {
                     Flash::set('alert', 'Please the shipping form');
                     $this->redirect('order/step3');
                 }
@@ -131,8 +135,8 @@ class Controller_Order extends Controller_Core {
                 $order->delivery_address2 = $_POST['delivery_address2'];
                 $order->delivery_city = $_POST['delivery_city'];
                 $order->delivery_postcode = $_POST['delivery_zip'];
-                $address = ORM::factory('AddressBook',$this->current_user->id);
-                if(!$address->loaded()){
+                $address = ORM::factory('AddressBook', $this->current_user->id);
+                if (!$address->loaded()) {
                     $address = ORM::factory('AddressBook');
                 }
                 $address->user_id = $this->current_user->id;
@@ -145,7 +149,7 @@ class Controller_Order extends Controller_Core {
                 $address->message = $_POST['message'];
                 $address->save();
             }
-
+            */
             $order->save();
             $session->delete('step1');
             $session->delete('step2');
@@ -161,6 +165,41 @@ class Controller_Order extends Controller_Core {
     public function action_gift()
     {
         $this->set_title('Claim a gift');
+        if(Auth::instance()->logged_in())
+            $this->redirect('/user_account');
+        if(isset($_POST['coupon_code'])){
+            $coupon = ORM::factory('Friend')
+                    ->where('coupon_code','=',$_POST['coupon_code'])
+                    ->find();
+            if(!$coupon->loaded()){
+                Flash::set('alert', 'Wrong coupon code. Please try again');
+                $this->redirect('order/gift');
+            } else {
+                Session::instance()->set('coupon_code', $_POST['coupon_code']);
+                $this->redirect('order/gift2');
+            }
+        }
+
+    }
+    public function action_gift2(){
+        if(Auth::instance()->logged_in())
+            $this->redirect('/user_account');
+        $session = Session::instance()->as_array();
+        if (!isset($session['coupon_code'])) {
+            $this->redirect('order/gift');
+        }
+        
+            print_r ($_POST);
+    }
+
+    private function generateRandomString($length = 8)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        return $randomString;
     }
 
 }

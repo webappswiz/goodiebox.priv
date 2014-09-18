@@ -28,18 +28,18 @@ if ($auth->logged_in())
                 $('#submit').attr('disabled', 'disabled');
             }
         })
-        $('#shipping').on('click',function(){
-        if($('#shipping_form').is(':visible')){
-               $('#shipping_form').slideUp();
-           } else{
-               $('#shipping_form').show('slow');
-           }
+        $('#shipping').on('click', function() {
+            if ($('#shipping_form').is(':visible')) {
+                $('#shipping_form').slideUp();
+            } else {
+                $('#shipping_form').show('slow');
+            }
         });
         $('#submit').on('click', function() {
-            if($('#shipping').is(':checked')){
+            if ($('#shipping').is(':checked')) {
                 $('#shipping_form').valid();
-                $.each ( $('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function ( i, obj ) {
-                    $('<input type="hidden">').prop( obj ).appendTo( $('#billing_form') );
+                $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function(i, obj) {
+                    $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
                 });
                 $('#billing_form').submit();
             } else {
@@ -47,8 +47,8 @@ if ($auth->logged_in())
             }
         });
 
-        $('#apply_coupon').on('click', function(){
-            if($('#coupon_id').val()!=''){
+        $('#apply_coupon').on('click', function() {
+            if ($('#coupon_id').val() != '') {
                 $('#coupon_code').val($('#coupon_id').val());
                 $('.box.rounded').hide();
             }
@@ -158,13 +158,13 @@ if (isset($session['step2'])) {
                         <label for="customer_city">Város*</label>
                         <input type="text" name="customer_city" class="rounded" id="customer_city" value="<?= ($current_user) ? $current_user->customer_city : ''; ?>" required>
                     </div>
-                    <?php if (!$auth->logged_in()):
+                    <?php
+                    if (!$auth->logged_in()):
                         $email = $session['step1']['email'];
-
                         ?>
                         <div class="fl" style="margin-right:5px;">
                             <label for="customer_email">E-mail cím*</label>
-                            <input type="text" name="customer_email" class="rounded" value="<?=$email?>" id="customer_email" required>
+                            <input type="text" name="customer_email" class="rounded" value="<?= $email ?>" id="customer_email" required>
                         </div>
                     <?php endif; ?>
                     <div>
@@ -181,7 +181,7 @@ if (isset($session['step2'])) {
                             <input type="password" name="password_confirm" class="rounded" id="password_confirm" required>
                         </div>
                     <?php endif; ?>
-                        <input type="hidden" name="coupon_code" id="coupon_code" value="">
+                    <input type="hidden" name="coupon_code" id="coupon_code" value="">
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
@@ -195,16 +195,16 @@ if (isset($session['step2'])) {
                     </div>
                 </form>
                 <script>
-                $("#billing_form").validate({
-                    rules: {
-                        customer_password: {
-                            required: true, minlength: 5
-                        },
-                        password_confirm: {
-                            required: true, equalTo: "#customer_password", minlength: 5
-                        }, }
-                });
-            </script>
+                    $("#billing_form").validate({
+                        rules: {
+                            customer_password: {
+                                required: true, minlength: 5
+                            },
+                            password_confirm: {
+                                required: true, equalTo: "#customer_password", minlength: 5
+                            }, }
+                    });
+                </script>
             </div> <!--End claim form-->
 
             <div class="claim-form claim-form-right">
@@ -239,13 +239,13 @@ if (isset($session['step2'])) {
                     </div>
 
                 </form>
-                <div style="margin-top:80px;">
-                        <label for="message">Megjegyzés</label>
-                        <textarea name="message" class="rounded"></textarea>
-                    </div>
+                <div style="margin-top:80px;" class="add">
+                    <label for="message">Megjegyzés</label>
+                    <textarea name="message" class="rounded"></textarea>
+                </div>
                 <script>
 
-            </script>
+                </script>
             </div> <!--End claim form-->
         </div><!--End claim form container-->
         <div class="order-form">
@@ -258,18 +258,16 @@ if (isset($session['step2'])) {
                         </div>
                         <div class="order-text-left">
                             <?php
-
                             $step1 = $session['step1'];
                             $step2 = $session['step2'];
-                            if($step1['selected_size']==1)
+                            if ($step1['selected_size'] == 1)
                                 $size = 'Icipici';
-                            if($step1['selected_size']==2)
+                            if ($step1['selected_size'] == 2)
                                 $size = 'Éppen jó';
-                            if($step1['selected_size']==3)
+                            if ($step1['selected_size'] == 3)
                                 $size = 'Igazi óriás';
-
                             ?>
-                            <span>GOODIEBOX <?php echo $step2['selected_box']?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
+                            <span>GOODIEBOX <?php echo $step2['selected_box'] ?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
                             <p>Házhozszállítás</p>
                         </div>
                         <div class="order-heading-leftbottom">
