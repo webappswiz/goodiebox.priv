@@ -8,6 +8,16 @@
                 $('#billing_form').submit();
             }
         });
+        if (!$('#tos').prop(':checked')) {
+            $('#submit_form').attr('disabled', 'disabled');
+        }
+        $('#tos').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#submit_form').removeAttr('disabled');
+            } else {
+                $('#submit_form').attr('disabled', 'disabled');
+            }
+        })
         $('.selected_size').val($('input:radio[id^="size"]:checked').val());
         $('input:radio').on('click', function() {
             $('.selected_size').val($(this).val());
@@ -152,7 +162,7 @@
         </script>
     </div>
     <div class="claim-form-btn">
-        <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox">
+        <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" id="tos">
         <input type="submit" id="submit_form" name="submit_form" value="KÉREM MOST" class="dark-btn claim-btn">
     </div>
     <div class="clear"></div>
