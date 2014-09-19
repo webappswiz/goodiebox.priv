@@ -134,10 +134,12 @@
                                 <label for="last-name">Barátod neve*</label>
                                 <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
                             </div>
-
                             <div>
                                 <label for="first-name">Barátod e-mail címe*</label>
                                 <input id="" type="text" value="" name="email"  class="rounded" required>
+                            </div>
+                            <div>
+                                <input type="checkbox" value="1" name="delay"> Send a gift code to my email
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order2" value="1">

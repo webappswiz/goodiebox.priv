@@ -114,7 +114,11 @@ class Controller_Order extends Controller_Core {
                     $order->friends_name = $step1['first-name'];
                 }
                 $order->coupon_code = $this->generateRandomString();
-                $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', 'Your gift code: '.$order->coupon_code);
+                if(!isset($_POST['delay'])){
+                    $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', 'Your gift code: '.$order->coupon_code);
+                } else {
+                    $this->send($this->current_user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', 'Your gift code: '.$order->coupon_code);
+                }
             }
             if (isset($step1['order3'])) {
                 $order = ORM::factory('User_Shelter');
