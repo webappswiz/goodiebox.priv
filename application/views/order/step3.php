@@ -35,6 +35,15 @@ if ($auth->logged_in())
                 $('#shipping_form').show('slow');
             }
         });
+        $('#company').on('click',function(){
+           if($('#company').is(':checked')){
+               $('#company_name').attr('required','required');
+               $('#tax_code').attr('required','required');
+           } else {
+               $('#company_name').removeAttr('required');
+               $('#tax_code').removeAttr('required');
+           }
+        });
         $('#submit').on('click', function() {
             if ($('#shipping').is(':checked')) {
                 $('#shipping_form').valid();

@@ -63,6 +63,10 @@ class Controller_Order extends Controller_Core {
                     $user->customer_city = $_POST['customer_city'];
                     $user->customer_zip = $_POST['customer_zip'];
                     $user->customer_telephone = $_POST['customer_telephone'];
+                    if(isset($_POST['copmany'])){
+                        $user->customer_company = $_POST['company_name'];
+                        $user->customer_taxcode = $_POST['tax_code'];
+                    }
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
                     $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
@@ -168,6 +172,7 @@ class Controller_Order extends Controller_Core {
                 $address->message = $_POST['message'];
                 $address->save();
             }
+
 
             $order->save();
             $session->delete('step1');
