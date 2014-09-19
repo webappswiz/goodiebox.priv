@@ -136,7 +136,14 @@ class Controller_User_Account extends Controller_Core {
             $friend = ORM::factory('Friend',(int)$_POST['gift']);
             if(!$friend->loaded())
                 $this->redirect('/user_account');
-
+            $fr['order2'] = 1;
+            $fr['email'] = $friend->friends_email;
+            $fr['first-name'] = $friend->friends_name;
+            $fr['selected_size'] = 0;
+            Session::instance()->set('step1', $fr);
+            $this->redirect('/order/step2');
+        } else {
+            $this->redirect('/user_account');
         }
     }
 

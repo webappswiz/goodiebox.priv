@@ -88,9 +88,16 @@ class Controller_Order extends Controller_Core {
                 $order->last_modified = date('Y-m-d H:i:s');
             }
             if (isset($step1['order2'])) {
-                $order = ORM::factory('Friend');
-                $order->friends_email = $step1['email'];
-                $order->friends_name = $step1['first-name'];
+
+                $order = ORM::factory('Friend')
+                        ->where('friends_email', '=', $step1['email'])
+                        ->and_where('friends_name', '=', $step1['first-name'])
+                        ->find();
+                if (!$order->loaded()) {
+                    $order = ORM::factory('Friend');
+                    $order->friends_email = $step1['email'];
+                    $order->friends_name = $step1['first-name'];
+                }
                 $order->coupon_code = $this->generateRandomString();
             }
             if (isset($step1['order3'])) {
