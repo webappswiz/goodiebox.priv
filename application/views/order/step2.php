@@ -10,7 +10,7 @@
     });
 </script>
 
-<nav style="text-align: right">
+<nav class="nav-right">
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>

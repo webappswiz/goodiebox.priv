@@ -137,7 +137,7 @@
 <script type="text/javascript">
 
 </script>
-<nav style="text-align: right">
+<nav class="nav-right">
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>
@@ -372,40 +372,5 @@
             }
         });
     </script>
-
-
-
-
-
-
-    <ul id="faqList">
-        <li>
-            <div class="answer">
-
-            </div>
-        </li>
-        <li>
-            <p class="question"> </p>
-            <div class="answer" style="overflow:hidden;">
-
-            </div>
-        </li>
-
-        <li>
-            <p class="question"></p>
-            <div class="answer">
-
-            </div>
-        </li>
-
-        <li>
-            <p class="question"></p>
-            <div class="answer">
-
-            </div>
-        </li>
-
-    </ul>
-
 </div>
 </section>
