@@ -106,7 +106,6 @@ class Controller_Order extends Controller_Core {
                 $order->shelter_id = $step1['option-name'];
                 $order->doggy_name = $step1['doggy_name'];
                 $order->doggy_gender = $step1['gender'];
-                $order->selected_size = $step1['selected_size'];
                 $order->selected_box = $step2['selected_box'];
                 $order->last_modified = date('Y-m-d H:i:s');
             }

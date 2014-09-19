@@ -51,8 +51,11 @@
             unloadPopupBox();
         });
 
-        $('#submit_form').on('click',function(){
-           $('#gift').submit();
+        $('#submit_form').on('click', function() {
+            $('#gift').submit();
+        });
+        $('#submit_shelter').on('click', function() {
+            $('#shelter').submit();
         });
 
         function unloadPopupBox() {    // TO Unload the Popupbox
@@ -306,7 +309,7 @@
 
                             <div class="support-row">
                                 <ul>
-                                    <li><input type="radio" name="gift" value="<?=$friend->id?>"></li>
+                                    <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
                                     <li class="option-text1"><?= $friend->friends_name; ?></li>
                                     <li class="option-text2"><?= $friend->friends_email; ?></li>
                                 </ul>
@@ -326,26 +329,29 @@
         <div>
             <div class="content">
                 <div class="support">
-                    <?php
-                    $shelters = ORM::factory('User_Shelter')->with('shelter')
-                            ->where('user_id', '=', $current_user->id)
-                            ->find_all();
-                    foreach ($shelters as $shelter):
-                        ?>
-                        <div class="support-row">
-                            <ul>
-                                <li><input type="radio"></li>
-                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                            </ul>
-                        </div>
+                    <form action="/user_account/shelter" id="shelter" method="POST">
                         <?php
-                    endforeach;
-                    ?>
+                        $shelters = ORM::factory('User_Shelter')->with('shelter')
+                                ->distinct('shelter_id')
+                                ->where('user_id', '=', $current_user->id)
+                                ->find_all();
+                        foreach ($shelters as $shelter):
+                            ?>
+                            <div class="support-row">
+                                <ul>
+                                    <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                    <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                    <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                </ul>
+                            </div>
+                            <?php
+                        endforeach;
+                        ?>
 
-                    <div style="margin-top:35px; float:none;">
-                        <input type="submit" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                    </div>
+                        <div style="margin-top:35px; float:none;">
+                            <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                        </div>
+                    </form>
                 </div> <!--End support-->
             </div>
         </div>

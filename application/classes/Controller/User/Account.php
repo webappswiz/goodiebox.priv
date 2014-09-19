@@ -130,11 +130,11 @@ class Controller_User_Account extends Controller_Core {
 
     public function action_gift()
     {
-        if(isset($_POST['submit_form'])){
-            if(empty($_POST['gift']))
+        if (isset($_POST['submit_form'])) {
+            if (empty($_POST['gift']))
                 $this->redirect('/user_account');
-            $friend = ORM::factory('Friend',(int)$_POST['gift']);
-            if(!$friend->loaded())
+            $friend = ORM::factory('Friend', (int) $_POST['gift']);
+            if (!$friend->loaded())
                 $this->redirect('/user_account');
             $fr['order2'] = 1;
             $fr['email'] = $friend->friends_email;
@@ -142,6 +142,30 @@ class Controller_User_Account extends Controller_Core {
             $fr['selected_size'] = 0;
             Session::instance()->set('step1', $fr);
             $this->redirect('/order/step2');
+        } else {
+            $this->redirect('/user_account');
+        }
+    }
+
+    public function action_shelter()
+    {
+        if (isset($_POST['submit_shelter'])) {
+            print_r($_POST);
+            if (empty($_POST['shelter']))
+                $this->redirect('/user_account');
+            $shelter = ORM::factory('User_Shelter')
+                    ->where('shelter_id','=',(int)$_POST['shelter'])
+                    ->find();
+            if (!$shelter->loaded())
+                $this->redirect('/user_account');
+            $sh['order3'] = 1;
+            $sh['option-name'] = $shelter->shelter_id;
+            $sh['doggy_name'] = $shelter->doggy_name;
+            $sh['gender'] = $shelter->doggy_gender;
+            $sh['selected_size'] = $shelter->selected_size;
+            Session::instance()->set('step1', $sh);
+            Session::instance()->set('step2', array('selected_box' => $shelter->selected_box));
+            $this->redirect('/order/step3');
         } else {
             $this->redirect('/user_account');
         }
