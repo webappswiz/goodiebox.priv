@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.0-beta2
+-- version 4.0.6
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 19 2014 г., 15:14
+-- Время создания: Сен 19 2014 г., 19:09
 -- Версия сервера: 5.5.37-0ubuntu0.13.10.1
--- Версия PHP: 5.5.3-1ubuntu2
+-- Версия PHP: 5.5.3-1ubuntu2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -57,14 +57,14 @@ CREATE TABLE IF NOT EXISTS `friend` (
   `date_purchased` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `friend`
 --
 
 INSERT INTO `friend` (`id`, `user_id`, `friends_email`, `friends_name`, `selected_box`, `coupon_code`, `date_purchased`) VALUES
-(3, 13, 'alexander@gmail.com', 'Alex Karamushko', 1, 'etGNZooG', '2014-09-19 14:47:20');
+(4, 10, 'dethmix@gmail.com', 'Dmitriy Pavlov', 0, 'e3yMb3pU', '2014-09-19 18:07:24');
 
 -- --------------------------------------------------------
 
@@ -88,18 +88,19 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `last_modified` datetime DEFAULT NULL,
   `date_purchased` datetime DEFAULT NULL,
   `orders_status` int(5) NOT NULL,
+  `company_name` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `tax_code` varchar(50) COLLATE utf8_swedish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `puppy_id` (`puppy_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `coupon_code`, `last_modified`, `date_purchased`, `orders_status`) VALUES
-(2, 13, 1, 30, 'Alex', 'Karamushko', 'Koscmiadsassd', '', 'Zaporizhzhya', '53440', '380975231602', 'DcJ5RRlt', '2014-09-19 12:14:03', NULL, 0),
-(3, 14, 1, 32, 'Alex', 'Karamushko', 'Koscmiadsassd', '', 'Zaporizhzhya', '69050', '380975231602', 'DcJ5RRlt', '2014-09-19 14:37:10', NULL, 0);
+INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `coupon_code`, `last_modified`, `date_purchased`, `orders_status`, `company_name`, `tax_code`) VALUES
+(11, 12, 1, 35, 'Dmitriy', 'Pavlov', 'Koscmiadsassd', '', 'Zaporizhzhya', '53440', '380975231602', '', '2014-09-19 17:24:48', '2014-09-19 17:24:48', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -119,16 +120,15 @@ CREATE TABLE IF NOT EXISTS `puppies` (
   `selected_size` int(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=36 ;
 
 --
 -- Дамп данных таблицы `puppies`
 --
 
 INSERT INTO `puppies` (`id`, `user_id`, `puppy_name`, `gender`, `years`, `months`, `alerg`, `alerg_descr`, `selected_size`) VALUES
-(30, 13, 'Bobik', 0, 1994, 1, 1, '', 1),
-(31, 10, 'Tuzik', 0, 1994, 1, 1, '', 3),
-(32, 14, 'Giraf', 0, 1994, 1, 1, '', 1);
+(31, 12, 'Bobik', 0, 1994, 1, 1, '', 1),
+(35, 12, 'Giraf', 0, 1994, 1, 1, 'sahsh,sajdja, sajasj', 1);
 
 -- --------------------------------------------------------
 
@@ -172,8 +172,7 @@ CREATE TABLE IF NOT EXISTS `roles_users` (
 INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES
 (10, 1),
 (11, 1),
-(13, 1),
-(14, 1),
+(12, 1),
 (11, 2);
 
 -- --------------------------------------------------------
@@ -223,17 +222,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `uniq_email` (`username`),
   KEY `users_index` (`id`),
   KEY `fk_users` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `customer_company`, `customer_taxcode`, `logins`, `last_login`) VALUES
-(10, 'alex@onlamp.info', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33', '', '', '', 6, '1411126577'),
+(10, 'alex@onlamp.info', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33', '', '', '', 7, '1411138185'),
 (11, 'admin', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 1, '1411054342'),
-(13, 'karam@vasya.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'karam@vasya.com', 'Alex', 'Karamushko', '380975231602', '53440', 'Zaporizhzhya', 'Koscmiadsassd', '', '', '', 1, '1411127211'),
-(14, 'alexander@gmail.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander@gmail.com', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Koscmiadsassd', '', '', '', 2, '1411127276');
+(12, 'dethmix@gmail.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'dethmix@gmail.com', 'Dmitriy', 'Pavlov', '380975231602', '53440', 'Zaporizhzhya', 'Koscmiadsassd', '', '', '', 4, '1411136352');
 
 -- --------------------------------------------------------
 
@@ -263,7 +261,16 @@ CREATE TABLE IF NOT EXISTS `user_shelter` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`,`shelter_id`),
   KEY `shelter_id` (`shelter_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=12 ;
+
+--
+-- Дамп данных таблицы `user_shelter`
+--
+
+INSERT INTO `user_shelter` (`id`, `user_id`, `shelter_id`, `doggy_name`, `doggy_gender`, `selected_size`, `selected_box`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `coupon_code`, `last_modified`, `date_purchased`, `orders_status`) VALUES
+(6, 12, 2, 'dsasaddasdsadsa', 0, 0, 1, 'Dmitriy', 'Pavlov', 'Koscmiadsassd', '', 'Zaporizhzhya', '53440', '380975231602', '', '2014-09-19 17:40:58', '2014-09-19 17:40:58', 0),
+(9, 10, 1, 'dsasaddasdsadsa', 0, 1, 1, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '2014-09-19 18:27:10', '2014-09-19 18:27:10', 0),
+(11, 10, 1, 'dsasaddasdsadsa', 0, 1, 1, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '2014-09-19 18:31:46', '2014-09-19 18:31:46', 0);
 
 -- --------------------------------------------------------
 

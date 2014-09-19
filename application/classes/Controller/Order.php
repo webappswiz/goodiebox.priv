@@ -63,7 +63,7 @@ class Controller_Order extends Controller_Core {
                     $user->customer_city = $_POST['customer_city'];
                     $user->customer_zip = $_POST['customer_zip'];
                     $user->customer_telephone = $_POST['customer_telephone'];
-                    if(isset($_POST['copmany'])){
+                    if(isset($_POST['company'])){
                         $user->customer_company = $_POST['company_name'];
                         $user->customer_taxcode = $_POST['tax_code'];
                     }
