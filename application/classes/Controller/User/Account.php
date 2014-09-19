@@ -99,6 +99,8 @@ class Controller_User_Account extends Controller_Core {
                 $selected_box['selected_box'] = $order->selected_box;
             Session::instance()->set('step2', $selected_box);
             $this->redirect('/order/step3');
+        } elseif(!empty ($_POST['gift'])){
+            
         }
         $this->render_nothing();
     }

@@ -14,9 +14,9 @@
             <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-i.png">
         </div>
         <div class="login">
-            <form>
-                E-mail cím <input type="text" name="username" class="rounded" id="">
-                Jelszó <input type="password" name="password" class="rounded" id="">
+            <form method="POST">
+                E-mail cím <input type="text" name="customer_email" class="rounded" id="">
+                Jelszó <input type="password" name="customer_password" class="rounded" id="">
                 <input type="submit" value="OK" class="box-btn rounded">
             </form>
         </div>

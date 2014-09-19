@@ -91,7 +91,7 @@
                     <textarea name="message" class="rounded"></textarea>
                 </div>
                 <p style="padding-top:20px;">*Az adatok megadása kötelező!</p>
-
+                <input type="hidden" name="submit_form" value="1">
             </form>
             <script>
                 $("#billing_form").validate();
