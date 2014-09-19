@@ -187,7 +187,7 @@ class Controller_Order extends Controller_Core {
 
 
             $order->save();
-            $this->send($user->email, 'karam@karam.org.ua', 'Thank you for your order', 'Thank you for your order');
+            $this->send($this->current_user->email, 'karam@karam.org.ua', 'Thank you for your order', 'Thank you for your order');
             $session->delete('step1');
             $session->delete('step2');
             echo View::factory('template/thankyou', get_defined_vars())->render();
