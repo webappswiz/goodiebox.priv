@@ -51,6 +51,9 @@
             unloadPopupBox();
         });
 
+        $('#submit_form').on('click',function(){
+           $('#gift').submit();
+        });
 
         function unloadPopupBox() {    // TO Unload the Popupbox
             $('#dialog-form').fadeOut("slow");
@@ -131,7 +134,7 @@
 <script type="text/javascript">
 
 </script>
-<nav>
+<nav style="text-align: right">
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>
@@ -272,7 +275,7 @@
                                     <label for="">Ajándékbeváltás</label>
                                     <input type="text" name="gift" class="rounded" id="">
                                 </div>
-                                <input type="hidden" name="puppy_id" value="<?=$puppy->id?>">
+                                <input type="hidden" name="puppy_id" value="<?= $puppy->id ?>">
                                 <div>
                                     <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
                                 </div>
@@ -293,26 +296,28 @@
         <div>
             <div class="content">
                 <div class="support">
-                    <?php
-                    $friends = ORM::factory('Friend')
-                            ->where('user_id', '=', $current_user->id)
-                            ->find_all();
-                    foreach ($friends as $friend):
-                        ?>
-
-                        <div class="support-row">
-                            <ul>
-                                <li><input type="radio"></li>
-                                <li class="option-text1"><?= $friend->friends_name; ?></li>
-                                <li class="option-text2"><?= $friend->friends_email; ?></li>
-                            </ul>
-                        </div>
+                    <form action="/user_account/gift" method="POST" id="gift">
                         <?php
-                    endforeach;
-                    ?>
-                    <div style="margin-top:35px; float:none;">
-                        <input type="submit" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                    </div>
+                        $friends = ORM::factory('Friend')
+                                ->where('user_id', '=', $current_user->id)
+                                ->find_all();
+                        foreach ($friends as $friend):
+                            ?>
+
+                            <div class="support-row">
+                                <ul>
+                                    <li><input type="radio" name="gift" value="<?=$friend->id?>"></li>
+                                    <li class="option-text1"><?= $friend->friends_name; ?></li>
+                                    <li class="option-text2"><?= $friend->friends_email; ?></li>
+                                </ul>
+                            </div>
+                            <?php
+                        endforeach;
+                        ?>
+                        <div style="margin-top:35px; float:none;">
+                            <input type="submit" name="submit_form" id="submit_form" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                        </div>
+                    </form>
                 </div> <!--End support-->
             </div>
         </div>

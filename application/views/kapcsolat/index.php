@@ -1,4 +1,4 @@
-<nav>
+<nav style="text-align: right">
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>
@@ -38,7 +38,7 @@
                 <textarea placeholder="Kezdj egy gépelni..." class="rounded"></textarea>
             </form>
             *Kötelező mezők
-            <input type="submit" value="ELKÜLDÖM" class="rounded">
+            <input type="submit" value="ELKÜLDÖM" class="dark-btn rounded">
         </div>
     </div> <!--End contact-cont-left-->
     <div class="contact-cont-right">

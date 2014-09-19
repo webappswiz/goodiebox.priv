@@ -25,10 +25,11 @@
     <div class="donations-btn">
         <p>Illatos út </br>Noé Állatotthon Alapítvány</br>Rex Kutyaotthon Alapítvány</br>HEROSZ Budapesti Állatotthona</p>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrow-dn.jpg">
-        <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékozom</button></a>
+        <a href="<?= URL::base(TRUE, FALSE) ?>/order/gift"><button type="button" class="top-btn rounded">Ajándékozom</button></a>
         <p class="donation-bottom-p">menhelyi kutyusnak</p>
     </div>
     <div class="donations-bottom-text">
         <p>*A menhelyen lévő kutyus kiválasztása minden esetben a vásárló feladata, a menhelyek weboldalán lévő fotók valódiságamiatt felelősséget nem vállalunk. Vásárláskor a kutya nevét és nemét minden esetben kötelező megadni, a csomag célba érését így tudjuk csak garantálni.  A menhelyről történő visszajelzésért felelősséget nem vállalunk.</p>
     </div>
 </section>
+

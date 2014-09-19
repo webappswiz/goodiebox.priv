@@ -68,7 +68,7 @@ $menus = array(
 </section>
 <div class="clear"></div>
 <div class="container">
-    <nav>
+    <nav style="text-align: center">
         <ul>
             <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
         </ul>

@@ -19,8 +19,6 @@ if($auth->logged_in()){
 if (!$menus)
     return;
 ?>
-<nav>
-    <ul>
         <?php
         foreach ($menus as $uri => $data) {
             $class = ''; //active
@@ -32,6 +30,3 @@ if (!$menus)
             echo '</li>';
         }
         ?>
-    </ul>
-</nav>
-<div class="clear"></div>

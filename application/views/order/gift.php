@@ -1,4 +1,4 @@
-<nav>
+<nav style="text-align: right">
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>

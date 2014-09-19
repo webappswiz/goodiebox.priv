@@ -78,9 +78,9 @@ class Controller_User_Account extends Controller_Core {
     public function action_order()
     {
         $user = $this->current_user;
-        if(isset($_POST['submit']) && empty($_POST['gift'])){
-            $puppy = ORM::factory('Puppy',(int)$_POST['puppy_id']);
-            if(!$puppy->loaded())
+        if (isset($_POST['submit']) && empty($_POST['gift'])) {
+            $puppy = ORM::factory('Puppy', (int) $_POST['puppy_id']);
+            if (!$puppy->loaded())
                 $this->redirect('/user_account');
             $puppy1['order1'] = 1;
             $puppy1['puppy_name'] = $puppy->puppy_name;
@@ -92,17 +92,52 @@ class Controller_User_Account extends Controller_Core {
             $puppy1['selected_size'] = $puppy->selected_size;
             Session::instance()->set('step1', $puppy1);
             $order = ORM::factory('Order')
-                    ->where('puppy_id','=',(int)$_POST['puppy_id'])
+                    ->where('puppy_id', '=', (int) $_POST['puppy_id'])
                     ->find();
             $selected_box['selected_box'] = 1;
-            if($order->loaded())
+            if ($order->loaded())
                 $selected_box['selected_box'] = $order->selected_box;
             Session::instance()->set('step2', $selected_box);
             $this->redirect('/order/step3');
-        } elseif(!empty ($_POST['gift'])){
-            
+        } elseif (!empty($_POST['gift'])) {
+            $coupon_code = $_POST['gift'];
+            $puppy_id = $_POST['puppy_id'];
+            $friend = ORM::factory('Friend')
+                    ->where('coupon_code', '=', $coupon_code)
+                    ->find();
+            if (!$friend->loaded()) {
+                Flash::set('alert', 'Wrong coupon code. Please try again');
+                $this->redirect('/user_account');
+            }
+            $puppy = ORM::factory('Puppy', (int) $_POST['puppy_id']);
+            if (!$puppy->loaded())
+                $this->redirect('/user_account');
+            $puppy1['order1'] = 1;
+            $puppy1['puppy_id'] = $puppy->id;
+            $puppy1['puppy_name'] = $puppy->puppy_name;
+            $puppy1['gender'] = $puppy->gender;
+            $puppy1['years'] = $puppy->years;
+            $puppy1['months'] = $puppy->months;
+            $puppy1['alerg'] = $puppy->alerg;
+            $puppy1['alerg_descr'] = $puppy->alerg_descr;
+            $puppy1['selected_size'] = $puppy->selected_size;
+            $puppy1['coupon_code'] = $coupon_code;
+            Session::instance()->set('step1', $puppy1);
+            $this->redirect('/order/step2');
         }
         $this->render_nothing();
+    }
+
+    public function action_gift()
+    {
+        if(isset($_POST['submit_form'])){
+            if(empty($_POST['gift']))
+                $this->redirect('/user_account');
+            $friend = ORM::factory('Friend',(int)$_POST['gift']);
+            if(!$friend->loaded())
+                $this->redirect('/user_account');
+
+        }
     }
 
 }

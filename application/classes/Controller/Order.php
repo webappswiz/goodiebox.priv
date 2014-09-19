@@ -22,12 +22,12 @@ class Controller_Order extends Controller_Core {
 
     public function action_step2()
     {
+        $session = Session::instance()->as_array();
         $this->set_title('Order - Step 2');
-        if (isset($_POST['order'])) {
+        if (isset($_POST['order']) && isset($session['step1'])) {
             Session::instance()->set('step2', $_POST);
             $this->redirect('order/step3');
         }
-        $session = Session::instance()->as_array();
         if (!isset($session['step1'])) {
             Flash::set('alert', 'Please fill the form');
             $this->redirect('order/index');
@@ -72,23 +72,25 @@ class Controller_Order extends Controller_Core {
             if (isset($step1['order1'])) {
                 $order = ORM::factory('Order');
                 $puppy = ORM::factory('Puppy');
-                $puppy->puppy_name = $step1['puppy_name'];
-                $puppy->gender = $step1['gender'];
-                $puppy->years = $step1['years'];
-                $puppy->months = $step1['months'];
-                $puppy->alerg = $step1['alerg'];
-                $puppy->alerg_descr = $step1['alerg_descr'];
-                $puppy->selected_size = $step1['selected_size'];
-                $puppy->user_id = $this->current_user->id;
-                $puppy->save();
-                $order->puppy_id = $puppy->id;
+                if (!isset($step1['puppy_id'])) {
+                    $puppy->puppy_name = $step1['puppy_name'];
+                    $puppy->gender = $step1['gender'];
+                    $puppy->years = $step1['years'];
+                    $puppy->months = $step1['months'];
+                    $puppy->alerg = $step1['alerg'];
+                    $puppy->alerg_descr = $step1['alerg_descr'];
+                    $puppy->selected_size = $step1['selected_size'];
+                    $puppy->user_id = $this->current_user->id;
+                    $puppy->save();
+                    $order->puppy_id = $puppy->id;
+                    $order->selected_box = $step2['selected_box'];
+                }
                 $order->last_modified = date('Y-m-d H:i:s');
             }
             if (isset($step1['order2'])) {
                 $order = ORM::factory('Friend');
                 $order->friends_email = $step1['email'];
                 $order->friends_name = $step1['first-name'];
-                $order->selected_box = $step2['selected_box'];
                 $order->coupon_code = $this->generateRandomString();
             }
             if (isset($step1['order3'])) {
@@ -96,10 +98,23 @@ class Controller_Order extends Controller_Core {
                 $order->selected_size = $step1['selected_size'];
                 $order->shelter_id = $step1['option-name'];
                 $order->doggy_name = $step1['doggy_name'];
-                $order->doggy_gender = $step1['neme'];
+                $order->doggy_gender = $step1['gender'];
                 $order->selected_size = $step1['selected_size'];
                 $order->selected_box = $step2['selected_box'];
                 $order->last_modified = date('Y-m-d H:i:s');
+            }
+            if (!empty($step1['coupon_code'])) {
+                $friend = ORM::factory('Friend')
+                        ->where('coupon_code', '=', $step1['coupon_code'])
+                        ->find();
+                if ($friend->loaded()) {
+                    $order->coupon_code = $step1['coupon_code'];
+                    $order->puppy_id = $step1['puppy_id'];
+                    $friend->coupon_code = '';
+                    $order->selected_box = $step2['selected_box'];
+                    $friend->save();
+                } else
+                    $this->redirect('/user_account');
             }
 
             $order->user_id = $this->current_user->id;

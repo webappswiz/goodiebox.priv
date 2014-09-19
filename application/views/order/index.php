@@ -28,7 +28,7 @@
     });
 </script>
 
-<nav>
+<nav style="text-align: right">
     <ul>
         <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
     </ul>
@@ -107,7 +107,7 @@
 
                             <div class="radio-list">
                                 <label for="Igen">Allergiás a kutyusod?*</label>
-                                <input type="radio" class="alerg_yes" value="0" name="alerg"> Igen <input type="radio" value="1" name="alerg" class="alerg_no" checked> Nem
+                                <input type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
                             </div>
 
                             <label for="last-name">Ha igen, mire?</label>
@@ -173,7 +173,7 @@
 
                             <div class="radio-list">
                                 <label for="last-name">Kutyus neme*</label>
-                                <input type="radio" name="neme" value="Kutyus neme" class="" checked> Lány <input type="radio" name="neme" value="Kutyus neme" class=""> Fiú
+                                <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order3" value="1">
