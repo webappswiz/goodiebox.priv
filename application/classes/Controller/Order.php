@@ -11,6 +11,17 @@ class Controller_Order extends Controller_Core {
         $this->template->active_menu = 'kapcsolat';
     }
 
+    private function send($to, $from, $subject, $body)
+    {
+        $email = new PHPMailer();
+        $email->ContentType = 'text/plain';
+        $email->AddAddress($to);
+        $email->SetFrom($from);
+        $email->Subject = $subject;
+        $email->Body = $body;
+        $email->Send();
+    }
+
     public function action_index()
     {
         $this->set_title('Order - Step 1');
@@ -103,6 +114,7 @@ class Controller_Order extends Controller_Core {
                     $order->friends_name = $step1['first-name'];
                 }
                 $order->coupon_code = $this->generateRandomString();
+                $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', 'Your gift code: '.$order->coupon_code);
             }
             if (isset($step1['order3'])) {
                 $order = ORM::factory('User_Shelter');
@@ -175,6 +187,7 @@ class Controller_Order extends Controller_Core {
 
 
             $order->save();
+            $this->send($user->email, 'karam@karam.org.ua', 'Thank you for your order', 'Thank you for your order');
             $session->delete('step1');
             $session->delete('step2');
             echo View::factory('template/thankyou', get_defined_vars())->render();
