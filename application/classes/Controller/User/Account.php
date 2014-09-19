@@ -140,10 +140,10 @@ class Controller_User_Account extends Controller_Core {
             $fr['email'] = $friend->friends_email;
             $fr['first-name'] = $friend->friends_name;
             if(isset($_POST['delay']))
-                $fr['delay'] = 1;
+              $fr['delay'] = 1;
             $fr['selected_size'] = 0;
             Session::instance()->set('step1', $fr);
-            $this->redirect('/order/step2');
+                $this->redirect('/order/step2');
         } else {
             $this->redirect('/user_account');
         }

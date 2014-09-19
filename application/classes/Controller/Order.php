@@ -114,6 +114,7 @@ class Controller_Order extends Controller_Core {
                     $order->friends_name = $step1['first-name'];
                 }
                 $order->coupon_code = $this->generateRandomString();
+
                 if(!isset($step1['delay'])){
                     $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', 'Your gift code: '.$order->coupon_code);
                 } else {
