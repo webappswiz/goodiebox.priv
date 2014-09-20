@@ -160,27 +160,27 @@
                         <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
                                 <label for="last-name">Vezetéknév*</label>
-                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= $current_user->customer_firstname ?>" required>
+                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($shipping)?$shipping->customer_firstname:$current_user->customer_firstname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
                                 <label for="first-name">Keresztnév*</label>
-                                <input id="" type="text" name="last-name" class="rounded" value="<?= $current_user->customer_lastname ?>" required>
+                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($shipping)?$shipping->customer_lastname:$current_user->customer_lastname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
                                 <label for="address">Cím*</label>
-                                <input type="text" name="address" class="rounded" id="" value="<?= $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
+                                <input type="text" name="address" class="rounded" id="" value="<?= ($shipping)?$shipping->customer_address:$current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
                                 <input type="text" name="address2" class="rounded" id="">
                             </div>
 
                             <div>
                                 <label for="zip">Irányítószám*</label>
-                                <input type="text" name="zip" class="rounded" id="" value="<?= $current_user->customer_zip ?>" required>
+                                <input type="text" name="zip" class="rounded" id="" value="<?= ($shipping)?$shipping->customer_zip:$current_user->customer_zip ?>" required>
                             </div>
                             <div class="add">
                                 <label for="">Város*</label>
-                                <input type="text" name="city" value="<?= $current_user->customer_city ?>" class="rounded" id="" required>
+                                <input type="text" name="city" value="<?= ($shipping)?$shipping->customer_city:$current_user->customer_city ?>" class="rounded" id="" required>
                             </div>
                             <div>
                                 <label for="message">Megjegyzés</label>
@@ -199,7 +199,7 @@
                         </div>
                         <div style="margin-right:0;">
                             <label for="">Telefonszám*</label>
-                            <input type="text" name="telephone" class="rounded" id="" value="<?= $current_user->customer_telephone ?>" required>
+                            <input type="text" name="telephone" class="rounded" id="" value="<?= ($shipping)?$shipping->customer_telephone:$current_user->customer_telephone ?>" required>
                         </div>
                         <div style="margin-top:50px;">
                             <input type="submit" name="edit_shipping" value="ADATAIM MENTÉSE" class="dark-btn Szemelyes-btn rounded">

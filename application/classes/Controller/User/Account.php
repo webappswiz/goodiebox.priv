@@ -14,20 +14,32 @@ class Controller_User_Account extends Controller_Core {
 
     public function action_index()
     {
-
+        $this->shipping = ORM::factory('AddressBook')
+                ->where('user_id', '=', $this->current_user->id)
+                ->find();
+        if(!$this->shipping->loaded())
+            $this->shipping = NULL;
     }
 
     public function action_editShipping()
     {
         $user = $this->current_user;
         if (isset($_POST['edit_shipping'])) {
-            $user->customer_firstname = $_POST['first-name'];
-            $user->customer_lastname = $_POST['last-name'];
-            $user->customer_telephone = $_POST['telephone'];
-            $user->customer_zip = $_POST['zip'];
-            $user->customer_city = $_POST['city'];
-            $user->customer_address = $_POST['address'] . ' ' . $_POST['address2'];
-            $user->save();
+            $this->shipping = ORM::factory('AddressBook')
+                ->where('user_id', '=', $this->current_user->id)
+                ->find();
+            if(!$this->shipping->loaded()){
+                $this->shipping = ORM::factory('AddressBook');
+                $this->shipping->user_id = $this->current_user->id;
+            }
+            $this->shipping->customer_firstname = $_POST['first-name'];
+            $this->shipping->customer_lastname = $_POST['last-name'];
+            $this->shipping->customer_telephone = $_POST['telephone'];
+            $this->shipping->customer_zip = $_POST['zip'];
+            $this->shipping->customer_city = $_POST['city'];
+            $this->shipping->customer_address = $_POST['address'] . ' ' . $_POST['address2'];
+            
+            $this->shipping->save();
             Flash::set('notice', 'Your shipping data has been successfully updated');
             if (isset($_POST['password']) && !empty($_POST['password'])) {
                 $user->password = $_POST['password'];

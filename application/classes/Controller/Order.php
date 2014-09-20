@@ -103,7 +103,6 @@ class Controller_Order extends Controller_Core {
                 $order->last_modified = date('Y-m-d H:i:s');
             }
             if (isset($step1['order2'])) {
-
                 $order = ORM::factory('Friend')
                         ->where('friends_email', '=', $step1['email'])
                         ->and_where('friends_name', '=', $step1['first-name'])

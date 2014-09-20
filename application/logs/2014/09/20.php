@@ -219,3 +219,65 @@
 #9 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #10 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #11 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:603
+2014-09-20 21:44:36 --- EMERGENCY: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH/views/template/core.php [ 9 ] in file:line
+2014-09-20 21:44:36 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-20 21:44:39 --- EMERGENCY: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH/views/template/core.php [ 9 ] in file:line
+2014-09-20 21:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-20 21:44:49 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: request ~ APPPATH/views/template/core.php [ 9 ] in /var/www/goodiebox.priv/application/views/template/core.php:9
+2014-09-20 21:44:49 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/template/core.php(9): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 9, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#4 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(513): Kohana_Controller_Template->after()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#6 [internal function]: Kohana_Controller->execute()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Main))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#10 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#11 {main} in /var/www/goodiebox.priv/application/views/template/core.php:9
+2014-09-20 21:44:50 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: request ~ APPPATH/views/template/core.php [ 9 ] in /var/www/goodiebox.priv/application/views/template/core.php:9
+2014-09-20 21:44:50 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/template/core.php(9): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 9, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/system/classes/Kohana/Controller/Template.php(44): Kohana_View->render()
+#4 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(513): Kohana_Controller_Template->after()
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#6 [internal function]: Kohana_Controller->execute()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Main))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#10 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#11 {main} in /var/www/goodiebox.priv/application/views/template/core.php:9
+2014-09-20 21:44:58 --- EMERGENCY: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH/views/template/core.php [ 9 ] in file:line
+2014-09-20 21:44:58 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-20 21:50:39 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: active_menu ~ APPPATH/views/template/menu.php [ 24 ] in /var/www/goodiebox.priv/application/views/template/menu.php:24
+2014-09-20 21:50:39 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/template/menu.php(24): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 24, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/views/hogyan/index.php(3): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Hogyan))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/application/views/template/menu.php:24
+2014-09-20 22:02:55 --- EMERGENCY: Database_Exception [ 1452 ]: Cannot add or update a child row: a foreign key constraint fails (`goodiebox`.`address_book`, CONSTRAINT `address_book_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) [ INSERT INTO `address_book` (`customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`) VALUES ('Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33 ') ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-20 22:02:55 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(2, 'INSERT INTO `ad...', false, Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1324): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#3 /var/www/goodiebox.priv/application/classes/Controller/User/Account.php(39): Kohana_ORM->save()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_User_Account->action_editShipping()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_User_Account))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
