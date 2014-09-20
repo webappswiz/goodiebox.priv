@@ -332,7 +332,7 @@
                   success: function(data) {
                     var parent;
                     if (!IS.empty(data)) {
-                      self.tDialog('hideProccess', 'Opps some error ocured');
+                      self.tDialog('hideProccess', 'Sorry. Some issue occured. Please try again.');
                     }
                     self.tDialog('close');
                     parent = self.parent();

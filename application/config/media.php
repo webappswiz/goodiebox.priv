@@ -14,7 +14,8 @@ return array(
             'ui_lib',
             'jquery.validate.min',
             'jquery.collapse',
-            'jquery-ui.min'
+            'jquery-ui.min',
+            'admin/shelters.form'
         ),
         'css' => array(
             'style'=> NULL,

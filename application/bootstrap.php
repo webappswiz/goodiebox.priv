@@ -116,6 +116,14 @@ Cookie::$salt = "Trololo finance. Investing is the best way to become rich!!!";
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
+Route::set('admin', 'admin/(<controller>(/<action>(/<id>)))')
+    ->defaults(array(
+        'directory' => 'admin',
+        'controller' => 'welcome',
+        'action'     => 'index',
+    ));
+
+
 Route::set('default', '(<controller>(/<action>(/<id>)))')
         ->defaults(array(
             'controller' => 'main',

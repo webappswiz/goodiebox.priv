@@ -1,109 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js">
     <head>
-        <title><?= URL::title($title); ?></title>
         <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        <?php
-        foreach (Media::styles() as $file => $type) {
-            echo HTML::style($file, array('media' => $type)), PHP_EOL;
-        }
-        echo Media::inline_style();
-        ?>
+        <title>GoodieBox Admin Dashboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
+      
         <script>
             var url_base = '<?php echo URL::base(true, true) ?>';
         </script>
+
+        <script src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <?php
         foreach (Media::scripts() as $file) {
             echo HTML::script($file), PHP_EOL;
         }
         echo Media::inline_script();
         ?>
-        <!-- Facebook Conversion Code for Goodiebox Prelaunch -->
-        <script>(function() {
-                var _fbq = window._fbq || (window._fbq = []);
-                if (!_fbq.loaded) {
-                    var fbds = document.createElement('script');
-                    fbds.async = true;
-                    fbds.src = '//connect.facebook.net/en_US/fbds.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(fbds, s);
-                    _fbq.loaded = true;
-                }
-            })();
-            window._fbq = window._fbq || [];
-            window._fbq.push(['track', '6014782475522', {'value': '0.00', 'currency': 'GBP'}]);
-        </script>
-    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6014782475522&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <span class="brand">Admin</span>
 
-    <script>
+                        <div class="nav-collapse collapse">
 
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '764361780253904', status: true, cookie: true, xfbml: true});
-        };
-        (function(d, debug) {
-            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement('script');
-            js.id = id;
-            js.async = true;
-            js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
-            ref.parentNode.insertBefore(js, ref);
-        }(document, /*debug*/ false));
-        function postToFeed(title, desc, url, image) {
-            var obj = {method: 'feed', link: 'http://blog.goodiebox.hu', picture: 'http://blog.goodiebox.hu/logo.jpg', name: 'Goodiebox', description: 'Meglepet&#233;s csomag kutyusodnak minden h&oacute;napban'};
-            function callback(response) {
-            }
-            FB.ui(obj, callback);
-        }
-    </script>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" alt="goodybox"></a>
-            </div> <!--End logo-->
-            <div class="social-right">
-                <ul>
-                    <li><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" alt="facebook"></a></li>
-                    <li><a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" alt="twitter"></a></li>
-                    <li><a href="#">
-                            <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
-                        </a></li>
-                </ul>
-                <script>
-                    $('.btnShare').click(function() {
-                        elem = $(this);
-                        postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
+                            <ul class="nav">
+                                <?php echo View::factory('admin_core/menu', get_defined_vars())->render(); ?>
+                            </ul>
 
-                        return false;
-                    });
-                </script>
+                            <ul class="nav pull-right settings">
+                                <li><a href="#" class="tip icon logout" data-original-title="Profile Settings"
+                                       data-placement="bottom"><i class="icon-large icon-cog"></i></a></li>
+                                <li class="divider-vertical"></li>
+                                <li><a href="/user_session/logout" class="tip icon logout" data-original-title="Logout" data-placement="bottom"><i
+                                            class="icon-large icon-off"></i></a></li>
+                            </ul>
 
-                <script>
-                    $('.popup').click(function(event) {
-                        var width = 575,
-                                height = 400,
-                                left = ($(window).width() - width) / 2,
-                                top = ($(window).height() - height) / 2,
-                                url = this.href,
-                                opts = 'status=1' +
-                                ',width=' + width +
-                                ',height=' + height +
-                                ',top=' + top +
-                                ',left=' + left;
+                            <ul class="nav pull-right settings">
+                                <li class="divider-vertical"></li>
+                            </ul>
 
-                        window.open(url, 'twitter', opts);
+                            <p class="navbar-text pull-right">
+                                Welcome <strong>Admin</strong>
+                            </p>
 
-                        return false;
-                    });
-                </script>
-            </div> <!--End social-right-->
-        </header>
-        <div class="clear"></div>
+                            <ul class="nav pull-right settings">
+                                <li class="divider-vertical"></li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="content">
+
