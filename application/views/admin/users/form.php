@@ -52,6 +52,12 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="customer_telephone">Customer's zip</label>
+                <div class="controls">
+                    <input type="text" id="customer_telephone" name="customer_telephone" placeholder="Customer's telephone" value="<?= $model->customer_telephone ?>" readonly>
+                </div>
+            </div>
+            <div class="control-group">
                 <label class="control-label" for="customer_company">Customer's company</label>
                 <div class="controls">
                     <input type="text" id="customer_company" name="customer_company" placeholder="Customer's company" value="<?= $model->customer_company ?>" readonly>
