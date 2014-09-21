@@ -104,13 +104,6 @@ class Controller_User_Account extends Controller_Core {
             $puppy1['alerg_descr'] = $puppy->alerg_descr;
             $puppy1['selected_size'] = $puppy->selected_size;
             Session::instance()->set('step1', $puppy1);
-            $order = ORM::factory('Order')
-                    ->where('puppy_id', '=', (int) $_POST['puppy_id'])
-                    ->find();
-            $selected_box['selected_box'] = 1;
-            //if ($order->loaded())
-            //    $selected_box['selected_box'] = $order->selected_box;
-            //Session::instance()->set('step2', $selected_box);
             $this->redirect('/order/step2');
         } elseif (!empty($_POST['gift'])) {
             $coupon_code = $_POST['gift'];
@@ -136,7 +129,10 @@ class Controller_User_Account extends Controller_Core {
             $puppy1['selected_size'] = $puppy->selected_size;
             $puppy1['coupon_code'] = $coupon_code;
             Session::instance()->set('step1', $puppy1);
-            $this->redirect('/order/step2');
+            $step2['order'] = 1;
+            $step2['selected_box'] = $friend->selected_box;
+            Session::instance()->set('step2', $step2);
+            $this->redirect('/order/step3');
         }
         $this->render_nothing();
     }
