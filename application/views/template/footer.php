@@ -8,8 +8,8 @@
             <li id="email"><a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a></li>
             <!-- li id="rss"><a href="/?feed=rss2">RSS</a></li -->
             <li id="fb"><a href="http://facebook.com/goodieboxhu">facebook.com/goodieboxhu</a></li>
-            <li id="aszf"><a href="/tos">ÁSZF</a></li>
-            <li id="adat"><a href="/privacy">Adatvédelem</a></li>
+            <li id="aszf"><a href="/aszf.pdf">ÁSZF</a></li>
+            <li id="adat"><a href="/adatkezelesi.pdf">Adatvédelem</a></li>
             <li id="twt"><a href="http://twitter.com/goodieboxhu">twitter.com/goodieboxhu</a></li>
         </ul>
         <div class="clear"></div>

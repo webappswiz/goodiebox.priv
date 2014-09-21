@@ -51,6 +51,6 @@
     </div>
     <div class="clear"></div>
     <div class="how-bottom-p">
-        <p>*A havi doboz tartalma minden esetben gondosan válogatott, teljes mértékben kiváló eledel és felszerelés. Rendelési és szállítási feltételeket lásd az <a href="/tos"><span>Általános Szerződési Feltételekben</span></a>.</p>
+        <p>*A havi doboz tartalma minden esetben gondosan válogatott, teljes mértékben kiváló eledel és felszerelés. <br/>Rendelési és szállítási feltételeket lásd az <a href="/aszf.pdf"><span>Általános Szerződési Feltételekben</span></a>.</p>
     </div>
 </section>
