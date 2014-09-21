@@ -15,10 +15,10 @@ $menus = array(
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> <!--End count image-->
     <div class="siess">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/siess.png" alt="Siess">
+        
     </div>
     <div class="count-text">
-        <p>HAMARONSAN...</p>
+        <p>Hamarosan...</p>
     </div> <!--End count text-->
     <div class="dog-img">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">

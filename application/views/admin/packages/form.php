@@ -22,9 +22,8 @@
                 </div>
             </div>
             <div class="control-group">
-                <div class="controls">
                     <input type="checkbox" id="package_enabled" name="package_enabled" value="1"> Package enabled 
-                </div>
+
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Submit</button>
