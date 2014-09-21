@@ -3,11 +3,14 @@
 $menus = array();
 $menus = array(
     '/admin' => array('Dashboard', 'dashboard'),
+    '/admin/packages' => array('Packages','packages'),
     '/admin/orders' => array('Orders', 'orders'),
+    '/admin/settings' => array('Statuses','settings'),
+    '/admin/shelters' => array('Shelters', 'shelters'),
     '/admin/users' => array('Users', 'users'),
     '/admin/templates' => array('Templates', 'templates'),
-    '/admin/shelters' => array('Shelters', 'shelters'),
-    '/admin/settings' => array('Settings','settings')
+    
+    
 );
 if (!$menus)
     return;

@@ -37,7 +37,7 @@ A harmadik lépés pedig a személyes adatok megadása. Mindig ellenőrizd a kit
         <h3>4. Mennyibe kerül és hogyan fizethetek?</h3>
         <div>
             <div class="content">
-                Egy rendelési periódushoz kétféle árat kalkuláltunk, normál és prémium. A normál ár kedvezményesebb, a prémium Goodiebox viszont tartalmasabb meglepetés dobozt takar. Akárcsak a periódus, az ár kiválasztására is lehetőséged van. Minden esetben csak és kizárólag bankkártyás utalásra van lehetőség. Amennyiben minden adatok helyesen adtál meg és elfogadtad az ÁSZF-ben leírtakat, tovább léphetsz a biztonságos fizető felületünkre.
+                Egy rendelési periódushoz kétféle árat kalkuláltunk, normál és prémium. Az első hónapban csak a normál ár elérhető. A normál ár kedvezményesebb, a prémium Goodiebox viszont tartalmasabb meglepetés dobozt takar. Akárcsak a periódus, az ár kiválasztására is lehetőséged van. Minden esetben csak és kizárólag bankkártyás utalásra van lehetőség. Amennyiben minden adatot helyesen adtál meg és elfogadtad az ÁSZF-ben leírtakat, tovább léphetsz a biztonságos fizető felületünkre.
             </div>
         </div>
 
