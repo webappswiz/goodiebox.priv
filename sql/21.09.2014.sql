@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 21 2014 г., 12:59
+-- Время создания: Сен 21 2014 г., 16:25
 -- Версия сервера: 5.5.37-0ubuntu0.13.10.1
 -- Версия PHP: 5.5.3-1ubuntu2.6
 
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `friend` (
 --
 
 INSERT INTO `friend` (`id`, `user_id`, `friends_email`, `friends_name`, `selected_box`, `coupon_code`, `date_purchased`) VALUES
-(7, 10, 'dethmix@gmail.com', 'Dmitriy Pavlov', 1, '', '2014-09-21 11:32:04');
+(7, 10, 'dethmix@gmail.com', 'Dmitriy Pavlov', 1, '', '2014-09-21 13:18:26');
 
 -- --------------------------------------------------------
 
@@ -124,8 +124,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `puppy_id` (`puppy_id`),
-  KEY `orders_status` (`orders_status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=34 ;
+  KEY `orders_status` (`orders_status`),
+  KEY `selected_box` (`selected_box`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=36 ;
 
 --
 -- Дамп данных таблицы `orders`
@@ -136,15 +137,15 @@ INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_fir
 (16, 10, 1, 42, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 1, 1, NULL, '2014-09-21 10:03:25', '2014-09-21 10:03:25'),
 (19, 10, 1, 37, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 1, 1, NULL, '2014-09-21 10:06:36', '2014-09-21 10:06:36'),
 (23, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 2, 1, NULL, '2014-09-21 11:13:18', '2014-09-21 11:13:18'),
-(24, 14, 1, 43, 'Dmitriy', 'Pavlov', 'kadfjlakfjalksdj', '', 'kadkjldajkdskjdjlkas', '65854', '47293847928347', '', '', 's4CRvg9B', 1, 1, NULL, '2014-09-21 11:14:22', NULL),
-(25, 15, 1, 45, 'Her', 'Muller', 'siasdajsd', '', 'lkadkljdsfaljdsakljdsaklj', '69050', '8923752875823', '', '', '', 1, 1, NULL, '2014-09-21 11:18:59', NULL),
 (26, 15, 1, 46, 'Her', 'Muller', 'siasdajsd', '', 'lkadkljdsfaljdsakljdsaklj', '69050', '8923752875823', '', '', '', 1, 1, NULL, '2014-09-21 11:27:47', '2014-09-21 11:27:47'),
 (27, 15, 1, 0, 'Her', 'Muller', 'siasdajsd', '', 'lkadkljdsfaljdsakljdsaklj', '69050', '8923752875823', '', '', '', 2, 1, NULL, '2014-09-21 11:32:04', '2014-09-21 11:32:04'),
 (29, 14, 1, 43, 'Dmitriy', 'Pavlov', 'kadfjlakfjalksdj', '', 'kadkjldajkdskjdjlkas', '65854', '47293847928347', '', '', 'HyOqVuty', 1, 1, NULL, '2014-09-21 11:38:37', '2014-09-21 11:38:37'),
 (30, 10, 1, 37, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 34 ', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 1, 1, NULL, '2014-09-21 11:50:04', '2014-09-21 11:50:04'),
 (31, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 3, 1, 14, '2014-09-21 12:53:40', '2014-09-21 12:53:40'),
 (32, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 3, 1, 15, '2014-09-21 12:58:24', '2014-09-21 12:58:24'),
-(33, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 3, 1, 16, '2014-09-21 12:58:45', '2014-09-21 12:58:45');
+(33, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 3, 1, 16, '2014-09-21 12:58:45', '2014-09-21 12:58:45'),
+(34, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 2, 1, NULL, '2014-09-21 13:18:26', '2014-09-21 13:18:26'),
+(35, 14, 1, 43, 'Dmitriy', 'Pavlov', 'kadfjlakfjalksdj', '', 'kadkjldajkdskjdjlkas', '65854', '47293847928347', '', '', '65CMLvAA', 1, 1, NULL, '2014-09-21 13:18:55', '2014-09-21 13:18:55');
 
 -- --------------------------------------------------------
 
@@ -168,6 +169,30 @@ INSERT INTO `order_statuses` (`type`, `status_name`) VALUES
 (3, 'Shipped'),
 (4, 'Done'),
 (6, 'Declined');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `packages`
+--
+
+CREATE TABLE IF NOT EXISTS `packages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `package_name` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `weight` varchar(10) COLLATE utf8_swedish_ci NOT NULL,
+  `price` varchar(10) COLLATE utf8_swedish_ci NOT NULL,
+  `enabled` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `packages`
+--
+
+INSERT INTO `packages` (`id`, `package_name`, `weight`, `price`, `enabled`) VALUES
+(1, '1 hónap', '0', '10', 1),
+(2, '3 hónap', '0', '15', 0),
+(3, '6 hónap', '0', '20', 0);
 
 -- --------------------------------------------------------
 
@@ -329,9 +354,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `customer_company`, `customer_taxcode`, `logins`, `last_login`) VALUES
 (10, 'alex@onlamp.info', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33', '', '', '', 15, '1411289386'),
-(11, 'admin', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 10, '1411278824'),
+(11, 'admin', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 11, '1411297398'),
 (13, 'dev@bsocialmedia.ca', 'a28a4e5e5fc383d1bbb2be9aafa1e2933d4b00d990e63e1d1b2527a37b0db2d6', 'dev@bsocialmedia.ca', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a', '', '', '', 1, '1411235949'),
-(14, 'dethmix@gmail.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'dethmix@gmail.com', 'Dmitriy', 'Pavlov', '47293847928347', '65854', 'kadkjldajkdskjdjlkas', 'kadfjlakfjalksdj', '', '', '', 1, '1411288357'),
+(14, 'dethmix@gmail.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'dethmix@gmail.com', 'Dmitriy', 'Pavlov', '47293847928347', '65854', 'kadkjldajkdskjdjlkas', 'kadfjlakfjalksdj', '', '', '', 2, '1411294719'),
 (15, 'alexander.karamushko@ecommerce.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@ecommerce.com', 'Her', 'Muller', '8923752875823', '69050', 'lkadkljdsfaljdsakljdsaklj', 'siasdajsd', '', '', '', 1, '1411287515');
 
 -- --------------------------------------------------------
@@ -405,6 +430,7 @@ ALTER TABLE `friend`
 -- Ограничения внешнего ключа таблицы `orders`
 --
 ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_4` FOREIGN KEY (`selected_box`) REFERENCES `packages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`orders_status`) REFERENCES `order_statuses` (`type`) ON DELETE CASCADE ON UPDATE CASCADE;
 
