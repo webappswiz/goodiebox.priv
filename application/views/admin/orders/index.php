@@ -7,10 +7,10 @@ if (count($orders) > 0) {
         <thead>
             <tr>
                 <th>#</th>
-                <th>Customer's firstname</th>
-                <th>Customer's lastname</th>
-                <th>Customer's telephone</th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Order type</th>
+                <th>Package</th>
                 <th>Order status</th>
                 <th>Coupon?</th>
                 <th>Date purchased</th>
@@ -25,7 +25,6 @@ if (count($orders) > 0) {
                 echo '<td>' . $i . '</td>';
                 echo '<td>' . $order->delivery_firstname . '</td>';
                 echo '<td>' . $order->delivery_lastname . '</td>';
-                echo '<td>' . $order->delivery_telephone . '</td>';
                 if($order->type==1)
                     $type = 'Own puppy';
                 if($order->type==2)
@@ -33,6 +32,7 @@ if (count($orders) > 0) {
                 if($order->type==3)
                     $type = 'Shelter';
                 echo '<td>' . $type . '</td>';
+                echo '<td>' . $order->package->package_name . '</td>';
                 echo '<td>' . $order->status->status_name . '</td>';
                 $coupon = (!empty($order->coupon_code))?'Yes':'No';
                 echo '<td>' . $coupon . '</td>';
