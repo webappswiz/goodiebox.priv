@@ -6,6 +6,9 @@ class Model_Order extends ORM {
 
     protected $_table_name = 'orders';
     protected $_primary_key = 'id';
+    protected $_has_many = array(
+        'status' => array('model'=>'OrderStatus','foreign_key'=>'order_status')
+    );
 
 }
 

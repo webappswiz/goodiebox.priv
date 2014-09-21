@@ -332,8 +332,7 @@
                 <div class="support">
                     <form action="/user_account/shelter" id="shelter" method="POST">
                         <?php
-                        $shelters = ORM::factory('User_Shelter')->with('shelter')
-                                ->distinct('shelter_id')
+                        $shelters = ORM::factory('ShelterDog')->with('shelter')
                                 ->where('user_id', '=', $current_user->id)
                                 ->find_all();
                         foreach ($shelters as $shelter):

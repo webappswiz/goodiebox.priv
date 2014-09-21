@@ -10,7 +10,7 @@
     <p>
         Mi abban szeretnénk segíteni ezeknek az árva kutyusoknak, hogy a menhelyen töltött idejüket  boldogabbá varázsoljuk veletek. Minden egyes  megrendelt <span>GOODIEBOX</span> után <span>100 Ft</span>-ot utalunk az általatok kiválasztott telepnek.</p>
     <div class="circles">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/donations-dogs.png">
+        <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/donations-dogs.png">
         <p>Lehetőséged van csomagot küldeni menhelyi kutyusnak is:</p>
         <ul>
             <li>Válaszd az <span>Ajándékozom</span> opciót</li>
@@ -24,8 +24,8 @@
     <p>Néhány menhely ahol nézelődhetsz:</p>
     <div class="donations-btn">
         <p>Illatos út </br>Noé Állatotthon Alapítvány</br>Rex Kutyaotthon Alapítvány</br>HEROSZ Budapesti Állatotthona</p>
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrow-dn.jpg">
-        <a href="<?= URL::base(TRUE, FALSE) ?>/order/gift"><button type="button" class="top-btn rounded">Ajándékozom</button></a>
+        <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/arrow-dn.jpg">
+        <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékozom</button></a>
         <p class="donation-bottom-p">menhelyi kutyusnak</p>
     </div>
     <div class="donations-bottom-text">

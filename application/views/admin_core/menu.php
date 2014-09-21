@@ -7,6 +7,7 @@ $menus = array(
     '/admin/users' => array('Users', 'users'),
     '/admin/templates' => array('Templates', 'templates'),
     '/admin/shelters' => array('Shelters', 'shelters'),
+    '/admin/settings' => array('Settings','settings')
 );
 if (!$menus)
     return;

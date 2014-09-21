@@ -94,6 +94,7 @@ class Controller_User_Account extends Controller_Core {
             $puppy = ORM::factory('Puppy', (int) $_POST['puppy_id']);
             if (!$puppy->loaded())
                 $this->redirect('/user_account');
+            $puppy1['puppy_id'] = $puppy->id;
             $puppy1['order1'] = 1;
             $puppy1['puppy_name'] = $puppy->puppy_name;
             $puppy1['gender'] = $puppy->gender;
@@ -107,10 +108,10 @@ class Controller_User_Account extends Controller_Core {
                     ->where('puppy_id', '=', (int) $_POST['puppy_id'])
                     ->find();
             $selected_box['selected_box'] = 1;
-            if ($order->loaded())
-                $selected_box['selected_box'] = $order->selected_box;
-            Session::instance()->set('step2', $selected_box);
-            $this->redirect('/order/step3');
+            //if ($order->loaded())
+            //    $selected_box['selected_box'] = $order->selected_box;
+            //Session::instance()->set('step2', $selected_box);
+            $this->redirect('/order/step2');
         } elseif (!empty($_POST['gift'])) {
             $coupon_code = $_POST['gift'];
             $puppy_id = $_POST['puppy_id'];
@@ -167,16 +168,16 @@ class Controller_User_Account extends Controller_Core {
             print_r($_POST);
             if (empty($_POST['shelter']))
                 $this->redirect('/user_account');
-            $shelter = ORM::factory('User_Shelter')
-                    ->where('shelter_id','=',(int)$_POST['shelter'])
+            $shelter = ORM::factory('User_Shelter')->with('shelter')
+                    ->where('shelter.shelter_id','=',(int)$_POST['shelter'])
                     ->find();
             if (!$shelter->loaded())
                 $this->redirect('/user_account');
             $sh['order3'] = 1;
-            $sh['option-name'] = $shelter->shelter_id;
-            $sh['doggy_name'] = $shelter->doggy_name;
-            $sh['gender'] = $shelter->doggy_gender;
-            $sh['selected_size'] = $shelter->selected_size;
+            $sh['option-name'] = $shelter->shelter->shelter_id;
+            $sh['doggy_name'] = $shelter->shelter->doggy_name;
+            $sh['gender'] = $shelter->shelter->doggy_gender;
+            $sh['selected_size'] = $shelter->shelter->selected_size;
             Session::instance()->set('step1', $sh);
             Session::instance()->set('step2', array('selected_box' => $shelter->selected_box));
             $this->redirect('/order/step3');

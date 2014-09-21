@@ -6,7 +6,7 @@ class Model_Shelter extends ORM {
 
     protected $_table_name = 'shelters';
     protected $_primary_key = 'id';
-
+    
 }
 
 // End Role Model
