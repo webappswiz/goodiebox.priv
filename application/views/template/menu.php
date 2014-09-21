@@ -3,15 +3,15 @@ $auth = Auth::instance();
 $menus = array();
 $menus = array(
     '/' => array('Fooldal', 'home'),
-    '/hogyan/' => array('Hogyan Mukodik', 'hogyan'),
-    '/tamogass' => array('Tamogass TE', 'tamogass'),
+    '/hogyan/' => array('Hogyan működik?', 'hogyan'),
+    '/tamogass' => array('Támogass Te is', 'tamogass'),
     'http://blog.goodiebox.hu' => array('Blog', 'blog'),
     '/gyik' => array('GYIK', 'gyik'),
     '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
 );
 if($auth->logged_in()){
-    $menus['user_account'] = array('Arcél','arcél');
-    $menus['user_session/logout'] = array('Logout','logout');
+    $menus['user_account'] = array('Profilom','arcél');
+    $menus['user_session/logout'] = array('Kilépés','logout');
 } else {
     $menus['user_session/login'] = array('Belépés','login');
 }
