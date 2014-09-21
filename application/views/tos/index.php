@@ -1,8 +1,4 @@
 <section id="content">
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><SECTION id="content"><HTML><HEAD>
-<META content="text/html; charset=unicode" http-equiv=Content-Type>
-<META name=GENERATOR content="MSHTML 11.00.9600.17280"></HEAD>
-<BODY>
 <P class=MsoNormal 
 style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: normal" 
 align=center><SPAN lang=HU 
@@ -1859,6 +1855,6 @@ style="FONT-SIZE: 12pt; FONT-FAMILY: Cambria; mso-bidi-font-family: Arial"><o:p>
 style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: normal; TEXT-AUTOSPACE: ; mso-layout-grid-align: none"><B 
 style="mso-bidi-font-weight: normal"><SPAN lang=HU 
 style="FONT-SIZE: 12pt; FONT-FAMILY: Cambria; mso-bidi-font-family: Arial">Budapest, 
-2014. szeptember 19.<o:p></o:p></SPAN></B></P></BODY></HTML>
+2014. szeptember 19.<o:p></o:p></SPAN></B></P>
 
 </section>
