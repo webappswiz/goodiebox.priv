@@ -104,12 +104,12 @@
                 $months[$i] = $i;
             ?>
             <label for="last-name">Kutyus születésnapja*</label>
-            <div class="text-shor1 fl">
+            <div class="text-shor1 fl" style="margin-right:10px">
                 <?php
                 echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name'));
                 ?>
             </div>
-            <div class="text-shor2">
+            <div class="text-shor1 fl">
                 <?php
                 echo Form::select('months', $months, '', array('required', 'class' => 'rounded option-name'));
                 ?>

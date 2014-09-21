@@ -94,17 +94,18 @@
                                 $months[$i] = $i;
                             ?>
                             <label for="last-name">Kutyus születésnapja*</label>
-                            <div class="text-shor1 fl">
+                            <div class="text-shor1 fl" style="margin-right: 10px">
                                 <?php
-                                echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name'));
+                                echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name')).' ';
                                 ?>
                             </div>
-                            <div class="text-shor2">
+                            
+                            <div class="text-shor1 fl">
                                 <?php
                                 echo Form::select('months', $months, '', array('required', 'class' => 'rounded option-name'));
                                 ?>
                             </div>
-
+                            <div class="clear"></div>
                             <div class="radio-list">
                                 <label for="Igen">Allergiás a kutyusod?*</label>
                                 <input type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
