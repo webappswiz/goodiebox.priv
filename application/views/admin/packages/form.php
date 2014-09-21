@@ -22,9 +22,8 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="package_price">Packages price</label>
                 <div class="controls">
-                    <input type="checkbox" id="package_enabled" name="package_enabled" value="1">
+                    <input type="checkbox" id="package_enabled" name="package_enabled" value="1"> Package enabled 
                 </div>
             </div>
             <div class="form-actions">
