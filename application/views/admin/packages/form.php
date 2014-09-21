@@ -33,7 +33,7 @@
             </div>
         </fieldset>
         <?php
-        echo Form::hidden('id', $model->type);
+        echo Form::hidden('id', $model->id);
         ?>
     </form>
 </div>

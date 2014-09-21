@@ -12,7 +12,7 @@ class Controller_Admin_Packages extends Controller_Admin {
     }
 
     protected function find_model() {
-        $this->model = ORM::factory('OrderStatus', (int) $this->request->param('id'));
+        $this->model = ORM::factory('Packages', (int) $this->request->param('id'));
         if (!$this->model->loaded())
             throw new Kohana_HTTP_Exception_404;
     }
