@@ -278,3 +278,117 @@
 #6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-21 14:29:08 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: user ~ APPPATH/views/admin/orders/index.php [ 25 ] in /var/www/goodiebox.priv/application/views/admin/orders/index.php:25
+2014-09-21 14:29:08 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/admin/orders/index.php(25): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 25, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/application/views/admin/orders/index.php:25
+2014-09-21 14:33:06 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'status.orders_status' in 'on clause' [ SELECT `status`.`type` AS `status:type`, `status`.`status_name` AS `status:status_name`, `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` LEFT JOIN `order_statuses` AS `status` ON (`order`.`id` = `status`.`orders_status`) ORDER BY `type` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:33:06 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `status`...', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/views/admin/orders/index.php(2): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:43:36 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'type, date_purchased' in 'order clause' [ SELECT `status`.`type` AS `status:type`, `status`.`status_name` AS `status:status_name`, `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` LEFT JOIN `order_statuses` AS `status` ON (`status`.`type` = `order`.`orders_status`) ORDER BY `type, date_purchased` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:43:36 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `status`...', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/views/admin/orders/index.php(2): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:45:13 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'DESC' in 'order clause' [ SELECT `status`.`type` AS `status:type`, `status`.`status_name` AS `status:status_name`, `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` LEFT JOIN `order_statuses` AS `status` ON (`status`.`type` = `order`.`orders_status`) ORDER BY `DESC` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:45:13 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `status`...', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/views/admin/orders/index.php(2): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:45:52 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'DESC' in 'order clause' [ SELECT `status`.`type` AS `status:type`, `status`.`status_name` AS `status:status_name`, `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` LEFT JOIN `order_statuses` AS `status` ON (`status`.`type` = `order`.`orders_status`) ORDER BY `DESC` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:45:52 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `status`...', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/views/admin/orders/index.php(2): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:46:14 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'date_purchased DESC' in 'order clause' [ SELECT `status`.`type` AS `status:type`, `status`.`status_name` AS `status:status_name`, `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` LEFT JOIN `order_statuses` AS `status` ON (`status`.`type` = `order`.`orders_status`) ORDER BY `date_purchased DESC` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:46:14 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `status`...', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/views/admin/orders/index.php(2): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:46:28 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'DESC' in 'order clause' [ SELECT `status`.`type` AS `status:type`, `status`.`status_name` AS `status:status_name`, `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` LEFT JOIN `order_statuses` AS `status` ON (`status`.`type` = `order`.`orders_status`) ORDER BY `DESC` ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:46:28 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `status`...', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/views/admin/orders/index.php(2): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#5 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#6 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#8 [internal function]: Kohana_Controller->execute()
+#9 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#10 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#11 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#12 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#13 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-21 14:59:45 --- EMERGENCY: ErrorException [ 1 ]: Class 'Pagination' not found ~ APPPATH/classes/Controller/Admin/Orders.php [ 22 ] in file:line
+2014-09-21 14:59:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-21 15:00:19 --- EMERGENCY: ErrorException [ 1 ]: Class 'Pagination' not found ~ APPPATH/classes/Controller/Admin/Orders.php [ 22 ] in file:line
+2014-09-21 15:00:19 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-21 15:00:20 --- EMERGENCY: ErrorException [ 1 ]: Class 'Pagination' not found ~ APPPATH/classes/Controller/Admin/Orders.php [ 22 ] in file:line
+2014-09-21 15:00:20 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-21 15:00:21 --- EMERGENCY: ErrorException [ 1 ]: Class 'Pagination' not found ~ APPPATH/classes/Controller/Admin/Orders.php [ 22 ] in file:line
+2014-09-21 15:00:21 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line

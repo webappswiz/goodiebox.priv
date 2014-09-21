@@ -1,53 +1,32 @@
-<?php
-$orders = ORM::factory('Order')->order_by('type')->find_all();
-if (count($orders) > 0) {
-    ?>
-    <h2>Orders</h2>
-    <table class="table table-stripped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Customer's firstname</th>
-                <th>Customer's lastname</th>
-                <th>Customer's email</th>
-                <th>Customer's telephone</th>
-                
-                <th>Last login</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $i = 1;
-            foreach ($users as $user) {
-                if ($user->is_admin())
-                    continue;
-                echo '<tr>';
-                echo '<td>' . $i . '</td>';
-                echo '<td>' . $user->customer_firstname . '</td>';
-                echo '<td>' . $user->customer_lastname . '</td>';
-                echo '<td>' . $user->email . '</td>';
-                echo '<td>' . $user->customer_telephone . '</td>';
-                echo '<td>' . date('d-m-Y H:i', $user->last_login) . '</td>';
-                echo '<td><a href="/admin/users/info/' . $user->id . '" class="btn btn-primary">Full info</a> ';
+<div class="row-fluid">
+    <div class="span2 pull-left">
+        <div class="well sidebar-nav">
+            <ul class="nav nav-tabs nav-stacked">
+                <li class="nav-header">Navigation</li>
+                <li><a href="/admin/templates/edit/1">Registration email template</a></li>
+                <li><a href="/admin/templates/edit/2">Order email template</a></li>
+                <li><a href="/admin/templates/edit/3">Gift email template</a></li>
+        </div>
+    </div>
+    <!--/.well -->
+    <!--/span3-->
 
-                echo HTML::anchor(
-                        '/admin/users/delete/' . $user->id, 'Remove', array(
-                    'data-title' => 'Delete user',
-                    'data-toggle' => 'confirm',
-                    'data-content' => 'Do you really want to delete a user ?',
-                    'title' => 'Delete user',
-                    'rel' => 'tooltip',
-                    'class' => 'btn btn-danger'
-                        )
-                );
-                echo '</td>';
-                echo '</tr>';
-                $i++;
-            }
-            ?>
-        </tbody>
-    </table>
-    <?php
-}
-?>
+    <div class="span10 pull-left">
+
+        <div class="well">
+            <h1>Editing of email templates</h1>
+
+            <p>
+                Here you can edit your email templates. Just click on<br/> 
+                the left menu item to start editing.
+            </p>
+        </div>
+
+    </div>
+    <!--/span9-->
+
+</div>
+<!--/row-fluid-->
+
+<hr>
+z

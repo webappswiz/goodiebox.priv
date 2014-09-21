@@ -19,16 +19,6 @@ foreach ($statuses as $status){
     echo '<td>'.$i.'</td>';
     echo '<td>'.$status->status_name.'</td>';
     echo '<td><a href="/admin/settings/edit/'.$status->type.'" class="btn btn-primary">Edit</a> ';
-    echo HTML::anchor(
-                        '/admin/settings/delete/' . $status->type, 'Remove', array(
-                    'data-title' => 'Delete a status',
-                    'data-toggle' => 'confirm',
-                    'data-content' => 'Do you really want to delete an order status ?',
-                    'title' => 'Delete status',
-                    'rel' => 'tooltip',
-                    'class' => 'btn btn-danger'
-                        )
-                );
     echo '</td>';
     echo '</tr>';
     $i++;

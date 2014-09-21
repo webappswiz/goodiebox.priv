@@ -117,12 +117,11 @@ Cookie::$salt = "Trololo finance. Investing is the best way to become rich!!!";
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Route::set('admin', 'admin/(<controller>(/<action>(/<id>)))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'welcome',
-        'action'     => 'index',
-    ));
-
+        ->defaults(array(
+            'directory' => 'admin',
+            'controller' => 'welcome',
+            'action' => 'index',
+        ));
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
         ->defaults(array(
@@ -132,11 +131,11 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 
 Kohana::modules(array(
     'auth' => MODPATH . 'auth', // Basic authentication
-    'cache'      => MODPATH.'cache',      // Caching with multiple backends
+    'cache' => MODPATH . 'cache', // Caching with multiple backends
     'database' => MODPATH . 'database', // Database access
     //'image'      => MODPATH.'image',      // Image manipulation
     'orm' => MODPATH . 'orm', // Object Relationship Mapping
-   // 'api' => MODPATH . 'api',
+    // 'api' => MODPATH . 'api',
 ));
 
 /**

@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $(':button.cancel').on('click', function() {
-            return window.location.replace("" + url_base + "admin/shelters");
+            return window.location.replace("" + url_base + "admin/settings");
         });
 
     });

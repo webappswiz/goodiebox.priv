@@ -51,11 +51,4 @@ class Controller_Admin_Settings extends Controller_Admin {
         $this->redirect('/admin/settings/');
     }
     
-    public function action_delete(){
-        $this->find_model();
-        if($this->model->loaded())
-            $this->model->delete();
-        $this->redirect('/admin/settings/');
-    }
-
 }

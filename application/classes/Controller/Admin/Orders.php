@@ -18,7 +18,8 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
 
     public function action_index() {
-        
+        $total_items = ORM::factory('Order')->count_all(); //Это вы как будто посчитали количество элементов
+        $this->orders = ORM::factory('Order')->with('status')->order_by('date_purchased','DESC')->find_all();
     }
 
     public function action_edit() {

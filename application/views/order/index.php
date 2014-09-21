@@ -15,7 +15,7 @@
                     $('#email').val('');
                     $('#email').focus();
                     $('#email').css('background-color', 'rosybrown');
-                    $('#email').after('<label id="email-error" class="error" for="email">Email is already registered. Please login in your account.</label>');
+                    $('#email').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
                 }
             });
         });
