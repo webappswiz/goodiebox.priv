@@ -456,3 +456,6 @@
 2014-09-21 16:12:46 --- EMERGENCY: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH/views/kapcsolat/index.php [ 27 ] in file:line
 2014-09-21 16:12:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2014-09-21 16:17:11 --- EMERGENCY: ErrorException [ 4 ]: syntax error, unexpected '}' ~ APPPATH/classes/Controller/Kapcsolat.php [ 15 ] in file:line
+2014-09-21 16:17:11 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
