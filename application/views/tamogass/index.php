@@ -30,7 +30,7 @@
         <p class="donation-bottom-p">menhelyi kutyusnak</p>
     </div>
     <div class="donations-bottom-text">
-        <p>*Amennyiben <span style="color: #cc0033">GOODIEBOX</span>-ot szeretnél küldeni egy menhelyi kutyusnak, kérlek olvasd el az <span style="color: #cc0033">Általános Szerződési Feltételek</span> rendelési információját ide vonatkozólag.</p>
+        <p style="text-align: center">*Amennyiben <span style="color: #cc0033">GOODIEBOX</span>-ot szeretnél küldeni egy menhelyi kutyusnak, kérlek olvasd el az <span style="color: #cc0033">Általános Szerződési Feltételek</span> rendelési információját ide vonatkozólag.</p>
     </div>
 </section>
 
