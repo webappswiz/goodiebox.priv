@@ -8,14 +8,14 @@
     <h1>Támogass menhelyi kutyust!</h1>
     <p>Magyarországon nagyon sok olyan kutyus van, akik menhelyen kénytelenek várakozni, amíg szerető gazdi érkezik és befogadja őket. Minden évben akciók és programok sokasága várja a kicsiket és nagyokat, hogy legjobb barátra találjanak.</p>
     <p>
-        Mi abban szeretnénk segíteni ezeknek az árva kutyusoknak, hogy a menhelyen töltött idejüket  boldogabbá varázsoljuk veletek. Minden egyes  megrendelt <span>GOODIEBOX</span> után <span>100 Ft</span>-ot utalunk az általatok kiválasztott telepnek.</p>
+        Mi abban szeretnénk segíteni ezeknek az árva kutyusoknak, hogy a menhelyen töltött idejüket  boldogabbá varázsoljuk veletek. Minden egyes  megrendelt <span style="color: #cc0033">GOODIEBOX</span> után <span style="color: #cc0033">100 Ft</span>-ot utalunk az általatok kiválasztott telepnek.</p>
     <div class="circles">
         <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/donations-dogs.png">
         <p>Lehetőséged van csomagot küldeni menhelyi kutyusnak is:</p>
         <ul>
-            <li>Válaszd az <span>Ajándékozom</span> opciót</li>
+            <li>Válaszd az <span style="color: #cc0033">Ajándékozom</span> opciót</li>
             <li>Válaszd ki a menhelyet, ahol a kutyus van*</li>
-            <li>Írd be a megjegyzésbe, hogy mi a <span>kutyus neve és neme</span></li>
+            <li>Írd be a megjegyzésbe, hogy mi a <span style="color: #cc0033">kutyus neve és neme</span></li>
             <li>Rendeld meg a csomagot és várd a visszajelzést a menhelyről.</li>
         </ul>
 
