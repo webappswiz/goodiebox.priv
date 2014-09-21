@@ -15,7 +15,8 @@
             <li>Válaszd az <span style="color: #cc0033">Ajándékozom</span> opciót!</li>
             <li>Válaszd ki a menhelyet, ahol a kutyus van*!</li>
             <li>Írd be a megjegyzésbe, hogy mi a kutyus neve és neme!</li>
-            <li>Rendeld meg a csomagot, őrizd meg a rendelést visszaigazoló e-mail üzenetünket és várd a visszajelzést a menhelyről, ha a kutyushoz 
+            <li>Rendeld meg a csomagot, őrizd meg a rendelést visszaigazoló e-mail<br/> 
+                üzenetünket és várd a visszajelzést a menhelyről, ha a kutyushoz<br/> 
                 megérkezett a dobozod!</li>
         </ul>
 
