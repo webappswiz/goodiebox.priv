@@ -11,7 +11,7 @@ class Controller_Kapcsolat extends Controller_Core {
     }
 
     public function action_index() {
-        print_r($this->current_user);
+        $this->user = ($this->current_user)?$this->current_user:'';
     }
 
 }

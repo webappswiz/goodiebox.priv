@@ -51,6 +51,6 @@
     </div>
     <div class="clear"></div>
     <div class="how-bottom-p">
-        <p>*A csomag összeállítása teljes mértékben kiváló eledel és felszerelés, mennyiségével és  tartalmával szemben támasztott </p><p> bármilyen követelésnek helye nincs. Rendelési és szállítási feltételeket lásd az <span>Általános Szerződési és Felhasználási Feltételekben.</span></p>
+        <p>*A havi doboz tartalma minden esetben gondosan válogatott, teljes mértékben kiváló eledel és felszerelés. Rendelési és szállítási feltételeket lásd az <a href="/tos"><span>Általános Szerződési Feltételekben</span></a>.</p>
     </div>
 </section>
