@@ -9,8 +9,8 @@
             <li id="rss"><a href="#">RSS</a></li>
             <li id="fb"><a href="http://facebook.com/goodieboxhu">facebook.com/goodieboxhu</a></li>
             <li id="twt"><a href="http://twitter.com/godieboxhu">twitter.com/godieboxhu</a></li>
-            <li id="aszf"><a href="#">ÁSZF</a></li>
-            <li id="adat"><a href="#">Adatvédelem</a></li>
+            <li id="aszf"><a href="/tos">ÁSZF</a></li>
+            <li id="adat"><a href="/privacy">Adatvédelem</a></li>
         </ul>
         <div class="clear"></div>
         <div class="copy-write">

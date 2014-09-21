@@ -249,3 +249,22 @@
 #6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #8 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:603
+2014-09-21 13:32:35 --- EMERGENCY: View_Exception [ 0 ]: The requested view tos/index could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-21 13:32:35 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('tos/index')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Tos))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-21 13:50:45 --- EMERGENCY: ErrorException [ 4 ]: syntax error, unexpected '=', expecting \\ (T_NS_SEPARATOR) or ';' or '{' ~ APPPATH/views/tos/index.php [ 6 ] in file:line
+2014-09-21 13:50:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-21 13:51:19 --- EMERGENCY: ErrorException [ 4 ]: syntax error, unexpected '=', expecting \\ (T_NS_SEPARATOR) or ';' or '{' ~ APPPATH/views/tos/index.php [ 5 ] in file:line
+2014-09-21 13:51:19 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-21 13:51:20 --- EMERGENCY: ErrorException [ 4 ]: syntax error, unexpected '=', expecting \\ (T_NS_SEPARATOR) or ';' or '{' ~ APPPATH/views/tos/index.php [ 5 ] in file:line
+2014-09-21 13:51:20 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
