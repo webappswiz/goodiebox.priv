@@ -11,10 +11,7 @@
         <h3>1. Mi is az a Goodiebox pontosan?</h3>
         <div>
             <div class="content">
-                Hogyan tudok rendelni a kutyusomnak?
-Saját kutyusnak a "MEGRENDELEM" gomb megnyomásával indul a vásárlás folyamata. Elsőként a kutyus méretét kell megadnod, illetve adatokat róla, hogy jobban megismerhessük és megkönnyítsd a munkánkat. 
-A második lépésben lehetőséged van kiválasztani a periódust, hány hónapra szeretnéd megrendelni a csomagot és milyen minőségben (normál vagy prémium).
-A harmadik lépés pedig a személyes adatok megadása. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és a valóságnak is megfeleljenek. A megrendelés egyben regisztráció is, a teljesítést követően létrejön a profilod, melyet bármikor módosíthatsz, kivéve az e-mail címedet.
+                A Goodiebox egy új szolgáltatás Magyarországon, az első meglepetés doboz kutyusoknak. Havonta változó, 4-5 különböző terméket rejtünk a csomagba és ingyenesen szállítjuk házhoz sikeres megrendelés esetén. A doboz gondosan válogatott, magas színvonalú termékeket tartalmaz. 
             </div>
         </div>
 
