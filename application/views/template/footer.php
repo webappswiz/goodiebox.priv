@@ -4,7 +4,7 @@
     <footer>
         <ul>
             <li id="post"><a href="#">1053 Budapest </br>Kossuth L. u. 7-9.</a></li>
-            <li id="telephone"><a href="#">+36 30 500 6785</a></li>
+            <li><a href="#">             </a></li>
             <li id="email"><a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a></li>
             <li id="rss"><a href="#">RSS</a></li>
             <li id="fb"><a href="http://facebook.com/goodieboxhu">facebook.com/goodieboxhu</a></li>
