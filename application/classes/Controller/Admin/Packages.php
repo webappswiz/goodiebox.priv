@@ -42,13 +42,18 @@ class Controller_Admin_Packages extends Controller_Admin {
     {
         $id = (int)Arr::get($_REQUEST, 'id');
         if ($id) {
-            $this->model = ORM::factory('OrderStatus', $id);
+            $this->model = ORM::factory('Packages', $id);
         } else {
-            $this->model = ORM::factory('OrderStatus');
+            $this->redirect('/admin/packages/');
         }
-        $this->model->status_name = $_REQUEST['status_name'];
+        $this->model->package_name = $_REQUEST['package_name'];
+        $this->model->price = $_REQUEST['package_price'];
+        if(isset($_REQUEST['package_enabled'])){
+            $this->model->enabled = 1;
+        } else
+            $this->model->enabled = 0;
         $this->model->save();
-        $this->redirect('/admin/settings/');
+        $this->redirect('/admin/packages/');
     }
     
 }

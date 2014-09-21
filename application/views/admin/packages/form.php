@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="control-group">
-                    <input type="checkbox" id="package_enabled" name="package_enabled" value="1"> Package enabled 
+                    <input type="checkbox" id="package_enabled" name="package_enabled"  <?php echo ($model->enabled==1) ? 'checked="checked"' : '' ?>value="1"> Package enabled 
 
             </div>
             <div class="form-actions">

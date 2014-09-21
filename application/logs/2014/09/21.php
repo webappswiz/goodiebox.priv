@@ -433,3 +433,23 @@
 #9 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #10 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #11 {main} in /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php:603
+2014-09-21 15:51:52 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: status_name ~ APPPATH/classes/Controller/Admin/Packages.php [ 49 ] in /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php:49
+2014-09-21 15:51:52 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php(49): Kohana_Core::error_handler(8, 'Undefined index...', '/var/www/goodie...', 49, Array)
+#1 /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php(29): Controller_Admin_Packages->update()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Admin_Packages->action_edit()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Packages))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php:49
+2014-09-21 15:53:40 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: price ~ APPPATH/classes/Controller/Admin/Packages.php [ 50 ] in /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php:50
+2014-09-21 15:53:40 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php(50): Kohana_Core::error_handler(8, 'Undefined index...', '/var/www/goodie...', 50, Array)
+#1 /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php(29): Controller_Admin_Packages->update()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Admin_Packages->action_edit()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Packages))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php:50
