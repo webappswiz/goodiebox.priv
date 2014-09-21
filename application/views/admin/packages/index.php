@@ -16,13 +16,13 @@ if(count($packages)>0){
     <tbody>
     <?php
     $i=1;
-foreach ($statuses as $status){
+foreach ($packages as $package){
     echo '<tr>';
     echo '<td>'.$i.'</td>';
-    echo '<td>'.$packages->package_name.'</td>';
-    echo '<td>'.$packages->price.'</td>';
-    echo '<td>'.$packages->enabled.'</td>';
-    echo '<td><a href="/admin/settings/edit/'.$status->type.'" class="btn btn-primary">Edit</a> ';
+    echo '<td>'.$package->package_name.'</td>';
+    echo '<td>'.$package->price.'</td>';
+    echo '<td>'.$package->enabled.'</td>';
+    echo '<td><a href="/admin/packages/edit/'.$package->id.'" class="btn btn-primary">Edit</a> ';
     echo '</td>';
     echo '</tr>';
     $i++;
@@ -33,5 +33,3 @@ foreach ($statuses as $status){
 <?php
 }
 ?>
-<?php
-echo HTML::anchor('/admin/settings/add', 'Add a new order status', array('class' => 'btn btn-primary'));

@@ -160,7 +160,7 @@ strong{font-weight: bold;}
 ********************************/
 header{overflow: hidden;}
 header .logo{padding-top: 35px; float: left;}
-header .social-right{margin-top: 45px; float: right;}
+header .social-right{margin-top: 25px; float: right;}
 header .social-right ul li{margin-top: 6px;}
 #counting-back .count-image img {margin-left: -40px; float: left; position: relative;z-index: 999;}
 #counting-back .siess{float: left; padding-right: 30px;padding-top: 70px;}

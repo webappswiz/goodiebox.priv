@@ -22,7 +22,7 @@ class Controller_Admin_Packages extends Controller_Admin {
     }
 
     public function action_edit() {
-        $this->set_filename('admin/settings/form');
+        $this->set_filename('admin/packages/form');
         $this->find_model();
         if (!$this->is_post())
             return;
