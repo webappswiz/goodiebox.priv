@@ -1,3 +1,9 @@
+<nav class="nav-right">
+    <ul>
+        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
+    </ul>
+</nav>
+<div class="clear"></div>
 <section id="content">
 <P class=MsoNormal 
 style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: normal" 
