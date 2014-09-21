@@ -453,3 +453,6 @@
 #6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Admin/Packages.php:50
+2014-09-21 16:12:46 --- EMERGENCY: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH/views/kapcsolat/index.php [ 27 ] in file:line
+2014-09-21 16:12:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line

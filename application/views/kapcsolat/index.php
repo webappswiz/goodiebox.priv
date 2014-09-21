@@ -24,16 +24,16 @@
         <div class="contact-us-form">
             <form>
                 <label for="last-name">Vezetéknév*</label>
-                <input type="text" name="last-name" class="rounded" id="">
+                <input type="text" name="last-name" class="rounded" value="<?=($current_user)?$current_user->customer_firstname:''?>">
 
                 <label for="last-name">Keresztnév*</label>
-                <input type="text" name="last-name" class="rounded" id="">
+                <input type="text" name="last-name" class="rounded" value="<?=($current_user)?$current_user->customer_lastname:''?>">
 
                 <label for="last-name">E-mail cím*</label>
-                <input type="text" name="last-name" class="rounded" id="">
+                <input type="text" name="last-name" class="rounded" value="">
 
                 <label for="last-name">Tárgy</label>
-                <input type="text" name="last-name" class="rounded" id="">
+                <input type="text" name="last-name" class="rounded" value="">
 
                 <textarea placeholder="Kezdj egy gépelni..." class="rounded"></textarea>
             </form>
