@@ -9,7 +9,6 @@
             Kapcsolat információ:</br>
             <span>GOODIEBOX </br>
                 Web Apps Consult Kft.</span></br>
-            Web Apps Consult Kft. </br>
             <span>1053 Budapest </br>
                 Kossuth Lajos utca 7-9.</span> </br>
             E-mail cím: </br>
