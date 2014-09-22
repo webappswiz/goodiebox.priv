@@ -19,12 +19,19 @@ class Controller_Admin_Orders extends Controller_Admin {
 
     public function action_index()
     {
-        $total_items = ORM::factory('Order')->count_all(); //Это вы как будто посчитали количество элементов
+        $this->redirect('/admin/orders/page/?page=1');
+        $total_items = ORM::factory('Order')->count_all();
         $this->orders = ORM::factory('Order')->with('status', 'package')->order_by('date_purchased', 'DESC')->find_all();
     }
 
     public function action_page(){
-        $this->redirect('/admin/orders/page/?page=1');
+        $this->orders = ORM::factory('Order')->with('status', 'package');
+        $this->pagination = Pagination::factory(array(
+                    'total_items' => $this->orders->count_all(),
+                    'items_per_page' => 5,
+        ));
+        $this->pagination->route_params(array('controller' => $this->request->controller(), 'action' => $this->request->action()));
+        $this->data = $this->orders->offset($this->pagination->offset)->limit($this->pagination->items_per_page)->order_by('date_purchased','DESC')->find_all()->as_array();
     }
 
     public function action_edit()

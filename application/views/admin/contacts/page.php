@@ -10,6 +10,7 @@
             <th>Subject</th>
             <th>Date</th>
             <th>Replied</th>
+            <th></th>
         </tr>
     </thead>
     <?php
@@ -24,10 +25,11 @@
             <td><?=$item->subject?></td>
             <td><?=$item->date?></td>
             <td><?=($item->replied==1)?'Yes':'No'?></td>
+            <td><?=($item->replied==1)?'':'<a href="/admin/contacts/reply/'.$item->id.'" class="btn btn-primary">Reply</a>'?></td>
         </tr>
         <?php
-        echo '<tr><th colspan="7">Message body</th></tr>';
-        echo '<tr><td colspan="7"><blockquote><p>'.$item->message.'</p></blockquote></td></tr>';
+        echo '<tr><th colspan="8">Message body</th></tr>';
+        echo '<tr><td colspan="8"><blockquote><p>'.$item->message.'</p></blockquote></td></tr>';
         $i++;
     }
 echo '</table>';

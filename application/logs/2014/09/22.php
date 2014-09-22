@@ -147,3 +147,15 @@
 #8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #10 {main} in /var/www/goodiebox.priv/application/views/admin/contacts/page.php:18
+2014-09-22 19:31:09 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'date' in 'order clause' [ SELECT `order`.`id` AS `id`, `order`.`user_id` AS `user_id`, `order`.`selected_box` AS `selected_box`, `order`.`puppy_id` AS `puppy_id`, `order`.`delivery_firstname` AS `delivery_firstname`, `order`.`delivery_lastname` AS `delivery_lastname`, `order`.`delivery_address` AS `delivery_address`, `order`.`delivery_address2` AS `delivery_address2`, `order`.`delivery_city` AS `delivery_city`, `order`.`delivery_postcode` AS `delivery_postcode`, `order`.`delivery_telephone` AS `delivery_telephone`, `order`.`company_name` AS `company_name`, `order`.`tax_code` AS `tax_code`, `order`.`coupon_code` AS `coupon_code`, `order`.`type` AS `type`, `order`.`orders_status` AS `orders_status`, `order`.`shelter_order` AS `shelter_order`, `order`.`last_modified` AS `last_modified`, `order`.`date_purchased` AS `date_purchased` FROM `orders` AS `order` ORDER BY `date` DESC LIMIT 5 OFFSET 0 ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-22 19:31:09 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `order`....', 'Model_Order', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Admin/Orders.php(34): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Admin_Orders->action_page()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Orders))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251

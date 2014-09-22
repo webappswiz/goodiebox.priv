@@ -1,8 +1,9 @@
 <?php
 
-if (count($orders) > 0) {
+if (count($data) > 0) {
     ?>
     <h2>Orders</h2>
+    <?php echo $pagination; ?>
     <table class="table table-stripped">
         <thead>
             <tr>
@@ -20,7 +21,7 @@ if (count($orders) > 0) {
         <tbody>
             <?php
             $i = 1;
-            foreach ($orders as $order) {
+            foreach ($data as $order) {
                 echo '<tr>';
                 echo '<td>' . $i . '</td>';
                 echo '<td>' . $order->delivery_firstname . '</td>';
@@ -44,6 +45,7 @@ if (count($orders) > 0) {
             ?>
         </tbody>
     </table>
+    <?php echo $pagination; ?>
     <?php
 }
 ?>
