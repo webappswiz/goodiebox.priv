@@ -22,7 +22,7 @@ A harmadik lépés pedig a személyes adatok megadása. Mindig ellenőrizd a kit
         <h3>3. Több kutyám is van. Tudok egyszerre több dobozt is rendelni?</h3>
         <div>
             <div class="content">
-                Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatok tudsz újra módosítani.
+                Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.
             </div>
         </div>
 
