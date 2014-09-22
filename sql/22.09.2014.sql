@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 22 2014 г., 14:19
+-- Время создания: Сен 22 2014 г., 21:17
 -- Версия сервера: 5.5.37-0ubuntu0.13.10.1
 -- Версия PHP: 5.5.3-1ubuntu2
 
@@ -61,15 +61,20 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `email` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `subject` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `message` text COLLATE utf8_swedish_ci NOT NULL,
+  `date` varchar(20) COLLATE utf8_swedish_ci NOT NULL,
+  `replied` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `contacts`
 --
 
-INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `subject`, `message`) VALUES
-(1, 'Alex', 'Karamushko', 'karam@vasya.com', 'ToS violation: Spam', 'adadads');
+INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `subject`, `message`, `date`, `replied`) VALUES
+(8, 'Alex', 'Karamushko', 'alexander.karamushko@gmail.com', 'ToS Violation - PHP SPAM', 'adsadsads', '2014-09-22 19:1', 0),
+(9, 'Alex', 'Karamushko', 'alexander.karamushko@gmail.com', 'Security issue', 'addasd', '2014-09-22 07:1', 0),
+(10, 'Alex', 'Karamushko', 'alexander.karamushko@gmail.com', 'Account security issue', 'dsaadsdsa', '2014-09-22 19:1', 0),
+(11, 'Alex', 'Karamushko', 'alexander.karamushko@gmail.com', 'ToS Violation - Phishing', 'dadsaaddsa', '2014-09-22 19:15', 1);
 
 -- --------------------------------------------------------
 
@@ -109,14 +114,15 @@ CREATE TABLE IF NOT EXISTS `friend` (
   `date_purchased` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `friend`
 --
 
 INSERT INTO `friend` (`id`, `user_id`, `friends_email`, `friends_name`, `selected_box`, `coupon_code`, `date_purchased`) VALUES
-(7, 10, 'dethmix@gmail.com', 'Dmitriy Pavlov', 1, '', '2014-09-21 13:18:26');
+(7, 10, 'dethmix@gmail.com', 'Dmitriy Pavlov', 1, '', '2014-09-21 13:18:26'),
+(8, 11, 'alex@onlamp.info', 'dsaasddas', 1, 'ohNbxcVK', '2014-09-22 19:48:54');
 
 -- --------------------------------------------------------
 
@@ -149,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   KEY `puppy_id` (`puppy_id`),
   KEY `orders_status` (`orders_status`),
   KEY `selected_box` (`selected_box`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=38 ;
 
 --
 -- Дамп данных таблицы `orders`
@@ -168,7 +174,9 @@ INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_fir
 (32, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 3, 1, 15, '2014-09-21 12:58:24', '2014-09-21 12:58:24'),
 (33, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 3, 1, 16, '2014-09-21 12:58:45', '2014-09-21 12:58:45'),
 (34, 10, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100a, 33', '', 'Zaporizhzhya', '69050', '380975231602', '', '', '', 2, 1, NULL, '2014-09-21 13:18:26', '2014-09-21 13:18:26'),
-(35, 14, 1, 43, 'Dmitriy', 'Pavlov', 'kadfjlakfjalksdj', '', 'kadkjldajkdskjdjlkas', '65854', '47293847928347', '', '', '65CMLvAA', 1, 1, NULL, '2014-09-21 13:18:55', '2014-09-21 13:18:55');
+(35, 14, 1, 43, 'Dmitriy', 'Pavlov', 'kadfjlakfjalksdj', '', 'kadkjldajkdskjdjlkas', '65854', '47293847928347', '', '', '65CMLvAA', 1, 1, NULL, '2014-09-21 13:18:55', '2014-09-21 13:18:55'),
+(36, 11, 1, 0, 'Alex', 'Karamushko', 'akdsjaksdjka', '', 'lakdl;askdl;akd', '9238493284', '9028390328', '', '', '', 2, 1, NULL, '2014-09-22 19:47:45', '2014-09-22 19:47:45'),
+(37, 16, 1, 0, 'skdjal', 'kajskdjs', 'ajdkajdak', '', 'l;askdaldka', '32838', '893789217821', '', '', '', 2, 1, NULL, '2014-09-22 19:48:54', '2014-09-22 19:48:54');
 
 -- --------------------------------------------------------
 
@@ -295,6 +303,7 @@ INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES
 (13, 1),
 (14, 1),
 (15, 1),
+(16, 1),
 (11, 2);
 
 -- --------------------------------------------------------
@@ -308,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `shelters` (
   `shelter_name` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `shelters`
@@ -369,7 +378,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `uniq_email` (`username`),
   KEY `users_index` (`id`),
   KEY `fk_users` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=17 ;
 
 --
 -- Дамп данных таблицы `users`
@@ -377,10 +386,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `customer_company`, `customer_taxcode`, `logins`, `last_login`) VALUES
 (10, 'alex@onlamp.info', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alex@onlamp.info', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a, 33', '', '', '', 16, '1411377615'),
-(11, 'admin', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 12, '1411375993'),
+(11, 'admin', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 14, '1411405324'),
 (13, 'dev@bsocialmedia.ca', 'a28a4e5e5fc383d1bbb2be9aafa1e2933d4b00d990e63e1d1b2527a37b0db2d6', 'dev@bsocialmedia.ca', 'Alex', 'Karamushko', '380975231602', '69050', 'Zaporizhzhya', 'Kosmicheskaya 100a', '', '', '', 1, '1411235949'),
 (14, 'dethmix@gmail.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'dethmix@gmail.com', 'Dmitriy', 'Pavlov', '47293847928347', '65854', 'kadkjldajkdskjdjlkas', 'kadfjlakfjalksdj', '', '', '', 2, '1411294719'),
-(15, 'alexander.karamushko@ecommerce.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@ecommerce.com', 'Her', 'Muller', '8923752875823', '69050', 'lkadkljdsfaljdsakljdsaklj', 'siasdajsd', '', '', '', 1, '1411287515');
+(15, 'alexander.karamushko@ecommerce.com', '463ff07800d6a50276a8c29727a265cd3b6cb9ccbf4224161b4950bed3e484ce', 'alexander.karamushko@ecommerce.com', 'Her', 'Muller', '8923752875823', '69050', 'lkadkljdsfaljdsakljdsaklj', 'siasdajsd', '', '', '', 1, '1411287515'),
+(16, 'test@test.com', 'a28a4e5e5fc383d1bbb2be9aafa1e2933d4b00d990e63e1d1b2527a37b0db2d6', 'test@test.com', 'skdjal', 'kajskdjs', '893789217821', '32838', 'l;askdaldka', 'ajdkajdak', '', '', '', 1, '1411404534');
 
 -- --------------------------------------------------------
 
@@ -453,9 +463,9 @@ ALTER TABLE `friend`
 -- Ограничения внешнего ключа таблицы `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_4` FOREIGN KEY (`selected_box`) REFERENCES `packages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`orders_status`) REFERENCES `order_statuses` (`type`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`orders_status`) REFERENCES `order_statuses` (`type`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orders_ibfk_4` FOREIGN KEY (`selected_box`) REFERENCES `packages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `puppies`
@@ -474,8 +484,8 @@ ALTER TABLE `roles_users`
 -- Ограничения внешнего ключа таблицы `shelter_dog`
 --
 ALTER TABLE `shelter_dog`
-  ADD CONSTRAINT `shelter_dog_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `shelter_dog_ibfk_1` FOREIGN KEY (`shelter_id`) REFERENCES `shelters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `shelter_dog_ibfk_1` FOREIGN KEY (`shelter_id`) REFERENCES `shelters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `shelter_dog_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `user_shelter`
