@@ -135,3 +135,15 @@
 #6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 19:10:34 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: i ~ APPPATH/views/admin/contacts/page.php [ 18 ] in /var/www/goodiebox.priv/application/views/admin/contacts/page.php:18
+2014-09-22 19:10:34 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/admin/contacts/page.php(18): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 18, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/application/views/admin/contacts/page.php:18
