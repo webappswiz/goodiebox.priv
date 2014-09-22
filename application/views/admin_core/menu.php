@@ -9,8 +9,8 @@ $menus = array(
     '/admin/shelters' => array('Shelters', 'shelters'),
     '/admin/users' => array('Users', 'users'),
     '/admin/templates' => array('Templates', 'templates'),
-    
-    
+    '/admin/contacts' => array('Contacts','contacts')
+
 );
 if (!$menus)
     return;

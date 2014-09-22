@@ -136,6 +136,7 @@ Kohana::modules(array(
     //'image'      => MODPATH.'image',      // Image manipulation
     'orm' => MODPATH . 'orm', // Object Relationship Mapping
     // 'api' => MODPATH . 'api',
+    'pagination' => MODPATH . 'pagination'
 ));
 
 /**

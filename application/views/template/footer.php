@@ -15,7 +15,7 @@
         <div class="clear"></div>
         <div class="copy-write">
             <p>Copyright 2014 | www.goodiebox.hu</p>
-            <p>Design by eszteradejuwondesign</p>
+            <p>Design by <a href="mailto:eszteradejuwon@gmail.com">eszteradejuwondesign</a></p>
         </div>
     </footer>
 </div> <!--End footer wrapper-->

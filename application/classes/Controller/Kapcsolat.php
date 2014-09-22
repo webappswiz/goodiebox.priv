@@ -19,6 +19,7 @@ class Controller_Kapcsolat extends Controller_Core {
             $contact->email = $_POST['email'];
             $contact->subject = $_POST['subject'];
             $contact->message = $_POST['message'];
+            $contact->date = date('Y-m-d H:i');
             $contact->save();
             echo 1;
             $this->render_nothing();

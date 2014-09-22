@@ -104,3 +104,34 @@
 2014-09-22 14:16:57 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Contacts' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
 2014-09-22 14:16:57 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2014-09-22 18:40:47 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'date_purchased' in 'order clause' [ SELECT `contacts`.`id` AS `id`, `contacts`.`firstname` AS `firstname`, `contacts`.`lastname` AS `lastname`, `contacts`.`email` AS `email`, `contacts`.`subject` AS `subject`, `contacts`.`message` AS `message` FROM `contacts` AS `contacts` ORDER BY `date_purchased` DESC ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-22 18:40:47 --- DEBUG: #0 /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `contact...', 'Model_Contacts', Array)
+#1 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1063): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /var/www/goodiebox.priv/modules/orm/classes/Kohana/ORM.php(1004): Kohana_ORM->_load_result(true)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Admin/Contacts.php(16): Kohana_ORM->find_all()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(84): Controller_Admin_Contacts->action_index()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-22 18:46:35 --- EMERGENCY: ErrorException [ 1 ]: Call to undefined method Request::redirect() ~ APPPATH/classes/Controller/Admin/Contacts.php [ 15 ] in file:line
+2014-09-22 18:46:35 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-22 18:46:56 --- EMERGENCY: ErrorException [ 1 ]: Class 'Pagination' not found ~ APPPATH/classes/Controller/Admin/Contacts.php [ 21 ] in file:line
+2014-09-22 18:46:56 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-22 18:47:49 --- EMERGENCY: ErrorException [ 1 ]: Call to undefined method Pagination::offset() ~ APPPATH/classes/Controller/Admin/Contacts.php [ 28 ] in file:line
+2014-09-22 18:47:49 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-09-22 18:52:25 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/contacts/page could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 18:52:25 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/contacts/...')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
