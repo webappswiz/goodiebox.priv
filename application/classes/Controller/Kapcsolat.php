@@ -12,6 +12,17 @@ class Controller_Kapcsolat extends Controller_Core {
 
     public function action_index() {
         $this->user = ($this->current_user)?$this->current_user:'';
+        if($this->is_post()){
+            $contact = ORM::factory('Contacts');
+            $contact->firstname = $_POST['firstname'];
+            $contact->lastname = $_POST['lastname'];
+            $contact->email = $_POST['email'];
+            $contact->subject = $_POST['subject'];
+            $contact->message = $_POST['message'];
+            $contact->save();
+            echo 1;
+            $this->render_nothing();
+        }
     }
 
 }

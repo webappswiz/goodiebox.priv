@@ -1,3 +1,22 @@
+<script>
+    $(document).ready(function() {
+        $('#submit').on('click', function() {
+            if ($('#contact').valid()) {
+                firstname = $('#customer_firstname').val();
+                lastname = $('#customer_lastname').val();
+                email = $('#customer_email').val();
+                subject = $('#subject').val();
+                message = $('#message').val();
+                $.post('/kapcsolat/index', {'email': email, 'firstname': firstname, 'lastname': lastname, 'subject': subject, 'message': message}).done(function(data) {
+                    if(data==1){
+                        $('.contact-us-form').empty();
+                        $('.contact-us-form').html('<h3>Your message has been recieved.</h3>');
+                    }
+                });
+            }
+        });
+    });
+</script>
 <div class="clear"></div>
 <section class="contact" class="rounded">
     <h1>Írj nekünk!</h1>
@@ -16,23 +35,31 @@
         </div> <!--End cotact address-->
 
         <div class="contact-us-form">
-            <form>
-                <label for="customer_firstname">Vezetéknév*</label>
-                <input type="text" name="customer_firstname" id="customer_firstname" class="rounded" value="<?=($current_user)?$current_user->customer_firstname:''?>">
+            <form action="" method="POST" id="contact">
+                <div><label for="customer_firstname">Vezetéknév*</label>
+                    <input type="text" name="customer_firstname" id="customer_firstname" class="rounded" value="<?= ($current_user) ? $current_user->customer_firstname : '' ?>" required></div>
+                <div><label for="customer_lastname">Keresztnév*</label>
+                    <input type="text" name="customer_lastname" id="customer_lastname" class="rounded" value="<?= ($current_user) ? $current_user->customer_lastname : '' ?>" required></div>
+                <div><label for="customer_email">E-mail cím*</label>
+                    <input type="text" name="customer_email" id="customer_email" class="rounded" value="<?= ($current_user) ? $current_user->email : '' ?>" required></div>
+                <div><label for="subject">Tárgy</label>
+                    <input type="text" name="subject" id="subject" class="rounded" value="" required></div>
+                <div><textarea name="message" id="message" placeholder="Kezdj egy gépelni..." class="rounded" required></textarea></div>
 
-                <label for="customer_lastname">Keresztnév*</label>
-                <input type="text" name="customer_lastname" id="customer_lastname" class="rounded" value="<?=($current_user)?$current_user->customer_lastname:''?>">
-
-                <label for="customer_email">E-mail cím*</label>
-                <input type="text" name="customer_email" id="customer_email" class="rounded" value="<?=($current_user)?$current_user->email:''?>">
-
-                <label for="subject">Tárgy</label>
-                <input type="text" name="subject" id="subject" class="rounded" value="">
-
-                <textarea name="message" id="message" placeholder="Kezdj egy gépelni..." class="rounded"></textarea>
             </form>
             *Kötelező mezők
-            <input type="submit" value="ELKÜLDÖM" class="dark-btn rounded">
+            <input type="submit" id="submit" value="ELKÜLDÖM" class="dark-btn rounded">
+            <script>
+                $("#contact").validate({
+                    rules: {
+                        customer_email: {
+                            required: true,
+                            email: true
+                        }
+                    }
+
+                });
+            </script>
         </div>
     </div> <!--End contact-cont-left-->
     <div class="contact-cont-right">

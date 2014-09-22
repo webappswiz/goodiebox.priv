@@ -101,3 +101,6 @@
 #16 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #17 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #18 {main} in /var/www/goodiebox.priv/system/classes/Kohana/HTML.php:106
+2014-09-22 14:16:57 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_Contacts' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2014-09-22 14:16:57 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
