@@ -14,7 +14,7 @@ class Controller_Admin_Contacts extends Controller_Admin {
         $email = new PHPMailer();
         $email->ContentType = 'text/html';
         $email->AddAddress($to);
-        $email->SetFrom($from);
+        $email->SetFrom($from,'Goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);

@@ -10,6 +10,14 @@
 <script type="text/javascript">
 tinyMCE.init({
         mode : "textareas",
+        plugins : "pagebreak,layer,table,save,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,template",
+        theme : "modern",
+        extended_valid_elements : "div[align|class|style|id|title]",
+        extended_valid_elements : "iframe[name|src|framespacing|border|frameborder|scrolling|title|height|width],object[declare|classid|codebase|data|type|codetype|archive|standby|height|width|usemap|name|tabindex|align|border|hspace|vspace]",
+        theme_advanced_buttons1 : "bold,italic,underline,emotions,strikethrough,blockquote,forecolor,formatselect,fontselect,fontsizeselect,link,unlink,|,image,media,|,code,preview,fullscreen",
+        theme_advanced_buttons2 : "charmap,insertdate,inserttime,|,outdent,indent,|,table,justifyleft,justifycenter,justifyright,bullist,numlist,|,undo,redo,|,pagebreak,print",
+        theme_advanced_toolbar_align : "left",
+        relative_urls : false
 });
 </script>
 <h2>Reply to <?=$message->firstname?></h2>

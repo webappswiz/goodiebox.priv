@@ -16,8 +16,13 @@
     <?php
     $i=1;
     foreach ($data as $item) {
+        if($item->replied==1){
+            $class = 'style="background-color: #CCFFCC"';
+        } else{
+            $class = 'style="background-color: #FFCCCC"';
+        }
         ?>
-        <tr>
+        <tr <?=$class?>>
             <td><?=$i?></td>
             <td><?=$item->firstname?></td>
             <td><?=$item->lastname?></td>
