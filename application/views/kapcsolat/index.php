@@ -1,8 +1,3 @@
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section class="contact" class="rounded">
     <h1>Írj nekünk!</h1>

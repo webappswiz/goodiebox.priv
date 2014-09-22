@@ -4,8 +4,6 @@ defined('SYSPATH') or die('No direct script access.');
 
 class Controller_Admin_users extends Controller_Admin {
 
-    public $template = 'admin_core/core';
-
     public function before() {
         parent::before();
         $this->template->active_menu = 'users';
@@ -18,14 +16,14 @@ class Controller_Admin_users extends Controller_Admin {
     }
 
     public function action_index() {
-        
+
     }
 
     public function action_info() {
         $this->set_filename('admin/users/form');
         $this->find_model();
     }
-    
+
     public function action_delete(){
         $this->find_model();
         if($this->model->loaded())

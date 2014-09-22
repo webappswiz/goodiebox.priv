@@ -1,8 +1,3 @@
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section id="faq" class="rounded">
     <h1>Gyakran Ismételt Kérdések</h1>
@@ -11,14 +6,14 @@
         <h3>1. Mi is az a Goodiebox pontosan?</h3>
         <div>
             <div class="content">
-                A Goodiebox egy új szolgáltatás Magyarországon, az első meglepetés doboz kutyusoknak. Havonta változó, 4-5 különböző terméket rejtünk a csomagba és ingyenesen szállítjuk házhoz sikeres megrendelés esetén. A doboz gondosan válogatott, magas színvonalú termékeket tartalmaz. 
+                A Goodiebox egy új szolgáltatás Magyarországon, az első meglepetés doboz kutyusoknak. Havonta változó, 4-5 különböző terméket rejtünk a csomagba és ingyenesen szállítjuk házhoz sikeres megrendelés esetén. A doboz gondosan válogatott, magas színvonalú termékeket tartalmaz.
             </div>
         </div>
 
         <h3>2. Hogyan tudok rendelni a kutyusomnak?</h3>
         <div>
             <div class="content">
-                Saját kutyusnak a "MEGRENDELEM" gomb megnyomásával indul a vásárlás folyamata. Elsőként a kutyus méretét kell megadnod, illetve adatokat róla, hogy jobban megismerhessük és megkönnyítsd a munkánkat. 
+                Saját kutyusnak a "MEGRENDELEM" gomb megnyomásával indul a vásárlás folyamata. Elsőként a kutyus méretét kell megadnod, illetve adatokat róla, hogy jobban megismerhessük és megkönnyítsd a munkánkat.
 A második lépésben lehetőséged van kiválasztani a periódust, hány hónapra szeretnéd megrendelni a csomagot és milyen minőségben (normál vagy prémium).
 A harmadik lépés pedig a személyes adatok megadása. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és a valóságnak is megfeleljenek. A megrendelés egyben regisztráció is, a teljesítést követően létrejön a profilod, melyet bármikor módosíthatsz, kivéve az e-mail címedet.
             </div>
@@ -48,7 +43,7 @@ A harmadik lépés pedig a személyes adatok megadása. Mindig ellenőrizd a kit
         <h3>6. Hogyan kapom meg a dobozom?</h3>
         <div>
             <div class="content">
-                Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban. 
+                Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban.
 A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körülbelül 10-15 munkanapon belül kapod kézhez, a házhozszállítás ingyenes.
             </div>
         </div>
@@ -56,7 +51,7 @@ A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körül
         <h3>7. Meg lehet tudni, hogy mi lesz a következő havi dobozban? Választhatok?</h3>
         <div>
             <div class="content">
-                A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad. Minden hónapban magas minőségű, 4-5 különböző terméket (jutalomfalat, snack, vitamin, játék, kiegészítő) pakolunk bele, előzetesen felmérve az igényeket. 
+                A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad. Minden hónapban magas minőségű, 4-5 különböző terméket (jutalomfalat, snack, vitamin, játék, kiegészítő) pakolunk bele, előzetesen felmérve az igényeket.
             </div>
         </div>
 

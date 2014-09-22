@@ -25,8 +25,8 @@ if (!$menus)
             if (isset($active_menu) && $active_menu === $data[1]) {
                 $class = 'class = "selected"';
             }
-            echo "<li $class>";
-            echo HTML::anchor($uri, $data[0]);
+            echo "<li>";
+            echo HTML::anchor($uri, $data[0],array($class));
             echo '</li>';
         }
         ?>

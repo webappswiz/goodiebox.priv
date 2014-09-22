@@ -27,12 +27,6 @@
         });
     });
 </script>
-
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section class="process-1" class="rounded">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/shop.png" class="badge">
@@ -99,7 +93,7 @@
                                 echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name')).' ';
                                 ?>
                             </div>
-                            
+
                             <div class="text-shor1 fl">
                                 <?php
                                 echo Form::select('months', $months, '', array('required', 'class' => 'rounded option-name'));

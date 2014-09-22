@@ -9,7 +9,10 @@ class Controller_User_Account extends Controller_Core {
     public function before()
     {
         parent::before();
+        $this->set_title('Profilom');
+        $this->template->active_menu = 'arcél';
         $this->check_access();
+
     }
 
     public function action_index()
@@ -38,7 +41,7 @@ class Controller_User_Account extends Controller_Core {
             $this->shipping->customer_zip = $_POST['zip'];
             $this->shipping->customer_city = $_POST['city'];
             $this->shipping->customer_address = $_POST['address'] . ' ' . $_POST['address2'];
-            
+
             $this->shipping->save();
             Flash::set('notice', 'Your shipping data has been successfully updated');
             if (isset($_POST['password']) && !empty($_POST['password'])) {

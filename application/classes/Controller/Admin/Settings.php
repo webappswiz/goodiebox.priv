@@ -4,8 +4,6 @@ defined('SYSPATH') or die('No direct script access.');
 
 class Controller_Admin_Settings extends Controller_Admin {
 
-    public $template = 'admin_core/core';
-
     public function before() {
         parent::before();
         $this->template->active_menu = 'settings';
@@ -18,7 +16,7 @@ class Controller_Admin_Settings extends Controller_Admin {
     }
 
     public function action_index() {
-        
+
     }
 
     public function action_edit() {
@@ -37,7 +35,7 @@ class Controller_Admin_Settings extends Controller_Admin {
         }
         $this->update();
     }
-    
+
      public function update()
     {
         $id = (int)Arr::get($_REQUEST, 'id');
@@ -50,5 +48,5 @@ class Controller_Admin_Settings extends Controller_Admin {
         $this->model->save();
         $this->redirect('/admin/settings/');
     }
-    
+
 }

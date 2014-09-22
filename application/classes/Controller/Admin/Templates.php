@@ -4,8 +4,6 @@ defined('SYSPATH') or die('No direct script access.');
 
 class Controller_Admin_Templates extends Controller_Admin {
 
-    public $template = 'admin_core/core';
-
     public function before() {
         parent::before();
         $this->template->active_menu = 'templates';
@@ -18,18 +16,18 @@ class Controller_Admin_Templates extends Controller_Admin {
     }
 
     public function action_index() {
-        
+
     }
 
     public function action_edit() {
         $this->set_filename('admin/templates/form');
-        
+
         $this->find_model();
         if (!$this->is_post())
             return;
         $this->update();
     }
-    
+
      public function update()
     {
         $id = (int)Arr::get($_REQUEST, 'id');

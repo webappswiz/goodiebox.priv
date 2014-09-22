@@ -1,8 +1,3 @@
-        <nav>
-            <ul>
-                <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-            </ul>
-        </nav>
         <div class="clear"></div>
         <section class="thanku" class="rounded">
             <h1>Köszönjük a rendelését!</h1>

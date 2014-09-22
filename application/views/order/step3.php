@@ -74,11 +74,6 @@ if (isset($session['step2'])) {
     $box = $session['step2']['selected_box'];
 }
 ?>
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section class="process-3" class="rounded">
     <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/shop.png" class="badge">

@@ -5,8 +5,14 @@ defined('SYSPATH') or die('No direct script access.');
 class Controller_User_Session extends Controller_Core {
 
     protected $check_access = False;
+    public function before()
+    {
+        parent::before();
+        $this->set_title('Belépés');
+        $this->template->active_menu = 'login';
+    }
 
-    public function action_login() {
+        public function action_login() {
         if (!$this->is_post())
             return;
 

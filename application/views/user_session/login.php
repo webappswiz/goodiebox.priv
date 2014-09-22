@@ -1,8 +1,3 @@
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section class="process-3" class="rounded">
     <div class="claim-form-container">

@@ -9,12 +9,6 @@
         });
     });
 </script>
-
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section class="process-2" class="rounded">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/shop.png" class="badge">

@@ -1,8 +1,4 @@
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
+
 <div class="clear"></div>
 <section class="how-it-works" class="rounded">
     <h1>Hogyan működik?</h1>

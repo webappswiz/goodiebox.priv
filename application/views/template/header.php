@@ -63,7 +63,7 @@
         }
     </script>
     <script>
-    < script >
+        < script >
                 (function(i, s, o, g, r, a, m) {
                     i['GoogleAnalyticsObject'] = r;
                     i[r] = i[r] || function() {
@@ -126,3 +126,14 @@
             </div> <!--End social-right-->
         </header>
         <div class="clear"></div>
+        <?php
+        if ($active_menu != 'home') {
+            ?>
+            <nav class="nav-right">
+                <ul>
+                    <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
+                </ul>
+            </nav>
+            <?php
+        }
+        ?>

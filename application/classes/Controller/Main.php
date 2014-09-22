@@ -9,11 +9,11 @@ class Controller_Main extends Controller_Core {
         parent::before();
         $this->template->active_menu = 'home';
         $this->set_title('Home');
-
     }
 
-        public function action_index()
+    public function action_index()
     {
+
     }
 
 }

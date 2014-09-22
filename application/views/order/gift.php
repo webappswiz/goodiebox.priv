@@ -1,8 +1,3 @@
-<nav class="nav-right">
-    <ul>
-        <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-    </ul>
-</nav>
 <div class="clear"></div>
 <section class="claim-gift" class="rounded">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/gift-mark.png" class="badge">
