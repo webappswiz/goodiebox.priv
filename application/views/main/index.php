@@ -15,7 +15,7 @@ $menus = array(
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> <!--End count image-->
     <div class="siess">
-        
+
     </div>
     <div class="count-text">
         <p>Hamarosan...</p>
@@ -47,6 +47,7 @@ $menus = array(
 <section id="menu">
     <?php
     $i = 1;
+    $active_menu = 'home';
     foreach ($menus as $uri => $data) {
         $class = ''; //active
         if (isset($active_menu) && $active_menu === $data[1]) {

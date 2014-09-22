@@ -41,6 +41,7 @@
             <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/contact-img1.jpg"></li>
             <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/contact-img2.jpg"></li>
             <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/contact-img3.jpg"></li>
+            <li style="text-align: center"><button type="button" class="top-btn rounded" style="width:175px;">Feliratkozok<br>a hírlevélre!</button></li>
         </ul>
     </div> <!--End contact-cont-right-->
 </section>
