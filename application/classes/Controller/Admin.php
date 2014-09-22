@@ -8,14 +8,14 @@ class Controller_Admin extends Controller_Core {
         parent::before();
         $this->template->active_menu = 'dashboard';
         if (!$this->current_user) {
-            throw new HTTP_Exception_403('Access deny');
+            $this->redirect('/');
         }
         if(!$this->current_user->is_admin()){
-            throw new HTTP_Exception_403('Access deny');
+            $this->redirect('/user_account');
         }
     }
-    
+
     public function action_index(){
-        
+
     }
 }
