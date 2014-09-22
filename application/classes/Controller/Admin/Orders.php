@@ -23,6 +23,10 @@ class Controller_Admin_Orders extends Controller_Admin {
         $this->orders = ORM::factory('Order')->with('status', 'package')->order_by('date_purchased', 'DESC')->find_all();
     }
 
+    public function action_page(){
+        $this->redirect('/admin/orders/page/?page=1');
+    }
+
     public function action_edit()
     {
         $this->set_filename('admin/settings/form');
