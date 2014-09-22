@@ -10,6 +10,17 @@ class Controller_Admin_Contacts extends Controller_Admin {
         $this->template->active_menu = 'contacts';
     }
 
+    private function send($to, $from, $subject, $body) {
+        $email = new PHPMailer();
+        $email->ContentType = 'text/html';
+        $email->AddAddress($to);
+        $email->SetFrom($from);
+        $email->Subject = $subject;
+        $email->Body = $body;
+        $email->IsHTML(true);
+        $email->Send();
+    }
+
     public function action_index()
     {
         $this->redirect('/admin/contacts/page/?page=1');
@@ -28,6 +39,22 @@ class Controller_Admin_Contacts extends Controller_Admin {
         $this->data = $contacts->offset($this->pagination->offset)->limit($this->pagination->items_per_page)->order_by('date','DESC')->find_all()->as_array();
         // Pass data and validation object to view
 
+    }
+
+    public function action_reply(){
+        $id = (int) $this->request->param('id');
+        if(!$id)
+            $this->redirect('/admin/contacts/page/?page=1');
+        $this->message = ORM::factory('Contacts',$id);
+        if(!$this->message->loaded())
+            $this->redirect('/admin/contacts/page/?page=1');
+        $this->set_filename('admin/contacts/form');
+        if (!$this->is_post())
+            return;
+        $this->send($this->message->email,'info@goodiebox.hu','Reply to your message. Goodiebox',$_POST['message']);
+        $this->message->replied = 1;
+        $this->message->save();
+        $this->redirect('/admin/contacts/page/?page=1');
     }
 
 }

@@ -10,7 +10,7 @@
                 $.post('/kapcsolat/index', {'email': email, 'firstname': firstname, 'lastname': lastname, 'subject': subject, 'message': message}).done(function(data) {
                     if(data==1){
                         $('.contact-us-form').empty();
-                        $('.contact-us-form').html('<h3>Your message has been recieved.</h3>');
+                        $('.contact-us-form').html('<h3>Köszönjük az üzenetedet!<br/>Hamarosan válaszolunk!<br/>Szép napot!</h3>');
                     }
                 });
             }

@@ -159,3 +159,57 @@
 #8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
 #10 {main} in /var/www/goodiebox.priv/modules/database/classes/Kohana/Database/Query.php:251
+2014-09-22 20:02:09 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/contacts/reply could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 20:02:09 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/contacts/...')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 20:04:08 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/contacts/form could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 20:04:08 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/contacts/...')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 20:10:42 --- EMERGENCY: View_Exception [ 0 ]: The requested view admin/contacts/form could not be found ~ SYSPATH/classes/Kohana/View.php [ 257 ] in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 20:10:42 --- DEBUG: #0 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(545): Kohana_View->set_filename('admin/contacts/...')
+#1 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(495): Controller_Base_Core->set_view()
+#2 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#3 [internal function]: Kohana_Controller->execute()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#5 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#8 {main} in /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php:545
+2014-09-22 20:11:03 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: item ~ APPPATH/views/admin/contacts/form.php [ 21 ] in /var/www/goodiebox.priv/application/views/admin/contacts/form.php:21
+2014-09-22 20:11:03 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/admin/contacts/form.php(21): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 21, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/application/views/admin/contacts/form.php:21
+2014-09-22 20:18:10 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: model ~ APPPATH/views/admin/contacts/form.php [ 46 ] in /var/www/goodiebox.priv/application/views/admin/contacts/form.php:46
+2014-09-22 20:18:10 --- DEBUG: #0 /var/www/goodiebox.priv/application/views/admin/contacts/form.php(46): Kohana_Core::error_handler(8, 'Undefined varia...', '/var/www/goodie...', 46, Array)
+#1 /var/www/goodiebox.priv/system/classes/Kohana/View.php(61): include('/var/www/goodie...')
+#2 /var/www/goodiebox.priv/system/classes/Kohana/View.php(348): Kohana_View::capture('/var/www/goodie...', Array)
+#3 /var/www/goodiebox.priv/application/classes/Controller/Base/Core.php(512): Kohana_View->render()
+#4 /var/www/goodiebox.priv/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Admin_Contacts))
+#7 /var/www/goodiebox.priv/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /var/www/goodiebox.priv/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /var/www/goodiebox.priv/index.php(118): Kohana_Request->execute()
+#10 {main} in /var/www/goodiebox.priv/application/views/admin/contacts/form.php:46

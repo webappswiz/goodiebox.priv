@@ -79,6 +79,7 @@
         ga('send', 'pageview');
 
     </script>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
     <div class="container">
