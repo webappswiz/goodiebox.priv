@@ -192,14 +192,24 @@ class Controller_Order extends Controller_Core {
                 $order->orders_status = 1;
                 $order->save();
                 if (!isset($step1['delay'])) {
+                    $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', $template);
+                } else {
                     $template = ORM::factory('Templates')
                             ->where('type','=',3)
                             ->find();
-                    $template = str_replace('[firstname]', $step1['first-name'], $template->template_text);
-                    $template = str_replace('[coupon_code]', $friend->coupon_code, $template);
-                    $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', $template);
-                } else {
                     $template = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+                    $template = str_replace('[lastname]', $this->current_user->customer_lastname, $template);
+                    $template = str_replace('[address]', $this->current_user->customer_address, $template);
+                    $template = str_replace('[company_name]', $this->current_user->customer_company, $template);
+                    $template = str_replace('[taxnumber]', $this->current_user->customer_taxcode, $template);
+                    $template = str_replace('[telephone]', $this->current_user->customer_telephone, $template);
+                    $template = str_replace('[order_date]', $order->date_purchased, $template);
+                    $template = str_replace('[invoice_date]', date('Y-m-d H:i'), $template);
+                    $template = str_replace('[invoice_num]', '1234566', $template);
+                    $template = str_replace('[package]', $order->selected_box, $template);
+                    $template = str_replace('[size]', $order->selected_box, $template);
+                    $template = str_replace('[price]', $order->package->price, $template);
+                    $template = str_replace('[total]', $order->package->price, $template);
                     $template = str_replace('[coupon_code]', $friend->coupon_code, $template);
                     $this->send($this->current_user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $template);
                 }
