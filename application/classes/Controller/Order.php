@@ -196,11 +196,11 @@ class Controller_Order extends Controller_Core {
                             ->where('type','=',3)
                             ->find();
                     $template = str_replace('[firstname]', $step1['first-name'], $template->template_text);
-                    $template = str_replace('[coupon_code]', $order->coupon_code, $template);
+                    $template = str_replace('[coupon_code]', $friend->coupon_code, $template);
                     $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', $template);
                 } else {
                     $template = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
-                    $template = str_replace('[coupon_code]', $order->coupon_code, $template);
+                    $template = str_replace('[coupon_code]', $friend->coupon_code, $template);
                     $this->send($this->current_user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $template);
                 }
                 Session::instance()->set('success', '1');
