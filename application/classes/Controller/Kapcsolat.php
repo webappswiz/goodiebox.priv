@@ -14,7 +14,7 @@ class Controller_Kapcsolat extends Controller_Core {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
-        $email->SetFrom($from);
+        $email->SetFrom($from,'Goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
         $email->Send();

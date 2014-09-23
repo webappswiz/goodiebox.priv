@@ -14,7 +14,7 @@ class Controller_Order extends Controller_Core {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
-        $email->SetFrom($from);
+        $email->SetFrom($from,'Goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
         $email->Send();
@@ -40,7 +40,7 @@ class Controller_Order extends Controller_Core {
             $this->redirect('order/index');
         }
     }
-    
+
     public function action_step3() {
         $session = Session::instance();
         $step1 = $session->get('step1');
@@ -191,9 +191,16 @@ class Controller_Order extends Controller_Core {
                 $order->orders_status = 1;
                 $order->save();
                 if (!isset($step1['delay'])) {
-                    $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', 'Your gift code: ' . $order->coupon_code);
+                    $template = ORM::factory('Templates')
+                            ->where('type','=',3)
+                            ->find();
+                    $template = str_replace('[firstname]', $step1['first-name'], $template->template_text);
+                    $template = str_replace('[coupon_code]', $order->coupon_code, $template);
+                    $this->send($step1['email'], 'karam@karam.org.ua', 'You got a gift coupon code', $template);
                 } else {
-                    $this->send($this->current_user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', 'Your gift code: ' . $order->coupon_code);
+                    $template = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+                    $template = str_replace('[coupon_code]', $order->coupon_code, $template);
+                    $this->send($this->current_user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $template);
                 }
                 Session::instance()->set('success', '1');
                 $this->redirect('/order/success');
