@@ -224,6 +224,7 @@ footer ul li a:hover{color: #cc0033;}
 .copy-write p{font-family: 'La-chata'; font-size:14px; margin-top: 30px; float: left; margin-right: 80px;}
 .copy-write a{color:#330000;}
 .copy-write a:hover{color:#cc0033;}
+
 /*******************************
 	POST PAGE CSS
 ********************************/
@@ -572,6 +573,8 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
 	.contact-cont-right{float: none;display: block;}
 	.claim-message {margin-top: 20px;}
+	.count-text {display:none;}
+	#faq img{display:none;}
 }
 	@media only screen and (max-width: 767px)
 {
@@ -586,6 +589,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.process-3{padding-left:50px; padding-right:50px;}
 	.bottom-text-field div input[type="text"] {width: 65%;}
 	.dog-btn{margin-left: 10px;}
+	.count-text {display:none;}
+	#faq img{display:none;}
+	#menu{display:none;}
 }
 	@media only screen and (max-width: 640px)
 {
@@ -611,6 +617,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .step2-btn-container{text-align: center;}
     .claim-gift{padding: 55px 60px 45px 60px;}
     .bottom-text-field div input[type="text"] {width: 100%;}
+	.count-text {display:none;}
+	#faq img{display:none;}
+	#menu{display:none;}
 }
 	@media only screen and (max-width: 460px)
 {
@@ -629,6 +638,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.count-btn{padding: 3px;}
 	.dark-btn{font-size: 18px;}
 	.option-text1,.option-text2{margin-left: 0px; display: block;}
+	.count-text {display:none;}
+	#faq img{display:none;}
+	#menu{display:none;}
 }
 	@media only screen and (max-width: 360px)
 {
@@ -637,6 +649,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.radio-list input[type="radio"]{margin-left: 30px;}
 	.claim-gift h1{font-size: 36px;}
 	#collapse-content .content {padding-left: 0; padding-right: 5px;}
+	.count-text {display:none;}
+	#faq img{display:none;}
+	#menu{display:none;}
 }
 .claim-form input[type="password"]{width: 206px;}
 .add input[type="password"]{width:100% !important; }
