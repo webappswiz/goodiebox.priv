@@ -222,7 +222,8 @@ footer ul li#adat{background: url(/assets/img/adatvedelem.png) no-repeat left;ma
 footer ul li a:hover{color: #cc0033;}
 .copy-write{padding-bottom:15px; overflow: hidden;}
 .copy-write p{font-family: 'La-chata'; font-size:14px; margin-top: 30px; float: left; margin-right: 80px;}
-
+.copy-write a{color:#330000;}
+.copy-write a:hover{color:#cc0033;}
 /*******************************
 	POST PAGE CSS
 ********************************/
