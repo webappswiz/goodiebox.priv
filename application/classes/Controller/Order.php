@@ -17,6 +17,7 @@ class Controller_Order extends Controller_Core {
         $email->SetFrom($from,'Goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
+        $email->IsHTML(true);
         $email->Send();
     }
 
