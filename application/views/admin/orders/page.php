@@ -38,7 +38,7 @@ if (count($data) > 0) {
                 $coupon = (!empty($order->coupon_code))?'Yes':'No';
                 echo '<td>' . $coupon . '</td>';
                 echo '<td>' . $order->date_purchased . '</td>';
-                echo '<td><a href="/admin/order/edit/'.$order->id.'" class="btn btn-primary">Edit</a></td>';
+                echo '<td><a href="/admin/orders/edit/'.$order->id.'" class="btn btn-primary">Edit</a></td>';
                 echo '</tr>';
                 $i++;
             }

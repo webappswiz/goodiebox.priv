@@ -144,3 +144,4 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 require_once Kohana::find_file('vendor', 'class.phpmailer');
+require_once Kohana::find_file('vendor', 'tcpdf_min/tcpdf');
