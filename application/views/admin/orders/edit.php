@@ -76,11 +76,11 @@
                 <?php
                     $statuses = ORM::factory('OrderStatus')->find_all();
                     foreach ($statuses as $s){
-                        $status[$s->type] = $s->status_name;
+                        $st[$s->type] = $s->status_name;
                     }
                     echo '<td rowspan="3" valign="top">';
                     echo '<form method="POST" action="">';
-                    echo Form::select('status_name', $status, $model->orders_status, array('required', 'class' => 'rounded option-name')).'<br/>';
+                    echo Form::select('status_name', $st, $model->orders_status, array('required', 'class' => 'rounded option-name')).'<br/>';
                     echo '<input type="submit" value="Change status" name="submit" class="btn btn-primary">';
                     echo '</form>';
                     echo '</td>';

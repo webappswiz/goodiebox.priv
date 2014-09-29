@@ -58,6 +58,50 @@ class Controller_Admin_Orders extends Controller_Admin {
         $this->model = ORM::factory('Order',$id);
         $this->model->orders_status = $_REQUEST['status_name'];
         $this->model->save();
+        if($_REQUEST['status_name']==2){
+            $shipping = new Shipping();
+            $data_string = '{"REQUEST": {"flDebug": "true","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "2014.09.24.",
+      "flCOD": "true",
+	  "nmRecipientCOD": "Gipsz Jakab",
+	  "nmBankCOD": "GiveMeAllYourMoney Bank",
+	  "txBankAccountNumberCOD": "12345678-12345678-12345678",
+      "flNothingProhibited": "true",
+      "flAgreedToTermsAndConditions": "true",
+
+	  "DESTINATIONADDRESS": {
+		"nmCompanyOrPerson": "Gipsz Jakab",
+		"cdCountry": "HU",
+		"txAddress": "Fő utca",
+		"txAddressNumber": "123",
+		"txPost": "1234",
+		"txCity": "Budapest",
+		"nmContact": "Gipsz Jakab",
+		"txPhoneContact": "0123456789",
+		"txEmailContact": "gipszjakab@gmail.com",
+		"txInstruction": "Ha nem vagyok otthon, hagyja a szomszédnál!"
+	  },
+      "PACKAGES":
+	  {
+        "PACKAGE":
+		[
+		{
+          "ctPackage": "2",
+		  "amContent": "5000",
+          "txContent": "Content of package1. The amContent is only mandatory if COD is set to TRUE",
+		  "idOrder": "1"
+        },
+		{
+          "ctPackage": "1",
+          "amContent": "50000",
+          "txContent": "Content of Package2. idOrder is not mandatory, but could be useful to send, as it will get printed on the waybill, and it’s easier to identify when you are printing waybill and taping them on the package. ",
+		  "idOrder": "2"
+        }
+      ]}
+    }
+  }
+}';
+            $result = $shipping->send_request($data_string);
+        }
         $this->redirect('/admin/orders/');
     }
 

@@ -412,3 +412,6 @@
 #9 /var/www/vhosts/goodiebox.priv/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #10 /var/www/vhosts/goodiebox.priv/public_html/index.php(118): Kohana_Request->execute()
 #11 {main} in /var/www/vhosts/goodiebox.priv/public_html/modules/orm/classes/Kohana/ORM.php:603
+2014-09-29 18:39:32 --- EMERGENCY: ErrorException [ 1 ]: Cannot use object of type Model_OrderStatus as array ~ APPPATH/views/admin/orders/edit.php [ 79 ] in file:line
+2014-09-29 18:39:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
