@@ -150,6 +150,7 @@ class Controller_Order extends Controller_Core {
         $pdf->AddPage();
         $pdf->writeHTML($invoice, true, false, false, false, '');
         $pdf->Output(DOCROOT.'orders/order_'.$order->id.'.pdf', 'F');
+        $pdf->setImageScale(1.53);
         $template = ORM::factory('Templates',2);
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
         $this->send($user->email, 'info@goodiebox.hu', 'Order confirmation', $body,'order_'.$order->id.'.pdf');
