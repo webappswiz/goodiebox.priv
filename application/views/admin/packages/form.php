@@ -16,9 +16,15 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="package_price">Packages price</label>
+                <label class="control-label" for="package_price">Package price</label>
                 <div class="controls">
                     <input type="text" id="package_price" name="package_price" placeholder="Package price" value="<?= $model->price ?>">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="package_code">Product code</label>
+                <div class="controls">
+                    <input type="text" id="package_code" name="package_code" placeholder="Package code" value="<?= $model->product_number ?>">
                 </div>
             </div>
             <div class="control-group">

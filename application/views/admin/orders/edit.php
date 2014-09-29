@@ -66,18 +66,40 @@
             <tr>
                 <td><strong>Purchased package</strong></td>
                 <td><?=$model->package->package_name?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <th>Modify order</th>
             </tr>
             <tr>
                 <td><strong>Order type</strong></td>
                 <td><?=$type?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <?php
+                    $statuses = ORM::factory('OrderStatus')->find_all();
+                    foreach ($statuses as $s){
+                        $status[$s->type] = $s->status_name;
+                    }
+                    echo '<td rowspan="3" valign="top">';
+                    echo '<form method="POST" action="">';
+                    echo Form::select('status_name', $status, $model->orders_status, array('required', 'class' => 'rounded option-name')).'<br/>';
+                    echo '<input type="submit" value="Change status" name="submit" class="btn btn-primary">';
+                    echo '</form>';
+                    echo '</td>';
+                ?>
             </tr>
             <tr>
                 <td><strong>Price</strong></td>
                 <td><?=($model->type==1 && $model->coupon_code<>'')?'Gift order':$model->package->price?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
                 <td><strong>Status</strong></td>
                 <td><?=$model->status->status_name?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
         </table>
+    <br/>
+    <?php
+
+    echo HTML::anchor('/orders/order_'.$model->id.'.pdf', 'See receipt');
+?>
 </div>

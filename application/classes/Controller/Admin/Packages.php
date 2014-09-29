@@ -46,6 +46,7 @@ class Controller_Admin_Packages extends Controller_Admin {
         }
         $this->model->package_name = $_REQUEST['package_name'];
         $this->model->price = $_REQUEST['package_price'];
+        $this->model->product_number = $_REQUEST['package_code'];
         if(isset($_REQUEST['package_enabled'])){
             $this->model->enabled = 1;
         } else

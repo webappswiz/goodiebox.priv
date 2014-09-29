@@ -9,6 +9,7 @@ class Model_Order extends ORM {
     protected $_belongs_to = array(
         'status' => array('model'=>'OrderStatus','foreign_key'=>'orders_status'),
         'package' => array('model'=>'Packages','foreign_key'=>'selected_box'),
+        'puppy' => array('model'=>'Puppy','foreign_key'=>'puppy_id'),
     );
     
 
