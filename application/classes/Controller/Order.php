@@ -152,7 +152,7 @@ class Controller_Order extends Controller_Core {
         $pdf->Output(DOCROOT.'orders/order_'.$order->id.'.pdf', 'F');
         $template = ORM::factory('Templates',2);
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
-        $this->send($user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $body,'order_'.$order->id.'.pdf');
+        $this->send($user->email, 'info@goodiebox.hu', 'Order confirmation', $body,'order_'.$order->id.'.pdf');
     }
 
     public function action_index() {
