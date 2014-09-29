@@ -210,7 +210,11 @@ class Controller_Order extends Controller_Core {
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
                     $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
+                    $template = ORM::factory('Templates',1);
                     $this->current_user = Auth::instance()->get_user();
+                    $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+                    $body = str_replace('[login]', $this->current_user->email, $body);
+                    $this->send($this->current_user->email, 'info@goodiebox.hu', 'Registration', $body);
                 }
             }
 
