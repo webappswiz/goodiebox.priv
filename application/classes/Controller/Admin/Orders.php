@@ -52,13 +52,15 @@ class Controller_Admin_Orders extends Controller_Admin {
         } else {
             $this->redirect('/admin/orders/');
         }
-        if(!$this->status->loaded())
+        if (!$this->status->loaded())
             $this->redirect('/admin/orders/');
-        
-        $this->model = ORM::factory('Order',$id);
+
+        $this->model = ORM::factory('Order', $id);
+        if($this->model->orders_status==$_REQUEST['status_name'])
+            return;
         $this->model->orders_status = $_REQUEST['status_name'];
         $this->model->save();
-        if($_REQUEST['status_name']==2){
+        if ($_REQUEST['status_name'] == 2) {
             $shipping = new Shipping();
             $data_string = '{"REQUEST": {"flDebug": "true","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "2014.09.24.",
       "flCOD": "true",
@@ -101,6 +103,7 @@ class Controller_Admin_Orders extends Controller_Admin {
   }
 }';
             $result = $shipping->send_request($data_string);
+            print_r($result);
         }
         $this->redirect('/admin/orders/');
     }
@@ -110,6 +113,22 @@ class Controller_Admin_Orders extends Controller_Admin {
         if ($this->model->loaded())
             $this->model->delete();
         $this->redirect('/admin/orders/');
+    }
+
+    public function action_receipt() {
+        $id = (int) $this->request->param('id');
+        if (file_exists(DOCROOT . 'orders/order_' . $id . '.pdf')) {
+            $file = DOCROOT . 'orders/order_' . $id . '.pdf';
+            $filename = 'Order_#'.$id.'_Reciept.pdf'; /* Note: Always use .pdf at the end. */
+            header('Content-type: application/pdf');
+            header('Content-Disposition:attachment; filename="' . $filename . '"');
+            header('Content-Transfer-Encoding: binary');
+            header('Content-Length: ' . filesize($file));
+            header('Accept-Ranges: bytes');
+            @readfile($file);
+            $this->render_nothing();
+        } else
+            $this->redirect('/admin/orders/');
     }
 
 }

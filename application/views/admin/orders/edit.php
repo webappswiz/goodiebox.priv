@@ -100,6 +100,6 @@
     <br/>
     <?php
 
-    echo HTML::anchor('/orders/order_'.$model->id.'.pdf', 'See receipt');
+    echo HTML::anchor('/admin/orders/receipt/'.$model->id, 'See receipt');
 ?>
 </div>
