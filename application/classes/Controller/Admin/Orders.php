@@ -103,7 +103,7 @@ class Controller_Admin_Orders extends Controller_Admin {
   }
 }';
             $result = $shipping->send_request($data_string);
-            print_r($result);
+            //print_r($result);
         }
         $this->redirect('/admin/orders/');
     }
