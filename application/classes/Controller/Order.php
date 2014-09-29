@@ -10,7 +10,7 @@ class Controller_Order extends Controller_Core {
         $this->template->active_menu = 'kapcsolat';
     }
 
-    private function send($to, $from, $subject, $body) {
+    private function send($to, $from, $subject, $body,$file='') {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
@@ -18,10 +18,13 @@ class Controller_Order extends Controller_Core {
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);
+        if(!empty($file)){
+            $email->AddAttachment(DOCROOT.'orders/'.$file,$file);
+        }
         $email->Send();
     }
 
-    private function gift_email($order, $user, $type) {
+    private function receipt_email($order, $user, $type) {
         if ($order->puppy_id > 0) {
             $size = $order->puppy->selected_size;
             if ($size == 1) {
@@ -147,7 +150,9 @@ class Controller_Order extends Controller_Core {
         $pdf->AddPage();
         $pdf->writeHTML($invoice, true, false, false, false, '');
         $pdf->Output(DOCROOT.'orders/order_'.$order->id.'.pdf', 'F');
-        //$this->send($user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $invoice);
+        $template = ORM::factory('Templates',2);
+        $body = str_replace('[firstname]', $user->customer_firstname, $template->text);
+        $this->send($user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $body,'order_'.$order->id.'.pdf');
     }
 
     public function action_index() {
@@ -283,7 +288,7 @@ class Controller_Order extends Controller_Core {
                 }
                 $order->orders_status = 1;
                 $order->save();
-                $this->gift_email($order, $this->current_user, 1);
+                $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
                 $this->redirect('/order/success');
             }
@@ -320,7 +325,7 @@ class Controller_Order extends Controller_Core {
                 $order->delivery_telephone = $_POST['customer_telephone'];
                 $order->orders_status = 1;
                 $order->save();
-
+                $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
                 $this->redirect('/order/success');
             }
@@ -373,6 +378,7 @@ class Controller_Order extends Controller_Core {
                 $order->last_modified = date('Y-m-d H:i:s');
                 $order->date_purchased = date('Y-m-d H:i:s');
                 $order->save();
+                $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
                 $this->redirect('/order/success');
             }

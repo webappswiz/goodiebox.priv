@@ -31,11 +31,6 @@ class Controller_Admin_Orders extends Controller_Admin {
         ));
         $this->pagination->route_params(array('controller' => $this->request->controller(), 'action' => $this->request->action()));
         $this->data = $this->orders->offset($this->pagination->offset)->limit($this->pagination->items_per_page)->order_by('date_purchased', 'DESC')->find_all()->as_array();
-        //$pdf = new TCPDF;
-        //$html = "<b>test</b>";
-        //$pdf->AddPage();
-        //$pdf->writeHTML($html);
-        //$pdf->Output('example_001.pdf', 'FD');
     }
 
     public function action_edit() {
