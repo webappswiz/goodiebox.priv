@@ -151,7 +151,7 @@ class Controller_Order extends Controller_Core {
         $pdf->writeHTML($invoice, true, false, false, false, '');
         $pdf->Output(DOCROOT.'orders/order_'.$order->id.'.pdf', 'F');
         $template = ORM::factory('Templates',2);
-        $body = str_replace('[firstname]', $user->customer_firstname, $template->text);
+        $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
         $this->send($user->email, 'karam@karam.org.ua', 'Here is your gift coupon code', $body,'order_'.$order->id.'.pdf');
     }
 
