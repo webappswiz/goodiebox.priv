@@ -38,7 +38,8 @@ class Controller_Order extends Controller_Core {
             } else{
                 $s = '';
             }
-        }
+        } else
+            $s=0;
 
         $invoice = '
             <!DOCTYPE html>
