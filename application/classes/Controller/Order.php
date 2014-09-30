@@ -319,7 +319,7 @@ class Controller_Order extends Controller_Core {
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
                 $template = View::factory('template/gift_email', array())->render();
-                $this->send('karam@karam.org.ua', 'karam@karam.org.ua', 'Test', $template);
+                $this->send('alexander.karamushko@ecommerce.com', 'karam@karam.org.ua', 'Test', $template);
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
                 $order->puppy_id = 0;
