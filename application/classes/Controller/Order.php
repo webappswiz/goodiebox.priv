@@ -110,19 +110,19 @@ class Controller_Order extends Controller_Core {
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Számla kelte<br/>
-                        ' . date('Y-m-d',$order->date_purchased) . '
+                        ' . date('Y-m-d',strtotme($order->date_purchased)) . '
                         <br/>
                     </td>
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Teljesítés dátuma<br/>
-                        ' . date('Y-m-d',$order->date_purchased) . '
+                        ' . date('Y-m-d',strtotme($order->date_purchased)) . '
                         <br/>
                     </td>
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Számla sorszáma<br/>
-                        ' . date('Y-m-d',$order->date_purchased) . '
+                        ' . date('Y-m-d',strtotme($order->date_purchased)). '
                     </td>
                 </tr>
                 <tr>
