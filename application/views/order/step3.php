@@ -50,6 +50,7 @@ if ($auth->logged_in())
                 $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function(i, obj) {
                     $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
                 });
+                $('<input type="hidden">').prop('#message').appendTo($('#billing_form'));
                 $('#billing_form').submit();
             } else {
                 $('#billing_form').submit();
@@ -245,7 +246,7 @@ if (isset($session['step2'])) {
                 </form>
                 <div style="margin-top:80px;" class="add">
                     <label for="message">Megjegyzés</label>
-                    <textarea name="message" class="rounded"></textarea>
+                    <textarea name="message" id="message" class="rounded"></textarea>
                 </div>
                 <script>
 
