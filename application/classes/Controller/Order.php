@@ -257,7 +257,7 @@ class Controller_Order extends Controller_Core {
                     $order->delivery_telephone = ($address->loaded()) ? $address->customer_telephone : $_POST['customer_telephone'];
                     $order->company_name = $_POST['company_name'];
                     $order->tax_code = $_POST['tax_code'];
-                    $order->message = $_POST['message'];
+                    $order->message = $_POST['msg'];
                 } elseif (isset($_POST['shipping'])) {
                     if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])) {
                         Flash::set('alert', 'Please the shipping form');
@@ -271,7 +271,7 @@ class Controller_Order extends Controller_Core {
                     $order->delivery_postcode = $_POST['delivery_zip'];
                     $order->company_name = $_POST['company_name'];
                     $order->tax_code = $_POST['tax_code'];
-                    $order->message = $_POST['message'];
+                    $order->message = $_POST['msg'];
                     $address = ORM::factory('AddressBook', $this->current_user->id);
                     if (!$address->loaded()) {
                         $address = ORM::factory('AddressBook');
@@ -338,7 +338,7 @@ class Controller_Order extends Controller_Core {
                 $order->delivery_city = $_POST['customer_city'];
                 $order->delivery_postcode = $_POST['customer_zip'];
                 $order->delivery_telephone = $_POST['customer_telephone'];
-                $order->message = $_POST['message'];
+                $order->message = $_POST['msg'];
                 $order->orders_status = 1;
                 $order->company_name = $_POST['company_name'];
                     $order->tax_code = $_POST['tax_code'];
@@ -394,7 +394,7 @@ class Controller_Order extends Controller_Core {
                 $order->orders_status = 1;
                 $order->shelter_order = $s_order->id;
                 $order->last_modified = date('Y-m-d H:i:s');
-                $order->message = $_POST['message'];
+                $order->message = $_POST['msg'];
                 $order->date_purchased = date('Y-m-d H:i:s');
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
