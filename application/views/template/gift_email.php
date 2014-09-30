@@ -9,21 +9,21 @@
             @font-face {
                 font-family: 'gillsansmt';
                 src: url('fonts/gillsansmt.eot');
-                src: local('<?=DOCROOT?>assets/fonts/gillsansmt'), url('<?=DOCROOT?>assets/fonts/gillsansmt.woff') format('woff'), url('<?=DOCROOT?>assets/fonts/gillsansmt.ttf') format('truetype');}
+                src: local('<?=URL::base(TRUE, FALSE)?>assets/fonts/gillsansmt'), url('<?=URL::base(TRUE, FALSE)?>assets/fonts/gillsansmt.woff') format('woff'), url('<?=URL::base(TRUE, FALSE)?>assets/fonts/gillsansmt.ttf') format('truetype');}
             @font-face {
                 font-family:'GilgongoKaps-Regular';
-                src: url('<?=DOCROOT?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot');
-                src: url('<?=DOCROOT?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot?#iefix') format('embedded-opentype'),
-                    url('<?=DOCROOT?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.woff') format('woff'),
-                    url('<?=DOCROOT?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.ttf') format('truetype'),
-                    url('<?=DOCROOT?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.svg#GilgongoKaps-Regular') format('svg');}
+                src: url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot');
+                src: url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot?#iefix') format('embedded-opentype'),
+                    url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.woff') format('woff'),
+                    url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.ttf') format('truetype'),
+                    url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoKaps_latin+latin-ext_gdi.svg#GilgongoKaps-Regular') format('svg');}
             @font-face {
                 font-family:'GilgongoMutombo-Regular';
-                src: url('<?=DOCROOT?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot');
-                src: url('<?=DOCROOT?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot?#iefix') format('embedded-opentype'),
-                    url('<?=DOCROOT?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.woff') format('woff'),
-                    url('<?=DOCROOT?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.ttf') format('truetype'),
-                    url('<?=DOCROOT?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.svg#GilgongoMutombo-Regular') format('svg');}
+                src: url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot');
+                src: url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot?#iefix') format('embedded-opentype'),
+                    url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.woff') format('woff'),
+                    url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.ttf') format('truetype'),
+                    url('<?=URL::base(TRUE, FALSE)?>assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.svg#GilgongoMutombo-Regular') format('svg');}
             .box{width:290px; height:145px; float:left;font-family: 'gillsansmt';letter-spacing:2px;}
             @media only screen and (max-width:640px){.logo img, .bottom-bg img{width: 100%; height: auto;} .box{float: none;margin: 0 auto;}}
             @media only screen and (max-width:460px){span{display: block;}}
@@ -33,10 +33,10 @@
     <body style="margin:0;">
         <div style="max-width:600px; background:#feffc0; margin:0 auto; color:#feffc0;">
             <header style="background:#e02158; height:180px; text-align:center;">
-                <div class="logo"><img src="<?=DOCROOT?>assets/img/logo_email.png"></div>
+                <div class="logo"><img src="<?=URL::base(TRUE, FALSE)?>assets/img/logo_email.png"></div>
                 <p style="font-family:'GilgongoKaps-Regular';font-size:50px;margin:0 0 20px 0;letter-spacing:8px;">Ajándék<span style="font-family:'GilgongoMutombo-Regular';font-size:35px;">kupon</span></p>
             </header>
-            <div style="background: url(<?=DOCROOT?>assets/img/design_bg.png) repeat-x; height:34px; margin:5px 0;"></div>
+            <div style="background: url(<?=URL::base(TRUE, FALSE)?>assets/img/design_bg.png) repeat-x; height:34px; margin:5px 0;"></div>
             <div class="box" style="border:5px solid #e02158; background-color:#feffc0;color:#e02158;">
                 <div style="padding:15px;">
                     <div style="font-size:18px">Kinek:</div>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div class="bottom-bg"style="text-align:center;margin-top:8px;"><img src="<?=DOCROOT?>assets/img/main_bg.png"></div>
+            <div class="bottom-bg"style="text-align:center;margin-top:8px;"><img src="<?=URL::base(TRUE, FALSE)?>assets/img/main_bg.png"></div>
         </div>
     </body>
 </html>
