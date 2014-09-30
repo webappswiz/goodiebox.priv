@@ -53,6 +53,7 @@ if ($auth->logged_in())
                 $('<input type="hidden">').prop('#message').appendTo($('#billing_form'));
                 $('#billing_form').submit();
             } else {
+                $('<input type="hidden">').prop('#message').appendTo($('#billing_form'));
                 $('#billing_form').submit();
             }
         });
