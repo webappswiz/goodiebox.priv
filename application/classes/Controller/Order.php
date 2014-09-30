@@ -148,9 +148,9 @@ class Controller_Order extends Controller_Core {
 ';
         $pdf = new TCPDF();
         $pdf->AddPage();
+        $pdf->setImageScale(1.53);
         $pdf->writeHTML($invoice, true, false, false, false, '');
         $pdf->Output(DOCROOT.'orders/order_'.$order->id.'.pdf', 'F');
-        $pdf->setImageScale(1.53);
         $template = ORM::factory('Templates',2);
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
         $this->send($user->email, 'info@goodiebox.hu', 'Order confirmation', $body,'order_'.$order->id.'.pdf');
@@ -315,6 +315,8 @@ class Controller_Order extends Controller_Core {
                 $friend->coupon_code = $this->generateRandomString();
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
+                $template = View::factory('template/gift_email', array())->render();
+                $this->send('karam@karam.org.ua', 'karam@karam.org.ua', '$subject', $template);
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
                 $order->puppy_id = 0;
