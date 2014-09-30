@@ -129,7 +129,7 @@ class Controller_Order extends Controller_Core {
                 </tr>
                 <tr>
                     <td class="tg-row4" colspan="1"><br/><br/>'.$order->package->product_number.'<br/></td>
-                    <td class="tg-row4" colspan="2"><br/><br/>GOODIEBOX ' . $s . ' ' . $order->package->package_name . '<br/></td>
+                    <td class="tg-row4" colspan="2"><br/><br/>GOODIEBOX ' . ($s)?$s:'' . ' ' . $order->package->package_name . '<br/></td>
                     <td class="tg-row4" colspan="1" style="text-align:right"><br/><br/>' . $order->package->price . '<br/></td>
                 </tr>
                 <tr>
