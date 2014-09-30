@@ -110,19 +110,19 @@ class Controller_Order extends Controller_Core {
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Számla kelte<br/>
-                        ' . $order->date_purchased . '
+                        ' . date('Y-m-d',$order->date_purchased) . '
                         <br/>
                     </td>
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Teljesítés dátuma<br/>
-                        ' . $order->date_purchased . '
+                        ' . date('Y-m-d',$order->date_purchased) . '
                         <br/>
                     </td>
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Számla sorszáma<br/>
-                        ' . $order->date_purchased . '
+                        ' . date('Y-m-d',$order->date_purchased) . '
                     </td>
                 </tr>
                 <tr>
@@ -143,7 +143,6 @@ class Controller_Order extends Controller_Core {
                     <td class="tg-s6z2" colspan="3">Összesen:<br/></td>
                     <td class="tg-031e" colspan="1" style="text-align:right">' . $order->package->price . '<br/></td>
                 </tr>
-                <tr><td colspan="4" style="text-align: right">azaz Nyolcezer-kétszázötven Forint.</td></tr>
                 <tr><td colspan="4"><br/><br/>Köszönjük a vásárlást!<br/><div style="text-align:center">Ez a számla összesen 1 példányban került kinyomtatásra</div><br/></td></tr>
             </table>
     </body>
