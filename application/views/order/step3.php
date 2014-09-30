@@ -50,10 +50,10 @@ if ($auth->logged_in())
                 $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function(i, obj) {
                     $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
                 });
-                $('<input type="hidden">').prop('#message').appendTo($('#billing_form'));
+                $('#msg').val($('#message').val());
                 $('#billing_form').submit();
             } else {
-                $('<input type="hidden">').prop('#message').appendTo($('#billing_form'));
+                $('#msg').val($('#message').val());
                 $('#billing_form').submit();
             }
         });
@@ -199,6 +199,7 @@ if (isset($session['step2'])) {
                         <label for="tax_code">Adószám</label>
                         <input type="text" name="tax_code" class="rounded" id="tax_code">
                     </div>
+                    <input type="hidden" name="msg" value="" id="msg">
                 </form>
                 <script>
                     $("#billing_form").validate({
