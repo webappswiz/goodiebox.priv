@@ -322,7 +322,7 @@ class Controller_Order extends Controller_Core {
                 $friend->coupon_code = $this->generateRandomString();
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
-                $template = View::factory('template/gift_email', array('from'=>$this->current_user,'to'=>$step1['first-name']))->render();
+                $template = View::factory('template/gift_email', array('from'=>$this->current_user,'to'=>$step1['first-name'],'coupon'=>$friend->coupon_code))->render();
                 if(isset($step1['delay'])){
                     $to = $this->current_user->email;
                 } else {

@@ -48,7 +48,7 @@
             <div class="box" style="border:5px solid #feffc0;background-color:#e02158;font-size:18px;">
                 <div style="padding:15px;">
                     <div style="">Kuponkód:</div>
-                    <div style="margin:10px 0 10px 5px;">[coupon_code]</div>
+                    <div style="margin:10px 0 10px 5px;"><?=$coupon?></div>
                     <div style="font-size:18px">Érvényes:</div>
                     <div style="margin:10px 0 0 5px;">
                         <?php
