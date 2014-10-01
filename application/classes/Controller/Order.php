@@ -14,6 +14,7 @@ class Controller_Order extends Controller_Core {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
+        $email->CharSet = 'UTF-8';
         $email->SetFrom($from, 'Goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
