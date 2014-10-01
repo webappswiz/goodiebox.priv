@@ -302,13 +302,7 @@ class Controller_Order extends Controller_Core {
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
-                
-                $request = Request::factory('http://goodiebox.priv/test.php')
-                        ->method(Request::POST)
-                        ->body($_POST)
-                        ->headers('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-                $response = $request->execute();
-                //$this->redirect('/order/success');
+                $this->redirect('/order/success');
             }
 
             //Give a gift
