@@ -54,7 +54,7 @@
                         <?php
                             $date = strtotime(date('Y-m-d'));
                             $final = date("Y-m-d", strtotime("+1 month", $date));
-                            echo date('Y-m-d',$date);
+                            echo $final;
                         ?>
                     </div>
                 </div>
