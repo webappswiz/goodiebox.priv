@@ -323,7 +323,7 @@ class Controller_Order extends Controller_Core {
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
                 $template = View::factory('template/gift_email', array('from'=>$this->current_user,'to'=>$step1['first-name']))->render();
-                if(isset($_POST['delay'])){
+                if(isset($step1['delay'])){
                     $to = $this->current_user->email;
                 } else {
                     $to = $step1['email'];
