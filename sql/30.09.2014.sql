@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 30 2014 г., 16:33
+-- Время создания: Окт 01 2014 г., 19:05
 -- Версия сервера: 5.1.73
 -- Версия PHP: 5.3.3
 
@@ -37,7 +37,17 @@ CREATE TABLE IF NOT EXISTS `address_book` (
   `customer_address2` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `message` text COLLATE utf8_swedish_ci NOT NULL,
   `user_id` int(11) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `address_book`
+--
+
+INSERT INTO `address_book` (`id`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `message`, `user_id`) VALUES
+(1, 'Anna ', 'Kocacs', '', '4032', 'Debrecen', 'Egyetem Sugarut 47', '', '', 25),
+(2, 'Reka', 'Smith', '', '4032', 'Debrecen', 'Egyetem Sugarut 47', '', '', 26),
+(3, 'Anna ', 'Koncs', '', '4032', 'Debrecen', 'Egyetem Sugarut 47', '', '', 11),
+(4, 'dfasfsd', 'asdfsa', '', 'asdfsa', 'asdfsaf', 'sdafsaf', '', '', 28);
 
 -- --------------------------------------------------------
 
@@ -101,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `friend` (
   `selected_box` int(1) NOT NULL,
   `coupon_code` varchar(50) COLLATE utf8_swedish_ci NOT NULL,
   `date_purchased` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -128,20 +138,21 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `orders_status` int(1) NOT NULL DEFAULT '1',
   `shelter_order` int(11) DEFAULT NULL,
   `last_modified` datetime DEFAULT NULL,
-  `date_purchased` datetime DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=16 ;
+  `date_purchased` datetime DEFAULT NULL,
+  `message` text COLLATE utf8_swedish_ci NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=42 ;
 
 --
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `company_name`, `tax_code`, `coupon_code`, `type`, `orders_status`, `shelter_order`, `last_modified`, `date_purchased`) VALUES
-(10, 18, 1, 68, 'Alex', 'Karamushko', 'Kosmichna 100a, 33', '', 'Zaporizhzhya', '69050', '+380975231602', '', '', '', 1, 1, NULL, '2014-09-29 19:16:46', '2014-09-29 19:16:46'),
-(11, 18, 1, 69, 'Alex', 'Karamushko', 'Kosmichna 100a, 33', '', 'Zaporizhzhya', '69050', '+380975231602', '', '', '', 1, 1, NULL, '2014-09-29 19:17:32', '2014-09-29 19:17:32'),
-(12, 18, 1, 70, 'Alex', 'Karamushko', 'Kosmichna 100a, 33', '', 'Zaporizhzhya', '69050', '+380975231602', '', '', '', 1, 1, NULL, '2014-09-29 19:18:14', '2014-09-29 19:18:14'),
-(13, 18, 1, 68, 'Alex', 'Karamushko', 'Kosmichna 100a, 33', '', 'Zaporizhzhya', '69050', '+380975231602', '', '', '', 1, 1, NULL, '2014-09-29 19:19:26', '2014-09-29 19:19:26'),
-(14, 19, 1, 71, 'Vasya', 'Pupkin', 'ajkdakdj', '', 'Kiev', '74387', '+380975231602', '', '', '', 1, 1, NULL, '2014-09-29 19:28:18', '2014-09-29 19:28:18'),
-(15, 19, 1, 71, 'Vasya', 'Pupkin', 'ajkdakdj', '', 'Kiev', '74387', '+380975231602', '', '', '', 1, 1, NULL, '2014-09-29 19:31:31', '2014-09-29 19:31:31');
+INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `company_name`, `tax_code`, `coupon_code`, `type`, `orders_status`, `shelter_order`, `last_modified`, `date_purchased`, `message`) VALUES
+(36, 25, 1, 79, 'Anna ', 'Kocacs', 'Egyetem Sugarut 47', '', 'Debrecen', '4032', '', 'WAW', '1235654321', '', 1, 1, NULL, '2014-09-30 17:08:54', '2014-09-30 17:08:54', 'Chicken'),
+(37, 26, 1, 80, 'Reka', 'Smith', 'Egyetem Sugarut 47', '', 'Debrecen', '4032', '', 'WAW', '3456543', '', 1, 1, NULL, '2014-09-30 17:13:09', '2014-09-30 17:13:09', 'Chicken no allowed'),
+(38, 27, 1, 81, 'alex', 'karam', 'kdfjksldjfklsdj', '', ',sdmf,smdf,.smdf,', '8347584', '92342342394', '', '', '', 1, 1, NULL, '2014-09-30 17:18:22', '2014-09-30 17:18:22', ''),
+(39, 11, 1, 82, 'Anna ', 'Koncs', 'Egyetem Sugarut 47', '', 'Debrecen', '4032', '', 'WAW', '234565432', '', 1, 1, NULL, '2014-09-30 17:42:38', '2014-09-30 17:42:38', 'chicken'),
+(40, 27, 1, 81, 'alex', 'karam', 'kdfjksldjfklsdj', '', ',sdmf,smdf,.smdf,', '8347584', '92342342394', '', '', '', 1, 1, NULL, '2014-09-30 17:58:09', '2014-09-30 17:58:09', ''),
+(41, 28, 1, 83, 'dfasfsd', 'asdfsa', 'sdafsaf', '', 'asdfsaf', 'asdfsa', '', 'dasfsa', 'dsafsaf', '', 1, 1, NULL, '2014-09-30 18:27:19', '2014-09-30 18:27:19', 'asdfas');
 
 -- --------------------------------------------------------
 
@@ -185,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `packages` (
 --
 
 INSERT INTO `packages` (`id`, `package_name`, `weight`, `price`, `enabled`, `product_number`) VALUES
-(1, '1 hónap', '0', '10', 1, 'IC01'),
+(1, '1 hónap', '0', '8250', 1, 'IC01'),
 (2, '3 hónap', '0', '15', 0, 'IC03'),
 (3, '6 hónap', '0', '20', 0, 'IC06');
 
@@ -205,17 +216,17 @@ CREATE TABLE IF NOT EXISTS `puppies` (
   `alerg` int(1) NOT NULL,
   `alerg_descr` text COLLATE utf8_swedish_ci NOT NULL,
   `selected_size` int(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=84 ;
 
 --
 -- Дамп данных таблицы `puppies`
 --
 
 INSERT INTO `puppies` (`id`, `user_id`, `puppy_name`, `gender`, `years`, `months`, `alerg`, `alerg_descr`, `selected_size`) VALUES
-(68, 18, 'Bobik', 0, 1994, 1, 0, '', 2),
-(69, 18, 'Bobik', 0, 1994, 1, 0, '', 2),
-(70, 18, 'Bobik', 0, 1994, 1, 0, '', 2),
-(71, 19, 'Giraf', 0, 1994, 1, 0, '', 1);
+(79, 25, 'Nana', 0, 1994, 1, 1, 'Chicken', 1),
+(80, 26, 'Roger', 0, 1994, 1, 1, 'Chicken', 1),
+(81, 27, 'bobik', 0, 1994, 1, 0, '', 3),
+(82, 11, 'Buddy', 0, 2000, 1, 1, 'Chicken', 1);
 
 -- --------------------------------------------------------
 
@@ -254,8 +265,10 @@ CREATE TABLE IF NOT EXISTS `roles_users` (
 
 INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES
 (11, 1),
-(18, 1),
-(19, 1),
+(25, 1),
+(26, 1),
+(27, 1),
+(28, 1),
 (11, 2);
 
 -- --------------------------------------------------------
@@ -315,16 +328,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `customer_taxcode` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `logins` int(11) NOT NULL,
   `last_login` varchar(50) COLLATE utf8_swedish_ci NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=29 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `customer_company`, `customer_taxcode`, `logins`, `last_login`) VALUES
-(11, 'admin', 'a28a4e5e5fc383d1bbb2be9aafa1e2933d4b00d990e63e1d1b2527a37b0db2d6', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 28, '1412019167'),
-(18, 'alex@onlamp.info', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alex@onlamp.info', 'Alex', 'Karamushko', '+380975231602', '69050', 'Zaporizhzhya', 'Kosmichna 100a, 33', '', 'Karam@Software', '1763471637', 1, '1412018206'),
-(19, 'alexander.karamushko@ecommerce.com', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alexander.karamushko@ecommerce.com', 'Vasya', 'Pupkin', '+380975231602', '74387', 'Kiev', 'ajkdakdj', '', '', '', 1, '1412018898');
+(11, 'admin', 'a28a4e5e5fc383d1bbb2be9aafa1e2933d4b00d990e63e1d1b2527a37b0db2d6', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 29, '1412090702'),
+(25, 'yemiadejuwon@gmail.com', 'cc1ac36745ac451101bce0f28e0c0f052baeae28a64ff4004ca135bc91aebb5a', 'yemiadejuwon@gmail.com', 'Reka', 'Kovacs', '654323456', '1053', 'Budapest', 'Kossuth Lajos u. 7-9', '', 'WAW', '1235654321', 1, '1412096934'),
+(26, 'yemi.adejuwon@icloud.com', 'cc1ac36745ac451101bce0f28e0c0f052baeae28a64ff4004ca135bc91aebb5a', 'yemi.adejuwon@icloud.com', 'Anna', 'Smith', '23456765432', '1053', 'Budapest', 'Kossuth Lajos u. 7-9', '', 'WAW', '3456543', 1, '1412097189'),
+(27, 'alex@onlamp.info', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alex@onlamp.info', 'alex', 'karam', '92342342394', '8347584', ',sdmf,smdf,.smdf,', 'kdfjksldjfklsdj', '', '', '', 3, '1412099876'),
+(28, 'info@joblinker.info', '3fc91ac07f35239582a4494652f8ec44830acd134532cfcfe0710ecbbc32c139', 'info@joblinker.info', 'asdfas', 'asdfas', 'asdfsaf', 'adfas', 'asdfsa', 'adfas', '', '', '', 1, '1412101639');
 
 -- --------------------------------------------------------
 
@@ -463,7 +478,7 @@ ALTER TABLE `user_tokens`
 -- AUTO_INCREMENT for table `address_book`
 --
 ALTER TABLE `address_book`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `contacts`
 --
@@ -478,12 +493,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `friend`
 --
 ALTER TABLE `friend`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `order_statuses`
 --
@@ -498,7 +513,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `puppies`
 --
 ALTER TABLE `puppies`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=84;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -518,7 +533,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user_shelter`
 --

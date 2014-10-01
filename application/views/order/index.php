@@ -56,9 +56,9 @@
     <h2>Válaszd ki </br>mekkora a kutyus!*</h2>
 
     <ul class="claim-option-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input type="radio" id="size" name="group1" value="1" class="" checked> Icipici</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input type="radio" id="size" name="group1" value="2" class=""> Éppen jó</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input type="radio" id="size" name="group1" value="3" class=""> Igazi óriás</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="1" class="" checked> Icipici</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="2" class=""> Éppen jó</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="3" class=""> Igazi óriás</li>
     </ul>
     <div class="clear"></div>
 
@@ -78,7 +78,7 @@
 
                             <div class="radio-list">
                                 <label for="last-name">Kutyus neme*</label>
-                                <input type="radio" name="gender" value="0" class="" checked> Lány <input name="gender" value="1" type="radio" class=""> Fiú
+                                <input style="cursor: pointer" type="radio" name="gender" value="0" class="" checked> Lány <input style="cursor: pointer" name="gender" value="1" type="radio" class=""> Fiú
                             </div>
                             <?php
                             for ($i = 1994; $i <= date('Y'); $i++)
@@ -102,7 +102,7 @@
                             <div class="clear"></div>
                             <div class="radio-list">
                                 <label for="Igen">Allergiás a kutyusod?*</label>
-                                <input type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
+                                <input style="cursor: pointer" type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input style="cursor: pointer" type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
                             </div>
 
                             <label for="last-name">Ha igen, mire?</label>

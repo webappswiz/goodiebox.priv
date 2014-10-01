@@ -10,7 +10,7 @@ class Controller_Order extends Controller_Core {
         $this->template->active_menu = 'kapcsolat';
     }
 
-    private function send($to, $from, $subject, $body,$file='') {
+    private function send($to, $from, $subject, $body, $file = '') {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
@@ -18,8 +18,8 @@ class Controller_Order extends Controller_Core {
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);
-        if(!empty($file)){
-            $email->AddAttachment(DOCROOT.'orders/'.$file,$file);
+        if (!empty($file)) {
+            $email->AddAttachment(DOCROOT . 'orders/' . $file, $file);
         }
         $email->Send();
     }
@@ -29,17 +29,15 @@ class Controller_Order extends Controller_Core {
             $size = $order->puppy->selected_size;
             if ($size == 1) {
                 $s = 'Icipici';
-            }
-            elseif ($size == 2) {
+            } elseif ($size == 2) {
                 $s = 'Éppen jó';
-            }
-            elseif ($size == 3) {
+            } elseif ($size == 3) {
                 $s = 'Igazi óriás';
-            } else{
+            } else {
                 $s = '';
             }
         } else
-            $s=0;
+            $s = 0;
 
         $invoice = '
             <!DOCTYPE html>
@@ -110,19 +108,19 @@ class Controller_Order extends Controller_Core {
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Számla kelte<br/>
-                        ' . date('Y-m-d',strtotime($order->date_purchased)) . '
+                        ' . date('Y-m-d', strtotime($order->date_purchased)) . '
                         <br/>
                     </td>
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Teljesítés dátuma<br/>
-                        ' . date('Y-m-d',strtotime($order->date_purchased)) . '
+                        ' . date('Y-m-d', strtotime($order->date_purchased)) . '
                         <br/>
                     </td>
                     <td class="tg-row2" colspan="1">
                         <br/><br/>
                         Számla sorszáma<br/>
-                        ' . date('Y-m-d',strtotime($order->date_purchased)). '
+                        ' . date('Y-m-d', strtotime($order->date_purchased)) . '
                     </td>
                 </tr>
                 <tr>
@@ -131,7 +129,7 @@ class Controller_Order extends Controller_Core {
                     <td class="tg-row3" colspan="1"><br/><br/>Ár (HUF)<br/></td>
                 </tr>
                 <tr>
-                    <td class="tg-row4" colspan="1"><br/><br/>'.$order->package->product_number.'<br/></td>
+                    <td class="tg-row4" colspan="1"><br/><br/>' . $order->package->product_number . '<br/></td>
                     <td class="tg-row4" colspan="2"><br/><br/>GOODIEBOX ' . $s . ' ' . $order->package->package_name . '<br/></td>
                     <td class="tg-row4" colspan="1" style="text-align:right"><br/><br/>' . $order->package->price . '<br/></td>
                 </tr>
@@ -152,10 +150,10 @@ class Controller_Order extends Controller_Core {
         $pdf->AddPage();
         $pdf->setImageScale(1.53);
         $pdf->writeHTML($invoice, true, false, false, false, '');
-        $pdf->Output(DOCROOT.'orders/order_'.$order->id.'.pdf', 'F');
-        $template = ORM::factory('Templates',2);
+        $pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
+        $template = ORM::factory('Templates', 2);
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
-        $this->send($user->email, 'info@goodiebox.hu', 'Order confirmation', $body,'order_'.$order->id.'.pdf');
+        $this->send($user->email, 'info@goodiebox.hu', 'Order confirmation', $body, 'order_' . $order->id . '.pdf');
     }
 
     public function action_index() {
@@ -213,7 +211,7 @@ class Controller_Order extends Controller_Core {
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
                     $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
-                    $template = ORM::factory('Templates',1);
+                    $template = ORM::factory('Templates', 1);
                     $this->current_user = Auth::instance()->get_user();
                     $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
                     $body = str_replace('[login]', $this->current_user->email, $body);
@@ -303,7 +301,13 @@ class Controller_Order extends Controller_Core {
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
-                $this->redirect('/order/success');
+                
+                $request = Request::factory('http://goodiebox.priv/test.php')
+                        ->method(Request::POST)
+                        ->body($_POST)
+                        ->headers('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                $response = $request->execute();
+                //$this->redirect('/order/success');
             }
 
             //Give a gift
@@ -341,7 +345,7 @@ class Controller_Order extends Controller_Core {
                 $order->message = $_POST['msg'];
                 $order->orders_status = 1;
                 $order->company_name = $_POST['company_name'];
-                    $order->tax_code = $_POST['tax_code'];
+                $order->tax_code = $_POST['tax_code'];
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
