@@ -40,17 +40,23 @@
             <div class="box" style="border:5px solid #e02158; background-color:#feffc0;color:#e02158;">
                 <div style="padding:15px;">
                     <div style="font-size:18px">Kinek:</div>
-                    <div style="margin:10px 0 10px 5px;font-size:14px">Hajnal Eszter</div>
+                    <div style="margin:10px 0 10px 5px;font-size:14px"><?=$from->customer_firstname.' '.$from->customer_lastname?></div>
                     <div style="font-size:18px;">Kitől:</div>
-                    <div style="margin:10px 0 0 5px;font-size:14px">Makk Marci</div>
+                    <div style="margin:10px 0 0 5px;font-size:14px"><?=$to?></div>
                 </div>
             </div>
             <div class="box" style="border:5px solid #feffc0;background-color:#e02158;font-size:18px;">
                 <div style="padding:15px;">
                     <div style="">Kuponkód:</div>
-                    <div style="margin:10px 0 10px 5px;">GB2345678943</div>
+                    <div style="margin:10px 0 10px 5px;">[coupon_code]</div>
                     <div style="font-size:18px">Érvényes:</div>
-                    <div style="margin:10px 0 0 5px;">2014.11.13.</div>
+                    <div style="margin:10px 0 0 5px;">
+                        <?php
+                            $date = strtotime(date('Y-m-d'));
+                            $final = date("Y-m-d", strtotime("+1 month", $date));
+                            echo $date;
+                        ?>
+                    </div>
                 </div>
             </div>
             <div style="clear:both;"></div>
