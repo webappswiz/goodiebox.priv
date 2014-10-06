@@ -302,7 +302,8 @@ class Controller_Order extends Controller_Core {
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
-                $this->redirect('/order/success');
+                Session::instance()->set('order',$order);
+                $this->redirect('/order/payment');
             }
 
             //Give a gift
@@ -513,7 +514,20 @@ class Controller_Order extends Controller_Core {
             $session->delete('success');
             $this->redirect('/');
         }
+        print_r($_REQUEST);
         $session->delete('success');
     }
-
+    
+    public function action_payment(){
+        $session = Session::instance();
+        $order = $session->get('order')->as_array();
+        require_once DOCROOT.'application/vendor/payu/config.php';
+        $this->payment = new PayULiveUpdate($config);
+        
+        if(!empty($order['id'])){
+            $this->order = $order;
+            
+        }
+        
+    }
 }
