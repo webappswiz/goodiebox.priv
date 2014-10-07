@@ -330,9 +330,11 @@
                                 <input type="submit" name="submit_form" id="submit_form" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
+                    <hr/>
                         <?php
-                    else:
+                    endif;
                         ?>
+                    <div class="clear"></div>
                         <ul class="claim-option-list">
                             <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
                             <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
@@ -368,9 +370,6 @@
                             </div>
                             <div class="clear"></div>
                         </div>
-                    <?php
-                    endif;
-                    ?>
                 </div> <!--End support-->
             </div>
         </div>
@@ -404,8 +403,10 @@
                                 <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
-                    <?php else: ?>
+                    <hr/>
+                    <?php endif; ?>
                         <div class="process-form-container2">
+                            <div class="clear"></div>
                             <ul class="claim-option-list">
                                 <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
                                 <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
@@ -445,7 +446,6 @@
                             <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
                         </div>
                         <div class="clear"></div>
-                    <?php endif; ?>
                 </div> <!--End support-->
             </div>
         </div>
