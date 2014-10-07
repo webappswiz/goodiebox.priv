@@ -15,6 +15,7 @@ if (count($data) > 0) {
                 <th>Order status</th>
                 <th>Coupon?</th>
                 <th>Date purchased</th>
+                <th>Payment Status</th>
                 <th></th>
             </tr>
         </thead>
@@ -38,6 +39,12 @@ if (count($data) > 0) {
                 $coupon = (!empty($order->coupon_code))?'Yes':'No';
                 echo '<td>' . $coupon . '</td>';
                 echo '<td>' . $order->date_purchased . '</td>';
+                if($order->payment_status ==1){
+                    $status = 'Paid';
+                } else {
+                    $status = 'Payment declined';
+                }
+                echo '<td>' . $status . '</td>';
                 echo '<td><a href="/admin/orders/edit/'.$order->id.'" class="btn btn-primary">Edit</a></td>';
                 echo '</tr>';
                 $i++;

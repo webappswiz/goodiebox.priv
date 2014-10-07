@@ -159,12 +159,9 @@ class Controller_Order extends Controller_Core {
 
     public function action_index() {
         $this->set_title('Order - Step 1');
-        if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3']) && !isset($this->current_user)) {
+        if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3'])) {
             Session::instance()->set('step1', $_POST);
             $this->redirect('order/step2');
-        }
-        elseif(isset($this->current_user)){
-            $this->redirect('/user_account');
         }
     }
 
@@ -302,11 +299,17 @@ class Controller_Order extends Controller_Core {
                         $this->redirect('/user_account');
                 }
                 $order->orders_status = 1;
+                $order->payment_status = 0;
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
-                Session::instance()->set('success', '1');
-                Session::instance()->set('order',$order);
-                $this->redirect('/order/payment');
+                if (!empty($step1['coupon_code'])) {
+                    Session::instance()->set('success', '1');
+                    $this->redirect('/order/success');
+                } else {
+                    Session::instance()->set('success', '1');
+                    Session::instance()->set('order', $order);
+                    $this->redirect('/order/payment');
+                }
             }
 
             //Give a gift
@@ -326,13 +329,13 @@ class Controller_Order extends Controller_Core {
                 $friend->coupon_code = $this->generateRandomString();
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
-                $template = View::factory('template/gift_email', array('from'=>$this->current_user,'to'=>$step1['first-name'],'coupon'=>$friend->coupon_code))->render();
-                if(isset($step1['delay'])){
+                $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['first-name'], 'coupon' => $friend->coupon_code))->render();
+                if (isset($step1['delay'])) {
                     $to = $this->current_user->email;
                 } else {
                     $to = $step1['email'];
                 }
-                
+
                 $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
@@ -351,10 +354,12 @@ class Controller_Order extends Controller_Core {
                 $order->orders_status = 1;
                 $order->company_name = $_POST['company_name'];
                 $order->tax_code = $_POST['tax_code'];
+                $order->payment_status = 0;
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
-                $this->redirect('/order/success');
+                Session::instance()->set('order', $order);
+                $this->redirect('/order/payment');
             }
 
             //Shelter
@@ -404,11 +409,13 @@ class Controller_Order extends Controller_Core {
                 $order->shelter_order = $s_order->id;
                 $order->last_modified = date('Y-m-d H:i:s');
                 $order->message = $_POST['msg'];
+                $order->payment_status = 0;
                 $order->date_purchased = date('Y-m-d H:i:s');
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
-                $this->redirect('/order/success');
+                Session::instance()->set('order', $order);
+                $this->redirect('/order/payment');
             }
         }
     }
@@ -517,20 +524,25 @@ class Controller_Order extends Controller_Core {
             $session->delete('success');
             $this->redirect('/');
         }
-        print_r($_REQUEST);
+        if(isset($_REQUEST['RC']) && $_REQUEST['RC']==000){
+            $order = $session->get('order')->as_array();
+            $order = ORM::factory('Order',$order['id']);
+            $order->payment_status = 1;
+            $order->save();
+        }
+        $session->delete('order');
         $session->delete('success');
     }
-    
-    public function action_payment(){
+
+    public function action_payment() {
         $session = Session::instance();
         $order = $session->get('order')->as_array();
-        require_once DOCROOT.'application/vendor/payu/config.php';
+        require_once DOCROOT . 'application/vendor/payu/config.php';
         $this->payment = new PayULiveUpdate($config);
-        
-        if(!empty($order['id'])){
+
+        if (!empty($order['id'])) {
             $this->order = $order;
-            
         }
-        
     }
+
 }
