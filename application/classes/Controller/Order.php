@@ -529,7 +529,7 @@ class Controller_Order extends Controller_Core {
         if(isset($_REQUEST['RC']) && $_REQUEST['RC']==000){
             $order->payment_status = 1;
             $order->save();
-        } elseif(isset($_REQUEST['RC']) && $_REQUEST['RC']==000) {
+        } elseif(isset($_REQUEST['RC']) && $_REQUEST['RC']!=000) {
             $order->payment_status = 2;
             $order->save();
         }
