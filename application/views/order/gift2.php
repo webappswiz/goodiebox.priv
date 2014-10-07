@@ -78,7 +78,7 @@
                 </div>
                 <div class="fl" style="margin-right:5px;">
                     <label for="customer_email">E-mail cím*</label>
-                    <input type="text" name="customer_email" class="rounded" id="customer_email" required>
+                    <input type="text" name="customer_email" class="rounded" id="email" required>
                 </div>
                 <div>
                     <label for="customer_telephone">Telefonszám*</label>

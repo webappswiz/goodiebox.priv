@@ -470,6 +470,12 @@ class Controller_Order extends Controller_Core {
             $user->customer_telephone = $_POST['customer_telephone'];
             $user->save();
             $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
+            $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
+            $template = ORM::factory('Templates', 1);
+            $this->current_user = Auth::instance()->get_user();
+            $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+            $body = str_replace('[login]', $this->current_user->email, $body);
+            $this->send($this->current_user->email, 'info@goodiebox.hu', 'Registration', $body);
             $puppy = ORM::factory('Puppy');
             $puppy->puppy_name = $_POST['puppy_name'];
             $puppy->gender = $_POST['gender'];
@@ -524,14 +530,17 @@ class Controller_Order extends Controller_Core {
             $session->delete('success');
             $this->redirect('/');
         }
-        $order = $session->get('order')->as_array();
-            $order = ORM::factory('Order',$order['id']);
-        if(isset($_REQUEST['RC']) && $_REQUEST['RC']==000){
-            $order->payment_status = 1;
-            $order->save();
-        } elseif(isset($_REQUEST['RC']) && $_REQUEST['RC']!=000) {
-            $order->payment_status = 2;
-            $order->save();
+        $order = $session->get('order', false);
+        if ($order) {
+            $order = $order->as_array();
+            $ord = ORM::factory('Order', $order['id']);
+            if (isset($_REQUEST['RC']) && $_REQUEST['RC'] == 000) {
+                $ord->payment_status = 1;
+                $ord->save();
+            } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
+                $ord->payment_status = 2;
+                $ord->save();
+            }
         }
         $session->delete('order');
         $session->delete('success');

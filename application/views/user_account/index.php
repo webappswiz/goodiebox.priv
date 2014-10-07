@@ -33,28 +33,38 @@
     }
 </style>
 <script type="text/javascript">
-
-    $(document).ready(function() {
-
+    $(document).ready(function () {
+        $('#submit_form').on('click', function () {
+            $('.process-form1').submit();
+        });
+        $('#submit_form_shelt').on('click', function () {
+            $('.process-form2').submit();
+        });
+        $('.selected_size').val($('input:radio[class^="size"]:checked').val());
+        console.log($('.selected_size').val());
+        $('.size').on('click', function () {
+            $('.selected_size').val($(this).val());
+            console.log($(this).val());
+        });
         // When site loaded, load the Popupbox First
-        $('#create-dog').on('click', function() {
+        $('#create-dog').on('click', function () {
             loadPopupBox();
         });
 
-        $('.alerg_yes').on('click', function() {
+        $('.alerg_yes').on('click', function () {
             $('#alerg_descr').attr('required', 'required');
         });
-        $('.alerg_no').on('click', function() {
+        $('.alerg_no').on('click', function () {
             $('#alerg_descr').removeAttr('required');
         });
-        $('#popupBoxClose').click(function() {
+        $('#popupBoxClose').click(function () {
             unloadPopupBox();
         });
 
-        $('#submit_form').on('click', function() {
+        $('#submit_form').on('click', function () {
             $('#gift').submit();
         });
-        $('#submit_shelter').on('click', function() {
+        $('#submit_shelter').on('click', function () {
             $('#shelter').submit();
         });
 
@@ -71,10 +81,10 @@
                 "opacity": "0.3"
             });
         }
-        $('.delete-btn').on('click', function() {
+        $('.delete-btn').on('click', function () {
             $(this).closest('.dog-profile').find('.delete-dog').show('slow');
         });
-        $('.cancel').on('click', function() {
+        $('.cancel').on('click', function () {
             $(this).closest('.dog-profile').find('.delete-dog').slideUp();
         });
     });
@@ -155,27 +165,27 @@
                         <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
                                 <label for="last-name">Vezetéknév*</label>
-                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($shipping)?$shipping->customer_firstname:$current_user->customer_firstname ?>" required>
+                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
                                 <label for="first-name">Keresztnév*</label>
-                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($shipping)?$shipping->customer_lastname:$current_user->customer_lastname ?>" required>
+                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_lastname : $current_user->customer_lastname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
                                 <label for="address">Cím*</label>
-                                <input type="text" name="address" class="rounded" id="" value="<?= ($shipping)?$shipping->customer_address:$current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
+                                <input type="text" name="address" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_address : $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
                                 <input type="text" name="address2" class="rounded" id="">
                             </div>
 
                             <div>
                                 <label for="zip">Irányítószám*</label>
-                                <input type="text" name="zip" class="rounded" id="" value="<?= ($shipping)?$shipping->customer_zip:$current_user->customer_zip ?>" required>
+                                <input type="text" name="zip" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_zip : $current_user->customer_zip ?>" required>
                             </div>
                             <div class="add">
                                 <label for="">Város*</label>
-                                <input type="text" name="city" value="<?= ($shipping)?$shipping->customer_city:$current_user->customer_city ?>" class="rounded" id="" required>
+                                <input type="text" name="city" value="<?= ($shipping) ? $shipping->customer_city : $current_user->customer_city ?>" class="rounded" id="" required>
                             </div>
                             <div>
                                 <label for="message">Megjegyzés</label>
@@ -194,7 +204,7 @@
                         </div>
                         <div style="margin-right:0;">
                             <label for="">Telefonszám*</label>
-                            <input type="text" name="telephone" class="rounded" id="" value="<?= ($shipping)?$shipping->customer_telephone:$current_user->customer_telephone ?>" required>
+                            <input type="text" name="telephone" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_telephone : $current_user->customer_telephone ?>" required>
                         </div>
                         <div style="margin-top:50px;">
                             <input type="submit" name="edit_shipping" value="ADATAIM MENTÉSE" class="dark-btn Szemelyes-btn rounded">
@@ -294,29 +304,73 @@
         <div>
             <div class="content">
                 <div class="support">
-                    <form action="/user_account/gift" method="POST" id="gift">
-                        <?php
-                        $friends = ORM::factory('Friend')
-                                ->where('user_id', '=', $current_user->id)
-                                ->find_all();
-                        foreach ($friends as $friend):
-                            ?>
-
-                            <div class="support-row">
-                                <ul>
-                                    <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
-                                    <li class="option-text1"><?= $friend->friends_name; ?></li>
-                                    <li class="option-text2"><?= $friend->friends_email; ?></li>
-                                    <li class="option-text3"><input type="radio" value="1" name="delay"> Send a gift code to my email</li>
-                                </ul>
-                            </div>
-                            <?php
-                        endforeach;
+                    <?php
+                    $friends = ORM::factory('Friend')
+                            ->where('user_id', '=', $current_user->id)
+                            ->find_all();
+                    if (count($friends) > 0):
                         ?>
-                        <div style="margin-top:35px; float:none;">
-                            <input type="submit" name="submit_form" id="submit_form" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                        <form action="/user_account/gift" method="POST" id="gift">
+                            <?php
+                            foreach ($friends as $friend):
+                                ?>
+
+                                <div class="support-row">
+                                    <ul>
+                                        <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
+                                        <li class="option-text1"><?= $friend->friends_name; ?></li>
+                                        <li class="option-text2"><?= $friend->friends_email; ?></li>
+                                        <li class="option-text3"><input type="radio" value="1" name="delay"> Send a gift code to my email</li>
+                                    </ul>
+                                </div>
+                                <?php
+                            endforeach;
+                            ?>
+                            <div style="margin-top:35px; float:none;">
+                                <input type="submit" name="submit_form" id="submit_form" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                            </div>
+                        </form>
+                        <?php
+                    else:
+                        ?>
+                        <ul class="claim-option-list">
+                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
+                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
+                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
+                        </ul>
+                        <div class="clear"></div>
+                        <div>
+                            <div class="content">
+                                <div class="process-form-container2">
+                                    <form class="process-form1" name="order" action="/order/index" method="POST">
+                                        <div>
+                                            <label for="last-name">Barátod neve*</label>
+                                            <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
+                                        </div>
+                                        <div>
+                                            <label for="first-name">Barátod e-mail címe*</label>
+                                            <input id="" type="text" value="" name="email"  class="rounded" required>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" value="1" name="delay"> Send a gift code to my email
+                                        </div>
+                                        <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                                        <input type="hidden" name="order2" value="1">
+                                        <input type="hidden" name="selected_size" class="selected_size">
+                                    </form>
+                                    <script>
+                                        $(".process-form1").validate();
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="claim-form-btn">
+                                <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn" style="margin-right:20px;">
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                    </form>
+                    <?php
+                    endif;
+                    ?>
                 </div> <!--End support-->
             </div>
         </div>
@@ -325,28 +379,73 @@
         <div>
             <div class="content">
                 <div class="support">
-                    <form action="/user_account/shelter" id="shelter" method="POST">
-                        <?php
-                        $shelters = ORM::factory('ShelterDog')->with('shelter')
-                                ->where('user_id', '=', $current_user->id)
-                                ->find_all();
-                        foreach ($shelters as $shelter):
-                            ?>
-                            <div class="support-row">
-                                <ul>
-                                    <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                    <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                    <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                </ul>
-                            </div>
-                            <?php
-                        endforeach;
+                    <?php
+                    $shelters = ORM::factory('ShelterDog')->with('shelter')
+                            ->where('user_id', '=', $current_user->id)
+                            ->find_all();
+                    if (count($shelters) > 0):
                         ?>
+                        <form action="/user_account/shelter" id="shelter" method="POST" >
+                            <?php
+                            foreach ($shelters as $shelter):
+                                ?>
+                                <div class="support-row">
+                                    <ul>
+                                        <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                        <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                        <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                    </ul>
+                                </div>
+                                <?php
+                            endforeach;
+                            ?>
 
-                        <div style="margin-top:35px; float:none;">
-                            <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                            <div style="margin-top:35px; float:none;">
+                                <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                            </div>
+                        </form>
+                    <?php else: ?>
+                        <div class="process-form-container2">
+                            <ul class="claim-option-list">
+                                <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
+                                <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
+                                <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
+                            </ul>
+                            <div class="clear"></div>
+                            <form class="process-form2" name="order" method="POST" action="/order/index">
+                                <div>
+                                    <label for="">Menhely neve*</label>
+                                    <select name="option-name" class="rounded option-name" required>
+                                        <?php
+                                        $shelters = ORM::factory('Shelter')->find_all();
+                                        foreach ($shelters as $shelter) {
+                                            ?>
+                                            <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <label for="">Kutyus neve*</label>
+                                <input type="text" name="doggy_name" class="rounded" id="" required>
+
+                                <div class="radio-list">
+                                    <label for="last-name">Kutyus neme*</label>
+                                    <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
+                                </div>
+                                <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                                <input type="hidden" name="order3" value="1">
+                                <input type="hidden" name="selected_size" class="selected_size">
+                            </form>
+                            <script>
+                                $(".process-form2").validate();
+                            </script>
                         </div>
-                    </form>
+                        <div class="claim-form-btn">
+                            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
+                        </div>
+                        <div class="clear"></div>
+                    <?php endif; ?>
                 </div> <!--End support-->
             </div>
         </div>
@@ -357,11 +456,11 @@
     <script>
         $("#collapse-content").collapse({
             accordion: true,
-            open: function() {
+            open: function () {
                 this.addClass("open");
                 this.css({height: this.children().outerHeight()});
             },
-            close: function() {
+            close: function () {
                 this.css({height: "0px"});
                 this.removeClass("open");
             }
