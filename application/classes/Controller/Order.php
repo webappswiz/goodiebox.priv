@@ -159,9 +159,12 @@ class Controller_Order extends Controller_Core {
 
     public function action_index() {
         $this->set_title('Order - Step 1');
-        if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3'])) {
+        if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3']) && !isset($this->current_user)) {
             Session::instance()->set('step1', $_POST);
             $this->redirect('order/step2');
+        }
+        elseif(isset($this->current_user)){
+            $this->redirect('/user_account');
         }
     }
 

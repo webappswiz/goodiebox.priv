@@ -51,6 +51,8 @@
         <input type='hidden' name='BILL_CITY' id='BILL_CITY' value='<?= $current_user->customer_city ?>' />
         <input type='hidden' name='BILL_STATE' id='BILL_STATE' value='' />
         <input type='hidden' name='BILL_COUNTRYCODE' id='BILL_COUNTRYCODE' value='HU' />
+        <input type='hidden' name='BILL_COMPANY' id='BILL_COMPANY' value='<?= $o->company_name ?>' />
+        <input type='hidden' name='BILL_FISCALCODE' id='BILL_FISCALCODE' value='<?= $o->tax_code ?>' />
         <input type='hidden' name='DELIVERY_FNAME' id='DELIVERY_FNAME' value='<?= $o->delivery_firstname ?>' />
         <input type='hidden' name='DELIVERY_LNAME' id='DELIVERY_LNAME' value='<?= $o->delivery_lastname ?>' />
         <input type='hidden' name='DELIVERY_PHONE' id='DELIVERY_PHONE' value='<?= $o->delivery_telephone ?>' />
@@ -60,6 +62,8 @@
         <input type='hidden' name='DELIVERY_CITY' id='DELIVERY_CITY' value='<?= $o->delivery_city ?>' />
         <input type='hidden' name='DELIVERY_STATE' id='DELIVERY_STATE' value='' />
         <input type='hidden' name='DELIVERY_COUNTRYCODE' id='DELIVERY_COUNTRYCODE' value='HU' />
+        <input type='hidden' name='DELIVERY_COMPANY' id='DELIVERY_COMPANY' value='<?= $o->company_name ?>' />
+        <input type='hidden' name='DELIVERY_FISCALCODE' id='DELIVERY_FISCALCODE' value='<?= $o->tax_code ?>' />
         <input type='hidden' name='ORDER_HASH' id='ORDER_HASH' value='<?=$hash_string?>' />
         <input type='hidden' name='SDK_VERSION' id='SDK_VERSION' value='PHP_2.1_sdk20140212' />
     </form>				
