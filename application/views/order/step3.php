@@ -64,7 +64,7 @@ if ($auth->logged_in())
                 $('.box.rounded').hide();
             }
         });
-
+        $("#customer_telephone").mask("+36 99 999-99-99");
     });
 </script>
 <?php

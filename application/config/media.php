@@ -15,7 +15,8 @@ return array(
             'jquery.validate.min',
             'jquery.collapse',
             'jquery-ui.min',
-            'main'
+            'main',
+            'mask'
         ),
         'css' => array(
             'style'=> NULL,

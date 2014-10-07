@@ -87,6 +87,7 @@
         $('.cancel').on('click', function () {
             $(this).closest('.dog-profile').find('.delete-dog').slideUp();
         });
+        $("#telephone").mask("+36 99 999-99-99");
     });
 </script>
 <div id="dialog-form" title="Add a new dog">
@@ -204,7 +205,7 @@
                         </div>
                         <div style="margin-right:0;">
                             <label for="">Telefonszám*</label>
-                            <input type="text" name="telephone" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_telephone : $current_user->customer_telephone ?>" required>
+                            <input type="text" name="telephone" class="rounded" id="telephone" value="<?= ($shipping) ? $shipping->customer_telephone : $current_user->customer_telephone ?>" required>
                         </div>
                         <div style="margin-top:50px;">
                             <input type="submit" name="edit_shipping" value="ADATAIM MENTÉSE" class="dark-btn Szemelyes-btn rounded">
