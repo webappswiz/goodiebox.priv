@@ -8,14 +8,36 @@
         $('input:radio').on('click', function() {
             $('.selected_size').val($(this).val());
         });
-        $('#email').on('blur', function() {
+        $('.email').on('blur', function() {
             $.post('/api/check', {'email': $(this).val()}).done(function(data) {
                 var i = $.parseJSON(data);
                 if (i.msg == 1) {
-                    $('#email').val('');
-                    $('#email').focus();
-                    $('#email').css('background-color', 'rosybrown');
-                    $('#email').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                    $('.email').val('');
+                    $('.email').focus();
+                    $('.email').css('background-color', 'rosybrown');
+                    $('.email').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                }
+            });
+        });
+        $('.email2').on('blur', function() {
+            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+                var i = $.parseJSON(data);
+                if (i.msg == 1) {
+                    $('.email2').val('');
+                    $('.email2').focus();
+                    $('.email2').css('background-color', 'rosybrown');
+                    $('.email2').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                }
+            });
+        });
+        $('.email3').on('blur', function() {
+            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+                var i = $.parseJSON(data);
+                if (i.msg == 1) {
+                    $('.email3').val('');
+                    $('.email3').focus();
+                    $('.email3').css('background-color', 'rosybrown');
+                    $('.email3').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
                 }
             });
         });
@@ -71,7 +93,7 @@
                     <div class="claim-form2">
                         <form class="process-form" name="order" method="POST">
                             <label for="">E-mail cím*</label>
-                            <input type="text" name="email" class="rounded" id="email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
+                            <input type="text" name="email" class="rounded email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
 
                             <label for="">Kutyus neve</label>
                             <input type="text" name="puppy_name" class="rounded" id="" required>
@@ -125,6 +147,10 @@
                 <div class="content">
                     <div class="process-form-container2">
                         <form class="process-form1" name="order" method="POST">
+                            
+                            <label for="">E-mail cím*</label>
+                            <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
+                            
                             <div>
                                 <label for="last-name">Barátod neve*</label>
                                 <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
@@ -152,6 +178,10 @@
                 <div class="content">
                     <div class="process-form-container2">
                         <form class="process-form2" name="order" method="POST">
+                            
+                            <label for="">E-mail cím*</label>
+                            <input type="text" name="email" class="rounded email3" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
+                            
                             <div>
                                 <label for="">Menhely neve*</label>
                                 <select name="option-name" class="rounded option-name" required>

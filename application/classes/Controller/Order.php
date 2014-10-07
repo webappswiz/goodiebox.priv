@@ -162,6 +162,8 @@ class Controller_Order extends Controller_Core {
         if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3'])) {
             Session::instance()->set('step1', $_POST);
             $this->redirect('order/step2');
+        } elseif(isset($this->current_user)){
+            $this->redirect('/user_account');
         }
     }
 
