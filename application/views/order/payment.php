@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function(){
-        //$('#PayUForm').submit();
+        $('#PayUForm').submit();
     });
 </script>
 <div class="clear"></div>
