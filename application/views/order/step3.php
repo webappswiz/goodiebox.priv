@@ -193,11 +193,11 @@ if (isset($session['step2'])) {
                     </div>
                     <div>
                         <label for="company_name">Cégnév</label>
-                        <input type="text" name="company_name" class="rounded" id="company_name">
+                        <input type="text" name="company_name" class="rounded" id="company_name" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
                     </div>
                     <div>
                         <label for="tax_code">Adószám</label>
-                        <input type="text" name="tax_code" class="rounded" id="tax_code">
+                        <input type="text" name="tax_code" class="rounded" id="tax_code" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
                     </div>
                     <input type="hidden" name="msg" value="" id="msg">
                 </form>
