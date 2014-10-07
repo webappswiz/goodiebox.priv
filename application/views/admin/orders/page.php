@@ -1,5 +1,4 @@
 <?php
-
 if (count($data) > 0) {
     ?>
     <h2>Orders</h2>
@@ -27,25 +26,27 @@ if (count($data) > 0) {
                 echo '<td>' . $i . '</td>';
                 echo '<td>' . $order->delivery_firstname . '</td>';
                 echo '<td>' . $order->delivery_lastname . '</td>';
-                if($order->type==1)
+                if ($order->type == 1)
                     $type = 'Own puppy';
-                if($order->type==2)
+                if ($order->type == 2)
                     $type = 'Gift order';
-                if($order->type==3)
+                if ($order->type == 3)
                     $type = 'Shelter';
                 echo '<td>' . $type . '</td>';
                 echo '<td>' . $order->package->package_name . '</td>';
                 echo '<td>' . $order->status->status_name . '</td>';
-                $coupon = (!empty($order->coupon_code))?'Yes':'No';
+                $coupon = (!empty($order->coupon_code)) ? 'Yes' : 'No';
                 echo '<td>' . $coupon . '</td>';
                 echo '<td>' . $order->date_purchased . '</td>';
-                if($order->payment_status ==1){
+                if ($order->payment_status == 1) {
                     $status = 'Paid';
+                } elseif ($order->payment_status == 0) {
+                    $status = 'Payment pending';
                 } else {
                     $status = 'Payment declined';
                 }
                 echo '<td>' . $status . '</td>';
-                echo '<td><a href="/admin/orders/edit/'.$order->id.'" class="btn btn-primary">Edit</a></td>';
+                echo '<td><a href="/admin/orders/edit/' . $order->id . '" class="btn btn-primary">Edit</a></td>';
                 echo '</tr>';
                 $i++;
             }

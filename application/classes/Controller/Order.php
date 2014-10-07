@@ -524,10 +524,13 @@ class Controller_Order extends Controller_Core {
             $session->delete('success');
             $this->redirect('/');
         }
-        if(isset($_REQUEST['RC']) && $_REQUEST['RC']==000){
-            $order = $session->get('order')->as_array();
+        $order = $session->get('order')->as_array();
             $order = ORM::factory('Order',$order['id']);
+        if(isset($_REQUEST['RC']) && $_REQUEST['RC']==000){
             $order->payment_status = 1;
+            $order->save();
+        } elseif(isset($_REQUEST['RC']) && $_REQUEST['RC']==000) {
+            $order->payment_status = 2;
             $order->save();
         }
         $session->delete('order');
