@@ -40,6 +40,10 @@
         $('#submit_form_shelt').on('click', function () {
             $('.process-form2').submit();
         });
+        $('#submit_form_invite').on('click', function () {
+            $('.process-form3').submit();
+        });
+
         $('.selected_size').val($('input:radio[class^="size"]:checked').val());
         console.log($('.selected_size').val());
         $('.size').on('click', function () {
@@ -152,7 +156,15 @@
 <section class="claim-gift" class="rounded" id="container">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/profile-icon.png" class="badge" style="top:-65px;">
     <h1>Saját profilom</h1>
+    <?php
+    $invites = ORM::factory('Invites')
+            ->where('user_id', '=', $current_user->id)
+            ->and_where('is_registered', '=', 1)
+            ->count_all();
+    echo $discount = $invites * 5 .'%';
+    ?>
     <div id="collapse-content">
+
         <h3>Személyes adataim<p class="sub-heading">Amennyiben szeretnéd, bármikor megváltoztathatod az adataidat.</p><p class="sub-heading">Új rendelés előtt kérjük mindig ellenőrizd a számlázási és a szállítási címet is!</p></h3>
         <div>
             <div class="content">
@@ -331,46 +343,46 @@
                                 <input type="submit" name="submit_form" id="submit_form" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
-                    <hr/>
+                        <hr/>
                         <?php
                     endif;
-                        ?>
+                    ?>
                     <div class="clear"></div>
-                        <ul class="claim-option-list">
-                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
-                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
-                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
-                        </ul>
-                        <div class="clear"></div>
-                        <div>
-                            <div class="content">
-                                <div class="process-form-container2">
-                                    <form class="process-form1" name="order" action="/order/index" method="POST">
-                                        <div>
-                                            <label for="last-name">Barátod neve*</label>
-                                            <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
-                                        </div>
-                                        <div>
-                                            <label for="first-name">Barátod e-mail címe*</label>
-                                            <input id="" type="text" value="" name="email"  class="rounded" required>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" value="1" name="delay"> Send a gift code to my email
-                                        </div>
-                                        <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                                        <input type="hidden" name="order2" value="1">
-                                        <input type="hidden" name="selected_size" class="selected_size">
-                                    </form>
-                                    <script>
-                                        $(".process-form1").validate();
-                                    </script>
-                                </div>
+                    <ul class="claim-option-list">
+                        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
+                        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
+                        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
+                    </ul>
+                    <div class="clear"></div>
+                    <div>
+                        <div class="content">
+                            <div class="process-form-container2">
+                                <form class="process-form1" name="order" action="/order/index" method="POST">
+                                    <div>
+                                        <label for="last-name">Barátod neve*</label>
+                                        <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
+                                    </div>
+                                    <div>
+                                        <label for="first-name">Barátod e-mail címe*</label>
+                                        <input id="" type="text" value="" name="email"  class="rounded" required>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" value="1" name="delay"> Send a gift code to my email
+                                    </div>
+                                    <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                                    <input type="hidden" name="order2" value="1">
+                                    <input type="hidden" name="selected_size" class="selected_size">
+                                </form>
+                                <script>
+                                    $(".process-form1").validate();
+                                </script>
                             </div>
-                            <div class="claim-form-btn">
-                                <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn" style="margin-right:20px;">
-                            </div>
-                            <div class="clear"></div>
                         </div>
+                        <div class="claim-form-btn">
+                            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn" style="margin-right:20px;">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
                 </div> <!--End support-->
             </div>
         </div>
@@ -404,53 +416,80 @@
                                 <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
-                    <hr/>
+                        <hr/>
                     <?php endif; ?>
-                        <div class="process-form-container2">
-                            <div class="clear"></div>
-                            <ul class="claim-option-list">
-                                <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
-                                <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
-                                <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
-                            </ul>
-                            <div class="clear"></div>
-                            <form class="process-form2" name="order" method="POST" action="/order/index">
-                                <div>
-                                    <label for="">Menhely neve*</label>
-                                    <select name="option-name" class="rounded option-name" required>
-                                        <?php
-                                        $shelters = ORM::factory('Shelter')->find_all();
-                                        foreach ($shelters as $shelter) {
-                                            ?>
-                                            <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <label for="">Kutyus neve*</label>
-                                <input type="text" name="doggy_name" class="rounded" id="" required>
-
-                                <div class="radio-list">
-                                    <label for="last-name">Kutyus neme*</label>
-                                    <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
-                                </div>
-                                <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                                <input type="hidden" name="order3" value="1">
-                                <input type="hidden" name="selected_size" class="selected_size">
-                            </form>
-                            <script>
-                                $(".process-form2").validate();
-                            </script>
-                        </div>
-                        <div class="claim-form-btn">
-                            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
-                        </div>
+                    <div class="process-form-container2">
                         <div class="clear"></div>
+                        <ul class="claim-option-list">
+                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
+                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
+                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
+                        </ul>
+                        <div class="clear"></div>
+                        <form class="process-form2" name="order" method="POST" action="/order/index">
+                            <div>
+                                <label for="">Menhely neve*</label>
+                                <select name="option-name" class="rounded option-name" required>
+                                    <?php
+                                    $shelters = ORM::factory('Shelter')->find_all();
+                                    foreach ($shelters as $shelter) {
+                                        ?>
+                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <label for="">Kutyus neve*</label>
+                            <input type="text" name="doggy_name" class="rounded" id="" required>
+
+                            <div class="radio-list">
+                                <label for="last-name">Kutyus neme*</label>
+                                <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
+                            </div>
+                            <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                            <input type="hidden" name="order3" value="1">
+                            <input type="hidden" name="selected_size" class="selected_size">
+                        </form>
+                        <script>
+                            $(".process-form2").validate();
+                        </script>
+                    </div>
+                    <div class="claim-form-btn">
+                        <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
+                    </div>
+                    <div class="clear"></div>
                 </div> <!--End support-->
             </div>
         </div>
 
+        <h3>Invite a friend<p class="sub-heading">Invite a friend</p></h3>
+        <div>
+            <div class="content">
+                <div class="support">
+                    <div class="process-form-container2">
+                        <form class="process-form3" name="invite" method="POST" action="/user_account/invite">
+                            <label for="">Friend email*</label>
+                            <input type="text" name="friend_email" class="rounded" id="friend_email" required>
+                        </form>
+                        <script>
+                            $(".process-form3").validate({
+                                rules: {
+                                    friend_email: {
+                                        required: true,
+                                        email: true
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="claim-form-btn">
+                        <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_invite" class="dark-btn claim-btn" style="margin-right:20px;">
+                    </div>
+                    <div class="clear"></div>
+                </div> <!--End support-->
+            </div>
+        </div>
 
 
     </div>

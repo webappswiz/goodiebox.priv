@@ -39,7 +39,7 @@
         <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='EN' />
         <input type='hidden' name='AUTOMODE' id='AUTOMODE' value='1' />
         <input type='hidden' name='ORDER_TIMEOUT' id='ORDER_TIMEOUT' value='3600' />
-        <input type='hidden' name='TIMEOUT_URL' id='TIMEOUT_URL' value='<?= URL::base(TRUE, FALSE) ?>order/timeout' />
+        <input type='hidden' name='TIMEOUT_URL' id='TIMEOUT_URL' value='<?= URL::base(TRUE, FALSE) ?>order/timeout/' />
         <input type='hidden' name='BACK_REF' id='BACK_REF' value='<?= URL::base(TRUE, FALSE) ?>order/success' />
         <input type='hidden' name='BILL_FNAME' id='BILL_FNAME' value='<?= $current_user->customer_firstname ?>' />
         <input type='hidden' name='BILL_LNAME' id='BILL_LNAME' value='<?= $current_user->customer_lastname ?>' />

@@ -21,13 +21,22 @@ if ($auth->logged_in())
         if (!$('#tos').prop(':checked')) {
             $('#submit').attr('disabled', 'disabled');
         }
+        
+        $('#discount_box').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#discount').val('1');
+            } else {
+                $('#discount').val('0');
+            }
+        });
+        
         $('#tos').on('click', function() {
             if ($(this).is(':checked')) {
                 $('#submit').removeAttr('disabled');
             } else {
                 $('#submit').attr('disabled', 'disabled');
             }
-        })
+        });
         $('#shipping').on('click', function() {
             if ($('#shipping_form').is(':visible')) {
                 $('#shipping_form').slideUp();
@@ -138,7 +147,7 @@ if (isset($session['step2'])) {
                 <h2>Számlázási adatok</h2>
                 <p>Ország</p>
                 <h4>Magyarország</h4>
-                <form autocomplete='off' name="billing_form" id="billing_form" method="POST">
+                <form name="billing_form" id="billing_form" method="POST">
                     <input type="hidden" name="form" value="1">
                     <div style="margin-right:5px;" class="fl">
                         <label for="customer_firstname">Vezetéknév*</label>
@@ -188,6 +197,7 @@ if (isset($session['step2'])) {
                         </div>
                     <?php endif; ?>
                     <input type="hidden" name="coupon_code" id="coupon_code" value="">
+                    <input type="hidden" name="discount" id="discount" value="">
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
@@ -216,7 +226,7 @@ if (isset($session['step2'])) {
 
             <div class="claim-form claim-form-right">
                 <span>A szállítási cím nem egyezik?</span><input type="checkbox" id="shipping">
-                <form autocomplete='off' name="shipping_form" id="shipping_form" method="POST" style="display: none;">
+                <form name="shipping_form" id="shipping_form" method="POST" style="display: none;">
                     <p>Ország</p>
                     <input type="hidden" name="shipping" value="1">
                     <h4>Magyarország</h4>
@@ -296,6 +306,19 @@ if (isset($session['step2'])) {
                     </div>
                 </div>
             </div>
+            <br/><br/>
+            <?php 
+            $invites = ORM::factory('Invites')
+                    ->where('user_id','=',$current_user->id)
+                    ->and_where('is_registered', '=', 1)
+                    ->count_all();
+            if($invites>0):
+            ?>
+            <div><strong>You have a discount: <?=$invites*5?> %</strong><br/><br/>
+            Do you want to use it with this order?
+            <input type="checkbox" name="discount_box" id="discount_box">
+            </div>
+            <?php endif; ?>
         </div>
         <div class="claim-form-btn">
             <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" id="tos">

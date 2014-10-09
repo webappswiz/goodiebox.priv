@@ -213,6 +213,21 @@ class Controller_Order extends Controller_Core {
                     }
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
+                    $invites = ORM::factory('Invites')
+                            ->where('email','=',$_POST['customer_email'])
+                            ->find_all();
+                    if(count($invites)>0){
+                        $i=0;
+                        foreach($invites as $inv){
+                            if($i==0){
+                                $inv->is_registered = 1;
+                                $inv->save();
+                            } else {
+                                $inv->delete();
+                            }
+                            $i++;
+                        }
+                    }
                     $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
                     $template = ORM::factory('Templates', 1);
                     $this->current_user = Auth::instance()->get_user();
@@ -284,7 +299,6 @@ class Controller_Order extends Controller_Core {
                     $address->customer_city = $_POST['delivery_city'];
                     $address->customer_address = $_POST['delivery_address'];
                     $address->customer_address2 = $_POST['delivery_address2'];
-
                     $address->save();
                 }
                 if (!empty($step1['coupon_code'])) {
@@ -557,6 +571,10 @@ class Controller_Order extends Controller_Core {
         if (!empty($order['id'])) {
             $this->order = $order;
         }
+    }
+    
+    public function action_timeout(){
+        $this->redirect('/user_account');
     }
 
 }

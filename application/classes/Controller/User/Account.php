@@ -184,5 +184,37 @@ class Controller_User_Account extends Controller_Core {
             $this->redirect('/user_account');
         }
     }
+    
+    public function action_invite(){
+        if(!$this->request->post() || empty($_POST['friend_email']))
+            $this->redirect('/user_account');
+        if($_POST['friend_email']==$this->current_user->email){
+            Flash::set('alert', 'You cannot send an invite to yourself');
+            $this->redirect('/user_account');
+        }
+        $email = $_POST['friend_email'];
+        $user = ORM::factory('User')
+                ->where('email','=',$email)
+                ->find();
+        if($user->loaded()){
+            Flash::set('alert', 'Such email is already registered in the system');
+            $this->redirect('/user_account');
+        }
+        $email = $_POST['friend_email'];
+        $invites = ORM::factory('Invites')
+                ->where('user_id','=',$this->current_user->id)
+                ->and_where('email','=',$email)
+                ->find();
+        if($invites->loaded()){
+            Flash::set('alert', 'You\'ve already sent an invite to this user');
+            $this->redirect('/user_account');
+        }
+        $invites = ORM::factory('Invites');
+        $invites->user_id = $this->current_user->id;
+        $invites->email = $email;
+        $invites->save();
+        Flash::set('notice', 'Your invite has been sent');
+        $this->redirect('/user_account');
+    }
 
 }
