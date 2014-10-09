@@ -162,7 +162,7 @@ class Controller_Order extends Controller_Core {
         if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3'])) {
             Session::instance()->set('step1', $_POST);
             $this->redirect('order/step2');
-        } elseif(isset($this->current_user)){
+        } elseif (isset($this->current_user)) {
             $this->redirect('/user_account');
         }
     }
@@ -185,7 +185,9 @@ class Controller_Order extends Controller_Core {
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
         $this->set_title('Order - Step 3');
+
         if ($this->is_post()) {
+            print_r($_REQUEST);
             if (!Auth::instance()->logged_in()) {
                 if (empty($_POST['customer_password']) || $_POST['customer_password'] != $_POST['password_confirm']) {
                     Flash::set('alert', 'Please fill email and password');
@@ -214,12 +216,12 @@ class Controller_Order extends Controller_Core {
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
                     $invites = ORM::factory('Invites')
-                            ->where('email','=',$_POST['customer_email'])
+                            ->where('email', '=', $_POST['customer_email'])
                             ->find_all();
-                    if(count($invites)>0){
-                        $i=0;
-                        foreach($invites as $inv){
-                            if($i==0){
+                    if (count($invites) > 0) {
+                        $i = 0;
+                        foreach ($invites as $inv) {
+                            if ($i == 0) {
                                 $inv->is_registered = 1;
                                 $inv->save();
                             } else {
@@ -238,7 +240,11 @@ class Controller_Order extends Controller_Core {
             }
 
             $order = ORM::factory('Order');
-
+            $invites = ORM::factory('Invites')
+                    ->where('user_id', '=', $this->current_user->id)
+                    ->and_where('is_used', '=', 0)
+                    ->and_where('is_registered', '=', 1)
+                    ->find_all();
             //Order for own dog
 
             if (isset($step1['order1'])) {
@@ -299,6 +305,7 @@ class Controller_Order extends Controller_Core {
                     $address->customer_city = $_POST['delivery_city'];
                     $address->customer_address = $_POST['delivery_address'];
                     $address->customer_address2 = $_POST['delivery_address2'];
+
                     $address->save();
                 }
                 if (!empty($step1['coupon_code'])) {
@@ -313,6 +320,11 @@ class Controller_Order extends Controller_Core {
                         $friend->save();
                     } else
                         $this->redirect('/user_account');
+                }
+                if ($_POST['discount'] == 1) {
+                    if (count($invites) > 0 && empty($step1['coupon_code'])) {
+                        $order->discount = 1;
+                    }
                 }
                 $order->orders_status = 1;
                 $order->payment_status = 0;
@@ -371,6 +383,11 @@ class Controller_Order extends Controller_Core {
                 $order->company_name = $_POST['company_name'];
                 $order->tax_code = $_POST['tax_code'];
                 $order->payment_status = 0;
+                if ($_POST['discount'] == 1) {
+                    if (count($invites) > 0) {
+                        $order->discount = 1;
+                    }
+                }
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
@@ -427,6 +444,11 @@ class Controller_Order extends Controller_Core {
                 $order->message = $_POST['msg'];
                 $order->payment_status = 0;
                 $order->date_purchased = date('Y-m-d H:i:s');
+                if ($_POST['discount'] == 1) {
+                    if (count($invites) > 0) {
+                        $order->discount = 1;
+                    }
+                }
                 $order->save();
                 $this->receipt_email($order, $this->current_user, 1);
                 Session::instance()->set('success', '1');
@@ -553,6 +575,17 @@ class Controller_Order extends Controller_Core {
             if (isset($_REQUEST['RC']) && $_REQUEST['RC'] == 000) {
                 $ord->payment_status = 1;
                 $ord->save();
+                if ($ord->discount == 1) {
+                    $invites = ORM::factory('Invites')
+                            ->where('user_id', '=', $this->current_user->id)
+                            ->and_where('is_used', '=', 0)
+                            ->and_where('is_registered', '=', 1)
+                            ->find_all();
+                    foreach ($invites as $inv) {
+                        $inv->is_used = 1;
+                        $inv->save();
+                    }
+                }
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
                 $ord->payment_status = 2;
                 $ord->save();
@@ -572,8 +605,8 @@ class Controller_Order extends Controller_Core {
             $this->order = $order;
         }
     }
-    
-    public function action_timeout(){
+
+    public function action_timeout() {
         $this->redirect('/user_account');
     }
 

@@ -1,12 +1,26 @@
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#PayUForm').submit();
     });
 </script>
 <div class="clear"></div>
 <section class="thanku" class="rounded">
     <?php
-    $o = ORM::factory('Order',$order['id'])->with('Package');
+    $o = ORM::factory('Order', $order['id'])->with('Package');
+    if ($o->discount == 1) {
+        $invites = ORM::factory('Invites')
+                ->where('user_id', '=', $current_user->id)
+                ->and_where('is_used', '=', 0)
+                ->and_where('is_registered', '=', 1)
+                ->find_all();
+        if(count($invites)>0){
+            $discount = ($o->package->price * ((count($invites)*5)/100));
+        } else {
+            $discount = 0;
+        }
+    } else {
+        $discount = 0;
+    }
     $hash['MERCHANT'] = 'P120701';
     $hash['ORDER_REF'] = $o->id;
     $hash['ORDER_DATE'] = $o->date_purchased;
@@ -18,7 +32,7 @@
     $hash['ORDER_VAT'] = '0';
     $hash['ORDER_SHIPPING'] = '0';
     $hash['PRICES_CURRENCY'] = 'HUF';
-    $hash['DISCOUNT'] = '0';
+    $hash['DISCOUNT'] = $discount;
     $hash['PAY_METHOD'] = 'CCVISAMC';
     $hash_string = $payment->createHashString($hash);
     ?>
@@ -34,7 +48,7 @@
         <input type='hidden' name='ORDER_VAT[]' id='ORDER_VAT' value='0' />
         <input type='hidden' name='PRICES_CURRENCY' id='PRICES_CURRENCY' value='HUF' />
         <input type='hidden' name='ORDER_SHIPPING' id='ORDER_SHIPPING' value='0' />
-        <input type='hidden' name='DISCOUNT' id='DISCOUNT' value='0' />
+        <input type='hidden' name='DISCOUNT' id='DISCOUNT' value='<?=$discount?>' />
         <input type='hidden' name='PAY_METHOD' id='PAY_METHOD' value='CCVISAMC' />
         <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='EN' />
         <input type='hidden' name='AUTOMODE' id='AUTOMODE' value='1' />
@@ -64,7 +78,7 @@
         <input type='hidden' name='DELIVERY_COUNTRYCODE' id='DELIVERY_COUNTRYCODE' value='HU' />
         <input type='hidden' name='DELIVERY_COMPANY' id='DELIVERY_COMPANY' value='<?= $o->company_name ?>' />
         <input type='hidden' name='DELIVERY_FISCALCODE' id='DELIVERY_FISCALCODE' value='<?= $o->tax_code ?>' />
-        <input type='hidden' name='ORDER_HASH' id='ORDER_HASH' value='<?=$hash_string?>' />
+        <input type='hidden' name='ORDER_HASH' id='ORDER_HASH' value='<?= $hash_string ?>' />
         <input type='hidden' name='SDK_VERSION' id='SDK_VERSION' value='PHP_2.1_sdk20140212' />
     </form>				
 </section>

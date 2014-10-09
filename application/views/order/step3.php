@@ -311,6 +311,7 @@ if (isset($session['step2'])) {
             $invites = ORM::factory('Invites')
                     ->where('user_id','=',$current_user->id)
                     ->and_where('is_registered', '=', 1)
+                    ->and_where('is_used','=',0)
                     ->count_all();
             if($invites>0):
             ?>
