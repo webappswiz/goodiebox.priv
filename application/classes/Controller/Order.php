@@ -187,7 +187,6 @@ class Controller_Order extends Controller_Core {
         $this->set_title('Order - Step 3');
 
         if ($this->is_post()) {
-            print_r($_REQUEST);
             if (!Auth::instance()->logged_in()) {
                 if (empty($_POST['customer_password']) || $_POST['customer_password'] != $_POST['password_confirm']) {
                     Flash::set('alert', 'Please fill email and password');

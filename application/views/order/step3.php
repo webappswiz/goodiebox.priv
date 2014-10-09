@@ -306,6 +306,7 @@ if (isset($session['step2'])) {
                     </div>
                 </div>
             </div>
+            <?php if($current_user):?>
             <br/><br/>
             <?php 
             $invites = ORM::factory('Invites')
@@ -319,7 +320,10 @@ if (isset($session['step2'])) {
             Do you want to use it with this order?
             <input type="checkbox" name="discount_box" id="discount_box">
             </div>
-            <?php endif; ?>
+            <?php 
+            endif; 
+            endif;
+            ?>
         </div>
         <div class="claim-form-btn">
             <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" id="tos">
