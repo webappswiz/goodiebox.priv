@@ -464,13 +464,13 @@
             </div>
         </div>
 
-        <h3>Invite a friend<p class="sub-heading">Invite a friend</p></h3>
+        <h3>Hívj meg egy barátot!<p class="sub-heading">Szerezz 5% kedvezményt!</p></h3>
         <div>
             <div class="content">
                 <div class="support">
                     <div class="process-form-container2">
                         <form class="process-form3" name="invite" method="POST" action="/user_account/invite">
-                            <label for="">Friend email*</label>
+                            <label for="">Barátod e-mail címe*</label>
                             <input type="text" name="friend_email" class="rounded" id="friend_email" required>
                         </form>
                         <script>

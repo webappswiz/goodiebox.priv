@@ -316,8 +316,8 @@ if (isset($session['step2'])) {
                     ->count_all();
             if($invites>0):
             ?>
-            <div><strong>You have a discount: <?=$invites*5?> %</strong><br/><br/>
-            Do you want to use it with this order?
+            <div><strong>Jelenlegi kedvezményed: <?=$invites*5?> %</strong><br/><br/>
+            Szeretnéd most felhasználni?
             <input type="checkbox" name="discount_box" id="discount_box">
             </div>
             <?php 

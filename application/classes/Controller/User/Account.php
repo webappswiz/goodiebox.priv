@@ -189,7 +189,7 @@ class Controller_User_Account extends Controller_Core {
         if(!$this->request->post() || empty($_POST['friend_email']))
             $this->redirect('/user_account');
         if($_POST['friend_email']==$this->current_user->email){
-            Flash::set('alert', 'You cannot send an invite to yourself');
+            Flash::set('alert', 'Nem küldhetsz meghívót saját magadnak!');
             $this->redirect('/user_account');
         }
         $email = $_POST['friend_email'];
@@ -197,7 +197,7 @@ class Controller_User_Account extends Controller_Core {
                 ->where('email','=',$email)
                 ->find();
         if($user->loaded()){
-            Flash::set('alert', 'Such email is already registered in the system');
+            Flash::set('alert', 'Ezzel az e-mail címmel már regisztráltak!');
             $this->redirect('/user_account');
         }
         $email = $_POST['friend_email'];
@@ -206,14 +206,14 @@ class Controller_User_Account extends Controller_Core {
                 ->and_where('email','=',$email)
                 ->find();
         if($invites->loaded()){
-            Flash::set('alert', 'You\'ve already sent an invite to this user');
+            Flash::set('alert', 'Már küldtél korábban meghívót erre az e-mail címre!');
             $this->redirect('/user_account');
         }
         $invites = ORM::factory('Invites');
         $invites->user_id = $this->current_user->id;
         $invites->email = $email;
         $invites->save();
-        Flash::set('notice', 'Your invite has been sent');
+        Flash::set('notice', 'A meghívót sikeresen elküldtük!');
         $this->redirect('/user_account');
     }
 
