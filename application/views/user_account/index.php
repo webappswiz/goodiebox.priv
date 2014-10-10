@@ -156,14 +156,35 @@
 <section class="claim-gift" class="rounded" id="container">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/profile-icon.png" class="badge" style="top:-65px;">
     <h1>Saját profilom</h1>
+    <br/><br/>
     <?php
     $invites = ORM::factory('Invites')
             ->where('user_id', '=', $current_user->id)
             ->and_where('is_registered', '=', 1)
-            ->and_where('is_used','=',0)
+            ->and_where('is_used', '=', 0)
             ->count_all();
-    echo $discount = $invites * 5 .'%';
+    $discount = $invites * 5 . '%';
     ?>
+    <style type="text/css">
+        #progressbar {
+            background-color: black;
+            border-radius: 13px; /* (height of inner div) / 2 + padding */
+            padding: 3px;
+        }
+
+        #progressbar > div {
+            background-color: orange;
+            width: <?=$discount?>; /* Adjust with JavaScript */
+            height: 20px;
+            border-radius: 10px;
+            text-align:center;
+        }
+
+    </style>
+    
+    <div id="progressbar">
+        <div><?=$discount?></div>
+    </div>
     <div id="collapse-content">
 
         <h3>Személyes adataim<p class="sub-heading">Amennyiben szeretnéd, bármikor megváltoztathatod az adataidat.</p><p class="sub-heading">Új rendelés előtt kérjük mindig ellenőrizd a számlázási és a szállítási címet is!</p></h3>
@@ -387,83 +408,83 @@
                 </div> <!--End support-->
             </div>
         </div>
-<!--
-        <h3>Támogatok menhelyi kutyust<p class="sub-heading">Ha korábban már támogattam, itt megismételhetem!</p></h3>
-        <div>
-            <div class="content">
-                <div class="support">
-                    <?php
-                    $shelters = ORM::factory('ShelterDog')->with('shelter')
-                            ->where('user_id', '=', $current_user->id)
-                            ->find_all();
-                    if (count($shelters) > 0):
-                        ?>
-                        <form action="/user_account/shelter" id="shelter" method="POST" >
-                            <?php
-                            foreach ($shelters as $shelter):
-                                ?>
-                                <div class="support-row">
-                                    <ul>
-                                        <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                        <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                        <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                    </ul>
-                                </div>
-                                <?php
-                            endforeach;
-                            ?>
-
-                            <div style="margin-top:35px; float:none;">
-                                <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+        <!--
+                <h3>Támogatok menhelyi kutyust<p class="sub-heading">Ha korábban már támogattam, itt megismételhetem!</p></h3>
+                <div>
+                    <div class="content">
+                        <div class="support">
+        <?php
+        $shelters = ORM::factory('ShelterDog')->with('shelter')
+                ->where('user_id', '=', $current_user->id)
+                ->find_all();
+        if (count($shelters) > 0):
+            ?>
+                                        <form action="/user_account/shelter" id="shelter" method="POST" >
+            <?php
+            foreach ($shelters as $shelter):
+                ?>
+                                                        <div class="support-row">
+                                                            <ul>
+                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                                            </ul>
+                                                        </div>
+                <?php
+            endforeach;
+            ?>
+                
+                                            <div style="margin-top:35px; float:none;">
+                                                <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                            </div>
+                                        </form>
+                                        <hr/>
+        <?php endif; ?>
+                            <div class="process-form-container2">
+                                <div class="clear"></div>
+                                <ul class="claim-option-list">
+                                    <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
+                                    <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
+                                    <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
+                                </ul>
+                                <div class="clear"></div>
+                                <form class="process-form2" name="order" method="POST" action="/order/index">
+                                    <div>
+                                        <label for="">Menhely neve*</label>
+                                        <select name="option-name" class="rounded option-name" required>
+        <?php
+        $shelters = ORM::factory('Shelter')->find_all();
+        foreach ($shelters as $shelter) {
+            ?>
+                                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+            <?php
+        }
+        ?>
+                                        </select>
+                                    </div>
+                                    <label for="">Kutyus neve*</label>
+                                    <input type="text" name="doggy_name" class="rounded" id="" required>
+        
+                                    <div class="radio-list">
+                                        <label for="last-name">Kutyus neme*</label>
+                                        <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
+                                    </div>
+                                    <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                                    <input type="hidden" name="order3" value="1">
+                                    <input type="hidden" name="selected_size" class="selected_size">
+                                </form>
+                                <script>
+                                    $(".process-form2").validate();
+                                </script>
                             </div>
-                        </form>
-                        <hr/>
-                    <?php endif; ?>
-                    <div class="process-form-container2">
-                        <div class="clear"></div>
-                        <ul class="claim-option-list">
-                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
-                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
-                            <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
-                        </ul>
-                        <div class="clear"></div>
-                        <form class="process-form2" name="order" method="POST" action="/order/index">
-                            <div>
-                                <label for="">Menhely neve*</label>
-                                <select name="option-name" class="rounded option-name" required>
-                                    <?php
-                                    $shelters = ORM::factory('Shelter')->find_all();
-                                    foreach ($shelters as $shelter) {
-                                        ?>
-                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
+                            <div class="claim-form-btn">
+                                <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
                             </div>
-                            <label for="">Kutyus neve*</label>
-                            <input type="text" name="doggy_name" class="rounded" id="" required>
-
-                            <div class="radio-list">
-                                <label for="last-name">Kutyus neme*</label>
-                                <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
-                            </div>
-                            <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                            <input type="hidden" name="order3" value="1">
-                            <input type="hidden" name="selected_size" class="selected_size">
-                        </form>
-                        <script>
-                            $(".process-form2").validate();
-                        </script>
+                            <div class="clear"></div>
+                        </div> 
                     </div>
-                    <div class="claim-form-btn">
-                        <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
-                    </div>
-                    <div class="clear"></div>
-                </div> 
-            </div>
-        </div>
--->
+                </div>
+        -->
         <h3>Hívj meg egy barátot!<p class="sub-heading">Szerezz 5% kedvezményt!</p></h3>
         <div>
             <div class="content">
