@@ -387,7 +387,7 @@
                 </div> <!--End support-->
             </div>
         </div>
-
+<!--
         <h3>Támogatok menhelyi kutyust<p class="sub-heading">Ha korábban már támogattam, itt megismételhetem!</p></h3>
         <div>
             <div class="content">
@@ -460,10 +460,10 @@
                         <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_shelt" class="dark-btn claim-btn" style="margin-right:20px;">
                     </div>
                     <div class="clear"></div>
-                </div> <!--End support-->
+                </div> 
             </div>
         </div>
-
+-->
         <h3>Hívj meg egy barátot!<p class="sub-heading">Szerezz 5% kedvezményt!</p></h3>
         <div>
             <div class="content">

@@ -172,7 +172,7 @@
                     </div>
                 </div>
             </div>
-
+<!--
             <h3>Menhelyi kutyusnak</h3>
             <div>
                 <div class="content">
@@ -212,6 +212,7 @@
                     </div>
                 </div>
             </div>
+-->
             <script>
                 $("#collapse-content").collapse({
                     accordion: true,
