@@ -14,6 +14,21 @@ class Controller_User_Account extends Controller_Core {
         $this->check_access();
 
     }
+    
+    private function send($to, $from, $subject, $body, $file = '') {
+        $email = new PHPMailer();
+        $email->ContentType = 'text/plain';
+        $email->AddAddress($to);
+        $email->CharSet = 'UTF-8';
+        $email->SetFrom($from, 'Goodiebox');
+        $email->Subject = $subject;
+        $email->Body = $body;
+        $email->IsHTML(true);
+        if (!empty($file)) {
+            $email->AddAttachment(DOCROOT . 'orders/' . $file, $file);
+        }
+        $email->Send();
+    }
 
     public function action_index()
     {
@@ -213,6 +228,9 @@ class Controller_User_Account extends Controller_Core {
         $invites->user_id = $this->current_user->id;
         $invites->email = $email;
         $invites->save();
+        $body = ORM::factory('Templates',4);
+        $body = str_replace('[friend]', $this->current_user->customer_firstname.' '.$this->current_user->customer_latname, $body);
+        $this->send($email, 'info@goodiebox.hu', 'You have received an invite', $body);
         Flash::set('notice', 'A meghívót sikeresen elküldtük!');
         $this->redirect('/user_account');
     }

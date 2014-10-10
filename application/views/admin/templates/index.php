@@ -6,6 +6,7 @@
                 <li><a href="/admin/templates/edit/1">Registration email template</a></li>
                 <li><a href="/admin/templates/edit/2">Order email template</a></li>
                 <li><a href="/admin/templates/edit/3">Gift email template</a></li>
+                <li><a href="/admin/templates/edit/3">Invite email template</a></li>
         </div>
     </div>
     <!--/.well -->
@@ -28,5 +29,4 @@
 </div>
 <!--/row-fluid-->
 
-<hr>
-z
+<hr/>

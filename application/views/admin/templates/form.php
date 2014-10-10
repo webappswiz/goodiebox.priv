@@ -28,6 +28,7 @@ tinyMCE.init({
                 <li <?=($model->type==1)?'class="active"':""?>><a href="/admin/templates/edit/1">Registration email template</a></li>
                 <li <?=($model->type==2)?'class="active"':""?>><a href="/admin/templates/edit/2">Order email template</a></li>
                 <li <?=($model->type==3)?'class="active"':""?>><a href="/admin/templates/edit/3">Gift email template</a></li>
+                <li <?=($model->type==4)?'class="active"':""?>><a href="/admin/templates/edit/4">Invite email template</a></li>
         </div>
     </div>
 
