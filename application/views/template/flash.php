@@ -22,7 +22,7 @@ foreach ($messages as $type => $messages_text) {
     foreach($messages_text as $text)
     {
         $class = Arr::get($type_list, $type);
-        echo "<div class=\"$class\">", PHP_EOL;
+        echo "<div class=\"$class\" style='text-align:center'>", PHP_EOL;
         echo $text, PHP_EOL;
         echo "</div>", PHP_EOL;
     }
