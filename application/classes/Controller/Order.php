@@ -40,6 +40,9 @@ class Controller_Order extends Controller_Core {
         } else
             $s = 0;
 
+        $discount = $order->package->price -$order->total_price;
+        $total_price = $order->package->price - $discount;
+        
         $invoice = '
             <!DOCTYPE html>
 <html lang="en">
@@ -136,11 +139,11 @@ class Controller_Order extends Controller_Core {
                 </tr>
                 <tr>
                     <td class="tg-row5" colspan="3">Kedvezmény:<br/>Szállítás és csomagolás:<br/>ÁFA:<br/></td>
-                    <td class="tg-row5" colspan="1" style="text-align:right">0,00<br/>0,00<br/>0,00<br/></td>
+                    <td class="tg-row5" colspan="1" style="text-align:right">'.$discount.'<br/>0,00<br/>0,00<br/></td>
                 </tr>
                 <tr>
                     <td class="tg-s6z2" colspan="3">Összesen:<br/></td>
-                    <td class="tg-031e" colspan="1" style="text-align:right">' . $order->package->price . '<br/></td>
+                    <td class="tg-031e" colspan="1" style="text-align:right">' . $total_price . '<br/></td>
                 </tr>
                 <tr><td colspan="4"><br/><br/>Köszönjük a vásárlást!<br/><div style="text-align:center">Ez a számla összesen 1 példányban került kinyomtatásra</div><br/></td></tr>
             </table>
@@ -304,7 +307,6 @@ class Controller_Order extends Controller_Core {
                     $address->customer_city = $_POST['delivery_city'];
                     $address->customer_address = $_POST['delivery_address'];
                     $address->customer_address2 = $_POST['delivery_address2'];
-
                     $address->save();
                 }
                 if (!empty($step1['coupon_code'])) {
@@ -320,15 +322,21 @@ class Controller_Order extends Controller_Core {
                     } else
                         $this->redirect('/user_account');
                 }
+                $discount = 0;
                 if ($_POST['discount'] == 1) {
                     if (count($invites) > 0 && empty($step1['coupon_code'])) {
                         $order->discount = 1;
+                        $pkg = ORM::factory('Packages',$step2['selected_box']);
+                        $discount = ($pkg->price * ((count($invites)*5)/100));
                     }
                 }
+                
+                
                 $order->orders_status = 1;
                 $order->payment_status = 0;
                 $order->save();
-                $this->receipt_email($order, $this->current_user, 1);
+                $order->total_price = round($order->package->price - $discount);
+                $order->save();
                 if (!empty($step1['coupon_code'])) {
                     Session::instance()->set('success', '1');
                     $this->redirect('/order/success');
@@ -382,13 +390,17 @@ class Controller_Order extends Controller_Core {
                 $order->company_name = $_POST['company_name'];
                 $order->tax_code = $_POST['tax_code'];
                 $order->payment_status = 0;
+                $discount = 0;
                 if ($_POST['discount'] == 1) {
                     if (count($invites) > 0) {
                         $order->discount = 1;
+                        $pkg = ORM::factory('Packages',$step2['selected_box']);
+                        $discount = ($pkg->price * ((count($invites)*5)/100));
                     }
                 }
                 $order->save();
-                $this->receipt_email($order, $this->current_user, 1);
+                $order->total_price = round($order->package->price = $discount);
+                $order->save();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
                 $this->redirect('/order/payment');
@@ -446,10 +458,13 @@ class Controller_Order extends Controller_Core {
                 if ($_POST['discount'] == 1) {
                     if (count($invites) > 0) {
                         $order->discount = 1;
+                        $pkg = ORM::factory('Packages',$step2['selected_box']);
+                        $discount = ($pkg->price * ((count($invites)*5)/100));
                     }
                 }
                 $order->save();
-                $this->receipt_email($order, $this->current_user, 1);
+                $order->total_price = round($order->package->price - $discount);
+                $order->save();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
                 $this->redirect('/order/payment');
@@ -538,6 +553,8 @@ class Controller_Order extends Controller_Core {
             $order->user_id = $user->id;
             $order->coupon_code = $ses;
             $order->save();
+            $order->total_price = 0;
+            $order->save();
             $order = ORM::factory('Friend')
                     ->where('coupon_code', '=', $ses)
                     ->find();
@@ -584,12 +601,14 @@ class Controller_Order extends Controller_Core {
                         $inv->is_used = 1;
                         $inv->save();
                     }
+                    $this->receipt_email($ord, $this->current_user, 1);
                 }
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
                 $ord->payment_status = 2;
                 $ord->save();
             }
         }
+        
         $session->delete('order');
         $session->delete('success');
     }

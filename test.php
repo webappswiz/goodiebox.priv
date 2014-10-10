@@ -1,4 +1,5 @@
 <?php
 
-print_r($_POST);
+$i = '7283.05000';
+        echo abs($i);
 
