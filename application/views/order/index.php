@@ -42,9 +42,13 @@
             });
         });
         $('.alerg_yes').on('click', function() {
+            $('#al_label').show();
+            $('#alerg_descr').show();
             $('#alerg_descr').attr('required', 'required');
         });
         $('.alerg_no').on('click', function() {
+            $('#al_label').hide();
+            $('#alerg_descr').hide();
             $('#alerg_descr').removeAttr('required');
         });
     });
@@ -90,7 +94,7 @@
             <h3>Saját kutyusomnak</h3>
             <div>
                 <div class="content">
-                    <div class="claim-form2">
+                    <div class="claim-form2" style="height: 439px">
                         <form class="process-form" name="order" method="POST">
                             <label for="">E-mail cím*</label>
                             <input type="text" name="email" class="rounded email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
@@ -126,10 +130,10 @@
                                 <label for="Igen">Allergiás a kutyusod?*</label>
                                 <input style="cursor: pointer" type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input style="cursor: pointer" type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
                             </div>
-
-                            <label for="last-name">Ha igen, mire?</label>
-                            <input type="text" name="alerg_descr" class="rounded" id="alerg_descr">
-
+                            
+                            <label style="display:none" for="last-name" id="al_label">Ha igen, mire?</label>
+                            <input style="display:none" type="text" name="alerg_descr" class="rounded" id="alerg_descr">
+                            
                             <p style="padding-top:20px;">*Kötelező adatok</p>
                             <input type="hidden" name="order1" value="1">
                             <input type="hidden" name="selected_size" class="selected_size">
