@@ -25,7 +25,12 @@ if ($auth->logged_in())
         $('#discount_box').on('click', function() {
             if ($(this).is(':checked')) {
                 $('#discount').val('1');
+                $('#discount1').html(discount+' HUF');
+                var final_price = total_price - discount;
+                $('#total_price').html(final_price+' HUF');
             } else {
+                $('#discount1').html('0000 HUF');
+                $('#total_price').html(total_price+' HUF');
                 $('#discount').val('0');
             }
         });
@@ -290,10 +295,12 @@ if (isset($session['step2'])) {
                             ?>
                             <span>GOODIEBOX <?php echo $step2['selected_box'] ?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
                             <p>Házhozszállítás</p>
+                            <p>Kedvezményt</p>
                         </div>
                         <div class="order-heading-leftbottom">
                             <h3>Összesen</h3>
                         </div>
+                        
                     </div>
 
                     <div class="order-content-right">
@@ -301,11 +308,14 @@ if (isset($session['step2'])) {
                             <h3>Összeg</h3>
                         </div>
                         <div class="order-text-right">
-                            0000 Ft
+                            <span><?=$price->price?> HUF</span>
+                            <p></p>
                             <p>Ingyenes</p>
+                            <p></p>
+                            <p id="discount1">0000 HUF</p>
                         </div>
                         <div class="order-heading-rightbottom">
-                            <h3>0000 Ft</h3>
+                            <h3 id="total_price"><?=round($price->price)?> HUF</h3>
                         </div>
                     </div>
                 </div>

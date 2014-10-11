@@ -42,5 +42,10 @@ class Controller_Core extends Controller_Base_Core {
             throw new HTTP_Exception_403('Access deny');
         }
     }
+    
+    public function append_js($name)
+    {
+        Base_Media::instance()->append_script($name);
+    }
 
 }

@@ -40,9 +40,9 @@ class Controller_Order extends Controller_Core {
         } else
             $s = 0;
 
-        $discount = $order->package->price -$order->total_price;
+        $discount = $order->package->price - $order->total_price;
         $total_price = $order->package->price - $discount;
-        
+
         $invoice = '
             <!DOCTYPE html>
 <html lang="en">
@@ -139,7 +139,7 @@ class Controller_Order extends Controller_Core {
                 </tr>
                 <tr>
                     <td class="tg-row5" colspan="3">Kedvezmény:<br/>Szállítás és csomagolás:<br/>ÁFA:<br/></td>
-                    <td class="tg-row5" colspan="1" style="text-align:right">'.$discount.'<br/>0,00<br/>0,00<br/></td>
+                    <td class="tg-row5" colspan="1" style="text-align:right">' . $discount . '<br/>0,00<br/>0,00<br/></td>
                 </tr>
                 <tr>
                     <td class="tg-s6z2" colspan="3">Összesen:<br/></td>
@@ -188,7 +188,19 @@ class Controller_Order extends Controller_Core {
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
         $this->set_title('Order - Step 3');
-
+        $this->price = ORM::factory('Packages', $step2['selected_box']);
+        $this->append_js_var('total_price', round($this->price->price));
+        $invites = ORM::factory('Invites')
+                ->where('user_id', '=', $this->current_user->id)
+                ->and_where('is_used', '=', 0)
+                ->and_where('is_registered', '=', 1)
+                ->count_all();
+        $this->discount = 0;
+        if ($invites > 0) {
+            echo $invites;
+            $this->discount = ($this->price->price * ($invites * 5) / 100);
+        }
+        $this->append_js_var('discount', round($this->discount));
         if ($this->is_post()) {
             if (!Auth::instance()->logged_in()) {
                 if (empty($_POST['customer_password']) || $_POST['customer_password'] != $_POST['password_confirm']) {
@@ -242,11 +254,6 @@ class Controller_Order extends Controller_Core {
             }
 
             $order = ORM::factory('Order');
-            $invites = ORM::factory('Invites')
-                    ->where('user_id', '=', $this->current_user->id)
-                    ->and_where('is_used', '=', 0)
-                    ->and_where('is_registered', '=', 1)
-                    ->find_all();
             //Order for own dog
 
             if (isset($step1['order1'])) {
@@ -326,12 +333,12 @@ class Controller_Order extends Controller_Core {
                 if ($_POST['discount'] == 1) {
                     if (count($invites) > 0 && empty($step1['coupon_code'])) {
                         $order->discount = 1;
-                        $pkg = ORM::factory('Packages',$step2['selected_box']);
-                        $discount = ($pkg->price * ((count($invites)*5)/100));
+                        $pkg = ORM::factory('Packages', $step2['selected_box']);
+                        $discount = ($pkg->price * ((count($invites) * 5) / 100));
                     }
                 }
-                
-                
+
+
                 $order->orders_status = 1;
                 $order->payment_status = 0;
                 $order->save();
@@ -396,8 +403,8 @@ class Controller_Order extends Controller_Core {
                 if ($_POST['discount'] == 1) {
                     if (count($invites) > 0) {
                         $order->discount = 1;
-                        $pkg = ORM::factory('Packages',$step2['selected_box']);
-                        $discount = ($pkg->price * ((count($invites)*5)/100));
+                        $pkg = ORM::factory('Packages', $step2['selected_box']);
+                        $discount = ($pkg->price * ((count($invites) * 5) / 100));
                     }
                 }
                 $order->save();
@@ -460,8 +467,8 @@ class Controller_Order extends Controller_Core {
                 if ($_POST['discount'] == 1) {
                     if (count($invites) > 0) {
                         $order->discount = 1;
-                        $pkg = ORM::factory('Packages',$step2['selected_box']);
-                        $discount = ($pkg->price * ((count($invites)*5)/100));
+                        $pkg = ORM::factory('Packages', $step2['selected_box']);
+                        $discount = ($pkg->price * ((count($invites) * 5) / 100));
                     }
                 }
                 $order->save();
@@ -610,7 +617,7 @@ class Controller_Order extends Controller_Core {
                 $ord->save();
             }
         }
-        
+
         $session->delete('order');
         $session->delete('success');
     }

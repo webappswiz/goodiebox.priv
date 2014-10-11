@@ -185,7 +185,12 @@ class Controller_Base_Core extends Controller_Template {
     {
         Base_Media::instance()->append_script($name);
     }
-
+    
+     public function append_js_var($name, $value, $position = NULL)
+    {
+        Base_Media::instance()->append_js_var($name, $value, $position);
+    }
+    
     /**
      * try to append css and js for file
      *
