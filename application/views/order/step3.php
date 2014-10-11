@@ -295,7 +295,7 @@ if (isset($session['step2'])) {
                             ?>
                             <span>GOODIEBOX <?php echo $step2['selected_box'] ?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
                             <p>Házhozszállítás</p>
-                            <p>Kedvezményt</p>
+                            <p>Kedvezmény</p>
                         </div>
                         <div class="order-heading-leftbottom">
                             <h3>Összesen</h3>
