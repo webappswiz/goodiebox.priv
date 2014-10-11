@@ -188,19 +188,24 @@ class Controller_Order extends Controller_Core {
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
         $this->set_title('Order - Step 3');
+
         $this->price = ORM::factory('Packages', $step2['selected_box']);
         $this->append_js_var('total_price', round($this->price->price));
-        $invites = ORM::factory('Invites')
-                ->where('user_id', '=', $this->current_user->id)
-                ->and_where('is_used', '=', 0)
-                ->and_where('is_registered', '=', 1)
-                ->count_all();
-        $this->discount = 0;
-        if ($invites > 0) {
-            echo $invites;
-            $this->discount = ($this->price->price * ($invites * 5) / 100);
-        }
-        $this->append_js_var('discount', round($this->discount));
+        if ($this->current_user) {
+            
+            $invites = ORM::factory('Invites')
+                    ->where('user_id', '=', $this->current_user->id)
+                    ->and_where('is_used', '=', 0)
+                    ->and_where('is_registered', '=', 1)
+                    ->count_all();
+            $this->discount = 0;
+            if ($invites > 0) {
+                echo $invites;
+                $this->discount = ($this->price->price * ($invites * 5) / 100);
+            }
+            $this->append_js_var('discount', round($this->discount));
+        } else
+            $invites = 0;
         if ($this->is_post()) {
             if (!Auth::instance()->logged_in()) {
                 if (empty($_POST['customer_password']) || $_POST['customer_password'] != $_POST['password_confirm']) {
