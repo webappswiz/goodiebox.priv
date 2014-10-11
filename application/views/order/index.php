@@ -154,14 +154,17 @@
                             
                             <label for="">E-mail cím*</label>
                             <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
-                            
                             <div>
-                                <label for="last-name">Barátod neve*</label>
-                                <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
+                                <label for="last-name">Vezetéknév*</label>
+                                <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
+                            </div>
+                            <div>
+                                <label for="last-name">Keresztnév*</label>
+                                <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
                             </div>
                             <div>
                                 <label for="first-name">Barátod e-mail címe*</label>
-                                <input id="" type="text" value="" name="email"  class="rounded" required>
+                                <input id="" type="text" value="" name="friend_email"  class="rounded" required>
                             </div>
                             <div>
                                 <input type="checkbox" value="1" name="delay"> Send a gift code to my email

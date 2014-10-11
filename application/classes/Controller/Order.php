@@ -352,12 +352,14 @@ class Controller_Order extends Controller_Core {
             if (isset($step1['order2'])) {
                 $friend = ORM::factory('Friend')
                         ->where('friends_email', '=', $step1['email'])
-                        ->and_where('friends_name', '=', $step1['first-name'])
+                        ->and_where('friends_firstname', '=', $step1['first-name'])
+                        ->and_where('friends_lastname', '=', $step1['last-name'])
                         ->find();
                 if (!$friend->loaded()) {
                     $friend = ORM::factory('Friend');
-                    $friend->friends_email = $step1['email'];
-                    $friend->friends_name = $step1['first-name'];
+                    $friend->friends_email = $step1['friend_email'];
+                    $friend->friends_firstname = $step1['first-name'];
+                    $friend->friends_lastname = $step1['last-name'];
                     $friend->user_id = $this->current_user->id;
                 }
                 $friend->selected_box = $step2['selected_box'];
