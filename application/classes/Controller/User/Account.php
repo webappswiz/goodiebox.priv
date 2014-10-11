@@ -165,7 +165,8 @@ class Controller_User_Account extends Controller_Core {
                 $this->redirect('/user_account');
             $fr['order2'] = 1;
             $fr['email'] = $friend->friends_email;
-            $fr['first-name'] = $friend->friends_name;
+            $fr['first-name'] = $friend->friends_firstname;
+            $fr['last-name'] = $friend->friends_lastname;
             if(isset($_POST['delay']))
               $fr['delay'] = 1;
             $fr['selected_size'] = 0;

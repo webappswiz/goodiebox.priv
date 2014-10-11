@@ -353,7 +353,7 @@
                                 <div class="support-row">
                                     <ul>
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
-                                        <li class="option-text1"><?= $friend->friends_name; ?></li>
+                                        <li class="option-text1"><?= $friend->friends_firstname . ' ' .$friend->friends_lastname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
                                         <li class="option-text3"><input type="radio" value="1" name="delay"> Send a gift code to my email</li>
                                     </ul>

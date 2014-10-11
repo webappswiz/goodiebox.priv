@@ -155,11 +155,11 @@
                             <label for="">E-mail cím*</label>
                             <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
                             <div>
-                                <label for="last-name">Vezetéknév*</label>
+                                <label for="last-name">Barátod*</label>
                                 <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
                             </div>
                             <div>
-                                <label for="last-name">Keresztnév*</label>
+                                <label for="last-name">Barátod*</label>
                                 <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
                             </div>
                             <div>
