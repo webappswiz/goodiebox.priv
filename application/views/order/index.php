@@ -152,7 +152,7 @@
                     <div class="process-form-container2">
                         <form class="process-form1" name="order" method="POST">
                             
-                            <label for="">E-mail cím*</label>
+                            <label for="">E-mail címed*</label>
                             <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
                             <div>
                                 <label for="last-name">Barátod vezetékneve*</label>
