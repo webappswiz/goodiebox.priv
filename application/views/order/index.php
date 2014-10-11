@@ -155,7 +155,7 @@
                                 messages: {
                                     puppy_name: "ez az információ szükséges",
                                     alerg_descr: "ez az információ szükséges",
-                                    email: "ez az információ szükséges"
+                                    email: "Helytelen e-mail cím!"
                                 }
                             });
                         </script>
@@ -213,7 +213,7 @@
                                     'first-name': "ez az információ szükséges",
                                     'last-name': "ez az információ szükséges",
                                     'friend_email': "ez az információ szükséges",
-                                    email: "ez az információ szükséges"
+                                    email: "Helytelen e-mail cím!"
                                 }
                             });
                         </script>
