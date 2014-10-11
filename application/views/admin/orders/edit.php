@@ -96,6 +96,11 @@
                 <td><?=$model->status->status_name?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
+            <tr>
+                <td><strong>Order comments</strong></td>
+                <td><?=$model->message?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
         </table>
     <br/>
     <?php

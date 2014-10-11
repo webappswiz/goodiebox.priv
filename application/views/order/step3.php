@@ -262,7 +262,7 @@ if (isset($session['step2'])) {
                 </form>
                 <div style="margin-top:80px;" class="add">
                     <label for="message">Megjegyzés</label>
-                    <textarea name="message" id="message" class="rounded"></textarea>
+                    <textarea style="margin-top: 5px;border: 3px solid #330000; padding: 5px; outline: none;" name="message" id="message" class="rounded"></textarea>
                 </div>
                 <script>
 
