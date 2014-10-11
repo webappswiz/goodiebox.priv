@@ -148,7 +148,7 @@
                                         required: true,
                                     },
                                     email: {
-                                        requred: true,
+                                        required: true,
                                         email: true
                                     }
                                 },
@@ -201,7 +201,7 @@
                                         required: true,
                                     },
                                     email: {
-                                        requred: true,
+                                        required: true,
                                         email: true
                                     },
                                     friend_email: {
