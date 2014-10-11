@@ -46,9 +46,11 @@ if ($auth->logged_in())
         });
         $('#company').on('click',function(){
            if($('#company').is(':checked')){
+               $('#tax').show();
                $('#company_name').attr('required','required');
                $('#tax_code').attr('required','required');
            } else {
+               $('#tax').hide();
                $('#company_name').removeAttr('required');
                $('#tax_code').removeAttr('required');
            }
@@ -201,6 +203,7 @@ if (isset($session['step2'])) {
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
+                    <div id="tax" style="display:none">
                     <div>
                         <label for="company_name">Cégnév</label>
                         <input type="text" name="company_name" class="rounded" id="company_name" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
@@ -209,6 +212,7 @@ if (isset($session['step2'])) {
                         <label for="tax_code">Adószám</label>
                         <input type="text" name="tax_code" class="rounded" id="tax_code" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
                     </div>
+                        </div>
                     <input type="hidden" name="msg" value="" id="msg">
                 </form>
                 <script>
