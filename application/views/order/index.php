@@ -167,7 +167,7 @@
                                 <input id="" type="text" value="" name="friend_email"  class="rounded" required>
                             </div>
                             <div>
-                                <input type="checkbox" value="1" name="delay" checked="checked"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd késöbb meglepem vele!
+                                <input type="checkbox" value="1" name="delay" checked="checked"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order2" value="1">
