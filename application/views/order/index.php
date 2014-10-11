@@ -1,15 +1,15 @@
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#submit_form').on('click', function() {
+    $(document).ready(function () {
+        $('#submit_form').on('click', function () {
             div = $('.content').filter(':visible');
             $('form', div).submit();
         });
         $('.selected_size').val($('input:radio[id^="size"]:checked').val());
-        $('input:radio').on('click', function() {
+        $('input:radio').on('click', function () {
             $('.selected_size').val($(this).val());
         });
-        $('.email').on('blur', function() {
-            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+        $('.email').on('blur', function () {
+            $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
                 if (i.msg == 1) {
                     $('.email').val('');
@@ -19,8 +19,8 @@
                 }
             });
         });
-        $('.email2').on('blur', function() {
-            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+        $('.email2').on('blur', function () {
+            $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
                 if (i.msg == 1) {
                     $('.email2').val('');
@@ -30,8 +30,8 @@
                 }
             });
         });
-        $('.email3').on('blur', function() {
-            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+        $('.email3').on('blur', function () {
+            $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
                 if (i.msg == 1) {
                     $('.email3').val('');
@@ -41,12 +41,12 @@
                 }
             });
         });
-        $('.alerg_yes').on('click', function() {
+        $('.alerg_yes').on('click', function () {
             $('#al_label').show();
             $('#alerg_descr').show();
             $('#alerg_descr').attr('required', 'required');
         });
-        $('.alerg_no').on('click', function() {
+        $('.alerg_no').on('click', function () {
             $('#al_label').hide();
             $('#alerg_descr').hide();
             $('#alerg_descr').removeAttr('required');
@@ -116,7 +116,7 @@
                             <label for="last-name">Kutyus születésnapja*</label>
                             <div class="text-shor1 fl" style="margin-right: 10px">
                                 <?php
-                                echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name')).' ';
+                                echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name')) . ' ';
                                 ?>
                             </div>
 
@@ -130,16 +130,34 @@
                                 <label for="Igen">Allergiás a kutyusod?*</label>
                                 <input style="cursor: pointer" type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input style="cursor: pointer" type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
                             </div>
-                            
+
                             <label style="display:none" for="last-name" id="al_label">Ha igen, mire?</label>
                             <input style="display:none" type="text" name="alerg_descr" class="rounded" id="alerg_descr">
-                            
+
                             <p style="padding-top:20px;">*Kötelező adatok</p>
                             <input type="hidden" name="order1" value="1">
                             <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
-                            $(".process-form").validate();
+                            $(".process-form").validate({
+                                rules: {
+                                    puppy_name: {
+                                        required: true,
+                                    },
+                                    alerg_descr: {
+                                        required: true,
+                                    },
+                                    email: {
+                                        requred: true,
+                                        email: true
+                                    }
+                                },
+                                messages: {
+                                    puppy_name: "ez az információ szükséges",
+                                    alerg_descr: "ez az információ szükséges",
+                                    email: "ez az információ szükséges"
+                                }
+                            });
                         </script>
                     </div>
                 </div>
@@ -151,7 +169,7 @@
                 <div class="content">
                     <div class="process-form-container2">
                         <form class="process-form1" name="order" method="POST">
-                            
+
                             <label for="">E-mail címed*</label>
                             <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
                             <div>
@@ -174,60 +192,83 @@
                             <input type="hidden" name="selected_size" class="selected_size">
                         </form>
                         <script>
-                            $(".process-form1").validate();
-                        </script>
-                    </div>
-                </div>
-            </div>
-<!--
-            <h3>Menhelyi kutyusnak</h3>
-            <div>
-                <div class="content">
-                    <div class="process-form-container2">
-                        <form class="process-form2" name="order" method="POST">
-                            
-                            <label for="">E-mail cím*</label>
-                            <input type="text" name="email" class="rounded email3" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
-                            
-                            <div>
-                                <label for="">Menhely neve*</label>
-                                <select name="option-name" class="rounded option-name" required>
-                                    <?php
-                                    $shelters = ORM::factory('Shelter')->find_all();
-                                    foreach ($shelters as $shelter) {
-                                        ?>
-                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
-                                        <?php
+                            $(".process-form1").validate({
+                                rules: {
+                                    'first-name': {
+                                        required: true,
+                                    },
+                                    'last-name': {
+                                        required: true,
+                                    },
+                                    email: {
+                                        requred: true,
+                                        email: true
+                                    },
+                                    friend_email: {
+                                        requred: true,
+                                        email: true
                                     }
-                                    ?>
-                                </select>
-                            </div>
-                            <label for="">Kutyus neve*</label>
-                            <input type="text" name="doggy_name" class="rounded" id="" required>
-
-                            <div class="radio-list">
-                                <label for="last-name">Kutyus neme*</label>
-                                <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
-                            </div>
-                            <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                            <input type="hidden" name="order3" value="1">
-                            <input type="hidden" name="selected_size" class="selected_size">
-                        </form>
-                        <script>
-                            $(".process-form2").validate();
+                                },
+                                messages: {
+                                    'first-name': "ez az információ szükséges",
+                                    'last-name': "ez az információ szükséges",
+                                    'friend_email': "ez az információ szükséges",
+                                    email: "ez az információ szükséges"
+                                }
+                            });
                         </script>
                     </div>
                 </div>
             </div>
--->
+            <!--
+                        <h3>Menhelyi kutyusnak</h3>
+                        <div>
+                            <div class="content">
+                                <div class="process-form-container2">
+                                    <form class="process-form2" name="order" method="POST">
+                                        
+                                        <label for="">E-mail cím*</label>
+                                        <input type="text" name="email" class="rounded email3" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
+                                        
+                                        <div>
+                                            <label for="">Menhely neve*</label>
+                                            <select name="option-name" class="rounded option-name" required>
+            <?php
+            $shelters = ORM::factory('Shelter')->find_all();
+            foreach ($shelters as $shelter) {
+                ?>
+                                                            <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                <?php
+            }
+            ?>
+                                            </select>
+                                        </div>
+                                        <label for="">Kutyus neve*</label>
+                                        <input type="text" name="doggy_name" class="rounded" id="" required>
+            
+                                        <div class="radio-list">
+                                            <label for="last-name">Kutyus neme*</label>
+                                            <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
+                                        </div>
+                                        <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                                        <input type="hidden" name="order3" value="1">
+                                        <input type="hidden" name="selected_size" class="selected_size">
+                                    </form>
+                                    <script>
+                                        $(".process-form2").validate();
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+            -->
             <script>
                 $("#collapse-content").collapse({
                     accordion: true,
-                    open: function() {
+                    open: function () {
                         this.addClass("open");
                         this.css({height: this.children().outerHeight()});
                     },
-                    close: function() {
+                    close: function () {
                         this.css({height: "0px"});
                         this.removeClass("open");
                     }
