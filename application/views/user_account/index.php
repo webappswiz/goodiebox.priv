@@ -56,9 +56,13 @@
         });
 
         $('.alerg_yes').on('click', function () {
+            $('#al_label').show();
+            $('#alerg_descr').show();
             $('#alerg_descr').attr('required', 'required');
         });
         $('.alerg_no').on('click', function () {
+            $('#al_label').hide();
+            $('#alerg_descr').hide();
             $('#alerg_descr').removeAttr('required');
         });
         $('#popupBoxClose').click(function () {
@@ -129,14 +133,15 @@
                 echo Form::select('months', $months, '', array('required', 'class' => 'rounded option-name'));
                 ?>
             </div>
-
+            <br/>
+            <br/>
             <div class="radio-list">
                 <label for="Igen">Allergiás a kutyusod?*</label>
                 <input type="radio" class="alerg_yes" value="0" name="alerg"> Igen <input type="radio" value="1" name="alerg" class="alerg_no" checked> Nem
             </div>
 
-            <label for="last-name">Ha igen, mire?</label>
-            <input type="text" name="alerg_descr" class="rounded" id="alerg_descr">
+            <label style="display:none" for="last-name" id="al_label">Ha igen, mire?</label>
+            <input style="display:none" type="text" name="alerg_descr" class="rounded" id="alerg_descr">
 
             <p style="padding-top:20px;">*Kötelező adatok</p>
             <input type="hidden" name="order1" value="1">
@@ -381,11 +386,11 @@
                             <div class="process-form-container2">
                                 <form class="process-form1" name="order" action="/order/index" method="POST">
                                     <div>
-                                        <label for="last-name">Barátod*</label>
+                                        <label for="last-name">Barátod vezetéknév*</label>
                                         <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
                                     </div>
                                     <div>
-                                        <label for="last-name">Barátod*</label>
+                                        <label for="last-name">Barátod keresztnév*</label>
                                         <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
                                     </div>
                                     <div>
