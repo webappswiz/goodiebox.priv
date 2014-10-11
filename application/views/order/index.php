@@ -99,7 +99,7 @@
                             <label for="">E-mail címed*</label>
                             <input type="text" name="email" class="rounded email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
 
-                            <label for="">Kutyus neve</label>
+                            <label for="">Kutyus neve*</label>
                             <input type="text" name="puppy_name" class="rounded" id="" required>
 
                             <div class="radio-list">
