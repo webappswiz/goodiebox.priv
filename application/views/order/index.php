@@ -96,7 +96,7 @@
                 <div class="content">
                     <div class="claim-form2" style="height: 439px">
                         <form class="process-form" name="order" method="POST">
-                            <label for="">E-mail cím*</label>
+                            <label for="">E-mail címed*</label>
                             <input type="text" name="email" class="rounded email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
 
                             <label for="">Kutyus neve</label>
@@ -155,11 +155,11 @@
                             <label for="">E-mail cím*</label>
                             <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
                             <div>
-                                <label for="last-name">Barátod vezetéknév*</label>
+                                <label for="last-name">Barátod vezetékneve*</label>
                                 <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
                             </div>
                             <div>
-                                <label for="last-name">Barátod keresztnév*</label>
+                                <label for="last-name">Barátod keresztneve*</label>
                                 <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
                             </div>
                             <div>
@@ -167,7 +167,7 @@
                                 <input id="" type="text" value="" name="friend_email"  class="rounded" required>
                             </div>
                             <div>
-                                <input type="checkbox" value="1" name="delay"> Send a gift code to my email
+                                <input type="checkbox" value="1" name="delay" checked="checked"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd késöbb meglepem vele!
                             </div>
                             <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                             <input type="hidden" name="order2" value="1">
