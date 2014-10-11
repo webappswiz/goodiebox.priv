@@ -174,16 +174,16 @@
 
         #progressbar > div {
             background-color: orange;
-            width: <?=$discount?>; /* Adjust with JavaScript */
+            width: <?= $discount ?>; /* Adjust with JavaScript */
             height: 20px;
             border-radius: 10px;
             text-align:center;
         }
 
     </style>
-    
+
     <div id="progressbar">
-        <div><?=$discount?></div>
+        <div><?= $discount ?></div>
     </div>
     <div id="collapse-content">
 
@@ -353,7 +353,7 @@
                                 <div class="support-row">
                                     <ul>
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
-                                        <li class="option-text1"><?= $friend->friends_firstname . ' ' .$friend->friends_lastname; ?></li>
+                                        <li class="option-text1"><?= $friend->friends_firstname . ' ' . $friend->friends_lastname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
                                         <li class="option-text3"><input type="radio" value="1" name="delay"> Send a gift code to my email</li>
                                     </ul>
@@ -381,8 +381,12 @@
                             <div class="process-form-container2">
                                 <form class="process-form1" name="order" action="/order/index" method="POST">
                                     <div>
-                                        <label for="last-name">Barátod neve*</label>
-                                        <input id="last-name" type="text" value="" name="first-name" class="rounded" required>
+                                        <label for="last-name">Barátod*</label>
+                                        <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
+                                    </div>
+                                    <div>
+                                        <label for="last-name">Barátod*</label>
+                                        <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
                                     </div>
                                     <div>
                                         <label for="first-name">Barátod e-mail címe*</label>
@@ -419,26 +423,26 @@
                 ->find_all();
         if (count($shelters) > 0):
             ?>
-                                        <form action="/user_account/shelter" id="shelter" method="POST" >
+                                            <form action="/user_account/shelter" id="shelter" method="POST" >
             <?php
             foreach ($shelters as $shelter):
                 ?>
-                                                        <div class="support-row">
-                                                            <ul>
-                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                                            </ul>
-                                                        </div>
+                                                                <div class="support-row">
+                                                                    <ul>
+                                                                        <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                                                        <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                                                        <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                                                    </ul>
+                                                                </div>
                 <?php
             endforeach;
             ?>
-                
-                                            <div style="margin-top:35px; float:none;">
-                                                <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                                            </div>
-                                        </form>
-                                        <hr/>
+                    
+                                                <div style="margin-top:35px; float:none;">
+                                                    <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                                </div>
+                                            </form>
+                                            <hr/>
         <?php endif; ?>
                             <div class="process-form-container2">
                                 <div class="clear"></div>
@@ -456,7 +460,7 @@
         $shelters = ORM::factory('Shelter')->find_all();
         foreach ($shelters as $shelter) {
             ?>
-                                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                                            <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
             <?php
         }
         ?>
