@@ -200,7 +200,6 @@ class Controller_Order extends Controller_Core {
                     ->count_all();
             $this->discount = 0;
             if ($invites > 0) {
-                echo $invites;
                 $this->discount = ($this->price->price * ($invites * 5) / 100);
             }
             $this->append_js_var('discount', round($this->discount));
@@ -362,6 +361,7 @@ class Controller_Order extends Controller_Core {
             //Give a gift
 
             if (isset($step1['order2'])) {
+                print_r($step1);
                 $friend = ORM::factory('Friend')
                         ->where('friends_email', '=', $step1['friend_email'])
                         ->and_where('friends_firstname', '=', $step1['firstname'])

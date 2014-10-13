@@ -40,6 +40,9 @@
         $('#submit_form_shelt').on('click', function () {
             $('.process-form2').submit();
         });
+        $('#submit_form_f').on('click', function () {
+            $('#gift').submit();
+        });
         $('#submit_form_invite').on('click', function () {
             $('.process-form3').submit();
         });
@@ -368,7 +371,7 @@
                             endforeach;
                             ?>
                             <div style="margin-top:35px; float:none;">
-                                <input type="submit" name="submit_form" id="submit_form" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                <input type="submit" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
                         <hr/>
@@ -388,15 +391,15 @@
                                 <form class="process-form1" name="order" action="/order/index" method="POST">
                                     <div>
                                         <label for="last-name">Barátod vezetéknév*</label>
-                                        <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
+                                        <input id="firstname" type="text" value="" name="firstname" class="rounded" required>
                                     </div>
                                     <div>
                                         <label for="last-name">Barátod keresztnév*</label>
-                                        <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
+                                        <input id="lastname" type="text" value="" name="lastname" class="rounded" required>
                                     </div>
                                     <div>
                                         <label for="first-name">Barátod e-mail címe*</label>
-                                        <input id="" type="text" value="" name="email"  class="rounded" required>
+                                        <input id="" type="text" value="" name="friend_email"  class="rounded" required>
                                     </div>
                                     <div>
                                         <input type="checkbox" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
