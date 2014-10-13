@@ -171,18 +171,18 @@
                         <form class="process-form1" name="order" method="POST">
 
                             <label for="">E-mail címed*</label>
-                            <input type="text" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
+                            <input type="text" id="email" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
                             <div>
                                 <label for="last-name">Barátod vezetékneve*</label>
-                                <input id="firstname" type="text" value="" name="first-name" class="rounded" required>
+                                <input id="first-name" type="text" value="" name="firstname" class="rounded" required>
                             </div>
                             <div>
                                 <label for="last-name">Barátod keresztneve*</label>
-                                <input id="lastname" type="text" value="" name="last-name" class="rounded" required>
+                                <input id="last-name" type="text" value="" name="lastname" class="rounded" required>
                             </div>
                             <div>
                                 <label for="first-name">Barátod e-mail címe*</label>
-                                <input id="" type="text" value="" name="friend_email"  class="rounded" required>
+                                <input id="friend_email" type="text" value="" name="friend_email"  class="rounded" required>
                             </div>
                             <div>
                                 <input type="checkbox" value="1" name="delay" checked="checked"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
@@ -194,26 +194,26 @@
                         <script>
                             $(".process-form1").validate({
                                 rules: {
-                                    'first-name': {
+                                    'firstname': {
                                         required: true,
                                     },
-                                    'last-name': {
+                                    'lastname': {
                                         required: true,
                                     },
-                                    email: {
+                                    'email': {
                                         required: true,
                                         email: true
                                     },
-                                    friend_email: {
-                                        requred: true,
+                                    'friend_email': {
+                                        required: true,
                                         email: true
                                     }
                                 },
                                 messages: {
-                                    'first-name': "ez az információ szükséges",
-                                    'last-name': "ez az információ szükséges",
+                                    'firstname': "ez az információ szükséges",
+                                    'lastname': "ez az információ szükséges",
                                     'friend_email': "ez az információ szükséges",
-                                    email: "Helytelen e-mail cím!"
+                                    'email': "Helytelen e-mail cím!"
                                 }
                             });
                         </script>

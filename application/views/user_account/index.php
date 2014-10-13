@@ -172,17 +172,18 @@
     ?>
     <style type="text/css">
         #progressbar {
-            background-color: black;
+            background-color:  #ff6699;
             border-radius: 13px; /* (height of inner div) / 2 + padding */
             padding: 3px;
         }
 
         #progressbar > div {
-            background-color: orange;
+            background-color: #330000;
             width: <?= $discount ?>; /* Adjust with JavaScript */
             height: 20px;
             border-radius: 10px;
             text-align:center;
+            color: white;
         }
 
     </style>
@@ -360,7 +361,7 @@
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
                                         <li class="option-text1"><?= $friend->friends_firstname . ' ' . $friend->friends_lastname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
-                                        <li class="option-text3"><input type="radio" value="1" name="delay"> Send a gift code to my email</li>
+                                        <li class="option-text3"><input type="radio" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
                                     </ul>
                                 </div>
                                 <?php
@@ -398,7 +399,7 @@
                                         <input id="" type="text" value="" name="email"  class="rounded" required>
                                     </div>
                                     <div>
-                                        <input type="checkbox" value="1" name="delay"> Send a gift code to my email
+                                        <input type="checkbox" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
                                     </div>
                                     <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                                     <input type="hidden" name="order2" value="1">
@@ -510,6 +511,9 @@
                                         required: true,
                                         email: true
                                     }
+                                },
+                                messages: {
+                                    'friend_email': "Helytelen e-mail cím!"
                                 }
                             });
                         </script>

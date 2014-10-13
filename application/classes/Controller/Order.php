@@ -363,26 +363,26 @@ class Controller_Order extends Controller_Core {
 
             if (isset($step1['order2'])) {
                 $friend = ORM::factory('Friend')
-                        ->where('friends_email', '=', $step1['email'])
-                        ->and_where('friends_firstname', '=', $step1['first-name'])
-                        ->and_where('friends_lastname', '=', $step1['last-name'])
+                        ->where('friends_email', '=', $step1['friend_email'])
+                        ->and_where('friends_firstname', '=', $step1['firstname'])
+                        ->and_where('friends_lastname', '=', $step1['lastname'])
                         ->find();
                 if (!$friend->loaded()) {
                     $friend = ORM::factory('Friend');
                     $friend->friends_email = $step1['friend_email'];
-                    $friend->friends_firstname = $step1['first-name'];
-                    $friend->friends_lastname = $step1['last-name'];
+                    $friend->friends_firstname = $step1['firstname'];
+                    $friend->friends_lastname = $step1['lastname'];
                     $friend->user_id = $this->current_user->id;
                 }
                 $friend->selected_box = $step2['selected_box'];
                 $friend->coupon_code = $this->generateRandomString();
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
-                $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['first-name'], 'coupon' => $friend->coupon_code))->render();
+                $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
                 if (isset($step1['delay'])) {
                     $to = $this->current_user->email;
                 } else {
-                    $to = $step1['email'];
+                    $to = $step1['friend_email'];
                 }
 
                 $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
