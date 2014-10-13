@@ -100,7 +100,16 @@
                 <input type="hidden" name="submit_form" value="1">
             </form>
             <script>
-                $("#billing_form").validate();
+                $("#billing_form").validate({
+                        rules: {
+                            customer_password: {
+                                required: true, minlength: 5
+                            },
+                            password_confirm: {
+                                required: true, equalTo: "#customer_password", minlength: 5
+                            }},
+                        
+                    });
             </script>
         </div> <!--End claim form-->
     </div><!--End claim orm container-->
