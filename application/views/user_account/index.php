@@ -364,7 +364,7 @@
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
                                         <li class="option-text1"><?= $friend->friends_firstname . ' ' . $friend->friends_lastname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
-                                        <li class="option-text3"><input type="radio" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
+                                        <li class="option-text3"><input type="radio" value="1" name="delay" checked> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
                                     </ul>
                                 </div>
                                 <?php
