@@ -55,6 +55,9 @@
             $('#alerg_descr').hide();
             $('#alerg_descr').removeAttr('required');
         });
+        $.validator.addMethod("myCustomRule", function (value, element) {
+            return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+        }, "Custom message for this rule");
     });
 </script>
 <div class="clear"></div>
@@ -152,8 +155,7 @@
                                         required: true,
                                     },
                                     email: {
-                                        required: true,
-                                        email: true
+                                        myCustomRule: true
                                     }
                                 },
                                 messages: {
@@ -205,12 +207,10 @@
                                         required: true,
                                     },
                                     'email': {
-                                        required: true,
-                                        email: true
+                                        myCustomRule: true
                                     },
                                     'friend_email': {
-                                        required: true,
-                                        email: true
+                                        myCustomRule: true
                                     }
                                 },
                                 messages: {

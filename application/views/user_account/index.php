@@ -425,8 +425,8 @@
                                             }
                                         },
                                         messages: {
-                                    'friend_email': "Helytelen e-mail cím!"
-                                }
+                                            'friend_email': "Helytelen e-mail cím!"
+                                        }
                                     });
                                 </script>
                             </div>
@@ -450,26 +450,26 @@
                 ->find_all();
         if (count($shelters) > 0):
             ?>
-                                                <form action="/user_account/shelter" id="shelter" method="POST" >
+                                                        <form action="/user_account/shelter" id="shelter" method="POST" >
             <?php
             foreach ($shelters as $shelter):
                 ?>
-                                                                        <div class="support-row">
-                                                                            <ul>
-                                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                                                            </ul>
-                                                                        </div>
+                                                                                        <div class="support-row">
+                                                                                            <ul>
+                                                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                                                                            </ul>
+                                                                                        </div>
                 <?php
             endforeach;
             ?>
-                        
-                                                    <div style="margin-top:35px; float:none;">
-                                                        <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                                                    </div>
-                                                </form>
-                                                <hr/>
+                                
+                                                            <div style="margin-top:35px; float:none;">
+                                                                <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                                            </div>
+                                                        </form>
+                                                        <hr/>
         <?php endif; ?>
                             <div class="process-form-container2">
                                 <div class="clear"></div>
@@ -487,7 +487,7 @@
         $shelters = ORM::factory('Shelter')->find_all();
         foreach ($shelters as $shelter) {
             ?>
-                                                                <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
             <?php
         }
         ?>
@@ -529,8 +529,7 @@
                             $(".process-form3").validate({
                                 rules: {
                                     friend_email: {
-                                        required: true,
-                                        email: true
+                                        myCustomRule: true
                                     }
                                 },
                                 messages: {

@@ -54,6 +54,9 @@
             required: "ez az információ szükséges",
             equalTo: "Kérjük, adja ugyanazt az értéket újra"
         });
+        $.validator.addMethod("myCustomRule", function (value, element) {
+            return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+        }, "Custom message for this rule");
     });
 </script>
 <div class="clear"></div>
@@ -125,7 +128,7 @@
                         equalTo: "#customer_password", minlength: 5
                     },
                     customer_email: {
-                        email: true
+                      myCustomRule: true
                     },
                     customer_zip: {
                         digits: true,
