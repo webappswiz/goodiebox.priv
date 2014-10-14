@@ -95,6 +95,10 @@
             $(this).closest('.dog-profile').find('.delete-dog').slideUp();
         });
         $("#telephone").mask("+36 99 999-99-99");
+        $.extend($.validator.messages, {
+            required: "ez az információ szükséges",
+            equalTo: "Kérjük, adja ugyanazt az értéket újra"
+        });
         $.validator.addMethod("myCustomRule", function (value, element) {
             return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
         }, "Custom message for this rule");
@@ -259,6 +263,9 @@
                             rules: {
                                 email: {
                                     myCustomRule: true
+                                },
+                                messages: {
+                                    email: "Helytelen e-mail cím!",
                                 }
                             }
                         });
