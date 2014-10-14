@@ -361,7 +361,6 @@ class Controller_Order extends Controller_Core {
             //Give a gift
 
             if (isset($step1['order2'])) {
-                print_r($step1);
                 $friend = ORM::factory('Friend')
                         ->where('friends_email', '=', $step1['friend_email'])
                         ->and_where('friends_firstname', '=', $step1['firstname'])
@@ -619,8 +618,10 @@ class Controller_Order extends Controller_Core {
                 }
                 if ($ord->type = 2) {
                     $friend = ORM::factory('Friend')
-                            ->where('coupon_code', '=', $step1['coupon_code'])
-                            ->find();
+                        ->where('friends_email', '=', $step1['friend_email'])
+                        ->and_where('friends_firstname', '=', $step1['firstname'])
+                        ->and_where('friends_lastname', '=', $step1['lastname'])
+                        ->find();
                     if ($friend->loaded()) {
                         $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
                         if (isset($step1['delay'])) {
