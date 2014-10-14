@@ -212,7 +212,7 @@
                                 messages: {
                                     'firstname': "ez az információ szükséges",
                                     'lastname': "ez az információ szükséges",
-                                    'friend_email': "ez az információ szükséges",
+                                    'friend_email': "Helytelen e-mail cím!",
                                     'email': "Helytelen e-mail cím!"
                                 }
                             });
