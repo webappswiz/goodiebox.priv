@@ -615,14 +615,13 @@ class Controller_Order extends Controller_Core {
                         $inv->is_used = 1;
                         $inv->save();
                     }
-                    $this->receipt_email($ord, $this->current_user, 1);
                 }
+                $this->receipt_email($ord, $this->current_user, 1);
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
                 $ord->payment_status = 2;
                 $ord->save();
             }
         }
-
         $session->delete('order');
         $session->delete('success');
     }
@@ -632,7 +631,6 @@ class Controller_Order extends Controller_Core {
         $order = $session->get('order')->as_array();
         require_once DOCROOT . 'application/vendor/payu/config.php';
         $this->payment = new PayULiveUpdate($config);
-
         if (!empty($order['id'])) {
             $this->order = $order;
         }
