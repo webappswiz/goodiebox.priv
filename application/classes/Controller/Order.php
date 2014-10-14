@@ -378,14 +378,14 @@ class Controller_Order extends Controller_Core {
                 $friend->coupon_code = $this->generateRandomString();
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
-                $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
-                if (isset($step1['delay'])) {
-                    $to = $this->current_user->email;
-                } else {
-                    $to = $step1['friend_email'];
-                }
+                //$template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
+                //if (isset($step1['delay'])) {
+                //    $to = $this->current_user->email;
+                //} else {
+                //    $to = $step1['friend_email'];
+               // }
 
-                $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
+                //$this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
                 $order->puppy_id = 0;
@@ -615,6 +615,16 @@ class Controller_Order extends Controller_Core {
                         $inv->is_used = 1;
                         $inv->save();
                     }
+                }
+                if($ord->type = 2){
+                    $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
+                if (isset($step1['delay'])) {
+                    $to = $this->current_user->email;
+                } else {
+                    $to = $step1['friend_email'];
+                }
+
+                $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 }
                 $this->receipt_email($ord, $this->current_user, 1);
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
