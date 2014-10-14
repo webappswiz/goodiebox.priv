@@ -192,7 +192,7 @@ class Controller_Order extends Controller_Core {
         $this->price = ORM::factory('Packages', $step2['selected_box']);
         $this->append_js_var('total_price', round($this->price->price));
         if ($this->current_user) {
-            
+
             $invites = ORM::factory('Invites')
                     ->where('user_id', '=', $this->current_user->id)
                     ->and_where('is_used', '=', 0)
@@ -383,8 +383,7 @@ class Controller_Order extends Controller_Core {
                 //    $to = $this->current_user->email;
                 //} else {
                 //    $to = $step1['friend_email'];
-               // }
-
+                // }
                 //$this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
@@ -618,15 +617,19 @@ class Controller_Order extends Controller_Core {
                         $inv->save();
                     }
                 }
-                if($ord->type = 2){
-                    $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
-                if (isset($step1['delay'])) {
-                    $to = $this->current_user->email;
-                } else {
-                    $to = $step1['friend_email'];
-                }
-
-                $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
+                if ($ord->type = 2) {
+                    $friend = ORM::factory('Friend')
+                            ->where('coupon_code', '=', $step1['coupon_code'])
+                            ->find();
+                    if ($friend->loaded()) {
+                        $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
+                        if (isset($step1['delay'])) {
+                            $to = $this->current_user->email;
+                        } else {
+                            $to = $step1['friend_email'];
+                        }
+                    }
+                    $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 }
                 $this->receipt_email($ord, $this->current_user, 1);
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
