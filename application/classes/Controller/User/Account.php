@@ -6,15 +6,13 @@ class Controller_User_Account extends Controller_Core {
 
     protected $check_access = true;
 
-    public function before()
-    {
+    public function before() {
         parent::before();
         $this->set_title('Profilom');
         $this->template->active_menu = 'arcél';
         $this->check_access();
-
     }
-    
+
     private function send($to, $from, $subject, $body, $file = '') {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
@@ -30,23 +28,21 @@ class Controller_User_Account extends Controller_Core {
         $email->Send();
     }
 
-    public function action_index()
-    {
+    public function action_index() {
         $this->shipping = ORM::factory('AddressBook')
                 ->where('user_id', '=', $this->current_user->id)
                 ->find();
-        if(!$this->shipping->loaded())
+        if (!$this->shipping->loaded())
             $this->shipping = NULL;
     }
 
-    public function action_editShipping()
-    {
+    public function action_editShipping() {
         $user = $this->current_user;
         if (isset($_POST['edit_shipping'])) {
             $this->shipping = ORM::factory('AddressBook')
-                ->where('user_id', '=', $this->current_user->id)
-                ->find();
-            if(!$this->shipping->loaded()){
+                    ->where('user_id', '=', $this->current_user->id)
+                    ->find();
+            if (!$this->shipping->loaded()) {
                 $this->shipping = ORM::factory('AddressBook');
                 $this->shipping->user_id = $this->current_user->id;
             }
@@ -69,8 +65,7 @@ class Controller_User_Account extends Controller_Core {
             $this->redirect('/user_account');
     }
 
-    public function action_removeDog()
-    {
+    public function action_removeDog() {
         $user = $this->current_user;
         $id = (int) $this->request->param('id');
         if (!$id)
@@ -86,8 +81,7 @@ class Controller_User_Account extends Controller_Core {
         $this->redirect('/user_account');
     }
 
-    public function action_addDog()
-    {
+    public function action_addDog() {
         $user = $this->current_user;
         if (isset($_POST['order1'])) {
             $puppy = ORM::factory('Puppy');
@@ -105,8 +99,7 @@ class Controller_User_Account extends Controller_Core {
         }
     }
 
-    public function action_order()
-    {
+    public function action_order() {
         $user = $this->current_user;
         if (isset($_POST['submit']) && empty($_POST['gift'])) {
             $puppy = ORM::factory('Puppy', (int) $_POST['puppy_id']);
@@ -155,8 +148,7 @@ class Controller_User_Account extends Controller_Core {
         $this->render_nothing();
     }
 
-    public function action_gift()
-    {
+    public function action_gift() {
         if (isset($_POST['submit_form'])) {
             if (empty($_POST['gift']))
                 $this->redirect('/user_account');
@@ -167,24 +159,23 @@ class Controller_User_Account extends Controller_Core {
             $fr['friend_email'] = $friend->friends_email;
             $fr['firstname'] = $friend->friends_firstname;
             $fr['lastname'] = $friend->friends_lastname;
-            if(isset($_POST['delay']))
-              $fr['delay'] = 1;
+            if (isset($_POST['delay']))
+                $fr['delay'] = 1;
             $fr['selected_size'] = 0;
             Session::instance()->set('step1', $fr);
-                //$this->redirect('/order/step2');
+            $this->redirect('/order/step2');
         } else {
             $this->redirect('/user_account');
         }
     }
 
-    public function action_shelter()
-    {
+    public function action_shelter() {
         if (isset($_POST['submit_shelter'])) {
             print_r($_POST);
             if (empty($_POST['shelter']))
                 $this->redirect('/user_account');
             $shelter = ORM::factory('User_Shelter')->with('shelter')
-                    ->where('shelter.shelter_id','=',(int)$_POST['shelter'])
+                    ->where('shelter.shelter_id', '=', (int) $_POST['shelter'])
                     ->find();
             if (!$shelter->loaded())
                 $this->redirect('/user_account');
@@ -200,28 +191,28 @@ class Controller_User_Account extends Controller_Core {
             $this->redirect('/user_account');
         }
     }
-    
-    public function action_invite(){
-        if(!$this->request->post() || empty($_POST['friend_email']))
+
+    public function action_invite() {
+        if (!$this->request->post() || empty($_POST['friend_email']))
             $this->redirect('/user_account');
-        if($_POST['friend_email']==$this->current_user->email){
+        if ($_POST['friend_email'] == $this->current_user->email) {
             Flash::set('alert', 'Nem küldhetsz meghívót saját magadnak!');
             $this->redirect('/user_account');
         }
         $email = $_POST['friend_email'];
         $user = ORM::factory('User')
-                ->where('email','=',$email)
+                ->where('email', '=', $email)
                 ->find();
-        if($user->loaded()){
+        if ($user->loaded()) {
             Flash::set('alert', 'Ezzel az e-mail címmel már regisztráltak!');
             $this->redirect('/user_account');
         }
         $email = $_POST['friend_email'];
         $invites = ORM::factory('Invites')
-                ->where('user_id','=',$this->current_user->id)
-                ->and_where('email','=',$email)
+                ->where('user_id', '=', $this->current_user->id)
+                ->and_where('email', '=', $email)
                 ->find();
-        if($invites->loaded()){
+        if ($invites->loaded()) {
             Flash::set('alert', 'Már küldtél korábban meghívót erre az e-mail címre!');
             $this->redirect('/user_account');
         }
@@ -229,8 +220,8 @@ class Controller_User_Account extends Controller_Core {
         $invites->user_id = $this->current_user->id;
         $invites->email = $email;
         $invites->save();
-        $body = ORM::factory('Templates',4);
-        $body = str_replace('[friend]', $this->current_user->customer_firstname.' '.$this->current_user->customer_lastname, $body->template_text);
+        $body = ORM::factory('Templates', 4);
+        $body = str_replace('[friend]', $this->current_user->customer_firstname . ' ' . $this->current_user->customer_lastname, $body->template_text);
         $this->send($email, 'info@goodiebox.hu', 'You have received an invite', $body);
         Flash::set('notice', 'A meghívót sikeresen elküldtük!');
         $this->redirect('/user_account');

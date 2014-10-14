@@ -153,7 +153,7 @@
                 <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
             </div>
         </form>
-        <a id="popupBoxClose"><strong>X</strong></a>
+        <a id="popupBoxClose"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
     </div>
 </div>
 
