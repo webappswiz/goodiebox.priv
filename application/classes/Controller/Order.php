@@ -594,6 +594,8 @@ class Controller_Order extends Controller_Core {
     public function action_success() {
         $session = Session::instance();
         $success = $session->get('success');
+        $step1 = $session->get('step1');
+        $step2 = $session->get('step2');
         if ($success != 1) {
             $session->delete('success');
             $this->redirect('/');
