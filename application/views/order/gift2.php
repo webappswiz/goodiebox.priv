@@ -1,8 +1,8 @@
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#submit_form').on('click', function() {
+    $(document).ready(function () {
+        $('#submit_form').on('click', function () {
             if ($('#doggy_form').valid()) {
-                $.each($('#doggy_form input, #doggy_form select, #doggy_form textarea').serializeArray(), function(i, obj) {
+                $.each($('#doggy_form input, #doggy_form select, #doggy_form textarea').serializeArray(), function (i, obj) {
                     $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
                 });
                 $('#billing_form').submit();
@@ -11,7 +11,7 @@
         if (!$('#tos').prop(':checked')) {
             $('#submit_form').attr('disabled', 'disabled');
         }
-        $('#tos').on('click', function() {
+        $('#tos').on('click', function () {
             if ($(this).is(':checked')) {
                 $('#submit_form').removeAttr('disabled');
             } else {
@@ -19,11 +19,11 @@
             }
         })
         $('.selected_size').val($('input:radio[id^="size"]:checked').val());
-        $('input:radio').on('click', function() {
+        $('input:radio').on('click', function () {
             $('.selected_size').val($(this).val());
         });
-        $('#email').on('blur', function() {
-            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+        $('#email').on('blur', function () {
+            $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
                 if (i.msg == 1) {
                     $('#email').val('');
@@ -33,10 +33,14 @@
                 }
             });
         });
-        $('.alerg_yes').on('click', function() {
+        $('.alerg_yes').on('click', function () {
+            $('#al_label').show();
+            $('#alerg_descr').show();
             $('#alerg_descr').attr('required', 'required');
         });
-        $('.alerg_no').on('click', function() {
+        $('.alerg_no').on('click', function () {
+            $('#al_label').hide();
+            $('#alerg_descr').hide();
             $('#alerg_descr').removeAttr('required');
         });
         $("#customer_telephone").mask("+36 99 999-99-99");
@@ -101,15 +105,14 @@
             </form>
             <script>
                 $("#billing_form").validate({
-                        rules: {
-                            customer_password: {
-                                required: true, minlength: 5
-                            },
-                            password_confirm: {
-                                required: true, equalTo: "#customer_password", minlength: 5
-                            }},
-                        
-                    });
+                    rules: {
+                        customer_password: {
+                            required: true, minlength: 5
+                        },
+                        password_confirm: {
+                            required: true, equalTo: "#customer_password", minlength: 5
+                        }},
+                });
             </script>
         </div> <!--End claim form-->
     </div><!--End claim orm container-->
@@ -154,11 +157,11 @@
 
             <div class="radio-list">
                 <label for="Igen">Allergiás a kutyusod?*</label>
-                <input type="radio" class="alerg_yes" value="0" name="alerg" required> Igen <input type="radio" value="1" name="alerg" class="alerg_no" checked> Nem
+                <input style="cursor: pointer" type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input style="cursor: pointer" type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
             </div>
 
-            <label for="last-name">Ha igen, mire?</label>
-            <input type="text" name="alerg_descr" class="rounded" id="alerg_descr">
+            <label style="display:none" for="last-name" id="al_label">Ha igen, mire?</label>
+            <input style="display:none" type="text" name="alerg_descr" class="rounded" id="alerg_descr">
 
             <p style="padding-top:20px;">*Kötelező adatok</p>
             <input type="hidden" name="order1" value="1">
