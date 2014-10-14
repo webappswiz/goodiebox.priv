@@ -1,11 +1,15 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('#submit_form').on('click', function () {
-            if ($('#doggy_form').valid()) {
-                $.each($('#doggy_form input, #doggy_form select, #doggy_form textarea').serializeArray(), function (i, obj) {
-                    $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
-                });
-                $('#billing_form').submit();
+            console.log($('#billing_form').validate());
+            if ($('#billing_form').valid()) {
+                if ($('#doggy_form').valid()) {
+                    $.each($('#doggy_form input, #doggy_form select, #doggy_form textarea').serializeArray(), function (i, obj) {
+                        $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
+                    });
+                    $('#billing_form').submit();
+                }
+
             }
         });
         if (!$('#tos').prop(':checked')) {
@@ -28,8 +32,10 @@
                 if (i.msg == 1) {
                     $('#email').val('');
                     $('#email').focus();
-                    $('#email').css('background-color', 'rosybrown');
-                    $('#email').after('<label id="email-error" class="error" for="email">Email is already registered. Please login in your account.</label>');
+                    $('#email').css('background-color', '#eb99ad');
+                    $('#email').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                } else {
+                    $('#email').css('background-color', 'white');
                 }
             });
         });
@@ -44,6 +50,10 @@
             $('#alerg_descr').removeAttr('required');
         });
         $("#customer_telephone").mask("+36 99 999-99-99");
+        $.extend($.validator.messages, {
+            required: "ez az információ szükséges",
+            equalTo: "Kérjük, adja ugyanazt az értéket újra"
+        });
     });
 </script>
 <div class="clear"></div>
@@ -56,7 +66,7 @@
             <h2>Szállítási adatok</h2>
             <p>Ország</p>
             <h4>Magyarország</h4>
-            <form id="billing_form" method="POST">
+            <form id="billing_form" method="POST" autocomplete="off">
                 <div style="margin-right:5px;" class="fl">
                     <label for="customer_firstname">Vezetéknév*</label>
                     <input id="customer_firstname" type="text" value="" name="customer_firstname" class="rounded" required>
@@ -103,18 +113,31 @@
                 <p style="padding-top:20px;">*Az adatok megadása kötelező!</p>
                 <input type="hidden" name="submit_form" value="1">
             </form>
-            <script>
-                $("#billing_form").validate({
-                    rules: {
-                        customer_password: {
-                            required: true, minlength: 5
-                        },
-                        password_confirm: {
-                            required: true, equalTo: "#customer_password", minlength: 5
-                        }},
-                });
-            </script>
+
         </div> <!--End claim form-->
+        <script>
+            $("#billing_form").validate({
+                rules: {
+                    customer_password: {
+                        minlength: 5
+                    },
+                    password_confirm: {
+                        equalTo: "#customer_password", minlength: 5
+                    },
+                    customer_email: {
+                        email: true
+                    },
+                    customer_zip: {
+                        digits: true,
+                        maxlength: 4,
+                        minlength: 4
+                    }
+                },
+                messages: {
+                    customer_email: "Helytelen e-mail cím!",
+                }
+            });
+        </script>
     </div><!--End claim orm container-->
     <div class="clear"></div>
     <h2>Válaszd ki </br>mekkora a kutyus!*</h2>

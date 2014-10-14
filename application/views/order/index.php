@@ -27,6 +27,8 @@
                     $('.email2').focus();
                     $('.email2').css('background-color', 'rosybrown');
                     $('.email2').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                } else {
+                    $('#email').css('background-color', 'white');
                 }
             });
         });
@@ -38,6 +40,8 @@
                     $('.email3').focus();
                     $('.email3').css('background-color', 'rosybrown');
                     $('.email3').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                } else {
+                    $('#email').css('background-color', 'white');
                 }
             });
         });

@@ -13,7 +13,9 @@ if ($auth->logged_in())
                     $('#customer_email').val('');
                     $('#customer_email').focus();
                     $('#customer_email').css('background-color', 'rosybrown');
-                    $('#customer_email').after('<label id="email-error" class="error" for="email">Email is already registered. Please login in your account.</label>');
+                    $('#customer_email').after('<label id="email-error" class="error" for="email">Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!</label>');
+                } else {
+                    $('#email').css('background-color', 'white');
                 }
             });
         });
@@ -223,7 +225,7 @@ if (isset($session['step2'])) {
                 <script>
                     $.extend($.validator.messages, { 
                         required: "ez az információ szükséges",
-                        equalTo: "Kérjük, adja ugyanazt az értéket újra"
+                        equalTo: "A jelszó nem egyezik"
                     });
                     $("#billing_form").validate({
                         rules: {
