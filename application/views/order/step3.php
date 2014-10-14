@@ -221,6 +221,10 @@ if (isset($session['step2'])) {
                     <input type="hidden" name="msg" value="" id="msg">
                 </form>
                 <script>
+                    $.extend($.validator.messages, { 
+                        required: "ez az információ szükséges",
+                        equalTo: "Kérjük, adja ugyanazt az értéket újra"
+                    });
                     $("#billing_form").validate({
                         rules: {
                             customer_password: {
@@ -228,8 +232,24 @@ if (isset($session['step2'])) {
                             },
                             password_confirm: {
                                 required: true, equalTo: "#customer_password", minlength: 5
-                            }, }
+                            },
+                            customer_email:{
+                                required: true,
+                                email: true
+                            },
+                            customer_zip:{
+                                required: true,
+                                digits: true,
+                                maxlength:4,
+                                minlength:4
+                            }
+                        },
+                        messages: {
+                            customer_email: "Helytelen e-mail cím!",
+                            
+                        }
                     });
+                    
                 </script>
             </div> <!--End claim form-->
 
