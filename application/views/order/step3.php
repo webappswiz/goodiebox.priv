@@ -5,9 +5,9 @@ if ($auth->logged_in())
     $current_user = $auth->get_user();
 ?>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#customer_email').on('blur', function() {
-            $.post('/api/check', {'email': $(this).val()}).done(function(data) {
+    $(document).ready(function () {
+        $('#customer_email').on('blur', function () {
+            $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
                 if (i.msg == 1) {
                     $('#customer_email').val('');
@@ -23,49 +23,49 @@ if ($auth->logged_in())
         if (!$('#tos').prop(':checked')) {
             $('#submit').attr('disabled', 'disabled');
         }
-        
-        $('#discount_box').on('click', function() {
+
+        $('#discount_box').on('click', function () {
             if ($(this).is(':checked')) {
                 $('#discount').val('1');
-                $('#discount1').html(discount+' HUF');
+                $('#discount1').html(discount + ' HUF');
                 var final_price = total_price - discount;
-                $('#total_price').html(final_price+' HUF');
+                $('#total_price').html(final_price + ' HUF');
             } else {
                 $('#discount1').html('0000 HUF');
-                $('#total_price').html(total_price+' HUF');
+                $('#total_price').html(total_price + ' HUF');
                 $('#discount').val('0');
             }
         });
-        
-        $('#tos').on('click', function() {
+
+        $('#tos').on('click', function () {
             if ($(this).is(':checked')) {
                 $('#submit').removeAttr('disabled');
             } else {
                 $('#submit').attr('disabled', 'disabled');
             }
         });
-        $('#shipping').on('click', function() {
+        $('#shipping').on('click', function () {
             if ($('#shipping_form').is(':visible')) {
                 $('#shipping_form').slideUp();
             } else {
                 $('#shipping_form').show('slow');
             }
         });
-        $('#company').on('click',function(){
-           if($('#company').is(':checked')){
-               $('#tax').show();
-               $('#company_name').attr('required','required');
-               $('#tax_code').attr('required','required');
-           } else {
-               $('#tax').hide();
-               $('#company_name').removeAttr('required');
-               $('#tax_code').removeAttr('required');
-           }
+        $('#company').on('click', function () {
+            if ($('#company').is(':checked')) {
+                $('#tax').show();
+                $('#company_name').attr('required', 'required');
+                $('#tax_code').attr('required', 'required');
+            } else {
+                $('#tax').hide();
+                $('#company_name').removeAttr('required');
+                $('#tax_code').removeAttr('required');
+            }
         });
-        $('#submit').on('click', function() {
+        $('#submit').on('click', function () {
             if ($('#shipping').is(':checked')) {
                 $('#shipping_form').valid();
-                $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function(i, obj) {
+                $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function (i, obj) {
                     $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
                 });
                 $('#msg').val($('#message').val());
@@ -76,13 +76,16 @@ if ($auth->logged_in())
             }
         });
 
-        $('#apply_coupon').on('click', function() {
+        $('#apply_coupon').on('click', function () {
             if ($('#coupon_id').val() != '') {
                 $('#coupon_code').val($('#coupon_id').val());
                 $('.box.rounded').hide();
             }
         });
         $("#customer_telephone").mask("+36 99 999-99-99");
+        $.validator.addMethod("myCustomRule", function (value, element) {
+            return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+        }, "Custom message for this rule");
     });
 </script>
 <?php
@@ -141,11 +144,11 @@ if (isset($session['step2'])) {
         <script>
             $("#collapse-content").collapse({
                 accordion: true,
-                open: function() {
+                open: function () {
                     this.addClass("open");
                     this.css({height: this.children().outerHeight()});
                 },
-                close: function() {
+                close: function () {
                     this.css({height: "0px"});
                     this.removeClass("open");
                 }
@@ -211,19 +214,19 @@ if (isset($session['step2'])) {
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
                     <div id="tax" style="display:none">
-                    <div>
-                        <label for="company_name">Cégnév</label>
-                        <input type="text" name="company_name" class="rounded" id="company_name" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
-                    </div>
-                    <div>
-                        <label for="tax_code">Adószám</label>
-                        <input type="text" name="tax_code" class="rounded" id="tax_code" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
-                    </div>
+                        <div>
+                            <label for="company_name">Cégnév</label>
+                            <input type="text" name="company_name" class="rounded" id="company_name" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
                         </div>
+                        <div>
+                            <label for="tax_code">Adószám</label>
+                            <input type="text" name="tax_code" class="rounded" id="tax_code" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
+                        </div>
+                    </div>
                     <input type="hidden" name="msg" value="" id="msg">
                 </form>
                 <script>
-                    $.extend($.validator.messages, { 
+                    $.extend($.validator.messages, {
                         required: "ez az információ szükséges",
                         equalTo: "A jelszó nem egyezik"
                     });
@@ -235,23 +238,21 @@ if (isset($session['step2'])) {
                             password_confirm: {
                                 required: true, equalTo: "#customer_password", minlength: 5
                             },
-                            customer_email:{
-                                required: true,
-                                email: true
+                            customer_email: {
+                                myCustomRule:true
                             },
-                            customer_zip:{
+                            customer_zip: {
                                 required: true,
                                 digits: true,
-                                maxlength:4,
-                                minlength:4
+                                maxlength: 4,
+                                minlength: 4
                             }
                         },
                         messages: {
                             customer_email: "Helytelen e-mail cím!",
-                            
                         }
                     });
-                    
+
                 </script>
             </div> <!--End claim form-->
 
@@ -322,7 +323,7 @@ if (isset($session['step2'])) {
                         <div class="order-heading-leftbottom">
                             <h3>Összesen</h3>
                         </div>
-                        
+
                     </div>
 
                     <div class="order-content-right">
@@ -330,34 +331,34 @@ if (isset($session['step2'])) {
                             <h3>Összeg</h3>
                         </div>
                         <div class="order-text-right">
-                            <span><?=$price->price?> HUF</span>
+                            <span><?= $price->price ?> HUF</span>
                             <p></p>
                             <p>Ingyenes</p>
                             <p></p>
                             <p id="discount1">0000 HUF</p>
                         </div>
                         <div class="order-heading-rightbottom">
-                            <h3 id="total_price"><?=round($price->price)?> HUF</h3>
+                            <h3 id="total_price"><?= round($price->price) ?> HUF</h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php if($current_user):?>
-            <br/><br/>
-            <?php 
-            $invites = ORM::factory('Invites')
-                    ->where('user_id','=',$current_user->id)
-                    ->and_where('is_registered', '=', 1)
-                    ->and_where('is_used','=',0)
-                    ->count_all();
-            if($invites>0):
-            ?>
-            <div><strong>Jelenlegi kedvezményed: <?=$invites*5?> %</strong><br/><br/>
-            Szeretnéd most felhasználni?
-            <input type="checkbox" name="discount_box" id="discount_box">
-            </div>
-            <?php 
-            endif; 
+            <?php if ($current_user): ?>
+                <br/><br/>
+                <?php
+                $invites = ORM::factory('Invites')
+                        ->where('user_id', '=', $current_user->id)
+                        ->and_where('is_registered', '=', 1)
+                        ->and_where('is_used', '=', 0)
+                        ->count_all();
+                if ($invites > 0):
+                    ?>
+                    <div><strong>Jelenlegi kedvezményed: <?= $invites * 5 ?> %</strong><br/><br/>
+                        Szeretnéd most felhasználni?
+                        <input type="checkbox" name="discount_box" id="discount_box">
+                    </div>
+                    <?php
+                endif;
             endif;
             ?>
         </div>

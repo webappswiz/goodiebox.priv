@@ -71,10 +71,6 @@
         $('#popupBoxClose').click(function () {
             unloadPopupBox();
         });
-
-        $('#submit_form').on('click', function () {
-            $('#gift').submit();
-        });
         $('#submit_shelter').on('click', function () {
             $('#shelter').submit();
         });
@@ -99,6 +95,9 @@
             $(this).closest('.dog-profile').find('.delete-dog').slideUp();
         });
         $("#telephone").mask("+36 99 999-99-99");
+        $.validator.addMethod("myCustomRule", function (value, element) {
+            return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+        }, "Custom message for this rule");
     });
 </script>
 <div id="dialog-form" title="Add a new dog">
@@ -256,7 +255,13 @@
                     </div>
                     </form>
                     <script>
-                        $("#shipping").validate();
+                        $("#shipping").validate({
+                            rules: {
+                                email: {
+                                    myCustomRule: true
+                                }
+                            }
+                        });
                     </script>
                 </div><!--End claim orm container-->
             </div>
@@ -364,7 +369,7 @@
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
                                         <li class="option-text1"><?= $friend->friends_firstname . ' ' . $friend->friends_lastname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
-                                        <li class="option-text3"><input type="radio" value="1" name="delay" checked> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
+                                        <li class="option-text3"><input type="radio" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
                                     </ul>
                                 </div>
                                 <?php
@@ -402,14 +407,27 @@
                                         <input id="" type="text" value="" name="friend_email"  class="rounded" required>
                                     </div>
                                     <div>
-                                        <input type="checkbox" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
+                                        <input type="checkbox" value="1" name="delay" checked> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
                                     </div>
                                     <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
                                     <input type="hidden" name="order2" value="1">
                                     <input type="hidden" name="selected_size" class="selected_size">
                                 </form>
                                 <script>
-                                    $(".process-form1").validate();
+                                    $.extend($.validator.messages, {
+                                        required: "ez az információ szükséges",
+                                        equalTo: "A jelszó nem egyezik"
+                                    });
+                                    $(".process-form1").validate({
+                                        rules: {
+                                            friend_email: {
+                                                myCustomRule: true
+                                            }
+                                        },
+                                        messages: {
+                                    'friend_email': "Helytelen e-mail cím!"
+                                }
+                                    });
                                 </script>
                             </div>
                         </div>
@@ -432,26 +450,26 @@
                 ->find_all();
         if (count($shelters) > 0):
             ?>
-                                            <form action="/user_account/shelter" id="shelter" method="POST" >
+                                                <form action="/user_account/shelter" id="shelter" method="POST" >
             <?php
             foreach ($shelters as $shelter):
                 ?>
-                                                                <div class="support-row">
-                                                                    <ul>
-                                                                        <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                                                        <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                                                        <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                                                    </ul>
-                                                                </div>
+                                                                        <div class="support-row">
+                                                                            <ul>
+                                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                                                            </ul>
+                                                                        </div>
                 <?php
             endforeach;
             ?>
-                    
-                                                <div style="margin-top:35px; float:none;">
-                                                    <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                                                </div>
-                                            </form>
-                                            <hr/>
+                        
+                                                    <div style="margin-top:35px; float:none;">
+                                                        <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                                    </div>
+                                                </form>
+                                                <hr/>
         <?php endif; ?>
                             <div class="process-form-container2">
                                 <div class="clear"></div>
@@ -469,7 +487,7 @@
         $shelters = ORM::factory('Shelter')->find_all();
         foreach ($shelters as $shelter) {
             ?>
-                                                            <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                                                <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
             <?php
         }
         ?>
