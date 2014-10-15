@@ -637,6 +637,10 @@ class Controller_Order extends Controller_Core {
                 $ord->payment_status = 2;
                 $ord->save();
             }
+            if (!isset($_REQUEST['RC'])){
+                $ord->payment_status = 3;
+                $ord->save();
+            }
         }
         $session->delete('order');
         $session->delete('success');

@@ -42,8 +42,10 @@ if (count($data) > 0) {
                     $status = 'Paid';
                 } elseif ($order->payment_status == 0) {
                     $status = 'Payment pending';
-                } else {
+                } elseif($order->payment_status == 0) {
                     $status = 'Payment declined';
+                } else {
+                    $status = 'Free. Gift order';
                 }
                 echo '<td>' . $status . '</td>';
                 echo '<td><a href="/admin/orders/edit/' . $order->id . '" class="btn btn-primary">Edit</a></td>';
