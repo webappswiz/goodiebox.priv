@@ -42,9 +42,9 @@ if (count($data) > 0) {
                     $status = 'Paid';
                 } elseif ($order->payment_status == 0) {
                     $status = 'Payment pending';
-                } elseif($order->payment_status == 0) {
+                } elseif($order->payment_status == 2) {
                     $status = 'Payment declined';
-                } else {
+                } elseif($order->payment_status == 3) {
                     $status = 'Free. Gift order';
                 }
                 echo '<td>' . $status . '</td>';
