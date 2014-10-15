@@ -341,21 +341,23 @@ class Controller_Order extends Controller_Core {
                         $discount = ($pkg->price * ((count($invites) * 5) / 100));
                     }
                 }
-
-
                 $order->orders_status = 1;
                 $order->payment_status = 0;
                 $order->save();
-                $order->total_price = round($order->package->price - $discount);
-                $order->save();
                 if (!empty($step1['coupon_code'])) {
-                    Session::instance()->set('success', '1');
+                    $order->total_price = 0;
+                } else {
+                    $order->total_price = round($order->package->price - $discount);
+                }
+                $order->save();
+                Session::instance()->set('success', '1');
+                Session::instance()->set('order', $order);
+                if(!empty($step1['coupon_code'])){
                     $this->redirect('/order/success');
                 } else {
-                    Session::instance()->set('success', '1');
-                    Session::instance()->set('order', $order);
                     $this->redirect('/order/payment');
                 }
+                
             }
 
             //Give a gift
@@ -377,13 +379,6 @@ class Controller_Order extends Controller_Core {
                 $friend->coupon_code = $this->generateRandomString();
                 $friend->date_purchased = date('Y-m-d H:i:s');
                 $friend->save();
-                //$template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
-                //if (isset($step1['delay'])) {
-                //    $to = $this->current_user->email;
-                //} else {
-                //    $to = $step1['friend_email'];
-                // }
-                //$this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
                 $order->puppy_id = 0;
@@ -411,7 +406,7 @@ class Controller_Order extends Controller_Core {
                     }
                 }
                 $order->save();
-                $order->total_price = round($order->package->price = $discount);
+                $order->total_price = round($order->package->price - $discount);
                 $order->save();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
@@ -564,9 +559,9 @@ class Controller_Order extends Controller_Core {
             $order->selected_box = 1;
             $order->user_id = $user->id;
             $order->coupon_code = $ses;
-            $order->save();
             $order->total_price = 0;
             $order->save();
+            Session::instance()->set('order', $order);
             $order = ORM::factory('Friend')
                     ->where('coupon_code', '=', $ses)
                     ->find();
@@ -602,7 +597,7 @@ class Controller_Order extends Controller_Core {
         if ($order) {
             $order = $order->as_array();
             $ord = ORM::factory('Order', $order['id']);
-            if (isset($_REQUEST['RC']) && $_REQUEST['RC'] == 000) {
+            if (isset($_REQUEST['RC']) && $_REQUEST['RC'] == 000 && $ord->loaded()) {
                 $ord->payment_status = 1;
                 $ord->save();
                 if ($ord->discount == 1) {
@@ -616,12 +611,12 @@ class Controller_Order extends Controller_Core {
                         $inv->save();
                     }
                 }
-                if ($ord->type = 2) {
+                if ($ord->type == 2) {
                     $friend = ORM::factory('Friend')
-                        ->where('friends_email', '=', $step1['friend_email'])
-                        ->and_where('friends_firstname', '=', $step1['firstname'])
-                        ->and_where('friends_lastname', '=', $step1['lastname'])
-                        ->find();
+                            ->where('friends_email', '=', $step1['friend_email'])
+                            ->and_where('friends_firstname', '=', $step1['firstname'])
+                            ->and_where('friends_lastname', '=', $step1['lastname'])
+                            ->find();
                     if ($friend->loaded()) {
                         $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
                         if (isset($step1['delay'])) {
@@ -633,16 +628,19 @@ class Controller_Order extends Controller_Core {
                     $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
                 }
                 $this->receipt_email($ord, $this->current_user, 1);
-            } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000) {
+            } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
                 $ord->payment_status = 2;
                 $ord->save();
-            }
-            if (!isset($_REQUEST['RC'])){
+            } elseif ($ord->loaded() && $ord->total_price == 0) {
                 $ord->payment_status = 3;
                 $ord->save();
+            } else {
+                $this->redirect('/user_account');
             }
         }
         $session->delete('order');
+        $session->delete('step1');
+        $session->delete('step2');
         $session->delete('success');
     }
 
