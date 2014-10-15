@@ -391,12 +391,6 @@
                     endif;
                     ?>
                     <div class="clear"></div>
-                    <ul class="claim-option-list">
-                        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="1"  checked> Icipici</li>
-                        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="2" > Éppen jó</li>
-                        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" class="size" name="group1" value="3" > Igazi óriás</li>
-                    </ul>
-                    <div class="clear"></div>
                     <div>
                         <div class="content">
                             <div class="process-form-container2">
