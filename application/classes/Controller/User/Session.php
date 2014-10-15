@@ -29,7 +29,7 @@ class Controller_User_Session extends Controller_Core {
                 $this->redirect($requested_url? : Kohana::$base_url . '/user_account');
         }
         else {
-            Flash::set('alert', 'Wrong username or password.');
+            Flash::set('alert', 'Helytelen felhasználónév vagy jelszó!');
         }
     }
 

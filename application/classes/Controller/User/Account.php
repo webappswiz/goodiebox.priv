@@ -94,7 +94,7 @@ class Controller_User_Account extends Controller_Core {
             $puppy->alerg_descr = $_POST['alerg_descr'];
             $puppy->selected_size = $_POST['size'];
             $puppy->save();
-            Flash::set('notice', 'The puppy has been successfully added');
+            Flash::set('notice', 'Sikeresen hozzáadtad a kutyust a profilodhoz!');
             $this->redirect('/user_account');
         }
     }
@@ -123,7 +123,7 @@ class Controller_User_Account extends Controller_Core {
                     ->where('coupon_code', '=', $coupon_code)
                     ->find();
             if (!$friend->loaded()) {
-                Flash::set('alert', 'Wrong coupon code. Please try again');
+                Flash::set('alert', 'Helytelen kupon kód. Kérlek, próbáld meg mégegyszer!');
                 $this->redirect('/user_account');
             }
             $puppy = ORM::factory('Puppy', (int) $_POST['puppy_id']);

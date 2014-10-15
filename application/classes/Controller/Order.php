@@ -488,7 +488,7 @@ class Controller_Order extends Controller_Core {
                     ->where('coupon_code', '=', $_POST['coupon_code'])
                     ->find();
             if (!$coupon->loaded()) {
-                Flash::set('alert', 'Wrong coupon code. Please try again');
+                Flash::set('alert', 'Helytelen kupon kód. Kérlek, próbáld meg mégegyszer!');
                 $this->redirect('order/gift');
             } else {
                 Session::instance()->set('coupon_code', $_POST['coupon_code']);
@@ -502,7 +502,7 @@ class Controller_Order extends Controller_Core {
                 Cookie::get('auth_required_url', NULL);
                 $this->redirect($requested_url? : Kohana::$base_url . '/user_account');
             } else {
-                Flash::set('alert', 'Wrong username or password.');
+                Flash::set('alert', 'Helytelen felhasználónév vagy jelszó!');
             }
         }
     }
