@@ -57,26 +57,26 @@ class Controller_Admin_Orders extends Controller_Admin {
         $this->model->save();
         if ($_REQUEST['status_name'] == 2) {
             $date = strtotime(date('Y.m.d'));
-            $pickup = date('Y.m.d',$date+86400);
+            $pickup = date('Y.m.d', $date + 86400);
             $shipping = new Shipping();
-            $data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "'.$pickup.'.",
+            $data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "' . $pickup . '.",
       "flCOD": "false",
-	  "nmRecipientCOD": "'.$this->model->delivery_firstname.' '.$this->model->delivery_lastname.'",
+	  "nmRecipientCOD": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
 	  "nmBankCOD": "GiveMeAllYourMoney Bank",
 	  "txBankAccountNumberCOD": "12345678-12345678-12345678",
       "flNothingProhibited": "true",
       "flAgreedToTermsAndConditions": "true",
 
 	  "DESTINATIONADDRESS": {
-		"nmCompanyOrPerson": "'.$this->model->delivery_firstname.' '.$this->model->delivery_lastname.'",
+		"nmCompanyOrPerson": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
 		"cdCountry": "HU",
-		"txAddress": "'.$this->model->delivery_address.'",
+		"txAddress": "' . $this->model->delivery_address . '",
 		"txAddressNumber": "",
-		"txPost": "'.$this->model->delivery_postcode.'",
-		"txCity": "'.$this->model->delivery_city.'",
-		"nmContact": "'.$this->model->delivery_firstname.' '.$this->model->delivery_lastname.'",
-		"txPhoneContact": "'.$this->model->delivery_telephone.'",
-		"txEmailContact": "'.$this->model->user->email.'",
+		"txPost": "' . $this->model->delivery_postcode . '",
+		"txCity": "' . $this->model->delivery_city . '",
+		"nmContact": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
+		"txPhoneContact": "' . $this->model->delivery_telephone . '",
+		"txEmailContact": "' . $this->model->user->email . '",
 		"txInstruction": ""
 	  },
       "PACKAGES":
@@ -86,21 +86,21 @@ class Controller_Admin_Orders extends Controller_Admin {
 		{
           "ctPackage": "1",
           "amContent": "0",
-          "txContent": "'.$this->model->package->package_name.'",
-          "idOrder": "'.$this->model->id.'"
+          "txContent": "' . $this->model->package->package_name . '",
+          "idOrder": "' . $this->model->id . '"
         }
       ]}
     }
   }
 }';
             $result = $shipping->send_request($data_string);
-            $label = json_decode($result,true);
+            $label = json_decode($result, true);
             $label = $label['Order']['Labels'][0];
             print_r($result);
-            $pdf_decoded = base64_decode ($label);
-            $pdf = fopen (DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
-            fwrite ($pdf,$pdf_decoded);
-            fclose ($pdf);
+            $pdf_decoded = base64_decode($label);
+            $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
+            fwrite($pdf, $pdf_decoded);
+            fclose($pdf);
         }
         //$this->redirect('/admin/orders/');
     }
@@ -127,7 +127,7 @@ class Controller_Admin_Orders extends Controller_Admin {
         } else
             $this->redirect('/admin/orders/');
     }
-    
+
     public function action_shipping() {
         $id = (int) $this->request->param('id');
         if (file_exists(DOCROOT . 'shipping/label_order_' . $id . '.pdf')) {
@@ -140,10 +140,9 @@ class Controller_Admin_Orders extends Controller_Admin {
             header('Accept-Ranges: bytes');
             @readfile($file);
             $this->render_nothing();
-        } else{
+        } else {
             $this->redirect('/admin/orders/');
         }
-            
     }
 
 }
