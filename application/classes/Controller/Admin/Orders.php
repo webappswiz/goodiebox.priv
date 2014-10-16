@@ -96,13 +96,12 @@ class Controller_Admin_Orders extends Controller_Admin {
             $result = $shipping->send_request($data_string);
             $label = json_decode($result, true);
             $label = $label['Order']['Labels'][0];
-            print_r($result);
             $pdf_decoded = base64_decode($label);
             $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
             fwrite($pdf, $pdf_decoded);
             fclose($pdf);
         }
-        //$this->redirect('/admin/orders/');
+        $this->redirect('/admin/orders/');
     }
 
     public function action_delete() {
