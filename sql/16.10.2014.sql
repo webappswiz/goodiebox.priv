@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Окт 16 2014 г., 09:18
+-- Время создания: Окт 16 2014 г., 10:00
 -- Версия сервера: 5.5.40-0ubuntu0.14.04.1
 -- Версия PHP: 5.5.9-1ubuntu4.4
 
@@ -59,6 +59,18 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `discounts`
+--
+
+CREATE TABLE IF NOT EXISTS `discounts` (
+`id` int(11) NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `discount` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `email_templates`
 --
 
@@ -95,13 +107,6 @@ CREATE TABLE IF NOT EXISTS `friend` (
   `date_purchased` datetime DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
---
--- Дамп данных таблицы `friend`
---
-
-INSERT INTO `friend` (`id`, `user_id`, `friends_email`, `friends_firstname`, `friends_lastname`, `selected_box`, `coupon_code`, `date_purchased`) VALUES
-(14, 66, 'alexander.karamushko@ecommerce.com', 'Yemi', 'Yemi', 1, '', '2014-10-15 15:35:04');
-
 -- --------------------------------------------------------
 
 --
@@ -116,13 +121,6 @@ CREATE TABLE IF NOT EXISTS `invites` (
   `is_paid` int(11) NOT NULL DEFAULT '0',
   `is_used` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
-
---
--- Дамп данных таблицы `invites`
---
-
-INSERT INTO `invites` (`id`, `user_id`, `email`, `is_registered`, `is_paid`, `is_used`) VALUES
-(1, 66, 'alexander.karamushko@ecommerce.com', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -154,15 +152,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `payment_status` int(1) NOT NULL,
   `discount` int(1) NOT NULL DEFAULT '0',
   `total_price` varchar(20) COLLATE utf8_swedish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
-
---
--- Дамп данных таблицы `orders`
---
-
-INSERT INTO `orders` (`id`, `user_id`, `selected_box`, `puppy_id`, `delivery_firstname`, `delivery_lastname`, `delivery_address`, `delivery_address2`, `delivery_city`, `delivery_postcode`, `delivery_telephone`, `company_name`, `tax_code`, `coupon_code`, `type`, `orders_status`, `shelter_order`, `last_modified`, `date_purchased`, `message`, `payment_status`, `discount`, `total_price`) VALUES
-(113, 66, 1, 0, 'Alex', 'Karamushko', 'Kosmicheskaya 100, 33', '', 'Zaporizhzhya', '6905', '+36 11 111-11-11', 'Karam@Software', 'Karam@Software', '', 2, 1, NULL, '2014-10-15 15:35:04', '2014-10-15 15:35:04', '', 1, 0, '8250.000000'),
-(121, 69, 1, 44, 'Alex', 'Karamushko', 'Kosmicheskaya 97, 69', '', 'Zaporizhzhzya', '6905', '+36 11 111-11-11', '', '', '', 1, 1, NULL, '2014-10-16 06:12:41', '2014-10-16 06:12:41', '', 1, 0, '8250.000000');
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -228,14 +218,6 @@ CREATE TABLE IF NOT EXISTS `puppies` (
   `selected_size` int(1) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
---
--- Дамп данных таблицы `puppies`
---
-
-INSERT INTO `puppies` (`id`, `user_id`, `puppy_name`, `gender`, `years`, `months`, `alerg`, `alerg_descr`, `selected_size`) VALUES
-(41, 66, 'Tuzik', 1, 1994, 1, 1, 'aaa', 1),
-(44, 69, 'Bobik', 1, 2012, 1, 1, 'Chicken', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -273,8 +255,6 @@ CREATE TABLE IF NOT EXISTS `roles_users` (
 
 INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES
 (11, 1),
-(66, 1),
-(69, 1),
 (11, 2);
 
 -- --------------------------------------------------------
@@ -341,9 +321,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `customer_firstname`, `customer_lastname`, `customer_telephone`, `customer_zip`, `customer_city`, `customer_address`, `customer_address2`, `customer_company`, `customer_taxcode`, `logins`, `last_login`) VALUES
-(11, 'admin', 'cc1ac36745ac451101bce0f28e0c0f052baeae28a64ff4004ca135bc91aebb5a', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 46, '1413437375'),
-(66, 'alex@onlamp.info', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alex@onlamp.info', 'Alex', 'Karamushko', '+36 11 111-11-11', '6905', 'Zaporizhzhya', 'Kosmicheskaya 100, 33', '', 'Karam@Software', '1721637136', 5, '1413440001'),
-(69, 'alexander.karamushko@ecommerce.com', '89ddc819e76bc719443d20d0b43d7c7e50133de5ae22afdcb7d3b86de32bb505', 'alexander.karamushko@ecommerce.com', 'Alex', 'Karamushko', '+36 11 111-11-11', '6905', 'Zaporizhzhzya', 'Kosmicheskaya 97, 69', '', '', '', 1, '1413439961');
+(11, 'admin', 'cc1ac36745ac451101bce0f28e0c0f052baeae28a64ff4004ca135bc91aebb5a', 'alexander.karamushko@gmail.com', '', '', '', '', '', '', '', '', '', 47, '1413440503');
 
 -- --------------------------------------------------------
 
@@ -395,6 +373,12 @@ ALTER TABLE `address_book`
 --
 ALTER TABLE `contacts`
  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `discounts`
+--
+ALTER TABLE `discounts`
+ ADD PRIMARY KEY (`id`), ADD KEY `user_id` (`user_id`);
 
 --
 -- Индексы таблицы `email_templates`
@@ -495,6 +479,11 @@ MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
 ALTER TABLE `contacts`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT для таблицы `discounts`
+--
+ALTER TABLE `discounts`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT для таблицы `email_templates`
 --
 ALTER TABLE `email_templates`
@@ -513,7 +502,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=122;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=126;
 --
 -- AUTO_INCREMENT для таблицы `order_statuses`
 --
@@ -568,6 +557,12 @@ MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `address_book`
 ADD CONSTRAINT `address_book_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `discounts`
+--
+ALTER TABLE `discounts`
+ADD CONSTRAINT `discounts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `friend`
