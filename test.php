@@ -1,6 +1,6 @@
 
 <?php
-require_once 'application/vendor/tcpdf_min/tcpdf.php';
+require_once 'tcpdf_min/tcpdf.php';
 
 $html = '<!DOCTYPE html>
 <!--
