@@ -6,7 +6,7 @@
         });
         $('.selected_size').val($('input:radio[id^="size"]:checked').val());
         console.log($('input:radio[id^="size"]:checked').val());
-        $('input:radio').on('click', function () {
+        $('input:radio[id^="size"]').on('click', function () {
             $('.selected_size').val($(this).val());
             console.log($(this).val());
         });
