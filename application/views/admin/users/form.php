@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="customer_telephone">Customer's zip</label>
+                <label class="control-label" for="customer_telephone">Customer's telephone</label>
                 <div class="controls">
                     <input type="text" id="customer_telephone" name="customer_telephone" placeholder="Customer's telephone" value="<?= $model->customer_telephone ?>" readonly>
                 </div>
