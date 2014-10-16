@@ -88,7 +88,7 @@
             </tr>
             <tr>
                 <td><strong>Price</strong></td>
-                <td><?=($model->type==1 && $model->coupon_code<>'')?'Gift order':$model->package->price?></td>
+                <td><?=($model->type==1 && $model->coupon_code<>'')?'Gift order':round($model->total_price)?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
@@ -96,11 +96,70 @@
                 <td><?=$model->status->status_name?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
+             <tr>
+                <td></td>
+                <td></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <th colspan="3">Details</th>
+            </tr>
+            <tr>
+                <td><strong>Client email address</strong></td>
+                <td><?=$current_user->email?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <?php
+            if($model->puppy_id!=0){
+                if($model->puppy->selected_size==1)
+                    $size = 'Icipici';
+                if($model->puppy->selected_size==2)
+                    $size = 'Éppen jó';
+                if($model->puppy->selected_size==3)
+                    $size = 'Igazi óriás';
+            }
+            ?>
+            <tr>
+                <td><strong>Dog size</strong></td>
+                <td><?=($model->puppy_id!=0 && $size)?$size:'----' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Dog name</strong></td>
+                <td><?=($model->puppy_id!=0)?$model->puppy->puppy_name:'----' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Year of birth</strong></td>
+                <td><?=($model->puppy_id!=0)?$model->puppy->years:'----' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Month of birth</strong></td>
+                <td><?=($model->puppy_id!=0)?$model->puppy->months:'----' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Allergie</strong></td>
+                <td><?=($model->puppy_id!=0 && $model->puppy->alerg==1)?'Yes':'No' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Allergie description</strong></td>
+                <td><?=($model->puppy_id!=0 && $model->puppy->alerg==1)?$model->puppy->alerg_descr:'----' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
             <tr>
                 <td><strong>Order comments</strong></td>
                 <td><?=$model->message?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
+            
         </table>
     <br/>
     <?php
