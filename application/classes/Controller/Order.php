@@ -195,6 +195,7 @@ class Controller_Order extends Controller_Core {
             $invites = ORM::factory('Invites')
                     ->where('user_id', '=', $this->current_user->id)
                     ->and_where('is_used', '=', 0)
+                    ->and_where('is_paid', '=', 1)
                     ->and_where('is_registered', '=', 1)
                     ->count_all();
             $this->discount = 0;
@@ -351,12 +352,11 @@ class Controller_Order extends Controller_Core {
                 $order->save();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
-                if(!empty($step1['coupon_code'])){
+                if (!empty($step1['coupon_code'])) {
                     $this->redirect('/order/success');
                 } else {
                     $this->redirect('/order/payment');
                 }
-                
             }
 
             //Give a gift
@@ -603,12 +603,23 @@ class Controller_Order extends Controller_Core {
                     $invites = ORM::factory('Invites')
                             ->where('user_id', '=', $this->current_user->id)
                             ->and_where('is_used', '=', 0)
+                            ->and_where('is_paid', '=', 1)
                             ->and_where('is_registered', '=', 1)
                             ->find_all();
                     foreach ($invites as $inv) {
                         $inv->is_used = 1;
                         $inv->save();
                     }
+                }
+                $invite = ORM::factory('Invites')
+                        ->where('email', '=', $this->current_user->email)
+                        ->and_where('is_used', '=', 0)
+                        ->and_where('is_paid', '=', 0)
+                        ->and_where('is_registered', '=', 1)
+                        ->find();
+                if ($invite->loaded()) {
+                    $invite->is_paid = 1;
+                    $invite->save();
                 }
                 if ($ord->type == 2) {
                     $friend = ORM::factory('Friend')
