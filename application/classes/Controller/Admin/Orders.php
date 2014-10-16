@@ -51,54 +51,55 @@ class Controller_Admin_Orders extends Controller_Admin {
             $this->redirect('/admin/orders/');
 
         $this->model = ORM::factory('Order', $id);
-        if($this->model->orders_status==$_REQUEST['status_name'])
+        if ($this->model->orders_status == $_REQUEST['status_name'])
             return;
         $this->model->orders_status = $_REQUEST['status_name'];
         $this->model->save();
         if ($_REQUEST['status_name'] == 2) {
+            $date = strtotime(date('Y.m.d'));
+            $pickup = date('Y.m.d',$date+86400);
             $shipping = new Shipping();
-            $data_string = '{"REQUEST": {"flDebug": "true","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "2014.09.24.",
-      "flCOD": "true",
-	  "nmRecipientCOD": "Gipsz Jakab",
+            $data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "'.$pickup.'.",
+      "flCOD": "false",
+	  "nmRecipientCOD": "'.$this->model->delivery_firstname.' '.$this->model->delivery_lastname.'",
 	  "nmBankCOD": "GiveMeAllYourMoney Bank",
 	  "txBankAccountNumberCOD": "12345678-12345678-12345678",
       "flNothingProhibited": "true",
       "flAgreedToTermsAndConditions": "true",
 
 	  "DESTINATIONADDRESS": {
-		"nmCompanyOrPerson": "Gipsz Jakab",
+		"nmCompanyOrPerson": "'.$this->model->delivery_firstname.' '.$this->model->delivery_lastname.'",
 		"cdCountry": "HU",
-		"txAddress": "Fő utca",
-		"txAddressNumber": "123",
-		"txPost": "1234",
-		"txCity": "Budapest",
-		"nmContact": "Gipsz Jakab",
-		"txPhoneContact": "0123456789",
-		"txEmailContact": "gipszjakab@gmail.com",
-		"txInstruction": "Ha nem vagyok otthon, hagyja a szomszédnál!"
+		"txAddress": "'.$this->model->delivery_address.'",
+		"txAddressNumber": "",
+		"txPost": "'.$this->model->delivery_postcode.'",
+		"txCity": "'.$this->model->delivery_city.'",
+		"nmContact": "'.$this->model->delivery_firstname.' '.$this->model->delivery_lastname.'",
+		"txPhoneContact": "'.$this->model->delivery_telephone.'",
+		"txEmailContact": "'.$this->model->user->email.'",
+		"txInstruction": ""
 	  },
       "PACKAGES":
 	  {
         "PACKAGE":
 		[
 		{
-          "ctPackage": "2",
-		  "amContent": "5000",
-          "txContent": "Content of package1. The amContent is only mandatory if COD is set to TRUE",
-		  "idOrder": "1"
-        },
-		{
           "ctPackage": "1",
-          "amContent": "50000",
-          "txContent": "Content of Package2. idOrder is not mandatory, but could be useful to send, as it will get printed on the waybill, and it’s easier to identify when you are printing waybill and taping them on the package. ",
-		  "idOrder": "2"
+          "amContent": "0",
+          "txContent": "'.$this->model->package->package_name.'",
+          "idOrder": "'.$this->model->id.'"
         }
       ]}
     }
   }
 }';
             $result = $shipping->send_request($data_string);
-            //print_r($result);
+            $label = json_decode($result,true);
+            $label = $label['Order']['Labels'][0];
+            $pdf_decoded = base64_decode ($label);
+            $pdf = fopen (DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
+            fwrite ($pdf,$pdf_decoded);
+            fclose ($pdf);
         }
         $this->redirect('/admin/orders/');
     }
@@ -114,7 +115,7 @@ class Controller_Admin_Orders extends Controller_Admin {
         $id = (int) $this->request->param('id');
         if (file_exists(DOCROOT . 'orders/order_' . $id . '.pdf')) {
             $file = DOCROOT . 'orders/order_' . $id . '.pdf';
-            $filename = 'Order_#'.$id.'_Reciept.pdf'; /* Note: Always use .pdf at the end. */
+            $filename = 'Order_#' . $id . '_Reciept.pdf'; /* Note: Always use .pdf at the end. */
             header('Content-type: application/pdf');
             header('Content-Disposition:attachment; filename="' . $filename . '"');
             header('Content-Transfer-Encoding: binary');
@@ -124,6 +125,24 @@ class Controller_Admin_Orders extends Controller_Admin {
             $this->render_nothing();
         } else
             $this->redirect('/admin/orders/');
+    }
+    
+    public function action_shipping() {
+        $id = (int) $this->request->param('id');
+        if (file_exists(DOCROOT . 'shipping/label_order_' . $id . '.pdf')) {
+            $file = DOCROOT . 'orders/order_' . $id . '.pdf';
+            $filename = 'Order_#' . $id . '_Reciept.pdf'; /* Note: Always use .pdf at the end. */
+            header('Content-type: application/pdf');
+            header('Content-Disposition:attachment; filename="' . $filename . '"');
+            header('Content-Transfer-Encoding: binary');
+            header('Content-Length: ' . filesize($file));
+            header('Accept-Ranges: bytes');
+            @readfile($file);
+            $this->render_nothing();
+        } else{
+            $this->redirect('/admin/orders/');
+        }
+            
     }
 
 }

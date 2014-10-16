@@ -10,6 +10,7 @@ class Model_Order extends ORM {
         'status' => array('model'=>'OrderStatus','foreign_key'=>'orders_status'),
         'package' => array('model'=>'Packages','foreign_key'=>'selected_box'),
         'puppy' => array('model'=>'Puppy','foreign_key'=>'puppy_id'),
+        'user' => array('model' => 'User', 'foreign_key' => 'user_id')
     );
     
 

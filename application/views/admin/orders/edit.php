@@ -165,5 +165,7 @@
     <?php
 
     echo HTML::anchor('/admin/orders/receipt/'.$model->id, 'See receipt');
+    echo ' | ';
+    echo HTML::anchor('/admin/orders/shipping/'.$model->id, 'Print label');
 ?>
 </div>
