@@ -130,7 +130,7 @@ class Controller_Admin_Orders extends Controller_Admin {
     public function action_shipping() {
         $id = (int) $this->request->param('id');
         if (file_exists(DOCROOT . 'shipping/label_order_' . $id . '.pdf')) {
-            $file = DOCROOT . 'orders/order_' . $id . '.pdf';
+            $file = DOCROOT . 'shipping/label_order_' . $id . '.pdf';
             $filename = 'Order_#' . $id . '_Reciept.pdf'; /* Note: Always use .pdf at the end. */
             header('Content-type: application/pdf');
             header('Content-Disposition:attachment; filename="' . $filename . '"');
