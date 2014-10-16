@@ -243,7 +243,7 @@ if (isset($session['step2'])) {
                                 required: true, equalTo: "#customer_password", minlength: 5
                             },
                             customer_email: {
-                                myCustomRule:true
+                                myCustomRule: true
                             },
                             customer_zip: {
                                 required: true,
@@ -356,9 +356,17 @@ if (isset($session['step2'])) {
                         ->and_where('is_paid', '=', 1)
                         ->and_where('is_used', '=', 0)
                         ->count_all();
-                if ($invites > 0):
+                $global_discount = ORM::factory('Discounts')
+                        ->where('user_id', '=', $current_user->id)
+                        ->find();
+                if ($global_discount->loaded()) {
+                    $g_discount = $global_discount->discount;
+                } else {
+                    $g_discount = 0;
+                }
+                if ($invites > 0 || $g_discount > 0):
                     ?>
-                    <div><strong>Jelenlegi kedvezményed: <?= $invites * 5 ?> %</strong><br/><br/>
+                    <div><strong>Jelenlegi kedvezményed: <?= $invites * 5 + $global_discount->discount ?> %</strong><br/><br/>
                         Szeretnéd most felhasználni?
                         <input type="checkbox" name="discount_box" id="discount_box">
                     </div>

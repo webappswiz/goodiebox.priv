@@ -175,7 +175,14 @@
             ->and_where('is_paid', '=', 1)
             ->and_where('is_used', '=', 0)
             ->count_all();
-    $discount = $invites * 5 . '%';
+    $global_discount = ORM::factory('Discounts')
+                    ->where('user_id', '=', $current_user->id)
+                    ->find();
+            if ($global_discount->loaded()) {
+                $g_discount = $global_discount->discount;
+            } else
+                $g_discount = 0;
+    $discount = $invites * 5 + $g_discount . '%';
     ?>
     <style type="text/css">
         #progressbar {

@@ -13,8 +13,15 @@
                 ->and_where('is_used', '=', 0)
                 ->and_where('is_registered', '=', 1)
                 ->find_all();
+        $global_discount = ORM::factory('Discounts')
+                    ->where('user_id', '=', $current_user->id)
+                    ->find();
+            if ($global_discount->loaded()) {
+                $g_discount = $global_discount->discount;
+            } else
+                $g_discount = 0;
         if(count($invites)>0){
-            $discount = ($o->package->price * ((count($invites)*5)/100));
+            $discount = ($o->package->price * ((count($invites)*5+$g_discount)/100));
         } else {
             $discount = 0;
         }

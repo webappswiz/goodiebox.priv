@@ -69,7 +69,14 @@
                     <input type="text" id="customer_taxcode" name="customer_taxcode" placeholder="Customer's tax code" value="<?= $model->customer_taxcode ?>" readonly>
                 </div>
             </div>
+            <div class="control-group">
+                <label class="control-label" for="discount">Customer's discount %</label>
+                <div class="controls">
+                    <input type="text" id="customer_taxcode" name="customer_discount" value="<?= $discount ?>">
+                </div>
+            </div>
             <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-primary cancel">Back</button>
             </div>
         </fieldset>
