@@ -54,11 +54,11 @@ class Controller_User_Account extends Controller_Core {
             $this->shipping->customer_address = $_POST['address'] . ' ' . $_POST['address2'];
 
             $this->shipping->save();
-            Flash::set('notice', 'Your shipping data has been successfully updated');
+            Flash::set('notice', 'A szállítási címedet sikeresen megváltoztattad!');
             if (isset($_POST['password']) && !empty($_POST['password'])) {
                 $user->password = $_POST['password'];
                 $user->save();
-                Flash::set('notice', 'Your password has been successfully updated');
+                Flash::set('notice', 'A jelszavadat sikeresen megváltoztattad!');
             }
             $this->redirect('/user_account');
         } else
@@ -76,7 +76,7 @@ class Controller_User_Account extends Controller_Core {
                 ->find();
         if ($puppy->loaded()) {
             $puppy->delete();
-            Flash::set('notice', 'The puppy has been successfully removed');
+            Flash::set('notice', 'A kutyust sikeresen törölted a profilodból!');
         }
         $this->redirect('/user_account');
     }

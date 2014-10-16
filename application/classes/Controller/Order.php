@@ -192,7 +192,6 @@ class Controller_Order extends Controller_Core {
         $this->price = ORM::factory('Packages', $step2['selected_box']);
         $this->append_js_var('total_price', round($this->price->price));
         if ($this->current_user) {
-
             $invites = ORM::factory('Invites')
                     ->where('user_id', '=', $this->current_user->id)
                     ->and_where('is_used', '=', 0)
