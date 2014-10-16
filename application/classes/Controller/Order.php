@@ -633,6 +633,7 @@ class Controller_Order extends Controller_Core {
                         ->find();
                 if ($global_discount->loaded()) {
                     $global_discount->discount = 0;
+                    $global_discount->save();
                 }
                 if ($ord->type == 2) {
                     $friend = ORM::factory('Friend')
