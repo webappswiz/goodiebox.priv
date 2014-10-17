@@ -114,8 +114,8 @@
             <input type="text" name="puppy_name" class="rounded" id="" required>
             <div class="radio-list">
                 <label for="last-name">Válaszd ki mekkora a kutyus!*</label>
-                <input type="radio" name="size" value="1" class="" checked> Icipici <input name="size" value="2" type="radio" class=""> Éppen jó
-                <input name="size" value="3" type="radio" class=""> Igazi óriás
+                <input type="radio" name="size" value="1" class="" checked> Icipici (max 9kg) <input name="size" value="2" type="radio" class=""> Éppen jó(10-24kg)
+                <input name="size" value="3" type="radio" class=""> Igazi óriás(25kg+)
             </div>
             <div class="radio-list">
                 <label for="last-name">Kutyus neme*</label>

@@ -145,9 +145,9 @@
     <div class="clear"></div>
     <h2>Válaszd ki </br>mekkora a kutyus!*</h2>
     <ul class="claim-option-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><p> Icipici<input type="radio" id="size" name="group1" value="1" class="" checked></p></li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"> Éppen jó<input type="radio" id="size" name="group1" value="2" class="" ></li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"> Igazi óriás<input type="radio" id="size" name="group1" value="3" class="" ></li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><p> Icipici<input type="radio" id="size" name="group1" value="1" class="" checked></p><br/><br/> max 9kg</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"> Éppen jó<input type="radio" id="size" name="group1" value="2" class="" ><br/><br/> 10-24kg</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"> Igazi óriás<input type="radio" id="size" name="group1" value="3" class="" ><br/><br/> 25kg+</li>
     </ul>
     <div class="clear"></div>
     <div class="claim-form2">
