@@ -441,7 +441,7 @@
                             </div>
                         </div>
                         <div class="claim-form-btn">
-                            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn" style="margin-right:20px;">
+                            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -548,7 +548,7 @@
                         </script>
                     </div>
                     <div class="claim-form-btn">
-                        <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_invite" class="dark-btn claim-btn" style="margin-right:20px;">
+                        <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_invite" class="dark-btn claim-btn rounded" style="margin-right:20px;">
                     </div>
                     <div class="clear"></div>
                 </div> <!--End support-->

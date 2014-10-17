@@ -8,7 +8,7 @@
                     <input class="rounded" type="password" name="password" placeholder="Password">
                 </div>
                 <div class="clear"></div>
-                <div class="claim-form-btn"><button class="claim-btn" type="submit">Sign in</button></div>
+                <div class="claim-form-btn"><button class="claim-btn rounded" type="submit">Sign in</button></div>
             </form>
         </div>
     </div>

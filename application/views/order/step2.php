@@ -54,8 +54,8 @@
         <form method="POST">
             <input type="hidden" name="order" value="1">
             <input type="hidden" name="selected_box" id="selected_box" value="">
-            <input type="button" id="back" class="dark-btn claim-btn fl"  onclick="history.go(-1);return true;" value="VISSZA">
-            <input type="submit" name="tovabb" id="next" value="TOVÁBB" class="dark-btn claim-btn fr">
+            <input type="button" id="back" class="dark-btn claim-btn fl rounded"  onclick="history.go(-1);return true;" value="VISSZA">
+            <input type="submit" name="tovabb" id="next" value="TOVÁBB" class="dark-btn claim-btn fr rounded">
         </form>
     </div>
     <div class="clear"></div>
