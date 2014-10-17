@@ -375,7 +375,7 @@ if (isset($session['step2'])) {
             ?>
         </div>
         <div class="claim-form-btn">
-            <span>Elolvastam és megértettem az ÁSZF-et</span><input type="checkbox" id="tos">
+            <span style="font-size: 18px;font-weight: 900;margin-right: 0px;vertical-align: middle">Elolvastam és megértettem az ÁSZF-et</span> <input type="checkbox" id="tos">
             <input type="submit" id="submit" name="submit" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
         </div>
         <div class="clear"></div>
