@@ -48,8 +48,9 @@
 
     <div class="step2-text">
         <h2>Jó tudni:</h2>
-        <p>Rendeléskor lehetőséged van regisztrálni, így később bármikor visszatérhetsz az oldalra, hogy megnézhesd rendelésed aktuális állapotát, újabb rendelést adj le vagy módosítsd a már meglévőt.</p>
-        <p>Kérjük mielőtt tovább haladsz, olvasd el az ÁSZF és az Adatvédelem menüpont alatt található szabályozásokat és csak ha mindennel egyetértesz, akkor kattints a Tovább gomra és add meg személyes adataid az online rendeléshez.</p>
+        <p>Rendeléskor automatikus regisztráció történik, létrejön a saját profilod a weboldalunkon. Később bármikor visszatérhetsz, hogy megnézhesd rendelésed aktuális állapotát, újabb rendelést adj le vagy meghívót küldhess a barátaidnak!</p>
+        <p>Ha legközelebb is rendelnél ennek a kutyusnak, a profilodban már várni fog az adatlapja, így sokkal egyszerűbben és gyorsabban intézheted a dolgokat. Amennyiben több kutyád van, úgy lehetőséged van új kutyus hozzáadására is, így átláthatóan tudod kezelni a rendeléseidet! Ne feledd, egyszerre csak egy kutyusnak tudsz rendelni, de bármennyiszer visszatérhetsz új rendelés leadásához, amíg a bolt nyitva van!</p>
+        <p>Kérjük, mielőtt tovább haladsz, olvasd el az Általános Szerződési Feltételeket és az Adatvédelemi Szabályzatot és csak ha mindennel egyetértesz, akkor kattints a Tovább gomra és add meg személyes adataid az online rendelés befejezéséhez.</p>
         <p>Köszönjük és jó rendelést!</p>
     </div>
 
