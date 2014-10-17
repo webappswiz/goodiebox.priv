@@ -16,7 +16,7 @@ window._fbq.push(['track', '6015691752322', {'value':'0.00','currency':'GBP'}]);
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6015691752322&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
 <div class="clear"></div>
         <section class="thanku" class="rounded">
-            <h1>Köszönjük a rendelését!</h1>
-            <h2>E-mail címére visszaigazolást küldtünk.</h2>
+            <h1>Köszönjük a rendelésedet!</h1>
+            <h2>E-mail címedre visszaigazolást küldtünk.</h2>
             <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/bark.jpg" alt="Thank you">
         </section>
