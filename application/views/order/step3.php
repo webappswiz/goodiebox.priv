@@ -335,8 +335,7 @@ if (isset($session['step2'])) {
                             <h3>Összeg</h3>
                         </div>
                         <div class="order-text-right">
-                            <span><?= $price->price ?> HUF</span>
-                            <p></p>
+                            <span><?= $price->price ?> HUF</span><br>&nbsp;
                             <p>Ingyenes</p>
                             <p></p>
                             <p id="discount1">0000 HUF</p>
