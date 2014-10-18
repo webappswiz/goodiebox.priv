@@ -1,4 +1,4 @@
-?php
+<?php
 $auth = Auth::instance();
 $session = Session::instance();
 if ($auth->logged_in())
