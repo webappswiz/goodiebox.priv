@@ -220,12 +220,12 @@
                         <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
                                 <label for="last-name">Vezetéknév*</label>
-                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_lastname : $current_user->customer_lastname ?>" required>
+                                <input id="last-name" type="text" name="last-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_lastname : $current_user->customer_lastname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
                                 <label for="first-name">Keresztnév*</label>
-                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
+                                <input id="" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
