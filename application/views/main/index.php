@@ -15,11 +15,21 @@ $menus = array(
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> <!--End count image-->
     <div class="siess">
-
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <div class="count-text">
-        <p>Hamarosan...</p>
+        <p>Add le a rendelésed <span>szeptember 10-ig</span>, hogy megkapd a havi csomagot!</p>
+        <div class="counter">
+            <p>Hátralévő idő: <span class="count-btn rounded">12</span> nap <span>15:37:55</span></p>
+        </div> <!--End counter-->
+        <div class="lock">
+            <ul>
+                <li><a href="#">Nyitva vagyunk!</a></li>
+            </ul>
+        </div> <!--End lock-->
+
     </div> <!--End count text-->
+
     <div class="dog-img">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
@@ -29,7 +39,7 @@ $menus = array(
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
         <a href="<?= URL::base(TRUE, FALSE) ?>order">
-        <button type="button" class="rounded">Megrendelem</button>
+            <button type="button" class="rounded">Megrendelem</button>
         </a>
         <p>a saját kutyusomnak</p>
     </div>
@@ -38,7 +48,7 @@ $menus = array(
     </div>
     <div class="order-btnright">
         <a href="<?= URL::base(TRUE, FALSE) ?>order">
-        <button type="button" class="rounded">Ajándékozom</button>
+            <button type="button" class="rounded">Ajándékozom</button>
         </a>
         <p>barátom kutyusának</p>
     </div>

@@ -673,8 +673,6 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 input.error{
     background-color: #eb99ad;
 }
-.count-text{width: 550px;}
-.count-text p{top:28%;left: 35%; padding-top: 10px; letter-spacing: 15px;position:absolute;font-family: 'franklin_gothic_bookregular'; font-size: 48px; font-weight: bold; text-align: center; padding-top: 40px;}
 
 #dialog-form label{font-size: 14px;}
 #dialog-form form input[type="text"],#dialog-form form textarea,.process-1 input[type="text"],.bottom-text-field div input[type="text"],.dog-profile-container input[type="text"]{border: 3px solid #330000; padding: 5px; outline: none;}
