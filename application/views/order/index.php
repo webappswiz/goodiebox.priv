@@ -104,7 +104,7 @@
     <h2>Kinek veszed a Goodiebox-ot?</h2>
     <div class="drop-down-form">
         <div id="collapse-content">
-            <h3>Saját kutyusomnak</h3>
+            <h3 <?=(isset($_GET['o']))?'class="open"':"";?>>Saját kutyusomnak</h3>
             <div>
                 <div class="content">
                     <div class="claim-form2" style="height: 439px">
@@ -176,7 +176,7 @@
             </div>
 
 
-            <h3>Barátom kutyusának</h3>
+            <h3 <?=(isset($_GET['g']))?'class="open"':"";?>>Barátom kutyusának</h3>
             <div>
                 <div class="content">
                     <div class="process-form-container2">
