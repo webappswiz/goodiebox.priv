@@ -53,8 +53,10 @@ function startCount(days, hours, minutes, seconds,status) {
     hours = (hours) < 10 ? '0' + hours : hours;
     if(status==0){
         $('li','.lock').css('background','url("/assets/img/lock-close.png") no-repeat left center');
+        $('li','.lock').html('Hamarosan nyitunk!');
     } else {
         $('li','.lock').css('background','url("/assets/img/lock-open.png") no-repeat left center');
+        $('li','.lock').html('Nyitva vagyunk!');
     }
     $('#hours').html(hours + ':' + minutes + ':' + seconds);
     countIt();
