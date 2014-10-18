@@ -75,10 +75,10 @@ and open the template in the editor.
                 <td style="height: 40px" colspan="4"></td>
             </tr>
             <tr>
-                <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;line-height: 2em;padding-left: 15px;" colspan="2">Szállító</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Vevö</td>
+                <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Szállító</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Vevő</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
+                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
                     Név:	<strong>Web Apps Consult Kft</strong> <br/>
                     Cím:	<strong>1053 Budapest</strong><br/>
                         <strong>Kossuth Lajos utca 7-9.</strong><br/>
@@ -87,11 +87,11 @@ and open the template in the editor.
                     Telefon: <strong>+36304536738</strong>
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
-                    Név:	<strong>' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '</strong> <br/>
-                    Cím:	<strong>' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '</strong><br/>
+                    Név:	' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '<br/>
+                    Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
                     Cégnév: '.$order->company_name.'<br/>
                     Adószám: '.$order->tax_code.'<br/>
-                    Telefon: <strong>'.$order->delivery_telephone.'</strong>
+                    Telefon: '.$order->delivery_telephone.'
                 </td>
             </tr>
             <tr style="padding: 0px">
