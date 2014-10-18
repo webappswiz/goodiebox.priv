@@ -226,5 +226,9 @@ class Controller_User_Account extends Controller_Core {
         Flash::set('notice', 'A meghívót sikeresen elküldtük!');
         $this->redirect('/user_account');
     }
+    
+    public function action_test(){
+        
+    }
 
 }
