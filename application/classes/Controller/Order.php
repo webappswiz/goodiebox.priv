@@ -173,20 +173,20 @@ and open the template in the editor.
                 <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Szállító</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Vevö</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
-                    Név:	<strong>Web Apps Consult Kft</strong> <br/>
-                    Cím:	<strong>1053 Budapest</strong><br/>
-                        <strong>Kossuth Lajos utca 7-9.</strong><br/>
-                    Adószám: <strong>3456478-3-45</strong><br/>
-                    Bankszámla: <strong>56456758-23685749</strong><br/>
-                    Telefon: <strong>+36304536738</strong>
+                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
+                    Név:	Web Apps Consult Kft<br/>
+                    Cím:	1053 Budapest<br/>
+                        Kossuth Lajos utca 7-9.<br/>
+                    Adószám: 3456478-3-45<br/>
+                    Bankszámla: 56456758-23685749<br/>
+                    Telefon: +36304536738
                 </td>
-                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
-                    Név:	<strong>' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '</strong> <br/>
-                    Cím:	<strong>' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '</strong><br/>
+                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
+                    Név:	' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '<br/>
+                    Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
                     Cégnév: '.$order->company_name.'<br/>
                     Adószám: '.$order->tax_code.'<br/>
-                    Telefon: <strong>'.$order->delivery_telephone.'</strong>
+                    Telefon: '.$order->delivery_telephone.'
                 </td>
             </tr>
             <tr style="padding: 0px">
