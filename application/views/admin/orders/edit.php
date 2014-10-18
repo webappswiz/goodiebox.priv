@@ -130,6 +130,16 @@
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
+                <td><strong>Dog's gender</strong></td>
+                <?php 
+                    if($model->puppy_id!=0){
+                        $gender = ($model->puppy->gender==0)?'Lány':'Fiú';
+                    }
+                ?>
+                <td><?=($model->puppy_id!=0)?$gender:'----' ?></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
                 <td><strong>Year of birth</strong></td>
                 <td><?=($model->puppy_id!=0)?$model->puppy->years:'----' ?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
