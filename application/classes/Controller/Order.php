@@ -79,12 +79,12 @@ and open the template in the editor.
             </tr>
             <tr style="padding: 0px">
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
-                    Név:	<strong>Web Apps Consult Kft</strong> <br/>
-                    Cím:	<strong>1053 Budapest</strong><br/>
-                        <strong>Kossuth Lajos utca 7-9.</strong><br/>
-                    Adószám: <strong>3456478-3-45</strong><br/>
-                    Bankszámla: <strong>56456758-23685749</strong><br/>
-                    Telefon: <strong>+36304536738</strong>
+                    Név:	Web Apps Consult Kft <br/>
+                    Cím:	1053 Budapest<br/>
+                        Kossuth Lajos utca 7-9.<br/>
+                    Adószám: 3456478-3-45<br/>
+                    Bankszámla: 56456758-23685749<br/>
+                    Telefon: +36304536738
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
                     Név:	' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '<br/>
