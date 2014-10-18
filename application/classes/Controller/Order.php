@@ -264,7 +264,7 @@ and open the template in the editor.
         file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
         $template = ORM::factory('Templates', 2);
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
-        $this->send($user->email, 'info@goodiebox.hu', 'Order confirmation', $body, 'order_' . $order->id . '.pdf');
+        $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
     }
 
     public function action_index() {
@@ -367,7 +367,7 @@ and open the template in the editor.
                     $this->current_user = Auth::instance()->get_user();
                     $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
                     $body = str_replace('[login]', $this->current_user->email, $body);
-                    $this->send($this->current_user->email, 'info@goodiebox.hu', 'Registration', $body);
+                    $this->send($this->current_user->email, 'info@goodiebox.hu', 'Sikeres regisztráció', $body);
                 }
             }
 
@@ -756,7 +756,7 @@ and open the template in the editor.
                             $to = $step1['friend_email'];
                         }
                     }
-                    $this->send($to, 'info@goodiebox.hu', 'Gift coupon code', $template);
+                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $template);
                 }
                 $this->receipt_email($ord, $this->current_user, 1);
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {

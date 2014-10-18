@@ -222,7 +222,7 @@ class Controller_User_Account extends Controller_Core {
         $invites->save();
         $body = ORM::factory('Templates', 4);
         $body = str_replace('[friend]', $this->current_user->customer_firstname . ' ' . $this->current_user->customer_lastname, $body->template_text);
-        $this->send($email, 'info@goodiebox.hu', 'You have received an invite', $body);
+        $this->send($email, 'info@goodiebox.hu', 'Meghívó: gyere és te is lepd meg a kutyusodat!', $body);
         Flash::set('notice', 'A meghívót sikeresen elküldtük!');
         $this->redirect('/user_account');
     }
