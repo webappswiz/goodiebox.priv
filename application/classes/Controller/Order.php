@@ -87,7 +87,7 @@ and open the template in the editor.
                     Telefon: +36304536738
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
-                    Név:	' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '<br/>
+                    Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
                     Cégnév: '.$order->company_name.'<br/>
                     Adószám: '.$order->tax_code.'<br/>
@@ -182,7 +182,7 @@ and open the template in the editor.
                     Telefon: +36304536738
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
-                    Név:	' . $order->delivery_firstname . ' ' . $order->delivery_lastname . '<br/>
+                    Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
                     Cégnév: '.$order->company_name.'<br/>
                     Adószám: '.$order->tax_code.'<br/>
