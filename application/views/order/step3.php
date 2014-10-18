@@ -167,12 +167,12 @@ if (isset($session['step2'])) {
                     <input type="hidden" name="form" value="1">
                     <div style="margin-right:5px;" class="fl">
                         <label for="customer_lastname">Vezetéknév*</label>
-                        <input type="text" value="<?= ($current_user) ? $current_user->customer_lastname : ''; ?>" name="customer_firstname" id="customer_firstname" class="rounded" required>
+                        <input type="text" value="<?= ($current_user) ? $current_user->customer_lastname : ''; ?>" name="customer_lastname" id="customer_lastname" class="rounded" required>
                     </div>
 
                     <div style="overflow:hidden;">
                         <label for="customer_firstname">Keresztnév*</label>
-                        <input type="text" value="<?= ($current_user) ? $current_user->customer_firstname : ''; ?>" name="customer_lastname" id="customer_lastname" class="rounded" required>
+                        <input type="text" value="<?= ($current_user) ? $current_user->customer_firstname : ''; ?>" name="customer_firstname" id="customer_firstname" class="rounded" required>
                     </div>
                     <div class="clear"></div>
                     <div class="add">
