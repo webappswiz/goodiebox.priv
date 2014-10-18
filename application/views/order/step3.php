@@ -166,13 +166,13 @@ if (isset($session['step2'])) {
                 <form name="billing_form" id="billing_form" method="POST">
                     <input type="hidden" name="form" value="1">
                     <div style="margin-right:5px;" class="fl">
-                        <label for="customer_firstname">Vezetéknév*</label>
-                        <input type="text" value="<?= ($current_user) ? $current_user->customer_firstname : ''; ?>" name="customer_firstname" id="customer_firstname" class="rounded" required>
+                        <label for="customer_lastname">Vezetéknév*</label>
+                        <input type="text" value="<?= ($current_user) ? $current_user->customer_lastname : ''; ?>" name="customer_firstname" id="customer_firstname" class="rounded" required>
                     </div>
 
                     <div style="overflow:hidden;">
-                        <label for="customer_lastname">Keresztnév*</label>
-                        <input type="text" value="<?= ($current_user) ? $current_user->customer_lastname : ''; ?>" name="customer_lastname" id="customer_lastname" class="rounded" required>
+                        <label for="customer_firstname">Keresztnév*</label>
+                        <input type="text" value="<?= ($current_user) ? $current_user->customer_firstname : ''; ?>" name="customer_lastname" id="customer_lastname" class="rounded" required>
                     </div>
                     <div class="clear"></div>
                     <div class="add">
@@ -267,13 +267,13 @@ if (isset($session['step2'])) {
                     <input type="hidden" name="shipping" value="1">
                     <h4>Magyarország</h4>
                     <div style="margin-right:5px;" class="fl">
-                        <label for="delivery_firstname">Vezetéknév*</label>
-                        <input id="delivery_firstname" type="text" value="" name="delivery_firstname" class="rounded" required>
+                        <label for="delivery_lastname">Vezetéknév*</label>
+                        <input id="delivery_lastname" type="text" value="" name="delivery_lastname" class="rounded" required>
                     </div>
 
                     <div style="overflow:hidden;">
-                        <label for="delivery_lastname">Keresztnév*</label>
-                        <input id="delivery_lastname" type="text" value="" name="delivery_lastname" class="rounded" required>
+                        <label for="delivery_firstname">Keresztnév*</label>
+                        <input id="delivery_firstname" type="text" value="" name="delivery_firstname" class="rounded" required>
                     </div>
                     <div class="clear"></div>
                     <div class="add">

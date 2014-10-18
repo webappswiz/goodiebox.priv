@@ -71,13 +71,13 @@
             <h4>Magyarország</h4>
             <form id="billing_form" method="POST" autocomplete="off">
                 <div style="margin-right:5px;" class="fl">
-                    <label for="customer_firstname">Vezetéknév*</label>
-                    <input id="customer_firstname" type="text" value="" name="customer_firstname" class="rounded" required>
+                    <label for="customer_lastname">Vezetéknév*</label>
+                    <input id="customer_lastname" type="text" value="" name="customer_lastname" class="rounded" required>
                 </div>
 
                 <div style="overflow:hidden;">
-                    <label for="customer_lastname">Keresztnév*</label>
-                    <input id="customer_lastname" type="text" value="" name="customer_lastname" class="rounded" required>
+                    <label for="customer_firstname">Keresztnév*</label>
+                    <input id="customer_firstname" type="text" value="" name="customer_firstname" class="rounded" required>
                 </div>
                 <div class="clear"></div>
                 <div class="add">

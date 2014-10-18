@@ -220,12 +220,12 @@
                         <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
                                 <label for="last-name">Vezetéknév*</label>
-                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
+                                <input id="last-name" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_lastname : $current_user->customer_lastname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
                                 <label for="first-name">Keresztnév*</label>
-                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_lastname : $current_user->customer_lastname ?>" required>
+                                <input id="" type="text" name="last-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
@@ -382,7 +382,7 @@
                                 <div class="support-row">
                                     <ul>
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
-                                        <li class="option-text1"><?= $friend->friends_firstname . ' ' . $friend->friends_lastname; ?></li>
+                                        <li class="option-text1"><?= $friend->friends_lastname . ' ' . $friend->friends_firstname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
                                         <li class="option-text3"><input type="radio" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
                                     </ul>
@@ -405,11 +405,11 @@
                                 <form class="process-form1" name="order" action="/order/index" method="POST">
                                     <div>
                                         <label for="last-name">Barátod vezetéknév*</label>
-                                        <input id="firstname" type="text" value="" name="firstname" class="rounded" required>
+                                        <input id="lastname" type="text" value="" name="lastname" class="rounded" required>
                                     </div>
                                     <div>
                                         <label for="last-name">Barátod keresztnév*</label>
-                                        <input id="lastname" type="text" value="" name="lastname" class="rounded" required>
+                                        <input id="firstname" type="text" value="" name="firstname" class="rounded" required>
                                     </div>
                                     <div>
                                         <label for="first-name">Barátod e-mail címe*</label>
