@@ -788,5 +788,8 @@ and open the template in the editor.
     public function action_timeout() {
         $this->redirect('/user_account');
     }
-
+    
+    public function action_ipn() {
+        
+    }
 }
