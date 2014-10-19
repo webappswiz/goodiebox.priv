@@ -74,9 +74,9 @@ class Controller_Order extends Controller_Core {
                     Név:	Web Apps Consult Kft <br/>
                     Cím:	1053 Budapest<br/>
                         Kossuth Lajos utca 7-9.<br/>
-                    Adószám: 3456478-3-45<br/>
-                    Bankszámla: 56456758-23685749<br/>
-                    Telefon: +36304536738
+                    Adószám: 25005813-1-41<br/>
+                    Bankszámla: 11707000-20488804<br/>
+                    Telefon: +36 30 233 7401
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
                     Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
@@ -114,11 +114,11 @@ class Controller_Order extends Controller_Core {
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">GOODIEBOX ' . $s . '<br/>' . $order->package->package_name . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">1</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">db</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float)$order->package->price, 2, ',', '') . '</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float)$order->package->price, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">AAM</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">0,00</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">' . number_format((float)$order->package->price, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
                         </tr>
                     </table>
                 </td>
@@ -130,13 +130,13 @@ class Controller_Order extends Controller_Core {
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float)$discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>0,00&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>0,00&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">Összesen:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float)$total_price, 2, ',', '') . '&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float) $total_price, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="4">Az ÁFA kulcs: AAM (alanyi mentes)</td>
@@ -165,8 +165,8 @@ class Controller_Order extends Controller_Core {
         //$pdf->writeHTML($invoice, true, false, false, false, '');
         //$pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
         file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
-        
-        
+
+
         $template = ORM::factory('Templates', 2);
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
         $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
@@ -250,14 +250,14 @@ class Controller_Order extends Controller_Core {
                         $user->customer_company = $_POST['company_name'];
                         $user->customer_taxcode = $_POST['tax_code'];
                     }
-                    
+
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
-                    if(isset($_POST['invite_code'])){
+                    if (isset($_POST['invite_code'])) {
                         $coupon = ORM::factory('Coupons')
-                                ->where('coupon','=',$_POST['invite_code'])
+                                ->where('coupon', '=', $_POST['invite_code'])
                                 ->find();
-                        if($coupon->loaded()){
+                        if ($coupon->loaded()) {
                             $coupon->delete();
                         }
                     }
@@ -363,18 +363,18 @@ class Controller_Order extends Controller_Core {
                 }
                 $discount = 0;
                 if ($_POST['discount'] == 1) {
-                    if (count($invites) > 0 && empty($step1['coupon_code'])) {
-                        if(isset($_POST['invite_code'])){
+                    if (isset($_POST['invite_code'])) {
                             $i = ORM::factory('Coupons')
-                                    ->where('coupon','=',$_POST['invite_code'])
+                                    ->where('coupon', '=', $_POST['invite_code'])
                                     ->find();
-                            if(!$i->loaded()){
+                            if (!$i->loaded()) {
                                 $session->delete('order');
                                 $session->delete('step1');
                                 $session->delete('step2');
                                 $this->redirect('/');
                             }
                         }
+                    if (count($invites) > 0 && empty($step1['coupon_code'])) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
@@ -437,18 +437,19 @@ class Controller_Order extends Controller_Core {
                 $order->payment_status = 0;
                 $discount = 0;
                 if ($_POST['discount'] == 1) {
-                    if (count($invites) > 0) {
-                        if(isset($_POST['invite_code'])){
-                            $i = ORM::factory('Coupons')
-                                    ->where('coupon','=',$_POST['invite_code'])
-                                    ->find();
-                            if(!$i->loaded()){
-                                $session->delete('order');
-                                $session->delete('step1');
-                                $session->delete('step2');
-                                $this->redirect('/');
-                            }
+                    if (isset($_POST['invite_code'])) {
+                        $i = ORM::factory('Coupons')
+                                ->where('coupon', '=', $_POST['invite_code'])
+                                ->find();
+                        if (!$i->loaded()) {
+                            $session->delete('order');
+                            $session->delete('step1');
+                            $session->delete('step2');
+                            $this->redirect('/');
                         }
+                    }
+                    if (count($invites) > 0) {
+
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * ((count($invites) * 5 + $g_discount) / 100));
@@ -512,18 +513,20 @@ class Controller_Order extends Controller_Core {
                 $order->payment_status = 0;
                 $order->date_purchased = date('Y-m-d H:i:s');
                 if ($_POST['discount'] == 1) {
-                    if (count($invites) > 0) {
-                        if(isset($_POST['invite_code'])){
-                            $i = ORM::factory('Coupons')
-                                    ->where('coupon','=',$_POST['invite_code'])
-                                    ->find();
-                            if(!$i->loaded()){
-                                $session->delete('order');
-                                $session->delete('step1');
-                                $session->delete('step2');
-                                $this->redirect('/');
-                            }
+                    if (isset($_POST['invite_code'])) {
+                        $i = ORM::factory('Coupons')
+                                ->where('coupon', '=', $_POST['invite_code'])
+                                ->find();
+                        if (!$i->loaded()) {
+                            $session->delete('order');
+                            $session->delete('step1');
+                            $session->delete('step2');
+                            $this->redirect('/');
+                        } else {
+                            
                         }
+                    }
+                    if (count($invites) > 0) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * ((count($invites) * 5 + $g_discount) / 100));
@@ -709,22 +712,22 @@ class Controller_Order extends Controller_Core {
         <style>
             @font-face {
                 font-family: \'gillsansmt\';
-                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt.eot\');
-                src: local(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt\'), url(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt.woff\') format(\'woff\'), url(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt.ttf\') format(\'truetype\');}
+                src: url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/gillsansmt.eot\');
+                src: local(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/gillsansmt\'), url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/gillsansmt.woff\') format(\'woff\'), url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/gillsansmt.ttf\') format(\'truetype\');}
             @font-face {
                 font-family:\'GilgongoKaps-Regular\';
-                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot\');
-                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot?#iefix\') format(\'embedded-opentype\'),
-                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.woff\') format(\'woff\'),
-                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.ttf\') format(\'truetype\'),
-                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.svg#GilgongoKaps-Regular\') format(\'svg\');}
+                src: url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot\');
+                src: url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot?#iefix\') format(\'embedded-opentype\'),
+                    url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.woff\') format(\'woff\'),
+                    url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.ttf\') format(\'truetype\'),
+                    url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.svg#GilgongoKaps-Regular\') format(\'svg\');}
             @font-face {
                 font-family:\'GilgongoMutombo-Regular\';
-                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot\');
-                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot?#iefix\') format(\'embedded-opentype\'),
-                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.woff\') format(\'woff\'),
-                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.ttf\') format(\'truetype\'),
-                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.svg#GilgongoMutombo-Regular\') format(\'svg\');}
+                src: url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot\');
+                src: url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot?#iefix\') format(\'embedded-opentype\'),
+                    url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.woff\') format(\'woff\'),
+                    url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.ttf\') format(\'truetype\'),
+                    url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.svg#GilgongoMutombo-Regular\') format(\'svg\');}
             .box{width:290px; height:145px; float:left;font-family: \'gillsansmt\';letter-spacing:2px;}
             @media only screen and (max-width:480px){ img{width: 100%; height: auto;}.box-row td{padding: 10px !important;}h2{font-size: 24px!important;} h2 span{font-size: 16px!important;}}
         </style>	
@@ -732,14 +735,14 @@ class Controller_Order extends Controller_Core {
     <body>				
         <table border="0" cellpadding="0" cellspacing="0"  align="center" style="max-width:600;background-color:#ffffc1;text-align:center;">
             <tr Style="background-color:#e12258;width:100%;">
-                <td colspan="2"><img src="'.URL::base(TRUE, FALSE).'assets/img/logo_gift.png" style="text-align:center;"></td>
+                <td colspan="2"><img src="' . URL::base(TRUE, FALSE) . 'assets/img/logo_gift.png" style="text-align:center;"></td>
             </tr>
             <tr Style="background-color:#e12258;width:100%;">
                 <td colspan="2"><h2 style="text-align:center;font-family:\'GilgongoKaps-Regular\';font-size:50px; color:#ffffc1;letter-spacing:8px; margin:0;padding:0;">Ajándék<span style="font-family:\'GilgongoMutombo-Regular\';font-size:35px;">kupon</span></h2></td>
             </tr>
             <tr><td colspan="2" style="height: 10px;"></td></tr>
             <tr>
-                <td colspan="2" background="'.URL::base(TRUE, FALSE).'assets/img/design_bg.png" height:47px;">
+                <td colspan="2" background="' . URL::base(TRUE, FALSE) . 'assets/img/design_bg.png" height:47px;">
                 </td>
             </tr>
             <tr style="width:100%;" class="box-row">
@@ -759,7 +762,7 @@ class Controller_Order extends Controller_Core {
                 <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;border-bottom:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;color:#ffffc1;">' . $final . '</td>
             </tr>
             <tr style=" width:100%;">
-                <td  colspan="2" style=" text-align: center; padding-top:8px;"><img src="'.URL::base(TRUE, FALSE).'assets/img/main_bg.png" width="336" height="123"></td>
+                <td  colspan="2" style=" text-align: center; padding-top:8px;"><img src="' . URL::base(TRUE, FALSE) . 'assets/img/main_bg.png" width="336" height="123"></td>
             </tr>
         </table>
     </body>
