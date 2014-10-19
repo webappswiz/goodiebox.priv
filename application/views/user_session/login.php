@@ -11,7 +11,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="clear"></div>
-                <div class="claim-form-btn"><button class="claim-btn rounded" type="submit">Sign in</button></div>
+                <div class="claim-form-btn"><button class="claim-btn rounded" type="submit">Belépés</button></div>
             </form>
         </div>
     </div>
