@@ -155,6 +155,8 @@ class Controller_Order extends Controller_Core {
     </body>
 </html>';
         $pdf = new DOMPDF();
+        $invoice = str_replace('ő', 'o', $invoice);
+        $invoice = str_replace('Ő', 'O', $invoice);
         $pdf->load_html($invoice);
         $pdf->render();
         $output = $pdf->output();
