@@ -60,7 +60,7 @@ class Controller_Order extends Controller_Core {
     <body>
         <table style="border:0 0 2px solid 0;border-top:0px;border-left:0px;border-right:0px;width: 670px;padding: 0px;margin: 0px" cellpadding="0" cellspacing="0" border="0">
             <tr>
-                <td style="width:50%;padding: 5px;border: 0px;border-left: 0px;" colspan="2"><img src="' . URL::base(TRUE, FALSE) . 'assets/img/logo_invoice.png"></td>
+                <td style="width:50%;padding: 5px;border: 0px;border-left: 0px;" colspan="2">Vevo</td>
                 <td style="padding: 5px;width:50%;text-align: right;vertical-align: top;border: 0px;border-right: 0px; font-size: 22px; font-weight: 600;letter-spacing: 5px;" colspan="2">SZÁMLA</td>
             </tr>
             <tr>
