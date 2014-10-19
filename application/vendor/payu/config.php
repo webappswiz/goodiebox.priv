@@ -30,9 +30,9 @@ $config = array(
 	'METHOD' => "CCVISAMC",																			//payment method	 empty -> select payment method on PayU payment page OR [ CCVISAMC, WIRE, CASH, PAYU_MOBILE ]
 	'ORDER_DATE' => date("Y-m-d H:i:s"),													//date of transaction
 	'LOGGER' => true,																		//transaction log
-	'LOG_PATH' => 'log',																	//path of log file
+	'LOG_PATH' => '/var/www/vhosts/goodiebox.karam.org.ua/',																	//path of log file
 	'BACK_REF' => 'http://'.$_SERVER['HTTP_HOST'].'/order/success',						//url of payu payment backref page
-	'TIMEOUT_URL' => 'http://'.$_SERVER['HTTP_HOST'].'/payu/timeout.php',					//url of payu payment timeout page
+	'TIMEOUT_URL' => 'http://'.$_SERVER['HTTP_HOST'].'/order/timeout.php',					//url of payu payment timeout page
 	'ORDER_TIMEOUT' => 3600,
 	'LANGUAGE' => 'EN'
 );

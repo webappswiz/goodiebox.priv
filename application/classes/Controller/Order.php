@@ -89,9 +89,9 @@ and open the template in the editor.
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
                     Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
-                    Cégnév: '.$order->company_name.'<br/>
-                    Adószám: '.$order->tax_code.'<br/>
-                    Telefon: '.$order->delivery_telephone.'
+                    Cégnév: ' . $order->company_name . '<br/>
+                    Adószám: ' . $order->tax_code . '<br/>
+                    Telefon: ' . $order->delivery_telephone . '
                 </td>
             </tr>
             <tr style="padding: 0px">
@@ -138,13 +138,13 @@ and open the template in the editor.
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;">'.$discount.'<br/><br/>0,00</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;">' . $discount . '<br/><br/>0,00</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">Összesen:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;">'.$total_price.'</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;">' . $total_price . '</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="4">Az ÁFA kulcs: AAM (alanyi mentes)</td>
@@ -184,9 +184,9 @@ and open the template in the editor.
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
                     Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
-                    Cégnév: '.$order->company_name.'<br/>
-                    Adószám: '.$order->tax_code.'<br/>
-                    Telefon: '.$order->delivery_telephone.'
+                    Cégnév: ' . $order->company_name . '<br/>
+                    Adószám: ' . $order->tax_code . '<br/>
+                    Telefon: ' . $order->delivery_telephone . '
                 </td>
             </tr>
             <tr style="padding: 0px">
@@ -233,13 +233,13 @@ and open the template in the editor.
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;">'.$discount.'<br/><br/>0,00</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;">' . $discount . '<br/><br/>0,00</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">Összesen:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;">'.$total_price.'</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;">' . $total_price . '</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="4">Az ÁFA kulcs: AAM (alanyi mentes)</td>
@@ -788,8 +788,34 @@ and open the template in the editor.
     public function action_timeout() {
         $this->redirect('/user_account');
     }
-    
+
     public function action_ipn() {
-        
+        require_once DOCROOT . 'application/vendor/payu/config.php';
+        $modifyConfig = new PayUModifyConfig($config);
+        $orderCurrency = (isset($_REQUEST['CURRENCY'])) ? $_REQUEST['CURRENCY'] : 'N/A';
+        $config = $modifyConfig->merchantByCurrency($orderCurrency);
+        $ipn = new PayUIpn($config);
+        $ipn->logger = $config['LOGGER'];
+        $ipn->log_path = $config['LOG_PATH'];
+        if ($ipn->validateReceived()) {
+
+            //echo <EPAYMENT> (must have)
+            echo $ipn->confirmReceived();
+
+            /*
+             * End of payment: SUCCESSFUL
+             */
+
+
+            /*
+             * Your code here
+             */
+
+            print "<pre>";
+            print "<br>REQUEST<br>";
+            print_r($_REQUEST);
+            print "<br></pre>";
+        }
     }
+
 }
