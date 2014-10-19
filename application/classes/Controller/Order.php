@@ -796,20 +796,20 @@ and open the template in the editor.
                 </td>
             </tr>
             <tr style="width:100%;" class="box-row">
-                <td style="padding:0px 0 0 10px;width:50%; border-top:6px solid #e12258;border-left:6px solid #e12258;border-right:6px solid #e12258; text-align:left;font-family: \'gillsansmt\'; color:#e12258;">Ki kapja:</td>
-                <td style="width:50%;border-top:6px solid #ffffc1;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;font-family: \'gillsansmt\'; color:#ffffc1;">Kuponkód:</td>
+                <td style="padding:0px 0 0 10px;width:50%; border-top:6px solid #e12258;border-left:6px solid #e12258;border-right:6px solid #e12258; text-align:left;color:#e12258;">Ki kapja:</td>
+                <td style="width:50%;border-top:6px solid #ffffc1;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;color:#ffffc1;">Kuponkód:</td>
             </tr>
             <tr style="width:100%;" class="box-row">
                 <td style="padding:5px 0 0 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258; text-align:left;font-family: \'gillsansmt\'; color:#e12258;">' . $step1['lastname'] . ' ' . $step1['firstname'] . '</td>
-                <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;font-family: \'gillsansmt\'; color:#ffffc1;">' . $friend->coupon_code . '</td>
+                <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258; color:#ffffc1;">' . $friend->coupon_code . '</td>
             </tr>
             <tr style="width:100%;" class="box-row">
                 <td style="padding:10px 0 0 10px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258; text-align:left;font-family: \'gillsansmt\'; color:#e12258;">Ki adja:</td>
-                <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;font-family: \'gillsansmt\'; color:#ffffc1;">Érvényes:</td>
+                <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258; color:#ffffc1;">Érvényes:</td>
             </tr>
             <tr style="width:100%;" class="box-row">
-                <td style="padding:10px 0 15px 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258;border-bottom:6px solid #e12258; text-align:left;font-family: \'gillsansmt\'; color:#e12258;">' . $this->current_user->customer_lastname . ' ' . $this->current_user->customer_firstname . '</td>
-                <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;border-bottom:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;font-family: \'gillsansmt\'; color:#ffffc1;">' . $final . '</td>
+                <td style="padding:10px 0 15px 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258;border-bottom:6px solid #e12258; text-align:left;color:#e12258;">' . $this->current_user->customer_lastname . ' ' . $this->current_user->customer_firstname . '</td>
+                <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;border-bottom:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;color:#ffffc1;">' . $final . '</td>
             </tr>
             <tr style=" width:100%;">
                 <td  colspan="2" style=" text-align: center; padding-top:8px;"><img src="'.URL::base(TRUE, FALSE).'assets/img/main_bg.png" width="336" height="123"></td>
