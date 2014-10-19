@@ -163,7 +163,7 @@ and open the template in the editor.
     </body>
 </html>';
         $pdf = new DOMPDF();
-        $pdf->load_html($invoice,'ISO-8859-16');
+        $pdf->load_html($invoice);
         $pdf->render();
         $output = $pdf->output();
         file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
