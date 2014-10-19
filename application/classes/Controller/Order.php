@@ -749,14 +749,21 @@ and open the template in the editor.
                             ->and_where('friends_lastname', '=', $step1['lastname'])
                             ->find();
                     if ($friend->loaded()) {
-                        $template = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
+                        $file = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['lastname'] . ' ' . $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
+                        $pdf = new DOMPDF();
+                        $pdf->load_html($file);
+                        $pdf->render();
+                        $output = $pdf->output();
+                        file_put_contents(DOCROOT . 'orders/gift_' . $order->id . '.pdf', $output);
+                        $template = ORM::factory('Templates', 3);
+                        $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
                         if (isset($step1['delay'])) {
                             $to = $this->current_user->email;
                         } else {
                             $to = $step1['friend_email'];
                         }
                     }
-                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $template);
+                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $template,'gift_' . $order->id . '.pdf');
                 }
                 $this->receipt_email($ord, $this->current_user, 1);
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
@@ -797,8 +804,8 @@ and open the template in the editor.
         if ($ipn->validateReceived()) {
             echo $ipn->confirmReceived();
             $orderno = Arr::get($_REQUEST, 'orderno');
-            $order = ORM::factory('Orders',(int)$orderno);
-            if($order->loaded()){
+            $order = ORM::factory('Orders', (int) $orderno);
+            if ($order->loaded()) {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Ok');
             }
         }
