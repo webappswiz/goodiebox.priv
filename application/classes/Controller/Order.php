@@ -750,6 +750,7 @@ and open the template in the editor.
                             ->find();
                     if ($friend->loaded()) {
                         $file = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['lastname'] . ' ' . $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
+                        echo $file;
                         $pdf = new DOMPDF();
                         $pdf->load_html($file);
                         $pdf->render();
