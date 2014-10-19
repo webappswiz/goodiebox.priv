@@ -754,7 +754,7 @@ and open the template in the editor.
                         $pdf = new DOMPDF();
                         $pdf->load_html($file);
                         $pdf->render();
-                        $output = $pdf->stream('hello.pdf');
+                        $output = $pdf->output();
                         file_put_contents(DOCROOT . 'orders/gift_' . $ord->id . '.pdf', $output);
                         $template = ORM::factory('Templates', 3);
                         if (isset($step1['delay'])) {
