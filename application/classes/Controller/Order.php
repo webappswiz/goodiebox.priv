@@ -44,19 +44,14 @@ class Controller_Order extends Controller_Core {
         $total_price = $order->package->price - $discount;
 
         $invoice = '<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html lang="hu">
     <head>
         <title>TODO supply a title</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
-            font-family: Arial, Helvetica, sans-serif;
+                font-family: DejaVu Sans, Helvetica, sans-serif;
                 color: #330000;
                 min-height: 100%;
                 padding-top: 25px;
@@ -162,7 +157,6 @@ and open the template in the editor.
         </table>
     </body>
 </html>';
-        $invoice = mb_convert_encoding($invoice, 'HTML-ENTITIES', 'iso-8859-2');
         $pdf = new DOMPDF();
         $pdf->load_html($invoice);
         $pdf->render();
