@@ -82,8 +82,21 @@ if ($auth->logged_in())
 
         $('#apply_coupon').on('click', function () {
             if ($('#coupon_id').val() != '') {
-                $('#invite_code').val($('#coupon_id').val());
-                $('.box.rounded').hide();
+                $.post('/api/checkCode', {'code': $('#coupon_id').val()}).done(function (data) {
+                    var i = $.parseJSON(data);
+                    if (i.msg == 1) {
+                        $('#invite_code').val($('#coupon_id').val());
+                        discount = total_price * 10/100;
+                        $('#discount').val('1');
+                        $('#discount1').html(discount + ' HUF');
+                        var final_price = total_price - discount;
+                        $('#total_price').html(final_price + ' HUF');
+                        $('.box.rounded').hide();
+                    } else {
+                        alert('Wrong code');
+                    }
+                });
+
             }
         });
         $("#customer_telephone").mask("+36 99 999-99-99");
@@ -379,7 +392,7 @@ if (isset($session['step2'])) {
             ?>
         </div>
         <div class="claim-form-btn">
-            <span style="font-size: 18px;font-weight: 300;margin-right: 0px;vertical-align: middle">Elolvastam és megértettem az <a style="color:#cc0033" href="<?=URL::base(TRUE, FALSE)?>aszf.pdf">ÁSZF-et</a></span> <input type="checkbox" id="tos">
+            <span style="font-size: 18px;font-weight: 300;margin-right: 0px;vertical-align: middle">Elolvastam és megértettem az <a style="color:#cc0033" href="<?= URL::base(TRUE, FALSE) ?>aszf.pdf">ÁSZF-et</a></span> <input type="checkbox" id="tos">
             <input type="submit" id="submit" name="submit" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
         </div>
         <div class="clear"></div>
