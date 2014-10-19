@@ -791,30 +791,16 @@ and open the template in the editor.
 
     public function action_ipn() {
         require_once DOCROOT . 'application/vendor/payu/config.php';
-        //$modifyConfig = new PayUModifyConfig($config);
-        //$orderCurrency = (isset($_REQUEST['CURRENCY'])) ? $_REQUEST['CURRENCY'] : 'N/A';
-        //$config = $modifyConfig->merchantByCurrency($orderCurrency);
         $ipn = new PayUIpn($config);
         $ipn->logger = $config['LOGGER'];
         $ipn->log_path = $config['LOG_PATH'];
         if ($ipn->validateReceived()) {
-
-            //echo <EPAYMENT> (must have)
             echo $ipn->confirmReceived();
-
-            /*
-             * End of payment: SUCCESSFUL
-             */
-
-
-            /*
-             * Your code here
-             */
-
-            print "<pre>";
-            print "<br>REQUEST<br>";
-            print_r($_REQUEST);
-            print "<br></pre>";
+            $orderno = Arr::get($_REQUEST, 'orderno');
+            $order = ORM::factory('Orders',(int)$orderno);
+            if($order->loaded()){
+                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Ok');
+            }
         }
     }
 
