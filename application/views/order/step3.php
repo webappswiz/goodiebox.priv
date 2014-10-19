@@ -64,16 +64,18 @@ if ($auth->logged_in())
         });
         $('#submit').on('click', function () {
             if ($('#shipping').is(':checked')) {
-                $('#shipping_form').valid();
-                $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function (i, obj) {
-                    $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
-                });
-                $('#msg').val($('#message').val());
-                $('#submit').attr('disabled','disabled');
-                $('#billing_form').submit();
+                if ($('#shipping_form').valid()) {
+                    $.each($('#shipping_form input, #shipping_form select, #shipping_form textarea').serializeArray(), function (i, obj) {
+                        $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
+                    });
+                    $('#msg').val($('#message').val());
+                    $('#submit').attr('disabled', 'disabled');
+                    $('#billing_form').submit();
+                }
+
             } else {
                 $('#msg').val($('#message').val());
-                $('#submit').attr('disabled','disabled');
+                $('#submit').attr('disabled', 'disabled');
                 $('#billing_form').submit();
             }
         });
