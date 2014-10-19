@@ -136,7 +136,7 @@ if (isset($session['step2'])) {
         <div class="box rounded">
             <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-i.png">
             <div id="collapse-content">
-                <h3>Ha már van regisztrált Goodiebox felhasználói fiókod, jelentkezz be! <span>KLIKK ide!</span></h3>
+                <h3>Ha van kuponod, itt beválthatod.  <span>KLIKK ide!</span></h3>
                 <div>
                     <div class="content">
                         <div class="login">
@@ -379,7 +379,7 @@ if (isset($session['step2'])) {
             ?>
         </div>
         <div class="claim-form-btn">
-            <span style="font-size: 18px;font-weight: 900;margin-right: 0px;vertical-align: middle">Elolvastam és megértettem az ÁSZF-et</span> <input type="checkbox" id="tos">
+            <span style="font-size: 18px;font-weight: 300;margin-right: 0px;vertical-align: middle">Elolvastam és megértettem az <a style="color:#cc0033" href="<?=URL::base(TRUE, FALSE)?>aszf.pdf">ÁSZF-et</a></span> <input type="checkbox" id="tos">
             <input type="submit" id="submit" name="submit" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
         </div>
         <div class="clear"></div>
