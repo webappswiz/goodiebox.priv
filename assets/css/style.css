@@ -1,5 +1,4 @@
 
-
 /* CSS RESET */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
 {
@@ -464,11 +463,11 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 ********************************/    				
 .option-name{width: 100%;border: 3px solid #330000; padding: 5px; outline: none;}
 .process-2{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 30px 90px 45px 90px;}
-.step2-text{margin-top: 120px;}
-.step2-list li{margin-right: 180px; margin-top: 115px;}
+.step2-text{margin-top: 10px;}
+.step2-list li{margin-right: 180px; margin-top: 50px;}
 .step2-text p{font-family: 'franklin_gothic_bookregular';font-size: 24px; padding-top: 25px;font-size: 20px;}
 .step2-text > h2{text-align: left; padding-bottom: 0;font-size: 20px;}
-.step2-btn-container{margin-top: 160px;}
+.step2-btn-container{margin-top: 20px;}
 /*******************************
 	PROCESS PAGE 3 CSS
 ********************************/
@@ -573,7 +572,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
 	.contact-cont-right{float: none;display: block;}
 	.claim-message {margin-top: 20px;}
-	.count-text {display:none;}
+	.count-text {/*display:none;*/}
 	#faq img{display:none;}
 }
 	@media only screen and (max-width: 767px)
@@ -589,7 +588,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.process-3{padding-left:50px; padding-right:50px;}
 	.bottom-text-field div input[type="text"] {width: 65%;}
 	.dog-btn{margin-left: 10px;}
-	.count-text {display:none;}
+	.count-text {/*display:none;*/ padding-top:0px !important;}
 	#faq img{display:none;}
 	#menu{display:none;}
 }
@@ -597,7 +596,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 {
 	.logo img{width: 100%; height: auto;}
 	.count-text{padding-left: 0px;}
-	header .social-right,.copy-write p {float: none;text-align: center;}
+	header .social-right,.copy-write p {float: none;text-align: center; display:none;}
 	.logo{margin-bottom: 30px; float: none!important;text-align: center;}
 	.star-img{display: none;}
 	.opinion-form form input{width: 100% !important; }
@@ -617,7 +616,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .step2-btn-container{text-align: center;}
     .claim-gift{padding: 55px 60px 45px 60px;}
     .bottom-text-field div input[type="text"] {width: 100%;}
-	.count-text {display:none;}
+	.count-text {/*display:none;*/ padding-top:0px !important;}
 	#faq img{display:none;}
 	#menu{display:none;}
 }
@@ -638,7 +637,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.count-btn{padding: 3px;}
 	.dark-btn{font-size: 18px;}
 	.option-text1,.option-text2{margin-left: 0px; display: block;}
-	.count-text {display:none;}
+	.count-text {/*display:none;*/ padding-top:0px !important;}
 	#faq img{display:none;}
 	#menu{display:none;}
 }
@@ -649,7 +648,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.radio-list input[type="radio"]{margin-left: 30px;}
 	.claim-gift h1{font-size: 36px;}
 	#collapse-content .content {padding-left: 0; padding-right: 5px;}
-	.count-text {display:none;}
+	.count-text {/*display:none;*/ padding-top:0px !important; text-align:center;}
 	#faq img{display:none;}
 	#menu{display:none;}
 }
@@ -657,12 +656,12 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .add input[type="password"]{width:100% !important; }
 .process-3 form input[type="text"],input[type="password"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
 .alert-error{
-    background-color:#cc0033;
+    background-color:rosybrown;
     padding: 20px;
 }
 
 .alert-success{
-    background-color: #336600;
+    background-color:#c8cfaf;
     padding: 20px;
 }
 
@@ -673,8 +672,3 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 input.error{
     background-color: #eb99ad;
 }
-
-#dialog-form label{font-size: 14px;}
-#dialog-form form input[type="text"],#dialog-form form textarea,.process-1 input[type="text"],.bottom-text-field div input[type="text"],.dog-profile-container input[type="text"]{border: 3px solid #330000; padding: 5px; outline: none;}
-#dialog-form input[type="radio"]{border: 3px solid #330000; width: 21px; height: 21px; background: none; outline:none; 	vertical-align: middle;}
-#dialog-form .radio-list input[type="radio"]{margin-left: 20px; width: 28px; }

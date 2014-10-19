@@ -44,8 +44,6 @@
         <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img2.jpg"> 3 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="2" class="" required disabled><br/>&nbsp;</li>
         <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img2.jpg"> 6 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="3" class="" required disabled><br/>&nbsp;</li>
     </ul>    
-    <div class="clear"></div>
-
     <div class="step2-text">
         <h2>Jó tudni:</h2>
         <p>Rendeléskor automatikus regisztráció történik, létrejön a saját profilod a weboldalunkon. Később bármikor visszatérhetsz, hogy megnézhesd rendelésed aktuális állapotát, újabb rendelést adj le vagy meghívót küldhess a barátaidnak!</p>
