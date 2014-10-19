@@ -82,7 +82,7 @@ if ($auth->logged_in())
 
         $('#apply_coupon').on('click', function () {
             if ($('#coupon_id').val() != '') {
-                $('#coupon_code').val($('#coupon_id').val());
+                $('#invite_code').val($('#coupon_id').val());
                 $('.box.rounded').hide();
             }
         });
@@ -141,7 +141,7 @@ if (isset($session['step2'])) {
                     <div class="content">
                         <div class="login">
                             <form class="coupon">
-                                Ajándékkupon kódom <input type="text" id="coupon_id" name="coupon" class="rounded" id="">
+                                Kedvezmény kodom <input type="text" id="coupon_id" name="coupon" class="rounded" id="">
                                 <input type="button" id="apply_coupon" value="OK" class="box-btn rounded">
                             </form>
                         </div>
@@ -213,11 +213,10 @@ if (isset($session['step2'])) {
                             <input type="password" name="customer_password" class="rounded" id="customer_password" required>
                             <label for="password_confirm">Jelszó megerősítése*</label>
                             <input type="password" name="password_confirm" class="rounded" id="password_confirm" required>
-                            <label for="invite_code">Invite code</label>
-                            <input type="text" name="invite_code" class="rounded" id="invite_code">
                         </div>
                     <?php endif; ?>
                     <input type="hidden" name="coupon_code" id="coupon_code" value="">
+                    <input type="hidden" name="invite_code" id="coupon_code" value="">
                     <input type="hidden" name="discount" id="discount" value="">
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
