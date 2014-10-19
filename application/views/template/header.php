@@ -22,7 +22,7 @@
         echo Media::inline_script();
         ?>
         <!-- Facebook Conversion Code for Goodiebox Prelaunch -->
-        <script>(function() {
+        <script>(function () {
                 var _fbq = window._fbq || (window._fbq = []);
                 if (!_fbq.loaded) {
                     var fbds = document.createElement('script');
@@ -40,11 +40,11 @@
 
     <script>
 
-        window.fbAsyncInit = function() {
+        window.fbAsyncInit = function () {
             FB.init({
                 appId: '764361780253904', status: true, cookie: true, xfbml: true});
         };
-        (function(d, debug) {
+        (function (d, debug) {
             var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
             if (d.getElementById(id)) {
                 return;
@@ -62,22 +62,21 @@
             FB.ui(obj, callback);
         }
     </script>
-        <script>
-                (function(i, s, o, g, r, a, m) {
-                    i['GoogleAnalyticsObject'] = r;
-                    i[r] = i[r] || function() {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
-                    a = s.createElement(o),
-                            m = s.getElementsByTagName(o)[0];
-                    a.async = 1;
-                    a.src = g;
-                    m.parentNode.insertBefore(a, m)
-                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-53180118-1', 'auto');
+        ga('require', 'displayfeatures');
         ga('send', 'pageview');
-
     </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
@@ -96,7 +95,7 @@
                         </a></li>
                 </ul>
                 <script>
-                    $('.btnShare').click(function() {
+                    $('.btnShare').click(function () {
                         elem = $(this);
                         postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('image'));
 
@@ -105,7 +104,7 @@
                 </script>
 
                 <script>
-                    $('.popup').click(function(event) {
+                    $('.popup').click(function (event) {
                         var width = 575,
                                 height = 400,
                                 left = ($(window).width() - width) / 2,
