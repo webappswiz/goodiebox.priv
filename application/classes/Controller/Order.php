@@ -155,6 +155,7 @@ class Controller_Order extends Controller_Core {
         </table>
     </body>
 </html>';
+        $invoice = iconv('UTF-8','Windows-1250',$invoice);
         $pdf = new DOMPDF();
         $pdf->load_html($invoice);
         $pdf->render();
