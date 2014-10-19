@@ -51,6 +51,7 @@ class Controller_Order extends Controller_Core {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
+            font-family: Arial, Helvetica, sans-serif;
                 color: #330000;
                 min-height: 100%;
                 padding-top: 25px;
