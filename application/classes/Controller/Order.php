@@ -756,7 +756,6 @@ and open the template in the editor.
                         $output = $pdf->output();
                         file_put_contents(DOCROOT . 'orders/gift_' . $ord->id . '.pdf', $output);
                         $template = ORM::factory('Templates', 3);
-                        $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
                         if (isset($step1['delay'])) {
                             $to = $this->current_user->email;
                         } else {
