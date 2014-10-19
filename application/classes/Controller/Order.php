@@ -52,10 +52,11 @@ and open the template in the editor.
 <html>
     <head>
         <title>TODO supply a title</title>
-        <meta charset="UTF-8">
+        <meta charset="ISO 8859-16">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
+            font-family: Arial, Helvetica, sans-serif;
                 color: #330000;
                 min-height: 100%;
                 padding-top: 25px;
@@ -162,7 +163,7 @@ and open the template in the editor.
     </body>
 </html>';
         $pdf = new DOMPDF();
-        $pdf->load_html($invoice);
+        $pdf->load_html($invoice,'ISO 8859-16');
         $pdf->render();
         $output = $pdf->output();
         file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
