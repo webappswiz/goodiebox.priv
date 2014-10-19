@@ -752,7 +752,7 @@ and open the template in the editor.
                         $file = View::factory('template/gift_email', array('from' => $this->current_user, 'to' => $step1['lastname'] . ' ' . $step1['firstname'], 'coupon' => $friend->coupon_code))->render();
                         echo $file;
                         $pdf = new DOMPDF();
-                        $pdf->load_html($file);
+                        $pdf->load_html($file,'UTF-8');
                         $pdf->render();
                         $output = $pdf->output();
                         file_put_contents(DOCROOT . 'orders/gift_' . $ord->id . '.pdf', $output);
