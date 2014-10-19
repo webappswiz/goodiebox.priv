@@ -61,7 +61,7 @@
 </script>
 <div class="clear"></div>
 <section class="claim-gift" class="rounded">
-    <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/gift-mark.png" class="badge">
+    <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/gift-mark.png" class="badge">
     <h1>Ajándékom van!</h1>
     <h2>Kérlek, add meg az adataid!</h2>
     <div class="claim-form-container">
@@ -145,9 +145,9 @@
     <div class="clear"></div>
     <h2>Válaszd ki </br>mekkora a kutyus!*</h2>
     <ul class="claim-option-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><p> Icipici<input type="radio" id="size" name="group1" value="1" class="" checked></p><br/><br/> max 9kg</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"> Éppen jó<input type="radio" id="size" name="group1" value="2" class="" ><br/><br/> 10-24kg</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"> Igazi óriás<input type="radio" id="size" name="group1" value="3" class="" ><br/><br/> 25kg+</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-dogs1.jpg"><p> Icipici<input type="radio" id="size" name="group1" value="1" class="" checked></p><br/><br/> max 9kg</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-dogs2.jpg"> Éppen jó<input type="radio" id="size" name="group1" value="2" class="" ><br/><br/> 10-24kg</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-dogs3.jpg"> Igazi óriás<input type="radio" id="size" name="group1" value="3" class="" ><br/><br/> 25kg+</li>
     </ul>
     <div class="clear"></div>
     <div class="claim-form2">

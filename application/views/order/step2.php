@@ -11,7 +11,7 @@
 </script>
 <div class="clear"></div>
 <section class="process-2" class="rounded">
-    <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/shop.png" class="badge">
+    <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/shop.png" class="badge">
     <h1>Rendelés</h1>
 
     <div class="process-circles">
@@ -37,12 +37,12 @@
     <div class="clear"></div>
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
     <ul class="claim-option-list step2-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img1.jpg"><p> 1 hónap<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="1" checked="checked" required></p><br/><?php
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img1.jpg"><p> 1 hónap<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="1" checked="checked" required></p><br/><?php
         $product = ORM::factory('Packages',1);
         echo $product->price.' HUF';
         ?></li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img2.jpg"> 3 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="2" class="" required disabled><br/>&nbsp;</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/step2-img2.jpg"> 6 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="3" class="" required disabled><br/>&nbsp;</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img2.jpg"> 3 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="2" class="" required disabled><br/>&nbsp;</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img2.jpg"> 6 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="3" class="" required disabled><br/>&nbsp;</li>
     </ul>    
     <div class="clear"></div>
 

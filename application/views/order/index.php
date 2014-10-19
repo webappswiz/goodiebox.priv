@@ -68,7 +68,7 @@
 </script>
 <div class="clear"></div>
 <section class="process-1" class="rounded">
-    <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/shop.png" class="badge">
+    <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/shop.png" class="badge">
     <h1>Rendelés</h1>
 
     <div class="process-circles">
@@ -95,9 +95,9 @@
     <h2>Válaszd ki </br>mekkora a kutyus!*</h2>
 
     <ul class="claim-option-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="1" class="" checked> Icipici<br/><br/> max 9kg</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="2" class=""> Éppen jó<br/><br/> 10-24kg</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="3" class=""> Igazi óriás<br/><br/> 25kg+</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-dogs1.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="1" class="" checked> Icipici<br/><br/> max 9kg</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-dogs2.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="2" class=""> Éppen jó<br/><br/> 10-24kg</li>
+        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-dogs3.jpg"><input style="cursor: pointer" type="radio" id="size" name="group1" value="3" class=""> Igazi óriás<br/><br/> 25kg+</li>
     </ul>
     <div class="clear"></div>
 
