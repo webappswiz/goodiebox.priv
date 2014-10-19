@@ -169,7 +169,6 @@ and open the template in the editor.
         //file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
         $pdf = new TCPDF();
         $pdf->AddPage();
-        $pdf->setImageScale(1.53);
         $pdf->writeHTML($invoice, true, false, false, false, '');
         $pdf->Output('test.pdf', 'F');
         
