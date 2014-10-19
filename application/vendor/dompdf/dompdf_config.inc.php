@@ -203,7 +203,7 @@ def("DOMPDF_DEFAULT_PAPER_SIZE", "letter");
  * Used if no suitable fonts can be found. This must exist in the font folder.
  * @var string
  */
-def("DOMPDF_DEFAULT_FONT", "arial");
+def("DOMPDF_DEFAULT_FONT", "dejavusans");
 
 /**
  * Image DPI setting
