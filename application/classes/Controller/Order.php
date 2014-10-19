@@ -762,7 +762,7 @@ and open the template in the editor.
                             $to = $step1['friend_email'];
                         }
                     }
-                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $template,'gift_' . $ord->id . '.pdf');
+                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $template->template_text,'gift_' . $ord->id . '.pdf');
                 }
                 $this->receipt_email($ord, $this->current_user, 1);
             } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
