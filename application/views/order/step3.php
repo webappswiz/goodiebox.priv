@@ -216,7 +216,7 @@ if (isset($session['step2'])) {
                         </div>
                     <?php endif; ?>
                     <input type="hidden" name="coupon_code" id="coupon_code" value="">
-                    <input type="hidden" name="invite_code" id="coupon_code" value="">
+                    <input type="hidden" name="invite_code" id="invite_code" value="">
                     <input type="hidden" name="discount" id="discount" value="">
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
