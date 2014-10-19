@@ -186,11 +186,11 @@
                             <input type="text" id="email" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
                             <div>
                                 <label for="last-name">Barátod vezetékneve*</label>
-                                <input id="first-name" type="text" value="" name="firstname" class="rounded" required>
+                                <input id="first-name" type="text" value="" name="lastname" class="rounded" required>
                             </div>
                             <div>
                                 <label for="last-name">Barátod keresztneve*</label>
-                                <input id="last-name" type="text" value="" name="lastname" class="rounded" required>
+                                <input id="last-name" type="text" value="" name="firstname" class="rounded" required>
                             </div>
                             <div>
                                 <label for="first-name">Barátod e-mail címe*</label>
