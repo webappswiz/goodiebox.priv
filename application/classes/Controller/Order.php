@@ -250,8 +250,21 @@ class Controller_Order extends Controller_Core {
                         $user->customer_company = $_POST['company_name'];
                         $user->customer_taxcode = $_POST['tax_code'];
                     }
+                    
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
+                    if(isset($_POST['invite_code'])){
+                        $coupon = ORM::factory('Coupons')
+                                ->where('coupon','=',$_POST['invite_code'])
+                                ->find();
+                        if($coupon->loaded()){
+                            $discount = ORM::factory('Discounts');
+                            $discount->user_id = $user->id;
+                            $discount->discount = 10;
+                            $discount->save();
+                            $coupon->delete();
+                        }
+                    }
                     $invites = ORM::factory('Invites')
                             ->where('email', '=', $_POST['customer_email'])
                             ->find_all();

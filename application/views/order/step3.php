@@ -208,12 +208,13 @@ if (isset($session['step2'])) {
                     </div>
                     <?php if (!$auth->logged_in()): ?>
                         <p style="margin-top:15px;">E-mail cím és jelszó megadása szükséges ahhoz, hogy később bejelentkezhess a Goodiebox fiókodba, követhesd aktuális rendelésed, módosíthasd a már meglévő adataidat vagy ha nincs rá szükséged, törölhesd.</p>
-
                         <div>
                             <label for="customer_password">Jelszó*</label>
                             <input type="password" name="customer_password" class="rounded" id="customer_password" required>
                             <label for="password_confirm">Jelszó megerősítése*</label>
                             <input type="password" name="password_confirm" class="rounded" id="password_confirm" required>
+                            <label for="invite_code">Invite code</label>
+                            <input type="text" name="invite_code" class="rounded" id="invite_code">
                         </div>
                     <?php endif; ?>
                     <input type="hidden" name="coupon_code" id="coupon_code" value="">
