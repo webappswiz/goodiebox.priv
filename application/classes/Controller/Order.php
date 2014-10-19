@@ -51,11 +51,29 @@ class Controller_Order extends Controller_Core {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
-                font-family: DejaVu Sans, Helvetica, sans-serif;
+            font-family: \'gillsansmt\';
                 color: #330000;
                 min-height: 100%;
                 padding-top: 25px;
                 padding-bottom: 25px;
+                @font-face {
+                font-family: \'gillsansmt\';
+                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt.eot\');
+                src: local(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt\'), url(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt.woff\') format(\'woff\'), url(\''.URL::base(TRUE, FALSE).'assets/fonts/gillsansmt.ttf\') format(\'truetype\');}
+            @font-face {
+                font-family:\'GilgongoKaps-Regular\';
+                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot\');
+                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.eot?#iefix\') format(\'embedded-opentype\'),
+                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.woff\') format(\'woff\'),
+                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.ttf\') format(\'truetype\'),
+                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoKaps_latin+latin-ext_gdi.svg#GilgongoKaps-Regular\') format(\'svg\');}
+            @font-face {
+                font-family:\'GilgongoMutombo-Regular\';
+                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot\');
+                src: url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.eot?#iefix\') format(\'embedded-opentype\'),
+                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.woff\') format(\'woff\'),
+                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.ttf\') format(\'truetype\'),
+                    url(\''.URL::base(TRUE, FALSE).'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.svg#GilgongoMutombo-Regular\') format(\'svg\');}
             }
 
         </style>
