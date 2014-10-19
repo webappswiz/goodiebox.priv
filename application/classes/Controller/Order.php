@@ -791,9 +791,9 @@ and open the template in the editor.
 
     public function action_ipn() {
         require_once DOCROOT . 'application/vendor/payu/config.php';
-        $modifyConfig = new PayUModifyConfig($config);
-        $orderCurrency = (isset($_REQUEST['CURRENCY'])) ? $_REQUEST['CURRENCY'] : 'N/A';
-        $config = $modifyConfig->merchantByCurrency($orderCurrency);
+        //$modifyConfig = new PayUModifyConfig($config);
+        //$orderCurrency = (isset($_REQUEST['CURRENCY'])) ? $_REQUEST['CURRENCY'] : 'N/A';
+        //$config = $modifyConfig->merchantByCurrency($orderCurrency);
         $ipn = new PayUIpn($config);
         $ipn->logger = $config['LOGGER'];
         $ipn->log_path = $config['LOG_PATH'];
