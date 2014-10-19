@@ -47,7 +47,6 @@ class Controller_Order extends Controller_Core {
 <html lang="hu">
     <head>
         <title>TODO supply a title</title>
-        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
