@@ -69,9 +69,11 @@ if ($auth->logged_in())
                     $('<input type="hidden">').prop(obj).appendTo($('#billing_form'));
                 });
                 $('#msg').val($('#message').val());
+                $('#submit').attr('disabled','disabled');
                 $('#billing_form').submit();
             } else {
                 $('#msg').val($('#message').val());
+                $('#submit').attr('disabled','disabled');
                 $('#billing_form').submit();
             }
         });
