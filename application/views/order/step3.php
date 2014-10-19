@@ -154,7 +154,7 @@ if (isset($session['step2'])) {
                     <div class="content">
                         <div class="login">
                             <form class="coupon">
-                                Kedvezmény kodom <input type="text" id="coupon_id" name="coupon" class="rounded" id="">
+                                Kedvezmény kódom <input type="text" id="coupon_id" name="coupon" class="rounded" id="">
                                 <input type="button" id="apply_coupon" value="OK" class="box-btn rounded">
                             </form>
                         </div>
