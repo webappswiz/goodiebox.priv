@@ -130,7 +130,7 @@ def("DOMPDF_UNICODE_ENABLED", true);
 /**
  * Whether to enable font subsetting or not.
  */
-def("DOMPDF_ENABLE_FONTSUBSETTING", false);
+def("DOMPDF_ENABLE_FONTSUBSETTING", true);
 
 /**
  * The PDF rendering backend to use
@@ -281,7 +281,7 @@ def("DOMPDF_ENABLE_JAVASCRIPT", true);
  *
  * @var bool
  */
-def("DOMPDF_ENABLE_REMOTE", false);
+def("DOMPDF_ENABLE_REMOTE", true);
 
 /**
  * The debug output log
