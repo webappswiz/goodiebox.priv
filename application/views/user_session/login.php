@@ -5,6 +5,8 @@
             <form action="<?php echo URL::site('user_session/login'); ?>" method="POST" class="login">
                 <div class="add">
                     <input class="rounded" type="text" name="username" placeholder="Email address">
+                </div>
+                <div class="add">
                     <input class="rounded" type="password" name="password" placeholder="Password">
                 </div>
                 <div class="clear"></div>
