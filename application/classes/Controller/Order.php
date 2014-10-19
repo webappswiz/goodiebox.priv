@@ -162,7 +162,7 @@ and open the template in the editor.
         </table>
     </body>
 </html>';
-        $invoice = mb_convert_encoding($invoice, 'HTML-ENTITIES', 'UTF-8');
+        $invoice = mb_convert_encoding($invoice, 'HTML-ENTITIES', 'iso-8859-2');
         $pdf = new DOMPDF();
         $pdf->load_html($invoice);
         $pdf->render();
