@@ -155,15 +155,15 @@ class Controller_Order extends Controller_Core {
         </table>
     </body>
 </html>';
-        //$pdf = new DOMPDF();
-        //$pdf->load_html($invoice);
-        //$pdf->render();
-        //$output = $pdf->output();
-        $pdf = new TCPDF();
-        $pdf->AddPage();
-        $pdf->writeHTML($invoice, true, false, false, false, '');
-        $pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
-        //file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
+        $pdf = new DOMPDF();
+        $pdf->load_html($invoice);
+        $pdf->render();
+        $output = $pdf->output();
+        //$pdf = new TCPDF();
+        //$pdf->AddPage();
+        //$pdf->writeHTML($invoice, true, false, false, false, '');
+        //$pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
+        file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
         
         
         $template = ORM::factory('Templates', 2);
