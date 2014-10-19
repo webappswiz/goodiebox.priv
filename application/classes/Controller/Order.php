@@ -825,8 +825,10 @@ and open the template in the editor.
                         file_put_contents(DOCROOT . 'orders/gift_' . $ord->id . '.pdf', $output);
                         $template = ORM::factory('Templates', 3);
                         if (isset($step1['delay'])) {
+                            $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
                             $to = $this->current_user->email;
                         } else {
+                            $body = str_replace('[firstname]', $step1['firstname'], $template->template_text);
                             $to = $step1['friend_email'];
                         }
                     }
