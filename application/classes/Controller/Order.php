@@ -162,19 +162,16 @@ and open the template in the editor.
         </table>
     </body>
 </html>';
-        //$pdf = new DOMPDF();
-        //$pdf->load_html($invoice,'ISO-8859-16');
-        //$pdf->render();
-        //$output = $pdf->output();
-        //file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
-        $pdf = new TCPDF();
-        $pdf->AddPage();
-        $pdf->writeHTML($invoice, true, false, false, false, '');
-        $pdf->Output('test.pdf', 'F');
+        $pdf = new DOMPDF();
+        $pdf->load_html($invoice,'ISO-8859-16');
+        $pdf->render();
+        $output = $pdf->output();
+        file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
         
-        //$template = ORM::factory('Templates', 2);
-        //$body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
-        //$this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
+        
+        $template = ORM::factory('Templates', 2);
+        $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
+        $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
     }
 
     public function action_index() {
