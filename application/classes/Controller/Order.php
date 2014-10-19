@@ -158,6 +158,7 @@ class Controller_Order extends Controller_Core {
         //$pdf->load_html($invoice);
         //$pdf->render();
         //$output = $pdf->output();
+        $pdf = new TCPDF();
         $pdf->AddPage();
         $pdf->writeHTML($invoice, true, false, false, false, '');
         $pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
