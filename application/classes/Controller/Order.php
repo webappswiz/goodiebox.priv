@@ -661,11 +661,50 @@ class Controller_Order extends Controller_Core {
             $order = $order->as_array();
             $ord = ORM::factory('Order', $order['id']);
             if (isset($_REQUEST['RC']) && $_REQUEST['RC'] == 000 && $ord->loaded()) {
-                $ord->payment_status = 1;
+                
+            } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
+                $ord->payment_status = 2;
                 $ord->save();
-                if ($ord->discount == 1) {
+            } elseif ($ord->loaded() && $ord->total_price == 0) {
+                $ord->payment_status = 3;
+                $ord->save();
+            } else {
+                $this->redirect('/user_account');
+            }
+        }
+        $session->delete('order');
+        $session->delete('step1');
+        $session->delete('step2');
+        $session->delete('success');
+    }
+
+    public function action_payment() {
+        $session = Session::instance();
+        $order = $session->get('order')->as_array();
+        require_once DOCROOT . 'application/vendor/payu/config.php';
+        $this->payment = new PayULiveUpdate($config);
+        if (!empty($order['id'])) {
+            $this->order = $order;
+        }
+    }
+
+    public function action_timeout() {
+        $this->redirect('/user_account');
+    }
+
+    public function action_ipn() {
+        require_once DOCROOT . 'application/vendor/payu/config.php';
+        $ipn = new PayUIpn($config);
+        if ($ipn->validateReceived()) {
+            echo $ipn->confirmReceived();
+            $orderno = Arr::get($_REQUEST, 'REFNOEXT');
+            $order = ORM::factory('Order', (int) $orderno);
+            if ($order->loaded()) {
+                $order->payment_status = 1;
+                $order->save();
+                if ($order->discount == 1) {
                     $invites = ORM::factory('Invites')
-                            ->where('user_id', '=', $this->current_user->id)
+                            ->where('user_id', '=', $order->user_id)
                             ->and_where('is_used', '=', 0)
                             ->and_where('is_paid', '=', 1)
                             ->and_where('is_registered', '=', 1)
@@ -676,7 +715,7 @@ class Controller_Order extends Controller_Core {
                     }
                 }
                 $invite = ORM::factory('Invites')
-                        ->where('email', '=', $this->current_user->email)
+                        ->where('email', '=', $order->email)
                         ->and_where('is_used', '=', 0)
                         ->and_where('is_paid', '=', 0)
                         ->and_where('is_registered', '=', 1)
@@ -686,13 +725,13 @@ class Controller_Order extends Controller_Core {
                     $invite->save();
                 }
                 $global_discount = ORM::factory('Discounts')
-                        ->where('user_id', '=', $this->current_user->id)
+                        ->where('user_id', '=', $order->user_id)
                         ->find();
                 if ($global_discount->loaded()) {
                     $global_discount->discount = 0;
                     $global_discount->save();
                 }
-                if ($ord->type == 2) {
+                if ($order->type == 2) {
                     $friend = ORM::factory('Friend')
                             ->where('friends_email', '=', $step1['friend_email'])
                             ->and_where('friends_firstname', '=', $step1['firstname'])
@@ -772,7 +811,7 @@ class Controller_Order extends Controller_Core {
                         $pdf->load_html($file);
                         $pdf->render();
                         $output = $pdf->output();
-                        file_put_contents(DOCROOT . 'orders/gift_' . $ord->id . '.pdf', $output);
+                        file_put_contents(DOCROOT . 'orders/gift_' . $order->id . '.pdf', $output);
                         $template = ORM::factory('Templates', 3);
                         $body = str_replace('[firstname]', $step1['firstname'], $template->template_text);
                         if (isset($step1['delay'])) {
@@ -781,56 +820,10 @@ class Controller_Order extends Controller_Core {
                             $to = $step1['friend_email'];
                         }
                     }
-                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $body, 'gift_' . $ord->id . '.pdf');
+                    $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $body, 'gift_' . $order->id . '.pdf');
                 }
-                $this->receipt_email($ord, $this->current_user, 1);
-            } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
-                $ord->payment_status = 2;
-                $ord->save();
-            } elseif ($ord->loaded() && $ord->total_price == 0) {
-                $ord->payment_status = 3;
-                $ord->save();
-            } else {
-                $this->redirect('/user_account');
-            }
-        }
-        $session->delete('order');
-        $session->delete('step1');
-        $session->delete('step2');
-        $session->delete('success');
-    }
-
-    public function action_payment() {
-        $session = Session::instance();
-        $order = $session->get('order')->as_array();
-        require_once DOCROOT . 'application/vendor/payu/config.php';
-        $this->payment = new PayULiveUpdate($config);
-        if (!empty($order['id'])) {
-            $this->order = $order;
-        }
-    }
-
-    public function action_timeout() {
-        $this->redirect('/user_account');
-    }
-
-    public function action_ipn() {
-        require_once DOCROOT . 'application/vendor/payu/config.php';
-        if($this->is_post()){
-            $data = $_REQUEST;
-        }
-        $ipn = new PayUIpn($config);
-        //$ipn->logger = $config['LOGGER'];
-        //$ipn->log_path = $config['LOG_PATH'];
-        if ($ipn->validateReceived()) {
-            echo $ipn->confirmReceived();
-            $orderno = Arr::get($_REQUEST, 'ORDERNO');
-            $order = ORM::factory('Order', (int) $orderno);
-            if ($order->loaded()) {
-                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $orderno);
-            } else {
-                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $_REQUEST['REFNOEXT']);
-            }
+                $this->receipt_email($order, $order->user, 1);
+            } 
         }
         $this->render_nothing();
     }
