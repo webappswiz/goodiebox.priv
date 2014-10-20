@@ -817,11 +817,10 @@ class Controller_Order extends Controller_Core {
     public function action_ipn() {
         require_once DOCROOT . 'application/vendor/payu/config.php';
         $ipn = new PayUIpn($config);
-        $ipn->logger = $config['LOGGER'];
-        $ipn->log_path = $config['LOG_PATH'];
+        //$ipn->logger = $config['LOGGER'];
+        //$ipn->log_path = $config['LOG_PATH'];
         if ($ipn->validateReceived()) {
             $orderno = Arr::get($_REQUEST, 'orderno');
-            
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', print_r($_POST));
