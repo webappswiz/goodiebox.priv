@@ -829,7 +829,7 @@ class Controller_Order extends Controller_Core {
             if ($order->loaded()) {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', print_r($data));
             } else {
-                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', print_r($data));
+                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $_REQUEST['REFNOEXT']);
             }
         }
         $this->render_nothing();
