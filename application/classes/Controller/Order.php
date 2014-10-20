@@ -420,6 +420,7 @@ class Controller_Order extends Controller_Core {
                 $order->user_id = $this->current_user->id;
                 $order->selected_box = $step2['selected_box'];
                 $order->puppy_id = 0;
+                $order->friend_id = $friend->id;
                 $order->last_modified = date('Y-m-d H:i:s');
                 $order->date_purchased = date('Y-m-d H:i:s');
                 $order->type = 2;
@@ -731,10 +732,7 @@ class Controller_Order extends Controller_Core {
                     $global_discount->save();
                 }
                 if ($order->type == 2) {
-                    $friend = ORM::factory('Friend')
-                            ->where('friends_email', '=', $step1['friend_email'])
-                            ->and_where('friends_firstname', '=', $step1['firstname'])
-                            ->and_where('friends_lastname', '=', $step1['lastname'])
+                    $friend = ORM::factory('Friend',$order->friend_id)
                             ->find();
                     if ($friend->loaded()) {
                         $date = strtotime(date('Y-m-d'));
