@@ -820,6 +820,8 @@ class Controller_Order extends Controller_Core {
         //$ipn->logger = $config['LOGGER'];
         //$ipn->log_path = $config['LOG_PATH'];
         if ($ipn->validateReceived()) {
+            echo $ipn->confirmReceived();
+            
             $orderno = Arr::get($_REQUEST, 'orderno');
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
@@ -828,7 +830,7 @@ class Controller_Order extends Controller_Core {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', print_r($_REQUEST));
             }
             
-            $ipn->confirmReceived();
+            
             
             
         }
