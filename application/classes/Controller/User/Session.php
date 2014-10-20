@@ -46,9 +46,14 @@ class Controller_User_Session extends Controller_Core {
         }
         $link = md5(2014 * 10 * 20 + $email_model->id);
         $email_template = ORM::factory('Templates', 5);
-        $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/reset/?hash=' . $link);
+        $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/newpass/?hash=' . $link);
         $email_template = str_replace('[link]', $http_link, $email_template->template_text);
         $this->send($email_model->email, 'info@goodiebox.hu', 'Jelszó helyreállítás', $email_template);
+    }
+    
+    public function action_newpass() {
+        echo $hash = Arr::get($_REQUEST, 'hash');
+        $this->render_nothing();
     }
 
     public function action_logout() {
