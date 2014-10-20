@@ -31,7 +31,7 @@
     $hash['MERCHANT'] = 'P120701';
     $hash['ORDER_REF'] = $o->id;
     $hash['ORDER_DATE'] = $o->date_purchased;
-    $hash['ORDER_PNAME'] = $o->package->package_name;
+    $hash['ORDER_PNAME'] = 'Goodiebox '.$o->package->package_name;
     $hash['ORDER_PCODE'] = $o->package->product_number;
     $hash['ORDER_PINFO'] = '';
     $hash['ORDER_PRICE'] = $o->package->price;
@@ -47,7 +47,7 @@
         <input type='hidden' name='MERCHANT' id='MERCHANT' value='<?= $payment->merchantId ?>' />
         <input type='hidden' name='ORDER_REF' id='ORDER_REF' value='<?= $o->id ?>' />
         <input type='hidden' name='ORDER_DATE' id='ORDER_DATE' value='<?= $o->date_purchased ?>' />
-        <input type='hidden' name='ORDER_PNAME[]' id='ORDER_PNAME' value='<?= $o->package->package_name ?>' />
+        <input type='hidden' name='ORDER_PNAME[]' id='ORDER_PNAME' value='<?= 'Goodiebox '.$o->package->package_name ?>' />
         <input type='hidden' name='ORDER_PCODE[]' id='ORDER_PCODE' value='<?= $o->package->product_number ?>' />
         <input type='hidden' name='ORDER_PINFO[]' id='ORDER_PINFO' value='' />
         <input type='hidden' name='ORDER_PRICE[]' id='ORDER_PRICE' value='<?= $o->package->price ?>' />

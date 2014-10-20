@@ -88,8 +88,10 @@
             </div> <!--End logo-->
             <div class="social-right">
                 <ul>
-                    <li><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" alt="facebook"></a></li>
-                    <li><a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" alt="twitter"></a></li>
+                    <li><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" width="32" height="32" alt="facebook"></a>
+                        <a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" width="32" height="32" alt="twitter"></a>
+                        <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
+                    </li>
                     <li><a href="#">
                             <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
                         </a></li>

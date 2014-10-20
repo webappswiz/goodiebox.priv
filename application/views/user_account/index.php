@@ -554,7 +554,7 @@
                 </div> <!--End support-->
             </div>
         </div>
-        <h3>Megrendelés<p class="sub-heading"></p></h3>
+        <h3>Megrendelés<p class="sub-heading">Rendelési adataid</p></h3>
         <div>
             <div class="content">
                 <div class="support">
@@ -578,7 +578,7 @@
                                 } elseif ($order->orders_status == 6) {
                                     $status = 'Elutasított';
                                 }
-                                echo 'Rendelés száma: '.$order->id . '<br/><br/>Order Date: ' . $order->date_purchased . '<br/><br/>Order Status: ' . $status;
+                                echo 'Rendelés száma: '.$order->id . '<br/><br/>Rendelés dátuma: ' . $order->date_purchased . '<br/><br/>Rendelés állapota: ' . $status;
                             }
 
                         endif;
