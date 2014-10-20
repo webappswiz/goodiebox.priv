@@ -824,10 +824,10 @@ class Controller_Order extends Controller_Core {
         //$ipn->log_path = $config['LOG_PATH'];
         if ($ipn->validateReceived()) {
             echo $ipn->confirmReceived();
-            $orderno = Arr::get($_REQUEST, 'orderno');
+            $orderno = Arr::get($_REQUEST, 'ORDERNO');
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
-                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', print_r($data));
+                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $_REQUEST['REFNOEXT']);
             } else {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $_REQUEST['REFNOEXT']);
             }
