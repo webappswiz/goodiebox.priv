@@ -826,7 +826,7 @@ class Controller_Order extends Controller_Core {
             if ($order->loaded()) {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Ok');
             } else {
-                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Not Ok');
+                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', print_r($_REQUEST));
             }
         }
         $this->render_nothing();
