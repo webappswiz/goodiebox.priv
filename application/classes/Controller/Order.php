@@ -715,7 +715,7 @@ class Controller_Order extends Controller_Core {
                     }
                 }
                 $invite = ORM::factory('Invites')
-                        ->where('email', '=', $order->email)
+                        ->where('email', '=', $order->user->email)
                         ->and_where('is_used', '=', 0)
                         ->and_where('is_paid', '=', 0)
                         ->and_where('is_registered', '=', 1)
