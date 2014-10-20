@@ -827,7 +827,7 @@ class Controller_Order extends Controller_Core {
             $orderno = Arr::get($_REQUEST, 'ORDERNO');
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
-                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $_REQUEST['REFNOEXT']);
+                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $orderno);
             } else {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', $_REQUEST['REFNOEXT']);
             }
