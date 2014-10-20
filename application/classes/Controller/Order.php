@@ -822,7 +822,7 @@ class Controller_Order extends Controller_Core {
         if ($ipn->validateReceived()) {
             echo $ipn->confirmReceived();
             $orderno = Arr::get($_REQUEST, 'orderno');
-            $order = ORM::factory('Orders', (int) $orderno);
+            $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Ok');
             }
