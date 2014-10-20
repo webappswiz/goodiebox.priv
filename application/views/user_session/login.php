@@ -13,6 +13,7 @@
                 <div class="clear"></div>
                 <div class="claim-form-btn"><button class="claim-btn rounded" type="submit">Belépés</button></div>
             </form>
+            <a href=""></a>
         </div>
     </div>
     <div class="clear"></div>
