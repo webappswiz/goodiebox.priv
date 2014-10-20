@@ -52,7 +52,9 @@ class Controller_User_Session extends Controller_Core {
     }
     
     public function action_newpass() {
-        echo $hash = Arr::get($_REQUEST, 'hash');
+        $hash = Arr::get($_REQUEST, 'hash');
+        if(!$hash)
+            $this->redirect('/user_session/login');
         $this->render_nothing();
     }
 
