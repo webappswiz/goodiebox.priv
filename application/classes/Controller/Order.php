@@ -825,8 +825,10 @@ class Controller_Order extends Controller_Core {
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
                 $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Ok');
+            } else {
+                $this->send('alex@onlamp.info', 'karam@karam.org.ua', 'IPN', 'Not Ok');
             }
         }
+        $this->render_nothing();
     }
-
 }
