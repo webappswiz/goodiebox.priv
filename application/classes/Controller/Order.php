@@ -209,8 +209,22 @@ class Controller_Order extends Controller_Core {
                     ->find();
             if ($global_discount->loaded()) {
                 $g_discount = $global_discount->discount;
-            } else
-                $g_discount = 0;
+            } else{
+                if(isset($_POST['invite_code'])){
+                    $coupon = ORM::factory('Coupons')
+                                ->where('coupon', '=', $_POST['invite_code'])
+                                ->find();
+                    if ($coupon->loaded()) {
+                        $global_discount = $coupon->discount;
+                        $coupon->delete();
+                    } else {
+                        $g_discount = 0;
+                    }
+                } else {
+                    $g_discount = 0;
+                }
+                
+            }
             $invites = ORM::factory('Invites')
                     ->where('user_id', '=', $this->current_user->id)
                     ->and_where('is_used', '=', 0)
@@ -253,14 +267,6 @@ class Controller_Order extends Controller_Core {
 
                     $user->save();
                     $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
-                    if (isset($_POST['invite_code'])) {
-                        $coupon = ORM::factory('Coupons')
-                                ->where('coupon', '=', $_POST['invite_code'])
-                                ->find();
-                        if ($coupon->loaded()) {
-                            $coupon->delete();
-                        }
-                    }
                     $invites = ORM::factory('Invites')
                             ->where('email', '=', $_POST['customer_email'])
                             ->find_all();
@@ -363,17 +369,6 @@ class Controller_Order extends Controller_Core {
                 }
                 $discount = 0;
                 if ($_POST['discount'] == 1) {
-                    if (isset($_POST['invite_code'])) {
-                            $i = ORM::factory('Coupons')
-                                    ->where('coupon', '=', $_POST['invite_code'])
-                                    ->find();
-                            if (!$i->loaded()) {
-                                $session->delete('order');
-                                $session->delete('step1');
-                                $session->delete('step2');
-                                $this->redirect('/');
-                            }
-                        }
                     if (count($invites) > 0 && empty($step1['coupon_code'])) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
@@ -438,19 +433,7 @@ class Controller_Order extends Controller_Core {
                 $order->payment_status = 0;
                 $discount = 0;
                 if ($_POST['discount'] == 1) {
-                    if (isset($_POST['invite_code'])) {
-                        $i = ORM::factory('Coupons')
-                                ->where('coupon', '=', $_POST['invite_code'])
-                                ->find();
-                        if (!$i->loaded()) {
-                            $session->delete('order');
-                            $session->delete('step1');
-                            $session->delete('step2');
-                            $this->redirect('/');
-                        }
-                    }
                     if (count($invites) > 0) {
-
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * ((count($invites) * 5 + $g_discount) / 100));
@@ -514,19 +497,6 @@ class Controller_Order extends Controller_Core {
                 $order->payment_status = 0;
                 $order->date_purchased = date('Y-m-d H:i:s');
                 if ($_POST['discount'] == 1) {
-                    if (isset($_POST['invite_code'])) {
-                        $i = ORM::factory('Coupons')
-                                ->where('coupon', '=', $_POST['invite_code'])
-                                ->find();
-                        if (!$i->loaded()) {
-                            $session->delete('order');
-                            $session->delete('step1');
-                            $session->delete('step2');
-                            $this->redirect('/');
-                        } else {
-                            
-                        }
-                    }
                     if (count($invites) > 0) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
