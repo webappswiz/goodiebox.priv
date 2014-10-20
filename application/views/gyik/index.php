@@ -29,7 +29,9 @@ A harmadik lépés pedig a személyes adatok megadása. Mindig ellenőrizd a kit
         <h3>4. Mennyibe kerül és hogyan fizethetek?</h3>
         <div>
             <div class="content">
-                Egy rendelési periódushoz kétféle árat kalkuláltunk, normál és prémium. Az első hónapban csak a normál ár elérhető. A normál ár kedvezményesebb, a prémium Goodiebox viszont tartalmasabb meglepetés dobozt takar. Akárcsak a periódus, az ár kiválasztására is lehetőséged van. Minden esetben csak és kizárólag bankkártyás utalásra van lehetőség. Amennyiben minden adatot helyesen adtál meg és elfogadtad az ÁSZF-ben leírtakat, tovább léphetsz a biztonságos fizető felületünkre.
+                Rendelési periódushoz rendeltük az árat. Az első hónapban csak az 1 hónapos rendelés elérhető, mely 7990 Ft. Így könnyebben tudod kipróbálni, mielőtt hosszabb távra rendelnél. Ez az ár fix, semmilyen rejtett költség sincs. Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.
+                <br/><br/>
+                Minden esetben csak és kizárólag bankkártyás fizetésre van lehetőség. Amennyiben minden adatot helyesen adtál meg és elfogadtad az ÁSZF-ben leírtakat, tovább léphetsz a PayU biztonságos fizető felületünkre.
             </div>
         </div>
 
