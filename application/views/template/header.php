@@ -88,7 +88,7 @@
             </div> <!--End logo-->
             <div class="social-right">
                 <ul>
-                    <li><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" width="32" height="32" alt="facebook"></a>
+                    <li style="text-align: center"><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" width="32" height="32" alt="facebook"></a>
                         <a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" width="32" height="32" alt="twitter"></a>
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
                     </li>
