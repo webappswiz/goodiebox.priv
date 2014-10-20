@@ -20,7 +20,7 @@ $menus = array(
     <div class="count-text">
         <p>Már itt is van a végső visszaszámlálás! Reméljük izgatottak vagytok!</p>
         <div class="counter">
-            <p>Hátralévő idő: <span class="count-btn rounded">12</span> nap <span>15:37:55</span></p>
+            <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours">15:37:55</span></p>
         </div> <!--End counter-->
         <div class="lock">
             <ul>
