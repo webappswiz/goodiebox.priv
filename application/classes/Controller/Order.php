@@ -215,7 +215,7 @@ class Controller_Order extends Controller_Core {
                                 ->where('coupon', '=', $_POST['invite_code'])
                                 ->find();
                     if ($coupon->loaded()) {
-                        $global_discount = $coupon->discount;
+                        $global_discount = 10;
                         $coupon->delete();
                     } else {
                         $g_discount = 0;
@@ -658,6 +658,14 @@ class Controller_Order extends Controller_Core {
     }
 
     public function action_timeout() {
+        $session = Session::instance();
+        $order = $session->get('order', false);
+        if ($order) {
+            $order = $order->as_array();
+            $ord = ORM::factory('Order', $order['id']);
+            $ord->orders_status = 6;
+            $ord->save();
+        }
         $this->redirect('/user_account');
     }
 

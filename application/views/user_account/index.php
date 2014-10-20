@@ -176,12 +176,12 @@
             ->and_where('is_used', '=', 0)
             ->count_all();
     $global_discount = ORM::factory('Discounts')
-                    ->where('user_id', '=', $current_user->id)
-                    ->find();
-            if ($global_discount->loaded()) {
-                $g_discount = $global_discount->discount;
-            } else
-                $g_discount = 0;
+            ->where('user_id', '=', $current_user->id)
+            ->find();
+    if ($global_discount->loaded()) {
+        $g_discount = $global_discount->discount;
+    } else
+        $g_discount = 0;
     $discount = $invites * 5 + $g_discount . '%';
     ?>
     <style type="text/css">
@@ -459,26 +459,26 @@
                 ->find_all();
         if (count($shelters) > 0):
             ?>
-                                                        <form action="/user_account/shelter" id="shelter" method="POST" >
+                                                                                <form action="/user_account/shelter" id="shelter" method="POST" >
             <?php
             foreach ($shelters as $shelter):
                 ?>
-                                                                                        <div class="support-row">
-                                                                                            <ul>
-                                                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                                                                            </ul>
-                                                                                        </div>
+                                                                                                                                        <div class="support-row">
+                                                                                                                                            <ul>
+                                                                                                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                                                                                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                                                                                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                                                                                                                            </ul>
+                                                                                                                                        </div>
                 <?php
             endforeach;
             ?>
-                                
-                                                            <div style="margin-top:35px; float:none;">
-                                                                <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                                                            </div>
-                                                        </form>
-                                                        <hr/>
+                                                        
+                                                                                    <div style="margin-top:35px; float:none;">
+                                                                                        <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                                                                    </div>
+                                                                                </form>
+                                                                                <hr/>
         <?php endif; ?>
                             <div class="process-form-container2">
                                 <div class="clear"></div>
@@ -496,7 +496,7 @@
         $shelters = ORM::factory('Shelter')->find_all();
         foreach ($shelters as $shelter) {
             ?>
-                                                                        <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                                                                                <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
             <?php
         }
         ?>
@@ -554,21 +554,53 @@
                 </div> <!--End support-->
             </div>
         </div>
+        <h3>Megrendelés<p class="sub-heading"></p></h3>
+        <div>
+            <div class="content">
+                <div class="support">
+                    <div class="process-form-container2">
+                        <?php
+                        $orders = ORM::factory('Order')
+                                ->where('user_id', '=', $current_user->id)
+                                ->find_all();
+                        if (count($orders) > 0):
+                            ?>
+                            <?php
+                            foreach ($orders as $order) {
+                                if ($order->orders_status == 1) {
+                                    $status = 'Függőben';
+                                } elseif ($order->orders_status == 2) {
+                                    $status = 'Feldolgozva';
+                                } elseif ($order->orders_status == 3) {
+                                    $status = 'Szállítva';
+                                } elseif ($order->orders_status == 4) {
+                                    $status = 'Kész';
+                                } elseif ($order->orders_status == 6) {
+                                    $status = 'Elutasított';
+                                }
+                                echo 'Rendelés száma: '.$order->id . '<br/><br/>Order Date: ' . $order->date_purchased . '<br/><br/>Order Status: ' . $status;
+                            }
 
+                        endif;
+                        ?>
+                        <div class="clear"></div>
+                    </div> <!--End support-->
+                </div>
+            </div>
 
+        </div>
+        <script>
+            $("#collapse-content").collapse({
+                accordion: true,
+                open: function () {
+                    this.addClass("open");
+                    this.css({height: this.children().outerHeight()});
+                },
+                close: function () {
+                    this.css({height: "0px"});
+                    this.removeClass("open");
+                }
+            });
+        </script>
     </div>
-    <script>
-        $("#collapse-content").collapse({
-            accordion: true,
-            open: function () {
-                this.addClass("open");
-                this.css({height: this.children().outerHeight()});
-            },
-            close: function () {
-                this.css({height: "0px"});
-                this.removeClass("open");
-            }
-        });
-    </script>
-</div>
 </section>
