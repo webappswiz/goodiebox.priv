@@ -90,7 +90,7 @@ class Controller_Order extends Controller_Core {
                 <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>Átutalás</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> 201014</td>
+                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> '.$order->invoice_num.'</td>
             </tr>
             <tr style="padding: 0px">
                 <td colspan="4">
@@ -660,9 +660,7 @@ class Controller_Order extends Controller_Core {
         if ($order) {
             $order = $order->as_array();
             $ord = ORM::factory('Order', $order['id']);
-            if (isset($_REQUEST['RC']) && $_REQUEST['RC'] == 000 && $ord->loaded()) {
-                
-            } elseif (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
+            if (isset($_REQUEST['RC']) && $_REQUEST['RC'] != 000 && $ord->loaded()) {
                 $ord->payment_status = 2;
                 $ord->save();
             } elseif ($ord->loaded() && $ord->total_price == 0) {
@@ -701,6 +699,7 @@ class Controller_Order extends Controller_Core {
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
                 $order->payment_status = 1;
+                $order->invoice_num = '201410'.$orderno;
                 $order->save();
                 if ($order->discount == 1) {
                     $invites = ORM::factory('Invites')
