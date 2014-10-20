@@ -817,7 +817,7 @@ class Controller_Order extends Controller_Core {
     public function action_ipn() {
         require_once DOCROOT . 'application/vendor/payu/config.php';
         if($this->is_post()){
-            $data = $_POST;
+            $data = $_REQUEST;
         }
         $ipn = new PayUIpn($config);
         //$ipn->logger = $config['LOGGER'];
