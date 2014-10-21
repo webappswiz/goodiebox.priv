@@ -72,7 +72,7 @@ class Controller_User_Session extends Controller_Core {
             $this->set_filename('/user_session/form');
         } else {
             $password = Arr::get($_REQUEST, 'customer_password');
-            $password_confirm = Arr::get($_REQUEST, 'customer_confirm');
+            $password_confirm = Arr::get($_REQUEST, 'password_confirm');
             if ($password != $password_confirm) {
                 Flash::set('alert', 'A jelszó nem egyezik');
                 $this->redirect('/user_session/reset/?hash' . $hash);
