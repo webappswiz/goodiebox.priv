@@ -53,7 +53,7 @@ class Controller_User_Session extends Controller_Core {
         $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/reset2/?hash=' . $token->token);
         $email_template = str_replace('[link]', $http_link, $email_template->template_text);
         $this->send($email_model->email, 'info@goodiebox.hu', 'Jelszó helyreállítás', $email_template);
-        Flash::set('notice', 'Elküldtük az jelszó emlékeztetöt az e-mail címedre.');
+        Flash::set('notice', 'Elküldtük az jelszó emlékeztetőt az e-mail címedre.');
             $this->redirect('/user_session/login');
     }
 

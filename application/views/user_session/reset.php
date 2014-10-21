@@ -4,7 +4,7 @@
         <div class="claim-form">
             <form action="<?php echo URL::site('user_session/reset'); ?>" method="POST" class="login">
                 <div class="add" style="margin-bottom: 5px">
-                    <input class="rounded" type="text" name="email" placeholder="Email address">
+                    <input class="rounded" type="text" name="email" placeholder="E-mail cím">
                 </div>
                 <div class="clear"></div>
                 <div class="clear"></div>

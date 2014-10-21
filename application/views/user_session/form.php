@@ -4,10 +4,10 @@
         <div class="claim-form">
             <form action="<?php echo URL::site('user_session/reset2/?hash='.$_GET['hash']); ?>" method="POST" class="reset">
                 <div class="add" style="margin-bottom: 5px">
-                    <input class="rounded" type="password" name="customer_password" id="customer_password" placeholder="Password" required>
+                    <input class="rounded" type="password" name="customer_password" id="customer_password" placeholder="Jelszó" required>
                 </div>
                 <div class="add" style="margin-bottom: 5px">
-                    <input class="rounded" type="password" name="password_confirm" placeholder="Confirm password" required>
+                    <input class="rounded" type="password" name="password_confirm" placeholder="Jelszó megerősítése" required>
                 </div>
                 <div class="clear"></div>
                 <div class="clear"></div>
