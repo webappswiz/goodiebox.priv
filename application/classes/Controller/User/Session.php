@@ -64,9 +64,10 @@ class Controller_User_Session extends Controller_Core {
         $user = ORM::factory('User_Token')
                 ->where('token', '=', $hash)
                 ->find();
-        if (!$user->loaded())
+        if (!$user->loaded()){
             Flash::set('alert', 'érvénytelen link');
-        $this->redirect('/user_session/login');
+            $this->redirect('/user_session/login');
+        }
         if (!$this->is_post()) {
             $this->set_filename('/user_session/form');
         } else {
