@@ -45,17 +45,45 @@ class Controller_User_Session extends Controller_Core {
             $this->redirect('/user_session/reset');
         }
         $link = md5(2014 * 10 * 20 + $email_model->id);
+        $token = ORM::factory('User_Token');
+        $token->user_id = $email_model->id;
+        $token->token = $link;
+        $token->save();
         $email_template = ORM::factory('Templates', 5);
-        $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/newpass/?hash=' . $link);
+        $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/reset2/?hash=' . $link);
         $email_template = str_replace('[link]', $http_link, $email_template->template_text);
         $this->send($email_model->email, 'info@goodiebox.hu', 'Jelszó helyreállítás', $email_template);
     }
-    
-    public function action_newpass() {
+
+    public function action_reset2() {
         $hash = Arr::get($_REQUEST, 'hash');
-        if(!$hash)
+        if (!$hash) {
+            Flash::set('alert', 'érvénytelen link');
             $this->redirect('/user_session/login');
-        $this->render_nothing();
+        }
+        $user = ORM::factory('User_Token')
+                ->where('token', '=', $hash)
+                ->find();
+        if (!$user->loaded())
+            Flash::set('alert', 'érvénytelen link');
+        $this->redirect('/user_session/login');
+        if (!$this->is_post()) {
+            $this->set_filename('/user_session/form');
+        } else {
+            $password = Arr::get($_REQUEST, 'customer_password');
+            $password_confirm = Arr::get($_REQUEST, 'customer_confirm');
+            if ($password != $password_confirm) {
+                Flash::set('alert', 'A jelszó nem egyezik');
+                $this->redirect('/user_session/reset/?hash' . $hash);
+            }
+            $user_id = $user->user_id;
+            $usr = ORM::factory('User', $user_id);
+            $usr->password = $password;
+            $usr->save();
+            $user->delete();
+            Flash::set('notice', 'A jelszavadat sikeresen megváltoztattad!');
+            $this->redirect('/user_session/login');
+        }
     }
 
     public function action_logout() {

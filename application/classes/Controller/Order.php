@@ -79,11 +79,11 @@ class Controller_Order extends Controller_Core {
                     Telefon: +36 30 233 7401
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
-                    Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
-                    Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>
-                    Cégnév: ' . $order->company_name . '<br/>
-                    Adószám: ' . $order->tax_code . '<br/>
-                    Telefon: ' . $order->delivery_telephone . '
+                    Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
+                    Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>
+                    Cégnév: ' . $user->customer_company . '<br/>
+                    Adószám: ' . $user->customer_taxcode . '<br/>
+                    Telefon: ' . $user->customer_telephone . '
                 </td>
             </tr>
             <tr style="padding: 0px">
@@ -678,7 +678,11 @@ class Controller_Order extends Controller_Core {
             $order = ORM::factory('Order', (int) $orderno);
             if ($order->loaded()) {
                 $order->payment_status = 1;
-                $order->invoice_num = '201410'.$orderno;
+                $o = ORM::factory('Order')
+                ->where('invoice_num','<>','')
+                ->order_by('invoice_num','DESC')
+                ->find();
+                $order->invoice_num = $o->invoice_num+1;
                 $order->save();
                 if ($order->discount == 1) {
                     $invites = ORM::factory('Invites')

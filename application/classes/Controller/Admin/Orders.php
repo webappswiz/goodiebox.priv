@@ -27,7 +27,7 @@ class Controller_Admin_Orders extends Controller_Admin {
         $this->orders = ORM::factory('Order')->with('status', 'package');
         $this->pagination = Pagination::factory(array(
                     'total_items' => $this->orders->count_all(),
-                    'items_per_page' => 5,
+                    'items_per_page' => 50,
         ));
         $this->pagination->route_params(array('controller' => $this->request->controller(), 'action' => $this->request->action()));
         $this->data = $this->orders->offset($this->pagination->offset)->limit($this->pagination->items_per_page)->order_by('date_purchased', 'DESC')->find_all()->as_array();
