@@ -649,7 +649,12 @@ class Controller_Order extends Controller_Core {
 
     public function action_payment() {
         $session = Session::instance();
-        $order = $session->get('order')->as_array();
+        $order = $session->get('order',false);
+        if($order){
+            $order = $order->as_array();
+        } else {
+            $this->redirect('/user_account');
+        }
         require_once DOCROOT . 'application/vendor/payu/config.php';
         $this->payment = new PayULiveUpdate($config);
         if (!empty($order['id'])) {
