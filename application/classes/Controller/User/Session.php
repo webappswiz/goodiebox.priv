@@ -53,6 +53,8 @@ class Controller_User_Session extends Controller_Core {
         $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/reset2/?hash=' . $token->token);
         $email_template = str_replace('[link]', $http_link, $email_template->template_text);
         $this->send($email_model->email, 'info@goodiebox.hu', 'Jelszó helyreállítás', $email_template);
+        Flash::set('notice', 'Email with the instruction on how to reset as password has been sent');
+            $this->redirect('/user_session/login');
     }
 
     public function action_reset2() {
