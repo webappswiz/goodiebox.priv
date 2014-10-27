@@ -154,7 +154,7 @@
             .greenbutton {
                 position: fixed;
                 width: 70px;
-                height: 150px;
+                height: 180px;
                 background-color:#009966;
                 -moz-border-radius:0px 5px;
                 -webkit-border-radius:0px 5px;
@@ -165,8 +165,9 @@
                 color:#ffffff;
                 left:-35px;
                 top:50%;
-                font-family: 'Insaniburger';
-                font-size:11px;
+                font-family: 'franklin_gothic_bookregular';
+                font-size:12px;
+                line-height: 16px;
                 text-decoration:none;
                 text-align: left;
                 padding-left: 20px;
@@ -186,10 +187,11 @@
             }
             .label_button {
                 color: #ffffff;
-                font-family: 'Insaniburger';
+                font-family: 'franklin_gothic_bookregular';
                 font-size:11px;
                 text-decoration:none;
                 text-align: left;
+                font-weight: bold;
             }
         </style>
         <?php
