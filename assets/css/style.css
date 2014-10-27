@@ -93,6 +93,7 @@ strong{font-weight: bold;}
 @font-face {
     font-family: 'Insaniburger';
     src: url('/assets/fonts/Insanibc.ttf')  format('truetype');
+    src: url('/assets/fonts/Insanibc.woff')  format('woff');
     font-weight: normal;
     font-style: normal;
 }
