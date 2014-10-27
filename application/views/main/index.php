@@ -66,6 +66,11 @@ $menus = array(
     ?>
 </section>
 <div class="clear"></div>
+
+<div class="container">
+    <h2>Azt kérdezed, mit is találtok majd a dobozban?</h2>
+</div>
+
 <div class="container">
     <nav style="text-align: center">
         <ul>
