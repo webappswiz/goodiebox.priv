@@ -156,7 +156,7 @@
                 display:inline-block;
                 cursor:pointer;
                 color:#ffffff;
-                left:0;
+                left:-35px;
                 top:50%;
                 font-family: Insaniburger;
                 font-size:11px;
@@ -176,6 +176,7 @@
                 background: linear-gradient(to bottom, #24c58f 5%, #44c767 100%);
                 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
                 background-color:#24c58f;
+                left: 0px;
             }
             .lable_button {
                 display: block;
