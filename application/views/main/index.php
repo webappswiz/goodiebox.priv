@@ -3,8 +3,8 @@ $menus = array();
 //if ($auth->logged_in()) {
 $menus = array(
     '/hogyan/' => array('Hogyan Mukodik', 'hogyan'),
-    'http://blog.goodiebox.hu' => array('Blog', 'blog'),
     '/gyik' => array('GYIK', 'gyik'),
+    'http://blog.goodiebox.hu' => array('Blog', 'blog'),
 );
 ?>
 <script type="text/javascript">
@@ -90,7 +90,7 @@ $menus = array(
 <div class="container" style="padding: 0px;margin-top: 0px">
     <h2 style="font-family: La-Chata;padding-top: 10px;">Azt kérdezed, mit is találtok majd a dobozban?</h2><br/>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 4-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
-        <span id="show_t1" style="color:green;cursor: pointer">Tovább olvasom</span>
+        <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold">Tovább olvasom</span>
     </p>
     <div id="tovab1" style="display:none">
         <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Az ár jelenleg egy dobozra 7990 Ft. Azon dolgozunk, hogy hamarosan 3, illetve 6 dobozt is tudjatok előrendelni, így jelentős megtakarításhoz juthattok majd!</p>
@@ -99,7 +99,7 @@ $menus = array(
     </div>
     <h2 style="font-family: La-Chata;padding-top: 10px;">Miért érdemes megrendelned?</h2><br/>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">
-        <strong>Időt és pénzt spórolunk neked!</strong><br/>
+        <p style="font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Időt és pénzt spórolunk neked!</strong></p><br/>
         Minden egyes doboz kedvezményesen jut el hozzátok:
     <ul style="list-style: disc;padding-left: 30px;">
         <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;">Goodiebox ára < ugyanazon termékek együttes bolti ára</li>
@@ -107,7 +107,7 @@ $menus = array(
         <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;">Házhozszállítás = 0 Ft</li>
 
     </ul><br/>
-    <span id="show_t2" style="color:green;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;cursor: pointer">Tovább olvasom</span>
+    <span id="show_t2" style="font-weight: bold;color:green;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;cursor: pointer">Tovább olvasom</span>
 </p>
 <div id="tovab2" style="display:none">
     <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Emellett nem kell havonta a boltokat járnod, hogy új és érdekes dolgokkal lepd meg kutyusod, erről mi gondoskodunk! Kreatívak vagyunk, imádjuk a kutyusokat és szeretünk csapatban dolgozni! Mi más sülhet ki egy ilyen együttállásból, mint csupa pozitív energia, boldogság és élet!</p>

@@ -51,7 +51,7 @@ class Controller_Admin_Contacts extends Controller_Admin {
         $this->set_filename('admin/contacts/form');
         if (!$this->is_post())
             return;
-        $this->send($this->message->email,'info@goodiebox.hu','Reply to your message. Goodiebox',$_POST['message']);
+        $this->send($this->message->email,'info@goodiebox.hu','Válaszolj a Goodiebox üzenetedre.',$_POST['message']);
         $this->message->replied = 1;
         $this->message->save();
         $this->redirect('/admin/contacts/page/?page=1');
