@@ -11,16 +11,16 @@ $menus = array(
     $(document).ready(function(){
     $('#show_t1').on('click', function () {
         if ($('#tovab1').is(":visible")) {
-            $('#tovab1').hide();
+            $('#tovab1').hide('slow');
         } else {
-            $('#tovab1').show();
+            $('#tovab1').show('slow');
         }
     });
     $('#show_t2').on('click', function () {
         if ($('#tovab2').is(":visible")) {
-            $('#tovab2').hide();
+            $('#tovab2').hide('slow');
         } else {
-            $('#tovab2').show();
+            $('#tovab2').show('slow');
         }
     });
     });
