@@ -572,6 +572,14 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .bottom-text-field{width: 100%;}
 }
 
+@media only screen and (max-width: 1024px){
+    #menu a {display: inline-block; zoom: 1;text-align: center;width: 308px; height: 308px; cursor: pointer;-webkit-transition: all 0.7s ease;
+         transition: all 0.7s ease;}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;width:298px;height: 297px;text-align: left}
+    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;width:298px;height: 297px;text-align: left}
+    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;width:298px;height: 297px;text-align: left}
+}
+
 @media only screen and (max-width: 800px)
 {
     .center-arrows,.dog-img,.siess{display: none;}
@@ -583,6 +591,8 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .contact-cont-right{float: none;display: block;}
     .claim-message {margin-top: 20px;}
     .count-text {/*display:none;*/}
+    #menu a {display: inline-block; zoom: 1;text-align: center;width: 244px; height: 244px; cursor: pointer;-webkit-transition: all 0.7s ease;
+         transition: all 0.7s ease;}
     #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
     #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
     #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
@@ -599,9 +609,11 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .contact-cont-right{float: none;display: block;}
     .claim-message {margin-top: 20px;}
     .count-text {/*display:none;*/}
-    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;width: 298px;height: 298px}
-    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;float: right;padding: 10px;width: 298px;height: 298px}
-    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: none;width: 298px;height: 298px}
+    #menu a {display: inline-block; zoom: 1;text-align: center;width: 244px; height: 244px; cursor: pointer;-webkit-transition: all 0.7s ease;
+         transition: all 0.7s ease;}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
+    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
+    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
     #faq img{display:none;}
 }
 @media only screen and (max-width: 767px)
