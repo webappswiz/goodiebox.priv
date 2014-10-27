@@ -165,8 +165,8 @@
                 color:#ffffff;
                 left:-35px;
                 top:50%;
-                font-family: 'franklin_gothic_bookregular';
-                font-size:12px;
+                font-family: 'La-Chata';
+                font-size:11px;
                 line-height: 16px;
                 text-decoration:none;
                 text-align: left;
@@ -187,7 +187,7 @@
             }
             .label_button {
                 color: #ffffff;
-                font-family: 'franklin_gothic_bookregular';
+                font-family: 'La-Chata';
                 font-size:11px;
                 text-decoration:none;
                 text-align: left;
