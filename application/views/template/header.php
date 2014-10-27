@@ -138,12 +138,6 @@
         }
         ?>
         <style type="text/css">
-            @font-face {
-                font-family: Insaniburger;
-                src: url('/assets/fonts/Insanibu.ttf');
-                font-weight: normal;
-                font-style: normal;
-            }
             .greenbutton {
                 position: fixed;
                 width: 70px;
@@ -158,7 +152,7 @@
                 color:#ffffff;
                 left:-35px;
                 top:50%;
-                font-family: Insaniburger;
+                font-family: 'Insaniburger';
                 font-size:11px;
                 text-decoration:none;
                 text-align: left;
@@ -178,17 +172,12 @@
                 background-color:#24c58f;
                 left: 0px;
             }
-            .lable_button {
-                display: block;
-                position: absolute;
-                width: 1em;
-                line-height:1em;
+            .label_button {
                 color: #ffffff;
-                font-family: Insaniburger;
-                font-size:24px;
+                font-family: 'Insaniburger';
+                font-size:11px;
                 text-decoration:none;
                 text-align: left;
-
             }
         </style>
         <?php

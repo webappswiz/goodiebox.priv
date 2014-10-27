@@ -90,6 +90,12 @@ strong{font-weight: bold;}
     font-style: normal;
 
 }
+@font-face {
+                font-family: 'Insaniburger';
+                src: url('/assets/fonts/Insanibc.ttf')  format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
 
 /*******************************
 			GENERAL CSS

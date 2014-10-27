@@ -86,6 +86,7 @@ $menus = array(
     }
     ?>
 </section>
+<div class='clear'></div>
 <div class="container" style="padding: 0px;margin-top: 0px">
     <h2 style="font-family: La-Chata;padding-top: 10px;">Azt kérdezed, mit is találtok majd a dobozban?</h2><br/>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 4-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
