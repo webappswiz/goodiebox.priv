@@ -564,6 +564,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.claim-form-btn{float: none;text-align: center; margin-top: 20px;}
 	.claim-btn{margin-top: 20px;margin-left: 0;}
 	.claim-form-right{position: static; margin-top: 40px;}
+        #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
+        #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
+        #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
 	.bottom-text-field div{display: block; float: none; text-align: center; margin-right: 0;}
 	.bottom-text-field{width: 100%;}
 }
@@ -579,6 +582,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 	.contact-cont-right{float: none;display: block;}
 	.claim-message {margin-top: 20px;}
 	.count-text {/*display:none;*/}
+        #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
+        #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
+        #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
 	#faq img{display:none;}
 }
 	@media only screen and (max-width: 767px)
@@ -623,6 +629,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .claim-gift{padding: 55px 60px 45px 60px;}
     .bottom-text-field div input[type="text"] {width: 100%;}
 	.count-text {/*display:none;*/ padding-top:0px !important;}
+        #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
+        #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
+        #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
 	#faq img{display:none;}
 	#menu{display:none;}
 }
