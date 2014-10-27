@@ -72,7 +72,7 @@ $menus = array(
         <p>barátom kutyusának</p>
     </div>
 </section> <!--End order place-->
-<section id="menu" style="margin-bottom: 0px;">
+<section id="menu" style="margin-bottom: 0px;padding: 0px">
     <?php
     $i = 1;
     $active_menu = 'home';

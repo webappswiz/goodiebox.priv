@@ -190,9 +190,9 @@ header .social-right ul li{margin-top: 6px;}
 #menu{max-width:965px;margin: 0 auto; text-align: center; margin-top: 10px;}
 #menu a {display: inline-block; zoom: 1;text-align: center;width: 298px; height: 297px; cursor: pointer;-webkit-transition: all 0.7s ease;
          transition: all 0.7s ease;}
-#menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
+#menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
 #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;}
-#menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;}
+#menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;float: right}
 #menu-img4{background: url(/assets/img/home-img4.jpg) no-repeat;}
 #menu-img5{background: url(/assets/img/home-img5.jpg) no-repeat;}
 #menu-img6{background: url(/assets/img/home-img6.jpg) no-repeat;}
