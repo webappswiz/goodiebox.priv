@@ -78,6 +78,16 @@
         ga('require', 'displayfeatures');
         ga('send', 'pageview');
     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.greenbutton').on('mouseover', function () {
+                $('#meg').show();
+            });
+            $('.greenbutton').on('mouseout', function () {
+                $('#meg').hide();
+            });
+        });
+    </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
@@ -122,6 +132,7 @@
 
                         return false;
                     });
+
                 </script>
             </div> <!--End social-right-->
         </header>
@@ -145,12 +156,12 @@
                 background-color:#009966;
                 -moz-border-radius:5px;
                 -webkit-border-radius:5px;
-                border-radius:5px;
+                border-radius:0px 5px 5px 0px;
                 border:1px solid #18ab29;
                 display:inline-block;
                 cursor:pointer;
                 color:#ffffff;
-                left:-35px;
+                left:0px;
                 top:50%;
                 font-family: 'Insaniburger';
                 font-size:11px;
@@ -184,10 +195,14 @@
         if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
             <div>
-                <a href="/order/">
-                    <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
+                <a href="/order/" style="vertical-align: middle">
+                    <button type="button" class="greenbutton" style="vertical-align: middle">
+                        <div class="label_button" style="vertical-align: middle;display:table-cell;">
+                            <div id="meg" style="display:none;line-height: 13px;float: left;margin-right: 15px;vertical-align: middle">M<br/> E<br/> G<br/> R<br/> E<br/> N<br/> D<br/> E<br/> L<br/> E<br/> M</div>
+                            <div style="line-height: 30px;top:50%;float: left;vertical-align: middle">M<br/>O<br/>S<br/>T<br/>!</div>
+                        </div>
                     </button>
                 </a>
             </div>
-        <?php
+            <?php
         }?>
