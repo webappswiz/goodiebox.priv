@@ -15,7 +15,6 @@ if($auth->logged_in()){
 } else {
     $menus['user_session/login'] = array('Belépés','login');
 }
-//}
 if (!$menus)
     return;
 ?>

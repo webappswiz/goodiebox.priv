@@ -127,7 +127,7 @@
         </header>
         <div class="clear"></div>
         <?php
-        if ($active_menu != 'home') {
+        //if ($active_menu != 'home') {
             ?>
             <nav class="nav-right">
                 <ul>
@@ -135,7 +135,7 @@
                 </ul>
             </nav>
             <?php
-        }
+       // }
         ?>
         <style type="text/css">
             @font-face {

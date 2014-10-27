@@ -115,11 +115,7 @@ $menus = array(
 </div>
 
 <div class="container">
-    <nav style="text-align: center">
-        <ul>
-            <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
-        </ul>
-    </nav>
+    
     <div class="clear"></div>
     <section id="portfolio">
         <p>“Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.”</p>
