@@ -78,16 +78,6 @@
         ga('require', 'displayfeatures');
         ga('send', 'pageview');
     </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.greenbutton').on('mouseover', function () {
-                $('#meg').show();
-            });
-            $('.greenbutton').on('mouseout', function () {
-                $('#meg').hide();
-            });
-        });
-    </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
@@ -132,7 +122,19 @@
 
                         return false;
                     });
-
+                </script>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.greenbutton').on('mouseover',function(){
+                        $('.greenbutton').stop();
+                        $('.greenbutton').animate({left:'0px'},500);
+                    });
+                    $('.greenbutton').on('mouseout',function(){
+                        $('.greenbutton').stop();
+                        $('.greenbutton').animate({left:'-35px'},500);
+                        
+                    });
+                });
                 </script>
             </div> <!--End social-right-->
         </header>
@@ -154,14 +156,14 @@
                 width: 70px;
                 height: 150px;
                 background-color:#009966;
-                -moz-border-radius:5px;
-                -webkit-border-radius:5px;
+                -moz-border-radius:0px 5px;
+                -webkit-border-radius:0px 5px;
                 border-radius:0px 5px 5px 0px;
                 border:1px solid #18ab29;
                 display:inline-block;
                 cursor:pointer;
                 color:#ffffff;
-                left:0px;
+                left:-35px;
                 top:50%;
                 font-family: 'Insaniburger';
                 font-size:11px;
@@ -181,7 +183,6 @@
                 background: linear-gradient(to bottom, #24c58f 5%, #44c767 100%);
                 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
                 background-color:#24c58f;
-                left: 0px;
             }
             .label_button {
                 color: #ffffff;
@@ -195,14 +196,10 @@
         if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
             <div>
-                <a href="/order/" style="vertical-align: middle">
-                    <button type="button" class="greenbutton" style="vertical-align: middle">
-                        <div class="label_button" style="vertical-align: middle;display:table-cell;">
-                            <div id="meg" style="display:none;line-height: 13px;float: left;margin-right: 15px;vertical-align: middle">M<br/> E<br/> G<br/> R<br/> E<br/> N<br/> D<br/> E<br/> L<br/> E<br/> M</div>
-                            <div style="line-height: 30px;top:50%;float: left;vertical-align: middle">M<br/>O<br/>S<br/>T<br/>!</div>
-                        </div>
+                <a href="/order/">
+                    <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
                 </a>
             </div>
-            <?php
+        <?php
         }?>
