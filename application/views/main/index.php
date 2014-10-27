@@ -83,7 +83,7 @@ $menus = array(
     ?>
 </section>
 <div class="container" style="padding: 0px;margin-top: 0px">
-    <h2 style="font-family: La-Chata">Azt kérdezed, mit is találtok majd a dobozban?</h2><br/>
+    <h2 style="font-family: La-Chata;padding-top: 10px;">Azt kérdezed, mit is találtok majd a dobozban?</h2><br/>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 4-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
         <span id="show_t1" style="color:green;cursor: pointer">Tovább olvasom</span>
     </p>
@@ -92,7 +92,7 @@ $menus = array(
         <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Olyan dolgokat rejtünk a Goodiebox-ba, amit kedvenced garantáltan imádni fog! Kis szeretet-csomag, hogy érezze, mennyire fontos neked!</p>
         <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Jó szervezők vagyunk, ezért ha hosszabb távra maradsz, vagyis több dobozt is rendelsz tőlünk, sohasem kapod kétszer ugyanazt az összeállítást!</p>
     </div>
-    <h2 style="font-family: La-Chata">Miért érdemes megrendelned?</h2><br/>
+    <h2 style="font-family: La-Chata;padding-top: 10px;">Miért érdemes megrendelned?</h2><br/>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">
         <strong>Időt és pénzt spórolunk neked!</strong><br/>
         Minden egyes doboz kedvezményesen jut el hozzátok:
