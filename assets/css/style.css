@@ -171,7 +171,7 @@ header .social-right ul li{margin-top: 6px;}
 .lock ul li a{ color: #330000;}
 .dog-img{float: right;padding-top: 70px;padding-right:50px;}
 .count-btn{padding: 10px; background: #cc0033; color: #ffffff !important;}
-#order-place{border: 4px dotted #330000;margin-top: 25px;padding: 15px; overflow: hidden; padding-bottom: 45px; position: relative;}
+#order-place{border: 4px dotted #330000;margin-top: 25px;padding:10px; overflow: hidden; padding-bottom: 45px; position: relative;}
 #order-place h2{text-align: center;font-family: 'FranklinGothic-Heavy'; font-size:38px;color: #330000; padding-top: 0!important;}
 #order-place h2 span{font-family: 'La-chata'; font-size:48px;color: #cc0033;}
 .order-btnleft{text-align: center; float: left; margin-top: 35px; margin-left: 80px;}
@@ -181,11 +181,11 @@ header .social-right ul li{margin-top: 6px;}
 #order-place p{font-family: 'La-chata';font-size: 18px;color: #cc0033; margin-top: 10px;}
 .center-arrows{position: absolute; top: 175px; left: 350px;}
 #menu{max-width:965px;margin: 0 auto; text-align: center; margin-top: 10px;}
-#menu a {display: inline-block; zoom: 1;text-align: center;width: 305px; height: 304px; cursor: pointer;-webkit-transition: all 0.7s ease;
+#menu a {display: inline-block; zoom: 1;text-align: center;width: 298px; height: 297px; cursor: pointer;-webkit-transition: all 0.7s ease;
 transition: all 0.7s ease;}
-#menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
+#menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
 #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-#menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
+#menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
 #menu-img4{background: url(/assets/img/home-img4.jpg) no-repeat;}
 #menu-img5{background: url(/assets/img/home-img5.jpg) no-repeat;}
 #menu-img6{background: url(/assets/img/home-img6.jpg) no-repeat;}
