@@ -2,158 +2,158 @@
 /* CSS RESET */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
 {
-	margin:0;
-	padding:0;
-	border:0;
-	font:inherit;
-	font-size:100%;
-	vertical-align:baseline
+    margin:0;
+    padding:0;
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline
 }
-	html{
-	line-height:1
+html{
+    line-height:1
 }
-	ol,ul
+ol,ul
 {
-	list-style:none
+    list-style:none
 }
-	table
+table
 {
-	border-collapse:collapse;
-	border-spacing:0
+    border-collapse:collapse;
+    border-spacing:0
 }
-	caption,th,td
+caption,th,td
 {
-	text-align:left;
-	font-weight:normal;
-	vertical-align:middle
+    text-align:left;
+    font-weight:normal;
+    vertical-align:middle
 }
-	q,blockquote
+q,blockquote
 {
-	quotes:none
+    quotes:none
 }
-	q:before,q:after,blockquote:before,blockquote:after
+q:before,q:after,blockquote:before,blockquote:after
 {
-	content:"";
-	content:none
+    content:"";
+    content:none
 }
-	a img
+a img
 {
-	border:none
+    border:none
 }
-	article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary
 {
-	display:block
+    display:block
 }
 strong{font-weight: bold;}	
 
 /*******************************
-			FONTS
+                        FONTS
 ********************************/
 @font-face {
     font-family: 'franklin_gothic_bookregular';
     src: url('/assets/fonts/franklin_gothic_book_regular-webfont.eot');
     src: url('/assets/fonts/franklin_gothic_book_regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/franklin_gothic_book_regular-webfont.woff') format('woff'),
-         url('/assets/fonts/franklin_gothic_book_regular-webfont.ttf') format('truetype'),
-         url('/assets/fonts/franklin_gothic_book_regular-webfont.svg#franklin_gothic_bookregular') format('svg');
+        url('/assets/fonts/franklin_gothic_book_regular-webfont.woff') format('woff'),
+        url('/assets/fonts/franklin_gothic_book_regular-webfont.ttf') format('truetype'),
+        url('/assets/fonts/franklin_gothic_book_regular-webfont.svg#franklin_gothic_bookregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
-  font-family: 'FranklinGothic-Heavy';
-  src: url('/assets/fonts/FranklinGothic-Heavy.eot');
-  src: url('/assets/fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'),  
-  	   url('/assets/fonts/FranklinGothic-Heavy.woff') format('woff'),
-  	   url('/assets/fonts/FranklinGothic-Heavy.ttf')  format('truetype'),
-  	   url('/assets/fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'FranklinGothic-Heavy';
+    src: url('/assets/fonts/FranklinGothic-Heavy.eot');
+    src: url('/assets/fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'),  
+        url('/assets/fonts/FranklinGothic-Heavy.woff') format('woff'),
+        url('/assets/fonts/FranklinGothic-Heavy.ttf')  format('truetype'),
+        url('/assets/fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-	font-family: 'La-chata';
-	src: url('/assets/fonts/La-chata-normal.eot');
-	src: local('☺'), url('/assets/fonts/La-chata-normal.woff') format('woff'),
-	url('/assets/fonts/La-chata-normal.ttf') format('truetype'),
-	url('/assets/fonts/La-chata-normal.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'La-chata';
+    src: url('/assets/fonts/La-chata-normal.eot');
+    src: local('☺'), url('/assets/fonts/La-chata-normal.woff') format('woff'),
+        url('/assets/fonts/La-chata-normal.ttf') format('truetype'),
+        url('/assets/fonts/La-chata-normal.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'franklin_gothic_mediumregular';
     src: url('/assets/fonts/franklin-gothic-medium-webfont.eot');
     src: url('/assets/fonts/franklin-gothic-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/franklin-gothic-medium-webfont.woff') format('woff'),
-         url('/assets/fonts/franklin-gothic-medium-webfont.ttf') format('truetype'),
-         url('/assets/fonts/franklin-gothic-medium-webfont.svg#franklin_gothic_mediumregular') format('svg');
+        url('/assets/fonts/franklin-gothic-medium-webfont.woff') format('woff'),
+        url('/assets/fonts/franklin-gothic-medium-webfont.ttf') format('truetype'),
+        url('/assets/fonts/franklin-gothic-medium-webfont.svg#franklin_gothic_mediumregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
-                font-family: 'Insaniburger';
-                src: url('/assets/fonts/Insanibc.ttf')  format('truetype');
-                font-weight: normal;
-                font-style: normal;
-            }
+    font-family: 'Insaniburger';
+    src: url('/assets/fonts/Insanibc.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*******************************
-			GENERAL CSS
+                        GENERAL CSS
 ********************************/
-	*,*:before,*:after
+*,*:before,*:after
 {
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box
 }
-	html
+html
 {
-	margin:0;
-	min-height:100%;
+    margin:0;
+    min-height:100%;
 }
-	body
+body
 {
-	margin:0;
-	min-height:100%;
-	background: #ffffff;
-	color: #330000;
-	-webkit-font-smoothing:antialiased;
-	text-rendering:optimizeLegibility;
+    margin:0;
+    min-height:100%;
+    background: #ffffff;
+    color: #330000;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
 }
-	a
+a
 {
-	text-decoration:none;
+    text-decoration:none;
 
 }
-	a:active
+a:active
 {
-	outline:none
+    outline:none
 }
 
 .container{
-	max-width: 960px;
-	margin: 0 auto;
+    max-width: 960px;
+    margin: 0 auto;
 }
 .clear{clear: both;}
 .rounded{
-	-webkit-border-radius:5px!important;
-	-moz-border-radius:5px!important;
-	-ms-border-radius:5px!important;
-	-o-border-radius:5px!important;
-	border-radius:5px!important;
+    -webkit-border-radius:5px!important;
+    -moz-border-radius:5px!important;
+    -ms-border-radius:5px!important;
+    -o-border-radius:5px!important;
+    border-radius:5px!important;
 }
 
 /*******************************
-	BUTTONS
+        BUTTONS
 ********************************/
 .top-btn{
-	padding: 8px 12px;
-	background: #cc0033;
-	color: #ffffff;
-	border: none;
-	font-size: 16px;
-	cursor: pointer;
-	font-family: 'La-chata';
+    padding: 8px 12px;
+    background: #cc0033;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'La-chata';
 }
 .top-btn:hover{background: #e70033;}
 
@@ -161,7 +161,7 @@ strong{font-weight: bold;}
 .dark-btn:hover{background-color: #760000;}
 
 /*******************************
-	MAIN PAGE CSS
+        MAIN PAGE CSS
 ********************************/
 header{overflow: hidden;}
 header .logo{padding-top: 35px; float: left;}
@@ -188,10 +188,10 @@ header .social-right ul li{margin-top: 6px;}
 .center-arrows{position: absolute; top: 175px; left: 350px;}
 #menu{max-width:965px;margin: 0 auto; text-align: center; margin-top: 10px;}
 #menu a {display: inline-block; zoom: 1;text-align: center;width: 298px; height: 297px; cursor: pointer;-webkit-transition: all 0.7s ease;
-transition: all 0.7s ease;}
-#menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
+         transition: all 0.7s ease;}
+#menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
 #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-#menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
+#menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
 #menu-img4{background: url(/assets/img/home-img4.jpg) no-repeat;}
 #menu-img5{background: url(/assets/img/home-img5.jpg) no-repeat;}
 #menu-img6{background: url(/assets/img/home-img6.jpg) no-repeat;}
@@ -231,20 +231,20 @@ footer ul li a:hover{color: #cc0033;}
 .copy-write a:hover{color:#cc0033;}
 
 /*******************************
-	POST PAGE CSS
+        POST PAGE CSS
 ********************************/
 .nav-right{font-size: 22.7px; text-align: right; margin-top: 20px;}
 .blog{max-width: 960px; margin:0 auto; border: 3px dotted #330000; padding: 45px 0 90px 0; overflow: hidden;margin-top: 10px;}
- h1{font-family: 'FranklinGothic-Heavy'; font-size:36px; text-align: center;}
- h2{font-family: 'franklin_gothic_bookregular'; font-size: 24px; font-weight: bold; text-align: center; padding-top: 40px;}
- .post{max-width: 1000px; margin: 0 auto; margin-top: 60px;}
- .post-img{width: 42.7%; float: left; margin-right: 8%; position: relative;}
- .star-img{position: absolute; top: -45px; left: -45px;}
- .post-text{width: 49%; float: left; padding-top: 40px;}
- .post-text> h1{font-family: 'FranklinGothic-Heavy'; font-size:24px; text-align: left;}
- .post-text h3{font-family: 'franklin_gothic_bookregular'; font-size: 16px; padding-top: 15px;}
- .post-text p{font-family: 'franklin_gothic_bookregular'; font-size: 14px; line-height: 30px; padding-top: 20px;}
- .post-text p a{font-family: 'FranklinGothic-Heavy';color: #330000; font-size: 16px;}
+h1{font-family: 'FranklinGothic-Heavy'; font-size:36px; text-align: center;}
+h2{font-family: 'franklin_gothic_bookregular'; font-size: 24px; font-weight: bold; text-align: center; padding-top: 40px;}
+.post{max-width: 1000px; margin: 0 auto; margin-top: 60px;}
+.post-img{width: 42.7%; float: left; margin-right: 8%; position: relative;}
+.star-img{position: absolute; top: -45px; left: -45px;}
+.post-text{width: 49%; float: left; padding-top: 40px;}
+.post-text> h1{font-family: 'FranklinGothic-Heavy'; font-size:24px; text-align: left;}
+.post-text h3{font-family: 'franklin_gothic_bookregular'; font-size: 16px; padding-top: 15px;}
+.post-text p{font-family: 'franklin_gothic_bookregular'; font-size: 14px; line-height: 30px; padding-top: 20px;}
+.post-text p a{font-family: 'FranklinGothic-Heavy';color: #330000; font-size: 16px;}
 .pager{font-family: 'FranklinGothic-Heavy';color: #330000;text-align: right; padding-right: 100px; padding-top: 70px;}
 
 .blog-page {padding:45px 110px 25px 110px;border: 3px dotted #330000; margin-top: 10px; overflow: hidden;}
@@ -280,7 +280,7 @@ footer ul li a:hover{color: #cc0033;}
 .opinion-form-text .text-left {float: left;margin-right: 25px; }
 .opinion-form-text .text-left span {color: #ff0099;}
 /*******************************
-	THANK U PAGE CSS
+        THANK U PAGE CSS
 ********************************/
 .thanku {padding-top:45px; padding-bottom:500px;border: 3px dotted #330000; margin-top: 10px;}
 .thanku{text-align: center;}
@@ -288,7 +288,7 @@ footer ul li a:hover{color: #cc0033;}
 .thanku > h2{font-family: 'FranklinGothic-Heavy'; font-size:24px; }
 
 /*******************************
-	DONATIONS PAGE CSS
+        DONATIONS PAGE CSS
 ********************************/
 .donations{border: 3px dotted #330000;margin-top: 10px; padding: 35px 55px 25px 55px;}
 .donations p{padding-top: 40px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;}
@@ -301,12 +301,12 @@ footer ul li a:hover{color: #cc0033;}
 .donations-btn{text-align: center;} 
 .donations-btn p{line-height: 36px;font-family: 'La-chata';}
 .donations-btn button{font-size: 24px; border-top: 1px solid #eb99ad;border-bottom: 1px solid #eb99ad; padding: 15px 20px;display: block;
-margin-left: auto;margin-right: auto;margin-top: -30px;}
+                      margin-left: auto;margin-right: auto;margin-top: -30px;}
 .donations-btn img{margin-left: -300px;}
 .donation-bottom-p{padding-top: 0 !important; color: #cc0033; }      				
 .donations-bottom-text p{font-size: 18px; overflow: hidden;}
 /*******************************
-	CONTACT PAGE CSS
+        CONTACT PAGE CSS
 ********************************/
 .contact{overflow: hidden; border: 3px dotted #330000;margin-top: 10px; padding: 45px 100px 35px 100px; font-family: 'franklin_gothic_bookregular';}
 .contact-text{max-width: 580px; text-align: center; margin: 0 auto; margin-top: 45px; border-bottom: 3px solid #330000; padding-bottom: 20px;}
@@ -321,7 +321,7 @@ margin-left: auto;margin-right: auto;margin-top: -30px;}
 .contact-us-form input[type="submit"]:hover{background: #430101;}
 .contact-cont-right{float: right; margin-top: 45px;}
 /*******************************
-	HOW IT WORKS PAGE CSS
+        HOW IT WORKS PAGE CSS
 ********************************/
 .how-it-works{border: 3px dotted #330000;margin-top: 10px; padding: 40px 15px 35px 15px;}
 .how-it-works > img {margin-top: 20px; text-align: center; display: block; margin-left: auto; margin-right: auto;}
@@ -363,46 +363,46 @@ margin-left: auto;margin-right: auto;margin-top: -30px;}
 
 
 #collapse-content h3 + div {
-  height: 0px;
-  padding: 0px;
-  overflow: hidden;
-  display: block!important;
-  -webkit-transform: translateZ(0);
-  -webkit-transition: all 0.5s ease;
-  moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition:all 0.5s ease;
-  transition: all 0.5s ease;
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display: block!important;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.5s ease;
+    moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition:all 0.5s ease;
+    transition: all 0.5s ease;
 }
 #collapse-content .content {
 
-  padding: 10px 0 20px 20px;
+    padding: 10px 0 20px 20px;
 }
 
 #collapse-content h3.open + div {
-  height: auto;
+    height: auto;
 }
 #collapse-content h3+div {
-  display: none;
+    display: none;
 }
 
 #collapse-content h3 a {
-  background: url("/assets/img/plus-sign.png")  no-repeat left center;
-  display: block;
-  padding-left: 20px;
-  margin: 0;
+    background: url("/assets/img/plus-sign.png")  no-repeat left center;
+    display: block;
+    padding-left: 20px;
+    margin: 0;
 }
 .claim-gift #collapse-content h3 a{background-position: left top; }
 #collapse-content h3.open a {  background: url("/assets/img/minus-sign.png") no-repeat left center;
-  display: block;
-  padding-left: 20px;
-  margin: 0;
+                               display: block;
+                               padding-left: 20px;
+                               margin: 0;
 }
-  .claim-gift #collapse-content h3.open a{background-position: left top; }
+.claim-gift #collapse-content h3.open a{background-position: left top; }
 
 
 /*******************************
-	GIFT CLAIM PAGE CSS
+        GIFT CLAIM PAGE CSS
 ********************************/
 input[type="radio"]{border: 3px solid #330000; width: 21px; height: 21px; background: none; outline:none; 	vertical-align: middle;}
 input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; background: none; outline:none; 	vertical-align: middle;}
@@ -449,7 +449,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .process-3 .claim-box1 #collapse-content{margin:0;}
 .process-3 .claim-box1  {padding: 0;}
 /*******************************
-	PROCESS PAGE 1 CSS
+        PROCESS PAGE 1 CSS
 ********************************/
 .process-1{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 55px 20px 45px 20px; }
 .process-circles{text-align: center;  overflow: hidden; margin-top: 30px;}
@@ -463,9 +463,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .process-form-container2{width: 435px;}
 .drop-down-form {margin-left: 70px;}
 .badge{position: absolute; top:-35px; left: -45px;}
-  
-  /*******************************
-	PROCESS PAGE 2 CSS
+
+/*******************************
+      PROCESS PAGE 2 CSS
 ********************************/    				
 .option-name{width: 100%;border: 3px solid #330000; padding: 5px; outline: none;}
 .process-2{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 30px 90px 45px 90px;}
@@ -475,7 +475,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .step2-text > h2{text-align: left; padding-bottom: 0;font-size: 20px;}
 .step2-btn-container{margin-top: 20px;}
 /*******************************
-	PROCESS PAGE 3 CSS
+        PROCESS PAGE 3 CSS
 ********************************/
 .process-3{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 55px 40px 45px 40px;font-family: 'franklin_gothic_bookregular';font-size: 14px;}
 .process-3 form input[type="text"],.process-3 form textarea{border: 3px solid #330000; padding: 5px; outline: none;}
@@ -531,141 +531,154 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .sub-heading{font-family: 'franklin_gothic_bookregular';font-size: 14px; margin-top: 5px;}
 
 /*******************************
-		MEDIA QUERIES CSS
+                MEDIA QUERIES CSS
 ********************************/
 
-	@media only screen and (max-width: 1040px)
+@media only screen and (max-width: 1040px)
 {
-	.container{padding-left: 15px; padding-right: 15px;}
-	.siess{padding-left:70px;}
-	.center-arrows {left: 340px;}
-	#counting-back .count-image img,.badge{display: none;}
-	.count-text,.post-img,.post-text{float:none !important;text-align: center;}
-	.post-img,.post-text{width: 100%; padding-left: 15px; padding-right: 15px;}
-	.star-img{ left: 250px;}
-	#menu {padding: 0 15px;}
-	.blog-page,.faq {padding-left:15px; padding-right:15px;}
-	.blog-page-post-img img{padding: 30px 20px 10px 0;}
-	.smiles,.opinion-send{margin-left: 0px;}
-	.opinion-form{margin-top: 20px; float: none;margin-left: 0;}
-	.opinion-form form textarea{margin-top: 20px;}
-	.opinion-form-text {margin-left: 0;}
-	footer{padding-left: 15px; padding-right: 15px;}
-	footer ul li{margin-left: 30px !important; }
-	.circles img,.claim-option-list li img {position: static; text-align: center;margin-left: auto;margin-right: auto; display: block;}
-	.how-it-works > img,.faq img{width: 100%; height: auto;}
-	.login{padding-left: 0;}
-	.claim-gift{padding-left: 70px; padding-right: 70px;}
-	.claim-message{position: static; float: none;width: 100%;}
-	.claim-form{width: 65%;margin-left: auto; margin-right: auto;float: none;}
-	.nav-right,.post-text> h1,.claim-form > h2,.claim-form > p,.claim-form h4{text-align: center;}
-	.claim-option-list li{display: block;margin: 30px auto 0 auto!important;}
-	.claim-form2,.claim-form-btn,.process-form-container2{margin-left: auto;margin-right: auto;}
-	.claim-form-btn{float: none;text-align: center; margin-top: 20px;}
-	.claim-btn{margin-top: 20px;margin-left: 0;}
-	.claim-form-right{position: static; margin-top: 40px;}
-        #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
-        #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-        #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
-	.bottom-text-field div{display: block; float: none; text-align: center; margin-right: 0;}
-	.bottom-text-field{width: 100%;}
+    .container{padding-left: 15px; padding-right: 15px;}
+    .siess{padding-left:70px;}
+    .center-arrows {left: 340px;}
+    #counting-back .count-image img,.badge{display: none;}
+    .count-text,.post-img,.post-text{float:none !important;text-align: center;}
+    .post-img,.post-text{width: 100%; padding-left: 15px; padding-right: 15px;}
+    .star-img{ left: 250px;}
+    #menu {padding: 0 15px;}
+    .blog-page,.faq {padding-left:15px; padding-right:15px;}
+    .blog-page-post-img img{padding: 30px 20px 10px 0;}
+    .smiles,.opinion-send{margin-left: 0px;}
+    .opinion-form{margin-top: 20px; float: none;margin-left: 0;}
+    .opinion-form form textarea{margin-top: 20px;}
+    .opinion-form-text {margin-left: 0;}
+    footer{padding-left: 15px; padding-right: 15px;}
+    footer ul li{margin-left: 30px !important; }
+    .circles img,.claim-option-list li img {position: static; text-align: center;margin-left: auto;margin-right: auto; display: block;}
+    .how-it-works > img,.faq img{width: 100%; height: auto;}
+    .login{padding-left: 0;}
+    .claim-gift{padding-left: 70px; padding-right: 70px;}
+    .claim-message{position: static; float: none;width: 100%;}
+    .claim-form{width: 65%;margin-left: auto; margin-right: auto;float: none;}
+    .nav-right,.post-text> h1,.claim-form > h2,.claim-form > p,.claim-form h4{text-align: center;}
+    .claim-option-list li{display: block;margin: 30px auto 0 auto!important;}
+    .claim-form2,.claim-form-btn,.process-form-container2{margin-left: auto;margin-right: auto;}
+    .claim-form-btn{float: none;text-align: center; margin-top: 20px;}
+    .claim-btn{margin-top: 20px;margin-left: 0;}
+    .claim-form-right{position: static; margin-top: 40px;}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
+    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
+    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
+    .bottom-text-field div{display: block; float: none; text-align: center; margin-right: 0;}
+    .bottom-text-field{width: 100%;}
 }
 
- 	@media only screen and (max-width: 800px)
+@media only screen and (max-width: 800px)
 {
-	.center-arrows,.dog-img,.siess{display: none;}
-	.count-text{margin: 0 auto; padding-left: 70px;}
-	.order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
-	.opinion-form form .submit-btn{position: static; margin-top: 20px;}
-	.blog-page-post-img img{float: none;padding-right: 0; }
-	.blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
-	.contact-cont-right{float: none;display: block;}
-	.claim-message {margin-top: 20px;}
-	.count-text {/*display:none;*/}
-        #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
-        #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-        #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
-	#faq img{display:none;}
+    .center-arrows,.dog-img,.siess{display: none;}
+    .count-text{margin: 0 auto; padding-left: 70px;}
+    .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
+    .opinion-form form .submit-btn{position: static; margin-top: 20px;}
+    .blog-page-post-img img{float: none;padding-right: 0; }
+    .blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
+    .contact-cont-right{float: none;display: block;}
+    .claim-message {margin-top: 20px;}
+    .count-text {/*display:none;*/}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
+    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
+    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
+    #faq img{display:none;}
 }
-	@media only screen and (max-width: 767px)
+@media only screen and (max-width: 768px)
 {
-	.star-img{ left: 130px;}
-	.contact-us-form input[type="submit"]{position: static; width: 100%; margin:20px 0 40px 0;}
-	.contact{padding: 55px 20px 35px 20px;}
-	.contact-cont-left,.contact-cont-right{float: none; text-align: center;}
-	.contact-us-form{margin-left: auto; margin-right: auto; text-align: left;}
-	.login form input[type="text"],.claim-form form input[type="text"],.client-acct-msg{width: 100%;}
-	.coupon input[type="text"]{width: 200px !important;}
-	.claim-form form div { float:none; }
-	.process-3{padding-left:50px; padding-right:50px;}
-	.bottom-text-field div input[type="text"] {width: 65%;}
-	.dog-btn{margin-left: 10px;}
-	.count-text {/*display:none;*/ padding-top:0px !important;}
-	#faq img{display:none;}
-	#menu{display:none;}
+    .center-arrows,.dog-img,.siess{display: none;}
+    .count-text{margin: 0 auto; padding-left: 70px;}
+    .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
+    .opinion-form form .submit-btn{position: static; margin-top: 20px;}
+    .blog-page-post-img img{float: none;padding-right: 0; }
+    .blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
+    .contact-cont-right{float: none;display: block;}
+    .claim-message {margin-top: 20px;}
+    .count-text {/*display:none;*/}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
+    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;float: right;padding: 10px}
+    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: none}
+    #faq img{display:none;}
 }
-	@media only screen and (max-width: 640px)
+@media only screen and (max-width: 767px)
 {
-	.logo img{width: 100%; height: auto;}
-	.count-text{padding-left: 0px;}
-	header .social-right,.copy-write p {float: none;text-align: center; display:none;}
-	.logo{margin-bottom: 30px; float: none!important;text-align: center;}
-	.star-img{display: none;}
-	.opinion-form form input{width: 100% !important; }
-	.smiles-img{margin-top: 20px;}
-	.copy-write p{margin-right: 0;}
-	.thanku img{width: 100%;height: auto;}
-	.donations{padding: 45px 15px 30px 15px;}
-	.circles ul,.drop-down-form {margin-left: 0;}
-	.how-list ul.how-list-left{float: none; width: 100%;}
-	.how-list ul.how-list-right{float: none; width: 100%;}
-	.claim-form,.claim-form2,.process-form-container2{width: 100%;}
-	.process-circles ul li{float: none;}
-	.process-circles ul li div.circle{display: block; margin: 0 auto;}
-	.process-circles ul li div.circle-line{display: block;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);
-    transform: rotate(90deg); margin: 25px 0;}
+    .star-img{ left: 130px;}
+    .contact-us-form input[type="submit"]{position: static; width: 100%; margin:20px 0 40px 0;}
+    .contact{padding: 55px 20px 35px 20px;}
+    .contact-cont-left,.contact-cont-right{float: none; text-align: center;}
+    .contact-us-form{margin-left: auto; margin-right: auto; text-align: left;}
+    .login form input[type="text"],.claim-form form input[type="text"],.client-acct-msg{width: 100%;}
+    .coupon input[type="text"]{width: 200px !important;}
+    .claim-form form div { float:none; }
+    .process-3{padding-left:50px; padding-right:50px;}
+    .bottom-text-field div input[type="text"] {width: 65%;}
+    .dog-btn{margin-left: 10px;}
+    .count-text {/*display:none;*/ padding-top:0px !important;}
+    #faq img{display:none;}
+    #menu{display:none;}
+}
+@media only screen and (max-width: 640px)
+{
+    .logo img{width: 100%; height: auto;}
+    .count-text{padding-left: 0px;}
+    header .social-right,.copy-write p {float: none;text-align: center; display:none;}
+    .logo{margin-bottom: 30px; float: none!important;text-align: center;}
+    .star-img{display: none;}
+    .opinion-form form input{width: 100% !important; }
+    .smiles-img{margin-top: 20px;}
+    .copy-write p{margin-right: 0;}
+    .thanku img{width: 100%;height: auto;}
+    .donations{padding: 45px 15px 30px 15px;}
+    .circles ul,.drop-down-form {margin-left: 0;}
+    .how-list ul.how-list-left{float: none; width: 100%;}
+    .how-list ul.how-list-right{float: none; width: 100%;}
+    .claim-form,.claim-form2,.process-form-container2{width: 100%;}
+    .process-circles ul li{float: none;}
+    .process-circles ul li div.circle{display: block; margin: 0 auto;}
+    .process-circles ul li div.circle-line{display: block;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);
+                                           transform: rotate(90deg); margin: 25px 0;}
     .claim-btn{float: none;}
     .step2-btn-container{text-align: center;}
     .claim-gift{padding: 55px 60px 45px 60px;}
     .bottom-text-field div input[type="text"] {width: 100%;}
-	.count-text {/*display:none;*/ padding-top:0px !important;}
-        #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
-        #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-        #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
-	#faq img{display:none;}
-	#menu{display:none;}
+    .count-text {/*display:none;*/ padding-top:0px !important;}
+    #faq img{display:none;}
+    #menu{display:none;}
 }
-	@media only screen and (max-width: 460px)
+@media only screen and (max-width: 460px)
 {
-	.logo img{width: 100%; height: auto;}
-	#order-place h2{font-size: 38px;}
-	#order-place h2 span{ font-size:48px;}
-	#order-place button{padding: 12px;font-size: 24px;}
-	.post-img img,.blog-page-post-img img,.circles img{width: 100%; height:auto;}
-	.post-text{text-align: left;}
-	.donations-btn img {display: none;}
-	.donations-btn button{margin-top: 30px; font-size: 28px;padding: 10px 15px;}	
-	.claim-gift,.process-3,.process-2,#faq{padding-left:15px; padding-right:15px;}
-	#menu{overflow: hidden;}
-	#menu ul li,#menu ul li:hover{background-size: 83%; margin-top: 0;}
-	.count-text .counter,.lock{float: none;margin-right: auto; margin-left: auto; text-align: center;}
-	.count-btn{padding: 3px;}
-	.dark-btn{font-size: 18px;}
-	.option-text1,.option-text2{margin-left: 0px; display: block;}
-	.count-text {/*display:none;*/ padding-top:0px !important;}
-	#faq img{display:none;}
-	#menu{display:none;}
+    .logo img{width: 100%; height: auto;}
+    #order-place h2{font-size: 38px;}
+    #order-place h2 span{ font-size:48px;}
+    #order-place button{padding: 12px;font-size: 24px;}
+    .post-img img,.blog-page-post-img img,.circles img{width: 100%; height:auto;}
+    .post-text{text-align: left;}
+    .donations-btn img {display: none;}
+    .donations-btn button{margin-top: 30px; font-size: 28px;padding: 10px 15px;}	
+    .claim-gift,.process-3,.process-2,#faq{padding-left:15px; padding-right:15px;}
+    #menu{overflow: hidden;}
+    #menu ul li,#menu ul li:hover{background-size: 83%; margin-top: 0;}
+    .count-text .counter,.lock{float: none;margin-right: auto; margin-left: auto; text-align: center;}
+    .count-btn{padding: 3px;}
+    .dark-btn{font-size: 18px;}
+    .option-text1,.option-text2{margin-left: 0px; display: block;}
+    .count-text {/*display:none;*/ padding-top:0px !important;}
+    #faq img{display:none;}
+    #menu{display:none;}
 }
-	@media only screen and (max-width: 360px)
+@media only screen and (max-width: 360px)
 {
-	.contact-cont-right ul li img,.dog-prof-img img{width: 100%; height: auto;}
-	.claim-btn {font-size: 24px; padding: 18px 25px;}
-	.radio-list input[type="radio"]{margin-left: 30px;}
-	.claim-gift h1{font-size: 36px;}
-	#collapse-content .content {padding-left: 0; padding-right: 5px;}
-	.count-text {/*display:none;*/ padding-top:0px !important; text-align:center;}
-	#faq img{display:none;}
-	#menu{display:none;}
+    .contact-cont-right ul li img,.dog-prof-img img{width: 100%; height: auto;}
+    .claim-btn {font-size: 24px; padding: 18px 25px;}
+    .radio-list input[type="radio"]{margin-left: 30px;}
+    .claim-gift h1{font-size: 36px;}
+    #collapse-content .content {padding-left: 0; padding-right: 5px;}
+    .count-text {/*display:none;*/ padding-top:0px !important; text-align:center;}
+    #faq img{display:none;}
+    #menu{display:none;}
 }
 .claim-form input[type="password"]{width: 206px;}
 .add input[type="password"]{width:100% !important; }
