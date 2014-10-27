@@ -22,7 +22,10 @@
                 $g_discount = 0;
         if(count($invites)>0){
             $discount = ($o->package->price * ((count($invites)*5+$g_discount)/100));
-        } else {
+        } elseif($g_discount>0){
+            $discount = ($o->package->price * ($g_discount/100));
+        }
+        else {
             $discount = 0;
         }
     } else {
@@ -57,7 +60,7 @@
         <input type='hidden' name='ORDER_SHIPPING' id='ORDER_SHIPPING' value='0' />
         <input type='hidden' name='DISCOUNT' id='DISCOUNT' value='<?=$discount?>' />
         <input type='hidden' name='PAY_METHOD' id='PAY_METHOD' value='CCVISAMC' />
-        <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='EN' />
+        <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='HU' />
         <input type='hidden' name='AUTOMODE' id='AUTOMODE' value='1' />
         <input type='hidden' name='ORDER_TIMEOUT' id='ORDER_TIMEOUT' value='3600' />
         <input type='hidden' name='TIMEOUT_URL' id='TIMEOUT_URL' value='<?= URL::base(TRUE, FALSE) ?>order/timeout/' />

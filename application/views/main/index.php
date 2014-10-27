@@ -2,12 +2,9 @@
 $menus = array();
 //if ($auth->logged_in()) {
 $menus = array(
-    '/' => array('Fooldal', 'home'),
     '/hogyan/' => array('Hogyan Mukodik', 'hogyan'),
-    '#' => array('Tamogass TE', 'tamogass'),
     'http://blog.goodiebox.hu' => array('Blog', 'blog'),
     '/gyik' => array('GYIK', 'gyik'),
-    '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
 );
 ?>
 <section id="counting-back">

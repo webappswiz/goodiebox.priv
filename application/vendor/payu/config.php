@@ -34,7 +34,7 @@ $config = array(
 	'BACK_REF' => 'http://'.$_SERVER['HTTP_HOST'].'/order/success',						//url of payu payment backref page
 	'TIMEOUT_URL' => 'http://'.$_SERVER['HTTP_HOST'].'/order/timeout.php',					//url of payu payment timeout page
 	'ORDER_TIMEOUT' => 3600,
-	'LANGUAGE' => 'EN'
+	'LANGUAGE' => 'HU'
 );
 
 ?>

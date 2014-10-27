@@ -230,10 +230,11 @@ class Controller_Order extends Controller_Core {
                     ->and_where('is_used', '=', 0)
                     ->and_where('is_paid', '=', 1)
                     ->and_where('is_registered', '=', 1)
-                    ->count_all();
+                    ->find_all();
+            $inv_count = $invites;
             $this->discount = 0;
-            if ($invites > 0 || $g_discount > 0) {
-                $this->discount = $this->price->price * (($invites * 5 + $g_discount) / 100);
+            if (count($invites) > 0 || $g_discount > 0) {
+                $this->discount = $this->price->price * ((count($invites) * 5 + $g_discount) / 100);
             }
             $this->append_js_var('discount', round($this->discount));
         } else
@@ -369,10 +370,15 @@ class Controller_Order extends Controller_Core {
                 }
                 $discount = 0;
                 if ($_POST['discount'] == 1) {
-                    if (count($invites) > 0 && empty($step1['coupon_code'])) {
+                    if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
+                        echo 1;
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
+                    } elseif($g_discount>0){
+                        $order->discount = 1;
+                        $pkg = ORM::factory('Packages', $step2['selected_box']);
+                        $discount = $pkg->price * ($g_discount / 100);
                     }
                 }
                 $order->orders_status = 1;
@@ -433,10 +439,15 @@ class Controller_Order extends Controller_Core {
                 $order->payment_status = 0;
                 $discount = 0;
                 if ($_POST['discount'] == 1) {
-                    if (count($invites) > 0) {
+                    if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
+                        echo 1;
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = ($pkg->price * ((count($invites) * 5 + $g_discount) / 100));
+                        $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
+                    } elseif($g_discount>0){
+                        $order->discount = 1;
+                        $pkg = ORM::factory('Packages', $step2['selected_box']);
+                        $discount = $pkg->price * ($g_discount / 100);
                     }
                 }
                 $order->save();
@@ -497,10 +508,14 @@ class Controller_Order extends Controller_Core {
                 $order->payment_status = 0;
                 $order->date_purchased = date('Y-m-d H:i:s');
                 if ($_POST['discount'] == 1) {
-                    if (count($invites) > 0) {
+                    if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = ($pkg->price * ((count($invites) * 5 + $g_discount) / 100));
+                        $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
+                    } elseif($g_discount>0){
+                        $order->discount = 1;
+                        $pkg = ORM::factory('Packages', $step2['selected_box']);
+                        $discount = $pkg->price * ($g_discount / 100);
                     }
                 }
                 $order->save();

@@ -137,3 +137,66 @@
             <?php
         }
         ?>
+        <style type="text/css">
+
+            @font-face {
+                font-family: Insaniburger;
+                src: url('fonts/Insanibu.ttf');
+                font-weight: normal;
+                font-style: normal;
+            }
+            .greenbutton {
+                position: fixed;
+                width: 140px;
+                height: 300px;
+                background-color:#009966;
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                border-radius:5px;
+                border:1px solid #18ab29;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                left:3%;
+                top:50%;
+                font-family: Insaniburger;
+                font-size:24px;
+                text-decoration:none;
+                text-align: left;
+                padding-left: 50px;
+                font-weight: 600;
+            }
+            .greenbutton:hover {
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #24c58f), color-stop(1, #44c767));
+                background:-moz-linear-gradient(top, #24c58f 5%, #44c767 100%);
+                background:-webkit-linear-gradient(top, #24c58f 5%, #44c767 100%);
+                background:-o-linear-gradient(top, #24c58f 5%, #44c767 100%);
+                background:-ms-linear-gradient(top, #24c58f 5%, #44c767 100%);
+                background:linear-gradient(to bottom, #24c58f 5%, #44c767 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
+                background-color:#24c58f;
+            }
+            .lable_button {
+                display: block;
+                position: absolute;
+                width: 1em;
+                line-height:1em;
+                color: #ffffff;
+                font-family: Insaniburger;
+                font-size:24px;
+                text-decoration:none;
+                text-align: left;
+                
+            }
+        </style>
+        <?php
+        if ($active_menu != 'home') {
+            ?>
+<div>
+            <a href="/order/">
+                    <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
+                </button>
+                
+            </a>
+        </div>
+        <?php }?>
