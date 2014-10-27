@@ -25,7 +25,7 @@ $menus = array(
     });
     });
 </script>
-<section id="counting-back" style="margin-top: 35px">
+<section id="counting-back" style="margin-top: 25px">
     <div class="count-image">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> <!--End count image-->
