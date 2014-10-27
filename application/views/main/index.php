@@ -49,11 +49,11 @@ $menus = array(
     </div>
 </section> <!--End counting back-->
 <div class="clear"></div>
-<nav class="">
+<nav style="margin-top: 10px">
                 <ul>
                     <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
                 </ul>
-            </nav>
+</nav>
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
