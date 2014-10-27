@@ -44,12 +44,16 @@ $menus = array(
         </div> <!--End lock-->
 
     </div> <!--End count text-->
-
     <div class="dog-img">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
 </section> <!--End counting back-->
 <div class="clear"></div>
+<nav class="">
+                <ul>
+                    <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
+                </ul>
+            </nav>
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">

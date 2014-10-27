@@ -127,7 +127,7 @@
         </header>
         <div class="clear"></div>
         <?php
-        //if ($active_menu != 'home') {
+        if ($active_menu != 'home') {
             ?>
             <nav class="nav-right">
                 <ul>
@@ -135,7 +135,7 @@
                 </ul>
             </nav>
             <?php
-       // }
+        }
         ?>
         <style type="text/css">
             @font-face {
@@ -198,7 +198,6 @@
                 <a href="/order/">
                     <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
-
                 </a>
             </div>
         <?php
