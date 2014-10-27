@@ -181,7 +181,7 @@ header .social-right ul li{margin-top: 6px;}
 #order-place p{font-family: 'La-chata';font-size: 18px;color: #cc0033; margin-top: 10px;}
 .center-arrows{position: absolute; top: 175px; left: 350px;}
 #menu{max-width:965px;margin: 0 auto; text-align: center; margin-top: 10px;}
-#menu a {display: inline-block; zoom: 1;text-align: center;width: 318px; height: 317px; cursor: pointer;-webkit-transition: all 0.7s ease;
+#menu a {display: inline-block; zoom: 1;text-align: center;width: 305px; height: 304px; cursor: pointer;-webkit-transition: all 0.7s ease;
 transition: all 0.7s ease;}
 #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
 #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
