@@ -7,7 +7,7 @@ class Controller_Order extends Controller_Core {
     public function before() {
         parent::before();
         $this->set_title('Order');
-        $this->template->active_menu = 'kapcsolat';
+        $this->template->active_menu = 'order';
     }
 
     private function send($to, $from, $subject, $body, $file = '') {

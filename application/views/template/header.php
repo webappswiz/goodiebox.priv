@@ -191,7 +191,7 @@
             }
         </style>
         <?php
-        if ($active_menu != 'home') {
+        if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
 <div>
             <a href="/order/">
