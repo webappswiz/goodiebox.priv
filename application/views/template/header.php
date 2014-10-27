@@ -187,17 +187,18 @@
                 font-size:24px;
                 text-decoration:none;
                 text-align: left;
-                
+
             }
         </style>
         <?php
         if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
-<div>
-            <a href="/order/">
+            <div>
+                <a href="/order/">
                     <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
-                </button>
-                
-            </a>
-        </div>
-        <?php }?>
+                    </button>
+
+                </a>
+            </div>
+        <?php
+        }?>
