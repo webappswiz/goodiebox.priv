@@ -147,8 +147,8 @@
             }
             .greenbutton {
                 position: fixed;
-                width: 140px;
-                height: 300px;
+                width: 70px;
+                height: 150px;
                 background-color:#009966;
                 -moz-border-radius:5px;
                 -webkit-border-radius:5px;
@@ -157,14 +157,15 @@
                 display:inline-block;
                 cursor:pointer;
                 color:#ffffff;
-                left:3%;
+                left:0;
                 top:50%;
                 font-family: Insaniburger;
-                font-size:24px;
+                font-size:11px;
                 text-decoration:none;
                 text-align: left;
-                padding-left: 50px;
-                font-weight: 600;
+                padding-left: 20px;
+                font-weight: 900;
+                margin-left: 0px;
             }
             .greenbutton:hover {
                 background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #24c58f), color-stop(1, #44c767));

@@ -68,7 +68,9 @@ $menus = array(
 <div class="clear"></div>
 
 <div class="container">
-    <h2>Azt kérdezed, mit is találtok majd a dobozban?</h2>
+    <h2 style="font-family: La-Chata">Azt kérdezed, mit is találtok majd a dobozban?</h2><br/>
+    Havonta változó, 4-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin). A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
+    Tovább olvasom
 </div>
 
 <div class="container">
