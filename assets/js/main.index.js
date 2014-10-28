@@ -2,28 +2,16 @@ countIt();
 
 function countIt(year, month, day, hours, minutes, seconds) {
     now = new Date();
-    start_date = new Date(2014, 9, 21, 18, 00, 00);
+    start_date = new Date(2014, 9, 28, 18, 00, 00);
     now = now.getTime()/1000;
     start = start_date.getTime()/1000;
-    if(now < start){
-        year = 2014;
-        month = 9;
-        day = 21;
-        hours = 18;
-        minutes = 00;
-        seconds = 00;
-        status = 0;
-    } else {
-        start = new Date(2014, 9, 21, 18, 00, 00);
-        start.setDate(start.getDate() + 8);
-        year = start.getFullYear();
-        month = start.getMonth();
-        day = start.getDate();
-        hours = 00;
-        minutes = 00;
-        seconds =00;
-        status = 1;
-    }
+    year = 2014;
+    month = 11;
+    day = 1;
+    hours = 18;
+    minutes = 00;
+    seconds = 00;
+    status = 0;
     setTimeout(function () {
         endDate = new Date(year, month, day, hours, minutes, seconds, 00);
         thisDate = new Date();
