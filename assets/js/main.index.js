@@ -8,7 +8,7 @@ function countIt(year, month, day, hours, minutes, seconds) {
     year = 2014;
     month = 11;
     day = 1;
-    hours = 18;
+    hours = 00;
     minutes = 00;
     seconds = 00;
     status = 0;
