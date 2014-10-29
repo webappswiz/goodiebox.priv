@@ -565,19 +565,21 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .claim-form-btn{float: none;text-align: center; margin-top: 20px;}
     .claim-btn{margin-top: 20px;margin-left: 0;}
     .claim-form-right{position: static; margin-top: 40px;}
-    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;float: left}
-    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;float: right}
+    #menu a {display: inline-block; zoom: 1;text-align: center;width: 307px; height: 307px; cursor: pointer;-webkit-transition: all 0.7s ease;
+         transition: all 0.7s ease;}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 307px 306px;text-align: left}
+    #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 307px 306px;text-align: left}
+    #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 307px 306px;text-align: left}
     .bottom-text-field div{display: block; float: none; text-align: center; margin-right: 0;}
     .bottom-text-field{width: 100%;}
 }
 
 @media only screen and (max-width: 1024px){
-    #menu a {display: inline-block; zoom: 1;text-align: center;width: 308px; height: 308px; cursor: pointer;-webkit-transition: all 0.7s ease;
+    #menu a {display: inline-block; zoom: 1;text-align: center;width: 298px; height: 297px; cursor: pointer;-webkit-transition: all 0.7s ease;
          transition: all 0.7s ease;}
     #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 298px 297px;text-align: left}
-    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;background-size: 298px 297px;text-align: left}
-    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 298px 297px;text-align: left}
+    #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 298px 297px;text-align: left}
+    #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 298px 297px;text-align: left}
 }
 
 @media only screen and (max-width: 800px)
@@ -593,9 +595,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .count-text {/*display:none;*/}
     #menu a {display: inline-block; zoom: 1;text-align: center;width: 244px; height: 244px; cursor: pointer;-webkit-transition: all 0.7s ease;
          transition: all 0.7s ease;}
-    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 244px 244px;}
-    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;background-size: 244px 244px;}
-    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 244px 244px;}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 244px 244px;text-align: left}
+    #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 244px 244px;text-align: left}
+    #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 244px 244px;text-align: left}
     #faq img{display:none;}
 }
 @media only screen and (max-width: 768px)
@@ -609,11 +611,11 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .contact-cont-right{float: none;display: block;}
     .claim-message {margin-top: 20px;}
     .count-text {/*display:none;*/}
-    #menu a {display: inline-block; zoom: 1;text-align: center;background-size: 244px 244px; cursor: pointer;-webkit-transition: all 0.7s ease;
+    #menu a {display: inline-block; zoom: 1;text-align: center;width: 242px; height: 242px; cursor: pointer;-webkit-transition: all 0.7s ease;
          transition: all 0.7s ease;}
-    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;}
-    #menu-img2{background: url(/assets/img/home-img4.jpg) no-repeat;}
-    #menu-img3{background: url(/assets/img/home-img5.jpg) no-repeat;}
+    #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 242px 242px;text-align: left}
+    #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 242px 242px;text-align: left}
+    #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 242px 242px;text-align: left}
     #faq img{display:none;}
 }
 @media only screen and (max-width: 767px)
