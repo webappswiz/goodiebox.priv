@@ -1,10 +1,11 @@
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
+        $('input:radio:first').attr('checked','checked');
         $('#selected_box').val($('#box').val());
-        $('input:radio').on('click',function(){
+        $('input:radio').on('click', function () {
             $('#selected_box').val($(this).val());
         });
-        $('#next').on('click',function(){
+        $('#next').on('click', function () {
             $('form').submit();
         });
     });
@@ -37,12 +38,25 @@
     <div class="clear"></div>
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
     <ul class="claim-option-list step2-list">
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img1.jpg"><p> 1 hónap<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="1" checked="checked" required></p><br/><?php
-        $product = ORM::factory('Packages',1);
-        echo $product->price.' HUF';
-        ?></li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img2.jpg"> 3 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="2" class="" required disabled><br/>&nbsp;</li>
-        <li><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/step2-img2.jpg"> 6 hónap<input style="cursor: pointer" type="radio" name="box" id="box" value="3" class="" required disabled><br/>&nbsp;</li>
+
+        <?php
+        $products = ORM::factory('Packages')
+                ->where('type', '=', 1)
+                ->find_all();
+        foreach ($products as $product) {
+            $img = ($product->enabled == 1) ? 1 : 2;
+            $price = ($product->price!=0)?$product->price . ' HUF':'';
+            echo '<li><img src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><p>' . $product->package_name . '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required></p><br/>' . $price;
+            $econ = ORM::factory('Packages')
+                    ->where('type','=',2)
+                    ->and_where('term', '=', $product->term)
+                    ->find();
+            if($econ->loaded()){
+                echo '<br/><br/>'.$econ->package_name.'(econ)<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required></p><br/>' . $econ->price . ' HUF';
+            }
+            echo '</li>';
+        }
+        ?>
     </ul>    
     <div class="step2-text">
         <h2>Jó tudni:</h2>
@@ -56,7 +70,8 @@
         <form method="POST">
             <input type="hidden" name="order" value="1">
             <input type="hidden" name="selected_box" id="selected_box" value="">
-            <input type="button" id="back" class="dark-btn claim-btn fl rounded"  onclick="history.go(-1);return true;" value="VISSZA">
+            <input type="button" id="back" class="dark-btn claim-btn fl rounded"  onclick="history.go(-1);
+                    return true;" value="VISSZA">
             <input type="submit" name="tovabb" id="next" value="TOVÁBB" class="dark-btn claim-btn fr rounded">
         </form>
     </div>

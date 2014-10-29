@@ -28,8 +28,8 @@ class Controller_Admin_Packages extends Controller_Admin {
     }
 
     public function action_add() {
-        $this->set_filename('admin/settings/form');
-        $this->model = ORM::factory('OrderStatus');
+        $this->set_filename('admin/packages/form');
+        $this->model = ORM::factory('Packages');
         if (!$this->is_post()) {
             return;
         }
@@ -42,11 +42,13 @@ class Controller_Admin_Packages extends Controller_Admin {
         if ($id) {
             $this->model = ORM::factory('Packages', $id);
         } else {
-            $this->redirect('/admin/packages/');
+            $this->model = ORM::factory('Packages');
         }
         $this->model->package_name = $_REQUEST['package_name'];
         $this->model->price = $_REQUEST['package_price'];
         $this->model->product_number = $_REQUEST['package_code'];
+        $this->model->type = $_REQUEST['type'];
+        $this->model->term = $_REQUEST['term'];
         if(isset($_REQUEST['package_enabled'])){
             $this->model->enabled = 1;
         } else

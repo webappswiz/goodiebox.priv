@@ -33,7 +33,7 @@ $menus = array(
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <div class="count-text">
-        <p>Add le a rendelésed október 28-ig, hogy megkapd az legelső dobozt!</p>
+        <p>Ne maradj le, december elsején indulnak ismét a megrendelések! </p>
         <div class="counter">
             <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours">15:37:55</span></p>
         </div> <!--End counter-->

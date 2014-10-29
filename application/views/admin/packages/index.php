@@ -32,4 +32,5 @@ foreach ($packages as $package){
 </table>
 <?php
 }
+echo HTML::anchor('/admin/packages/add', 'Add a new product', array('class' => 'btn btn-primary'));
 ?>
