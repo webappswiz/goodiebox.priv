@@ -37,7 +37,7 @@
     </div>
     <div class="clear"></div>
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
-    <ul class="claim-option-list step2-list">
+    <ul class="claim-option-list step2-list" style='border: 1px solid'>
 
         <?php
         $products = ORM::factory('Packages')
@@ -46,13 +46,13 @@
         foreach ($products as $product) {
             $img = ($product->enabled == 1) ? 1 : 2;
             $price = ($product->price!=0)?$product->price . ' HUF':'';
-            echo '<li><img src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><p>' . $product->package_name . '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required></p><br/>' . $price;
+            echo '<li><img width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><p>' . $product->package_name . '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required></p><br/>' . $price;
             $econ = ORM::factory('Packages')
                     ->where('type','=',2)
                     ->and_where('term', '=', $product->term)
                     ->find();
             if($econ->loaded()){
-                echo '<br/><br/>'.$econ->package_name.'(econ)<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required></p><br/>' . $econ->price . ' HUF';
+                echo '<hr>'.$econ->package_name.'(econ)<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required></p><br/>' . $econ->price . ' HUF';
             }
             echo '</li>';
         }
