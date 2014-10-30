@@ -52,7 +52,7 @@
                     ->and_where('term', '=', $product->term)
                     ->find();
             if($econ->loaded()){
-                echo '<hr><input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required><label>'.$econ->package_name.'</label><br/><br/>' . $econ->price . ' HUF';
+                echo '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required><label>'.$econ->package_name.'</label><br/><br/>' . $econ->price . ' HUF';
             }
             echo '</li>';
         }
