@@ -37,6 +37,7 @@
     </div>
     <div class="clear"></div>
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
+    <br/><br/>
     <ul class="claim-option-list step2-list">
 
         <?php
