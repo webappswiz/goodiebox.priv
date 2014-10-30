@@ -471,7 +471,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .option-name{width: 100%;border: 3px solid #330000; padding: 5px; outline: none;}
 .process-2{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 30px 90px 45px 90px;}
 .step2-text{margin-top: 10px;}
-.step2-list li{margin-right: 140px; margin-top: 30px;padding-left: 0px;line-height: 10px;text-align: left}
+.step2-list li{margin-right: 100px; margin-top: 30px;padding-left: 0px;line-height: 10px;text-align: left}
 .step2-list input[type="radio"]{
     vertical-align: baseline;
     margin-right: 4px;
