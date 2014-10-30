@@ -479,7 +479,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .step2-list span{
     padding-left: 40px;
 }
-.step2-text p{font-family: 'franklin_gothic_bookregular';font-size: 24px; padding-top: 0px;font-size: 20px;}
+.step2-text p{font-family: 'franklin_gothic_bookregular';font-size: 24px; padding-top: 25px;font-size: 20px;}
 .step2-text > h2{text-align: left; padding-bottom: 0;font-size: 20px;}
 .step2-btn-container{margin-top: 20px;}
 /*******************************
