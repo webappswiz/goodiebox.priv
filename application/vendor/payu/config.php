@@ -25,7 +25,7 @@
  */
  
 $config = array(
-	'MERCHANT' => "P120701",																		//merchant account ID
+	'MERCHANT' => "T70501",																		//merchant account ID
 	'SECRET_KEY' => "2@6H297Z_2P3@L9)N*9M",																		//secret key for account ID	
 	'METHOD' => "CCVISAMC",																			//payment method	 empty -> select payment method on PayU payment page OR [ CCVISAMC, WIRE, CASH, PAYU_MOBILE ]
 	'ORDER_DATE' => date("Y-m-d H:i:s"),													//date of transaction

@@ -668,7 +668,8 @@ class Controller_Order extends Controller_Core {
         if($order){
             $order = $order->as_array();
         } else {
-            $this->redirect('/user_account');
+            echo 1;
+            //$this->redirect('/user_account');
         }
         require_once DOCROOT . 'application/vendor/payu/config.php';
         $this->payment = new PayULiveUpdate($config);
