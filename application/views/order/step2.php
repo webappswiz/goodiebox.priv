@@ -46,7 +46,7 @@
         foreach ($products as $product) {
             $img = ($product->enabled == 1) ? 1 : 2;
             $price = ($product->price!=0 && $product->enabled==1)?$product->price . ' HUF':'';
-            echo '<li><img width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required><label>' . $product->package_name . '</label><br/><br/><span class="price">' . $price.'</span>';
+            echo '<li><img style="margin-right:30px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required><label>' . $product->package_name . '</label><br/><br/><span class="price">' . $price.'</span>';
             $econ = ORM::factory('Packages')
                     ->where('type','=',2)
                     ->and_where('term', '=', $product->term)
