@@ -57,7 +57,7 @@
                         ->and_where('term', '=', $product->term)
                         ->find();
                 echo '<div class="boxes">';
-                echo '<img style="margin-left:30px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><br/>';
+                echo '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><br/>';
                 echo '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required>';
                 echo '<label class="tooltip">' . $product->package_name . '<span>'.$product->description.'</span></label>';
                 echo '<br/><br/>';

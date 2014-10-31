@@ -706,7 +706,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     #faq img{display:none;}
     #menu{display:none;}
     .boxes img{width: 70px;height: 40px;}
-    
+
 }
 .claim-form input[type="password"]{width: 206px;}
 .add input[type="password"]{width:100% !important; }
@@ -735,6 +735,16 @@ input.error{
     padding: 20px;
     margin: 5px;
     overflow: hidden;
+    font-family: 'franklin_gothic_bookregular';
+    font-size: 16px;
+    vertical-align:baseline;
+}
+.boxes input[type="radio"]{
+    margin-top: -1px;
+    vertical-align: middle;
+}
+.boxes label{
+    vertical-align:baseline;
 }
 label.tooltip {outline:none; }
 label.tooltip strong {line-height:30px;}
@@ -750,7 +760,7 @@ label.tooltip:hover span{
     background:#333 url(cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
 }
 .callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
-    
+
 /*CSS3 extras*/
 label.tooltip span
 {
