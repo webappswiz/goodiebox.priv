@@ -49,6 +49,7 @@ class Controller_Admin_Packages extends Controller_Admin {
         $this->model->product_number = $_REQUEST['package_code'];
         $this->model->type = $_REQUEST['type'];
         $this->model->term = $_REQUEST['term'];
+        $this->model->description = $_REQUEST['description'];
         if(isset($_REQUEST['package_enabled'])){
             $this->model->enabled = 1;
         } else

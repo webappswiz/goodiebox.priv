@@ -47,6 +47,12 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="package_description">Product description</label>
+                <div class="controls">
+                    <textarea id="description" name="description" rows="10"><?= $model->description ?></textarea>
+                </div>
+            </div>
+            <div class="control-group">
                     <input type="checkbox" id="package_enabled" name="package_enabled"  <?php echo ($model->enabled==1) ? 'checked="checked"' : '' ?>value="1"> Package enabled 
 
             </div>

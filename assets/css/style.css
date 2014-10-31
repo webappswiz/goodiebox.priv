@@ -471,7 +471,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .option-name{width: 100%;border: 3px solid #330000; padding: 5px; outline: none;}
 .process-2{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 30px 90px 45px 90px;}
 .step2-text{margin-top: 10px;}
-.step2-list li{margin-right: 100px; margin-top: 30px;padding-left: 0px;line-height: 10px;text-align: left}
+.step2-list li{margin-right: 100px; margin-top: 30px;padding-left: 0px;line-height: 10px;text-align: left;overflow: visible;}
 .step2-list input[type="radio"]{
     vertical-align: baseline;
     margin-right: 4px;
@@ -573,7 +573,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .claim-btn{margin-top: 20px;margin-left: 0;}
     .claim-form-right{position: static; margin-top: 40px;}
     #menu a {display: inline-block; zoom: 1;text-align: center;width: 307px; height: 307px; cursor: pointer;-webkit-transition: all 0.7s ease;
-         transition: all 0.7s ease;}
+             transition: all 0.7s ease;}
     #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 307px 306px;text-align: left}
     #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 307px 306px;text-align: left}
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 307px 306px;text-align: left}
@@ -583,7 +583,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 
 @media only screen and (max-width: 1024px){
     #menu a {display: inline-block; zoom: 1;text-align: center;width: 298px; height: 297px; cursor: pointer;-webkit-transition: all 0.7s ease;
-         transition: all 0.7s ease;}
+             transition: all 0.7s ease;}
     #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 298px 297px;text-align: left}
     #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 298px 297px;text-align: left}
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 298px 297px;text-align: left}
@@ -601,7 +601,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .claim-message {margin-top: 20px;}
     .count-text {/*display:none;*/}
     #menu a {display: inline-block; zoom: 1;text-align: center;width: 244px; height: 244px; cursor: pointer;-webkit-transition: all 0.7s ease;
-         transition: all 0.7s ease;}
+             transition: all 0.7s ease;}
     #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 244px 244px;text-align: left}
     #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 244px 244px;text-align: left}
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 244px 244px;text-align: left}
@@ -619,11 +619,12 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .claim-message {margin-top: 20px;}
     .count-text {/*display:none;*/}
     #menu a {display: inline-block; zoom: 1;text-align: center;width: 242px; height: 242px; cursor: pointer;-webkit-transition: all 0.7s ease;
-         transition: all 0.7s ease;}
+             transition: all 0.7s ease;}
     #menu-img1{background: url(/assets/img/home-img1.jpg) no-repeat;background-size: 242px 242px;text-align: left}
     #menu-img2{background: url(/assets/img/home-img5.jpg) no-repeat;background-size: 242px 242px;text-align: left}
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 242px 242px;text-align: left}
     #faq img{display:none;}
+    .boxes{margin: 2px;}
 }
 @media only screen and (max-width: 767px)
 {
@@ -641,6 +642,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .count-text {/*display:none;*/ padding-top:0px !important;}
     #faq img{display:none;}
     #menu{display:none;}
+    .boxes img{width: 70px;height: 40px;}
 }
 @media only screen and (max-width: 640px)
 {
@@ -669,6 +671,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .count-text {/*display:none;*/ padding-top:0px !important;}
     #faq img{display:none;}
     #menu{display:none;}
+    .boxes img{width: 70px;height: 40px;}
 }
 @media only screen and (max-width: 460px)
 {
@@ -690,6 +693,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .count-text {/*display:none;*/ padding-top:0px !important;}
     #faq img{display:none;}
     #menu{display:none;}
+    .boxes img{width: 70px;height: 40px;}
 }
 @media only screen and (max-width: 360px)
 {
@@ -701,6 +705,8 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
     .count-text {/*display:none;*/ padding-top:0px !important; text-align:center;}
     #faq img{display:none;}
     #menu{display:none;}
+    .boxes img{width: 70px;height: 40px;}
+    
 }
 .claim-form input[type="password"]{width: 206px;}
 .add input[type="password"]{width:100% !important; }
@@ -721,4 +727,34 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 }
 input.error{
     background-color: #eb99ad;
+}
+.boxes{
+    width: 30%;
+    float: left;
+    text-align: left;
+    padding: 20px;
+    margin: 5px;
+    overflow: hidden;
+}
+label.tooltip {outline:none; }
+label.tooltip strong {line-height:30px;}
+label.tooltip:hover {text-decoration:none;} 
+label.tooltip span {
+    z-index:10;display:none; padding:14px 20px;
+    margin-top:60px; margin-left:-160px;
+    width:300px; line-height:16px;
+}
+label.tooltip:hover span{
+    display:inline; position:absolute; 
+    border:2px solid #FFF;  color:#EEE;
+    background:#333 url(cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+}
+.callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
+    
+/*CSS3 extras*/
+label.tooltip span
+{
+    border-radius:2px;        
+    box-shadow: 0px 0px 8px 4px #666;
+    /*opacity: 0.8;*/
 }
