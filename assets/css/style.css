@@ -430,9 +430,9 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .claim-message {width: 40%; position: absolute; top:75px; right: 10px;}
 .claim-message textarea{width: 100%; height: 80px;}
 .claim-option-list{overflow: hidden; text-align: center;font-family: 'franklin_gothic_bookregular';font-size: 18px;}
-.claim-option-list li{max-width:285px;display: inline-block; text-align: center;vertical-align: top;margin-right: 60px;}
+.claim-option-list li{max-width:285px;display: inline-block; text-align: center;vertical-align: baseline;margin-right: 60px;}
 .claim-option-list li:last-child{margin-right: 0;}
-.claim-option-list li img{vertical-align: top;display: block; margin-bottom: 20px;}
+.claim-option-list li img{vertical-align: baseline;display: block; margin-bottom: 20px;}
 .claim-option-list li input[type="radio"]{border: 3px solid #330000; width: 21px; height: 21px; background: none; outline:none; 	vertical-align: middle;}
 .claim-form2 {margin-top: 35px; width: 300px;}
 .claim-form2 input[type="text"]{width: 100%;}
