@@ -100,6 +100,7 @@ if ($auth->logged_in())
             }
         });
         $("#customer_telephone").mask("+36 99 999-99-99");
+        $("#delivery_telephone").mask("+36 99 999-99-99");
         $.extend($.validator.messages, {
             required: "ez az információ szükséges",
             equalTo: "Kérjük, adja ugyanazt az értéket újra"
@@ -302,6 +303,10 @@ if (isset($session['step2'])) {
                     <div>
                         <label for="delivery_zip">Irányítószám*</label>
                         <input type="text" name="delivery_zip" class="rounded" id="delivery_zip" value="" required>
+                    </div>
+                    <div>
+                        <label for=delivery_telephone">Telefonszám*</label>
+                        <input type="text" name="delivery_telephone" class="rounded" id="delivery_telephone" value="" required>
                     </div>
                     <div class="add">
                         <label for="delivery_city">Város*</label>

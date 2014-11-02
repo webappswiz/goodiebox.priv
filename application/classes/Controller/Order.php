@@ -339,6 +339,7 @@ class Controller_Order extends Controller_Core {
                     $order->delivery_address2 = $_POST['delivery_address2'];
                     $order->delivery_city = $_POST['delivery_city'];
                     $order->delivery_postcode = $_POST['delivery_zip'];
+                    $order->delivery_telephone = $_POST['delivery_telephone'];
                     $order->company_name = $_POST['company_name'];
                     $order->tax_code = $_POST['tax_code'];
                     $order->message = $_POST['msg'];
@@ -353,6 +354,7 @@ class Controller_Order extends Controller_Core {
                     $address->customer_city = $_POST['delivery_city'];
                     $address->customer_address = $_POST['delivery_address'];
                     $address->customer_address2 = $_POST['delivery_address2'];
+                    $address->customer_telephone = $_POST['delivery_telephone'];
                     $address->save();
                 }
                 if (!empty($step1['coupon_code'])) {
