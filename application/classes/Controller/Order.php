@@ -90,7 +90,7 @@ class Controller_Order extends Controller_Core {
                 <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>Átutalás</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> '.$order->invoice_num.'</td>
+                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> ' . $order->invoice_num . '</td>
             </tr>
             <tr style="padding: 0px">
                 <td colspan="4">
@@ -209,11 +209,11 @@ class Controller_Order extends Controller_Core {
                     ->find();
             if ($global_discount->loaded()) {
                 $g_discount = $global_discount->discount;
-            } else{
-                if(isset($_POST['invite_code'])){
+            } else {
+                if (isset($_POST['invite_code'])) {
                     $coupon = ORM::factory('Coupons')
-                                ->where('coupon', '=', $_POST['invite_code'])
-                                ->find();
+                            ->where('coupon', '=', $_POST['invite_code'])
+                            ->find();
                     if ($coupon->loaded()) {
                         $global_discount = 10;
                         $coupon->delete();
@@ -223,7 +223,6 @@ class Controller_Order extends Controller_Core {
                 } else {
                     $g_discount = 0;
                 }
-                
             }
             $invites = ORM::factory('Invites')
                     ->where('user_id', '=', $this->current_user->id)
@@ -263,6 +262,9 @@ class Controller_Order extends Controller_Core {
                     $user->customer_telephone = $_POST['customer_telephone'];
                     if (isset($_POST['company'])) {
                         $user->customer_company = $_POST['company_name'];
+                        $user->customer_company_address = $_POST['company_address'];
+                        $user->customer_company_zip = $_POST['company_zip'];
+                        $user->customer_company_city = $_POST['company_city'];
                         $user->customer_taxcode = $_POST['tax_code'];
                     }
 
@@ -326,6 +328,9 @@ class Controller_Order extends Controller_Core {
                     $order->delivery_postcode = ($address->loaded()) ? $address->customer_zip : $_POST['customer_zip'];
                     $order->delivery_telephone = ($address->loaded()) ? $address->customer_telephone : $_POST['customer_telephone'];
                     $order->company_name = $_POST['company_name'];
+                    $order->company_address = $_POST['company_address'];
+                    $order->company_zip = $_POST['company_zip'];
+                    $order->company_city = $_POST['company_city'];
                     $order->tax_code = $_POST['tax_code'];
                     $order->message = $_POST['msg'];
                 } elseif (isset($_POST['shipping'])) {
@@ -341,6 +346,9 @@ class Controller_Order extends Controller_Core {
                     $order->delivery_postcode = $_POST['delivery_zip'];
                     $order->delivery_telephone = $_POST['delivery_telephone'];
                     $order->company_name = $_POST['company_name'];
+                    $order->company_address = $_POST['company_address'];
+                    $order->company_zip = $_POST['company_zip'];
+                    $order->company_city = $_POST['company_city'];
                     $order->tax_code = $_POST['tax_code'];
                     $order->message = $_POST['msg'];
                     $address = ORM::factory('AddressBook', $this->current_user->id);
@@ -377,7 +385,7 @@ class Controller_Order extends Controller_Core {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
-                    } elseif($g_discount>0){
+                    } elseif ($g_discount > 0) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = $pkg->price * ($g_discount / 100);
@@ -437,6 +445,9 @@ class Controller_Order extends Controller_Core {
                 $order->message = $_POST['msg'];
                 $order->orders_status = 1;
                 $order->company_name = $_POST['company_name'];
+                $order->company_address = $_POST['company_address'];
+                $order->company_zip = $_POST['company_zip'];
+                $order->company_city = $_POST['company_city'];
                 $order->tax_code = $_POST['tax_code'];
                 $order->payment_status = 0;
                 $discount = 0;
@@ -446,7 +457,7 @@ class Controller_Order extends Controller_Core {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
-                    } elseif($g_discount>0){
+                    } elseif ($g_discount > 0) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = $pkg->price * ($g_discount / 100);
@@ -514,7 +525,7 @@ class Controller_Order extends Controller_Core {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
-                    } elseif($g_discount>0){
+                    } elseif ($g_discount > 0) {
                         $order->discount = 1;
                         $pkg = ORM::factory('Packages', $step2['selected_box']);
                         $discount = $pkg->price * ($g_discount / 100);
@@ -666,8 +677,8 @@ class Controller_Order extends Controller_Core {
 
     public function action_payment() {
         $session = Session::instance();
-        $order = $session->get('order',false);
-        if($order){
+        $order = $session->get('order', false);
+        if ($order) {
             $order = $order->as_array();
         } else {
             echo 1;
@@ -702,10 +713,10 @@ class Controller_Order extends Controller_Core {
             if ($order->loaded()) {
                 $order->payment_status = 1;
                 $o = ORM::factory('Order')
-                ->where('invoice_num','<>','')
-                ->order_by('invoice_num','DESC')
-                ->find();
-                $order->invoice_num = $o->invoice_num+1;
+                        ->where('invoice_num', '<>', '')
+                        ->order_by('invoice_num', 'DESC')
+                        ->find();
+                $order->invoice_num = $o->invoice_num + 1;
                 $order->save();
                 if ($order->discount == 1) {
                     $invites = ORM::factory('Invites')
@@ -737,7 +748,7 @@ class Controller_Order extends Controller_Core {
                     $global_discount->save();
                 }
                 if ($order->type == 2) {
-                    $friend = ORM::factory('Friend',$order->friend_id)
+                    $friend = ORM::factory('Friend', $order->friend_id)
                             ->find();
                     if ($friend->loaded()) {
                         $date = strtotime(date('Y-m-d'));
@@ -825,8 +836,9 @@ class Controller_Order extends Controller_Core {
                     $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $body, 'gift_' . $order->id . '.pdf');
                 }
                 $this->receipt_email($order, $order->user, 1);
-            } 
+            }
         }
         $this->render_nothing();
     }
+
 }

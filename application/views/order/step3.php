@@ -55,10 +55,16 @@ if ($auth->logged_in())
             if ($('#company').is(':checked')) {
                 $('#tax').show();
                 $('#company_name').attr('required', 'required');
+                $('#company_address').attr('required', 'required');
+                $('#company_zip').attr('required', 'required');
+                $('#company_city').attr('required', 'required');
                 $('#tax_code').attr('required', 'required');
             } else {
                 $('#tax').hide();
                 $('#company_name').removeAttr('required');
+                $('#company_address').removeAttr('required');
+                $('#company_zip').removeAttr('required');
+                $('#company_city').removeAttr('required');
                 $('#tax_code').removeAttr('required');
             }
         });
@@ -236,13 +242,25 @@ if (isset($session['step2'])) {
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
                     <div id="tax" style="display:none">
-                        <div>
+                        <div class="add">
                             <label for="company_name">Cégnév</label>
                             <input type="text" name="company_name" class="rounded" id="company_name" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
                         </div>
+                        <div class="add">
+                            <label for="company_address">Cím*</label>
+                            <input type="text" name="company_address" class="rounded" id="company_address" value="<?= ($current_user) ? $current_user->customer_company_address : ''; ?>">
+                        </div>
+                        <div class="fl" style="margin-right:5px;">
+                            <label for="company_zip">Irányítószám*</label>
+                            <input type="text" name="company_zip" class="rounded" id="company_zip" value="<?= ($current_user) ? $current_user->customer_company_zip : ''; ?>">
+                        </div>
+                        <div >
+                            <label for="company_city">Város*</label>
+                            <input type="text" name="company_city" class="rounded" id="company_city" value="<?= ($current_user) ? $current_user->customer_company_city : ''; ?>">
+                        </div>
                         <div>
                             <label for="tax_code">Adószám</label>
-                            <input type="text" name="tax_code" class="rounded" id="tax_code" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
+                            <input type="text" name="tax_code" class="rounded" id="tax_code" value="<?= ($current_user) ? $current_user->customer_taxcode : ''; ?>">
                         </div>
                     </div>
                     <input type="hidden" name="msg" value="" id="msg">
