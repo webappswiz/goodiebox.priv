@@ -128,12 +128,12 @@ $menus = array(
     <div id="fotok">
         <div class="image-row">
             <div class="image-set">
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/1st.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/1st_thumb.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/2nd.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/2nd_thumb.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/4th.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/4th_thumb.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/3rd.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/3rd_thumb.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/6th.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/6th_thumb.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/5th.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/5th_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/1st.jpg" data-lightbox="example-set" data-title=""><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/1st_thumb.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/2nd.jpg" data-lightbox="example-set" data-title=""><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/2nd_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/4th.jpg" data-lightbox="example-set" data-title=""><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/4th_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/3rd.jpg" data-lightbox="example-set" data-title=""><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/3rd_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/6th.jpg" data-lightbox="example-set" data-title=""><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/6th_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/5th.jpg" data-lightbox="example-set" data-title=""><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/5th_thumb.jpg" alt="" /></a>
                 
             </div>
         </div>
