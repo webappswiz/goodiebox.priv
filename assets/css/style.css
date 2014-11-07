@@ -768,3 +768,54 @@ label.tooltip span
     box-shadow: 0px 0px 8px 4px #666;
     /*opacity: 0.8;*/
 }
+
+.etabs { 
+    margin: 0; 
+    padding: 0; 
+}
+.tab {
+    font-family: 'franklin_gothic_bookregular';
+    font-size: 26px;
+    width: 33%;
+    font-weight: bolder;
+    display: inline-block; 
+    zoom:1; 
+    *display:inline; 
+    text-align: center;
+    border-bottom: 3px solid #330000;
+    margin-right: -4px;
+    
+}
+.tab a {
+    
+    line-height: 2em; 
+    display: block; 
+    padding: 0 10px; 
+    outline: none; 
+    color: #268949;
+}
+.tab a:hover { 
+    text-decoration: none; 
+}
+.tab.active { 
+    background: #fff; 
+    position: relative; 
+    border-color: #330000; 
+    border: 3px solid #330000;
+    border-right: 6px solid #330000; 
+    border-left: 6px solid #330000; 
+    border-bottom: 0px;
+    padding-bottom: 3px;
+    
+}
+.tab a.active { 
+    font-weight: bold; 
+    color: #330000;
+}
+.tab-container .panel-container { 
+    background: #fff; 
+    border: solid #666 1px; 
+    padding: 10px; 
+    -moz-border-radius: 0 4px 4px 4px; 
+    -webkit-border-radius: 0 4px 4px 4px; 
+}

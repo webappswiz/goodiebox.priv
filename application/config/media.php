@@ -16,7 +16,9 @@ return array(
             'jquery.collapse',
             'jquery-ui.min',
             'main',
-            'mask'
+            'mask',
+            'jquery.easytabs',
+            'jquery.ba-hashchange.min'
         ),
         'css' => array(
             'style'=> NULL,
