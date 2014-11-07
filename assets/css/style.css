@@ -771,7 +771,8 @@ label.tooltip span
 
 .etabs { 
     margin: 0; 
-    padding: 0; 
+    padding: 5px; 
+    font-size: 0;
 }
 .tab {
     font-family: 'franklin_gothic_bookregular';
@@ -783,7 +784,6 @@ label.tooltip span
     *display:inline; 
     text-align: center;
     border-bottom: 3px solid #330000;
-    margin-right: -4px;
     
 }
 .tab a {
