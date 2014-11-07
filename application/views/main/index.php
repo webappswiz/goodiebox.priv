@@ -91,7 +91,7 @@ $menus = array(
 
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
-        <li class='tab'><a href="#miert">Miért jó a Goodiebox</a></li>
+        <li class='tab'><a href="#miert">Miért jó a Goodiebox?</a></li>
         <li class='tab'><a href="#fotok">Goodiebox fotók</a></li>
         <li class='tab'><a href="#videok">Goodiebox videók</a></li>
     </ul>
