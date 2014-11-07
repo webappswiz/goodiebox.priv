@@ -91,11 +91,11 @@ $menus = array(
 
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
-        <li class='tab'><a href="#tabs1-html">Miért jó a Goodiebox</a></li>
-        <li class='tab'><a href="#tabs1-js">Goodiebox fotók</a></li>
-        <li class='tab'><a href="#tabs1-css">Goodiebox videók</a></li>
+        <li class='tab'><a href="#miert">Miért jó a Goodiebox</a></li>
+        <li class='tab'><a href="#fotok">Goodiebox fotók</a></li>
+        <li class='tab'><a href="#videok">Goodiebox videók</a></li>
     </ul>
-    <div id="tabs1-html">
+    <div id="miert">
         <div class="container" style="padding: 0 30px 0 30px;margin-top: 0px;text-align: justify">
             <h2 style="font-family: La-Chata;padding-top: 10px;">Mit is találtok majd a dobozban?</h2><br/>
             <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 4-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
@@ -125,13 +125,23 @@ $menus = array(
             </div>
         </div>
     </div>
-    <div id="tabs1-js">
-        <h2>JS for these tabs</h2>
-        <!-- content -->
+    <div id="fotok">
+        <div class="image-row">
+            <div class="image-set">
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/1st.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/1st_thumb.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/2nd.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/2nd_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/4th.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/4th_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/3rd.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/3rd_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/6th.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/6th_thumb.jpg" alt="" /></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/5th.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/5th_thumb.jpg" alt="" /></a>
+                
+            </div>
+        </div>
     </div>
-    <div id="tabs1-css">
-        <h2>CSS Styles for these tabs</h2>
-        <!-- content -->
+    <div id="videok" style="text-align: center">
+        <iframe width="420" height="315" src="//www.youtube.com/embed/okr7WGT2usw" frameborder="0" allowfullscreen></iframe>
+        <iframe width="420" height="315" src="//www.youtube.com/embed/tCAIR-u3n3s" frameborder="0" allowfullscreen></iframe>
+
     </div>
 </div>
 

@@ -1,10 +1,12 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+
+defined('SYSPATH') or die('No direct script access.');
 
 return array(
     'core' => array(
         'static_uri' => 'uri',
         'uri' => 'assets/',
-        'path' => DOCROOT.'assets'.DIRECTORY_SEPARATOR,
+        'path' => DOCROOT . 'assets' . DIRECTORY_SEPARATOR,
     ),
     'default' => array(
         'js' => array(
@@ -18,13 +20,14 @@ return array(
             'main',
             'mask',
             'jquery.easytabs',
-            'jquery.ba-hashchange.min'
+            'lightbox.min'
         ),
         'css' => array(
-            'style'=> NULL,
-            'jquery-ui.min'=> NULL,
-            'jquery-ui.structure.min'=> NULL,
-            'jquery-ui.theme.min'=> NULL
+            'style' => NULL,
+            'jquery-ui.min' => NULL,
+            'jquery-ui.structure.min' => NULL,
+            'jquery-ui.theme.min' => NULL,
+            'lightbox' => NULL,
         ),
     ),
 );
