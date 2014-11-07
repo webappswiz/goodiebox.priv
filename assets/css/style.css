@@ -770,27 +770,32 @@ label.tooltip span
 }
 
 .etabs { 
-    margin: 0; 
-    padding: 5px; 
+    margin: 0px; 
+    padding: 0px; 
     font-size: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .tab {
     font-family: 'franklin_gothic_bookregular';
     font-size: 26px;
-    width: 33%;
+    width: 319px;
     font-weight: bolder;
     display: inline-block; 
     zoom:1; 
     *display:inline; 
     text-align: center;
-    border-bottom: 3px solid #330000;
+    border-bottom: 4px solid #330000;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 5px;
     
 }
 .tab a {
     
     line-height: 2em; 
     display: block; 
-    padding: 0 10px; 
+    
     outline: none; 
     color: #268949;
 }
@@ -801,11 +806,13 @@ label.tooltip span
     background: #fff; 
     position: relative; 
     border-color: #330000; 
-    border: 3px solid #330000;
-    border-right: 3px solid #330000; 
-    border-left: 3px solid #330000; 
+    border: 4px solid #330000;
+    border-right: 4px solid #330000; 
+    border-left: 4px solid #330000; 
     border-bottom: 0px;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
+    padding-right: 0px;
+    margin: 0px;
     
 }
 .tab a.active { 
@@ -815,7 +822,10 @@ label.tooltip span
 .tab-container .panel-container { 
     background: #fff; 
     border: solid #666 1px; 
-    padding: 10px; 
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
     -moz-border-radius: 0 4px 4px 4px; 
     -webkit-border-radius: 0 4px 4px 4px; 
 }
