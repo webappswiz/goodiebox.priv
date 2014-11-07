@@ -802,8 +802,8 @@ label.tooltip span
     position: relative; 
     border-color: #330000; 
     border: 3px solid #330000;
-    border-right: 6px solid #330000; 
-    border-left: 6px solid #330000; 
+    border-right: 3px solid #330000; 
+    border-left: 3px solid #330000; 
     border-bottom: 0px;
     padding-bottom: 3px;
     
