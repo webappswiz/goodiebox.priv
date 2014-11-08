@@ -796,9 +796,6 @@ label.tooltip span
     #faq img{display:none;}
     #menu{display:none;}
     .boxes img{width: 70px;height: 40px;}
-    .tab-container{
-        display: none;
-    }
 }
 @media only screen and (max-width: 640px)
 {
@@ -828,9 +825,6 @@ label.tooltip span
     #faq img{display:none;}
     #menu{display:none;}
     .boxes img{width: 70px;height: 40px;}
-    .tab-container{
-        display: none;
-    }
 }
 @media only screen and (max-width: 460px)
 {
@@ -853,9 +847,6 @@ label.tooltip span
     #faq img{display:none;}
     #menu{display:none;}
     .boxes img{width: 70px;height: 40px;}
-    .tab-container{
-        display: none;
-    }
 }
 @media only screen and (max-width: 360px)
 {
@@ -868,8 +859,15 @@ label.tooltip span
     #faq img{display:none;}
     #menu{display:none;}
     .boxes img{width: 70px;height: 40px;}
-    .tab-container{
-        display: none;
+}
+@media only screen and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+{
+    .tab {
+        width: 170px;
+        font-size: 16px;
     }
-
+    .etabs{
+        text-align: center;
+    }
 }
