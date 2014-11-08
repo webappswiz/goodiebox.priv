@@ -832,6 +832,13 @@ label.tooltip span
     #faq img{display:none;}
     #menu{display:none;}
     .boxes img{width: 70px;height: 40px;}
+    .tab {
+        width: 200px;
+        font-size: 20px;
+    }
+    .etabs{
+        text-align: center;
+    }
 }
 @media only screen and (max-width: 460px)
 {
