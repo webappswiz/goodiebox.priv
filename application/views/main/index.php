@@ -96,7 +96,7 @@ $menus = array(
         <li class='tab'><a href="#videok">Goodiebox videók</a></li>
     </ul>
     <div id="miert">
-        <div class="container" style="padding: 0 30px 0 30px;margin-top: 0px;text-align: justify">
+        <div class="container" id="text" style="padding: 0 30px 0 30px;margin-top: 0px;">
             <h2 style="font-family: La-Chata;padding-top: 10px;">Mit is találtok majd a dobozban?</h2><br/>
             <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 4-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
                 <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold">Tovább olvasom</span>

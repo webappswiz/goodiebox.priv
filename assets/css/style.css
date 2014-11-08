@@ -667,6 +667,9 @@ label.tooltip span
     -webkit-border-radius: 0 4px 4px 4px; 
 }
 
+#text{
+        text-align: justify;
+    }
 @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
@@ -862,6 +865,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
+    #text{
+        text-align: left;
+    }
 }
 @media only screen and (max-width: 460px)
 {
@@ -895,6 +901,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
+    #text{
+        text-align: left;
+    }
 }
 @media only screen and (max-width: 360px)
 {
@@ -918,6 +927,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
+    #text{
+        text-align: left;
+    }
 }
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 592px)  and (orientation : portrait)
@@ -933,6 +945,9 @@ and (max-device-width : 592px)  and (orientation : portrait)
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
+    #text{
+        text-align: left;
+    }
 }
 
 @media only screen and (min-device-width : 320px) 
@@ -949,4 +964,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
+    #text{
+        text-align: left;
+    }
 }
