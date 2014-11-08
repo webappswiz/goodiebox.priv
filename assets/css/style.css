@@ -876,7 +876,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
 and (max-device-width : 592px)  and (orientation : landscape)
 {
     .tab {
-        width: 130px;
+        width: 120px;
         font-size: 14px;
     }
     .etabs{
