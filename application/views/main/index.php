@@ -156,8 +156,8 @@ $menus = array(
         </div>
     </div>
     <div id="videok" style="text-align: center">
-        <iframe width="420" height="315" src="//www.youtube.com/embed/okr7WGT2usw" frameborder="0" allowfullscreen></iframe>
-        <iframe width="420" height="315" src="//www.youtube.com/embed/tCAIR-u3n3s" frameborder="0" allowfullscreen></iframe>
+        <iframe width="320" height="315" src="//www.youtube.com/embed/okr7WGT2usw" frameborder="0" allowfullscreen></iframe>
+        <iframe width="320" height="315" src="//www.youtube.com/embed/tCAIR-u3n3s" frameborder="0" allowfullscreen></iframe>
 
     </div>
 </div>
