@@ -861,10 +861,22 @@ label.tooltip span
     .boxes img{width: 70px;height: 40px;}
 }
 @media only screen and (min-device-width : 320px) 
-and (max-device-width : 592px) 
+and (max-device-width : 592px)  and (orientation : portrait)
 {
     .tab {
-        width: 110px;
+        width: 90px;
+        font-size: 12px;
+    }
+    .etabs{
+        text-align: center;
+    }
+}
+
+@media only screen and (min-device-width : 320px) 
+and (max-device-width : 592px)  and (orientation : landscape)
+{
+    .tab {
+        width: 130px;
         font-size: 14px;
     }
     .etabs{
