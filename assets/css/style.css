@@ -214,7 +214,7 @@ nav ul li a:hover,nav ul li a.selected{color:#cc0033;transition: all 0.2s ease-i
 #portfolio i{float: right; font-size: 17px; padding:10px 15px 0 0;}
 
 #footer-wrapper{max-width: 960px; margin: 0 auto;  background: url(/assets/img/footer-bg.jpg); margin-top: 35px;}
-footer{max-width: 880px; margin: 0 auto; /*padding-top: 20px;*/}
+footer{max-width: 880px; margin: 0 auto; overflow:auto;/*padding-top: 20px;*/}
 footer ul li{ float:left; padding-left: 35px; height:32px; margin-top: 35px;}
 footer ul li a{font-family: 'La-chata'; font-size: 16px; line-height: 32px; color:#330000;}
 footer ul li#post{background: url(/assets/img/post.png) no-repeat left;margin-left: 0; }
@@ -726,6 +726,10 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 10px; padding-right: 15px;}
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
 }
 
 @media only screen and (max-width: 800px)
@@ -752,6 +756,13 @@ label.tooltip span
         text-align: center;
     }
     #faq img{display:none;}
+    footer{padding-left: 5px; padding-right: 15px;
+    font-size: 10px;
+    }
+    
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
 }
 @media only screen and (max-width: 768px)
 {
@@ -778,6 +789,10 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 5px; padding-right: 15px;    font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
 }
 @media only screen and (max-width: 767px)
 {
@@ -803,6 +818,10 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 5px; padding-right: 15px;    font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
 }
 @media only screen and (max-width: 640px)
 {
@@ -839,6 +858,10 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 5px; padding-right: 15px;    font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
 }
 @media only screen and (max-width: 460px)
 {
@@ -868,6 +891,10 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 5px; padding-right: 15px;    font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
 }
 @media only screen and (max-width: 360px)
 {
@@ -887,6 +914,10 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 5px; padding-right: 15px;    font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
 }
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 592px)  and (orientation : portrait)
@@ -898,6 +929,10 @@ and (max-device-width : 592px)  and (orientation : portrait)
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 0px; padding-right: 15px;font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
 }
 
 @media only screen and (min-device-width : 320px) 
@@ -910,4 +945,8 @@ and (max-device-width : 593px)  and (orientation : landscape)
     .etabs{
         text-align: center;
     }
+    footer{padding-left: 0px; padding-right: 15px;    font-size: 10px;    }
+    footer ul li{margin-left: 30px !important; }
+    footer ul li a{font-size: 14px;}
+    footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
 }
