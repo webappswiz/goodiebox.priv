@@ -877,7 +877,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
 {
     .tab {
         width: 110px;
-        font-size: 12px;
+        font-size: 10px;
     }
     .etabs{
         text-align: center;
