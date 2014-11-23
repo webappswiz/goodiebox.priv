@@ -714,6 +714,9 @@ label.tooltip span
     .etabs{
         text-align: center;
     }
+    #propose{
+        display:none;
+    }
 }
 
 @media only screen and (max-width: 1024px){
@@ -733,6 +736,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
+    #propose{
+        display:none;
+    }
 }
 
 @media only screen and (max-width: 800px)
@@ -766,6 +772,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
+    #propose{
+        display:none;
+    }
 }
 @media only screen and (max-width: 768px)
 {
@@ -796,6 +805,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
+    #propose{
+        display:none;
+    }
 }
 @media only screen and (max-width: 767px)
 {
@@ -825,6 +837,9 @@ label.tooltip span
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
+    #propose{
+        display:none;
+    }
 }
 @media only screen and (max-width: 640px)
 {
@@ -868,6 +883,9 @@ label.tooltip span
     #text{
         text-align: left;
     }
+    #propose{
+        display:none;
+    }
 }
 @media only screen and (max-width: 460px)
 {
@@ -904,6 +922,9 @@ label.tooltip span
     #text{
         text-align: left;
     }
+    #propose{
+        display:none;
+    }
 }
 @media only screen and (max-width: 360px)
 {
@@ -930,6 +951,9 @@ label.tooltip span
     #text{
         text-align: left;
     }
+    #propose{
+        display:none;
+    }
 }
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 592px)  and (orientation : portrait)
@@ -947,6 +971,9 @@ and (max-device-width : 592px)  and (orientation : portrait)
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
     #text{
         text-align: left;
+    }
+    #propose{
+        display:none;
     }
 }
 
@@ -966,5 +993,8 @@ and (max-device-width : 593px)  and (orientation : landscape)
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
     #text{
         text-align: left;
+    }
+    #propose{
+        display:none;
     }
 }
