@@ -26,7 +26,7 @@ $menus = array(
         $('#tab-container').easytabs();
     });
 </script>
-<section id="counting-back" style="margin-top: 25px">
+<section id="counting-back" style="margin-top: 25px;vertical-align: middle;border:1px solid">
     <div class="count-image">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> <!--End count image-->
