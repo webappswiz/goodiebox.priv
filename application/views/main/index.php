@@ -26,7 +26,7 @@ $menus = array(
         $('#tab-container').easytabs();
     });
 </script>
-<section id="counting-back" style="margin-top: 25px;vertical-align: middle;border:1px solid;overflow: hidden">
+<section id="counting-back" style="margin-top: 25px;vertical-align: middle;border:1px solid;position: relative">
     <div class="count-image">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> <!--End count image-->
@@ -46,7 +46,7 @@ $menus = array(
 
     </div> <!--End count text-->
     <div class="dog-img">
-        
+        <img style="position: absolute;right: 10px;" src="<?= URL::base(TRUE, TRUE )?>/assets/img/4890-2.png" alt="" width="70" height="70"><br/>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
 </section> <!--End counting back-->
