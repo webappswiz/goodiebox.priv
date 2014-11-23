@@ -46,7 +46,7 @@ $menus = array(
 
     </div> <!--End count text-->
     <div class="dog-img">
-        <img id="propose" style="position: absolute;right: 120px;bottom:-85px" src="<?= URL::base(TRUE, TRUE )?>/assets/img/4890-2.png" alt="" width="70" height="70"><br/>
+        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE )?>/assets/img/4890-2.png" alt="" width="100" height="100"><br/>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
 </section> <!--End counting back-->
