@@ -6,6 +6,7 @@
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<meta name="p:domain_verify" content="b74aa75479f58d13024eabfe1419c0aa"/>
         <?php
         foreach (Media::styles() as $file => $type) {
             echo HTML::style($file, array('media' => $type)), PHP_EOL;
@@ -37,6 +38,7 @@
             window._fbq.push(['track', '6014782475522', {'value': '0.00', 'currency': 'GBP'}]);
         </script>
     <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6014782475522&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
+
     <script>
 
         window.fbAsyncInit = function () {
@@ -78,12 +80,13 @@
         ga('send', 'pageview');
     </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<script src="//load.sumome.com/" data-sumo-site-id="13f38ebb1d7ae2e9b0cf60d4e0fdd9eca282dd8682115a92cfe65269a474d136" async></script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" alt="goodybox"></a>
+                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" width="374" height="102" alt="goodybox"></a>
             </div> <!--End logo-->
             <div class="social-right">
                 <ul>
@@ -92,7 +95,7 @@
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie" target="blank"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
                     </li>
                     <li><a href="#">
-                            <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
+                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <a href="#"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
                         </a></li>
                 </ul>
                 <script>
@@ -104,7 +107,7 @@
                     });
                 </script>
 
-                <script>
+               <script>
                     $('.popup').click(function (event) {
                         var width = 575,
                                 height = 400,
@@ -197,7 +200,7 @@
         if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
             <div>
-                <a href="/order/">
+                <a href="#">
                     <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
                 </a>
