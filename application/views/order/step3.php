@@ -403,7 +403,12 @@ if (isset($session['step2'])) {
                 } else {
                     $g_discount = 0;
                 }
-                if ($invites > 0 || $g_discount > 0):
+                
+                $package = ORM::factory('Packages',$step2['selected_box']);
+                if($package->loaded()){
+                    $type = $package->type;
+                }
+                if (($invites > 0 || $g_discount > 0) && $type==2):
                     ?>
                     <div><strong>Jelenlegi kedvezményed: <?= $invites * 5 + $global_discount->discount ?> %</strong><br/><br/>
                         Szeretnéd most felhasználni?
