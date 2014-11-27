@@ -51,7 +51,6 @@
         console.log($('.selected_size').val());
         $('.size').on('click', function () {
             $('.selected_size').val($(this).val());
-            console.log($(this).val());
         });
         // When site loaded, load the Popupbox First
         $('#create-dog').on('click', function () {
@@ -391,7 +390,7 @@
                             endforeach;
                             ?>
                             <div style="margin-top:35px; float:none;">
-                                <input type="submit" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                <input type="button" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
                         <hr/>

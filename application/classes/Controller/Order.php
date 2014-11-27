@@ -78,7 +78,7 @@ class Controller_Order extends Controller_Core {
                     Bankszámla: 11707000-20488804<br/>
                     Telefon: +36 30 233 7401
                 </td>
-                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="2">
+                <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="3">
                     Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
                     Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>
                     Cégnév: ' . $user->customer_company . '<br/>
@@ -90,10 +90,11 @@ class Controller_Order extends Controller_Core {
                 <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>Átutalás</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
+                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> ' . $order->invoice_num . '</td>
             </tr>
             <tr style="padding: 0px">
-                <td colspan="4">
+                <td colspan="5">
                     <table style="width: 100%;padding: 0px;margin: 0px" cellpadding="0" cellspacing="0">
                         <tr>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">Termék kód</td>
@@ -116,7 +117,7 @@ class Controller_Order extends Controller_Core {
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">db</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">AAM</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">AM</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">0,00</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
                         </tr>
@@ -124,7 +125,7 @@ class Controller_Order extends Controller_Core {
                 </td>
             </tr>
             <tr style="padding: 0px">
-                <td style="padding: 0px;margin: 0px;width:50%;height: 45px;border-left: 2px solid; border-right: 2px solid;" colspan="4"></td>
+                <td style="padding: 0px;margin: 0px;width:50%;height: 45px;border-left: 2px solid; border-right: 2px solid;" colspan="5"></td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
@@ -139,7 +140,7 @@ class Controller_Order extends Controller_Core {
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float) $total_price, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="4">Az ÁFA kulcs: AAM (alanyi mentes)</td>
+                <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="4">Az ÁFA kulcs: AM (alanyi mentes)</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="4">Köszönjük a vásárlást!</td>
