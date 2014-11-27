@@ -44,7 +44,7 @@ class Controller_Order extends Controller_Core {
         $total_price = $order->package->price - $discount;
         if($order->company_name<>''){
             $company = 'Cégnév: '.$order->company_name.'<br/>
-                    Cím: '. $order->company_zip.', '.$company_city.'<br/>
+                    Cím: '. $order->company_zip.', '.$order->company_city.'<br/>
                         '.$order->company_address.'<br/>
                     Adószám: '.$order->tax_code.'<br/>';
                         
