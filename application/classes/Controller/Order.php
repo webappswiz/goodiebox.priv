@@ -129,28 +129,30 @@ class Controller_Order extends Controller_Core {
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
+                <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>0,00&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
+                <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">Összesen:</td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float) $total_price, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="4">Az ÁFA kulcs: AM (alanyi mentes)</td>
+                <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">Az ÁFA kulcs: AM (alanyi mentes)</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="4">Köszönjük a vásárlást!</td>
+                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">Köszönjük a vásárlást!</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 105px;" colspan="4"></td>
+                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 105px;" colspan="5"></td>
             </tr>
             <tr style="padding: 0px">
                 <td style="height:50px;vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;font-size: 10px;font-weight: 600" colspan="2">A számla 2 példányban került kinyomtatásra.</td>
-                <td style="height:50px;vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;text-align: right;font-size: 10px;;font-weight: 600" colspan="2"></td>
+                <td style="height:50px;vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;text-align: right;font-size: 10px;;font-weight: 600" colspan="3"></td>
             </tr>
         </table>
     </body>
