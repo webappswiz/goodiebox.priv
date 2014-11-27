@@ -42,7 +42,15 @@ class Controller_Order extends Controller_Core {
 
         $discount = $order->package->price - $order->total_price;
         $total_price = $order->package->price - $discount;
-
+        if($order->company_name<>''){
+            $company = 'Cégnév: '.$order->company_name.'<br/>
+                    Cím: '. $order->company_zip.', '.$company_city.'<br/>
+                        '.$order->company_address.'<br/>
+                    Adószám: '.$order->tax_code.'<br/>';
+                        
+        } else {
+            $company = '';
+        }
         $invoice = '<!DOCTYPE html>
 <html lang="hu">
     <head>
@@ -81,8 +89,7 @@ class Controller_Order extends Controller_Core {
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="3">
                     Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
                     Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>
-                    Cégnév: ' . $user->customer_company . '<br/>
-                    Adószám: ' . $user->customer_taxcode . '<br/>
+                    '.$company.'
                     Telefon: ' . $user->customer_telephone . '
                 </td>
             </tr>
