@@ -59,7 +59,7 @@ $menus = array(
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
-        <a href="#">
+        <a href="/order/?o">
             <button type="button" class="rounded">Megrendelem</button>
         </a>
         <p>a saját kutyusomnak</p>
@@ -68,7 +68,7 @@ $menus = array(
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png">
     </div>
     <div class="order-btnright">
-        <a href="#">
+        <a href="/order/?g">
             <button type="button" class="rounded">Ajándékozom</button>
         </a>
         <p>barátom kutyusának</p>

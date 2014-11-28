@@ -95,7 +95,7 @@
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie" target="blank"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
                     </li>
                     <li><a href="#">
-                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <a href="#"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
+                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <a href="/order/?g"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
                         </a></li>
                 </ul>
                 <script>
