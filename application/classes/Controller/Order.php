@@ -47,10 +47,22 @@ class Controller_Order extends Controller_Core {
                     Cím: '. $order->company_zip.', '.$order->company_city.'<br/>
                         '.$order->company_address.'<br/>
                     Adószám: '.$order->tax_code.'<br/>';
+            $user_details = '';
                         
         } else {
             $company = '';
+            $user_details = 'Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
+                     Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
         }
+        
+        if($order->package->term==1){
+            $term = '1';
+        } elseif($order->package->term==2){
+            $term = '3';
+        } else {
+            $term = '6';
+        }
+        
         $invoice = '<!DOCTYPE html>
 <html lang="hu">
     <head>
@@ -87,8 +99,7 @@ class Controller_Order extends Controller_Core {
                     Telefon: +36 30 233 7401
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="3">
-                    Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
-                    Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>
+                    '.$user_details.'
                     '.$company.'
                     Telefon: ' . $user->customer_telephone . '
                 </td>
@@ -120,7 +131,7 @@ class Controller_Order extends Controller_Core {
                         <tr>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">' . $order->package->product_number . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">GOODIEBOX ' . $s . '<br/>' . $order->package->package_name . '</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">1</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.$term.'</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">db</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>

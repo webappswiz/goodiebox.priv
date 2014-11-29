@@ -359,8 +359,17 @@ if (isset($session['step2'])) {
                                 $size = 'Éppen jó';
                             if ($step1['selected_size'] == 3)
                                 $size = 'Igazi óriás';
+                            
+                            $package = ORM::factory('Packages',$step2['selected_box']);
+                            if($package->term==1){
+            $term = '1';
+        } elseif($package->term==2){
+            $term = '3';
+        } else {
+            $term = '6';
+        }
                             ?>
-                            <span>GOODIEBOX <?php echo $step2['selected_box'] ?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
+                            <span><?=$package->package_name?> <?=$term?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
                             <p>Házhozszállítás</p>
                             <p>Kedvezmény</p>
                         </div>
@@ -408,7 +417,7 @@ if (isset($session['step2'])) {
                 if($package->loaded()){
                     $type = $package->type;
                 }
-                if (($invites > 0 || $g_discount > 0) && $type==2):
+                if (($invites > 0 || $g_discount > 0) && $type==1):
                     ?>
                     <div><strong>Jelenlegi kedvezményed: <?= $invites * 5 + $global_discount->discount ?> %</strong><br/><br/>
                         Szeretnéd most felhasználni?
