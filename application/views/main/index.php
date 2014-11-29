@@ -1,4 +1,58 @@
 <?php
+$options = ORM::factory('Options',1);
+$text = $options->text;
+$end_date = $options->end_date;
+$status = $options->status;
+$date_array = explode(' ', $end_date);
+$date = explode('/',$date_array[0]);
+$time = explode(':', $date_array[1]);
+?>
+<script>
+countIt('<?=$date[0]?>','<?=$date[1]?>','<?=$date[2]?>','<?=$time[0]?>','<?=$time[1]?>','00','<?=$status?>');
+function countIt(year, month, day, hours, minutes, seconds,status) {
+    now = new Date();
+    start_date = new Date(2014, 9, 28, 18, 00, 00);
+    now = now.getTime()/1000;
+    start = start_date.getTime()/1000;
+    setTimeout(function () {
+        endDate = new Date(year, month, day, hours, minutes, seconds, 00);
+        thisDate = new Date();
+        var daysLeft = parseInt((endDate - thisDate) / 86400000);
+        var hoursLeft = parseInt((endDate - thisDate) / 3600000);
+        var minutsLeft = parseInt((endDate - thisDate) / 60000);
+        var secondsLeft = parseInt((endDate - thisDate) / 1000);
+
+        seconds = minutsLeft * 60;
+        seconds = secondsLeft - seconds;
+        seconds = (seconds < 10) ? 0 + seconds : seconds;
+
+        minutes = hoursLeft * 60;
+        minutes = minutsLeft - minutes;
+
+        hours = daysLeft * 24;
+        hours = (hoursLeft - hours) < 0 ? 0 : hoursLeft - hours;
+        days = daysLeft;
+        startCount(days, hours, minutes, seconds,status);
+    }, 100);
+}
+
+function startCount(days, hours, minutes, seconds,status) {
+    $('#days').html(days);
+    seconds = (seconds) < 10 ? '0' + seconds : seconds;
+    minutes = (minutes) < 10 ? '0' + minutes : minutes;
+    hours = (hours) < 10 ? '0' + hours : hours;
+    if(status==0){
+        $('li','.lock').css('background','url("/assets/img/lock-close.png") no-repeat left center');
+        $('li','.lock').html('Hamarosan nyitunk!');
+    } else {
+        $('li','.lock').css('background','url("/assets/img/lock-open.png") no-repeat left center');
+        $('li','.lock').html('Nyitva vagyunk!');
+    }
+    $('#hours').html(hours + ':' + minutes + ':' + seconds);
+    countIt('<?=$date[0]?>','<?=$date[1]-1?>','<?=$date[2]?>','<?=$time[0]?>','<?=$time[1]?>','00','<?=$status?>');
+}
+</script>
+<?php
 $menus = array();
 //if ($auth->logged_in()) {
 $menus = array(
@@ -33,10 +87,10 @@ $menus = array(
     <div class="siess">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
-    <div class="count-text">
-        <p>Ne maradj le, december elsején indulnak ismét a megrendelések! </p>
+    <div class="count-text" style="min-width: 400px;">
+        <p><?=$text?></p>
         <div class="counter">
-            <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours">15:37:55</span></p>
+            <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
         </div> <!--End counter-->
         <div class="lock">
             <ul>
@@ -59,7 +113,7 @@ $menus = array(
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
-        <a href="/order/?o">
+        <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?o':'#'?>">
             <button type="button" class="rounded">Megrendelem</button>
         </a>
         <p>a saját kutyusomnak</p>
@@ -68,7 +122,7 @@ $menus = array(
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png">
     </div>
     <div class="order-btnright">
-        <a href="/order/?g">
+        <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?g':'#'?>">
             <button type="button" class="rounded">Ajándékozom</button>
         </a>
         <p>barátom kutyusának</p>

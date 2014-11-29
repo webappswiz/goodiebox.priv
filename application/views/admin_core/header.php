@@ -1,3 +1,12 @@
+<?php
+$options = ORM::factory('Options',1);
+$text = $options->text;
+$end_date = $options->end_date;
+$status = $options->status;
+$date_array = explode(' ', $end_date);
+$date = explode('/',$date_array[0]);
+$time = explode(':', $date_array[1]);
+?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -9,19 +18,18 @@
         <link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/datetimepicker.css">
       
         <script>
             var url_base = '<?php echo URL::base(true, true) ?>';
         </script>
-
-        <script src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <?php
         foreach (Media::scripts() as $file) {
             echo HTML::script($file), PHP_EOL;
         }
         echo Media::inline_script();
         ?>
+        <script src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <div class="navbar navbar-fixed-top">

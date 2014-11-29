@@ -17,10 +17,10 @@ return array(
             'jquery.validate.min',
             'jquery.collapse',
             'jquery-ui.min',
-            'main',
             'mask',
             'jquery.easytabs',
-            'lightbox.min'
+            'lightbox.min',
+            'main',
         ),
         'css' => array(
             'style' => NULL,

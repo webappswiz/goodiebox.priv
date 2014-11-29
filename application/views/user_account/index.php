@@ -158,7 +158,15 @@
         <a id="popupBoxClose"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
     </div>
 </div>
-
+<?php
+$options = ORM::factory('Options',1);
+$text = $options->text;
+$end_date = $options->end_date;
+$status = $options->status;
+$date_array = explode(' ', $end_date);
+$date = explode('/',$date_array[0]);
+$time = explode(':', $date_array[1]);
+?>
 <script type="text/javascript">
 
 </script>
@@ -348,7 +356,7 @@
                                 </div>
                                 <input type="hidden" name="puppy_id" value="<?= $puppy->id ?>">
                                 <div>
-                                    <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
+                                    <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded" <?=($status==0)?'disabled':''?>>
                                 </div>
                             </form>
                         </div>  <!--End dog profile container-->
@@ -390,7 +398,7 @@
                             endforeach;
                             ?>
                             <div style="margin-top:35px; float:none;">
-                                <input type="button" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                <input <?=($status==0)?'disabled':''?> type="button" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
                         <hr/>
@@ -440,7 +448,7 @@
                             </div>
                         </div>
                         <div class="claim-form-btn">
-                            <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
+                            <input <?=($status==0)?'disabled':''?> type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
                         </div>
                         <div class="clear"></div>
                     </div>
