@@ -56,8 +56,17 @@
                         ->where('type', '=', 2)
                         ->and_where('term', '=', $product->term)
                         ->find();
+                if($product->term==1){
+                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img1.jpg"><br/>';
+                } elseif($product->term==2){
+                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/6sales.png"><br/>';
+                } elseif($product->term==3){
+                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/10sales.png"><br/>';
+                }
+                
+                
                 echo '<div class="boxes">';
-                echo '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="68" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img' . $img . '.jpg"><br/>';
+                echo $image;
                 echo '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required>';
                 echo '<label class="tooltip">' . $product->package_name . '<span>'.$product->description.'</span></label>';
                 echo '<br/><br/>';
