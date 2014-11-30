@@ -67,24 +67,20 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->invoice_num = $o->invoice_num + 1;
         $this->model->save();
         
-        $this->receipt_email($this->model);
+        $this->receipt_email($this->model,Arr::get($_REQUEST, 'size'));
         $this->redirect('/admin/invoice/');
     }
 
-    private function receipt_email($order) {
-        if ($order->puppy_id > 0) {
-            $size = $order->puppy->selected_size;
-            if ($size == 1) {
+    private function receipt_email($order,$size) {
+        
+            if ($order->$size == 1) {
                 $s = 'Icipici';
             } elseif ($size == 2) {
                 $s = 'Éppen jó';
             } elseif ($size == 3) {
                 $s = 'Igazi óriás';
-            } else {
-                $s = '';
             }
-        } else
-            $s = 0;
+        
 
         $discount = $order->total_price - $order->total_price;
         $total_price = $order->total_price - $discount;

@@ -21,6 +21,16 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="product">Dog's size</label>
+                <div class="controls">
+                    <select id="size" name="size">
+                        <option value="1">Icipici</option>
+                        <option value="2">Éppen jó</option>
+                        <option value="3">Igazi óriás</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
                 <label class="control-label" for="lastname">Last name</label>
                 <div class="controls">
                     <input type="text" id="lastname" name="lastname" placeholder="" value="">
