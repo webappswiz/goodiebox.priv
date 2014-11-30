@@ -686,8 +686,6 @@ class Controller_Order extends Controller_Core {
             } elseif ($ord->loaded() && $ord->total_price == 0) {
                 $ord->payment_status = 3;
                 $ord->save();
-            } else {
-                $this->redirect('/user_account');
             }
         }
         $session->delete('order');
