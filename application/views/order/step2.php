@@ -59,7 +59,7 @@
                 if($product->term==1){
                     $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/1box.png"><br/>';
                 } elseif($product->term==2){
-                    $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/6salesok.png"><br/>';
+                    $image = '<img style="margin-bottom:46px;width:200px;height:100px"  src="' . URL::base(TRUE, FALSE) . 'assets/img/6salesok.png"><br/>';
                 } elseif($product->term==3){
                     $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/10salesok.png"><br/>';
                 }
