@@ -10,7 +10,8 @@ $menus = array(
     '/admin/users' => array('Users', 'users'),
     '/admin/templates' => array('Templates', 'templates'),
     '/admin/contacts' => array('Contacts','contacts'),
-    '/admin/counter' => array('Counter','counter')
+    '/admin/counter' => array('Counter','counter'),
+    '/admin/invoice' => array('Invoices','invoice')
 
 );
 if (!$menus)
