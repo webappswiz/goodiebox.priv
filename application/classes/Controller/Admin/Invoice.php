@@ -59,6 +59,8 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->tax_code = Arr::get($_REQUEST, 'tax_code');
         $this->model->total_price = Arr::get($_REQUEST, 'total_price');
         $this->model->user_id = $this->current_user->id;
+        $this->model->last_modified = date('Y-m-d H:i:s');
+        $this->model->date_purchased = date('Y-m-d H:i:s');
         $this->model->type = 4;
         $o = ORM::factory('Order')
                 ->where('invoice_num', '<>', '')
