@@ -57,11 +57,11 @@
                         ->and_where('term', '=', $product->term)
                         ->find();
                 if($product->term==1){
-                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="120" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img1.jpg"><br/>';
+                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="80" height="80" src="' . URL::base(TRUE, FALSE) . 'assets/img/step2-img1.jpg"><br/>';
                 } elseif($product->term==2){
-                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="120" src="' . URL::base(TRUE, FALSE) . 'assets/img/6sales.png"><br/>';
+                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="80" height="80" src="' . URL::base(TRUE, FALSE) . 'assets/img/6sales.png"><br/>';
                 } elseif($product->term==3){
-                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="120" height="120" src="' . URL::base(TRUE, FALSE) . 'assets/img/10sales.png"><br/>';
+                    $image = '<img style="margin-left:30px;margin-bottom:10px;" width="80" height="80" src="' . URL::base(TRUE, FALSE) . 'assets/img/10sales.png"><br/>';
                 }
                 
                 
