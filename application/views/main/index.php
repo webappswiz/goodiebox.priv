@@ -128,20 +128,7 @@ $menus = array(
         <p>barátom kutyusának</p>
     </div>
 </section> <!--End order place-->
-<section id="menu" style="margin-bottom: 0px;padding: 0px">
-    <?php
-    $i = 1;
-    $active_menu = 'home';
-    foreach ($menus as $uri => $data) {
-        $class = ''; //active
-        if (isset($active_menu) && $active_menu === $data[1]) {
-            $class = 'class = "selected"';
-        }
-        echo HTML::anchor($uri, '', array('id' => 'menu-img' . $i)) . "\n";
-        $i++;
-    }
-    ?>
-</section>
+
 <div class='clear'></div>
 
 <div id="tab-container" class="tab-container">
@@ -223,6 +210,25 @@ $menus = array(
 
     </div>
 </div>
+
+<div class='clear'></div>
+
+<section id="menu" style="margin-bottom: 0px;padding: 0px">
+    <?php
+    $i = 1;
+    $active_menu = 'home';
+    foreach ($menus as $uri => $data) {
+        $class = ''; //active
+        if (isset($active_menu) && $active_menu === $data[1]) {
+            $class = 'class = "selected"';
+        }
+        echo HTML::anchor($uri, '', array('id' => 'menu-img' . $i)) . "\n";
+        $i++;
+    }
+    ?>
+</section>
+
+<div class='clear'></div>
 
 <div class="container">
     <div class="clear"></div>
