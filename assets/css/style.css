@@ -670,6 +670,10 @@ label.tooltip span
 #text{
         text-align: justify;
     }
+    
+     #map{
+        width:893px;
+    }
 @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
@@ -807,6 +811,9 @@ label.tooltip span
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
     #propose{
         display:none;
+    }
+    #map{
+        width:700px;
     }
 }
 @media only screen and (max-width: 767px)
