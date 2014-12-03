@@ -214,18 +214,7 @@ $menus = array(
 <div class='clear'></div>
 
 <section id="menu" style="margin-bottom: 0px;padding: 0px">
-    <?php
-    $i = 1;
-    $active_menu = 'home';
-    foreach ($menus as $uri => $data) {
-        $class = ''; //active
-        if (isset($active_menu) && $active_menu === $data[1]) {
-            $class = 'class = "selected"';
-        }
-        echo HTML::anchor($uri, '', array('id' => 'menu-img' . $i)) . "\n";
-        $i++;
-    }
-    ?>
+    <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hungary-map-website.png" alt="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!" title="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!">
 </section>
 
 <div class='clear'></div>

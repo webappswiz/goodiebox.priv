@@ -110,7 +110,9 @@
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <?php
+            
             if($model->puppy_id!=0){
+                $size = '----';
                 if($model->puppy->selected_size==1)
                     $size = 'Icipici';
                 if($model->puppy->selected_size==2)
