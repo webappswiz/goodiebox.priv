@@ -214,6 +214,8 @@ $menus = array(
 <div class='clear'></div>
 
 <section id="menu" style="margin-bottom: 0px;padding: 0px">
+    <h2 style="font-family: La-Chata;padding-bottom: 10px;">Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink?
+Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!</h2>
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hungary-map-website.png" alt="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!" title="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!">
 </section>
 
