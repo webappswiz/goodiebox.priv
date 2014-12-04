@@ -784,7 +784,7 @@ label.tooltip span
         display:none;
     }
     #map{
-        width:780px;
+        width:790px;
     }
 }
 @media only screen and (max-width: 768px)
@@ -820,7 +820,7 @@ label.tooltip span
         display:none;
     }
     #map{
-        width:700px;
+        width:760px;
     }
 }
 @media only screen and (max-width: 767px)
@@ -904,7 +904,7 @@ label.tooltip span
         display:none;
     }
     #map{
-        width:600px;
+        width:630px;
     }
 }
 @media only screen and (max-width: 460px)
@@ -946,7 +946,7 @@ label.tooltip span
         display:none;
     }
     #map{
-        width:400px;
+        width:450px;
     }
 }
 @media only screen and (max-width: 360px)
@@ -978,7 +978,7 @@ label.tooltip span
         display:none;
     }
     #map{
-        width:340px;
+        width:350px;
     }
 }
 @media only screen and (min-device-width : 320px) 
@@ -1002,7 +1002,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
         display:none;
     }
     #map{
-        width:200px;
+        width:310px;
     }
 }
 
