@@ -743,6 +743,10 @@ label.tooltip span
     #propose{
         display:none;
     }
+    
+    #map{
+        width:900px;
+    }
 }
 
 @media only screen and (max-width: 800px)
@@ -778,6 +782,9 @@ label.tooltip span
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
     #propose{
         display:none;
+    }
+    #map{
+        width:780px;
     }
 }
 @media only screen and (max-width: 768px)
@@ -995,7 +1002,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
         display:none;
     }
     #map{
-        width:300px;
+        width:200px;
     }
 }
 
