@@ -42,27 +42,26 @@ class Controller_Order extends Controller_Core {
 
         $discount = $order->package->price - $order->total_price;
         $total_price = $order->package->price - $discount;
-        if($order->company_name<>''){
-            $company = 'Cégnév: '.$order->company_name.'<br/>
-                    Cím: '. $order->company_zip.', '.$order->company_city.'<br/>
-                        '.$order->company_address.'<br/>
-                    Adószám: '.$order->tax_code.'<br/>';
+        if ($order->company_name <> '') {
+            $company = 'Cégnév: ' . $order->company_name . '<br/>
+                    Cím: ' . $order->company_zip . ', ' . $order->company_city . '<br/>
+                        ' . $order->company_address . '<br/>
+                    Adószám: ' . $order->tax_code . '<br/>';
             $user_details = '';
-                        
         } else {
             $company = '';
             $user_details = 'Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
                      Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
         }
-        
-        if($order->package->term==1){
+
+        if ($order->package->term == 1) {
             $term = '1';
-        } elseif($order->package->term==2){
+        } elseif ($order->package->term == 2) {
             $term = '3';
         } else {
             $term = '6';
         }
-        
+
         $invoice = '<!DOCTYPE html>
 <html lang="hu">
     <head>
@@ -99,8 +98,8 @@ class Controller_Order extends Controller_Core {
                     Telefon: +36 30 233 7401
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="3">
-                    '.$user_details.'
-                    '.$company.'
+                    ' . $user_details . '
+                    ' . $company . '
                     Telefon: ' . $user->customer_telephone . '
                 </td>
             </tr>
@@ -131,9 +130,9 @@ class Controller_Order extends Controller_Core {
                         <tr>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">' . $order->package->product_number . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">GOODIEBOX ' . $s . '<br/>' . $order->package->package_name . '</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.$term.'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . $term . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">db</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price/$term, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price / $term, 2, ',', '') . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->package->price, 2, ',', '') . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">AM</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">0,00</td>
@@ -216,6 +215,300 @@ class Controller_Order extends Controller_Core {
         }
     }
 
+    private function register() {
+        if (empty($_POST['customer_password']) || $_POST['customer_password'] != $_POST['password_confirm']) {
+            Flash::set('alert', 'Please fill email and password');
+            $this->redirect('order/step3');
+        }
+        $user = ORM::factory('User')
+                ->where('email', '=', $_POST['customer_email'])
+                ->or_where('username', '=', $_POST['customer_email'])
+                ->find();
+        if (!$user->loaded()) {
+            $user = ORM::factory('User');
+            $user->username = $_POST['customer_email'];
+            $user->email = $_POST['customer_email'];
+            $user->password = $_POST['customer_password'];
+            $user->customer_firstname = $_POST['customer_firstname'];
+            $user->customer_lastname = $_POST['customer_lastname'];
+            $user->customer_address = $_POST['customer_address'];
+            $user->customer_address2 = $_POST['customer_address2'];
+            $user->customer_city = $_POST['customer_city'];
+            $user->customer_zip = $_POST['customer_zip'];
+            $user->customer_telephone = $_POST['customer_telephone'];
+            if (isset($_POST['company'])) {
+                $user->customer_company = $_POST['company_name'];
+                $user->customer_company_address = $_POST['company_address'];
+                $user->customer_company_zip = $_POST['company_zip'];
+                $user->customer_company_city = $_POST['company_city'];
+                $user->customer_taxcode = $_POST['tax_code'];
+            }
+
+            $user->save();
+            $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
+            $invites = ORM::factory('Invites')
+                    ->where('email', '=', $_POST['customer_email'])
+                    ->find_all();
+            if (count($invites) > 0) {
+                $i = 0;
+                foreach ($invites as $inv) {
+                    if ($i == 0) {
+                        $inv->is_registered = 1;
+                        $inv->save();
+                    } else {
+                        $inv->delete();
+                    }
+                    $i++;
+                }
+            }
+            $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
+            $template = ORM::factory('Templates', 1);
+            $this->current_user = Auth::instance()->get_user();
+            $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+            $body = str_replace('[login]', $this->current_user->email, $body);
+            $this->send($this->current_user->email, 'info@goodiebox.hu', 'Sikeres regisztráció', $body);
+        }
+    }
+
+    private function regular_order() {
+        $session = Session::instance();
+        $step1 = $session->get('step1');
+        $step2 = $session->get('step2');
+        $order = ORM::factory('Order');
+        $puppy = ORM::factory('Puppy');
+        if (!isset($step1['puppy_id'])) {
+            $puppy->puppy_name = $step1['puppy_name'];
+            $puppy->gender = $step1['gender'];
+            $puppy->years = $step1['years'];
+            $puppy->months = $step1['months'];
+            $puppy->alerg = $step1['alerg'];
+            $puppy->alerg_descr = $step1['alerg_descr'];
+            $puppy->selected_size = $step1['selected_size'];
+            $puppy->user_id = $this->current_user->id;
+            $puppy->save();
+        }
+        $order->puppy_id = (isset($step1['puppy_id'])) ? $step1['puppy_id'] : $puppy->id;
+        $order->selected_box = $step2['selected_box'];
+        $order->last_modified = date('Y-m-d H:i:s');
+        $order->date_purchased = date('Y-m-d H:i:s');
+        $order->type = 1;
+        $order->user_id = $this->current_user->id;
+        $address = ORM::factory('AddressBook')
+                ->where('user_id', '=', $this->current_user->id)
+                ->find();
+        if (isset($_POST['customer_firstname']) && !isset($_POST['shipping'])) {
+            $order->delivery_firstname = ($address->loaded()) ? $address->customer_firstname : $_POST['customer_firstname'];
+            $order->delivery_lastname = ($address->loaded()) ? $address->customer_lastname : $_POST['customer_lastname'];
+            $order->delivery_address = ($address->loaded()) ? $address->customer_address : $_POST['customer_address'];
+            $order->delivery_address2 = ($address->loaded()) ? $address->customer_address2 : $_POST['customer_address2'];
+            $order->delivery_city = ($address->loaded()) ? $address->customer_city : $_POST['customer_city'];
+            $order->delivery_postcode = ($address->loaded()) ? $address->customer_zip : $_POST['customer_zip'];
+            $order->delivery_telephone = ($address->loaded()) ? $address->customer_telephone : $_POST['customer_telephone'];
+            $order->company_name = $_POST['company_name'];
+            $order->company_address = $_POST['company_address'];
+            $order->company_zip = $_POST['company_zip'];
+            $order->company_city = $_POST['company_city'];
+            $order->tax_code = $_POST['tax_code'];
+            $order->message = $_POST['msg'];
+        } elseif (isset($_POST['shipping'])) {
+            if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])) {
+                Flash::set('alert', 'Please the shipping form');
+                $this->redirect('order/step3');
+            }
+            $order->delivery_firstname = $_POST['delivery_firstname'];
+            $order->delivery_lastname = $_POST['delivery_lastname'];
+            $order->delivery_address = $_POST['delivery_address'];
+            $order->delivery_address2 = $_POST['delivery_address2'];
+            $order->delivery_city = $_POST['delivery_city'];
+            $order->delivery_postcode = $_POST['delivery_zip'];
+            $order->delivery_telephone = $_POST['delivery_telephone'];
+            $order->company_name = $_POST['company_name'];
+            $order->company_address = $_POST['company_address'];
+            $order->company_zip = $_POST['company_zip'];
+            $order->company_city = $_POST['company_city'];
+            $order->tax_code = $_POST['tax_code'];
+            $order->message = $_POST['msg'];
+            $address = ORM::factory('AddressBook', $this->current_user->id);
+            if (!$address->loaded()) {
+                $address = ORM::factory('AddressBook');
+            }
+            $address->user_id = $this->current_user->id;
+            $address->customer_firstname = $_POST['delivery_firstname'];
+            $address->customer_lastname = $_POST['delivery_lastname'];
+            $address->customer_zip = $_POST['delivery_zip'];
+            $address->customer_city = $_POST['delivery_city'];
+            $address->customer_address = $_POST['delivery_address'];
+            $address->customer_address2 = $_POST['delivery_address2'];
+            $address->customer_telephone = $_POST['delivery_telephone'];
+            $address->save();
+        }
+        if (!empty($step1['coupon_code'])) {
+            $friend = ORM::factory('Friend')
+                    ->where('coupon_code', '=', $step1['coupon_code'])
+                    ->find();
+            if ($friend->loaded()) {
+                $order->coupon_code = $step1['coupon_code'];
+                $order->puppy_id = $step1['puppy_id'];
+                $friend->coupon_code = '';
+                $order->selected_box = $step2['selected_box'];
+                $friend->save();
+            } else
+                $this->redirect('/user_account');
+        }
+        $discount = 0;
+        if ($_POST['discount'] == 1) {
+            if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
+                echo 1;
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
+            } elseif ($g_discount > 0) {
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = $pkg->price * ($g_discount / 100);
+            }
+        }
+        $order->orders_status = 1;
+        $order->payment_status = 0;
+        $order->save();
+        if (!empty($step1['coupon_code'])) {
+            $order->total_price = 0;
+        } else {
+            $order->total_price = round($order->package->price - $discount);
+        }
+        $order->save();
+        return $order;
+    }
+
+    private function gift_order() {
+        $session = Session::instance();
+        $step1 = $session->get('step1');
+        $step2 = $session->get('step2');
+        $order = ORM::factory('Order');
+        $friend = ORM::factory('Friend')
+                ->where('friends_email', '=', $step1['friend_email'])
+                ->and_where('friends_firstname', '=', $step1['firstname'])
+                ->and_where('friends_lastname', '=', $step1['lastname'])
+                ->find();
+        if (!$friend->loaded()) {
+            $friend = ORM::factory('Friend');
+            $friend->friends_email = $step1['friend_email'];
+            $friend->friends_firstname = $step1['firstname'];
+            $friend->friends_lastname = $step1['lastname'];
+            $friend->user_id = $this->current_user->id;
+        }
+        $friend->selected_box = $step2['selected_box'];
+        $friend->coupon_code = $this->generateRandomString();
+        $friend->date_purchased = date('Y-m-d H:i:s');
+        $friend->save();
+        $order->user_id = $this->current_user->id;
+        $order->selected_box = $step2['selected_box'];
+        $order->puppy_id = 0;
+        $order->friend_id = $friend->id;
+        $order->last_modified = date('Y-m-d H:i:s');
+        $order->date_purchased = date('Y-m-d H:i:s');
+        $order->type = 2;
+        $order->delivery_firstname = $_POST['customer_firstname'];
+        $order->delivery_lastname = $_POST['customer_lastname'];
+        $order->delivery_address = $_POST['customer_address'];
+        $order->delivery_address2 = $_POST['customer_address2'];
+        $order->delivery_city = $_POST['customer_city'];
+        $order->delivery_postcode = $_POST['customer_zip'];
+        $order->delivery_telephone = $_POST['customer_telephone'];
+        $order->message = $_POST['msg'];
+        $order->orders_status = 1;
+        $order->company_name = $_POST['company_name'];
+        $order->company_address = $_POST['company_address'];
+        $order->company_zip = $_POST['company_zip'];
+        $order->company_city = $_POST['company_city'];
+        $order->tax_code = $_POST['tax_code'];
+        $order->payment_status = 0;
+        $discount = 0;
+        if ($_POST['discount'] == 1) {
+            if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
+                echo 1;
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
+            } elseif ($g_discount > 0) {
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = $pkg->price * ($g_discount / 100);
+            }
+        }
+        $order->save();
+        $order->total_price = round($order->package->price - $discount);
+        $order->save();
+        return $order;
+    }
+
+    private function shelter_order() {
+        $session = Session::instance();
+        $step1 = $session->get('step1');
+        $step2 = $session->get('step2');
+        $shelter = ORM::factory('ShelterDog')
+                ->where('shelter_id', '=', $step1['option-name'])
+                ->and_where('doggy_name', '=', $step1['doggy_name'])
+                ->and_where('doggy_gender', '=', $step1['gender'])
+                ->and_where('selected_size', '=', $step1['selected_size'])
+                ->find();
+        if (!$shelter->loaded()) {
+            $shelter = ORM::factory('ShelterDog');
+            $shelter->selected_size = $step1['selected_size'];
+            $shelter->shelter_id = $step1['option-name'];
+            $shelter->doggy_name = $step1['doggy_name'];
+            $shelter->doggy_gender = $step1['gender'];
+            $shelter->user_id = $this->current_user->id;
+            $shelter->save();
+        }
+        $s_order = ORM::factory('User_Shelter');
+        $s_order->user_id = $this->current_user->id;
+        $s_order->dog = $shelter->id;
+        $s_order->selected_box = $step2['selected_box'];
+        $s_order->delivery_address = '';
+        $s_order->delivery_address2 = '';
+        $s_order->delivery_city = '';
+        $s_order->delivery_postcode = '';
+        $s_order->delivery_telephone = '';
+        $s_order->last_modified = date('Y-m-d H:i:s');
+        $s_order->date_purchased = date('Y-m-d H:i:s');
+        $s_order->save();
+        $order = ORM::factory('Order');
+        $order->user_id = $this->current_user->id;
+        $order->selected_box = $step2['selected_box'];
+        $order->delivery_firstname = $this->current_user->customer_firstname;
+        $order->delivery_lastname = $this->current_user->customer_lastname;
+        $order->delivery_address = $this->current_user->customer_address;
+        $order->delivery_address2 = $this->current_user->customer_address2;
+        $order->delivery_city = $this->current_user->customer_city;
+        $order->delivery_postcode = $this->current_user->customer_zip;
+        $order->delivery_telephone = $this->current_user->customer_telephone;
+        $order->company_name = $this->current_user->customer_company;
+        $order->tax_code = $this->current_user->customer_taxcode;
+        $order->type = 3;
+        $order->orders_status = 1;
+        $order->shelter_order = $s_order->id;
+        $order->last_modified = date('Y-m-d H:i:s');
+        $order->message = $_POST['msg'];
+        $order->payment_status = 0;
+        $order->date_purchased = date('Y-m-d H:i:s');
+        if ($_POST['discount'] == 1) {
+            if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
+            } elseif ($g_discount > 0) {
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = $pkg->price * ($g_discount / 100);
+            }
+        }
+        $order->save();
+        $order->total_price = round($order->package->price - $discount);
+        $order->save();
+        return $order;
+    }
+
     public function action_step3() {
         $session = Session::instance();
         $step1 = $session->get('step1');
@@ -261,166 +554,12 @@ class Controller_Order extends Controller_Core {
             $invites = 0;
         if ($this->is_post()) {
             if (!Auth::instance()->logged_in()) {
-                if (empty($_POST['customer_password']) || $_POST['customer_password'] != $_POST['password_confirm']) {
-                    Flash::set('alert', 'Please fill email and password');
-                    $this->redirect('order/step3');
-                }
-                $user = ORM::factory('User')
-                        ->where('email', '=', $_POST['customer_email'])
-                        ->or_where('username', '=', $_POST['customer_email'])
-                        ->find();
-                if (!$user->loaded()) {
-                    $user = ORM::factory('User');
-                    $user->username = $_POST['customer_email'];
-                    $user->email = $_POST['customer_email'];
-                    $user->password = $_POST['customer_password'];
-                    $user->customer_firstname = $_POST['customer_firstname'];
-                    $user->customer_lastname = $_POST['customer_lastname'];
-                    $user->customer_address = $_POST['customer_address'];
-                    $user->customer_address2 = $_POST['customer_address2'];
-                    $user->customer_city = $_POST['customer_city'];
-                    $user->customer_zip = $_POST['customer_zip'];
-                    $user->customer_telephone = $_POST['customer_telephone'];
-                    if (isset($_POST['company'])) {
-                        $user->customer_company = $_POST['company_name'];
-                        $user->customer_company_address = $_POST['company_address'];
-                        $user->customer_company_zip = $_POST['company_zip'];
-                        $user->customer_company_city = $_POST['company_city'];
-                        $user->customer_taxcode = $_POST['tax_code'];
-                    }
-
-                    $user->save();
-                    $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
-                    $invites = ORM::factory('Invites')
-                            ->where('email', '=', $_POST['customer_email'])
-                            ->find_all();
-                    if (count($invites) > 0) {
-                        $i = 0;
-                        foreach ($invites as $inv) {
-                            if ($i == 0) {
-                                $inv->is_registered = 1;
-                                $inv->save();
-                            } else {
-                                $inv->delete();
-                            }
-                            $i++;
-                        }
-                    }
-                    $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
-                    $template = ORM::factory('Templates', 1);
-                    $this->current_user = Auth::instance()->get_user();
-                    $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
-                    $body = str_replace('[login]', $this->current_user->email, $body);
-                    $this->send($this->current_user->email, 'info@goodiebox.hu', 'Sikeres regisztráció', $body);
-                }
+                $this->register();
             }
-
-            $order = ORM::factory('Order');
-            //Order for own dog
+            
 
             if (isset($step1['order1'])) {
-                $puppy = ORM::factory('Puppy');
-                if (!isset($step1['puppy_id'])) {
-                    $puppy->puppy_name = $step1['puppy_name'];
-                    $puppy->gender = $step1['gender'];
-                    $puppy->years = $step1['years'];
-                    $puppy->months = $step1['months'];
-                    $puppy->alerg = $step1['alerg'];
-                    $puppy->alerg_descr = $step1['alerg_descr'];
-                    $puppy->selected_size = $step1['selected_size'];
-                    $puppy->user_id = $this->current_user->id;
-                    $puppy->save();
-                }
-                $order->puppy_id = (isset($step1['puppy_id'])) ? $step1['puppy_id'] : $puppy->id;
-                $order->selected_box = $step2['selected_box'];
-                $order->last_modified = date('Y-m-d H:i:s');
-                $order->date_purchased = date('Y-m-d H:i:s');
-                $order->type = 1;
-                $order->user_id = $this->current_user->id;
-                $address = ORM::factory('AddressBook')
-                        ->where('user_id', '=', $this->current_user->id)
-                        ->find();
-                if (isset($_POST['customer_firstname']) && !isset($_POST['shipping'])) {
-                    $order->delivery_firstname = ($address->loaded()) ? $address->customer_firstname : $_POST['customer_firstname'];
-                    $order->delivery_lastname = ($address->loaded()) ? $address->customer_lastname : $_POST['customer_lastname'];
-                    $order->delivery_address = ($address->loaded()) ? $address->customer_address : $_POST['customer_address'];
-                    $order->delivery_address2 = ($address->loaded()) ? $address->customer_address2 : $_POST['customer_address2'];
-                    $order->delivery_city = ($address->loaded()) ? $address->customer_city : $_POST['customer_city'];
-                    $order->delivery_postcode = ($address->loaded()) ? $address->customer_zip : $_POST['customer_zip'];
-                    $order->delivery_telephone = ($address->loaded()) ? $address->customer_telephone : $_POST['customer_telephone'];
-                    $order->company_name = $_POST['company_name'];
-                    $order->company_address = $_POST['company_address'];
-                    $order->company_zip = $_POST['company_zip'];
-                    $order->company_city = $_POST['company_city'];
-                    $order->tax_code = $_POST['tax_code'];
-                    $order->message = $_POST['msg'];
-                } elseif (isset($_POST['shipping'])) {
-                    if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])) {
-                        Flash::set('alert', 'Please the shipping form');
-                        $this->redirect('order/step3');
-                    }
-                    $order->delivery_firstname = $_POST['delivery_firstname'];
-                    $order->delivery_lastname = $_POST['delivery_lastname'];
-                    $order->delivery_address = $_POST['delivery_address'];
-                    $order->delivery_address2 = $_POST['delivery_address2'];
-                    $order->delivery_city = $_POST['delivery_city'];
-                    $order->delivery_postcode = $_POST['delivery_zip'];
-                    $order->delivery_telephone = $_POST['delivery_telephone'];
-                    $order->company_name = $_POST['company_name'];
-                    $order->company_address = $_POST['company_address'];
-                    $order->company_zip = $_POST['company_zip'];
-                    $order->company_city = $_POST['company_city'];
-                    $order->tax_code = $_POST['tax_code'];
-                    $order->message = $_POST['msg'];
-                    $address = ORM::factory('AddressBook', $this->current_user->id);
-                    if (!$address->loaded()) {
-                        $address = ORM::factory('AddressBook');
-                    }
-                    $address->user_id = $this->current_user->id;
-                    $address->customer_firstname = $_POST['delivery_firstname'];
-                    $address->customer_lastname = $_POST['delivery_lastname'];
-                    $address->customer_zip = $_POST['delivery_zip'];
-                    $address->customer_city = $_POST['delivery_city'];
-                    $address->customer_address = $_POST['delivery_address'];
-                    $address->customer_address2 = $_POST['delivery_address2'];
-                    $address->customer_telephone = $_POST['delivery_telephone'];
-                    $address->save();
-                }
-                if (!empty($step1['coupon_code'])) {
-                    $friend = ORM::factory('Friend')
-                            ->where('coupon_code', '=', $step1['coupon_code'])
-                            ->find();
-                    if ($friend->loaded()) {
-                        $order->coupon_code = $step1['coupon_code'];
-                        $order->puppy_id = $step1['puppy_id'];
-                        $friend->coupon_code = '';
-                        $order->selected_box = $step2['selected_box'];
-                        $friend->save();
-                    } else
-                        $this->redirect('/user_account');
-                }
-                $discount = 0;
-                if ($_POST['discount'] == 1) {
-                    if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
-                        echo 1;
-                        $order->discount = 1;
-                        $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
-                    } elseif ($g_discount > 0) {
-                        $order->discount = 1;
-                        $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = $pkg->price * ($g_discount / 100);
-                    }
-                }
-                $order->orders_status = 1;
-                $order->payment_status = 0;
-                $order->save();
-                if (!empty($step1['coupon_code'])) {
-                    $order->total_price = 0;
-                } else {
-                    $order->total_price = round($order->package->price - $discount);
-                }
-                $order->save();
+                $order = $this->regular_order();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
                 if (!empty($step1['coupon_code'])) {
@@ -430,131 +569,15 @@ class Controller_Order extends Controller_Core {
                 }
             }
 
-            //Give a gift
-
             if (isset($step1['order2'])) {
-                $friend = ORM::factory('Friend')
-                        ->where('friends_email', '=', $step1['friend_email'])
-                        ->and_where('friends_firstname', '=', $step1['firstname'])
-                        ->and_where('friends_lastname', '=', $step1['lastname'])
-                        ->find();
-                if (!$friend->loaded()) {
-                    $friend = ORM::factory('Friend');
-                    $friend->friends_email = $step1['friend_email'];
-                    $friend->friends_firstname = $step1['firstname'];
-                    $friend->friends_lastname = $step1['lastname'];
-                    $friend->user_id = $this->current_user->id;
-                }
-                $friend->selected_box = $step2['selected_box'];
-                $friend->coupon_code = $this->generateRandomString();
-                $friend->date_purchased = date('Y-m-d H:i:s');
-                $friend->save();
-                $order->user_id = $this->current_user->id;
-                $order->selected_box = $step2['selected_box'];
-                $order->puppy_id = 0;
-                $order->friend_id = $friend->id;
-                $order->last_modified = date('Y-m-d H:i:s');
-                $order->date_purchased = date('Y-m-d H:i:s');
-                $order->type = 2;
-                $order->delivery_firstname = $_POST['customer_firstname'];
-                $order->delivery_lastname = $_POST['customer_lastname'];
-                $order->delivery_address = $_POST['customer_address'];
-                $order->delivery_address2 = $_POST['customer_address2'];
-                $order->delivery_city = $_POST['customer_city'];
-                $order->delivery_postcode = $_POST['customer_zip'];
-                $order->delivery_telephone = $_POST['customer_telephone'];
-                $order->message = $_POST['msg'];
-                $order->orders_status = 1;
-                $order->company_name = $_POST['company_name'];
-                $order->company_address = $_POST['company_address'];
-                $order->company_zip = $_POST['company_zip'];
-                $order->company_city = $_POST['company_city'];
-                $order->tax_code = $_POST['tax_code'];
-                $order->payment_status = 0;
-                $discount = 0;
-                if ($_POST['discount'] == 1) {
-                    if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
-                        echo 1;
-                        $order->discount = 1;
-                        $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
-                    } elseif ($g_discount > 0) {
-                        $order->discount = 1;
-                        $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = $pkg->price * ($g_discount / 100);
-                    }
-                }
-                $order->save();
-                $order->total_price = round($order->package->price - $discount);
-                $order->save();
+                $order = $this->gift_order();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
                 $this->redirect('/order/payment');
             }
 
-            //Shelter
-
             if (isset($step1['order3'])) {
-                $shelter = ORM::factory('ShelterDog')
-                        ->where('shelter_id', '=', $step1['option-name'])
-                        ->and_where('doggy_name', '=', $step1['doggy_name'])
-                        ->and_where('doggy_gender', '=', $step1['gender'])
-                        ->and_where('selected_size', '=', $step1['selected_size'])
-                        ->find();
-                if (!$shelter->loaded()) {
-                    $shelter = ORM::factory('ShelterDog');
-                    $shelter->selected_size = $step1['selected_size'];
-                    $shelter->shelter_id = $step1['option-name'];
-                    $shelter->doggy_name = $step1['doggy_name'];
-                    $shelter->doggy_gender = $step1['gender'];
-                    $shelter->user_id = $this->current_user->id;
-                    $shelter->save();
-                }
-                $s_order = ORM::factory('User_Shelter');
-                $s_order->user_id = $this->current_user->id;
-                $s_order->dog = $shelter->id;
-                $s_order->selected_box = $step2['selected_box'];
-                $s_order->delivery_address = '';
-                $s_order->delivery_address2 = '';
-                $s_order->delivery_city = '';
-                $s_order->delivery_postcode = '';
-                $s_order->delivery_telephone = '';
-                $s_order->last_modified = date('Y-m-d H:i:s');
-                $s_order->date_purchased = date('Y-m-d H:i:s');
-                $s_order->save();
-                $order = ORM::factory('Order');
-                $order->user_id = $this->current_user->id;
-                $order->selected_box = $step2['selected_box'];
-                $order->delivery_firstname = $this->current_user->customer_firstname;
-                $order->delivery_lastname = $this->current_user->customer_lastname;
-                $order->delivery_address = $this->current_user->customer_address;
-                $order->delivery_address2 = $this->current_user->customer_address2;
-                $order->delivery_city = $this->current_user->customer_city;
-                $order->delivery_postcode = $this->current_user->customer_zip;
-                $order->delivery_telephone = $this->current_user->customer_telephone;
-                $order->company_name = $this->current_user->customer_company;
-                $order->tax_code = $this->current_user->customer_taxcode;
-                $order->type = 3;
-                $order->orders_status = 1;
-                $order->shelter_order = $s_order->id;
-                $order->last_modified = date('Y-m-d H:i:s');
-                $order->message = $_POST['msg'];
-                $order->payment_status = 0;
-                $order->date_purchased = date('Y-m-d H:i:s');
-                if ($_POST['discount'] == 1) {
-                    if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
-                        $order->discount = 1;
-                        $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
-                    } elseif ($g_discount > 0) {
-                        $order->discount = 1;
-                        $pkg = ORM::factory('Packages', $step2['selected_box']);
-                        $discount = $pkg->price * ($g_discount / 100);
-                    }
-                }
-                $order->save();
-                $order->total_price = round($order->package->price - $discount);
-                $order->save();
+                $order = $this->shelter_order();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
                 $this->redirect('/order/payment');
@@ -564,8 +587,9 @@ class Controller_Order extends Controller_Core {
 
     public function action_gift() {
         $this->set_title('Claim a gift');
-        if (Auth::instance()->logged_in())
+        if (Auth::instance()->logged_in()){
             $this->redirect('/user_account');
+        }
         if (isset($_POST['coupon_code'])) {
             $coupon = ORM::factory('Friend')
                     ->where('coupon_code', '=', $_POST['coupon_code'])
@@ -591,8 +615,9 @@ class Controller_Order extends Controller_Core {
     }
 
     public function action_gift2() {
-        if (Auth::instance()->logged_in())
+        if (Auth::instance()->logged_in()){
             $this->redirect('/user_account');
+        }
         $session = Session::instance();
         $ses = $session->get('coupon_code');
         if (!isset($ses)) {
