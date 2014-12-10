@@ -1030,3 +1030,15 @@ and (max-device-width : 593px)  and (orientation : landscape)
         width:300px;
     }
 }
+
+.cc_instruct{
+    margin: 10px;
+    padding-left: 25px;
+}
+.cc_instruct > p {
+    margin: 5px;
+    line-height: 25px;
+}
+.pay{
+    margin: 5px;
+}

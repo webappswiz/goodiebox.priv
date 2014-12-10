@@ -238,6 +238,7 @@ if (isset($session['step2'])) {
                     <input type="hidden" name="coupon_code" id="coupon_code" value="">
                     <input type="hidden" name="invite_code" id="invite_code" value="">
                     <input type="hidden" name="discount" id="discount" value="">
+                    <input type="hidden" name="payment_type" id="payment_type" value="cc">
                     <div style="margin-top:20px;">
                         <span>ÁFÁS számlát szeretnék</span><input type="checkbox" name="company" id="company">
                     </div>
@@ -341,7 +342,36 @@ if (isset($session['step2'])) {
                 </script>
             </div> <!--End claim form-->
         </div><!--End claim form container-->
-        <div class="order-form">
+        <div class="order-form" style="padding-top: 60px !important;">
+            <h2>Payment type</h2>
+            <br/>
+            <input id="cc" checked type="radio" name="cc" class="pay"> Credit Card Payment<br/>
+            <div class="cc_instruct">
+                <p>Credit card</p>
+                <p>payment</p>
+                <p>instructions</p>
+            </div>
+            <input id="dbt" type="radio" name="cc" class="pay"> Direct Bank transfer <br/>
+            <div class="cc_instruct" style="display: none;">
+                <p>Direct Bank Transfer</p>
+                <p>payment</p>
+                <p>instructions</p>
+            </div>
+            <input id="cod" type="radio" name="cc" class="pay"> Cash on delivery
+            <div class="cc_instruct" style="display: none;">
+                <p>Cash on delivery</p>
+                <p>payment</p>
+                <p>instructions</p>
+            </div>
+        </div>
+        <script>
+            $('.pay').on('click',function(event){
+               $('.cc_instruct').hide();
+               $('#payment_type').val($(this).attr('id'));
+               $(event.target).nextAll('.cc_instruct').first().show();
+            });
+        </script>
+        <div class="order-form" style="padding-top: 10px !important;">
             <h2>Rendelésem</h2>
             <div class="order-container rounded">
                 <div class="inner">
