@@ -190,11 +190,10 @@ $menus = array(
     </div>
 
     <div id="fotok">
-        <ul class='etabs' style="text-align: center">
-            <li class='tab active nov'  id="nov"><a href="#nov">November</a></li>
-            <li class='tab dec' id="dec"><a href="#dec" >December</a></li>
-        </ul>
-        <div class="image-row" style="text-align: center" id="nov_photos">
+        <a style="cursor: pointer" id="nov"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/nov.png" width="150"></a>
+        <a style="cursor: pointer" id="dec"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/dec.png" width="150"></a>
+        <div class="image-row" style="text-align: center;display: none" id="nov_photos">
+            <h2>November fotók</h2><br/>
             <div class="image-set">
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-0.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-0.jpg" alt=""/></a>
@@ -223,6 +222,7 @@ $menus = array(
             </div>
         </div>
         <div class="image-row" style="text-align: center;display: none;" id="dec_photos">
+            <h2>December fotók</h2><br/>
             <div class="image-set">
                 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-12.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-12.jpg" alt=""/></a>
@@ -273,7 +273,7 @@ $menus = array(
     </div>
     <div id="videok" style="text-align: center">
     <?php
-    $xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads');
+    $xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads?max-results=4');
     $xml=simplexml_load_string($xml_data) or die("Error: Cannot create object");
     foreach($xml->entry as $entry){
         $link = $entry->id;
