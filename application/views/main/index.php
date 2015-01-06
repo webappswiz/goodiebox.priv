@@ -1,56 +1,56 @@
 <?php
-$options = ORM::factory('Options',1);
+$options = ORM::factory('Options', 1);
 $text = $options->text;
 $end_date = $options->end_date;
 $status = $options->status;
 $date_array = explode(' ', $end_date);
-$date = explode('/',$date_array[0]);
+$date = explode('/', $date_array[0]);
 $time = explode(':', $date_array[1]);
 ?>
 <script>
-countIt('<?=$date[0]?>','<?=$date[1]?>','<?=$date[2]?>','<?=$time[0]?>','<?=$time[1]?>','00','<?=$status?>');
-function countIt(year, month, day, hours, minutes, seconds,status) {
-    now = new Date();
-    start_date = new Date(2014, 9, 28, 18, 00, 00);
-    now = now.getTime()/1000;
-    start = start_date.getTime()/1000;
-    setTimeout(function () {
-        endDate = new Date(year, month, day, hours, minutes, seconds, 00);
-        thisDate = new Date();
-        var daysLeft = parseInt((endDate - thisDate) / 86400000);
-        var hoursLeft = parseInt((endDate - thisDate) / 3600000);
-        var minutsLeft = parseInt((endDate - thisDate) / 60000);
-        var secondsLeft = parseInt((endDate - thisDate) / 1000);
+    countIt('<?= $date[0] ?>', '<?= $date[1] ?>', '<?= $date[2] ?>', '<?= $time[0] ?>', '<?= $time[1] ?>', '00', '<?= $status ?>');
+    function countIt(year, month, day, hours, minutes, seconds, status) {
+        now = new Date();
+        start_date = new Date(2014, 9, 28, 18, 00, 00);
+        now = now.getTime() / 1000;
+        start = start_date.getTime() / 1000;
+        setTimeout(function () {
+            endDate = new Date(year, month, day, hours, minutes, seconds, 00);
+            thisDate = new Date();
+            var daysLeft = parseInt((endDate - thisDate) / 86400000);
+            var hoursLeft = parseInt((endDate - thisDate) / 3600000);
+            var minutsLeft = parseInt((endDate - thisDate) / 60000);
+            var secondsLeft = parseInt((endDate - thisDate) / 1000);
 
-        seconds = minutsLeft * 60;
-        seconds = secondsLeft - seconds;
-        seconds = (seconds < 10) ? 0 + seconds : seconds;
+            seconds = minutsLeft * 60;
+            seconds = secondsLeft - seconds;
+            seconds = (seconds < 10) ? 0 + seconds : seconds;
 
-        minutes = hoursLeft * 60;
-        minutes = minutsLeft - minutes;
+            minutes = hoursLeft * 60;
+            minutes = minutsLeft - minutes;
 
-        hours = daysLeft * 24;
-        hours = (hoursLeft - hours) < 0 ? 0 : hoursLeft - hours;
-        days = daysLeft;
-        startCount(days, hours, minutes, seconds,status);
-    }, 100);
-}
-
-function startCount(days, hours, minutes, seconds,status) {
-    $('#days').html(days);
-    seconds = (seconds) < 10 ? '0' + seconds : seconds;
-    minutes = (minutes) < 10 ? '0' + minutes : minutes;
-    hours = (hours) < 10 ? '0' + hours : hours;
-    if(status==0){
-        $('li','.lock').css('background','url("/assets/img/lock-close.png") no-repeat left center');
-        $('li','.lock').html('Hamarosan nyitunk!');
-    } else {
-        $('li','.lock').css('background','url("/assets/img/lock-open.png") no-repeat left center');
-        $('li','.lock').html('Nyitva vagyunk!');
+            hours = daysLeft * 24;
+            hours = (hoursLeft - hours) < 0 ? 0 : hoursLeft - hours;
+            days = daysLeft;
+            startCount(days, hours, minutes, seconds, status);
+        }, 100);
     }
-    $('#hours').html(hours + ':' + minutes + ':' + seconds);
-    countIt('<?=$date[0]?>','<?=$date[1]-1?>','<?=$date[2]?>','<?=$time[0]?>','<?=$time[1]?>','00','<?=$status?>');
-}
+
+    function startCount(days, hours, minutes, seconds, status) {
+        $('#days').html(days);
+        seconds = (seconds) < 10 ? '0' + seconds : seconds;
+        minutes = (minutes) < 10 ? '0' + minutes : minutes;
+        hours = (hours) < 10 ? '0' + hours : hours;
+        if (status == 0) {
+            $('li', '.lock').css('background', 'url("/assets/img/lock-close.png") no-repeat left center');
+            $('li', '.lock').html('Hamarosan nyitunk!');
+        } else {
+            $('li', '.lock').css('background', 'url("/assets/img/lock-open.png") no-repeat left center');
+            $('li', '.lock').html('Nyitva vagyunk!');
+        }
+        $('#hours').html(hours + ':' + minutes + ':' + seconds);
+        countIt('<?= $date[0] ?>', '<?= $date[1] - 1 ?>', '<?= $date[2] ?>', '<?= $time[0] ?>', '<?= $time[1] ?>', '00', '<?= $status ?>');
+    }
 </script>
 <?php
 $menus = array();
@@ -77,6 +77,18 @@ $menus = array(
                 $('#tovab2').show('slow');
             }
         });
+        $('#nov').on('click', function () {
+            $('.tab.dec').removeClass('active');
+            $(this).addClass('active');
+            $('#dec_photos').hide();
+            $('#nov_photos').show();
+        });
+        $('#dec').on('click', function () {
+            $('.tab.nov').removeClass('active');
+            $(this).addClass('active');
+            $('#nov_photos').hide();    
+            $('#dec_photos').show();
+        });
         $('#tab-container').easytabs();
     });
 </script>
@@ -88,7 +100,7 @@ $menus = array(
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <div class="count-text" style="min-width: 400px;">
-        <p><?=$text?></p>
+        <p><?= $text ?></p>
         <div class="counter">
             <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
         </div> <!--End counter-->
@@ -100,7 +112,7 @@ $menus = array(
 
     </div> <!--End count text-->
     <div class="dog-img">
-        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE )?>/assets/img/4890-2.png" alt="" width="100" height="100"><br/>
+        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/4890-2.png" alt="" width="100" height="100"><br/>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
 </section> <!--End counting back-->
@@ -113,7 +125,7 @@ $menus = array(
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
-        <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?o':'#'?>">
+        <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?o' : '#' ?>">
             <button type="button" class="rounded">Megrendelem</button>
         </a>
         <p>a saját kutyusomnak</p>
@@ -122,7 +134,7 @@ $menus = array(
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png">
     </div>
     <div class="order-btnright">
-        <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?g':'#'?>">
+        <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?g' : '#' ?>">
             <button type="button" class="rounded">Ajándékozom</button>
         </a>
         <p>barátom kutyusának</p>
@@ -130,7 +142,9 @@ $menus = array(
 </section> <!--End order place-->
 
 <div class='clear'></div>
+<script type="text/javascript">
 
+</script>
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
         <li class='tab'><a href="#miert">Miért jó a Goodiebox?</a></li>
@@ -174,8 +188,13 @@ $menus = array(
             </div>
         </div>
     </div>
+
     <div id="fotok">
-        <div class="image-row" style="text-align: center">
+        <ul class='etabs' style="text-align: center">
+            <li class='tab active nov'  id="nov"><a href="#nov">November</a></li>
+            <li class='tab dec' id="dec"><a href="#dec" >December</a></li>
+        </ul>
+        <div class="image-row" style="text-align: center" id="nov_photos">
             <div class="image-set">
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-0.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-0.jpg" alt=""/></a>
@@ -203,6 +222,54 @@ $menus = array(
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-11.jpg" alt="" /></a>
             </div>
         </div>
+        <div class="image-row" style="text-align: center;display: none;" id="dec_photos">
+            <div class="image-set">
+                				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-12.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-12.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-13.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-13.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-14.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-14.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-15.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-15.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-16.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-16.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-17.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-17.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-18.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-18.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-19.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-19.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-20.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-20.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-21.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-21.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-22.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-22.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-23.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-23.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-24.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-24.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-25.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-25.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-26.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-26.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-27.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-27.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-28.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-28.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-29.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-29.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-30.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-30.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-31.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-31.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-32.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-32.jpg" alt=""/></a>
+<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-33.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-33.jpg" alt=""/></a>
+            </div>
+        </div>
     </div>
     <div id="videok" style="text-align: center">
         <iframe width="320" height="315" src="//www.youtube.com/embed/okr7WGT2usw" frameborder="0" allowfullscreen></iframe>
@@ -215,7 +282,7 @@ $menus = array(
 
 <section style="text-align: center;margin-bottom: 0px;padding: 0px">
     <h2 style="font-family: La-Chata;padding-bottom: 10px;line-height:35px">Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink?
-Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!</h2>
+        Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!</h2>
     <img id="map" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hungary-map-website.png" alt="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!" title="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!">
 </section>
 
