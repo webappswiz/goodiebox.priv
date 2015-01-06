@@ -272,8 +272,18 @@ $menus = array(
         </div>
     </div>
     <div id="videok" style="text-align: center">
-        <iframe width="320" height="315" src="//www.youtube.com/embed/okr7WGT2usw" frameborder="0" allowfullscreen></iframe>
-        <iframe width="320" height="315" src="//www.youtube.com/embed/tCAIR-u3n3s" frameborder="0" allowfullscreen></iframe>
+    <?php
+    $xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads');
+    $xml=simplexml_load_string($xml_data) or die("Error: Cannot create object");
+    foreach($xml->entry as $entry){
+        $link = $entry->id;
+        $link_array = explode('/',$link);
+        $video_id = array_pop($link_array);
+        echo '<iframe width="315" height="315" src="//www.youtube.com/embed/'.$video_id.'" frameborder="0" allowfullscreen></iframe> ';
+    }
+    ?>
+    
+       
 
     </div>
 </div>
