@@ -190,8 +190,8 @@ $menus = array(
     </div>
 
     <div id="fotok" style="position:relative">
-        <span style="font-size: 20px;z-index: 100;position: absolute;left: 55px;top:50px;"><strong>2014</strong></span><a style="cursor: pointer" id="nov"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/nov.png" width="150"></a>
-        <span style="font-size: 20px;z-index: 100;position: absolute;left: 210px;top:50px;"><strong>2014</strong></span><a style="cursor: pointer" id="dec"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/dec.png" width="150"></a>
+        <span style="font-size: 14px;z-index: 100;position: absolute;left: 25px;top:22px;"><strong>2014</strong></span><a style="cursor: pointer" id="nov"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/nov.png" width="150"></a>
+        <span style="font-size: 14px;z-index: 100;position: absolute;left: 180px;top:22px;"><strong>2014</strong></span><a style="cursor: pointer" id="dec"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/dec.png" width="150"></a>
         <div class="image-row" style="text-align: center;display: none" id="nov_photos">
             <h2>November fotók</h2><br/>
             <div class="image-set">
