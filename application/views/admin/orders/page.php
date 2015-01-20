@@ -32,6 +32,8 @@ if (count($data) > 0) {
                     $type = 'Gift order';
                 if ($order->type == 3)
                     $type = 'Shelter';
+                if ($order->type == 4)
+                    $type = 'Manual order';
                 echo '<td>' . $type . '</td>';
                 echo '<td>' . $order->package->package_name . '</td>';
                 echo '<td>' . $order->status->status_name . '</td>';

@@ -59,6 +59,9 @@
     if($model->type==3){
         $type = 'Shelter order';
     }
+    if($model->type==4){
+        $type = 'Manual order';
+    }
     ?>
     
     

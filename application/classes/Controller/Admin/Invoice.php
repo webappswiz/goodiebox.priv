@@ -75,7 +75,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
 
     private function receipt_email($order,$size) {
         
-            if ($order->$size == 1) {
+            if ($size == 1) {
                 $s = 'Icipici';
             } elseif ($size == 2) {
                 $s = 'Éppen jó';
