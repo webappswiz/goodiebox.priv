@@ -34,6 +34,7 @@ if (count($data) > 0) {
                     $type = 'Shelter';
                 if ($order->type == 4)
                     $type = 'Manual order';
+                
                 echo '<td>' . $type . '</td>';
                 echo '<td>' . $order->package->package_name . '</td>';
                 echo '<td>' . $order->status->status_name . '</td>';
@@ -48,6 +49,8 @@ if (count($data) > 0) {
                     $status = 'Payment declined';
                 } elseif($order->payment_status == 3) {
                     $status = 'Free. Gift order';
+                } elseif($order->payment_status == 5) {
+                    $status = 'Cash on delivery';
                 }
                 echo '<td>' . $status . '</td>';
                 echo '<td><a href="/admin/orders/edit/' . $order->id . '" class="btn btn-primary">Edit</a></td>';

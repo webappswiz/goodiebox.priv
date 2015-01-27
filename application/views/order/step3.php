@@ -3,9 +3,14 @@ $auth = Auth::instance();
 $session = Session::instance();
 if ($auth->logged_in())
     $current_user = $auth->get_user();
+$shipping = ORM::factory('ShippingCost',1);
+$cost = $shipping->cost;
 ?>
 <script type="text/javascript">
     $(document).ready(function () {
+        var ship_cost = 0;
+        
+        
         $('#customer_email').on('blur', function () {
             $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
@@ -23,18 +28,42 @@ if ($auth->logged_in())
         if (!$('#tos').prop(':checked')) {
             $('#submit').attr('disabled', 'disabled');
         }
+        
 
         $('#discount_box').on('click', function () {
             if ($(this).is(':checked')) {
                 $('#discount').val('1');
                 $('#discount1').html(discount + ' HUF');
-                var final_price = total_price - discount;
+                var final_price = total_price - discount + ship_cost;
                 $('#total_price').html(final_price + ' HUF');
             } else {
                 $('#discount1').html('0000 HUF');
-                $('#total_price').html(total_price + ' HUF');
+                var final_price = total_price + ship_cost;
+                $('#total_price').html(final_price + ' HUF');
                 $('#discount').val('0');
             }
+        });
+        
+        $('#cod').on('click', function(){
+            ship_cost = <?=$cost?>;
+            $('#ship').html(ship_cost + ' HUF');
+            var price = $('#total_price').html().split(' ');
+            var ship_price = parseInt(price[0]) + ship_cost;
+            $('#total_price').html(ship_price);
+            $('#pt').val('cod');
+            $('#cod').attr('disabled','disabled');
+        });
+        $('#cc').on('click', function(){
+            ship_cost = <?=$cost?>;
+            if($('#ship').html()!=='Ingyenes'){
+                $('#ship').html('Ingyenes');
+                var price = $('#total_price').html().split(' ');
+                var ship_price = parseInt(price[0]) - ship_cost;
+                $('#total_price').html(ship_price);
+                
+                $('#cod').removeAttr('disabled');
+            } 
+            $('#pt').val('cc');
         });
 
         $('#tos').on('click', function () {
@@ -235,6 +264,7 @@ if (isset($session['step2'])) {
                             <input type="password" name="password_confirm" class="rounded" id="password_confirm" required>
                         </div>
                     <?php endif; ?>
+                    <input type="hidden" name="pt" id="pt" value="cc">
                     <input type="hidden" name="coupon_code" id="coupon_code" value="">
                     <input type="hidden" name="invite_code" id="invite_code" value="">
                     <input type="hidden" name="discount" id="discount" value="">
@@ -351,12 +381,6 @@ if (isset($session['step2'])) {
                 <p>payment</p>
                 <p>instructions</p>
             </div>
-            <input id="dbt" type="radio" name="cc" class="pay"> Direct Bank transfer <br/>
-            <div class="cc_instruct" style="display: none;">
-                <p>Direct Bank Transfer</p>
-                <p>payment</p>
-                <p>instructions</p>
-            </div>
             <input id="cod" type="radio" name="cc" class="pay"> Cash on delivery
             <div class="cc_instruct" style="display: none;">
                 <p>Cash on delivery</p>
@@ -415,7 +439,7 @@ if (isset($session['step2'])) {
                         </div>
                         <div class="order-text-right">
                             <span><?= $price->price ?> HUF</span><br>&nbsp;
-                            <p>Ingyenes</p>
+                            <p id="ship">Ingyenes</p>
                             <p></p>
                             <p id="discount1">0000 HUF</p>
                         </div>

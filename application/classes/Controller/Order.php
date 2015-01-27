@@ -408,7 +408,10 @@ class Controller_Order extends Controller_Core {
             }
         }
         $order->orders_status = 1;
-        $order->payment_status = 0;
+        if($_POST['pt']=='cod'){
+            $order->payment_status = 5;
+        } else 
+            $order->payment_status = 0;
         $order->save();
         if (!empty($step1['coupon_code'])) {
             $order->total_price = 0;
@@ -640,7 +643,7 @@ class Controller_Order extends Controller_Core {
                 $order = $this->regular_order();
                 Session::instance()->set('success', '1');
                 Session::instance()->set('order', $order);
-                if (!empty($step1['coupon_code'])) {
+                if (!empty($step1['coupon_code']) || $_POST['pt']=='cod') {
                     $this->redirect('/order/success');
                 } else {
                     $this->redirect('/order/payment');
@@ -789,6 +792,9 @@ class Controller_Order extends Controller_Core {
             } elseif ($ord->loaded() && $ord->total_price == 0) {
                 $ord->payment_status = 3;
                 $ord->save();
+                $this->receipt_email($ord, $ord->user, 1);
+            } elseif($ord->type==1 && $ord->payment_status=5){
+                $this->receipt_email($ord, $ord->user, 1);
             }
         }
         $session->delete('order');

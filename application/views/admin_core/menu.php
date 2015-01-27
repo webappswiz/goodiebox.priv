@@ -11,8 +11,8 @@ $menus = array(
     '/admin/templates' => array('Templates', 'templates'),
     '/admin/contacts' => array('Contacts','contacts'),
     '/admin/counter' => array('Counter','counter'),
-    '/admin/invoice' => array('Invoices','invoice')
-
+    '/admin/invoice' => array('Invoices','invoice'),
+    '/admin/shipping' => array('Shipping','shipping')
 );
 if (!$menus)
     return;
