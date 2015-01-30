@@ -31,7 +31,7 @@
     } else {
         $discount = 0;
     }
-    $hash['MERCHANT'] = 'P120701';
+    $hash['MERCHANT'] = 'T70501';
     $hash['ORDER_REF'] = $o->id;
     $hash['ORDER_DATE'] = $o->date_purchased;
     $hash['ORDER_PNAME'] = 'Goodiebox '.$o->package->package_name;
