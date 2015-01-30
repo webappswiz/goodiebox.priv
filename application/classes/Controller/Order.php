@@ -812,7 +812,7 @@ class Controller_Order extends Controller_Core {
                 $ord->payment_status = 3;
                 $ord->save();
                 $this->receipt_email($ord, $ord->user, 1);
-            } elseif($ord->type==1 && $ord->payment_status=5){
+            } elseif($ord->type==1 && $ord->payment_status==5){
                 $this->receipt_email($ord, $ord->user, 1);
             }
         }
