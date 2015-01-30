@@ -615,7 +615,7 @@ label.tooltip span
 }
 .tab {
     font-family: 'franklin_gothic_bookregular';
-    font-size: 20px;
+    font-size: 22px;
     width: 319px;
     font-weight: bolder;
     display: inline-block; 
@@ -675,7 +675,7 @@ label.tooltip span
         width:893px;
     }
     #nov,#dec{
-        font-family: 'La-chata';font-size: 30px;
+        font-family: 'La-chata';font-size: 20px;
     }
 @media only screen and (max-width: 1040px)
 {

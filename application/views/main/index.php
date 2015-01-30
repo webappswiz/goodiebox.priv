@@ -190,9 +190,9 @@ $menus = array(
     </div>
 
     <div id="fotok">
-        <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">November 2014</a>
+        <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">2014 December</a>
         &nbsp;&nbsp;&nbsp;
-        <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">December 2014</a>
+        <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2014 November</a>
         <div class="image-row" style="text-align: center;display: none" id="nov_photos">
             <h2>November fotók</h2><br/>
             <div class="image-set">
