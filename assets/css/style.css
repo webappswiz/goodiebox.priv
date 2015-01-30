@@ -674,6 +674,9 @@ label.tooltip span
      #map{
         width:893px;
     }
+    #nov,#dec{
+        font-family: 'La-chata';font-size: 18px;
+    }
 @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
