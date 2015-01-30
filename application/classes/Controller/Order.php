@@ -974,7 +974,7 @@ class Controller_Order extends Controller_Core {
                         $output = $pdf->output();
                         file_put_contents(DOCROOT . 'orders/gift_' . $order->id . '.pdf', $output);
                         $template = ORM::factory('Templates', 3);
-                        $body = str_replace('[firstname]', $friend->firstname, $template->template_text);
+                        $body = str_replace('[firstname]', $friend->friends_firstname, $template->template_text);
                         if (isset($step1['delay'])) {
                             $to = $current_user->email;
                         } else {
