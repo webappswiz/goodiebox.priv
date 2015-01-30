@@ -978,7 +978,7 @@ class Controller_Order extends Controller_Core {
                         if (isset($step1['delay'])) {
                             $to = $current_user->email;
                         } else {
-                            $to = $friend->friend_email;
+                            $to = $friend->friends_email;
                         }
                     }
                     $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $body, 'gift_' . $order->id . '.pdf');
