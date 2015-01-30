@@ -677,6 +677,7 @@ label.tooltip span
     #nov,#dec{
         font-family: 'La-chata';font-size: 20px;
         color: #330000;
+        margin-left: 22px;
     }
     #nov:hover,#dec:hover{
         color: #268949;
