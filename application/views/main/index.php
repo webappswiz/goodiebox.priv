@@ -194,7 +194,6 @@ $menus = array(
         &nbsp;&nbsp;&nbsp;
         <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2014 November</a>
         <div class="image-row" style="text-align: center;display: none" id="nov_photos">
-            <h2>November fotók</h2><br/>
             <div class="image-set">
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-0.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-0.jpg" alt=""/></a>
@@ -223,7 +222,6 @@ $menus = array(
             </div>
         </div>
         <div class="image-row" style="text-align: center;" id="dec_photos">
-            <h2>December fotók</h2><br/>
             <div class="image-set">
                 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-12.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-12.jpg" alt=""/></a>
