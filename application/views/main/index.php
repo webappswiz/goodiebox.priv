@@ -192,7 +192,7 @@ $menus = array(
     <div id="fotok">
         <a style="cursor: pointer" id="dec" class="active" style="font-family: 'La-chata';font-size: 18px">2014 December</a>
         &nbsp;&nbsp;&nbsp;
-        <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2014 November</a>
+        <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2014 November</a><br/>
         <div class="image-row" style="text-align: center;display: none" id="nov_photos">
             <div class="image-set">
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-0.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
