@@ -948,7 +948,7 @@ class Controller_Order extends Controller_Core {
                 <td style="width:50%;border-top:6px solid #ffffc1;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;color:#ffffc1;">Kuponkód:</td>
             </tr>
             <tr style="width:100%;" class="box-row">
-                <td style="padding:5px 0 0 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258; text-align:left;color:#e12258;">' . $step1['lastname'] . ' ' . $step1['firstname'] . '</td>
+                <td style="padding:5px 0 0 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258; text-align:left;color:#e12258;">' . $friend->friends_lastname . ' ' . $friend->friends_firstname . '</td>
                 <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258; color:#ffffc1;">' . $friend->coupon_code . '</td>
             </tr>
             <tr style="width:100%;" class="box-row">
