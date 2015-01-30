@@ -974,11 +974,11 @@ class Controller_Order extends Controller_Core {
                         $output = $pdf->output();
                         file_put_contents(DOCROOT . 'orders/gift_' . $order->id . '.pdf', $output);
                         $template = ORM::factory('Templates', 3);
-                        $body = str_replace('[firstname]', $step1['firstname'], $template->template_text);
+                        $body = str_replace('[firstname]', $friend->firstname, $template->template_text);
                         if (isset($step1['delay'])) {
-                            $to = $this->current_user->email;
+                            $to = $current_user->email;
                         } else {
-                            $to = $step1['friend_email'];
+                            $to = $friend->friend_email;
                         }
                     }
                     $this->send($to, 'info@goodiebox.hu', 'Ajándék a barátodtól!', $body, 'gift_' . $order->id . '.pdf');
