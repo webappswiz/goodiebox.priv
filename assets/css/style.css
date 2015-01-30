@@ -676,6 +676,14 @@ label.tooltip span
     }
     #nov,#dec{
         font-family: 'La-chata';font-size: 20px;
+        color: #330000;
+    }
+    #nov:hover,#dec:hover{
+        color: #268949;
+        
+    }
+    #nov.active,#dec.active{
+        color: #268949;
     }
 @media only screen and (max-width: 1040px)
 {
