@@ -372,6 +372,7 @@ if (isset($session['step2'])) {
                 </script>
             </div> <!--End claim form-->
         </div><!--End claim form container-->
+        <?php if(!isset($session['step1']['order2'])):?>
         <div class="order-form" style="padding-top: 60px !important;">
             <h2>Fizetési lehetőségek:</h2>
             <br/>
@@ -396,6 +397,7 @@ if (isset($session['step2'])) {
                $(event.target).nextAll('.cc_instruct').first().show();
             });
         </script>
+        <?php endif;?>
         <div class="order-form" style="padding-top: 10px !important;">
             <h2>Rendelésem</h2>
             <div class="order-container rounded">
