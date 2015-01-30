@@ -193,8 +193,11 @@ class Controller_Order extends Controller_Core {
         //$pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
         file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
 
-
-        $template = ORM::factory('Templates', 2);
+        if($order->payment_status==5){
+            $template = ORM::factory('Templates', 6);
+        } else {
+            $template = ORM::factory('Templates', 2);
+        }
         $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
         $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
     }

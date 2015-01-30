@@ -27,8 +27,10 @@ tinyMCE.init({
                 <li class="nav-header">Navigation</li>
                 <li <?=($model->type==1)?'class="active"':""?>><a href="/admin/templates/edit/1">Registration email template</a></li>
                 <li <?=($model->type==2)?'class="active"':""?>><a href="/admin/templates/edit/2">Order email template</a></li>
+                <li <?=($model->type==6)?'class="active"':""?>><a href="/admin/templates/edit/6">Cash on delivery email template</a></li>
                 <li <?=($model->type==3)?'class="active"':""?>><a href="/admin/templates/edit/3">Gift email template</a></li>
                 <li <?=($model->type==4)?'class="active"':""?>><a href="/admin/templates/edit/4">Invite email template</a></li>
+                <li <?=($model->type==5)?'class="active"':""?>><a href="/admin/templates/edit/5">Forgot password email template</a></li>
         </div>
     </div>
 
