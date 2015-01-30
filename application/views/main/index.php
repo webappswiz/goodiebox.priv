@@ -222,7 +222,7 @@ $menus = array(
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-11.jpg" alt="" /></a>
             </div>
         </div>
-        <div class="image-row" style="text-align: center;display: none;" id="dec_photos">
+        <div class="image-row" style="text-align: center;" id="dec_photos">
             <h2>December fotók</h2><br/>
             <div class="image-set">
                 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-12.jpg" data-lightbox="example-set" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
