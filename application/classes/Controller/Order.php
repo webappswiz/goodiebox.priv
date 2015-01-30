@@ -896,7 +896,9 @@ class Controller_Order extends Controller_Core {
                 }
                 if ($order->type == 2) {
                     $friend = ORM::factory('Friend', $order->friend_id);
+                    
                     if ($friend->loaded()) {
+                        $current_user = ORM::factory('User',$friend->user_id);
                         $date = strtotime(date('Y-m-d'));
                         $final = date("Y-m-d", strtotime("+3 month", $date));
 
@@ -956,7 +958,7 @@ class Controller_Order extends Controller_Core {
                 <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258; color:#ffffc1;">Érvényes:</td>
             </tr>
             <tr style="width:100%;" class="box-row">
-                <td style="padding:10px 0 15px 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258;border-bottom:6px solid #e12258; text-align:left;color:#e12258;">' . $this->current_user->customer_lastname . ' ' . $this->current_user->customer_firstname . '</td>
+                <td style="padding:10px 0 15px 15px;width:50%; border-left:6px solid #e12258;border-right:6px solid #e12258;border-bottom:6px solid #e12258; text-align:left;color:#e12258;">' . $current_user->customer_lastname . ' ' . $current_user->customer_firstname . '</td>
                 <td style="width:50%;border-left:6px solid #ffffc1;border-right:6px solid #ffffc1;border-bottom:6px solid #ffffc1;text-align:left;padding:15px;padding-bottom: 0px; background-color:#e12258;color:#ffffc1;">' . $final . '</td>
             </tr>
             <tr style=" width:100%;">
