@@ -39,8 +39,15 @@ class Controller_Order extends Controller_Core {
             }
         } else
             $s = 0;
-
-        $discount = $order->package->price - $order->total_price;
+        if($order->payment_status==5){
+            $cost = ORM::factory('ShippingCost',1);
+            $pr = $cost->cost;
+        } else {
+            $pr = 0;
+        }
+        
+        
+        $discount = $order->package->price - $order->total_price + $pr;
         $total_price = $order->package->price - $discount;
         if ($order->company_name <> '') {
             $company = 'Cégnév: ' . $order->company_name . '<br/>
@@ -149,14 +156,14 @@ class Controller_Order extends Controller_Core {
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>0,00&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>'.number_format((float) $pr, 2, ',', '').'&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">Összesen:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float) $total_price, 2, ',', '') . '&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float) ($total_price+$pr), 2, ',', '')  . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">Az ÁFA kulcs: AM (alanyi mentes)</td>
@@ -416,7 +423,13 @@ class Controller_Order extends Controller_Core {
         if (!empty($step1['coupon_code'])) {
             $order->total_price = 0;
         } else {
-            $order->total_price = round($order->package->price - $discount);
+            if($_POST['pt']=='cod'){
+                $cost = ORM::factory('ShippingCost',1);
+                $order->total_price = round($order->package->price - $discount+$cost->cost);
+            } else {
+                $order->total_price = round($order->package->price - $discount);
+            }
+            
         }
         $order->save();
         return $order;
@@ -516,7 +529,13 @@ class Controller_Order extends Controller_Core {
             }
         }
         $order->save();
-        $order->total_price = round($order->package->price - $discount);
+        if($_POST['pt']=='cod'){
+            $cost = ORM::factory('ShippingCost',1);
+            $order->total_price = round($order->package->price - $discount+$cost->cost);
+        } else {
+            $order->total_price = round($order->package->price - $discount);
+        }
+        
         $order->save();
         return $order;
     }
