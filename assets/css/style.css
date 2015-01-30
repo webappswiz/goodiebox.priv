@@ -674,16 +674,16 @@ label.tooltip span
      #map{
         width:893px;
     }
-    #nov,#dec{
+    #nov,#dec,#jan{
         font-family: 'La-chata';font-size: 20px;
         color: #330000;
         margin-left: 22px;
     }
-    #nov:hover,#dec:hover{
+    #nov:hover,#dec:hover,#jan:hover{
         color: #268949;
         
     }
-    #nov.active,#dec.active{
+    #nov.active,#dec.active,#jan.active{
         color: #268949;
     }
 @media only screen and (max-width: 1040px)
