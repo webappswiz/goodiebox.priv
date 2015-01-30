@@ -895,8 +895,7 @@ class Controller_Order extends Controller_Core {
                     $global_discount->save();
                 }
                 if ($order->type == 2) {
-                    $friend = ORM::factory('Friend', $order->friend_id)
-                            ->find();
+                    $friend = ORM::factory('Friend', $order->friend_id);
                     if ($friend->loaded()) {
                         $date = strtotime(date('Y-m-d'));
                         $final = date("Y-m-d", strtotime("+3 month", $date));
