@@ -49,7 +49,7 @@ $cost = $shipping->cost;
             $('#ship').html(ship_cost + ' HUF');
             var price = $('#total_price').html().split(' ');
             var ship_price = parseInt(price[0]) + ship_cost;
-            $('#total_price').html(ship_price);
+            $('#total_price').html(ship_price + ' HUF');
             $('#pt').val('cod');
             $('#cod').attr('disabled','disabled');
         });
