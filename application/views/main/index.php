@@ -147,9 +147,9 @@ $menus = array(
 </script>
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
-        <li class='tab'><a href="#miert">Miért jó a Goodiebox?</a></li>
-        <li class='tab'><a href="#fotok">Goodiebox fotók</a></li>
-        <li class='tab'><a href="#videok">Goodiebox videók</a></li>
+        <li class='tab'><a href="#miert" style="font-family: 'La-chata'">Miért jó a Goodiebox?</a></li>
+        <li class='tab'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
+        <li class='tab'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
     </ul>
     <div id="miert">
         <div class="container" id="text" style="padding: 0 30px 0 30px;margin-top: 0px;">
@@ -189,9 +189,10 @@ $menus = array(
         </div>
     </div>
 
-    <div id="fotok" style="position:relative">
-        <span style="font-size: 14px;z-index: 100;position: absolute;left: 25px;top:22px;"><strong>2014</strong></span><a style="cursor: pointer" id="nov"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/nov.png" width="150"></a>
-        <span style="font-size: 14px;z-index: 100;position: absolute;left: 180px;top:22px;"><strong>2014</strong></span><a style="cursor: pointer" id="dec"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/dec.png" width="150"></a>
+    <div id="fotok">
+        <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">November 2014</a>
+        &nbsp;&nbsp;&nbsp;
+        <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">December 2014</a>
         <div class="image-row" style="text-align: center;display: none" id="nov_photos">
             <h2>November fotók</h2><br/>
             <div class="image-set">
