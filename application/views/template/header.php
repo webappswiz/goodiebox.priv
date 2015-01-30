@@ -104,7 +104,7 @@ $time = explode(':', $date_array[1]);
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie" target="blank"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
                     </li>
                     <li><a href="#">
-                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?g':'#'?>"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
+                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/gift':'#'?>"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
                         </a></li>
                 </ul>
                 <script>
@@ -209,7 +209,7 @@ $time = explode(':', $date_array[1]);
         if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
             <div>
-                <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/gift':'#'?>">
+                <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?o':'#'?>">
                     <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
                 </a>
