@@ -373,20 +373,21 @@ if (isset($session['step2'])) {
             </div> <!--End claim form-->
         </div><!--End claim form container-->
         <div class="order-form" style="padding-top: 60px !important;">
-            <h2>Payment type</h2>
+            <h2>Fizetési lehetőségek:</h2>
             <br/>
-            <input id="cc" checked type="radio" name="cc" class="pay"> Credit Card Payment<br/>
+            <input id="cc" checked type="radio" name="cc" class="pay">Bankkártyával azonnal (PayU biztonságos felületen keresztül)<br/>
             <div class="cc_instruct">
-                <p>Credit card</p>
-                <p>payment</p>
-                <p>instructions</p>
+                <p>Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. 
+                    A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!</p>
             </div>
-            <input id="cod" type="radio" name="cc" class="pay"> Cash on delivery
+            <input id="cod" type="radio" name="cc" class="pay">Utánvét (Extra költséget számolunk fel: +<?=$cost?> Ft)
             <div class="cc_instruct" style="display: none;">
-                <p>Cash on delivery</p>
-                <p>payment</p>
-                <p>instructions</p>
+                <p>Amint a "Megrendelem" gombra kattintasz, automatikusan elfogadod a szabályzatunkat és átvételkor tudsz fizetni készpénzzel az otthonodban.</p>
             </div>
+            <br/><br/><br/><br/>
+            <p style="line-height: 20px;">
+                Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:rendeles@goodiebox.hu Köszönjük!
+            </p>
         </div>
         <script>
             $('.pay').on('click',function(event){
