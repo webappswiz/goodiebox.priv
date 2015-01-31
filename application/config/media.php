@@ -21,6 +21,7 @@ return array(
             'jquery.easytabs',
             'lightbox.min',
             'main',
+            'jquery.bxslider.min'
         ),
         'css' => array(
             'style' => NULL,
@@ -28,6 +29,7 @@ return array(
             'jquery-ui.structure.min' => NULL,
             'jquery-ui.theme.min' => NULL,
             'lightbox' => NULL,
+            'jquery.bxslider' => NULL
         ),
     ),
 );

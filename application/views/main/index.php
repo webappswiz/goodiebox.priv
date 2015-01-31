@@ -325,7 +325,7 @@ $menus = array(
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-51.jpg" alt=""/></a>
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-52.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-52.jpg" alt=""/></a>
-                   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-53.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-53.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
                    "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-53.jpg" alt=""/></a>
             </div>
         </div>
@@ -351,11 +351,203 @@ $menus = array(
 
 <div class='clear'></div>
 
-<section style="text-align: center;margin-bottom: 0px;padding: 0px">
-    <h2 style="font-family: La-Chata;padding-bottom: 10px;line-height:35px">Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink?
-        Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!</h2>
-    <img id="map" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hungary-map-website.png" alt="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!" title="Kíváncsi vagy, merre laknak a Goodiebox tulajdonos kutyusaink? Szerezz egy meglepi dobozt és kerüljetek fel ti is a térképre!">
-</section>
+<ul class="bxslider">
+    <div style="float: left;width:472px">
+        <li style="margin-right: 10px;">	
+            <div class="customer_quote_wrap">
+                <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;">
+                    Szuper ötlet, szuperül kivitelezve! :)
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <br/>
+            Zsófia, Szigetmonostor
+            <br/>
+            <br/>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Kedves Goodiebox-os Csapat, Megszeretném mégegyszer köszönni a kedvességetek, mind a többszöri egyeztetés, mind amiatt, hogy tényleg minden szempontból odafigyeltetek a kutyusom gyomorbetegségére. A játékok pedig egyszerűen fantasztikusak, nagy volt az öröm. Továbbra is maradunk hű vásárlótok :-)
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Zsanett, Kozármisleny
+        <br/>
+        <br/>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0065.JPG" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Ismét nagyon tetszett a doboz tartalma. Ez a száraztáp igazi újdonság volt számomra, mert ezt a márkát eddig még nem ismertem, de Rustynak nagyon ízlik, ahogy természetesen a jutalomfalatok is.
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Nikolett, Budapest
+        <br/>
+        <br/>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Meg vagyok elégedve a csomag tartalmával. A játék amit kaptunk erős anyagú, úgyhogy a két kutya egész nap nyúzta, mégsem lett rajta sérülés. A táppal és a snackekkel is elégedettek vagyunk.
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Enikő, Kulcs
+        <br/>
+        <br/>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Imádom a Goodieboxot, szinte sajnálom, hogy nem lehet gyakrabban rendelni. :­) Nagyon szeretem a hozzácsomagolt levelet, amelyben szépen, gondosan le van írva minden, és amelyből új infókhoz jutok és új termékeket ismerhetek meg.
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                A legjobb kutyás oldal amivel eddig találkoztam!
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyon jó  kezdeményezésnek tartom, a doboz tartalmával nagyon elégedett voltam, csupa minőségi, prémium termékek.
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyon szuper ötlet! Igazán jó és hasznos dolgok kerültek összeválogatásra a dobozba, a gazdinak is meglepik, nem csak a kutyusoknak. Klassz, ízléses csomagolás, látszik, hogy foglalkoztak vele, nemcsak beledobálták a dolgokat :)
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyon jó. Hasznos dolog!
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyon jónak tartom. Tényleg személyre szabott odafigyeléssel állítottátok össze a csomagot, még telefonon is egyeztettetek, hogy a táp megfelel-­e Oszkárnak. A rénszarvast azonnal kivette és azóta is cipeli. Köszönjük!
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Rita, Budapest 
+        <br/>
+        <br/>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Teljesen meg vagyok elégedve a kapott csomaggal. Tetszett minden kis apró részletével, mint pl a csomagoláson feltüntetett matrica. :) A táp és a snack is nagyon megnyerő volt a kutyusnak, a játékról nem is beszélve! A biléta pedig nagyon egyedi. Ezen kívül tetszett a mellékelt kis kártya a karácsonyi üdvözlő cetlivel, illetve a csapat kedvessége és közvetlensége! Igazi karácsonyi meglepetés volt számunkra! Köszönöm, hogy az első közös karácsonyunkat ilyen széppé és emlékezetessé tette a Goodiebox csapata!
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+    </div>
+</li>
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Kedves Goodiebox! Nagyon köszönöm Pöczök nevében is a meglepetés dobozt! A plüss játék óriási öröm volt, sajnos nem sikerült a videó, annyira szaladgált vele. A bilétáért külön hálás vagyok. Köszönettel
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Csilla, Budapest
+        <br/>
+        <br/>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Imádom! :­) A hozzám hasonló "őrült" gazdiknak kiváló, a kutyusokról nem is beszélve! :­) Csak így tovább, mi biztos Veletek maradunk!
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+</ul>
+<script type="text/javascript">
+    $('.bxslider').bxSlider({
+        minSlides: 2,
+        maxSlides: 2,
+        slideWidth: 475,
+        slideMargin: 10,
+        adaptiveHeight: true
+    });
+</script>
 
 <div class='clear'></div>
 
@@ -365,4 +557,4 @@ $menus = array(
         <p>“Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.”</p>
         <i>Anatole France</i>
     </section> <!--End portfolio-->
-
+</div>
