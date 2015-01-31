@@ -694,6 +694,7 @@ label.tooltip span
     font-family: 'franklin_gothic_bookregular';
     line-height: 30px;
     margin: 10px;
+    margin-bottom: 2px;
     text-align: justify;
 }
 .bordered{
