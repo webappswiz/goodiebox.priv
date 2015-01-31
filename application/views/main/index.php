@@ -357,7 +357,7 @@ $menus = array(
                 <div class="customer_quote_text" style="padding: 2px;">
                     "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
-                <div style="float: right;bottom: 0">Erzsébet, Budapest</div>
+                <div style="position: absolute;bottom: 0;right: 0">Erzsébet, Budapest</div>
     </div>
     
     <div class="slide">
@@ -365,7 +365,7 @@ $menus = array(
                 <div class="customer_quote_text" style="padding: 2px;">
                     Szuper ötlet, szuperül kivitelezve! :)
                 </div>
-                <div style="float: right;bottom: 0">Erzsébet, Budapest</div>
+                <div style="position: absolute;bottom:0;right: 0">Erzsébet, Budapest</div>
     </div>
     
     <div class="slide">
