@@ -30,7 +30,7 @@ return array(
             'jquery-ui.theme.min' => NULL,
             'lightbox' => NULL,
             'jquery.bxslider' => NULL,
-            'http://necolas.github.io/normalize.css/3.0.2/normalize.css' => NULL
+            
            
         ),
     ),
