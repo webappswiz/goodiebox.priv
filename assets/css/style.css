@@ -857,6 +857,9 @@ label.tooltip span
     #map{
         width:760px;
     }
+    .slide-item{
+        font-size: 12px;
+    }
 }
 @media only screen and (max-width: 767px)
 {
@@ -891,6 +894,9 @@ label.tooltip span
     }
     #map{
         width:760px;
+    }
+    .slide-item{
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 640px)
@@ -954,6 +960,9 @@ label.tooltip span
     .copy-write{
         display: none;
     }
+    .slide-item{
+        font-size: 12px;
+    }
 }
 @media only screen and (max-width: 460px)
 {
@@ -996,6 +1005,9 @@ label.tooltip span
     #map{
         width:450px;
     }
+    .slide-item{
+        font-size: 12px;
+    }
 }
 @media only screen and (max-width: 360px)
 {
@@ -1028,6 +1040,9 @@ label.tooltip span
     #map{
         width:350px;
     }
+    .slide-item{
+        font-size: 12px;
+    }
 }
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 592px)  and (orientation : portrait)
@@ -1051,6 +1066,9 @@ and (max-device-width : 592px)  and (orientation : portrait)
     }
     #map{
         width:310px;
+    }
+    .slide-item{
+        font-size: 12px;
     }
 }
 
@@ -1076,6 +1094,9 @@ and (max-device-width : 593px)  and (orientation : landscape)
     }
     #map{
         width:300px;
+    }
+    .slide-item{
+        font-size: 12px;
     }
 }
 
