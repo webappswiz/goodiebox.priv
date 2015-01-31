@@ -122,7 +122,6 @@ $menus = array(
                 <li><a href="#">Nyitva vagyunk!</a></li>
             </ul>
         </div> 
-
     </div> 
     <div class="dog-img">
         <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/4890-2.png" alt="" width="100" height="100"><br/>

@@ -906,9 +906,9 @@ label.tooltip span
     margin: 0 auto;
     
 }
-
     .logo img{width: 90%; height: auto;}
-    .count-text{padding-left: 0px;}
+    .count-text{padding-left: 0px;text-align: center}
+    
     header .social-right,.copy-write p {float: none;text-align: center; display:none;}
     .logo{margin-bottom: 30px; float: none!important;text-align: center;}
     .star-img{display: none;}
