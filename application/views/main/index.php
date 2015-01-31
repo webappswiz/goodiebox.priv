@@ -351,7 +351,7 @@ $menus = array(
 
 <div class='clear'></div>
 
-<h2>Megrendelőink véleménye a Goodiebox-ról...</h2>
+<h2 style="font-family: La-Chata;padding-top: 10px;">Megrendelőink véleménye a Goodiebox-ról...</h2>
 
 <div class="bxslider">
     <div class="slide">
