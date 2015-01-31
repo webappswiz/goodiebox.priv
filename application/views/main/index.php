@@ -104,10 +104,11 @@ $menus = array(
         $('#tab-container').easytabs();
     });
 </script>
+<!--
 <section id="counting-back" style="margin-top: 25px;vertical-align: middle;position: relative">
     <div class="count-image">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
-    </div> <!--End count image-->
+    </div> 
     <div class="siess">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
@@ -115,19 +116,19 @@ $menus = array(
         <p><?= $text ?></p>
         <div class="counter">
             <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
-        </div> <!--End counter-->
+        </div> 
         <div class="lock">
             <ul>
                 <li><a href="#">Nyitva vagyunk!</a></li>
             </ul>
-        </div> <!--End lock-->
+        </div> 
 
-    </div> <!--End count text-->
+    </div> 
     <div class="dog-img">
         <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/4890-2.png" alt="" width="100" height="100"><br/>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
-</section> <!--End counting back-->
+</section> -->
 <div class="clear"></div>
 <nav style="margin-top: 10px">
     <ul>
