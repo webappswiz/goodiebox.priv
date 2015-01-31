@@ -20,6 +20,7 @@
     </footer>
 </div> <!--End footer wrapper-->
 <!-- Pure Chat Snippet -->
+<!--
 <script type='text/javascript'>
 (function () {	var done = false;	var script = document.createElement('script'); script.async = true;	script.type = 'text/javascript';	script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) {	if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'b40484b9-45b5-4055-bacc-9674bf9f70a2', f: true }); done = true;	}	};	})();
 </script>

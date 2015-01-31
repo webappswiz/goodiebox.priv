@@ -538,14 +538,128 @@ $menus = array(
     </div>
 </li>
 
+-------------------
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
+<li style="margin-right: 10px;">
+    <div style="float: right;width:472px">
+        <div class="customer_quote_wrap">
+            <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/default-placeholder.png" alt="" style="float: left;margin-right: 10px;"/>
+            <div class="customer_quote_text" style="padding: 2px;">
+                Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <br/>
+        Ancsa, Sümeg
+        <br/>
+        <br/>
+    </div>
+</li>
+
 </ul>
 <script type="text/javascript">
     $('.bxslider').bxSlider({
         minSlides: 2,
-        maxSlides: 2,
         slideWidth: 475,
         slideMargin: 10,
-        adaptiveHeight: true
+        mode: 'vertical',
     });
 </script>
 

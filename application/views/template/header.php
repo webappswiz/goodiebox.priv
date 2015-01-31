@@ -89,7 +89,7 @@ $time = explode(':', $date_array[1]);
         ga('send', 'pageview');
     </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<script src="//load.sumome.com/" data-sumo-site-id="13f38ebb1d7ae2e9b0cf60d4e0fdd9eca282dd8682115a92cfe65269a474d136" async></script>
+	<!--<script src="//load.sumome.com/" data-sumo-site-id="13f38ebb1d7ae2e9b0cf60d4e0fdd9eca282dd8682115a92cfe65269a474d136" async></script> -->
 </head>
 <body>
     <div class="container">
