@@ -355,9 +355,9 @@ $menus = array(
     <div class="slide">
                 <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
                 <div class="customer_quote_text" style="padding: 2px;">
-                    Szuper ötlet, szuperül kivitelezve! :)
+                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
-                <div style="float: right">Zsófia, Szigetmonostor</div>
+                <div style="float: right;bottom: 0">Erzsébet, Budapest</div>
     </div>
     
     <div class="slide">
@@ -365,8 +365,7 @@ $menus = array(
                 <div class="customer_quote_text" style="padding: 2px;">
                     Szuper ötlet, szuperül kivitelezve! :)
                 </div>
-                <div style="clear:both"></div>
-                Zsófia, Szigetmonostor
+                <div style="float: right;bottom: 0">Erzsébet, Budapest</div>
     </div>
     
     <div class="slide">
@@ -374,8 +373,7 @@ $menus = array(
                 <div class="customer_quote_text" style="padding: 2px;">
                     Szuper ötlet, szuperül kivitelezve! :)
                 </div>
-                <div style="clear:both"></div>
-                Zsófia, Szigetmonostor
+               <div style="float: right;bottom: 0">Erzsébet, Budapest</div>
     </div>
     
 </div>

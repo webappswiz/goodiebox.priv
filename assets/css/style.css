@@ -626,13 +626,13 @@ label.tooltip span
     margin: 0px;
     padding: 0px;
     padding-right: 5px;
-    
+
 }
 .tab a {
-    
+
     line-height: 2em; 
     display: block; 
-    
+
     outline: none; 
     color: #268949;
 }
@@ -650,7 +650,7 @@ label.tooltip span
     padding-bottom: 4px;
     padding-right: 0px;
     margin: 0px;
-    
+
 }
 .tab a.active { 
     font-weight: bold; 
@@ -668,30 +668,33 @@ label.tooltip span
 }
 
 #text{
-        text-align: justify;
-    }
-    
-     #map{
-        width:893px;
-    }
-    #nov,#dec,#jan{
-        font-family: 'La-chata';font-size: 20px;
-        color: #330000;
-        margin-left: 22px;
-    }
-    #nov:hover,#dec:hover,#jan:hover{
-        color: #268949;
-        
-    }
-    #nov.active,#dec.active,#jan.active{
-        color: #268949;
-    }
-    
-    .slide{
-        border:  4px dotted #330000;
-        overflow: hidden;
-        padding: 2px;
-    }
+    text-align: justify;
+}
+
+#map{
+    width:893px;
+}
+#nov,#dec,#jan{
+    font-family: 'La-chata';font-size: 20px;
+    color: #330000;
+    margin-left: 22px;
+}
+#nov:hover,#dec:hover,#jan:hover{
+    color: #268949;
+
+}
+#nov.active,#dec.active,#jan.active{
+    color: #268949;
+}
+
+.slide{
+    border:  4px dotted #330000;
+    overflow: hidden;
+    padding: 2px;
+    position: relative;
+    font-family: 'franklin_gothic_bookregular';
+    line-height: 30px;
+}
 @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
@@ -761,7 +764,7 @@ label.tooltip span
     #propose{
         display:none;
     }
-    
+
     #map{
         width:900px;
     }
@@ -792,9 +795,9 @@ label.tooltip span
     }
     #faq img{display:none;}
     footer{padding-left: 5px; padding-right: 15px;
-    font-size: 10px;
+           font-size: 10px;
     }
-    
+
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 10px;}
