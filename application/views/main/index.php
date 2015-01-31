@@ -456,7 +456,7 @@ Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órá
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Lilla, Tata</div>    
         </div>
         <div class="slide-item">
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;">
                     "Imádom! :­) A hozzám hasonló "őrült" gazdiknak kiváló, a kutyusokról nem is beszélve! :­) Csak így tovább, mi biztos Veletek maradunk!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>    
