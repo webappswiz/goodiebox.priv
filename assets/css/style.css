@@ -697,7 +697,7 @@ label.tooltip span
     text-align: justify;
 }
 .bordered{
-    border:  4px dotted #330000;
+    border:  2px dotted #330000;
 }
 @media only screen and (max-width: 1040px)
 {
