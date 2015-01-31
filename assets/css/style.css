@@ -888,6 +888,7 @@ label.tooltip span
     .container{
     max-width: 640px;
     margin: 0 auto;
+    border: 1px solid;
 }
     .logo img{width: 90%; height: auto;}
     .count-text{padding-left: 0px;}
