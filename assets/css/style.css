@@ -700,7 +700,16 @@ label.tooltip span
 .bordered{
     border:  2px dotted #330000;
 }
-@media only screen and (max-width: 1040px)
+
+.slide img {
+    border:3px solid;
+    -webkit-border-radius:3px!important;
+    -moz-border-radius:3px!important;
+    -ms-border-radius:3px!important;
+    -o-border-radius:3px!important;
+    border-radius:3px!important;
+}
+ @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
     .siess{padding-left:70px;}
