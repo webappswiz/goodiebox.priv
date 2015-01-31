@@ -351,7 +351,7 @@ $menus = array(
 
 <div class='clear'></div>
 
-<h2 style="font-family: La-Chata;padding-top: 10px;">Megrendelőink véleménye a Goodiebox-ról...</h2>
+<h2 style="font-family: La-Chata;padding-top: 10px;padding-bottom: 25px;">Megrendelőink véleménye a Goodiebox-ról...</h2>
 
 <div class="bxslider">
     <div class="slide">
@@ -468,7 +468,7 @@ Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órá
         minSlides: 1,
         slideMargin: 10,
         auto: true,
-        pause: 5000
+        pause: 10000,
     });
 </script>
 
