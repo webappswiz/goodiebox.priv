@@ -357,20 +357,20 @@ $menus = array(
     <div class="slide">
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsófia, Szigetmonostor</div>    
         </div>
         <div class="slide-item">
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Kedves Goodiebox-os Csapat, Megszeretném mégegyszer köszönni a kedvességetek, mind a többszöri egyeztetés, mind amiatt, hogy tényleg minden szempontból odafigyeltetek a kutyusom gyomorbetegségére. A játékok pedig egyszerűen fantasztikusak, nagy volt az öröm. Továbbra is maradunk hű vásárlótok :-)"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsanett, Kozármisleny</div>    
         </div>
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0065.JPG" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Ismét nagyon tetszett a doboz tartalma. Ez a száraztáp igazi újdonság volt számomra, mert ezt a márkát eddig még nem ismertem, de Rustynak nagyon ízlik, ahogy természetesen a jutalomfalatok is."
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Nikolett, Budapest</div>    
@@ -380,20 +380,20 @@ $menus = array(
     <div class="slide">
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/1460135_911183998914557_5797755493820555406_n.jpg" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ancsa, Sümeg</div>    
         </div>
         <div class="slide-item">
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Imádom a Goodieboxot, szinte sajnálom, hogy nem lehet gyakrabban rendelni. :­) Nagyon szeretem a hozzácsomagolt levelet, amelyben szépen, gondosan le van írva minden, és amelyből új infókhoz jutok és új termékeket ismerhetek meg."
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>    
         </div>
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/20141224_173208.jpg" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Nagyon jónak tartom. Tényleg személyre szabott odafigyeléssel állítottátok össze a csomagot, még telefonon is egyeztettetek, hogy a táp megfelel-­e Oszkárnak. A rénszarvast azonnal kivette és azóta is cipeli. Köszönjük!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Rita, Budapest</div>    
@@ -403,20 +403,20 @@ $menus = array(
     <div class="slide">
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/2015-01-31_0146.png" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Nagy örömmel vettük át és bontottuk ki az általatok küldött csomagot. Izgatottan fedtük fel a titkot rejtő dobozt. "
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Viktória, Tiszaszentimre</div>    
         </div>
         <div class="slide-item">
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Nagyon tetszett a csomagolás és a tartalom is. Nagyon cuki a gravírozott biléta. A karácsonyi plédnek külön nagyon örültem, mert régóta szerettem volna meglepni egy ilyennel a kutyusaimat."
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>    
         </div>
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/10155858_561404270661711_1556163618799603132_n.jpg" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Erzsébet, Budapest</div>
@@ -426,20 +426,20 @@ $menus = array(
     <div class="slide">
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/charlie3.jpg" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Sziasztok! Megkaptuk a dobozunkat, nagyon szépen köszönjük, mindketten imádjuk a tartalmát :) Küldök pár képet! (A rénszarvas szerelem volt első látásra, rögtön kikapta a dobozból :D) Boldog Karácsonyt Kívánunk Nektek!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ági, Szeged</div>    
         </div>
         <div class="slide-item">
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Teljesen meg vagyok elégedve a kapott csomaggal. Tetszett minden kis apró részletével, mint pl a csomagoláson feltüntetett matrica. :) A táp és a snack is nagyon megnyerő volt a kutyusnak, a játékról nem is beszélve! A biléta pedig nagyon egyedi. Ezen kívül tetszett a mellékelt kis kártya a karácsonyi üdvözlő cetlivel, illetve a csapat kedvessége és közvetlensége! Igazi karácsonyi meglepetés volt számunkra! Köszönöm, hogy az első közös karácsonyunkat ilyen széppé és emlékezetessé tette a Goodiebox csapata!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>    
         </div>
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/mr-smith.png" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Köszönjük szépen a csomagot, nagyon nagy az öröm nálunk! 
 Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órák óta kizárólag az új kis plüss barátjával hajlandó közlekedni a házban - nem ereszti - imádja! :)"
                 </div>
@@ -450,7 +450,7 @@ Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órá
     <div class="slide">
         <div class="slide-item bordered rounded">
         <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/10863758_840033542685952_1741040682_n.jpg" alt="" style="float: left;margin: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                     "Sziasztok! Először is szeretném nektek megköszönni, hogy örömtelivé varázsoltátok Nudlika első karácsonyát! :) Telitalálat volt a box, a plüss bárányt azóta sem lehet kiimádkozni a szájából! A takarót pedig párnának használta éjszaka. :) A kis bilétáért pedig külön köszönet, nagyon aranyos volt tőletek a gravírozás! A folttisztító pedig telitalálat, már ki is szedte a kocsiból a hányásfoltot! Már most alig várom, hogy rendelhessem tőletek Nudlus szülinapi dobozát! :) Nagyon Boldog Karácsonyt kívánunk az egész csapatnak!!!"
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Lilla, Tata</div>    
