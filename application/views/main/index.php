@@ -477,10 +477,9 @@ Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órá
 
 <div class='clear'></div>
 
-<div class="container">
+
     <div class="clear"></div>
     <section id="portfolio">
         <p>“Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.”</p>
         <i>Anatole France</i>
     </section> <!--End portfolio-->
-</div>
