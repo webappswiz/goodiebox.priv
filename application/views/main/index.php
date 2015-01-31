@@ -157,6 +157,7 @@ $menus = array(
 <script type="text/javascript">
 
 </script>
+<!--
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
         <li class='tab'><a href="#miert" style="font-family: 'La-chata'">Miért jó a Goodiebox?</a></li>
@@ -348,7 +349,7 @@ $menus = array(
 
     </div>
 </div>
-
+-->
 <div class='clear'></div>
 
 <h2 style="font-family: La-Chata;padding-top: 10px;padding-bottom: 25px;">Megrendelőink véleménye a Goodiebox-ról...</h2>
