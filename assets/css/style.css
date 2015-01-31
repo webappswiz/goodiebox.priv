@@ -686,6 +686,12 @@ label.tooltip span
     #nov.active,#dec.active,#jan.active{
         color: #268949;
     }
+    
+    .slide{
+        border:  4px dotted #330000;
+        overflow: hidden;
+        padding: 2px;
+    }
 @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}

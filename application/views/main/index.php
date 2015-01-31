@@ -357,8 +357,7 @@ $menus = array(
                 <div class="customer_quote_text" style="padding: 2px;">
                     Szuper ötlet, szuperül kivitelezve! :)
                 </div>
-                <div style="clear:both"></div>
-                Zsófia, Szigetmonostor
+                <div style="float: right">Zsófia, Szigetmonostor</div>
     </div>
     
     <div class="slide">
