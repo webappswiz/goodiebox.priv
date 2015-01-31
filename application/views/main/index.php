@@ -470,7 +470,8 @@ Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órá
         auto: true,
         pause: 10000,
         adaptiveHeight: true,
-        controls: false
+        controls: false,
+        speed:1000
     });
 </script>
 
