@@ -353,35 +353,58 @@ $menus = array(
 
 <div class="bxslider">
     <div class="slide">
-                <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;">
+        <div class="slide-item">
+        <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
                     "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
-                <div style="position: absolute;bottom: 0;right: 0">Erzsébet, Budapest</div>
+                <div style="position: absolute;bottom: 0;right: 2px;">Erzsébet, Budapest</div>    
+        </div>
+        <div class="slide-item">
+        <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
+                </div>
+                <div style="position: absolute;bottom: 0;right: 2px;">Erzsébet, Budapest</div>    
+        </div>
+        <div class="slide-item">
+        <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
+                </div>
+                <div style="position: absolute;bottom: 0;right: 2px;">Erzsébet, Budapest</div>    
+        </div>
     </div>
     
     <div class="slide">
-                <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;">
-                    Szuper ötlet, szuperül kivitelezve! :)
+        <div class="slide-item">
+        <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
-                <div style="position: absolute;bottom:0;right: 0">Erzsébet, Budapest</div>
-    </div>
-    
-    <div class="slide">
-                <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
-                <div class="customer_quote_text" style="padding: 2px;">
-                    Szuper ötlet, szuperül kivitelezve! :)
+                <div style="position: absolute;bottom: 0;right: 2px;">Erzsébet, Budapest</div>    
+        </div>
+        <div class="slide-item">
+        <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
                 </div>
-               <div style="float: right;bottom: 0">Erzsébet, Budapest</div>
+                <div style="position: absolute;bottom: 0;right: 2px;">Erzsébet, Budapest</div>    
+        </div>
+        <div class="slide-item">
+        <img width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin-right: 10px;"/>
+                <div class="customer_quote_text" style="padding: 2px;padding-bottom: 20px">
+                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
+                </div>
+                <div style="position: absolute;bottom: 0;right: 2px;">Erzsébet, Budapest</div>    
+        </div>
     </div>
-    
 </div>
 <script type="text/javascript">
     $('.bxslider').bxSlider({
-        minSlides: 2,
+        minSlides: 1,
         slideMargin: 10,
-        mode: 'vertical',
+        
     });
 </script>
 

@@ -687,13 +687,14 @@ label.tooltip span
     color: #268949;
 }
 
-.slide{
+.slide-item{
     border:  4px dotted #330000;
     overflow: hidden;
     padding: 2px;
     position: relative;
     font-family: 'franklin_gothic_bookregular';
     line-height: 30px;
+    margin: 10px;
 }
 @media only screen and (max-width: 1040px)
 {
