@@ -941,6 +941,9 @@ label.tooltip span
     #map{
         width:630px;
     }
+    .copy-write{
+        display: none;
+    }
 }
 @media only screen and (max-width: 460px)
 {
