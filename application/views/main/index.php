@@ -112,7 +112,7 @@ $menus = array(
     <div class="siess">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
-    <div class="count-text" style="min-width: 400px;">
+    <div class="count-text">
         <p><?= $text ?></p>
         <div class="counter">
             <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
