@@ -178,7 +178,7 @@ header .social-right ul li{margin-top: 6px;}
 .lock ul li a{ color: #330000;}
 .dog-img{float: right;padding-top: 70px;padding-right:50px;}
 .count-btn{padding: 10px; background: #cc0033; color: #ffffff !important;}
-#order-place{border: 4px dotted #330000;margin-top: 25px;padding:10px; overflow: hidden; padding-bottom: 45px; position: relative;}
+#order-place{border: 2px dotted #330000;margin-top: 25px;padding:10px; overflow: hidden; padding-bottom: 45px; position: relative;}
 #order-place h2{text-align: center;font-family: 'FranklinGothic-Heavy'; font-size:38px;color: #330000; padding-top: 0!important;}
 #order-place h2 span{font-family: 'La-chata'; font-size:48px;color: #cc0033;}
 .order-btnleft{text-align: center; float: left; margin-top: 35px; margin-left: 80px;}
