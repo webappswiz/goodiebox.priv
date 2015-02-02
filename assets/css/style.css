@@ -863,6 +863,9 @@ label.tooltip span
 }
 @media only screen and (max-width: 767px)
 {
+    #counting-back .count-text{
+        text-align: center;
+    }
     .star-img{ left: 130px;}
     .contact-us-form input[type="submit"]{position: static; width: 100%; margin:20px 0 40px 0;}
     .contact{padding: 55px 20px 35px 20px;}
@@ -906,8 +909,9 @@ label.tooltip span
     margin: 0 auto;
     
 }
+
     .logo img{width: 90%; height: auto;}
-    .count-text{padding-left: 0px}
+    .count-text{padding-left: 15px}
     .count-text p{
         text-align: center;
     }
@@ -968,6 +972,26 @@ label.tooltip span
 }
 @media only screen and (max-width: 460px)
 {
+    #counting-back .count-text{
+        float: none;
+        text-align: center;
+        padding-left: 5px;
+    }
+    #counting-back .count-text .counter{
+        float: none;
+        text-align: center;
+    }
+    #counting-back .count-text .lock{
+        float: none;
+        text-align: center;
+    }
+    .lock{
+        float: none;
+        width: 200px;
+    }
+    .lock ul li{
+        float: none;
+    }
     .logo img{width: 100%; height: auto;}
     #order-place h2{font-size: 38px;}
     #order-place h2 span{ font-size:48px;}
@@ -1013,6 +1037,26 @@ label.tooltip span
 }
 @media only screen and (max-width: 360px)
 {
+    #counting-back .count-text{
+        float: none;
+        text-align: center;
+        padding-left: 5px;
+    }
+    #counting-back .count-text .counter{
+        float: none;
+        text-align: center;
+    }
+    #counting-back .count-text .lock{
+        float: none;
+        text-align: center;
+    }
+    .lock{
+        float: none;
+        width: 200px;
+    }
+    .lock ul li{
+        float: none;
+    }
     .contact-cont-right ul li img,.dog-prof-img img{width: 100%; height: auto;}
     .claim-btn {font-size: 24px; padding: 18px 25px;}
     .radio-list input[type="radio"]{margin-left: 30px;}
@@ -1049,6 +1093,26 @@ label.tooltip span
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 592px)  and (orientation : portrait)
 {
+    #counting-back .count-text{
+        float: none;
+        text-align: center;
+        padding-left: 5px;
+    }
+    #counting-back .count-text .counter{
+        float: none;
+        text-align: center;
+    }
+    #counting-back .count-text .lock{
+        float: none;
+        text-align: center;
+    }
+    .lock{
+        float: none;
+        width: 200px;
+    }
+    .lock ul li{
+        float: none;
+    }
     .tab {
         width: 30%;
         font-size: 12px;
