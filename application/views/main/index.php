@@ -358,7 +358,7 @@ $menus = array(
         <div class="slide-item bordered rounded">
         <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0061.JPG" alt="" style="float: left;margin: 10px;"/>
                 <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
-                    "Kedves Goodiebox! Nagyon szépen köszönjük a sok kedves és hasznos ajándékot. Büfikénk a sipolós játékokat imádja és a rénszarvas rögtön a kedvence lett. Én a névreszóló bilétának örülök a legjobban. Persze ez nem az én ajándékom. Gyönyörűségünk végig izgatottan nézte mit is varázsolunk elő a neki szánt dobozból. Csak egy kis jutifalattal tudtuk lekenyerezni, hogy legalább egy fotó készülhessen róla és az ajándékairól. Igazán nagyon örültünk mindennek és mégegyszer nagyon szépen köszönjük!"
+                    Szuper ötlet, szuperül kivitelezve! :)
                 </div>
                 <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsófia, Szigetmonostor</div>    
         </div>
@@ -470,7 +470,7 @@ Mr. Smith nem bírta kivárni a szentestét és kibontotta az ajándékot! Órá
         pause: 10000,
         adaptiveHeight: true,
         controls: false,
-        speed:700
+        speed:1000
     });
 </script>
 
