@@ -829,6 +829,7 @@ label.tooltip span
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
@@ -871,6 +872,7 @@ label.tooltip span
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     #counting-back .count-text{
         text-align: center;
@@ -915,6 +917,7 @@ label.tooltip span
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     .container{
     max-width: 640px;
@@ -986,6 +989,7 @@ label.tooltip span
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     #counting-back .count-text{
         float: none;
@@ -1054,6 +1058,7 @@ label.tooltip span
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     #counting-back .count-text{
         float: none;
@@ -1113,6 +1118,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     #counting-back .count-text{
         float: none;
@@ -1164,6 +1170,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
 {
     #jan,#dec,#nov{
         font-size: 12px;
+        margin: 2px;
     }
     .tab {
         width: 30%;
