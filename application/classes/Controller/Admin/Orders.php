@@ -56,11 +56,18 @@ class Controller_Admin_Orders extends Controller_Admin {
         $this->model->orders_status = $_REQUEST['status_name'];
         $this->model->save();
         if ($_REQUEST['status_name'] == 2) {
+            if($this->model->payment_status==5){
+                $flcode = true;
+                $cost = $this->model->total_price;
+            } else {
+                $flcode = false;
+                $cost = 0;
+            }
             $date = strtotime(date('Y.m.d'));
             $pickup = date('Y.m.d', $date + 86400);
             $shipping = new Shipping();
             $data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "' . $pickup . '.",
-      "flCOD": "false",
+      "flCOD": "'.$flcode.'",
 	  "nmRecipientCOD": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
 	  "nmBankCOD": "GiveMeAllYourMoney Bank",
 	  "txBankAccountNumberCOD": "12345678-12345678-12345678",
@@ -85,7 +92,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		[
 		{
           "ctPackage": "1",
-          "amContent": "0",
+          "amContent": "'.$cost.'",
           "txContent": "' . $this->model->package->package_name . '",
           "idOrder": "' . $this->model->id . '"
         }
