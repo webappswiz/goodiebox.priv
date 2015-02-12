@@ -221,7 +221,7 @@ $menus = array(
     
 </section>
 <div class="clear"></div>
-<center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Értesítsünk, amikor nyitva vagyunk?</a></center>
+<?php if($status==0):?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Értesítsünk, amikor nyitva vagyunk?</a></center><?php endif;?>
 <div class="clear"></div>
 <nav style="margin-top: 10px">
     <ul>
