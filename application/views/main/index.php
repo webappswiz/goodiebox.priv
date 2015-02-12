@@ -118,6 +118,10 @@ $menus = array(
             });
         }
         
+        $('#popupBoxClose').on('click', function(){
+            unloadPopupBox();
+        });
+        
         $('#subscribe').on('click', function(){
             loadPopupBox();
         });
@@ -174,11 +178,11 @@ $menus = array(
     <div class="claim-form2">
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
-                <label>Your name:</label> <input type="text" name="name" value="" size="40" class="" />
+                <label>Your name:</label> <input type="text" name="name" value="" size="40" class="" required/>
             </div>
             <br/>
             <div>
-                <label>Email:</label> <input type="text" name="email" value="" size="40" class="" />
+                <label>Email:</label> <input type="text" name="email" value="" size="40" class="" required/>
             </div>
             <div>
                 <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
