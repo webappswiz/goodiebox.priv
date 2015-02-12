@@ -9,6 +9,7 @@
                 <li><a href="/admin/templates/edit/3">Gift email template</a></li>
                 <li><a href="/admin/templates/edit/4">Invite email template</a></li>
                 <li><a href="/admin/templates/edit/5">Forgot password email template</a></li>
+                <li><a href="/admin/templates/edit/5">Notification email template</a></li>
         </div>
     </div>
     <!--/.well -->
