@@ -8,6 +8,21 @@ class Controller_Admin_Counter extends Controller_Admin {
         parent::before();
         $this->template->active_menu = 'counter';
     }
+    
+    private function send($to, $from, $subject, $body, $file = '') {
+        $email = new PHPMailer();
+        $email->ContentType = 'text/plain';
+        $email->AddAddress($to);
+        $email->CharSet = 'UTF-8';
+        $email->SetFrom($from, 'Goodiebox');
+        $email->Subject = $subject;
+        $email->Body = $body;
+        $email->IsHTML(true);
+        if (!empty($file)) {
+            $email->AddAttachment(DOCROOT . 'orders/' . $file, $file);
+        }
+        $email->Send();
+    }
 
     protected function find_model() {
         $this->model = ORM::factory('Options', 1);
@@ -18,7 +33,7 @@ class Controller_Admin_Counter extends Controller_Admin {
 
     public function action_index() {
         $this->find_model();
-        if($this->is_post())
+        if ($this->is_post())
             $this->update();
     }
 
@@ -27,13 +42,19 @@ class Controller_Admin_Counter extends Controller_Admin {
         $this->model->end_date = arr::get($_REQUEST, 'end_date');
         $this->model->status = arr::get($_REQUEST, 'status');
         $this->model->save();
-        
-        if($this->model->status==1){
+
+        if ($this->model->status == 1) {
+            $template = ORM::factory('Templates', 7);
+            $subscribers = ORM::factory('Subscribers')->find_all();
+            foreach ($subscribers as $subscriber) {
+                $email_template = str_replace('[name]', $subscriber->name, $template->template_text);
+                $this->send($subscriber->email, 'info@goodiebox.hu', 'Store is opened', $email_template);
+            }
             $text = 'Successfully enabled';
         } else {
             $text = 'Successfully disabled';
         }
-        
+
         Flash::set('notice', $text);
         $this->redirect('/admin/counter/');
     }
