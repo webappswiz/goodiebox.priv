@@ -709,6 +709,49 @@ label.tooltip span
     -o-border-radius:3px!important;
     border-radius:3px!important;
 }
+
+ #dialog-form1{
+        display:none; /* Hide the DIV */
+        position:fixed;
+        height:255px;
+        width:350px;
+        background:#FFFFFF;
+        margin: 0 auto;
+        z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+        left: 50%;
+        top: 10px;
+        margin-left: -125px;
+        /* additional features, can be omitted */
+        border:2px solid;
+        padding:15px;
+        font-size:18px;
+        overflow: hidden;
+    }
+    #dialog-form1 input[type="text"]{
+        font-size: 18px;
+        margin: 5px;
+        border:1px solid #330000;
+        padding: 2px;
+    }
+    #dialog-form1 input[type="submit"]{
+        margin: 5px;
+    }
+    #dialog-form1 label{
+        font-size: 18px;
+        margin: 5px;
+    }
+    #popupBoxClose1 {
+        font-size:20px;
+        line-height:15px;
+        right:5px;
+        top:5px;
+        position:absolute;
+        color:#6fa5e2;
+        font-weight:500;
+        cursor: pointer;
+    }
+
+
  @media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
@@ -984,12 +1027,13 @@ label.tooltip span
     .slide-item{
         font-size: 12px;
     }
-    #dialog-form{
-        height:200px;
+    #dialog-form1{
+        height:220px;
         width:300px;
         font-size: 14px;
+        left:10px;
     }
-    #dialog-form input[type="text"]{
+    #dialog-form1 input[type="text"]{
         font-size: 14px;
         margin: 2px;
         padding: 1px;
@@ -1062,6 +1106,17 @@ label.tooltip span
     }
     .slide-item{
         font-size: 12px;
+    }
+    #dialog-form1{
+        height:220px;
+        width:300px;
+        font-size: 14px;
+        left:5px;
+    }
+    #dialog-form1 input[type="text"]{
+        font-size: 14px;
+        margin: 2px;
+        padding: 1px;
     }
 }
 @media only screen and (max-width: 360px)
@@ -1136,6 +1191,20 @@ label.tooltip span
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 592px)  and (orientation : portrait)
 {
+    #dialog-form1{
+        height:220px;
+        width:300px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    #dialog-form1 input[type="text"]{
+        font-size: 14px;
+        margin: 2px;
+        padding: 1px;
+    }
+    #dialog-form1 .dark-btn{
+        
+    }
     #jan,#dec,#nov{
         font-size: 12px;
         margin: 2px;

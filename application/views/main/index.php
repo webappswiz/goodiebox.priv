@@ -104,21 +104,21 @@ $menus = array(
         $('#tab-container').easytabs();
         
         function unloadPopupBox() {    // TO Unload the Popupbox
-            $('#dialog-form').fadeOut("slow");
+            $('#dialog-form1').fadeOut("slow");
             $("#container").css({// this is just for style
                 "opacity": "1"
             });
         }
 
         function loadPopupBox() {    // To Load the Popupbox
-            $('#dialog-form').slideDown( "slow");
+            $('#dialog-form1').slideDown( "slow");
             
             $("#container").css({// this is just for style
                 "opacity": "0.3"
             });
         }
         
-        $('#popupBoxClose').on('click', function(){
+        $('#popupBoxClose1').on('click', function(){
             unloadPopupBox();
         });
         
@@ -131,51 +131,13 @@ $menus = array(
 </script>
 
 <style type="text/css">
-    #dialog-form{
-        display:none; /* Hide the DIV */
-        position:fixed;
-        height:255px;
-        width:350px;
-        background:#FFFFFF;
-        margin: 0 auto;
-        z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
-        left: 50%;
-        top: 10px;
-        margin-left: -125px;
-        /* additional features, can be omitted */
-        border:2px solid;
-        padding:15px;
-        font-size:18px;
-    }
-    #dialog-form input[type="text"]{
-        font-size: 18px;
-        margin: 5px;
-        border:1px solid #330000;
-        padding: 2px;
-    }
-    #dialog-form input[type="submit"]{
-        margin: 5px;
-    }
-    #dialog-form label{
-        font-size: 18px;
-        margin: 5px;
-    }
-    #popupBoxClose {
-        font-size:20px;
-        line-height:15px;
-        right:5px;
-        top:5px;
-        position:absolute;
-        color:#6fa5e2;
-        font-weight:500;
-        cursor: pointer;
-    }
+   
     
     
 </style>
 
 
-<div id="dialog-form" title="Add a new dog">
+<div id="dialog-form1" title="Add a new dog">
     <script>
         $(".process-form").validate();
     </script>
@@ -192,7 +154,7 @@ $menus = array(
                 <input type="submit" value="Kérem az értesítést!" class="dark-btn dog-prof-btn rounded">
             </div>
         </form>
-        <a id="popupBoxClose"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
+        <a id="popupBoxClose1"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
     </div>
 </div>
 
