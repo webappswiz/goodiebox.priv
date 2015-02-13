@@ -140,9 +140,8 @@ $menus = array(
         margin: 0 auto;
         z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
         left: 50%;
-        top: 50%;
+        top: 10px;
         margin-left: -125px;
-        margin-top: -175px;
         /* additional features, can be omitted */
         border:2px solid;
         padding:15px;
