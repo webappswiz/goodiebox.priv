@@ -733,6 +733,12 @@ label.tooltip span
         border:1px solid #330000;
         padding: 2px;
     }
+    #dialog-form1 input[type="email"]{
+        font-size: 18px;
+        margin: 5px;
+        border:1px solid #330000;
+        padding: 2px;
+    }
     #dialog-form1 input[type="submit"]{
         margin: 5px;
     }
@@ -1135,7 +1141,11 @@ label.tooltip span
         margin: 1px;
         padding: 1px;
     }
-    
+    #dialog-form1 input[type="email"]{
+        font-size: 12px;
+        margin: 1px;
+        padding: 1px;
+    }
     
    #dialog-form1 label{
         margin-top: 1px;
@@ -1158,6 +1168,7 @@ label.tooltip span
         display: none;
         height:200px;
         width:300px;
+        padding-left: 20px;
         font-size: 12px;
     }
     #dialog-form1 input[type="text"]{
@@ -1165,7 +1176,11 @@ label.tooltip span
         margin: 1px;
         padding: 1px;
     }
-    
+    #dialog-form1 input[type="email"]{
+        font-size: 12px;
+        margin: 1px;
+        padding: 1px;
+    }
     #popupBoxClose1 {
         font-size:10px;
         right:5px;
@@ -1239,11 +1254,17 @@ and (max-device-width : 592px)  and (orientation : portrait)
     #dialog-form1{
         display: none;
         height:220px;
-        width:300px;
+        width:280px;
+        padding-left: 10px;
         font-size: 14px;
         margin-left: 10px;
     }
     #dialog-form1 input[type="text"]{
+        font-size: 12px;
+        margin: 1px;
+        padding: 1px;
+    }
+    #dialog-form1 input[type="email"]{
         font-size: 12px;
         margin: 1px;
         padding: 1px;
