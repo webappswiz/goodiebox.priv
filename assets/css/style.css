@@ -745,6 +745,8 @@ label.tooltip span
         line-height:15px;
         right:5px;
         top:5px;
+        float: right;
+        
         position:absolute;
         color:#6fa5e2;
         font-weight:500;
@@ -1134,6 +1136,7 @@ label.tooltip span
         font-size:10px;
         right:5px;
         top:5px;
+        float: right;
         position:absolute;
         color:#6fa5e2;
         font-weight:500;
