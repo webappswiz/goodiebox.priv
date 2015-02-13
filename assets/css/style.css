@@ -719,7 +719,7 @@ label.tooltip span
         margin: 0 auto;
         z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
         left: 50%;
-        top: 10px;
+        top: 60px;
         margin-left: -125px;
         /* additional features, can be omitted */
         border:2px solid;
@@ -1034,6 +1034,7 @@ label.tooltip span
         width:300px;
         font-size: 14px;
         left:10px;
+        margin-left: 20px;
     }
     #dialog-form1 input[type="text"]{
         font-size: 12px;
