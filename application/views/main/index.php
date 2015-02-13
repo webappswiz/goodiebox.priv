@@ -142,6 +142,7 @@ $menus = array(
         $(".process-form").validate();
     </script>
     <div class="claim-form2">
+        <a id="popupBoxClose1"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
                 <label>Keresztneved:</label> <input type="text" name="name" value="" size="20" class="" required/>
@@ -154,7 +155,7 @@ $menus = array(
                 <input type="submit" value="Kérem az értesítést!" class="dark-btn dog-prof-btn rounded">
             </div>
         </form>
-        <a id="popupBoxClose1"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
+        
     </div>
 </div>
 
