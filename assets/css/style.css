@@ -1036,8 +1036,8 @@ label.tooltip span
         left:10px;
     }
     #dialog-form1 input[type="text"]{
-        font-size: 14px;
-        margin: 2px;
+        font-size: 12px;
+        margin: 1px;
         padding: 1px;
     }
     
@@ -1130,14 +1130,14 @@ label.tooltip span
         left:5px;
     }
     #dialog-form1 input[type="text"]{
-        font-size: 14px;
-        margin: 2px;
+        font-size: 12px;
+        margin: 1px;
         padding: 1px;
     }
     
     
    #dialog-form1 label{
-        margin-top: 2px;
+        margin-top: 1px;
     }
     
     #popupBoxClose1 {
@@ -1161,7 +1161,7 @@ label.tooltip span
     }
     #dialog-form1 input[type="text"]{
         font-size: 12px;
-        margin: 2px;
+        margin: 1px;
         padding: 1px;
     }
     
@@ -1243,10 +1243,15 @@ and (max-device-width : 592px)  and (orientation : portrait)
         margin-left: 10px;
     }
     #dialog-form1 input[type="text"]{
-        font-size: 14px;
-        margin: 2px;
+        font-size: 12px;
+        margin: 1px;
         padding: 1px;
     }
+    
+    #dialog-form1 label{
+        margin: 1px;
+    }
+    
     #dialog-form1 .dark-btn{
         
     }
