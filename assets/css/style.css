@@ -984,6 +984,19 @@ label.tooltip span
     .slide-item{
         font-size: 12px;
     }
+    #dialog-form{
+        height:200px;
+        width:300px;
+        margin-left: -100px;
+        margin-top: -125px;
+        font-size: 14px;
+    }
+    #dialog-form input[type="text"]{
+        font-size: 14px;
+        margin: 2px;
+        padding: 1px;
+        width: 180px;
+    }
 }
 @media only screen and (max-width: 460px)
 {

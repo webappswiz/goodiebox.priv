@@ -134,7 +134,6 @@ $menus = array(
     #dialog-form{
         display:none; /* Hide the DIV */
         position:fixed;
-        _position:absolute; /* hack for internet explorer 6 */
         height:255px;
         width:350px;
         background:#FFFFFF;
@@ -143,8 +142,7 @@ $menus = array(
         left: 50%;
         top: 50%;
         margin-left: -125px;
-        margin-top: -275px;
-
+        margin-top: -175px;
         /* additional features, can be omitted */
         border:2px solid;
         padding:15px;
@@ -173,6 +171,8 @@ $menus = array(
         font-weight:500;
         cursor: pointer;
     }
+    
+    
 </style>
 
 
@@ -183,11 +183,11 @@ $menus = array(
     <div class="claim-form2">
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
-                <label>Keresztneved:</label> <input type="text" name="name" value="" size="40" class="" required/>
+                <label>Keresztneved:</label> <input type="text" name="name" value="" size="20" class="" required/>
             </div>
             <br/>
             <div>
-                <label>Email címed:</label> <input type="text" name="email" value="" size="40" class="" required/>
+                <label>Email címed:</label> <input type="text" name="email" value="" size="20" class="" required/>
             </div>
             <div style="text-align: center;">
                 <input type="submit" value="Kérem az értesítést!" class="dark-btn dog-prof-btn rounded">
