@@ -13,7 +13,7 @@ class Controller_Subscribe extends Controller_Core {
             $this->redirect('/');
         }
         
-        $subscriber = ORM::factory('Subscribers')->where('email','=',arr::get($_REQUEST, 'email'));
+        $subscriber = ORM::factory('Subscribers')->where('email','=',arr::get($_REQUEST, 'email'))->find();
         if(!$subscriber->loaded()){
             $subscriber = ORM::factory('Subscribers');
         } else {
