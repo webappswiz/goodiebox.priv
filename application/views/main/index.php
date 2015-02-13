@@ -137,7 +137,7 @@ $menus = array(
 </style>
 
 
-<div id="dialog-form1" title="Add a new dog">
+<div id="dialog-form1" title="Add a new dog" style="display:none;">
     <script>
         $(".process-form").validate();
     </script>
