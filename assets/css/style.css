@@ -1122,13 +1122,13 @@ label.tooltip span
 }
 @media only screen and (max-width: 360px)
 {
-    #dialog-form{
+    #dialog-form1{
         display: none;
         height:200px;
         width:300px;
         font-size: 12px;
     }
-    #dialog-form input[type="text"]{
+    #dialog-form1 input[type="text"]{
         font-size: 12px;
         margin: 2px;
         padding: 1px;
