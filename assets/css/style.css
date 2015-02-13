@@ -1028,6 +1028,7 @@ label.tooltip span
         font-size: 12px;
     }
     #dialog-form1{
+        display: none;
         height:220px;
         width:300px;
         font-size: 14px;
@@ -1122,6 +1123,7 @@ label.tooltip span
 @media only screen and (max-width: 360px)
 {
     #dialog-form{
+        display: none;
         height:200px;
         width:300px;
         font-size: 12px;
@@ -1192,6 +1194,7 @@ label.tooltip span
 and (max-device-width : 592px)  and (orientation : portrait)
 {
     #dialog-form1{
+        display: none;
         height:220px;
         width:300px;
         font-size: 14px;
