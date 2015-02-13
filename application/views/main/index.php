@@ -147,7 +147,6 @@ $menus = array(
             <div>
                 <label>Keresztneved:</label> <input type="text" name="name" value="" size="20" class="" required/>
             </div>
-            <br/>
             <div>
                 <label>Email címed:</label> <input type="text" name="email" value="" size="20" class="" required/>
             </div>
