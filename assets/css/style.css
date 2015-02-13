@@ -746,7 +746,6 @@ label.tooltip span
         right:5px;
         top:5px;
         float: right;
-        
         position:absolute;
         color:#6fa5e2;
         font-weight:500;
@@ -1042,6 +1041,10 @@ label.tooltip span
         padding: 1px;
     }
     
+    #dialog-form1 label{
+        margin-top: 2px;
+    }
+    
     #popupBoxClose1 {
         font-size:10px;
         right:5px;
@@ -1130,6 +1133,11 @@ label.tooltip span
         font-size: 14px;
         margin: 2px;
         padding: 1px;
+    }
+    
+    
+   #dialog-form1 label{
+        margin-top: 2px;
     }
     
     #popupBoxClose1 {
