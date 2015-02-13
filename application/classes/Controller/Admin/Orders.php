@@ -57,10 +57,10 @@ class Controller_Admin_Orders extends Controller_Admin {
         $this->model->save();
         if ($_REQUEST['status_name'] == 2) {
             if($this->model->payment_status==5){
-                $flcode = true;
+                $flcode = "true";
                 $cost = $this->model->total_price;
             } else {
-                $flcode = false;
+                $flcode = "false";
                 $cost = 0;
             }
             $date = strtotime(date('Y.m.d'));

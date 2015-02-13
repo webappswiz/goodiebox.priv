@@ -17,7 +17,7 @@ class Controller_Subscribe extends Controller_Core {
         $subscriber->name = arr::get($_REQUEST, 'name');
         $subscriber->email = arr::get($_REQUEST, 'email');
         $subscriber->save();
-        Flash::set('notice', 'You have successfully subscribed!');
+        Flash::set('notice', 'Köszönjük szépen! Amint kinyitunk, értesítünk Téged is!');
         $this->redirect('/');
     }
 

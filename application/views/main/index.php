@@ -135,7 +135,7 @@ $menus = array(
         display:none; /* Hide the DIV */
         position:fixed;
         _position:absolute; /* hack for internet explorer 6 */
-        height:250px;
+        height:255px;
         width:350px;
         background:#FFFFFF;
         margin: 0 auto;
@@ -150,8 +150,13 @@ $menus = array(
         padding:15px;
         font-size:18px;
     }
-    #dialog-form input{
+    #dialog-form input[type="text"]{
         font-size: 18px;
+        margin: 5px;
+        border:1px solid #330000;
+        padding: 2px;
+    }
+    #dialog-form input[type="submit"]{
         margin: 5px;
     }
     #dialog-form label{
@@ -178,14 +183,14 @@ $menus = array(
     <div class="claim-form2">
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
-                <label>Your name:</label> <input type="text" name="name" value="" size="40" class="" required/>
+                <label>Keresztneved:</label> <input type="text" name="name" value="" size="40" class="" required/>
             </div>
             <br/>
             <div>
-                <label>Email:</label> <input type="text" name="email" value="" size="40" class="" required/>
+                <label>Email címed:</label> <input type="text" name="email" value="" size="40" class="" required/>
             </div>
-            <div>
-                <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
+            <div style="text-align: center;">
+                <input type="submit" value="Kérem az értesítést!" class="dark-btn dog-prof-btn rounded">
             </div>
         </form>
         <a id="popupBoxClose"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
@@ -221,7 +226,7 @@ $menus = array(
     
 </section>
 <div class="clear"></div>
-<?php if($status==0):?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Értesítsünk, amikor nyitva vagyunk?</a></center><?php endif;?>
+<?php if($status==0):?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Szeretnél értesítést, amikor rendelhető a következő Goodiebox?</a></center><?php endif;?>
 <div class="clear"></div>
 <nav style="margin-top: 10px">
     <ul>
