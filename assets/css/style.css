@@ -1039,6 +1039,16 @@ label.tooltip span
         margin: 2px;
         padding: 1px;
     }
+    
+    #popupBoxClose1 {
+        font-size:10px;
+        right:5px;
+        top:5px;
+        position:absolute;
+        color:#6fa5e2;
+        font-weight:500;
+        cursor: pointer;
+    }
 }
 @media only screen and (max-width: 460px)
 {
@@ -1119,6 +1129,16 @@ label.tooltip span
         margin: 2px;
         padding: 1px;
     }
+    
+    #popupBoxClose1 {
+        font-size:10px;
+        right:5px;
+        top:5px;
+        position:absolute;
+        color:#6fa5e2;
+        font-weight:500;
+        cursor: pointer;
+    }
 }
 @media only screen and (max-width: 360px)
 {
@@ -1133,6 +1153,17 @@ label.tooltip span
         margin: 2px;
         padding: 1px;
     }
+    
+    #popupBoxClose1 {
+        font-size:10px;
+        right:5px;
+        top:5px;
+        position:absolute;
+        color:#6fa5e2;
+        font-weight:500;
+        cursor: pointer;
+    }
+    
     #jan,#dec,#nov{
         font-size: 12px;
         margin: 2px;

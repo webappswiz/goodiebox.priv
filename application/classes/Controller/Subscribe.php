@@ -13,7 +13,13 @@ class Controller_Subscribe extends Controller_Core {
             $this->redirect('/');
         }
         
-        $subscriber = ORM::factory('Subscribers');
+        $subscriber = ORM::factory('Subscribers')->where('email','=',arr::get($_REQUEST, 'email'));
+        if(!$subscriber->loaded()){
+            $subscriber = ORM::factory('Subscribers');
+        } else {
+            Flash::set('alert', 'Már feliratkoztál! Köszönjük szépen!');
+            $this->redirect('/');
+        }
         $subscriber->name = arr::get($_REQUEST, 'name');
         $subscriber->email = arr::get($_REQUEST, 'email');
         $subscriber->save();
