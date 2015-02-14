@@ -68,7 +68,14 @@
     <table>
             <tr>
                 <td><strong>Purchased package</strong></td>
-                <td><?=$model->package->package_name?></td>
+                <?php
+                if($model->selected_box==0){
+                    $pkg = $model->prod_name;
+                } else {
+                    $pkg = $model->package->package_name;
+                }
+                ?>
+                <td><?=$pkg?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <th>Modify order</th>
             </tr>

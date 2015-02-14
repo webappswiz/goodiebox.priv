@@ -36,7 +36,12 @@ if (count($data) > 0) {
                     $type = 'Manual order';
                 
                 echo '<td>' . $type . '</td>';
-                echo '<td>' . $order->package->package_name . '</td>';
+                if($order->selected_box==0){
+                    $pkg = $order->prod_name;
+                } else {
+                    $pkg = $order->package->package_name;
+                }
+                echo '<td>' . $pkg . '</td>';
                 echo '<td>' . $order->status->status_name . '</td>';
                 $coupon = (!empty($order->coupon_code)) ? 'Yes' : 'No';
                 echo '<td>' . $coupon . '</td>';

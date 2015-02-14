@@ -45,7 +45,12 @@ class Controller_Admin_Invoice extends Controller_Admin {
         if (!$this->is_post()) {
             return;
         }
-        $this->model->selected_box = Arr::get($_REQUEST, 'product');
+        if(Arr::get($_REQUEST, 'product')!=0){
+            $this->model->selected_box = Arr::get($_REQUEST, 'product');
+        } else {
+            $this->model->selected_box = 0;
+            $this->model->prod_name = Arr::get($_REQUEST, 'prod_name');;
+        }
         $this->model->delivery_firstname = Arr::get($_REQUEST, 'firstname');
         $this->model->delivery_lastname = Arr::get($_REQUEST, 'lastname');
         $this->model->delivery_address = Arr::get($_REQUEST, 'address');
@@ -57,7 +62,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->company_zip = Arr::get($_REQUEST, 'company_zip');
         $this->model->company_city = Arr::get($_REQUEST, 'company_city');
         $this->model->tax_code = Arr::get($_REQUEST, 'tax_code');
-        $this->model->total_price = Arr::get($_REQUEST, 'total_price');
+        $this->model->total_price = Arr::get($_REQUEST, 'total_price')+Arr::get($_REQUEST, 'shipping_cost');
         $this->model->user_id = $this->current_user->id;
         $this->model->last_modified = date('Y-m-d H:i:s');
         $this->model->date_purchased = date('Y-m-d H:i:s');
@@ -69,18 +74,19 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->invoice_num = $o->invoice_num + 1;
         $this->model->save();
         
-        $this->receipt_email($this->model,Arr::get($_REQUEST, 'size'));
+        $this->receipt_email($this->model,Arr::get($_REQUEST, 'size'),Arr::get($_REQUEST, 'shipping_cost'));
         $this->redirect('/admin/invoice/');
     }
 
-    private function receipt_email($order,$size) {
-        
+    private function receipt_email($order,$size,$shipping) {
             if ($size == 1) {
-                $s = 'Icipici';
+                $s = 'GOODIEBOX Icipici'.'<br/>'.$order->package->package_name;
             } elseif ($size == 2) {
-                $s = 'Éppen jó';
+                $s = 'GOODIEBOX Éppen jó'.'<br/>'.$order->package->package_name;
             } elseif ($size == 3) {
-                $s = 'Igazi óriás';
+                $s = 'GOODIEBOX Igazi óriás'.'<br/>'.$order->package->package_name;
+            } else {
+                $s=$order->prod_name;
             }
         
 
@@ -102,10 +108,15 @@ class Controller_Admin_Invoice extends Controller_Admin {
             $term = '1';
         } elseif ($order->package->term == 2) {
             $term = '3';
-        } else {
+        } elseif($order->package->term==3) {
             $term = '6';
+        } else {
+            $term = '1';
         }
 
+        $one_item = $order->total_price/$term - $shipping;
+        $full_item = $order->total_price - $shipping;
+        
         $invoice = '<!DOCTYPE html>
 <html lang="hu">
     <head>
@@ -173,14 +184,14 @@ class Controller_Admin_Invoice extends Controller_Admin {
                         </tr>
                         <tr>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">' . $order->package->product_number . '</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">GOODIEBOX ' . $s . '<br/>' . $order->package->package_name . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . $s . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . $term . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">db</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->total_price/$term, 2, ',', '') . '</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $order->total_price, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $one_item, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . number_format((float) $full_item, 2, ',', '') . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">AM</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">0,00</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">' . number_format((float) $order->total_price, 2, ',', '') . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">' . number_format((float) $full_item, 2, ',', '') . '</td>
                         </tr>
                     </table>
                 </td>
@@ -193,7 +204,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>0,00&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>'.number_format((float) $shipping, 2, ',', '').'&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>

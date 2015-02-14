@@ -3,6 +3,17 @@
         $(':button.cancel').on('click', function() {
             return window.location.replace("" + url_base + "admin/packages");
         });
+        $('#type').on('change',function(){
+           if($(this).val()==="0"){
+               $('#size').attr('disabled','disabled');
+               $('#sizediv').hide('slow');
+               $('#sizediv').after('<div class="control-group" id="custom_prod"><label class="control-label" for="prod_name">Custom product name</label><div class="controls"><input type="text" id="prod_name" name="prod_name" placeholder="" value=""></div></div>');
+           } else {
+               $('#size').removeAttr('disabled');
+               $('#sizediv').show('slow');
+               $('#custom_prod').hide('slow');
+           }
+        });
 
     });
 </script>
@@ -17,10 +28,11 @@
                         <?php foreach ($products as $product):?>
                         <option value="<?=$product->id?>"><?=$product->package_name?></option>
                         <?php endforeach;?>
+                        <option value="0">Other product</option>
                     </select>
                 </div>
             </div>
-            <div class="control-group">
+            <div class="control-group" id="sizediv">
                 <label class="control-label" for="product">Dog's size</label>
                 <div class="controls">
                     <select id="size" name="size">
@@ -97,7 +109,13 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="total_price">Total price</label>
+                <label class="control-label" for="shipping_cost">Shipping cost</label>
+                <div class="controls">
+                    <input type="text" id="total_price" name="shipping_cost" placeholder="" value="0">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="total_price">Product price</label>
                 <div class="controls">
                     <input type="text" id="total_price" name="total_price" placeholder="" value="">
                 </div>

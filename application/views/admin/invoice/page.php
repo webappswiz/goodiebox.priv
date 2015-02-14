@@ -26,7 +26,12 @@ if (count($data) > 0) {
                 if ($order->type == 4)
                     $type = 'Manual orders';
                 echo '<td>' . $type . '</td>';
-                echo '<td>' . $order->package->package_name . '</td>';
+                if($order->selected_box==0){
+                    $pkg = $order->prod_name;
+                } else {
+                    $pkg = $order->package->package_name;
+                }
+                echo '<td>' . $pkg . '</td>';
                 echo '<td>' . $order->date_purchased . '</td>';
                 echo '<td><a href="/admin/orders/receipt/' . $order->id . '" class="btn btn-primary">View</a></td>';
                 echo '</tr>';
