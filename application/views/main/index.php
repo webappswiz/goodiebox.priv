@@ -77,30 +77,6 @@ $menus = array(
                 $('#tovab2').show('slow');
             }
         });
-        $('#nov').on('click', function () {
-            $('#dec').removeClass('active');
-            $('#jan').removeClass('active');
-            $(this).addClass('active');
-            $('#dec_photos').hide();
-            $('#jan_photos').hide();
-            $('#nov_photos').show();
-        });
-        $('#dec').on('click', function () {
-            $('#nov').removeClass('active');
-            $('#jan').removeClass('active');
-            $(this).addClass('active');
-            $('#nov_photos').hide();
-            $('#jan_photos').hide();
-            $('#dec_photos').show();
-        });
-        $('#jan').on('click', function () {
-            $('#nov').removeClass('active');
-            $('#dec').removeClass('active');
-            $(this).addClass('active');
-            $('#nov_photos').hide();
-            $('#dec_photos').hide();
-            $('#jan_photos').show();
-        });
         $('#tab-container').easytabs();
         
         function unloadPopupBox() {    // TO Unload the Popupbox
@@ -130,13 +106,6 @@ $menus = array(
     });
 </script>
 
-<style type="text/css">
-   
-    
-    
-</style>
-
-
 <div id="dialog-form1" title="Add a new dog" style="display:none;">
     <script>
         $(".process-form").validate();
@@ -157,9 +126,6 @@ $menus = array(
         
     </div>
 </div>
-
-
-
 
 <section id="counting-back" style="margin-top: 25px;vertical-align: middle;position: relative">
     <div class="count-image">
@@ -214,9 +180,6 @@ $menus = array(
 </section> <!--End order place-->
 
 <div class='clear'></div>
-<script type="text/javascript">
-
-</script>
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
         <li class='tab'><a href="#miert" style="font-family: 'La-chata'">Miért jó a Goodiebox?</a></li>
@@ -262,89 +225,6 @@ $menus = array(
     </div>
 
     <div id="fotok">
-        <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 January</a>
-        &nbsp;&nbsp;&nbsp;
-        <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">2014 December</a>
-        &nbsp;&nbsp;&nbsp;
-        <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2014 November</a><br/><br/><br/>
-        <div class="image-row" style="text-align: center;display: none" id="nov_photos">
-            <div class="image-set">
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-0.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-0.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-1.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-1.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-2.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-2.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-3.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-3.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-4.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-4.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-5.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-5.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-6.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-6.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-7.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-7.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-8.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-8.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-9.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-9.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-10.png" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-10.jpg" alt="" /></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-11.png" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/thumb_img-11.jpg" alt="" /></a>
-            </div>
-        </div>
-        <div class="image-row" style="text-align: center;display: none" id="dec_photos">
-            <div class="image-set">
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-12.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-12.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-13.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-13.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-14.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-14.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-15.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-15.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-16.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-16.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-17.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-17.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-18.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-18.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-19.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-19.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-20.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-20.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-21.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-21.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-22.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-22.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-23.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-23.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-24.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-24.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-25.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-25.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-26.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-26.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-27.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-27.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-28.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-28.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-29.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-29.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-30.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-30.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-31.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-31.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-32.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-32.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-33.jpg" data-lightbox="example-set2" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-33.jpg" alt=""/></a>
-            </div>
-        </div>
-
-
         <div class="image-row" style="text-align: center;" id="jan_photos">
             <div class="image-set">
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-34.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
