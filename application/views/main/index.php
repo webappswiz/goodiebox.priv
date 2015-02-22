@@ -127,7 +127,7 @@ $menus = array(
     </div>
 </div>
 
-<section id="counting-back" style="margin-top: 25px;vertical-align: middle;position: relative">
+<section id="counting-back" style="margin-bottom: 5px;margin-top: 25px;vertical-align: middle;position: relative">
     <div class="count-image">
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> 
@@ -153,7 +153,9 @@ $menus = array(
     
 </section>
 <div class="clear"></div>
-<?php if($status==0):?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Szeretnél értesítést, amikor rendelhető a következő Goodiebox?</a></center><?php endif;?>
+<div class="clear"></div>
+<br/>
+    <?php if($status==0):?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Szeretnél értesítést, amikor rendelhető a következő Goodiebox?</a></center><?php endif;?>
 <div class="clear"></div>
 <nav style="margin-top: 10px">
     <ul>

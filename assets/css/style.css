@@ -840,6 +840,9 @@ label.tooltip span
     #jan,#dec,#nov{
         font-size: 12px;
     }
+    .counting-back{
+        margin-bottom: 5px;
+    }
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
     .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
