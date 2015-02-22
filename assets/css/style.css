@@ -654,6 +654,7 @@ label.tooltip span
 }
 .tab a.active { 
     font-weight: bold; 
+    font-size: 18px;
     color: #330000;
 }
 .tab-container .panel-container { 
