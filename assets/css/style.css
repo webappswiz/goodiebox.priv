@@ -1351,7 +1351,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     }
     .tab a.active { 
     font-weight: bold; 
-    font-size: 10px;
+    font-size: 8px;
     color: #330000;
 }
     .etabs{
@@ -1388,7 +1388,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
     }
    .tab a.active { 
     font-weight: bold; 
-    font-size: 10px;
+    font-size: 8px;
     color: #330000;
 }
     .etabs{
