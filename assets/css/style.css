@@ -841,7 +841,7 @@ label.tooltip span
         font-size: 12px;
     }
     .counting-back{
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
