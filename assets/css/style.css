@@ -1278,7 +1278,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
         
     }
     #jan,#dec,#nov{
-        font-size: 12px;
+        font-size: 10px;
         margin: 2px;
     }
     #counting-back .count-text{
@@ -1303,7 +1303,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     }
     .tab {
         width: 30%;
-        font-size: 12px;
+        font-size: 10px;
     }
     .etabs{
         text-align: center;
