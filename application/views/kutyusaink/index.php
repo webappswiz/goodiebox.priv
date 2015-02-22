@@ -38,7 +38,7 @@
         </ul>
         
         <div id="fotok">
-            <div>
+            <div id="navs">
                 <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 January</a>
             &nbsp;&nbsp;&nbsp;
             <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">2014 December</a>
