@@ -799,7 +799,7 @@ label.tooltip span
     .bottom-text-field{width: 100%;}
     .tab {
         width: 308px;
-        font-size: 14px;
+        font-size: 16px;
     }
     .etabs{
         text-align: center;
@@ -817,7 +817,7 @@ label.tooltip span
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 298px 297px;text-align: left}
     .tab {
         width: 298px;
-        font-size: 22px;
+        font-size: 16px;
     }
     .etabs{
         text-align: center;
@@ -859,7 +859,7 @@ label.tooltip span
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 244px 244px;text-align: left}
     .tab {
         width: 244px;
-        font-size: 20px;
+        font-size: 16px;
     }
     .etabs{
         text-align: center;
