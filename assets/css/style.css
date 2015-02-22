@@ -1377,8 +1377,8 @@ and (max-device-width : 592px)  and (orientation : portrait)
         font-size: 12px;
     }
     .example-image{
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
     }
 }
 
