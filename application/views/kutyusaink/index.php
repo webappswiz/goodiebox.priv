@@ -29,11 +29,14 @@
 </script>
 <section class="how-it-works rounded">
     <h1>Kutyusaink</h1>
-    <div id="tab-container" class="tab-container" style="margin-top: 100px;">
-        <ul class='etabs' style="text-align: center">
+    <br/>
+    <div id="tab-container" class="tab-container" style="margin-top: 10px;">
+        
+        <ul class='etabs' style="text-align: center;margin-bottom: 10px;">
             <li class='tab'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
             <li class='tab'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
         </ul>
+        
         <div id="fotok">
             <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 January</a>
             &nbsp;&nbsp;&nbsp;
