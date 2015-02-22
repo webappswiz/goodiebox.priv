@@ -758,7 +758,10 @@ label.tooltip span
         font-weight:500;
         cursor: pointer;
     }
-
+.example-image{
+ width: 150px;
+ height: 150px;
+}
 
  @media only screen and (max-width: 1040px)
 {
@@ -1372,6 +1375,10 @@ and (max-device-width : 592px)  and (orientation : portrait)
     }
     .slide-item{
         font-size: 12px;
+    }
+    .example-image{
+        width: 100px;
+        height: 100px;
     }
 }
 
