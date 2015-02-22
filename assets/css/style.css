@@ -801,6 +801,9 @@ label.tooltip span
         width: 308px;
         font-size: 16px;
     }
+    .tab.active{
+        font-size: 16px;
+    }
     .etabs{
         text-align: center;
     }
@@ -817,6 +820,9 @@ label.tooltip span
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 298px 297px;text-align: left}
     .tab {
         width: 298px;
+        font-size: 16px;
+    }
+    .tab.active{
         font-size: 16px;
     }
     .etabs{
@@ -859,6 +865,9 @@ label.tooltip span
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 244px 244px;text-align: left}
     .tab {
         width: 244px;
+        font-size: 16px;
+    }
+    .tab.active{
         font-size: 16px;
     }
     .etabs{
@@ -905,6 +914,9 @@ label.tooltip span
         width: 244px;
         font-size: 16px;
     }
+    .tab.active{
+        font-size: 16px;
+    }
     .etabs{
         text-align: center;
     }
@@ -948,6 +960,9 @@ label.tooltip span
     .boxes img{width: 70px;height: 40px;}
     .tab {
         width: 30%;
+        font-size: 16px;
+    }
+    .tab.active{
         font-size: 16px;
     }
     .etabs{
@@ -1010,6 +1025,9 @@ label.tooltip span
     .boxes img{width: 70px;height: 40px;}
     .tab {
         width: 30%;
+        font-size: 16px;
+    }
+    .tab.active{
         font-size: 16px;
     }
     .etabs{
@@ -1113,6 +1131,9 @@ label.tooltip span
     .boxes img{width: 70px;height: 40px;}
     .tab {
         width: 30%;
+        font-size: 16px;
+    }
+    .tab.active{
         font-size: 16px;
     }
     .etabs{
@@ -1232,6 +1253,9 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
+    .tab.active{
+        font-size: 16px;
+    }
     .etabs{
         text-align: center;
     }
@@ -1309,6 +1333,9 @@ and (max-device-width : 592px)  and (orientation : portrait)
         width: 30%;
         font-size: 10px;
     }
+    .tab.active{
+        font-size: 10px;
+    }
     .etabs{
         text-align: center;
     }
@@ -1339,6 +1366,9 @@ and (max-device-width : 593px)  and (orientation : landscape)
     }
     .tab {
         width: 30%;
+        font-size: 10px;
+    }
+    .tab.active{
         font-size: 10px;
     }
     .etabs{
