@@ -801,9 +801,11 @@ label.tooltip span
         width: 308px;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -822,9 +824,11 @@ label.tooltip span
         width: 298px;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -867,9 +871,11 @@ label.tooltip span
         width: 244px;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -914,9 +920,11 @@ label.tooltip span
         width: 244px;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -962,9 +970,11 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -1027,9 +1037,11 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -1133,9 +1145,11 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -1253,9 +1267,11 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
-    .tab.active{
-        font-size: 16px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -1333,9 +1349,11 @@ and (max-device-width : 592px)  and (orientation : portrait)
         width: 30%;
         font-size: 10px;
     }
-    .tab.active{
-        font-size: 10px;
-    }
+    .tab a.active { 
+    font-weight: bold; 
+    font-size: 10px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
@@ -1368,9 +1386,11 @@ and (max-device-width : 593px)  and (orientation : landscape)
         width: 30%;
         font-size: 10px;
     }
-    .tab.active{
-        font-size: 10px;
-    }
+   .tab a.active { 
+    font-weight: bold; 
+    font-size: 10px;
+    color: #330000;
+}
     .etabs{
         text-align: center;
     }
