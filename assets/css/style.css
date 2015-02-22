@@ -607,6 +607,7 @@ label.tooltip span
 }
 
 .etabs { 
+    margin: 0px; 
     padding: 0px; 
     font-size: 0;
     padding-bottom: 10px;

@@ -32,17 +32,20 @@
     <br/>
     <div id="tab-container" class="tab-container" style="margin-top: 10px;">
         
-        <ul class='etabs' style="text-align: center;margin-bottom: 10px;">
+        <ul class='etabs' style="text-align: center;margin-bottom: 10px">
             <li class='tab'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
             <li class='tab'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
         </ul>
         
         <div id="fotok">
-            <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 January</a>
+            <div>
+                <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 January</a>
             &nbsp;&nbsp;&nbsp;
             <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">2014 December</a>
             &nbsp;&nbsp;&nbsp;
             <a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2014 November</a><br/><br/><br/>
+            </div>
+            
             <div class="image-row" style="text-align: center;display: none" id="nov_photos">
                 <div class="image-set">
                     <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>/assets/img/photos/img-0.jpg" data-lightbox="example-set1" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
