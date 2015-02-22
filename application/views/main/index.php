@@ -271,8 +271,9 @@ $menus = array(
             </div>
             <br/>
             <a href="<?= URL::base(TRUE, FALSE) ?>kutyusaink" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi kutyusért!</a>
+            
         </div>
-
+        <div style="margin:30px;"></div>
 
     </div>
     <div id="videok" style="text-align: center">
