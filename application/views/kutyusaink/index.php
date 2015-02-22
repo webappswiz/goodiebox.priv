@@ -30,8 +30,7 @@
 <br/><br/>
 <section class="how-it-works rounded">
     <h1>Kutyusaink</h1>
-    <br/>
-    <div id="tab-container" class="tab-container">
+    <div id="tab-container" class="tab-container" style="margin-top: 100px;">
         <ul class='etabs' style="text-align: center">
             <li class='tab'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
             <li class='tab'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
