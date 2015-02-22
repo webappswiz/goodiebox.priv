@@ -27,7 +27,6 @@
         $('#tab-container').easytabs();
     });
 </script>
-<br/><br/>
 <section class="how-it-works rounded">
     <h1>Kutyusaink</h1>
     <div id="tab-container" class="tab-container" style="margin-top: 100px;">
