@@ -39,7 +39,7 @@
         
         <div id="fotok">
             <div id="navs">
-                <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 January</a>
+                <a style="cursor: pointer" id="jan" class="active" style="font-family: 'La-chata';font-size: 18px">2015 Január</a>
             &nbsp;&nbsp;&nbsp;
             <a style="cursor: pointer" id="dec" style="font-family: 'La-chata';font-size: 18px">2014 December</a>
             &nbsp;&nbsp;&nbsp;
