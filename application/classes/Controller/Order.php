@@ -288,7 +288,8 @@ class Controller_Order extends Controller_Core {
         $session = Session::instance();
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
-
+        $global_discount = 0;
+        $g_discount = 0;
         if ($this->current_user) {
             $global_discount = ORM::factory('Discounts')
                     ->where('user_id', '=', $this->current_user->id)
@@ -446,6 +447,8 @@ class Controller_Order extends Controller_Core {
         $session = Session::instance();
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
+        $global_discount = 0;
+        $g_discount = 0;
         if ($this->current_user) {
             $global_discount = ORM::factory('Discounts')
                     ->where('user_id', '=', $this->current_user->id)
@@ -551,7 +554,7 @@ class Controller_Order extends Controller_Core {
         $session = Session::instance();
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
-
+        $global_discount = 0;
         if ($this->current_user) {
             $global_discount = ORM::factory('Discounts')
                     ->where('user_id', '=', $this->current_user->id)
