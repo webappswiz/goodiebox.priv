@@ -108,6 +108,15 @@
                     <input type="text" id="tax_code" name="tax_code" placeholder="" value="">
                 </div>
             </div>
+            <div class="control-group" id="payment_method">
+                <label class="control-label" for="payment_method">Payment method</label>
+                <div class="controls">
+                    <select id="size" name="pmethod">
+                        <option value="1">Credit Card payment</option>
+                        <option value="2">Cash on Delivery</option>
+                    </select>
+                </div>
+            </div>
             <div class="control-group">
                 <label class="control-label" for="shipping_cost">Shipping cost</label>
                 <div class="controls">

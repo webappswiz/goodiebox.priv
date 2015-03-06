@@ -45,28 +45,30 @@ FONTOS! Amennyiben nem kapod meg az üzeneteket 24 órán belül, mindenképpen 
         <h3>4. Mennyibe kerül és hogyan fizethetek?</h3>
         <div>
             <div class="content">
-                Rendeléskor a periódusokhoz rendeltük az aktuális árakat. Jelenleg kétféle dobozunk elérhető: <br/><br/>
+                Rendeléskor a periódusokhoz rendeltük az aktuális árakat. Jelenleg kétféle dobozunk elérhető:<br /><br />
 
-Goodiebox Smart 4890 Ft<br/>
-Havonta változó, 3-4 különböző, gondosan válogatott termék (táp, snack, játék, kiegészítő, vitamin) egy dobozban. <br/><br/>
+Goodiebox Smart 4890 Ft<br />
+Havonta változó, 3-4 különböző, gondosan válogatott termék (táp, jutalomfalat, játék) egy dobozban.<br /><br /> 
 
-Goodiebox Plus 7990 Ft<br/>
-Havonta változó, 4-5 különböző, gondosan válogatott, prémium minőségi termék (táp, snack, játék, kiegészítő, vitamin) egy dobozban. <br/><br/>
+Goodiebox Plus 7990 Ft<br />
+Havonta változó, 4-5 különböző, gondosan válogatott, prémium minőségi termék (táp, jutalomfalat, játék, kiegészítő, vitamin, higiénés termék) egy dobozban.<br /><br /> 
 
-Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (bizonyos esetben). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni. <br/><br/>
+Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkárytás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.<br /><br />
 
-Fizetési lehetőségek:<br/><br/>
+Fizetési lehetőségek:<br />
+Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)<br /><br />
 
-Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, amikor többlet kötlség nem kerül felszámolásra!)<br/><br/>
+Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege 800 Ft)<br /><br />
 
-Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked!)
+3, vagy 6 hónapos előrendeléskor:<br />
+A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)
             </div>
         </div>
 
         <h3>5. Ha megrendeltem, mikor kapom meg?</h3>
         <div>
             <div class="content">
-                A webshopunk minden hónap elsején nyílik és körülbelül 1 hétig tart nyitva. A főoldali számláló ez idő alatt folyamatosan visszaszámlál. Ekkor tudsz rendeléseket leadni az adott időszakra. Ha a rendelési szakasz lezárul, a "Zárva vagyunk" felirat jelenik meg a főoldalon, ebben az esetben további rendeléseket nem tudunk fogadni. Ezt követően dolgozzuk fel a beérkezett adatokat és készítjük a kutyusoknak a Goodiebox-okat. Körülbelül 10 napos határidővel csomagolunk, a dobozok ezt követően kerülnek kiszállításra, ingyenesen. A bolt a csomagszállítást követően értékeli az adott hónapot, picit szusszan, majd újra indul a rendelési időszak. A webshop nyitvatartási szakaszairól értesítést posztolunk a Facebook-on is, ahol érdemes tehát követni bennünket!
+                A webshopunk minden hónap elején nyílik és pár napig tart nyitva. A főoldali számláló ez idő alatt folyamatosan visszaszámlál. Ekkor tudsz rendeléseket leadni az adott időszakra. Ha a rendelési szakasz lezárul, a "Hamarosan nyitunk!" felirat jelenik meg a főoldalon, ebben az esetben további rendeléseket nem tudunk fogadni. Ezt követően dolgozzuk fel a beérkezett adatokat és készítjük a kutyusoknak a "kutyaszemélyiségre" szabott Goodiebox-okat. Körülbelül 10 napos határidővel csomagolunk, a dobozok ezt követően kerülnek kiszállításra, ingyenesen. A bolt a csomagszállítást követően értékeli az adott hónapot, picit szusszan, majd újra indul a rendelési időszak. A webshop nyitvatartási szakaszairól értesítést posztolunk a Facebook-on is, ahol érdemes tehát követni bennünket! Ha szeretnél minden nyitáskor automatikus üzenetet kapni tőlünk, hogy nehogy lemaradj és időben le tudd adni a rendelésedet, iratkozz fel az értesítőre a weboldalunkon a visszaszámláló alatt!
             </div>
         </div>
 
@@ -99,16 +101,7 @@ A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körül
         <h3>9. Nem érkezett meg a Goodiebox, pedig regsztráltam, vagyis megrendeltem.</h3>
         <div>
             <div class="content">
-                Amennyiben nem érkezett meg a megrendelést visszaigazoló e-mail a rendelést követően azonnal vagy legfeljebb 24 órán belül, mindenképpen jelezd azt ügyfélszolgálati e-mail címünkön, hogy utána tudjunk nézni: rendeles@goodiebox.hu
-                <br /><br />
-                Saját kutyusnak a "Megrendelem" gomb megnyomásával indul a vásárlás folyamata. 
-<br /><br />
-                Először a kutyusod méretét kell megadnod és néhány fontos információt kérünk róla. Hogy gondosan tudjunk pakolni, nagyon fontos, hogy helyesen töltsd ki az adatokat, különös figyelmet fordítva az allergia kérdésre, hiszen ebben az esetben külön figyelmet kell fordítanunk a megfelelő táp vagy snack beszerzésére. 
-<br /><br />
-                A második lépésben a periódust tudod kiválasztani, amivel jelzed nekünk, melyik dobozt kéred (Goodiebox Smart vagy Goodiebox Plus), és szeretnéd-e előrendelni. 
-<br /><br />
-                A harmadik lépésben pedig a személyes adataidat kell megadnod. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és megfeleljenek a valóságnak. Akkor sikeres a megrendelés, amikor a PayU biztonságos fizető felületén befejezted a szükséges tranzakciót. Ezután email üzeneteket küldünk neked aszerint, hogy milyen jellegű megrendelést tettél. 
-
+              Amennyiben nem érkezett meg a megrendelést visszaigazoló e-mail a rendelést követően azonnal vagy legfeljebb 24 órán belül, mindenképpen jelezd azt ügyfélszolgálati e-mail címünkön, hogy utána tudjunk nézni: <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a>
             </div>
         </div>
 

@@ -74,11 +74,11 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->invoice_num = $o->invoice_num + 1;
         $this->model->save();
         
-        $this->receipt_email($this->model,Arr::get($_REQUEST, 'size'),Arr::get($_REQUEST, 'shipping_cost'));
+        $this->receipt_email($this->model,Arr::get($_REQUEST, 'size'),Arr::get($_REQUEST, 'shipping_cost'),  Arr::get($_REQUEST, 'pmethod'));
         $this->redirect('/admin/invoice/');
     }
 
-    private function receipt_email($order,$size,$shipping) {
+    private function receipt_email($order,$size,$shipping,$pmethod) {
             if ($size == 1) {
                 $s = 'GOODIEBOX Icipici'.'<br/>'.$order->package->package_name;
             } elseif ($size == 2) {
@@ -88,7 +88,11 @@ class Controller_Admin_Invoice extends Controller_Admin {
             } else {
                 $s=$order->prod_name;
             }
-        
+    if($pmethod==1){
+        $method = 'Átutalás';
+    } else {
+        $method = 'Készpénz';
+    }
 
         $discount = $order->total_price - $order->total_price;
         $total_price = $order->total_price - $discount;
@@ -159,7 +163,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
                 </td>
             </tr>
             <tr style="padding: 0px">
-                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>Átutalás</td>
+                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>'.$method.'</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>

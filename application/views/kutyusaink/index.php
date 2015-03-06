@@ -28,13 +28,14 @@
     });
 </script>
 <section class="how-it-works rounded">
-    <h1>Kutyusaink</h1>
+    <h1>Kutyusaink + Dobozaink</h1>
     <br/>
     <div id="tab-container" class="tab-container" style="margin-top: 10px;">
         
         <ul class='etabs' style="text-align: center;margin-bottom: 10px">
-            <li class='tab'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
-            <li class='tab'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
+            <li class='tab2'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
+            <li class='tab2'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
+			<li class='tab2'><a href="#doboz" style="font-family: 'La-chata'">Meglepi dobozaink</a></li>
         </ul>
         
         <div id="fotok">
@@ -186,5 +187,29 @@
 
 
         </div>
+		<div id="doboz"style="text-align: center">
+			<div class="image-row spacer" style="font-family: 'franklin_gothic_bookregular'; font-size:17px; text-align: justify;">
+			<p>Megmutatjuk nektek az eddigi meglepi dobozaink tartalmát. Természetesen a Smart és a Plus dobozok egy adott hónapon belül mást és mást tartalmazhatnak. A Smart doboz inkább jutalomfalatokban erős, míg a Plus doboz mindig valami kiegészítőt, extra terméket kínál a kutyusnak vagy a gazdinak.</p>
+			<br />
+		<p>Előfordul bizony, hogy egyes termékek még egy hónapon belül is különbözőek az adott doboz kategórián belül, hiszen mindig próbáljuk abszolút kutyaszemélyiségre szabni a meglepiket!</p> 
+			<br />
+		<p>Ha például egy kutyus érzékeny valamire, más jutalomfalat vagy táp kerül a csomagba. Ha már törzsvendégünk, akkor pedig arra is figyelmet fordítunk, hogy ne kapja ismét ugyanazokat a termékeket vagy ízesítést, mint az előző hónapokban!</p>
+			<br />
+		<p>Egy dolog azonban biztos!</p>
+			<br />
+		<p><span style="font-weight:bold;">Mindig figyelünk az ár-érték arányra, hiszen az egyik legfontosabb dolog, hogy olyan csomagot állítsunk nektek össze, ami abszolút mértékben megéri az árát! Szeretnénk, ha kedvező áron próbálhatnátok ki új termékeket vagy beszerezni olyanokat, amiket eddig még nem próbáltatok! Ne feledjétek, nekünk az a legnagyobb öröm, ha boldoggá tehetjük a legjobb barátotokat: a kutyusotokat! ♥</span></p>
+		<br /><br />
+                <div class="image-set" style="text-align:center;">
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/februar-plus-large.jpg"data-lightbox="example-set13" data-title="2015 Február Plus"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/februar-plus.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/februar-smart-large.jpg" data-lightbox="example-set13" data-title="2015 Február Smart"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/februar-smart.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/januar-plus-large.jpg"data-lightbox="example-set13" data-title="2015 Január Plus"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/januar-plus.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/januar-smart-large.jpg" data-lightbox="example-set13" data-title="2015 Január Smart"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/januar-smart.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/december-plus-large.jpg"data-lightbox="example-set13" data-title="2014 December Plus"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/december-plus.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/december-smart-large.jpg" data-lightbox="example-set13" data-title="2014 December Smart"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/december-smart.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/november-large.jpg" data-lightbox="example-set13" data-title="2014 November Plus"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/november.jpg" alt=""/></a>
+				
+			</div>
+		</div>
+		</div>
     </div>
 </section>

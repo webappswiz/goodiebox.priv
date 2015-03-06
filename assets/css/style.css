@@ -657,6 +657,58 @@ label.tooltip span
     font-size: 20px;
     color: #330000;
 }
+
+/*New styles added by Yemi for Gallery page 28th Feb */
+
+.tab2 {
+    font-family: 'franklin_gothic_bookregular';
+    font-size: 20px;
+    width: 259px;
+    font-weight: bolder;
+    display: inline-block; 
+    zoom:1; 
+    *display:inline; 
+    text-align: center;
+    border-bottom: 4px solid #330000;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 5px;
+
+}
+.tab2 a {
+
+    line-height: 2em; 
+    display: block; 
+
+    outline: none; 
+    color: #268949;
+}
+.tab2 a:hover { 
+    text-decoration: none; 
+}
+.tab2.active { 
+    background: #fff; 
+    position: relative; 
+    border-color: #330000; 
+    border: 4px solid #330000;
+    border-right: 4px solid #330000; 
+    border-left: 4px solid #330000; 
+    border-bottom: 0px;
+    padding-bottom: 4px;
+    padding-right: 0px;
+    margin: 0px;
+
+}
+.tab2 a.active { 
+    font-weight: bold; 
+    font-size: 20px;
+    color: #330000;
+}
+.spacer {
+padding: 0 70px;
+}
+/* End new styles added by Yemi */
+
 .tab-container .panel-container { 
     background: #fff; 
     border: solid #666 1px; 
@@ -762,6 +814,10 @@ label.tooltip span
  width: 150px;
  height: 150px;
 }
+.example-image-cards{
+ width: 315px;
+ height: 221px;
+}
 #navs{
     text-align: center;
 }
@@ -830,6 +886,10 @@ label.tooltip span
         width: 298px;
         font-size: 16px;
     }
+	.tab2 {
+        width: 198px;
+        font-size: 16px;
+    }
     .tab a.active { 
     font-weight: bold; 
     font-size: 16px;
@@ -875,6 +935,10 @@ label.tooltip span
     #menu-img3{background: url(/assets/img/home-img6.jpg) no-repeat;background-size: 244px 244px;text-align: left}
     .tab {
         width: 244px;
+        font-size: 16px;
+    }
+	.tab2 {
+        width: 198px;
         font-size: 16px;
     }
     .tab a.active { 
@@ -926,6 +990,10 @@ label.tooltip span
         width: 244px;
         font-size: 16px;
     }
+	.tab2 {
+        width: 198px;
+        font-size: 16px;
+    }
     .tab a.active { 
     font-weight: bold; 
     font-size: 16px;
@@ -974,6 +1042,10 @@ label.tooltip span
     .boxes img{width: 70px;height: 40px;}
     .tab {
         width: 30%;
+        font-size: 16px;
+    }
+	.tab2 {
+        width: 25%;
         font-size: 16px;
     }
     .tab a.active { 
@@ -1273,7 +1345,16 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
+	.tab2 {
+        width: 20%;
+        font-size: 16px;
+    }
     .tab a.active { 
+    font-weight: bold; 
+    font-size: 16px;
+    color: #330000;
+}
+.tab2 a.active { 
     font-weight: bold; 
     font-size: 16px;
     color: #330000;
@@ -1355,7 +1436,17 @@ and (max-device-width : 592px)  and (orientation : portrait)
         width: 30%;
         font-size: 8px;
     }
+	.tab2 {
+        width: 30%;
+        font-size: 8px;
+    }
+	
     .tab a.active { 
+    font-weight: bold; 
+    font-size: 8px;
+    color: #330000;
+}
+.tab2 a.active { 
     font-weight: bold; 
     font-size: 8px;
     color: #330000;
@@ -1383,6 +1474,13 @@ and (max-device-width : 592px)  and (orientation : portrait)
         width: 110px;
         height: 110px;
     }
+	.example-image-cards{
+		width: 90%;
+		height: 90%;
+	}
+	.spacer {
+	padding: 0;
+	}
 }
 
 @media only screen and (min-device-width : 320px) 
