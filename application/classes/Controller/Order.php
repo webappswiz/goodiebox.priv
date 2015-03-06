@@ -41,9 +41,18 @@ class Controller_Order extends Controller_Core {
             $s = 0;
         if ($order->payment_status == 5) {
             $cost = ORM::factory('ShippingCost', 1);
-            $pr = $cost->cost;
+            if ($order->package->term == 1) {
+                $cod = $cost->cost;
+            } elseif ($order->package->term == 2) {
+                $cod = $cost->cost * 3;
+            } elseif ($order->package->term == 3) {
+                $cod = $cost->cost * 6;
+            }
+            $pr = $cod;
+            $method = 'Készpénz';
         } else {
             $pr = 0;
+            $method = 'Átutalás';
         }
 
 
@@ -111,7 +120,7 @@ class Controller_Order extends Controller_Core {
                 </td>
             </tr>
             <tr style="padding: 0px">
-                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>Átutalás</td>
+                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>'.$method.'</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
