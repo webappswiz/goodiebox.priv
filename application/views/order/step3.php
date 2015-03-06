@@ -3,14 +3,25 @@ $auth = Auth::instance();
 $session = Session::instance();
 if ($auth->logged_in())
     $current_user = $auth->get_user();
-$shipping = ORM::factory('ShippingCost',1);
+$shipping = ORM::factory('ShippingCost', 1);
 $cost = $shipping->cost;
+$session = Session::instance()->as_array();
+$step1 = $session['step1'];
+$step2 = $session['step2'];
+$package = ORM::factory('Packages', $step2['selected_box']);
+if ($package->term == 1) {
+    $term = '1';
+} elseif ($package->term == 2) {
+    $term = '3';
+} else {
+    $term = '6';
+}
 ?>
 <script type="text/javascript">
     $(document).ready(function () {
         var ship_cost = 0;
-        
-        
+
+
         $('#customer_email').on('blur', function () {
             $.post('/api/check', {'email': $(this).val()}).done(function (data) {
                 var i = $.parseJSON(data);
@@ -28,7 +39,7 @@ $cost = $shipping->cost;
         if (!$('#tos').prop(':checked')) {
             $('#submit').attr('disabled', 'disabled');
         }
-        
+
 
         $('#discount_box').on('click', function () {
             if ($(this).is(':checked')) {
@@ -43,26 +54,26 @@ $cost = $shipping->cost;
                 $('#discount').val('0');
             }
         });
-        
-        $('#cod').on('click', function(){
-            ship_cost = <?=$cost?>;
+
+        $('#cod').on('click', function () {
+            ship_cost = <?= $cost*$term ?>;
             $('#ship').html(ship_cost + ' HUF');
             var price = $('#total_price').html().split(' ');
             var ship_price = parseInt(price[0]) + ship_cost;
             $('#total_price').html(ship_price + ' HUF');
             $('#pt').val('cod');
-            $('#cod').attr('disabled','disabled');
+            $('#cod').attr('disabled', 'disabled');
         });
-        $('#cc').on('click', function(){
-            ship_cost = <?=$cost?>;
-            if($('#ship').html()!=='Ingyenes'){
+        $('#cc').on('click', function () {
+            ship_cost = <?= $cost*$term ?>;
+            if ($('#ship').html() !== 'Ingyenes') {
                 $('#ship').html('Ingyenes');
                 var price = $('#total_price').html().split(' ');
                 var ship_price = parseInt(price[0]) - ship_cost;
                 $('#total_price').html(ship_price);
-                
+
                 $('#cod').removeAttr('disabled');
-            } 
+            }
             $('#pt').val('cc');
         });
 
@@ -121,7 +132,7 @@ $cost = $shipping->cost;
                     var i = $.parseJSON(data);
                     if (i.msg == 1) {
                         $('#invite_code').val($('#coupon_id').val());
-                        discount = total_price * 10/100;
+                        discount = total_price * 10 / 100;
                         $('#discount').val('1');
                         $('#discount1').html(discount + ' HUF');
                         var final_price = total_price - discount;
@@ -372,32 +383,32 @@ if (isset($session['step2'])) {
                 </script>
             </div> <!--End claim form-->
         </div><!--End claim form container-->
-        <?php if(!isset($session['step1']['order2'])):?>
-        <div class="order-form" style="padding-top: 60px !important;">
-            <h2>Fizetési lehetőségek:</h2>
-            <br/>
-            <input id="cc" checked type="radio" name="cc" class="pay">Bankkártyával azonnal (PayU biztonságos felületen keresztül)<br/>
-            <div class="cc_instruct">
-                <p>Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. 
-                    A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!</p>
+        <?php if (!isset($session['step1']['order2'])): ?>
+            <div class="order-form" style="padding-top: 60px !important;">
+                <h2>Fizetési lehetőségek:</h2>
+                <br/>
+                <input id="cc" checked type="radio" name="cc" class="pay">Bankkártyával azonnal (PayU biztonságos felületen keresztül)<br/>
+                <div class="cc_instruct">
+                    <p>Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. 
+                        A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!</p>
+                </div>
+                <input id="cod" type="radio" name="cc" class="pay">Utánvét (Extra költséget számolunk fel: +<?= $cost ?> Ft)
+                <div class="cc_instruct" style="display: none;">
+                    <p>Amint a "Megrendelem" gombra kattintasz, automatikusan elfogadod a szabályzatunkat és átvételkor tudsz fizetni készpénzzel az otthonodban.</p>
+                </div>
+                <br/><br/><br/><br/>
+                <p style="line-height: 20px;">
+                    Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:rendeles@goodiebox.hu Köszönjük!
+                </p>
             </div>
-            <input id="cod" type="radio" name="cc" class="pay">Utánvét (Extra költséget számolunk fel: +<?=$cost?> Ft)
-            <div class="cc_instruct" style="display: none;">
-                <p>Amint a "Megrendelem" gombra kattintasz, automatikusan elfogadod a szabályzatunkat és átvételkor tudsz fizetni készpénzzel az otthonodban.</p>
-            </div>
-            <br/><br/><br/><br/>
-            <p style="line-height: 20px;">
-                Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:rendeles@goodiebox.hu Köszönjük!
-            </p>
-        </div>
-        <script>
-            $('.pay').on('click',function(event){
-               $('.cc_instruct').hide();
-               $('#payment_type').val($(this).attr('id'));
-               $(event.target).nextAll('.cc_instruct').first().show();
-            });
-        </script>
-        <?php endif;?>
+            <script>
+                $('.pay').on('click', function (event) {
+                    $('.cc_instruct').hide();
+                    $('#payment_type').val($(this).attr('id'));
+                    $(event.target).nextAll('.cc_instruct').first().show();
+                });
+            </script>
+        <?php endif; ?>
         <div class="order-form" style="padding-top: 10px !important;">
             <h2>Rendelésem</h2>
             <div class="order-container rounded">
@@ -416,17 +427,17 @@ if (isset($session['step2'])) {
                                 $size = 'Éppen jó';
                             if ($step1['selected_size'] == 3)
                                 $size = 'Igazi óriás';
-                            
-                            $package = ORM::factory('Packages',$step2['selected_box']);
-                            if($package->term==1){
-            $term = '1';
-        } elseif($package->term==2){
-            $term = '3';
-        } else {
-            $term = '6';
-        }
+
+                            $package = ORM::factory('Packages', $step2['selected_box']);
+                            if ($package->term == 1) {
+                                $term = '1';
+                            } elseif ($package->term == 2) {
+                                $term = '3';
+                            } else {
+                                $term = '6';
+                            }
                             ?>
-                            <span><?=$package->package_name?> <?=$term?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
+                            <span><?= $package->package_name ?> <?= $term ?> </span>hónapra</br>Választott kutyus méret: <?php echo $size ?>
                             <p>Házhozszállítás</p>
                             <p>Kedvezmény</p>
                         </div>
@@ -469,12 +480,12 @@ if (isset($session['step2'])) {
                 } else {
                     $g_discount = 0;
                 }
-                
-                $package = ORM::factory('Packages',$step2['selected_box']);
-                if($package->loaded()){
+
+                $package = ORM::factory('Packages', $step2['selected_box']);
+                if ($package->loaded()) {
                     $type = $package->type;
                 }
-                if (($invites > 0 || $g_discount > 0) && $type==1 && $term==1):
+                if (($invites > 0 || $g_discount > 0) && $type == 1 && $term == 1):
                     ?>
                     <div><strong>Jelenlegi kedvezményed: <?= $invites * 5 + $global_discount->discount ?> %</strong><br/><br/>
                         Szeretnéd most felhasználni?
