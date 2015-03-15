@@ -58,7 +58,16 @@ class Controller_Admin_Orders extends Controller_Admin {
         if ($_REQUEST['status_name'] == 2) {
             if($this->model->payment_status==5){
                 $flcode = "true";
-                $cost = $this->model->total_price;
+                
+                $ship = ORM::factory('ShippingCost', 1);
+                if($this->model->package->term==1){
+                   $ship_cost = $ship->cost;
+                } elseif($this->model->package->term==2){
+                   $ship_cost = $ship->cost*3;
+                } elseif($this->model->package->term==3){
+                   $ship_cost = $ship->cost*6;
+                }
+                $cost = $this->model->total_price + $ship_cost;
             } else {
                 $flcode = "false";
                 $cost = 0;

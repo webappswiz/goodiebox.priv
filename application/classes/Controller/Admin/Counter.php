@@ -14,7 +14,7 @@ class Controller_Admin_Counter extends Controller_Admin {
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
         $email->CharSet = 'UTF-8';
-        $email->SetFrom($from, 'Goodiebox');
+        $email->SetFrom($from, 'goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);
@@ -48,7 +48,7 @@ class Controller_Admin_Counter extends Controller_Admin {
             $subscribers = ORM::factory('Subscribers')->find_all();
             foreach ($subscribers as $subscriber) {
                 $email_template = str_replace('[name]', $subscriber->name, $template->template_text);
-                $this->send($subscriber->email, 'info@goodiebox.hu', 'Store is opened', $email_template);
+                $this->send($subscriber->email, 'info@goodiebox.hu', 'Nyitva Vagyunk!', $email_template);
             }
             $text = 'Successfully enabled';
         } else {
