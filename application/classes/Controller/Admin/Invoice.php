@@ -45,12 +45,22 @@ class Controller_Admin_Invoice extends Controller_Admin {
         if (!$this->is_post()) {
             return;
         }
-        if(Arr::get($_REQUEST, 'product')!=0){
+        if (Arr::get($_REQUEST, 'product') != 0) {
             $this->model->selected_box = Arr::get($_REQUEST, 'product');
+                if($this->model->package->term==1){
+                   $ship_cost = Arr::get($_REQUEST, 'shipping_cost');
+                } elseif($this->model->package->term==2){
+                   $ship_cost = Arr::get($_REQUEST, 'shipping_cost')*3;
+                } elseif($this->model->package->term==3){
+                   $ship_cost = Arr::get($_REQUEST, 'shipping_cost')*6;
+                }
+             
         } else {
             $this->model->selected_box = 0;
-            $this->model->prod_name = Arr::get($_REQUEST, 'prod_name');;
+            $this->model->prod_name = Arr::get($_REQUEST, 'prod_name');
+            $ship_cost = Arr::get($_REQUEST, 'shipping_cost');
         }
+        
         $this->model->delivery_firstname = Arr::get($_REQUEST, 'firstname');
         $this->model->delivery_lastname = Arr::get($_REQUEST, 'lastname');
         $this->model->delivery_address = Arr::get($_REQUEST, 'address');
@@ -62,7 +72,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->company_zip = Arr::get($_REQUEST, 'company_zip');
         $this->model->company_city = Arr::get($_REQUEST, 'company_city');
         $this->model->tax_code = Arr::get($_REQUEST, 'tax_code');
-        $this->model->total_price = Arr::get($_REQUEST, 'total_price')+Arr::get($_REQUEST, 'shipping_cost');
+        $this->model->total_price = Arr::get($_REQUEST, 'total_price') + $ship_cost;
         $this->model->user_id = $this->current_user->id;
         $this->model->last_modified = date('Y-m-d H:i:s');
         $this->model->date_purchased = date('Y-m-d H:i:s');
@@ -73,26 +83,25 @@ class Controller_Admin_Invoice extends Controller_Admin {
                 ->find();
         $this->model->invoice_num = $o->invoice_num + 1;
         $this->model->save();
-        
-        $this->receipt_email($this->model,Arr::get($_REQUEST, 'size'),Arr::get($_REQUEST, 'shipping_cost'),  Arr::get($_REQUEST, 'pmethod'));
+        $this->receipt_email($this->model, Arr::get($_REQUEST, 'size'), $ship_cost, Arr::get($_REQUEST, 'pmethod'));
         $this->redirect('/admin/invoice/');
     }
 
-    private function receipt_email($order,$size,$shipping,$pmethod) {
-            if ($size == 1) {
-                $s = 'GOODIEBOX Icipici'.'<br/>'.$order->package->package_name;
-            } elseif ($size == 2) {
-                $s = 'GOODIEBOX Éppen jó'.'<br/>'.$order->package->package_name;
-            } elseif ($size == 3) {
-                $s = 'GOODIEBOX Igazi óriás'.'<br/>'.$order->package->package_name;
-            } else {
-                $s=$order->prod_name;
-            }
-    if($pmethod==1){
-        $method = 'Átutalás';
-    } else {
-        $method = 'Készpénz';
-    }
+    private function receipt_email($order, $size, $shipping, $pmethod) {
+        if ($size == 1) {
+            $s = 'GOODIEBOX Icipici' . '<br/>' . $order->package->package_name;
+        } elseif ($size == 2) {
+            $s = 'GOODIEBOX Éppen jó' . '<br/>' . $order->package->package_name;
+        } elseif ($size == 3) {
+            $s = 'GOODIEBOX Igazi óriás' . '<br/>' . $order->package->package_name;
+        } else {
+            $s = $order->prod_name;
+        }
+        if ($pmethod == 1) {
+            $method = 'Átutalás';
+        } else {
+            $method = 'Készpénz';
+        }
 
         $discount = $order->total_price - $order->total_price;
         $total_price = $order->total_price - $discount;
@@ -112,15 +121,15 @@ class Controller_Admin_Invoice extends Controller_Admin {
             $term = '1';
         } elseif ($order->package->term == 2) {
             $term = '3';
-        } elseif($order->package->term==3) {
+        } elseif ($order->package->term == 3) {
             $term = '6';
         } else {
             $term = '1';
         }
 
-        $one_item = $order->total_price/$term - $shipping;
+        $one_item = ($order->total_price -$shipping) / $term;
         $full_item = $order->total_price - $shipping;
-        
+
         $invoice = '<!DOCTYPE html>
 <html lang="hu">
     <head>
@@ -163,7 +172,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
                 </td>
             </tr>
             <tr style="padding: 0px">
-                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>'.$method.'</td>
+                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>' . $method . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
@@ -208,7 +217,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>'.number_format((float) $shipping, 2, ',', '').'&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>' . number_format((float) $shipping, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
