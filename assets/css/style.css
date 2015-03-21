@@ -705,7 +705,7 @@ label.tooltip span
     color: #330000;
 }
 .spacer {
-padding: 0 70px;
+    padding: 0 70px;
 }
 /* End new styles added by Yemi */
 
@@ -763,69 +763,71 @@ padding: 0 70px;
     border-radius:3px!important;
 }
 
- #dialog-form1{
-        display:none; /* Hide the DIV */
-        position:fixed;
-        height:255px;
-        width:350px;
-        background:#FFFFFF;
-        margin: 0 auto;
-        z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
-        left: 50%;
-        top: 60px;
-        margin-left: -125px;
-        /* additional features, can be omitted */
-        border:2px solid;
-        padding:15px;
-        font-size:18px;
-        overflow: hidden;
-    }
-    #dialog-form1 input[type="text"]{
-        font-size: 18px;
-        margin: 5px;
-        border:1px solid #330000;
-        padding: 2px;
-    }
-    #dialog-form1 input[type="email"]{
-        font-size: 18px;
-        margin: 5px;
-        border:1px solid #330000;
-        padding: 2px;
-    }
-    #dialog-form1 input[type="submit"]{
-        margin: 5px;
-    }
-    #dialog-form1 label{
-        font-size: 18px;
-        margin: 5px;
-    }
-    #popupBoxClose1 {
-        font-size:20px;
-        line-height:15px;
-        right:5px;
-        top:5px;
-        float: right;
-        position:absolute;
-        color:#6fa5e2;
-        font-weight:500;
-        cursor: pointer;
-    }
+#dialog-form1{
+    display:none; /* Hide the DIV */
+    position:fixed;
+    height:255px;
+    width:350px;
+    background:#FFFFFF;
+    margin: 0 auto;
+    z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+    left: 50%;
+    top: 60px;
+    margin-left: -125px;
+    /* additional features, can be omitted */
+    border:2px solid;
+    padding:15px;
+    font-size:18px;
+    overflow: hidden;
+}
+#dialog-form1 input[type="text"]{
+    font-size: 18px;
+    margin: 5px;
+    border:1px solid #330000;
+    padding: 2px;
+    width:200px;
+}
+#dialog-form1 input[type="email"]{
+    font-size: 18px;
+    margin: 5px;
+    border:1px solid #330000;
+    padding: 2px;
+    width:200px;
+}
+#dialog-form1 input[type="submit"]{
+    margin: 5px;
+}
+#dialog-form1 label{
+    font-size: 18px;
+    margin: 5px;
+}
+#popupBoxClose1 {
+    font-size:20px;
+    line-height:15px;
+    right:5px;
+    top:5px;
+    float: right;
+    position:absolute;
+    color:#6fa5e2;
+    font-weight:500;
+    cursor: pointer;
+}
 .example-image{
- width: 150px;
- height: 150px;
+    width: 150px;
+    height: 150px;
 }
 
 
 
 .example-image-cards{
- width: 315px;
- height: 221px;
+    width: 315px;
+    height: 221px;
 }
 #navs{
     text-align: center;
 }
 
- @media only screen and (max-width: 1040px)
+@media only screen and (max-width: 1040px)
 {
     .container{padding-left: 15px; padding-right: 15px;}
     .siess{padding-left:70px;}
@@ -867,11 +869,11 @@ padding: 0 70px;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
-.etabs{
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
+    .etabs{
         text-align: center;
     }
     #propose{
@@ -889,15 +891,15 @@ padding: 0 70px;
         width: 298px;
         font-size: 16px;
     }
-	.tab2 {
+    .tab2 {
         width: 198px;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -940,15 +942,15 @@ padding: 0 70px;
         width: 244px;
         font-size: 16px;
     }
-	.tab2 {
+    .tab2 {
         width: 198px;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -993,15 +995,15 @@ padding: 0 70px;
         width: 244px;
         font-size: 16px;
     }
-	.tab2 {
+    .tab2 {
         width: 198px;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -1047,15 +1049,15 @@ padding: 0 70px;
         width: 30%;
         font-size: 16px;
     }
-	.tab2 {
+    .tab2 {
         width: 25%;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -1080,10 +1082,10 @@ padding: 0 70px;
         margin: 2px;
     }
     .container{
-    max-width: 640px;
-    margin: 0 auto;
-    
-}
+        max-width: 640px;
+        margin: 0 auto;
+
+    }
 
     .logo img{width: 90%; height: auto;}
     .count-text{padding-left: 15px}
@@ -1119,10 +1121,10 @@ padding: 0 70px;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -1130,7 +1132,7 @@ padding: 0 70px;
         max-width: 630px;
     }
     footer{padding-left: 5px; padding-right: 15px;    font-size: 10px;   }
-    
+
     footer ul li{margin-left: 30px !important; }
     footer ul li a{font-size: 14px;}
     footer ul li#fb{background: url(/assets/img/fb-thumb.png) no-repeat left; margin-left: 5px;font-size: 8px;}
@@ -1162,11 +1164,11 @@ padding: 0 70px;
         margin: 1px;
         padding: 1px;
     }
-    
+
     #dialog-form1 label{
         margin-top: 2px;
     }
-    
+
     #popupBoxClose1 {
         font-size:10px;
         right:5px;
@@ -1227,10 +1229,10 @@ padding: 0 70px;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -1266,11 +1268,11 @@ padding: 0 70px;
         margin: 1px;
         padding: 1px;
     }
-    
-   #dialog-form1 label{
+
+    #dialog-form1 label{
         margin-top: 1px;
     }
-    
+
     #popupBoxClose1 {
         font-size:10px;
         right:5px;
@@ -1310,7 +1312,7 @@ padding: 0 70px;
         font-weight:500;
         cursor: pointer;
     }
-    
+
     #jan,#dec,#nov{
         font-size: 12px;
         margin: 2px;
@@ -1348,20 +1350,20 @@ padding: 0 70px;
         width: 30%;
         font-size: 16px;
     }
-	.tab2 {
+    .tab2 {
         width: 20%;
         font-size: 16px;
     }
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
-.tab2 a.active { 
-    font-weight: bold; 
-    font-size: 16px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
+    .tab2 a.active { 
+        font-weight: bold; 
+        font-size: 16px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -1403,13 +1405,13 @@ and (max-device-width : 592px)  and (orientation : portrait)
         margin: 1px;
         padding: 1px;
     }
-    
+
     #dialog-form1 label{
         margin: 1px;
     }
-    
+
     #dialog-form1 .dark-btn{
-        
+
     }
     #jan,#dec,#nov{
         font-size: 10px;
@@ -1439,21 +1441,21 @@ and (max-device-width : 592px)  and (orientation : portrait)
         width: 30%;
         font-size: 8px;
     }
-	.tab2 {
+    .tab2 {
         width: 30%;
         font-size: 8px;
     }
-	
+
     .tab a.active { 
-    font-weight: bold; 
-    font-size: 8px;
-    color: #330000;
-}
-.tab2 a.active { 
-    font-weight: bold; 
-    font-size: 8px;
-    color: #330000;
-}
+        font-weight: bold; 
+        font-size: 8px;
+        color: #330000;
+    }
+    .tab2 a.active { 
+        font-weight: bold; 
+        font-size: 8px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }
@@ -1477,13 +1479,13 @@ and (max-device-width : 592px)  and (orientation : portrait)
         width: 110px;
         height: 110px;
     }
-	.example-image-cards{
-		width: 90%;
-		height: 90%;
-	}
-	.spacer {
-	padding: 0;
-	}
+    .example-image-cards{
+        width: 90%;
+        height: 90%;
+    }
+    .spacer {
+        padding: 0;
+    }
 }
 
 @media only screen and (min-device-width : 320px) 
@@ -1497,11 +1499,11 @@ and (max-device-width : 593px)  and (orientation : landscape)
         width: 30%;
         font-size: 8px;
     }
-   .tab a.active { 
-    font-weight: bold; 
-    font-size: 8px;
-    color: #330000;
-}
+    .tab a.active { 
+        font-weight: bold; 
+        font-size: 8px;
+        color: #330000;
+    }
     .etabs{
         text-align: center;
     }

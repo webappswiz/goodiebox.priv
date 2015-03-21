@@ -9,8 +9,8 @@
             <a href="http://spicedogs.eu/hu" target="blank"><img class="" height="150" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0270_300.jpg" alt="" /></a>
             <a href="http://kutyabarat.hu/" target="blank"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0271_300.jpg" alt="" /></a>
             <a href="http://www.flashkutyapekseg.hu/" target="blank"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0272_300.jpg" alt="" /></a>
-            <a href="http://sixfeet-design.blogspot.hu/" target="blank"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0304_300.jpg" alt="" /></a>
-            <a href="http://beagle-club.hu/" target="blank"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0305_300.jpg" alt="" /></a>
+            <a href="http://sixfeet-design.blogspot.hu/" target="blank"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0304_300.jpg" alt="" /></a><br/>
+            <a href="http://beagle-club.hu/" target="blank"><img class="" height="100" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0305_300.jpg" alt="" /></a>
         </div>
     </div>
 </section>
