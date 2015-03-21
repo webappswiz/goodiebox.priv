@@ -5,10 +5,10 @@ $menus = array(
     '/' => array('Főoldal', 'home'),
     '/hogyan/' => array('Hogyan működik?', 'hogyan'),
     '/kutyusaink' => array('Kutyusaink', 'kutyusaink'),
-    '/partnerek' => array('Partnerek', 'partnerek'),
     'http://blog.goodiebox.hu' => array('Blog', 'blog'),
     '/gyik' => array('GYIK', 'gyik'),
     '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
+    '/partnerek' => array('Partnereink', 'partnerek'),
 );
 if($auth->logged_in()){
     $menus['user_account'] = array('Profilom','arcél');
