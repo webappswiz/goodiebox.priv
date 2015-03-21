@@ -8,6 +8,7 @@ $menus = array(
     'http://blog.goodiebox.hu' => array('Blog', 'blog'),
     '/gyik' => array('GYIK', 'gyik'),
     '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
+    '/media' => array('Média', 'media'),
     '/partnerek' => array('Partnereink', 'partnerek'),
 );
 if($auth->logged_in()){

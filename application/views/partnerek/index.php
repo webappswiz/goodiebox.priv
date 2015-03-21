@@ -1,6 +1,8 @@
 <section class="how-it-works rounded">
     <h1>Partnereink</h1>
     <br/>
+    <br/>
+    <br/>
     <div class="image-row" style="text-align: center;">
         <div class="image-set">
             <a href="https://www.purina-proplan.hu/" target="blank"><img class="" height="60" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0267_300.jpg" alt=""/></a>
