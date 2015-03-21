@@ -968,6 +968,9 @@ label.tooltip span
     #map{
         width:790px;
     }
+    .medialinks img{
+        width: 200px;
+    }
 }
 @media only screen and (max-width: 768px)
 {
@@ -1019,6 +1022,9 @@ label.tooltip span
     }
     .slide-item{
         font-size: 12px;
+    }
+    .medialinks img{
+        width: 200px;
     }
 }
 @media only screen and (max-width: 767px)
@@ -1073,6 +1079,9 @@ label.tooltip span
     }
     .slide-item{
         font-size: 12px;
+    }
+    .medialinks img{
+        width: 200px;
     }
 }
 @media only screen and (max-width: 640px)
@@ -1186,6 +1195,9 @@ label.tooltip span
         font-weight:500;
         cursor: pointer;
     }
+    .medialinks img{
+        width: 200px;
+    }
 }
 @media only screen and (max-width: 460px)
 {
@@ -1293,6 +1305,9 @@ label.tooltip span
         font-weight:500;
         cursor: pointer;
     }
+    .medialinks img{
+        width: 200px;
+    }
 }
 @media only screen and (max-width: 360px)
 {
@@ -1394,6 +1409,9 @@ label.tooltip span
     }
     .slide-item{
         font-size: 12px;
+    }
+    .medialinks img{
+        width: 200px;
     }
 }
 @media only screen and (min-device-width : 320px) 
@@ -1500,11 +1518,17 @@ and (max-device-width : 592px)  and (orientation : portrait)
     .spacer {
         padding: 0;
     }
+    .medialinks img{
+        width: 200px;
+    }
 }
 
 @media only screen and (min-device-width : 320px) 
 and (max-device-width : 593px)  and (orientation : landscape)
 {
+    .medialinks img{
+        width: 200px;
+    }
     #jan,#dec,#nov{
         font-size: 12px;
         margin: 2px;
@@ -1552,5 +1576,4 @@ and (max-device-width : 593px)  and (orientation : landscape)
 }
 .medialinks img{
     border:3px solid #330000;
-    
 }
