@@ -9,6 +9,8 @@
             <img class="" height="150" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0270_300.jpg" alt="" /></a>
             <img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0271_300.jpg" alt="" /></a>
             <img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0272_300.jpg" alt="" /></a>
+            <img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0304_300.jpg" alt="" /></a>
+            <img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0305_300.jpg" alt="" /></a>
         </div>
     </div>
 </section>
