@@ -91,6 +91,7 @@
                     echo '<td rowspan="3" valign="top">';
                     echo '<form method="POST" action="">';
                     echo Form::select('status_name', $st, $model->orders_status, array('required', 'class' => 'rounded option-name')).'<br/>';
+                    echo 'Free shipping <input type="checkbox" value="1" name="freeshipping"><br/><br/>';
                     echo '<input type="submit" value="Change status" name="submit" class="btn btn-primary">';
                     echo '</form>';
                     echo '</td>';
