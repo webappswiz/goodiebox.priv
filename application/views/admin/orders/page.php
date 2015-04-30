@@ -12,6 +12,7 @@ if (count($data) > 0) {
     <?php echo $pagination; ?>
     <?php
     $statuses = ORM::factory('OrderStatus')->find_all();
+    $st[0] = '- Please select a status';
     foreach ($statuses as $s) {
         $st[$s->type] = $s->status_name;
     }
@@ -25,11 +26,13 @@ if (count($data) > 0) {
                             <option value="0">- Please select an action</option>
                             <option value="1">Print Label</option>
                             <option value="2">Cancel Order</option>
+                            <option value="3">Change Status</option>
+                            <option value="4">Print Invoices</option>
                         </select>
-                        <input type="text" name="filter_by_fname" placeholder="First Name">
-                        <input type="text" name="filter_by_lname" placeholder="Last Name">
-                        <input type="text" class="datef" name="date_from" placeholder="Date From">
-                        <input type="text" class="datet" name="date_to" placeholder="Date To">
+                        <input type="text" name="filter_by_fname" placeholder="First Name" value="<?php echo (isset($_REQUEST['filter_by_fname']))?$_REQUEST['filter_by_fname']:'';?>">
+                        <input type="text" name="filter_by_lname" placeholder="Last Name" value="<?php echo (isset($_REQUEST['filter_by_lname']))?$_REQUEST['filter_by_lname']:'';?>">
+                        <input type="text" class="datef" name="date_from" placeholder="Date From" value="<?php echo (isset($_REQUEST['date_from']))?$_REQUEST['date_from']:'';?>">
+                        <input type="text" class="datet" name="date_to" placeholder="Date To" value="<?php echo (isset($_REQUEST['date_to']))?$_REQUEST['date_to']:'';?>">
                         <?php echo Form::select('status_name', $st, '', array('required', 'class' => 'rounded option-name'));?>
                         <input type="submit" class="btn btn-primary" value="Go">
                     </td>

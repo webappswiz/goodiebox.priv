@@ -30,13 +30,13 @@ class Controller_Admin_Orders extends Controller_Admin {
             $this->orders->where('delivery_firstname', 'LIKE', '%' . $_REQUEST['filter_by_fname'] . '%');
             $this->orders->and_where('delivery_lastname', 'LIKE', '%' . $_REQUEST['filter_by_lname'] . '%');
         }
-        if(isset($_REQUEST['date_from']) && isset($_REQUEST['date_to']) && !empty($_REQUEST['date_from']) && !empty($_REQUEST['date_to'])){
-            $date_from = date('Y-m-d H:i:s',strtotime($_REQUEST['date_from']));
-            $date_to = date('Y-m-d H:i:s',strtotime($_REQUEST['date_to']));
+        if (isset($_REQUEST['date_from']) && isset($_REQUEST['date_to']) && !empty($_REQUEST['date_from']) && !empty($_REQUEST['date_to'])) {
+            $date_from = date('Y-m-d H:i:s', strtotime($_REQUEST['date_from']));
+            $date_to = date('Y-m-d H:i:s', strtotime($_REQUEST['date_to']));
             $this->orders->and_where('date_purchased', '>=', $date_from);
             $this->orders->and_where('date_purchased', '<=', $date_to);
         }
-        if(isset($_REQUEST['status_name'])){
+        if (isset($_REQUEST['status_name']) && $_REQUEST['action'] == 0 && $_REQUEST['status_name'] != 0) {
             $this->orders->and_where('orders_status', '=', $_REQUEST['status_name']);
         }
         $count = $this->orders->count_all();
@@ -44,6 +44,43 @@ class Controller_Admin_Orders extends Controller_Admin {
                     'total_items' => $count,
                     'items_per_page' => 50,
         ));
+        if (isset($_REQUEST['action']) && $_REQUEST['action'] != 0 && isset($_REQUEST['orders'])) {
+            if (!is_array($_REQUEST['orders']))
+                return;
+            if ($_REQUEST['action'] == 1) {
+                //print_label
+            }
+            if ($_REQUEST['action'] == 2) {
+                foreach ($_REQUEST['orders'] as $ord) {
+                    $o = ORM::factory('Order', $ord);
+                    $o->orders_status = 7;
+                    $o->save();
+                    $user = ORM::factory('User', $o->user_id);
+                    $this->cancel_order($o, $user, 1);
+                }
+            }
+            if ($_REQUEST['action'] == 3) {
+                foreach ($_REQUEST['orders'] as $ord) {
+                    $o = ORM::factory('Order', $ord);
+                    $o->orders_status = $_REQUEST['status_name'];
+                    $o->save();
+                }
+            }
+            if ($_REQUEST['action'] == 4) {
+                foreach ($_REQUEST['orders'] as $id) {
+                    if (file_exists(DOCROOT . 'orders/order_' . $id . '.pdf')) {
+                        $file = DOCROOT . 'orders/order_' . $id . '.pdf';
+                        $filename = 'Order_#' . $id . '_Reciept.pdf'; /* Note: Always use .pdf at the end. */
+                        header('Content-type: application/pdf');
+                        header('Content-Disposition:attachment; filename="' . $filename . '"');
+                        header('Content-Transfer-Encoding: binary');
+                        header('Content-Length: ' . filesize($file));
+                        header('Accept-Ranges: bytes');
+                        @readfile($file);
+                    }
+                }
+            }
+        }
         $this->pagination->route_params(array('controller' => $this->request->controller(), 'action' => $this->request->action()));
         $this->data = $this->orders->offset($this->pagination->offset)->limit($this->pagination->items_per_page)->order_by('date_purchased', 'DESC')->find_all()->as_array();
     }
