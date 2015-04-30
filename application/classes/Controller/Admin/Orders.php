@@ -25,8 +25,23 @@ class Controller_Admin_Orders extends Controller_Admin {
 
     public function action_page() {
         $this->orders = ORM::factory('Order')->with('status', 'package');
+        $this->orders->reset(FALSE);
+        if (isset($_REQUEST['filter_by_fname']) && isset($_REQUEST['filter_by_lname'])) {
+            $this->orders->where('delivery_firstname', 'LIKE', '%' . $_REQUEST['filter_by_fname'] . '%');
+            $this->orders->and_where('delivery_lastname', 'LIKE', '%' . $_REQUEST['filter_by_lname'] . '%');
+        }
+        if(isset($_REQUEST['date_from']) && isset($_REQUEST['date_to']) && !empty($_REQUEST['date_from']) && !empty($_REQUEST['date_to'])){
+            $date_from = date('Y-m-d H:i:s',strtotime($_REQUEST['date_from']));
+            $date_to = date('Y-m-d H:i:s',strtotime($_REQUEST['date_to']));
+            $this->orders->and_where('date_purchased', '>=', $date_from);
+            $this->orders->and_where('date_purchased', '<=', $date_to);
+        }
+        if(isset($_REQUEST['status_name'])){
+            $this->orders->and_where('orders_status', '=', $_REQUEST['status_name']);
+        }
+        $count = $this->orders->count_all();
         $this->pagination = Pagination::factory(array(
-                    'total_items' => $this->orders->count_all(),
+                    'total_items' => $count,
                     'items_per_page' => 50,
         ));
         $this->pagination->route_params(array('controller' => $this->request->controller(), 'action' => $this->request->action()));
@@ -114,7 +129,7 @@ class Controller_Admin_Orders extends Controller_Admin {
         }
 
         if ($_REQUEST['status_name'] == 7) {
-            $user = ORM::factory('User',$this->model->user_id);
+            $user = ORM::factory('User', $this->model->user_id);
             $this->cancel_order($this->model, $user, 1);
         }
 

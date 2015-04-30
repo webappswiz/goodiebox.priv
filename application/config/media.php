@@ -21,7 +21,8 @@ return array(
             'jquery.easytabs',
             'lightbox.min',
             'main',
-            'jquery.bxslider.min'
+            'jquery.bxslider.min',
+            'bootstrap-datepicker'
         ),
         'css' => array(
             'style' => NULL,
