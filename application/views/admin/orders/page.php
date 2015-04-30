@@ -3,9 +3,14 @@ if (count($data) > 0) {
     ?>
     <h2>Orders</h2>
     <?php echo $pagination; ?>
+    <select name="action">
+        <option>Print Label</option>
+        <option>Cancel Order</option>
+    </select>
     <table class="table table-stripped">
         <thead>
             <tr>
+                <th></th>
                 <th>#</th>
                 <th>First name</th>
                 <th>Last name</th>
@@ -23,6 +28,7 @@ if (count($data) > 0) {
             $i = 1;
             foreach ($data as $order) {
                 echo '<tr>';
+                echo '<td><input type="checkbox" name="orders[]" value="'.$order->id.'"></td>';
                 echo '<td>' . $i . '</td>';
                 echo '<td>' . $order->delivery_firstname . '</td>';
                 echo '<td>' . $order->delivery_lastname . '</td>';
