@@ -67,18 +67,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 }
             }
             if ($_REQUEST['action'] == 4) {
-                foreach ($_REQUEST['orders'] as $id) {
-                    if (file_exists(DOCROOT . 'orders/order_' . $id . '.pdf')) {
-                        $file = DOCROOT . 'orders/order_' . $id . '.pdf';
-                        $filename = 'Order_#' . $id . '_Reciept.pdf'; /* Note: Always use .pdf at the end. */
-                        header('Content-type: application/pdf');
-                        header('Content-Disposition:attachment; filename="' . $filename . '"');
-                        header('Content-Transfer-Encoding: binary');
-                        header('Content-Length: ' . filesize($file));
-                        header('Accept-Ranges: bytes');
-                        @readfile($file);
-                    }
-                }
+                
             }
         }
         $this->pagination->route_params(array('controller' => $this->request->controller(), 'action' => $this->request->action()));
