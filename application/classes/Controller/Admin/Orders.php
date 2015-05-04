@@ -355,7 +355,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">Az ÁFA kulcs: AM (alanyi mentes)</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">Köszönjük a vásárlást!</td>
+                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">MEGJEGYZÉS:<br/>Ez a stornó számla a '.$order->invoice_num.' számú számla helyesbitése.</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 105px;" colspan="5"></td>
