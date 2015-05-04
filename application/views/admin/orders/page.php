@@ -40,10 +40,12 @@ if (count($data) > 0) {
                             <option value="4">Print Invoices</option>
                         </select>
                         <input type="text" name="filter_by_fname" placeholder="First Name" value="<?php echo (isset($_REQUEST['filter_by_fname'])) ? $_REQUEST['filter_by_fname'] : ''; ?>">
-                        <input type="text" name="filter_by_lname" placeholder="Last Name" value="<?php echo (isset($_REQUEST['filter_by_lname'])) ? $_REQUEST['filter_by_lname'] : ''; ?>">
-                        <input type="text" class="datef" name="date_from" placeholder="Date From" value="<?php echo (isset($_REQUEST['date_from'])) ? $_REQUEST['date_from'] : ''; ?>">
-                        <input type="text" class="datet" name="date_to" placeholder="Date To" value="<?php echo (isset($_REQUEST['date_to'])) ? $_REQUEST['date_to'] : ''; ?>">
+                        
+                        <input type="text" class="datef" name="date_from" placeholder="Date From" value="<?php echo (isset($_REQUEST['date_from'])) ? $_REQUEST['date_from'] : ''; ?>"><br/>
+                        
                         <?php echo Form::select('status_name', $st, '', array('required', 'class' => 'rounded option-name')); ?>
+                        <input type="text" name="filter_by_lname" placeholder="Last Name" value="<?php echo (isset($_REQUEST['filter_by_lname'])) ? $_REQUEST['filter_by_lname'] : ''; ?>">
+                        <input type="text" class="datet" name="date_to" placeholder="Date To" value="<?php echo (isset($_REQUEST['date_to'])) ? $_REQUEST['date_to'] : ''; ?>"><br/>
                         <input type="submit" class="btn btn-primary" value="Go">
                     </td>
                 </tr>
