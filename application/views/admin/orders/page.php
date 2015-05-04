@@ -17,6 +17,16 @@ if (count($data) > 0) {
         $st[$s->type] = $s->status_name;
     }
     ?>
+    <script>
+        $('body').on('click', '#select_all', function () {
+            var checkboxes = $(this).closest('form').find(':checkbox');
+            if ($(this).is(':checked')) {
+                checkboxes.prop('checked', true);
+            } else {
+                checkboxes.prop('checked', false);
+            }
+        });
+    </script>
     <form action="" method="GET">
         <table class="table table-stripped">
             <thead>
@@ -29,16 +39,16 @@ if (count($data) > 0) {
                             <option value="3">Change Status</option>
                             <option value="4">Print Invoices</option>
                         </select>
-                        <input type="text" name="filter_by_fname" placeholder="First Name" value="<?php echo (isset($_REQUEST['filter_by_fname']))?$_REQUEST['filter_by_fname']:'';?>">
-                        <input type="text" name="filter_by_lname" placeholder="Last Name" value="<?php echo (isset($_REQUEST['filter_by_lname']))?$_REQUEST['filter_by_lname']:'';?>">
-                        <input type="text" class="datef" name="date_from" placeholder="Date From" value="<?php echo (isset($_REQUEST['date_from']))?$_REQUEST['date_from']:'';?>">
-                        <input type="text" class="datet" name="date_to" placeholder="Date To" value="<?php echo (isset($_REQUEST['date_to']))?$_REQUEST['date_to']:'';?>">
-                        <?php echo Form::select('status_name', $st, '', array('required', 'class' => 'rounded option-name'));?>
+                        <input type="text" name="filter_by_fname" placeholder="First Name" value="<?php echo (isset($_REQUEST['filter_by_fname'])) ? $_REQUEST['filter_by_fname'] : ''; ?>">
+                        <input type="text" name="filter_by_lname" placeholder="Last Name" value="<?php echo (isset($_REQUEST['filter_by_lname'])) ? $_REQUEST['filter_by_lname'] : ''; ?>">
+                        <input type="text" class="datef" name="date_from" placeholder="Date From" value="<?php echo (isset($_REQUEST['date_from'])) ? $_REQUEST['date_from'] : ''; ?>">
+                        <input type="text" class="datet" name="date_to" placeholder="Date To" value="<?php echo (isset($_REQUEST['date_to'])) ? $_REQUEST['date_to'] : ''; ?>">
+                        <?php echo Form::select('status_name', $st, '', array('required', 'class' => 'rounded option-name')); ?>
                         <input type="submit" class="btn btn-primary" value="Go">
                     </td>
                 </tr>
                 <tr>
-                    <th></th>
+                    <th><input type="checkbox" id="select_all"></th>
                     <th>#</th>
                     <th>First name</th>
                     <th>Last name</th>

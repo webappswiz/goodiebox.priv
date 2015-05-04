@@ -31,7 +31,6 @@ class Controller_Admin_Orders extends Controller_Admin {
             $this->orders->and_where('delivery_lastname', 'LIKE', '%' . $_REQUEST['filter_by_lname'] . '%');
         }
         if (isset($_REQUEST['date_from']) && isset($_REQUEST['date_to']) && !empty($_REQUEST['date_from']) && !empty($_REQUEST['date_to'])) {
-            echo strtotime($_REQUEST['date_from']) . ' '.strtotime($_REQUEST['date_to']);
             $date_from = date('Y-m-d H:i:s', strtotime($_REQUEST['date_from']));
             $date_to = date('Y-m-d', strtotime($_REQUEST['date_to']));
             $this->orders->and_where('date_purchased', '>=', $date_from);
