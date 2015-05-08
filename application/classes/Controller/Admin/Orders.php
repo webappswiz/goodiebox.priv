@@ -201,6 +201,23 @@ class Controller_Admin_Orders extends Controller_Admin {
             $this->redirect('/admin/orders/');
         }
     }
+    
+    public function action_cancel() {
+        $id = (int) $this->request->param('id');
+        if (file_exists(DOCROOT . 'orders/cancelled_order_' . $id . '.pdf')) {
+            $file = DOCROOT . 'orders/cancelled_order_' . $id . '.pdf';
+            $filename = 'Order_#' . $id . '_Cancel_Reciept.pdf'; /* Note: Always use .pdf at the end. */
+            header('Content-type: application/pdf');
+            header('Content-Disposition:attachment; filename="' . $filename . '"');
+            header('Content-Transfer-Encoding: binary');
+            header('Content-Length: ' . filesize($file));
+            header('Accept-Ranges: bytes');
+            @readfile($file);
+            $this->render_nothing();
+        } else {
+            $this->redirect('/admin/orders/');
+        }
+    }
 
     private function cancel_order($order, $user, $type) {
         if ($order->puppy_id > 0) {
@@ -243,8 +260,8 @@ class Controller_Admin_Orders extends Controller_Admin {
             $user_details = '';
         } else {
             $company = '';
-            $user_details = 'Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
-                     Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
+            $user_details = 'Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
+                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>';
         }
 
         if ($order->package->term == 1) {

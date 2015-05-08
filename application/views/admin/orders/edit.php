@@ -190,5 +190,10 @@
     echo HTML::anchor('/admin/orders/receipt/'.$model->id, 'See receipt');
     echo ' | ';
     echo HTML::anchor('/admin/orders/shipping/'.$model->id, 'Print label');
+    if($model->orders_status==7){
+        echo ' | ';
+    echo HTML::anchor('/admin/orders/cancel/'.$model->id, 'Cancelled order invoice');
+    }
+    
 ?>
 </div>
