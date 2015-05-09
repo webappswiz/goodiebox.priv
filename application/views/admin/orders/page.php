@@ -69,7 +69,7 @@ if (count($data) > 0) {
                 foreach ($data as $order) {
                     echo '<tr>';
                     echo '<td><input type="checkbox" name="orders[]" value="' . $order->id . '"></td>';
-                    echo '<td>' . $i . '</td>';
+                    echo '<td>' . $order->id . '</td>';
                     echo '<td>' . $order->delivery_firstname . '</td>';
                     echo '<td>' . $order->delivery_lastname . '</td>';
                     if ($order->type == 1)

@@ -24,7 +24,7 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
 
     public function action_page() {
-        $this->orders = ORM::factory('Order')->with('status', 'package');
+        $this->orders = ORM::factory('Order')->with('status', 'package')->where('order.type','!=',10);
         $this->orders->reset(FALSE);
         if (isset($_REQUEST['filter_by_fname']) && isset($_REQUEST['filter_by_lname'])) {
             $this->orders->where('delivery_firstname', 'LIKE', '%' . $_REQUEST['filter_by_fname'] . '%');
@@ -248,8 +248,17 @@ class Controller_Admin_Orders extends Controller_Admin {
             $pr = 0;
             $method = 'Átutalás';
         }
-
-
+        
+        $this->model = ORM::factory('Order');
+        $this->model->user_id = $order->user_id;
+        $o = ORM::factory('Order')
+                ->where('invoice_num', '<>', '')
+                ->order_by('invoice_num', 'DESC')
+                ->find();
+        $this->model->invoice_num = $o->invoice_num + 1;
+        $this->model->type = 10;
+        $this->model->order_num = $order->id;
+        $this->model->save();
         $discount = $order->package->price - $order->total_price + $pr;
         $total_price = $order->package->price - $discount;
         if ($order->company_name <> '') {
@@ -318,7 +327,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> ' . $order->invoice_num . '</td>
+                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> ' . $this->model->invoice_num . '</td>
             </tr>
             <tr style="padding: 0px">
                 <td colspan="5">
@@ -372,7 +381,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">Az ÁFA kulcs: AM (alanyi mentes)</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">MEGJEGYZÉS:<br/>Ez a stornó számla a '.$order->invoice_num.' számú számla helyesbitése.</td>
+                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">MEGJEGYZÉS:<br/>Ez a stornó számla a '.$this->model->invoice_num.' számú számla helyesbitése.</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 105px;" colspan="5"></td>
