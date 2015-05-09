@@ -24,7 +24,7 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
 
     public function action_page() {
-        $this->orders = ORM::factory('Order')->with('status', 'package')->where('order.type','!=',10);
+        $this->orders = ORM::factory('Order')->with('status', 'package')->where('order.type', '!=', 10);
         $this->orders->reset(FALSE);
         if (isset($_REQUEST['filter_by_fname']) && isset($_REQUEST['filter_by_lname'])) {
             $this->orders->where('delivery_firstname', 'LIKE', '%' . $_REQUEST['filter_by_fname'] . '%');
@@ -34,7 +34,7 @@ class Controller_Admin_Orders extends Controller_Admin {
             $date_from = date('Y-m-d H:i:s', strtotime($_REQUEST['date_from']));
             $date_to = date('Y-m-d', strtotime($_REQUEST['date_to']));
             $this->orders->and_where('date_purchased', '>=', $date_from);
-            $this->orders->and_where('date_purchased', '<=', $date_to.' 23:59:00');
+            $this->orders->and_where('date_purchased', '<=', $date_to . ' 23:59:00');
         }
         if (isset($_REQUEST['status_name']) && $_REQUEST['action'] == 0 && $_REQUEST['status_name'] != 0) {
             $this->orders->and_where('orders_status', '=', $_REQUEST['status_name']);
@@ -48,7 +48,67 @@ class Controller_Admin_Orders extends Controller_Admin {
             if (!is_array($_REQUEST['orders']))
                 return;
             if ($_REQUEST['action'] == 1) {
-                //print_label
+                
+                foreach ($_REQUEST['orders'] as $ord) {
+                    $this->model = ORM::factory('Order', $ord);
+                    $this->model->orders_status = 2;
+                    $this->model->save();
+                    if ($this->model->payment_status == 5) {
+                        $flcode = "true";
+                        $cost = $this->model->total_price;
+                    } else {
+                        $flcode = "false";
+                        $cost = 0;
+                    }
+                    if (isset($_REQUEST['freeshipping']) && $_REQUEST['freeshipping'] == 1) {
+                        $flcode = "false";
+                        $cost = 0;
+                    }
+                    $date = strtotime(date('Y.m.d'));
+                    $pickup = date('Y.m.d', $date + 86400);
+                    $shipping = new Shipping();
+                    $data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "' . $pickup . '.",
+      "flCOD": "' . $flcode . '",
+	  "nmRecipientCOD": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
+	  "nmBankCOD": "GiveMeAllYourMoney Bank",
+	  "txBankAccountNumberCOD": "12345678-12345678-12345678",
+      "flNothingProhibited": "true",
+      "flAgreedToTermsAndConditions": "true",
+
+	  "DESTINATIONADDRESS": {
+		"nmCompanyOrPerson": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
+		"cdCountry": "HU",
+		"txAddress": "' . $this->model->delivery_address . '",
+		"txAddressNumber": "",
+		"txPost": "' . $this->model->delivery_postcode . '",
+		"txCity": "' . $this->model->delivery_city . '",
+		"nmContact": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
+		"txPhoneContact": "' . $this->model->delivery_telephone . '",
+		"txEmailContact": "' . $this->model->user->email . '",
+		"txInstruction": ""
+	  },
+      "PACKAGES":
+	  {
+        "PACKAGE":
+		[
+		{
+          "ctPackage": "1",
+          "amContent": "' . $cost . '",
+          "txContent": "' . $this->model->package->package_name . '",
+          "idOrder": "' . $this->model->id . '"
+        }
+      ]}
+    }
+  }
+}';
+                    $result = $shipping->send_request($data_string);
+                    $label = json_decode($result, true);
+                    $label = $label['Order']['Labels'][0];
+                    $pdf_decoded = base64_decode($label);
+                    $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
+                    fwrite($pdf, $pdf_decoded);
+                    fclose($pdf);
+                }
             }
             if ($_REQUEST['action'] == 2) {
                 foreach ($_REQUEST['orders'] as $ord) {
@@ -201,7 +261,7 @@ class Controller_Admin_Orders extends Controller_Admin {
             $this->redirect('/admin/orders/');
         }
     }
-    
+
     public function action_cancel() {
         $id = (int) $this->request->param('id');
         if (file_exists(DOCROOT . 'orders/cancelled_order_' . $id . '.pdf')) {
@@ -248,7 +308,7 @@ class Controller_Admin_Orders extends Controller_Admin {
             $pr = 0;
             $method = 'Átutalás';
         }
-        
+
         $this->model = ORM::factory('Order');
         $this->model->user_id = $order->user_id;
         $o = ORM::factory('Order')
@@ -368,7 +428,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">-' . number_format((float) $pr, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">-' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>-' . number_format((float) $pr, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
@@ -381,7 +441,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">Az ÁFA kulcs: AM (alanyi mentes)</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">MEGJEGYZÉS:<br/>Ez a stornó számla a '.$this->model->invoice_num.' számú számla helyesbítése.</td>
+                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">MEGJEGYZÉS:<br/>Ez a stornó számla a ' . $this->model->invoice_num . ' számú számla helyesbítése.</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 105px;" colspan="5"></td>
