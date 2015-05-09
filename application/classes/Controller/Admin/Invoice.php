@@ -82,6 +82,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
                 ->order_by('invoice_num', 'DESC')
                 ->find();
         $this->model->invoice_num = $o->invoice_num + 1;
+        $this->model->payment_status = (Arr::get($_REQUEST, 'pmethod')==1)?'0':'5';
         $this->model->save();
         $this->receipt_email($this->model, Arr::get($_REQUEST, 'size'), $ship_cost, Arr::get($_REQUEST, 'pmethod'));
         $this->redirect('/admin/invoice/');
