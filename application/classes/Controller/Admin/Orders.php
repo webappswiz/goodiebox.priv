@@ -287,16 +287,16 @@ class Controller_Admin_Orders extends Controller_Admin {
         </style>
     </head>
     <body>
-        <table style="border:0 0 2px solid 0;border-top:0px;border-left:0px;border-right:0px;width: 670px;padding: 0px;margin: 0px" cellpadding="0" cellspacing="0" border="0">
+        <table style="border:0 0 2px solid 0;border-top:0px;border-left:0px;border-right:0px solid;width: 670px;padding: 0px;margin: 0px" cellpadding="0" cellspacing="0" border="0">
             <tr>
                 <td style="width:50%;padding: 5px;border: 0px;border-left: 0px;" colspan="2"><img src="' . URL::base(TRUE, FALSE) . 'assets/img/logo_invoice.png"></td>
-                <td style="padding: 5px;width:50%;text-align: right;vertical-align: top;border: 0px;border-right: 0px; font-size: 20px; font-weight: 600;letter-spacing: 5px;" colspan="2">STORNÓ SZÁMLA</td>
+                <td style="padding: 5px;width:50%;text-align: right;vertical-align: top;border: 0px solid;border-right: 0px; font-size: 20px; font-weight: 600;letter-spacing: 5px;" colspan="3">STORNÓ SZÁMLA</td>
             </tr>
             <tr>
                 <td style="height: 40px" colspan="4"></td>
             </tr>
             <tr>
-                <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Szállító</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Vevo</td>
+                <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Szállító</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="3">Vevo</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
@@ -359,7 +359,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">-' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>-' . number_format((float) $pr, 2, ',', '') . '&nbsp;&nbsp;</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>-' . number_format((float) $pr, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
