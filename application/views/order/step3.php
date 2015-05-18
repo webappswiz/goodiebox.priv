@@ -56,7 +56,7 @@ if ($package->term == 1) {
         });
 
         $('#cod').on('click', function () {
-            ship_cost = <?= $cost*$term ?>;
+            ship_cost = <?= $cost * $term ?>;
             $('#ship').html(ship_cost + ' HUF');
             var price = $('#total_price').html().split(' ');
             var ship_price = parseInt(price[0]) + ship_cost;
@@ -65,7 +65,7 @@ if ($package->term == 1) {
             $('#cod').attr('disabled', 'disabled');
         });
         $('#cc').on('click', function () {
-            ship_cost = <?= $cost*$term ?>;
+            ship_cost = <?= $cost * $term ?>;
             if ($('#ship').html() !== 'Ingyenes') {
                 $('#ship').html('Ingyenes');
                 var price = $('#total_price').html().split(' ');
@@ -133,6 +133,14 @@ if ($package->term == 1) {
                     if (i.msg == 1) {
                         $('#invite_code').val($('#coupon_id').val());
                         discount = total_price * 10 / 100;
+                        $('#discount').val('1');
+                        $('#discount1').html(discount + ' HUF');
+                        var final_price = total_price - discount;
+                        $('#total_price').html(final_price + ' HUF');
+                        $('.box.rounded').hide();
+                    } else if (i.msg == 2) {
+                        $('#invite_code').val($('#coupon_id').val());
+                        discount = total_price * 5 / 100;
                         $('#discount').val('1');
                         $('#discount1').html(discount + ' HUF');
                         var final_price = total_price - discount;

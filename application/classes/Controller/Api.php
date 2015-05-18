@@ -33,8 +33,15 @@ class Controller_API extends Controller_Core {
             $code = ORM::factory('Coupons')
                     ->where('coupon', '=', $coupon_code)
                     ->find();
+            $code1 = ORM::factory('CouponCodes')
+                    ->where('coupon_code', '=', $coupon_code)
+                    ->find();
             if ($code->loaded()) {
                 echo json_encode(array('msg' => '1'));
+            } elseif ($code1->loaded()) {
+                $code1->count = $code1->count + 1;
+                $code1->save();
+                echo json_encode(array('msg' => '2'));
             } else {
                 echo json_encode(array('msg' => '0'));
             }

@@ -120,7 +120,7 @@ class Controller_Order extends Controller_Core {
                 </td>
             </tr>
             <tr style="padding: 0px">
-                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>'.$method.'</td>
+                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>' . $method . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
@@ -407,6 +407,7 @@ class Controller_Order extends Controller_Core {
             $friend = ORM::factory('Friend')
                     ->where('coupon_code', '=', $step1['coupon_code'])
                     ->find();
+
             if ($friend->loaded()) {
                 $order->coupon_code = $step1['coupon_code'];
                 $order->puppy_id = $step1['puppy_id'];
@@ -418,6 +419,9 @@ class Controller_Order extends Controller_Core {
         }
         $discount = 0;
         if ($_POST['discount'] == 1) {
+            $new = ORM::factory('CouponCodes')
+                    ->where('coupon_code', '=', $_REQUEST['invite_code'])
+                    ->find();
             if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
                 echo 1;
                 $order->discount = 1;
@@ -427,6 +431,10 @@ class Controller_Order extends Controller_Core {
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = $pkg->price * ($g_discount / 100);
+            } elseif ($new->loaded()) {
+                $order->discount = 1;
+                $pkg = ORM::factory('Packages', $step2['selected_box']);
+                $discount = $pkg->price * 0.05 + $discount;
             }
         }
         $order->orders_status = 1;
