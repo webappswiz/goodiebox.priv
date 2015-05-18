@@ -423,7 +423,6 @@ class Controller_Order extends Controller_Core {
                     ->where('coupon_code', '=', $_REQUEST['invite_code'])
                     ->find();
             if (count($inv_count) > 0 && empty($step1['coupon_code'])) {
-                echo 1;
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = ($pkg->price * (((count($invites) * 5) + $g_discount) / 100));
@@ -431,7 +430,8 @@ class Controller_Order extends Controller_Core {
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = $pkg->price * ($g_discount / 100);
-            } elseif ($new->loaded()) {
+            } 
+            if ($new->loaded()) {
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = $pkg->price * 0.05 + $discount;
