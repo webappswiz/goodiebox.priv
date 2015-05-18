@@ -39,8 +39,6 @@ class Controller_API extends Controller_Core {
             if ($code->loaded()) {
                 echo json_encode(array('msg' => '1'));
             } elseif ($code1->loaded()) {
-                $code1->count = $code1->count + 1;
-                $code1->save();
                 echo json_encode(array('msg' => '2'));
             } else {
                 echo json_encode(array('msg' => '0'));

@@ -435,6 +435,8 @@ class Controller_Order extends Controller_Core {
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = $pkg->price * 0.05 + $discount;
+                $new->count = $new->count+1;
+                $new->save();
             }
         }
         $order->orders_status = 1;
