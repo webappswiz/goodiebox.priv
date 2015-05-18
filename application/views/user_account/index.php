@@ -159,12 +159,12 @@
     </div>
 </div>
 <?php
-$options = ORM::factory('Options',1);
+$options = ORM::factory('Options', 1);
 $text = $options->text;
 $end_date = $options->end_date;
 $status = $options->status;
 $date_array = explode(' ', $end_date);
-$date = explode('/',$date_array[0]);
+$date = explode('/', $date_array[0]);
 $time = explode(':', $date_array[1]);
 ?>
 <script type="text/javascript">
@@ -356,7 +356,7 @@ $time = explode(':', $date_array[1]);
                                 </div>
                                 <input type="hidden" name="puppy_id" value="<?= $puppy->id ?>">
                                 <div>
-                                    <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded" <?=($status==0)?'disabled':''?>>
+                                    <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded" <?= ($status == 0) ? 'disabled' : '' ?>>
                                 </div>
                             </form>
                         </div>  <!--End dog profile container-->
@@ -398,7 +398,7 @@ $time = explode(':', $date_array[1]);
                             endforeach;
                             ?>
                             <div style="margin-top:35px; float:none;">
-                                <input <?=($status==0)?'disabled':''?> type="button" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                <input <?= ($status == 0) ? 'disabled' : '' ?> type="button" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
                         <hr/>
@@ -448,7 +448,7 @@ $time = explode(':', $date_array[1]);
                             </div>
                         </div>
                         <div class="claim-form-btn">
-                            <input <?=($status==0)?'disabled':''?> type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
+                            <input <?= ($status == 0) ? 'disabled' : '' ?> type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -466,26 +466,26 @@ $time = explode(':', $date_array[1]);
                 ->find_all();
         if (count($shelters) > 0):
             ?>
-                                                                                <form action="/user_account/shelter" id="shelter" method="POST" >
+                                                                                    <form action="/user_account/shelter" id="shelter" method="POST" >
             <?php
             foreach ($shelters as $shelter):
                 ?>
-                                                                                                                                        <div class="support-row">
-                                                                                                                                            <ul>
-                                                                                                                                                <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
-                                                                                                                                                <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
-                                                                                                                                                <li class="option-text2"><?= $shelter->doggy_name ?></li>
-                                                                                                                                            </ul>
-                                                                                                                                        </div>
+                                                                                                                                                <div class="support-row">
+                                                                                                                                                    <ul>
+                                                                                                                                                        <li><input type="radio" name="shelter" value="<?= $shelter->shelter_id ?>"></li>
+                                                                                                                                                        <li class="option-text1"><?= $shelter->shelter->shelter_name ?></li>
+                                                                                                                                                        <li class="option-text2"><?= $shelter->doggy_name ?></li>
+                                                                                                                                                    </ul>
+                                                                                                                                                </div>
                 <?php
             endforeach;
             ?>
-                                                        
-                                                                                    <div style="margin-top:35px; float:none;">
-                                                                                        <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
-                                                                                    </div>
-                                                                                </form>
-                                                                                <hr/>
+                                                            
+                                                                                        <div style="margin-top:35px; float:none;">
+                                                                                            <input type="submit" id="submit_shelter" name="submit_shelter" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                                                                        </div>
+                                                                                    </form>
+                                                                                    <hr/>
         <?php endif; ?>
                             <div class="process-form-container2">
                                 <div class="clear"></div>
@@ -503,7 +503,7 @@ $time = explode(':', $date_array[1]);
         $shelters = ORM::factory('Shelter')->find_all();
         foreach ($shelters as $shelter) {
             ?>
-                                                                                                <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
+                                                                                                    <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
             <?php
         }
         ?>
@@ -585,7 +585,31 @@ $time = explode(':', $date_array[1]);
                                 } elseif ($order->orders_status == 6) {
                                     $status = 'Elutasított';
                                 }
-                                echo 'Rendelés száma: '.$order->id . '<br/><br/>Rendelés dátuma: ' . $order->date_purchased . '<br/><br/>Rendelés állapota: ' . $status;
+                                echo 'Rendelés száma: ' . $order->id . '<br/><br/>Rendelés dátuma: ' . $order->date_purchased . '<br/><br/>Rendelés állapota: ' . $status;
+                            }
+
+                        endif;
+                        ?>
+                        <div class="clear"></div>
+                    </div> <!--End support-->
+                </div>
+            </div>
+
+        </div>
+        <h3>Coupons' usage</h3>
+        <div>
+            <div class="content">
+                <div class="support">
+                    <div class="process-form-container2">
+                        <?php
+                        $discounts = ORM::factory('CouponCodes')
+                                ->where('user_id', '=', $current_user->id)
+                                ->find_all();
+                        if (count($discounts) > 0):
+                            ?>
+                            <?php
+                            foreach ($discounts as $discount) {
+                                echo 'Coupon code: ' . $discount->coupon_code . ' <br/>Number of usage:'.$discount->count;
                             }
 
                         endif;
