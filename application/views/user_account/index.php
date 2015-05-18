@@ -585,7 +585,7 @@ $time = explode(':', $date_array[1]);
                                 } elseif ($order->orders_status == 6) {
                                     $status = 'Elutasított';
                                 }
-                                echo 'Rendelés száma: ' . $order->id . '<br/><br/>Rendelés dátuma: ' . $order->date_purchased . '<br/><br/>Rendelés állapota: ' . $status;
+                                echo 'Rendelés száma: ' . $order->id . '<br/><br/>Rendelés dátuma: ' . $order->date_purchased . '<br/><br/>Rendelés állapota: ' . $status.'<br/><hr>';
                             }
 
                         endif;
