@@ -2,7 +2,6 @@
 
 $menus = array();
 $menus = array(
-    '/admin' => array('Dashboard', 'dashboard'),
     '/admin/packages' => array('Packages','packages'),
     '/admin/orders' => array('Orders', 'orders'),
     '/admin/settings' => array('Statuses','settings'),
