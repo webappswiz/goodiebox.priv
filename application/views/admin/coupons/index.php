@@ -34,4 +34,5 @@ if (count($model) > 0) {
     </table>
     <?php
 }
-echo '<td><a href="/admin/coupons/add/" class="btn btn-primary">Add new</a></td>';
+echo '<a href="/admin/coupons/add/" class="btn btn-primary">Add new</a>';
+echo '<a href="/admin/coupons/add_user/" class="btn btn-primary">Add new user</a>';
