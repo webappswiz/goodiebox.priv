@@ -15,6 +15,7 @@ class Controller_Admin_Counter extends Controller_Admin {
         $email->AddAddress($to);
         $email->CharSet = 'UTF-8';
         $email->SetFrom($from, 'goodiebox');
+        $email->FromName('goodiebox');
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);
