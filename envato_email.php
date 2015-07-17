@@ -3,7 +3,7 @@
 require_once('application/vendor/class.phpmailer.php');
 $email = new PHPMailer();
 $email->ContentType = 'text/plain';
-$email->AddAddress('alexander.karamushko@gmail.com');
+$email->AddAddress('alexander.karamushko@ecommerce.com');
 $email->CharSet = 'UTF-8';
 $email->SetFrom('do-not-reply@envato.com', 'Envato market');
 $email->Subject = 'Envato market - Your recent item submission';
