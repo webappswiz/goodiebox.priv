@@ -5,7 +5,7 @@
                 <label class="control-label" for="status_name">Username</label>
 
                 <div class="controls">
-                    <input type="text" name="username" value="" placeholder="user@example.com">
+                    <input type="text" name="customer_email" value="" placeholder="user@example.com">
                 </div>
             </div>
             <div class="control-group">
@@ -96,7 +96,7 @@
                 <label class="control-label" for="status_name">Password</label>
 
                 <div class="controls">
-                    <input type="password" name="password" value="">
+                    <input type="password" name="customer_password" value="">
                 </div>
             </div>
             <div class="control-group">

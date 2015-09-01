@@ -146,7 +146,7 @@ $menus = array(
         </div> 
     </div> 
     <div class="dog-img">
-        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/4890-2.png" alt="" width="100" height="100"><br/>
+        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/5990-2.png" alt="" width="100" height="100"><br/>
         <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
     </div>
     
@@ -190,20 +190,20 @@ $menus = array(
     <div id="miert">
         <div class="container" id="text" style="padding: 0 30px 0 30px;margin-top: 0px;">
             <h2 style="font-family: La-Chata;padding-top: 10px;">Mit is találtok majd a dobozban?</h2><br/>
-            <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 3-5 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
+            <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 3-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
                 <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold">Tovább olvasom</span>
             </p>
             <div id="tovab1" style="display:none;">
                 <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Jelenleg kétféle dobozunk elérhető:
                     <br /><br />
-                    <strong>Goodiebox Smart 4890 Ft</strong><br />
-                    Havonta változó, 3-4 különböző, gondosan válogatott termék (táp, snack, játék, kiegészítő, vitamin) egy dobozban.
+                    <strong>Goodiebox Smart 5990 Ft</strong><br />
+                    Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, snack, játék, kiegészítő, vitamin) egy dobozban.
                     <br /><br />
                     <strong>Goodiebox Plus 7990 Ft</strong><br />
-                    Havonta változó, 4-5 különböző, gondosan válogatott, prémium minőségi termék (táp, snack, játék, kiegészítő, higiéniás termék, vitamin) egy dobozban.</p>
+                    Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, snack, játék, kiegészítő, higiéniás termék, vitamin) egy dobozban.</p>
                 <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Olyan dolgokat rejtünk a Goodiebox-ba, amit kedvenced garantáltan imádni fog! Kis szeretet-csomag, hogy érezze, mennyire fontos neked!</p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Jó szervezők vagyunk, ezért ha hosszabb távra maradsz, vagyis több dobozt is rendelsz tőlünk, sohasem kapod kétszer ugyanazt az összeállítást egy éven belül!</p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Gyere és rendelj elő 3, vagy akár 6 dobozt is, így nem kell online lenned és figyelni nehogy kifuss a időből amikor nyitva vagyunk! Így amellett, hogy még több pénzt tudsz megtakarítani, mi a megrendelt dobozokat elkészítjük nektek és ingyenesen kiszállítjuk a megfelelő időben (3 vagy 6 egymást követő hónapban)! Bizony, kényelmesek és megbízhatóan is vagyunk! Tegyél egy próbát! :-)</p><br /><br />
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Jó szervezők vagyunk, ezért ha hosszabb távra maradsz, vagyis több dobozt is rendelsz tőlünk, sohasem kapod kétszer ugyanazt <span style="color:#D931F7;font-weight:bold;">az</span> összeállítást egy éven belül!</p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;display:none;">Gyere és rendelj elő 3, vagy akár 6 dobozt is, így nem kell online lenned és figyelni nehogy kifuss a időből amikor nyitva vagyunk! Így amellett, hogy még több pénzt tudsz megtakarítani, mi a megrendelt dobozokat elkészítjük nektek és ingyenesen kiszállítjuk a megfelelő időben (3 vagy 6 egymást követő hónapban)! Bizony, kényelmesek és megbízhatóan is vagyunk! Tegyél egy próbát! :-)</p><br /><br />
             </div>
             <h2 style="font-family: La-Chata;padding-top: 10px;">Miért érdemes megrendelned?</h2><br/>
             <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">
@@ -228,65 +228,41 @@ $menus = array(
     <div id="fotok">
         <div class="image-row" style="text-align: center;" id="jan_photos">
             <div class="image-set">
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-122.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-122.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-123.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-123.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-124.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-124.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-125.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-125.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-126.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-126.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-127.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-127.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-128.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-128.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-129.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-129.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-130.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-130.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-131.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-131.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-132.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-132.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-133.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-133.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-134.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-134.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-135.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-135.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-136.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-136.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-137.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-137.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-138.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-138.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-139.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-139.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-140.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-140.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-141.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-141.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-142.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-142.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-143.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-143.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-144.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-144.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-145.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-145.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-146.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-146.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-147.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-147.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-148.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-148.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-149.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-149.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-150.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-150.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-151.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-151.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-207.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-207.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-208.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-208.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-209.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-209.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-210.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-210.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-211.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-211.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-212.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-212.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-213.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-213.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-214.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-214.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-215.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-215.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-216.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-216.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-217.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-217.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-219.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-219.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-221.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-221.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-222.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-222.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-223.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-223.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-224.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-224.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-225.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-225.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-226.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-226.jpg" alt=""/></a>
             </div>
             <br/>
             <a href="<?= URL::base(TRUE, FALSE) ?>kutyusaink" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi kutyusért!</a>
@@ -297,17 +273,18 @@ $menus = array(
     </div>
     <div id="videok" style="text-align: center">
         <?php
-        $xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads?max-results=3');
+        /*$xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads?max-results=3');
         $xml = simplexml_load_string($xml_data) or die("Error: Cannot create object");
         foreach ($xml->entry as $entry) {
             $link = $entry->id;
             $link_array = explode('/', $link);
             $video_id = array_pop($link_array);
             echo '<iframe width="315" height="315" src="//www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe> ';
-        }
+        }*/
+		echo '<iframe width="315" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4ZnDVm3eIp0fjo7W2dGCdirkuboJ_kzt&loop=1" frameborder="0" allowfullscreen></iframe> ';
         ?>
 		<br/><br/>
-            <a href="https://www.youtube.com/channel/UCAnqUKt9dkY7Tw2kndO9JAA" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi videóért!</a>
+            <a href="https://www.youtube.com/channel/UCAnqUKt9dkY7Tw2kndO9JAA/videos" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi videóért!</a>
 
 
     </div>
@@ -346,7 +323,7 @@ $menus = array(
         <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/1460135_911183998914557_5797755493820555406_n.jpg" alt="" style="float: left;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
-                "Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló volt benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK"
+                "Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló <span style="color:#D931F7;font-weight:900;">volt</span> benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK"
             </div>
             <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ancsa, Sümeg</div>    
         </div>

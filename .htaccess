@@ -1,3 +1,24 @@
+RewriteEngine on
+# Options +FollowSymlinks
+RewriteCond %{HTTP_REFERER} s\.click\.aliexpress\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} addons\.mozilla\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} theguardlan\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} site33\.simple-share-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} googlsucks\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} simple-share-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} www\.Get-Free-Traffic-Now\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} Get-Free-Traffic-Now\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} torture\.ml [NC,OR]
+RewriteCond %{HTTP_REFERER} buy-cheap-online\.info
+RewriteRule .* - [F]
+
+<IfModule mod_security.c>
+SecFilterEngine Off
+SecFilterScanPOST Off
+</IfModule>
+
+# Use PHP5.4 as default
+AddHandler application/x-httpd-php54 .php
 # Turn on URL rewriting
 RewriteEngine On
 

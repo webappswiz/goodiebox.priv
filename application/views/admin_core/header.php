@@ -74,7 +74,6 @@ $time = explode(':', $date_array[1]);
                 </div>
             </div>
         </div>
-        <br/>
         <div style="clear: both"></div>
         <div class="container" id="content">
 

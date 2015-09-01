@@ -45,6 +45,9 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn cancel">Cancel</button>
             </div>
-        </fieldset>    
+        </fieldset>  
+		<?php	$total_subscribers = ORM::factory('Subscribers')->count_all();
+				echo 'An email will be sent to all <span style="color:red;font-weight:bold;">' . $total_subscribers . '</span> subscribers!';
+		?>			 
     </form>
 </div>

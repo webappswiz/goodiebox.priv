@@ -15,7 +15,8 @@ class Controller_Order extends Controller_Core {
         $email->ContentType = 'text/plain';
         $email->AddAddress($to);
         $email->CharSet = 'UTF-8';
-        $email->SetFrom($from, 'Goodiebox');
+        $email->From = $from;
+	$email->FromName = 'goodiebox';
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);

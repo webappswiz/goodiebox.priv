@@ -463,7 +463,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .process-form-container2 input[type="text"]{width: 100%;}
 .process-form-container2{width: 435px;}
 .drop-down-form {margin-left: 70px;}
-.badge{position: absolute; top:-35px; left: -45px;}
+.badge{position: absolute; top:-35px; left: -45px;display:none;}
 
 /*******************************
       PROCESS PAGE 2 CSS
@@ -727,16 +727,16 @@ label.tooltip span
 #map{
     width:893px;
 }
-#nov,#dec,#jan,#feb,#mar{
+#nov,#dec,#jan,#feb,#mar,#apr,#may,#jun{
     font-family: 'La-chata';font-size: 20px;
     color: #330000;
     margin-left: 22px;
 }
-#nov:hover,#dec:hover,#jan:hover,#feb:hover,#mar:hover{
+#nov:hover,#dec:hover,#jan:hover,#feb:hover,#mar:hover,#apr:hover,#may:hover,#jun:hover{
     color: #268949;
 
 }
-#nov.active,#dec.active,#jan.active,#feb.active,#mar.active{
+#nov.active,#dec.active,#jan.active,#feb.active,#mar.active,#apr.active,#may.active,#jun.active{
     color: #268949;
 }
 
@@ -918,7 +918,7 @@ label.tooltip span
 
 @media only screen and (max-width: 800px)
 {
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
     }
     .counting-back{
@@ -974,7 +974,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 768px)
 {
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
         margin: 2px;
     }
@@ -1029,7 +1029,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 767px)
 {
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
         margin: 2px;
     }
@@ -1086,7 +1086,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 640px)
 {
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
         margin: 2px;
     }
@@ -1201,7 +1201,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 460px)
 {
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
         margin: 2px;
     }
@@ -1340,7 +1340,7 @@ label.tooltip span
         cursor: pointer;
     }
 
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
         margin: 2px;
     }
@@ -1445,7 +1445,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     #dialog-form1 .dark-btn{
 
     }
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 10px;
         margin: 2px;
     }
@@ -1529,7 +1529,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
     .medialinks img{
         width: 200px;
     }
-    #feb,#jan,#dec,#nov,#mar{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
         font-size: 12px;
         margin: 2px;
     }

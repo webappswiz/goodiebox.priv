@@ -101,7 +101,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
         if ($pmethod == 1) {
             $method = 'Átutalás';
         } else {
-            $method = 'Készpénz';
+            $method = 'Utánvét';
         }
 
         $discount = $order->total_price - $order->total_price;

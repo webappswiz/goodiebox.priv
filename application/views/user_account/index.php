@@ -596,7 +596,7 @@ $time = explode(':', $date_array[1]);
             </div>
 
         </div>
-        <h3>Coupons' usage</h3>
+        <h3>Kupon használat követése</h3>
         <div>
             <div class="content">
                 <div class="support">
@@ -609,7 +609,7 @@ $time = explode(':', $date_array[1]);
                             ?>
                             <?php
                             foreach ($discounts as $discount) {
-                                echo 'Coupon code: ' . $discount->coupon_code . ' <br/>Number of usage:'.$discount->count;
+                                echo 'Kupon kód: ' . $discount->coupon_code . ' <br/>Megrendelések a kupon kóddal: '.$discount->count;
                             }
 
                         endif;
