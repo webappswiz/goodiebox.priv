@@ -68,7 +68,7 @@
     <div class="clear"></div>
     <h2>Biztosan a kiválasztott doboznál maradsz?</h2>
     <br/><br/>
-    <section style="margin-bottom: 0px;padding: 0px">
+    <section style="margin-bottom: 0px;padding: 30px">
         <?php
         $products = ORM::factory('Packages')
                 ->where('type', '=', 1)
@@ -82,28 +82,27 @@
                     ->and_where('term', '=', $product->term)
                     ->find();
             if ($product->term == 1) {
-                $image = '<img style="height:86px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/plus-2nd-order-page.png"><br/>';
-                $image1 = '<img style="height:86px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/smart-2nd-order-page.png"><br/>';
+                $image = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/plus-2nd-order-page.png"><br/>';
+                $image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/smart-2nd-order-page.png"><br/>';
             } 
             $box1 = (Session::instance()->get('package') == 'plus') ? 'checked' : '';
             $box2 = (Session::instance()->get('package') == 'smart') ? 'checked' : '';
 
 
             echo '<div class="boxes">';
-            echo $image;
-            echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="box" name="box" id="box_plus" value="' . $product->id . '" required>';
-            echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
-            echo '<br/><br/>';
-            echo '<span class="price" style="margin-left:50px;">' . $price . '</span>';
-            echo '</div>';
-            echo '<div class="boxes">';
-            echo '</div>';
-            echo '<div class="boxes">';
             echo $image1;
             echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="box" name="box" id="box_smart" value="' . $econ->id . '" required>';
             echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
             echo '<br/><br/>';
-            echo '<span class="price" style="margin-left:50px;">' . $econ->price . ' HUF</span>';
+            echo '<span class="price" style="margin-left:20px;">' . $econ->price . ' HUF</span>';
+            echo '</div>';
+            
+            echo '<div class="boxes">';
+            echo $image;
+            echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="box" name="box" id="box_plus" value="' . $product->id . '" required>';
+            echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
+            echo '<br/><br/>';
+            echo '<span class="price" style="margin-left:20px;">' . $price . '</span>';
             echo '</div>';
         }
         ?>
