@@ -82,12 +82,9 @@
                     ->and_where('term', '=', $product->term)
                     ->find();
             if ($product->term == 1) {
-                $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/1box.png"><br/>';
-            } elseif ($product->term == 2) {
-                $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/6salesok.png"><br/>';
-            } elseif ($product->term == 3) {
-                $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/10salesok.png"><br/>';
-            }
+                $image = '<img style="width:150px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/plus-2nd-order-page.png"><br/>';
+                $image1 = '<img style="width:150px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/smart-2nd-order-page.png"><br/>';
+            } 
             $box1 = (Session::instance()->get('package') == 'plus') ? 'checked' : '';
             $box2 = (Session::instance()->get('package') == 'smart') ? 'checked' : '';
 
@@ -102,7 +99,7 @@
             echo '<div class="boxes">';
             echo '</div>';
             echo '<div class="boxes">';
-            echo $image;
+            echo $image1;
             echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="box" name="box" id="box_smart" value="' . $econ->id . '" required>';
             echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
             echo '<br/><br/>';
