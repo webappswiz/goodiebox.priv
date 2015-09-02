@@ -165,7 +165,7 @@ $menus = array(
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 150px;">SMART</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;">SMART</button>
         </a>
         <p>Haspók kutyusoknak<br/>
 már 5990 Ft-tól!</p>
@@ -175,7 +175,7 @@ már 5990 Ft-tól!</p>
     </div>
     <div class="order-btnright">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?plus' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 150px;">PLUS</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;">PLUS</button>
         </a>
         <p>Kivételes kutyusoknak<br/>
 már 7990 Ft-tól!</p>
