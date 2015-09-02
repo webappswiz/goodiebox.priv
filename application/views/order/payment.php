@@ -37,7 +37,7 @@
     $hash['ORDER_PNAME'] = 'Goodiebox '.$o->package->package_name;
     $hash['ORDER_PCODE'] = $o->package->product_number;
     $hash['ORDER_PINFO'] = '';
-    $hash['ORDER_PRICE'] = $o->package->price;
+    $hash['ORDER_PRICE'] = $o->total_price;
     $hash['ORDER_QTY'] = '1';
     $hash['ORDER_VAT'] = '0';
     $hash['ORDER_SHIPPING'] = '0';
@@ -53,7 +53,7 @@
         <input type='hidden' name='ORDER_PNAME[]' id='ORDER_PNAME' value='<?= 'Goodiebox '.$o->package->package_name ?>' />
         <input type='hidden' name='ORDER_PCODE[]' id='ORDER_PCODE' value='<?= $o->package->product_number ?>' />
         <input type='hidden' name='ORDER_PINFO[]' id='ORDER_PINFO' value='' />
-        <input type='hidden' name='ORDER_PRICE[]' id='ORDER_PRICE' value='<?= $o->package->price ?>' />
+        <input type='hidden' name='ORDER_PRICE[]' id='ORDER_PRICE' value='<?= $o->total_price ?>' />
         <input type='hidden' name='ORDER_QTY[]' id='ORDER_QTY' value='1' />
         <input type='hidden' name='ORDER_VAT[]' id='ORDER_VAT' value='0' />
         <input type='hidden' name='PRICES_CURRENCY' id='PRICES_CURRENCY' value='HUF' />
