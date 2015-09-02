@@ -66,7 +66,7 @@
 
     </div>
     <div class="clear"></div>
-    <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
+    <h2>Biztosan ennél a doboznál maradsz? (Are u sure that u pick this box?)</h2>
     <br/><br/>
     <section style="margin-bottom: 0px;padding: 0px">
         <?php
