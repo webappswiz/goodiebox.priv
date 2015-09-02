@@ -1,6 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $('input:radio:first').attr('checked', 'checked');
         $('#selected_box').val($('#box').val());
         $('input:radio').on('click', function () {
             $('#selected_box').val($(this).val());
@@ -14,7 +13,32 @@
         $('.tooltips').on('mouseout', function () {
             $('span', '.tooltips').hide();
         });
+        if ($('#box_smart').is(':checked')) {
+            $('.step2-text').html('<p>A <span style="color:red"><b>Goodiebox Smart</b></span> dobozt választottad! Ha kutyusod játékos és szereti a hasát, akkor ez a doboz biztosan nagy örömöt okoz majd nektek!</p>'
+                    + '<p>Tartalom: 3-5 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet!</p>'
+                    + '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>');
+        }
+        if ($('#box_plus').is(':checked')) {
+            $('.step2-text').html('<p>A <span style="color:red"><b>Goodiebox Plus</b></span> dobozt választottad! Ha kutyusod játékos, szereti a hasát és az extra meglepiket is, akkor ez a doboz egészen biztosan nagy örömöt okoz majd nektek!</p>'
+                    + '<p>Tartalom: 4-6 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet! A Plus doboz a legjobb választás ha valamilyen extra kényeztetésre vágynátok! Mi több, a szülinapos kutyusok Plus meglepidoboz vásárlásakor ajándékot is kapnak tőlünk a doboz értékén felül!</p>'
+                    + '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>');
+        }
+
+        $('#box_smart').on('click', function () {
+            $('.step2-text').html('<p>A <span style="color:red"><b>Goodiebox Smart</b></span> dobozt választottad! Ha kutyusod játékos és szereti a hasát, akkor ez a doboz biztosan nagy örömöt okoz majd nektek!</p>'
+                    + '<p>Tartalom: 3-5 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet!</p>'
+                    + '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>');
+
+        });
+
+        $('#box_plus').on('click', function () {
+            $('.step2-text').html('<p>A <span style="color:red"><b>Goodiebox Plus</b></span> dobozt választottad! Ha kutyusod játékos, szereti a hasát és az extra meglepiket is, akkor ez a doboz egészen biztosan nagy örömöt okoz majd nektek!</p>'
+                    + '<p>Tartalom: 4-6 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet! A Plus doboz a legjobb választás ha valamilyen extra kényeztetésre vágynátok! Mi több, a szülinapos kutyusok Plus meglepidoboz vásárlásakor ajándékot is kapnak tőlünk a doboz értékén felül!</p>'
+                    + '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>');
+        });
+
     });
+
 </script>
 <div class="clear"></div>
 <section class="process-2" class="rounded">
@@ -64,11 +88,13 @@
             } elseif ($product->term == 3) {
                 $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/10salesok.png"><br/>';
             }
+            $box1 = (Session::instance()->get('package') == 'plus') ? 'checked' : '';
+            $box2 = (Session::instance()->get('package') == 'smart') ? 'checked' : '';
 
 
             echo '<div class="boxes">';
             echo $image;
-            echo '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required>';
+            echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="" name="box" id="box_plus" value="' . $product->id . '" required>';
             echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
             echo '<br/><br/>';
             echo '<span class="price" style="margin-left:50px;">' . $price . '</span>';
@@ -77,7 +103,7 @@
             echo '</div>';
             echo '<div class="boxes">';
             echo $image;
-            echo '<input style="padding-left:0px;cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required>';
+            echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="" name="box" id="box_smart" value="' . $econ->id . '" required>';
             echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
             echo '<br/><br/>';
             echo '<span class="price" style="margin-left:50px;">' . $econ->price . ' HUF</span>';
@@ -87,11 +113,7 @@
     </section>
     <div class="clear"></div>
     <div class="step2-text" style="text-align: justify">
-        <h2>Jó tudni:</h2>
-        <p>Rendeléskor automatikus regisztráció történik, létrejön a saját profilod a weboldalunkon. Később bármikor visszatérhetsz, hogy megnézhesd rendelésed aktuális állapotát, újabb rendelést adj le vagy meghívót küldhess a barátaidnak!</p>
-        <p>Ha legközelebb is rendelnél ennek a kutyusnak, a profilodban már várni fog az adatlapja, így sokkal egyszerűbben és gyorsabban intézheted a dolgokat. Amennyiben több kutyád van, úgy lehetőséged van új kutyus hozzáadására is, így átláthatóan tudod kezelni a rendeléseidet! Ne feledd, egyszerre csak egy kutyusnak tudsz rendelni, de bármennyiszer visszatérhetsz új rendelés leadásához, amíg a bolt nyitva van!</p>
-        <p>Kérjük, mielőtt tovább haladsz, olvasd el az Általános Szerződési Feltételeket és az Adatvédelemi Szabályzatot és csak ha mindennel egyetértesz, akkor kattints a Tovább gombra és add meg személyes adataid az online rendelés befejezéséhez.</p>
-        <p>Köszönjük és jó rendelést!</p>
+
     </div>
 
     <div class="step2-btn-container">

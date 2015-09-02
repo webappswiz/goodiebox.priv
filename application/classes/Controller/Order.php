@@ -16,7 +16,7 @@ class Controller_Order extends Controller_Core {
         $email->AddAddress($to);
         $email->CharSet = 'UTF-8';
         $email->From = $from;
-	$email->FromName = 'goodiebox';
+        $email->FromName = 'goodiebox';
         $email->Subject = $subject;
         $email->Body = $body;
         $email->IsHTML(true);
@@ -215,7 +215,15 @@ class Controller_Order extends Controller_Core {
     }
 
     public function action_index() {
+        $session = Session::instance()->as_array();
         $this->set_title('Order - Step 1');
+        if (isset($_GET['smart'])) {
+            Session::instance()->set('package', 'smart');
+        }
+        if (isset($_GET['plus'])) {
+            Session::instance()->set('package', 'plus');
+        }
+        echo Session::instance()->get('package');
         if (isset($_POST['order1']) || isset($_POST['order2']) || isset($_POST['order3'])) {
             Session::instance()->set('step1', $_POST);
             $this->redirect('order/step2');
@@ -431,12 +439,12 @@ class Controller_Order extends Controller_Core {
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = $pkg->price * ($g_discount / 100);
-            } 
+            }
             if ($new->loaded()) {
                 $order->discount = 1;
                 $pkg = ORM::factory('Packages', $step2['selected_box']);
                 $discount = $pkg->price * 0.05 + $discount;
-                $new->count = $new->count+1;
+                $new->count = $new->count + 1;
                 $new->save();
             }
         }
