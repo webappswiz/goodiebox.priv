@@ -105,7 +105,7 @@
     <div class="drop-down-form">
             <div>
                 <div class="content">
-                    <div class="claim-form2" style="height: 439px">
+                    <div class="claim-form2">
                         <form class="process-form" name="order" method="POST">
                             <label for="">E-mail címed*</label>
                             <input type="text" name="email" class="rounded email" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
