@@ -103,8 +103,6 @@
 
     <h2>Kinek veszed a Goodiebox-ot?</h2>
     <div class="drop-down-form">
-        <div id="collapse-content">
-            <h3 class="open">Saját kutyusomnak</h3>
             <div>
                 <div class="content">
                     <div class="claim-form2" style="height: 439px">
@@ -174,103 +172,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--
-            <h3 <?=(isset($_GET['g']))?'class="open"':"";?>>Barátom kutyusának</h3>
-            <div>
-                <div class="content">
-                    <div class="process-form-container2">
-                        <form class="process-form1" name="order" method="POST">
-
-                            <label for="">E-mail címed*</label>
-                            <input type="text" id="email" name="email" class="rounded email2" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
-                            <div>
-                                <label for="last-name">Barátod vezetékneve*</label>
-                                <input id="first-name" type="text" value="" name="lastname" class="rounded" required>
-                            </div>
-                            <div>
-                                <label for="last-name">Barátod keresztneve*</label>
-                                <input id="last-name" type="text" value="" name="firstname" class="rounded" required>
-                            </div>
-                            <div>
-                                <label for="first-name">Barátod e-mail címe*</label>
-                                <input id="friend_email" type="text" value="" name="friend_email"  class="rounded" required>
-                            </div>
-                            <div>
-                                <input type="checkbox" value="1" name="delay" checked="checked"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
-                            </div>
-                            <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                            <input type="hidden" name="order2" value="1">
-                            <input type="hidden" name="selected_size" class="selected_size">
-                        </form>
-                        <script>
-                            $(".process-form1").validate({
-                                rules: {
-                                    'firstname': {
-                                        required: true,
-                                    },
-                                    'lastname': {
-                                        required: true,
-                                    },
-                                    'email': {
-                                        myCustomRule: true
-                                    },
-                                    'friend_email': {
-                                        myCustomRule: true
-                                    }
-                                },
-                                messages: {
-                                    'firstname': "ez az információ szükséges",
-                                    'lastname': "ez az információ szükséges",
-                                    'friend_email': "Helytelen e-mail cím!",
-                                    'email': "Helytelen e-mail cím!"
-                                }
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
-            <!--
-                        <h3>Menhelyi kutyusnak</h3>
-                        <div>
-                            <div class="content">
-                                <div class="process-form-container2">
-                                    <form class="process-form2" name="order" method="POST">
-                                        
-                                        <label for="">E-mail cím*</label>
-                                        <input type="text" name="email" class="rounded email3" required <?= ($current_user) ? 'value="' . $current_user->email . '"' : ""; ?> >
-                                        
-                                        <div>
-                                            <label for="">Menhely neve*</label>
-                                            <select name="option-name" class="rounded option-name" required>
-            <?php
-            $shelters = ORM::factory('Shelter')->find_all();
-            foreach ($shelters as $shelter) {
-                ?>
-                                                            <option value="<?= $shelter->id ?>"><?= $shelter->shelter_name ?></option>
-                <?php
-            }
-            ?>
-                                            </select>
-                                        </div>
-                                        <label for="">Kutyus neve*</label>
-                                        <input type="text" name="doggy_name" class="rounded" id="" required>
-            
-                                        <div class="radio-list">
-                                            <label for="last-name">Kutyus neme*</label>
-                                            <input type="radio" name="gender" value="0" class="" checked> Lány <input type="radio" name="gender" value="1" class=""> Fiú
-                                        </div>
-                                        <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
-                                        <input type="hidden" name="order3" value="1">
-                                        <input type="hidden" name="selected_size" class="selected_size">
-                                    </form>
-                                    <script>
-                                        $(".process-form2").validate();
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-            -->
             <script>
                 $("#collapse-content").collapse({
                     accordion: true,
@@ -288,6 +189,6 @@
                 <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
             </div>
             <div class="clear"></div>
-        </div>
+        
     </div>
 </section>
