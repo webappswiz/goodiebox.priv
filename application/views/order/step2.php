@@ -66,7 +66,7 @@
 
     </div>
     <div class="clear"></div>
-    <h2>Biztosan ennél a doboznál maradsz?</h2>
+    <h2>Biztosan a kiválasztott doboznál maradsz?</h2>
     <br/><br/>
     <section style="margin-bottom: 0px;padding: 0px">
         <?php
