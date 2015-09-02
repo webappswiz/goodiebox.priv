@@ -1,6 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#selected_box').val($('#box').val());
+        $('#selected_box').val($('.box').val());
         $('input:radio').on('click', function () {
             $('#selected_box').val($(this).val());
         });
@@ -94,7 +94,7 @@
 
             echo '<div class="boxes">';
             echo $image;
-            echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="" name="box" id="box_plus" value="' . $product->id . '" required>';
+            echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="box" name="box" id="box_plus" value="' . $product->id . '" required>';
             echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
             echo '<br/><br/>';
             echo '<span class="price" style="margin-left:50px;">' . $price . '</span>';
@@ -103,7 +103,7 @@
             echo '</div>';
             echo '<div class="boxes">';
             echo $image;
-            echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="" name="box" id="box_smart" value="' . $econ->id . '" required>';
+            echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="box" name="box" id="box_smart" value="' . $econ->id . '" required>';
             echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
             echo '<br/><br/>';
             echo '<span class="price" style="margin-left:50px;">' . $econ->price . ' HUF</span>';
