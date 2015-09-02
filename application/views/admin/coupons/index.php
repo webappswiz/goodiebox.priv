@@ -1,8 +1,7 @@
 <?php
 if (count($model) > 0) {
-    
     ?>
-    <h2>Orders</h2>
+    <h2>Coupons</h2>
     <table class="table table-stripped">
         <thead>
             <tr>
@@ -12,13 +11,14 @@ if (count($model) > 0) {
                 <th>Coupon Codes</th>
                 <th>Count</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <?php
             $i = 1;
             foreach ($model as $coupon) {
-                $user = ORM::factory('User',$coupon->user_id);
+                $user = ORM::factory('User', $coupon->user_id);
                 echo '<tr>';
                 echo '<td>' . $i . '</td>';
                 echo '<td>' . $user->customer_firstname . '</td>';
@@ -26,6 +26,7 @@ if (count($model) > 0) {
                 echo '<td>' . $coupon->coupon_code . '</td>';
                 echo '<td>' . $coupon->count . '</td>';
                 echo '<td><a href="/admin/coupons/edit/' . $coupon->id . '" class="btn btn-primary">Edit</a></td>';
+                echo '<td><a href="/admin/coupons/delete/' . $coupon->id . '" class="btn btn-primary">Delete</a></td>';
                 echo '</tr>';
                 $i++;
             }

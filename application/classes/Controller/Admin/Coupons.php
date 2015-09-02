@@ -31,6 +31,14 @@ class Controller_Admin_Coupons extends Controller_Admin {
             $this->redirect('/admin/coupons/');
         }
     }
+    
+    public function action_delete(){
+        $this->model = ORM::factory('CouponCodes',(int) $this->request->param('id'));
+        if (!$this->model->loaded())
+            throw new Kohana_HTTP_Exception_404;
+        $this->model->delete();
+        $this->redirect('/admin/coupons/');
+    }
 
     public function action_edit() {
         $this->model = ORM::factory('CouponCodes', (int) $this->request->param('id'));
