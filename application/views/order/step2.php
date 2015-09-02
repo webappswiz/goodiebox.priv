@@ -45,42 +45,45 @@
     <h2>Válaszd ki </br>milyen periódust szeretnél!</h2>
     <br/><br/>
     <section style="margin-bottom: 0px;padding: 0px">
-            <?php
-            $products = ORM::factory('Packages')
-                    ->where('type', '=', 1)
-                    ->find_all();
-            foreach ($products as $product) {
-                $img = ($product->enabled == 1) ? 1 : 2;
-                $price = ($product->price != 0 && $product->enabled == 1) ? $product->price . ' HUF' : '';
-                $econ = ORM::factory('Packages')
-                        ->where('type', '=', 2)
-                        ->and_where('term', '=', $product->term)
-                        ->find();
-                if($product->term==1){
-                    $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/1box.png"><br/>';
-                } elseif($product->term==2){
-                    $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/6salesok.png"><br/>';
-                } elseif($product->term==3){
-                    $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/10salesok.png"><br/>';
-                }
-                
-                
-                echo '<div class="boxes">';
-                echo $image;
-                echo '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required>';
-                echo '<label class="tooltip">' . $product->package_name . '<span>'.$product->description.'</span></label>';
-                echo '<br/><br/>';
-                echo '<span class="price" style="margin-left:50px;">' . $price . '</span>';
-                if ($econ->loaded()) {
-                    echo '<br/><br/><br/>';
-                    echo '<input style="padding-left:0px;cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required>';
-                    echo '<label class="tooltip">' . $econ->package_name . '<span>'.$econ->description.'</span></label>';
-                    echo '<br/><br/>';
-                    echo '<span class="price" style="margin-left:30px;">' . $econ->price . ' HUF</span>';
-                }
-                echo '</div>';
+        <?php
+        $products = ORM::factory('Packages')
+                ->where('type', '=', 1)
+                ->and_where('enabled', '=', '1')
+                ->find_all();
+        foreach ($products as $product) {
+            $img = ($product->enabled == 1) ? 1 : 2;
+            $price = ($product->price != 0 && $product->enabled == 1) ? $product->price . ' HUF' : '';
+            $econ = ORM::factory('Packages')
+                    ->where('type', '=', 2)
+                    ->and_where('term', '=', $product->term)
+                    ->find();
+            if ($product->term == 1) {
+                $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/1box.png"><br/>';
+            } elseif ($product->term == 2) {
+                $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/6salesok.png"><br/>';
+            } elseif ($product->term == 3) {
+                $image = '<img style="margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/10salesok.png"><br/>';
             }
-            ?>
+
+
+            echo '<div class="boxes">';
+            echo $image;
+            echo '<input style="cursor: pointer" type="radio" class="" name="box" id="box" value="' . $product->id . '" required>';
+            echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
+            echo '<br/><br/>';
+            echo '<span class="price" style="margin-left:50px;">' . $price . '</span>';
+            echo '</div>';
+            echo '<div class="boxes">';
+            echo '</div>';
+            echo '<div class="boxes">';
+            echo $image;
+            echo '<input style="padding-left:0px;cursor: pointer" type="radio" class="" name="box" id="box" value="' . $econ->id . '" required>';
+            echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
+            echo '<br/><br/>';
+            echo '<span class="price" style="margin-left:50px;">' . $econ->price . ' HUF</span>';
+            echo '</div>';
+        }
+        ?>
     </section>
     <div class="clear"></div>
     <div class="step2-text" style="text-align: justify">

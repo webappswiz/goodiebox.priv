@@ -43,14 +43,7 @@ class Controller_Admin_Counter extends Controller_Admin {
         $this->model->end_date = arr::get($_REQUEST, 'end_date');
         $this->model->status = arr::get($_REQUEST, 'status');
         $this->model->save();
-
         if ($this->model->status == 1) {
-            $template = ORM::factory('Templates', 7);
-            $subscribers = ORM::factory('Subscribers')->find_all();
-            foreach ($subscribers as $subscriber) {
-                $email_template = str_replace('[name]', $subscriber->name, $template->template_text);
-                $this->send($subscriber->email, 'info@goodiebox.hu', 'Nyitva Vagyunk!', $email_template);
-            }
             $text = 'Successfully enabled';
         } else {
             $text = 'Successfully disabled';

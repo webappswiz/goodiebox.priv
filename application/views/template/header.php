@@ -104,8 +104,25 @@ $time = explode(':', $date_array[1]);
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie" target="blank"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
                     </li>
                     <li><a href="#">
-                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/gift':'#'?>"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a>
-                        </a></li>
+                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <!-- a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/gift':'#'?>"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a -->
+                        </a>
+						<script src="https://apis.google.com/js/platform.js"></script>
+
+<script>
+  function onYtEvent(payload) {
+    if (payload.eventType == 'subscribe') {
+      // Add code to handle subscribe event.
+    } else if (payload.eventType == 'unsubscribe') {
+      // Add code to handle unsubscribe event.
+    }
+    if (window.console) { // for debugging only
+      window.console.log('YT event: ', payload);
+    }
+  }
+</script>
+
+<div class="g-ytsubscribe" data-channelid="UCAnqUKt9dkY7Tw2kndO9JAA" data-layout="default" data-theme="dark" data-count="default" data-onytevent="onYtEvent"></div>
+						</li>
                 </ul>
                 <script>
                     $('.btnShare').click(function () {

@@ -164,19 +164,21 @@ $menus = array(
 <section id="order-place" class="rounded">
     <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
     <div class="order-btnleft">
-        <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?o' : '#' ?>">
-            <button type="button" class="rounded">Megrendelem</button>
+        <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
+            <button type="button" class="rounded">SMART</button>
         </a>
-        <p>a saját kutyusomnak</p>
+        <p>Haspók kutyusoknak<br/>
+már 5990 Ft-tól!</p>
     </div>
     <div class="center-arrows">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png">
+        
     </div>
     <div class="order-btnright">
-        <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?g' : '#' ?>">
-            <button type="button" class="rounded">Ajándékozom</button>
+        <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?plus' : '#' ?>">
+            <button type="button" class="rounded">PLUS</button>
         </a>
-        <p>barátom kutyusának</p>
+        <p>Kivételes kutyusoknak<br/>
+már 7990 Ft-tól!</p>
     </div>
 </section> <!--End order place-->
 
