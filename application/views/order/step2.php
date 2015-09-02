@@ -66,7 +66,7 @@
 
     </div>
     <div class="clear"></div>
-    <h2>Biztosan ennél a doboznál maradsz? (Are u sure that u pick this box?)</h2>
+    <h2>Biztosan ennél a doboznál maradsz?</h2>
     <br/><br/>
     <section style="margin-bottom: 0px;padding: 0px">
         <?php
@@ -82,8 +82,8 @@
                     ->and_where('term', '=', $product->term)
                     ->find();
             if ($product->term == 1) {
-                $image = '<img style="width:150px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/plus-2nd-order-page.png"><br/>';
-                $image1 = '<img style="width:150px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/smart-2nd-order-page.png"><br/>';
+                $image = '<img style="height:86px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/plus-2nd-order-page.png"><br/>';
+                $image1 = '<img style="height:86px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/smart-2nd-order-page.png"><br/>';
             } 
             $box1 = (Session::instance()->get('package') == 'plus') ? 'checked' : '';
             $box2 = (Session::instance()->get('package') == 'smart') ? 'checked' : '';
