@@ -1,6 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#selected_box').val($('.box').val());
+        $('#selected_box').val($('input[type="radio"]:checked').val());
         $('input:radio').on('click', function () {
             $('#selected_box').val($(this).val());
         });
