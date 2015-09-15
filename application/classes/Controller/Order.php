@@ -702,7 +702,44 @@ class Controller_Order extends Controller_Core {
         $this->set_title('Order - Step 3');
         $this->price = ORM::factory('Packages', $step2['selected_box']);
         $this->append_js_var('total_price', round($this->price->price));
-
+        $global_discount = 0;
+        $g_discount = 0;
+        if ($this->current_user) {
+            $global_discount = ORM::factory('Discounts')
+                    ->where('user_id', '=', $this->current_user->id)
+                    ->find();
+            if ($global_discount->loaded()) {
+                $g_discount = $global_discount->discount;
+            } else {
+                if (isset($_POST['invite_code'])) {
+                    $coupon = ORM::factory('Coupons')
+                            ->where('coupon', '=', $_POST['invite_code'])
+                            ->find();
+                    if ($coupon->loaded()) {
+                        $global_discount = 10;
+                        $coupon->delete();
+                    } else {
+                        $g_discount = 0;
+                    }
+                } else {
+                    $g_discount = 0;
+                }
+            }
+            $invites = ORM::factory('Invites')
+                    ->where('user_id', '=', $this->current_user->id)
+                    ->and_where('is_used', '=', 0)
+                    ->and_where('is_paid', '=', 1)
+                    ->and_where('is_registered', '=', 1)
+                    ->find_all();
+            $inv_count = $invites;
+            $this->discount = 0;
+            if (count($invites) > 0 || $g_discount > 0) {
+                $this->discount = $this->price->price * ((count($invites) * 5 + $g_discount) / 100);
+            }
+            $this->append_js_var('discount', round($this->discount));
+        } else {
+            $invites = 0;
+        }
         if ($this->is_post()) {
             if (!Auth::instance()->logged_in()) {
                 $this->register();

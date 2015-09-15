@@ -1,8 +1,10 @@
 <?php
 $auth = Auth::instance();
 $session = Session::instance();
-if ($auth->logged_in())
+$disc = 0;
+if ($auth->logged_in()){
     $current_user = $auth->get_user();
+}
 $shipping = ORM::factory('ShippingCost', 1);
 $cost = $shipping->cost;
 $session = Session::instance()->as_array();
@@ -16,11 +18,11 @@ if ($package->term == 1) {
 } else {
     $term = '6';
 }
+
 ?>
 <script type="text/javascript">
     $(document).ready(function () {
         var ship_cost = 0;
-
 
         $('#customer_email').on('blur', function () {
             $.post('/api/check', {'email': $(this).val()}).done(function (data) {
