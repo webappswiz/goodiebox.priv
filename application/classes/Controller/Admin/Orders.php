@@ -56,6 +56,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                     if ($this->model->payment_status == 5) {
                         $flcode = "true";
                         $cost = $this->model->total_price;
+                        $this->generate_cod_invoice($this->model, $this->model->user);
                     } else {
                         $flcode = "false";
                         $cost = 0;
@@ -66,7 +67,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                     }
                     $date = strtotime(date('Y.m.d'));
                     $pickup = date('Y.m.d', $date + 86400);
-                 /*   $shipping = new Shipping();
+                    $shipping = new Shipping();
                     $data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "' . $pickup . '.",
       "flCOD": "' . $flcode . '",
 	  "nmRecipientCOD": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
@@ -107,7 +108,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                     $pdf_decoded = base64_decode($label);
                     $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
                     fwrite($pdf, $pdf_decoded);
-                    fclose($pdf);*/
+                    fclose($pdf);
                 }
             }
             if ($_REQUEST['action'] == 2) {
@@ -206,21 +207,19 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
   }
 }';
-          /*  $result = $shipping->send_request($data_string);
+            $result = $shipping->send_request($data_string);
             $label = json_decode($result, true);
             $label = $label['Order']['Labels'][0];
             $pdf_decoded = base64_decode($label);
             $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
             fwrite($pdf, $pdf_decoded);
-            fclose($pdf);*/
+            fclose($pdf);
         }
 
         if ($_REQUEST['status_name'] == 7) {
             $user = ORM::factory('User', $this->model->user_id);
             $this->cancel_order($this->model, $user, 1);
         }
-
-        $this->redirect('/admin/orders/');
     }
 
     public function action_delete() {

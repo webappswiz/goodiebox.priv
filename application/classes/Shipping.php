@@ -3,7 +3,7 @@
 class Shipping extends Singleton {
 
    public function send_request($data_string) {
-        $ch = curl_init('http://furgefutar.hu/webservices/webshop2.ashx');
+        $ch = curl_init('https://furgefutar.hu/webservices/webshop2.ashx');
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
