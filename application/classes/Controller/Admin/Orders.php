@@ -147,10 +147,11 @@ class Controller_Admin_Orders extends Controller_Admin {
         if ($id && $_REQUEST['status_name']) {
             $this->status = ORM::factory('OrderStatus', $_REQUEST['status_name']);
         } else {
-            $this->redirect('/admin/orders/');
+            //$this->redirect('/admin/orders/');
         }
-        if (!$this->status->loaded())
-            $this->redirect('/admin/orders/');
+        if (!$this->status->loaded()){
+//$this->redirect('/admin/orders/');
+        }
 
         $this->model = ORM::factory('Order', $id);
         if ($this->model->orders_status == $_REQUEST['status_name'])
@@ -280,6 +281,10 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
 
     private function cancel_order($order, $user, $type) {
+        if($order->invoice_num==''){
+            Flash::set('alert', 'Order doesn\'t have an invoice number. Cannot be cancelled.');
+            $this->redirect('/admin/orders/');
+        }
         if ($order->puppy_id > 0) {
             $size = $order->puppy->selected_size;
             if ($size == 1) {

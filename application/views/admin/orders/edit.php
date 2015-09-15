@@ -62,6 +62,9 @@
     if($model->type==4){
         $type = 'Manual order';
     }
+    if($model->type==10){
+        $type = 'Cancelled order';
+    }
     ?>
     
     
