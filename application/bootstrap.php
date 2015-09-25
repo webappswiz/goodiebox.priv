@@ -66,7 +66,7 @@ mb_substitute_character('none');
 /**
  * Set the default language
  */
-I18n::lang('en-us');
+I18n::lang('en');
 
 if (isset($_SERVER['SERVER_PROTOCOL'])) {
     // Replace the default protocol.
@@ -145,5 +145,5 @@ Kohana::modules(array(
  */
 require_once Kohana::find_file('vendor', 'class.phpmailer');
 require_once Kohana::find_file('vendor', 'dompdf/dompdf_config.inc');
-require_once  Kohana::find_file('vendor', 'tcpdf_min/tcpdf');
+require_once Kohana::find_file('vendor', 'tcpdf_min/tcpdf');
 require_once Kohana::find_file('vendor', 'payu/PayUPayment.class');

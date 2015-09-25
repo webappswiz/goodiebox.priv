@@ -1,6 +1,7 @@
+
 <div class="clear"></div>
 <section id="faq" class="rounded">
-    <h1>Gyakran Ismételt Kérdések</h1>
+    <h1><?php echo __('Gyakran Ismételt Kérdések'); ?></h1>
 
     <div id="collapse-content">
         <h3>1. Mi is az a Goodiebox pontosan?</h3>

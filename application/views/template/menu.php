@@ -3,19 +3,19 @@ $auth = Auth::instance();
 $menus = array();
 $menus = array(
     '/' => array('Főoldal', 'home'),
-    '/hogyan/' => array('Hogyan működik?', 'hogyan'),
-    '/kutyusaink' => array('Kutyusaink', 'kutyusaink'),
-    'http://blog.goodiebox.hu' => array('Blog', 'blog'),
-    '/gyik' => array('GYIK', 'gyik'),
-    '/kapcsolat' => array('Kapcsolat', 'kapcsolat'),
-    '/media' => array('Média', 'media'),
-    '/partnerek' => array('Partnereink', 'partnerek'),
+    '/hogyan/' => array( __('Hogyan működik?'), 'hogyan'),
+    '/kutyusaink' => array( __('Kutyusaink'), 'kutyusaink'),
+    'http://blog.goodiebox.hu' => array( __('Blog'), 'blog'),
+    '/gyik' => array( __('GYIK'), 'gyik'),
+    '/kapcsolat' => array( __('Kapcsolat'), 'kapcsolat'),
+    '/media' => array( __('Média'), 'media'),
+    '/partnerek' => array( __('Partnereink'), 'partnerek'),
 );
 if($auth->logged_in()){
-    $menus['user_account'] = array('Profilom','arcél');
-    $menus['user_session/logout'] = array('Kilépés','logout');
+    $menus['user_account'] = array( __('Profilom'),'arcél');
+    $menus['user_session/logout'] = array( __('Kilépés'),'logout');
 } else {
-    $menus['user_session/login'] = array('Belépés','login');
+    $menus['user_session/login'] = array( __('Belépés'),'login');
 }
 if (!$menus)
     return;
