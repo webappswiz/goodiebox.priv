@@ -1,10 +1,10 @@
 <?php
-$options = ORM::factory('Options',1);
+$options = ORM::factory('Options', 1);
 $text = $options->text;
 $end_date = $options->end_date;
 $status = $options->status;
 $date_array = explode(' ', $end_date);
-$date = explode('/',$date_array[0]);
+$date = explode('/', $date_array[0]);
 $time = explode(':', $date_array[1]);
 ?>
 <!DOCTYPE html>
@@ -89,11 +89,25 @@ $time = explode(':', $date_array[1]);
         ga('send', 'pageview');
     </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<!--<script src="//load.sumome.com/" data-sumo-site-id="13f38ebb1d7ae2e9b0cf60d4e0fdd9eca282dd8682115a92cfe65269a474d136" async></script> -->
+        <!--<script src="//load.sumome.com/" data-sumo-site-id="13f38ebb1d7ae2e9b0cf60d4e0fdd9eca282dd8682115a92cfe65269a474d136" async></script> -->
 </head>
 <body>
     <div class="container">
         <header>
+
+            <?php
+            if (Cookie::get('lang', 'hu') == 'hu') {
+                ?>
+                <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hu_bw.jpg" width="48"> <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/gb.jpg" width="48"></a>
+                <?php
+            } else {
+                ?>
+                <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hu.jpg" width="48"></a> <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/gb_bw.jpg" width="48">
+                <?php
+            }
+            ?>
+
+
             <div class="logo">
                 <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" width="374" height="102" alt="goodybox"></a>
             </div> <!--End logo-->
@@ -104,25 +118,25 @@ $time = explode(':', $date_array[1]);
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie" target="blank"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
                     </li>
                     <li><a href="#">
-                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <!-- a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/gift':'#'?>"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a -->
+                            <!-- <a href="<?= URL::base(TRUE, FALSE) ?>order/gift"> --> <!-- a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/gift' : '#' ?>"><button type="button" class="top-btn rounded">Ajándékbeváltás</button></a -->
                         </a>
-						<script src="https://apis.google.com/js/platform.js"></script>
+                        <script src="https://apis.google.com/js/platform.js"></script>
 
-<script>
-  function onYtEvent(payload) {
-    if (payload.eventType == 'subscribe') {
-      // Add code to handle subscribe event.
-    } else if (payload.eventType == 'unsubscribe') {
-      // Add code to handle unsubscribe event.
-    }
-    if (window.console) { // for debugging only
-      window.console.log('YT event: ', payload);
-    }
-  }
-</script>
+                        <script>
+        function onYtEvent(payload) {
+            if (payload.eventType == 'subscribe') {
+                // Add code to handle subscribe event.
+            } else if (payload.eventType == 'unsubscribe') {
+                // Add code to handle unsubscribe event.
+            }
+            if (window.console) { // for debugging only
+                window.console.log('YT event: ', payload);
+            }
+        }
+                        </script>
 
-<div class="g-ytsubscribe" data-channelid="UCAnqUKt9dkY7Tw2kndO9JAA" data-layout="default" data-theme="dark" data-count="default" data-onytevent="onYtEvent"></div>
-						</li>
+                        <div class="g-ytsubscribe" data-channelid="UCAnqUKt9dkY7Tw2kndO9JAA" data-layout="default" data-theme="dark" data-count="default" data-onytevent="onYtEvent"></div>
+                    </li>
                 </ul>
                 <script>
                     $('.btnShare').click(function () {
@@ -133,7 +147,7 @@ $time = explode(':', $date_array[1]);
                     });
                 </script>
 
-               <script>
+                <script>
                     $('.popup').click(function (event) {
                         var width = 575,
                                 height = 400,
@@ -152,17 +166,17 @@ $time = explode(':', $date_array[1]);
                     });
                 </script>
                 <script type="text/javascript">
-                $(document).ready(function(){
-                    $('.greenbutton').on('mouseover',function(){
-                        $('.greenbutton').stop();
-                        $('.greenbutton').animate({left:'0px'},500);
+                    $(document).ready(function () {
+                        $('.greenbutton').on('mouseover', function () {
+                            $('.greenbutton').stop();
+                            $('.greenbutton').animate({left: '0px'}, 500);
+                        });
+                        $('.greenbutton').on('mouseout', function () {
+                            $('.greenbutton').stop();
+                            $('.greenbutton').animate({left: '-35px'}, 500);
+
+                        });
                     });
-                    $('.greenbutton').on('mouseout',function(){
-                        $('.greenbutton').stop();
-                        $('.greenbutton').animate({left:'-35px'},500);
-                        
-                    });
-                });
                 </script>
             </div> <!--End social-right-->
         </header>
@@ -226,10 +240,10 @@ $time = explode(':', $date_array[1]);
         if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
             ?>
             <div>
-                <a href="<?=($status==1)?URL::base(TRUE, FALSE).'order/?o':'#'?>">
+                <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?o' : '#' ?>">
                     <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
                 </a>
             </div>
-        <?php
+            <?php
         }?>

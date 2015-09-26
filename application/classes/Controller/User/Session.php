@@ -25,10 +25,18 @@ class Controller_User_Session extends Controller_Core {
             $this->user = Auth::instance()->get_user();
             if ($this->user->is_admin()) {
                 $this->redirect(Kohana::$base_url . '/admin');
-            } else
+            } else {
+                $lang_id = $this->user->lang;
+                if ($lang_id == 1) {
+                    I18n::lang('hu');
+                    $lang = Cookie::set('lang', 'hu');
+                } else {
+                    I18n::lang('en');
+                    $lang = Cookie::set('lang', 'en');
+                }
                 $this->redirect($requested_url? : Kohana::$base_url . '/user_account');
-        }
-        else {
+            }
+        } else {
             Flash::set('alert', 'Helytelen felhasználónév vagy jelszó!');
         }
     }
@@ -54,7 +62,7 @@ class Controller_User_Session extends Controller_Core {
         $email_template = str_replace('[link]', $http_link, $email_template->template_text);
         $this->send($email_model->email, 'info@goodiebox.hu', 'Jelszó helyreállítás', $email_template);
         Flash::set('notice', 'Elküldtük az jelszó emlékeztetőt az e-mail címedre.');
-            $this->redirect('/user_session/login');
+        $this->redirect('/user_session/login');
     }
 
     public function action_reset2() {
@@ -66,7 +74,7 @@ class Controller_User_Session extends Controller_Core {
         $user = ORM::factory('User_Token')
                 ->where('token', '=', $hash)
                 ->find();
-        if (!$user->loaded()){
+        if (!$user->loaded()) {
             Flash::set('alert', 'érvénytelen link');
             $this->redirect('/user_session/login');
         }
