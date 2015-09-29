@@ -2,7 +2,7 @@
 $auth = Auth::instance();
 $menus = array();
 $menus = array(
-    '/' => array('Főoldal', 'home'),
+    '/' => array(__('Főoldal'), 'home'),
     '/hogyan/' => array( __('Hogyan működik?'), 'hogyan'),
     '/kutyusaink' => array( __('Kutyusaink'), 'kutyusaink'),
     'http://blog.goodiebox.hu' => array( __('Blog'), 'blog'),

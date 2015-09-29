@@ -1,5 +1,5 @@
 <section class="how-it-works rounded medialinks" style="text-align: center">
-    <h1>Média</h1>
+    <h1><?php echo __('Média'); ?></h1>
     <br/>
     <br/>
     <br/>

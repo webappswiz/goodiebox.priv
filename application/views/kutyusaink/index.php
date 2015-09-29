@@ -148,25 +148,25 @@
     });
 </script>
 <section class="how-it-works rounded">
-    <h1>Kutyusaink + Dobozaink</h1>
+    <h1><?php echo __('Kutyusaink + Dobozaink');?></h1>
     <br/>
     <div id="tab-container" class="tab-container" style="margin-top: 10px;">
         
         <ul class='etabs' style="text-align: center;margin-bottom: 10px">
-            <li class='tab2'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
-            <li class='tab2'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
-			<li class='tab2'><a href="#doboz" style="font-family: 'La-chata'">Meglepi dobozaink</a></li>
+            <li class='tab2'><a href="#fotok" style="font-family: 'La-chata'"><?php echo __('Goodiebox fotók');?></a></li>
+            <li class='tab2'><a href="#videok" style="font-family: 'La-chata'"><?php echo __('Goodiebox videók');?></a></li>
+			<li class='tab2'><a href="#doboz" style="font-family: 'La-chata'"><?php echo __('Meglepi dobozaink');?></a></li>
         </ul>
         
         <div id="fotok">
             <div id="navs">
-			<a style="cursor: pointer" id="jun" class="active" style="font-family: 'La-chata';font-size: 18px">2015 Június</a>
+			<a style="cursor: pointer" id="jun" class="active" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Június');?></a>
             &nbsp;&nbsp;&nbsp
-			<a style="cursor: pointer" id="may" style="font-family: 'La-chata';font-size: 18px">2015 Május</a>
+			<a style="cursor: pointer" id="may" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Május');?></a>
             &nbsp;&nbsp;&nbsp
-			<a style="cursor: pointer" id="apr" style="font-family: 'La-chata';font-size: 18px">2015 Április</a>
+			<a style="cursor: pointer" id="apr" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Április');?></a>
             &nbsp;&nbsp;&nbsp;
-			<a style="cursor: pointer" id="mar" style="font-family: 'La-chata';font-size: 18px">2015 Március</a>
+			<a style="cursor: pointer" id="mar" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Március');?></a>
             &nbsp;&nbsp;&nbsp;
             <!-- a style="cursor: pointer" id="feb" style="font-family: 'La-chata';font-size: 18px">2015 Február</a -->
             &nbsp;&nbsp;&nbsp;
@@ -638,15 +638,15 @@
         </div>
 		<div id="doboz"style="text-align: center">
 			<div class="image-row spacer" style="font-family: 'franklin_gothic_bookregular'; font-size:17px; text-align: justify;">
-			<p>Megmutatjuk nektek az eddigi meglepi dobozaink tartalmát. Természetesen a Smart és a Plus dobozok egy adott hónapon belül mást és mást tartalmazhatnak. A Smart doboz inkább jutalomfalatokban erős, míg a Plus doboz mindig valami kiegészítőt, extra terméket kínál a kutyusnak vagy a gazdinak.</p>
+			<p><?php echo __('Megmutatjuk nektek az eddigi meglepi dobozaink tartalmát. Természetesen a Smart és a Plus dobozok egy adott hónapon belül mást és mást tartalmazhatnak. A Smart doboz inkább jutalomfalatokban erős, míg a Plus doboz mindig valami kiegészítőt, extra terméket kínál a kutyusnak vagy a gazdinak.');?></p>
 			<br />
-		<p>Előfordul bizony, hogy egyes termékek még egy hónapon belül is különbözőek az adott doboz kategórián belül, hiszen mindig próbáljuk abszolút kutyaszemélyiségre szabni a meglepiket!</p> 
+		<p><?php echo __('Előfordul bizony, hogy egyes termékek még egy hónapon belül is különbözőek az adott doboz kategórián belül, hiszen mindig próbáljuk abszolút kutyaszemélyiségre szabni a meglepiket!');?></p> 
 			<br />
-		<p>Ha például egy kutyus érzékeny valamire, más jutalomfalat vagy táp kerül a csomagba. Ha már törzsvendégünk, akkor pedig arra is figyelmet fordítunk, hogy ne kapja ismét ugyanazokat a termékeket vagy ízesítést, mint az előző hónapokban!</p>
+		<p><?php echo __('Ha például egy kutyus érzékeny valamire, más jutalomfalat vagy táp kerül a csomagba. Ha már törzsvendégünk, akkor pedig arra is figyelmet fordítunk, hogy ne kapja ismét ugyanazokat a termékeket vagy ízesítést, mint az előző hónapokban!');?></p>
 			<br />
-		<p>Egy dolog azonban biztos!</p>
+		<p><?php echo __('Egy dolog azonban biztos!');?></p>
 			<br />
-		<p><span style="font-weight:bold;">Mindig figyelünk az ár-érték arányra, hiszen az egyik legfontosabb dolog, hogy olyan csomagot állítsunk nektek össze, ami abszolút mértékben megéri az árát! Szeretnénk, ha kedvező áron próbálhatnátok ki új termékeket vagy beszerezni olyanokat, amiket eddig még nem próbáltatok! Ne feledjétek, nekünk az a legnagyobb öröm, ha boldoggá tehetjük a legjobb barátotokat: a kutyusotokat! ♥</span></p>
+		<p><span style="font-weight:bold;"><?php echo __('Mindig figyelünk az ár-érték arányra, hiszen az egyik legfontosabb dolog, hogy olyan csomagot állítsunk nektek össze, ami abszolút mértékben megéri az árát! Szeretnénk, ha kedvező áron próbálhatnátok ki új termékeket vagy beszerezni olyanokat, amiket eddig még nem próbáltatok! Ne feledjétek, nekünk az a legnagyobb öröm, ha boldoggá tehetjük a legjobb barátotokat: a kutyusotokat! ♥');?></span></p>
 		<br /><br />
                 <div class="image-set" style="text-align:center;">
 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/plus-june-large.jpg"data-lightbox="example-set13" data-title="2015 Június Plus"><img class="example-image-cards" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/plus-june.jpg" alt=""/></a>

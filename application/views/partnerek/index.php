@@ -1,5 +1,5 @@
 <section class="how-it-works rounded">
-    <h1>Partnereink</h1>
+    <h1><?php echo __('Partnereink'); ?></h1>
     <br/>
     <br/>
     <br/>

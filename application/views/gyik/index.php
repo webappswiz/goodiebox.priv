@@ -4,22 +4,22 @@
     <h1><?php echo __('Gyakran Ismételt Kérdések'); ?></h1>
 
     <div id="collapse-content">
-        <h3>1. Mi is az a Goodiebox pontosan?</h3>
+        <h3><?php echo __('1. Mi is az a Goodiebox pontosan?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                A Goodiebox egy egyedülálló szolgáltatás Magyarországon, igazán egyedi és kreatív meglepetés doboz kifejezetten kutyáknak! Ha szeretnéd meglepni kedvencedet, akkor a lehető legjobb helyen jársz! 
+                <?php echo __('A Goodiebox egy egyedülálló szolgáltatás Magyarországon, igazán egyedi és kreatív meglepetés doboz kifejezetten kutyáknak! Ha szeretnéd meglepni kedvencedet, akkor a lehető legjobb helyen jársz! 
 				<br /><br />
 				Jelenleg két dobozunk elérhető; a Goodiebox Smart és a Goodiebox Plus. A dobozok tartalma minden hónapban változik, így érdemes mindig visszalátogatni hozzánk!
 				<br /><br />
 				<b>Szülinapos a kutyusod?</b><br />
-				Rendelj neki egy szuper Goodiebox-ot, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!
+				Rendelj neki egy szuper Goodiebox-ot, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!'); ?>
             </div>
         </div>
 
-        <h3>2. Hogyan tudok rendelni a kutyusomnak?</h3>
+        <h3><?php echo __('2. Hogyan tudok rendelni a kutyusomnak?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                A főoldalon válaszd ki a megfelelő dobozt és a gomb megnyomásával indul is a vásárlás folyamata. <br /><br />
+                <?php echo __(''); ?>A főoldalon válaszd ki a megfelelő dobozt és a gomb megnyomásával indul is a vásárlás folyamata. <br /><br />
 
 Először a kutyusod méretét kell megadnod és néhány fontos információt kérünk róla. Hogy gondosan tudjunk pakolni, nagyon fontos, hogy helyesen töltsd ki az adatokat, különös figyelmet fordítva az érzékenység kérdésre, hiszen ebben az esetben külön figyelmet kell fordítanunk a megfelelő táp vagy snack beszerzésére. <br /><br />
 
@@ -39,14 +39,14 @@ FONTOS! Amennyiben nem kapod meg az üzeneteket 24 órán belül, mindenképpen 
             </div>
         </div>
 
-        <h3>3. Több kutyám is van. Tudok egyszerre több dobozt is rendelni?</h3>
+        <h3><?php echo __('3. Több kutyám is van. Tudok egyszerre több dobozt is rendelni?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.
+                <?php echo __(''); ?>Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.
             </div>
         </div>
 
-        <h3>4. Mennyibe kerül és hogyan fizethetek?</h3>
+        <h3><?php echo __('4. Mennyibe kerül és hogyan fizethetek?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
                 Rendeléskor a periódusokhoz rendeltük az aktuális árakat. Jelenleg kétféle <span style="color:#D931F7;font-weight:bold;">dobozunk</span> elérhető:<br /><br />
@@ -69,25 +69,25 @@ A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott 
             </div>
         </div>
 
-        <h3>5. Ha megrendeltem, <span style="color:#D931F7;font-weight:bold;">mikor</span> kapom meg?</h3>
+        <h3><?php echo __('5. Ha megrendeltem, <span style="color:#D931F7;font-weight:bold;">mikor</span> kapom meg?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                A webshopunk minden hónap elején nyílik és pár napig tart nyitva. A főoldali számláló ez idő alatt folyamatosan visszaszámlál. Ekkor tudsz rendeléseket leadni az adott időszakra. Ha a rendelési szakasz lezárul, a "Hamarosan nyitunk!" felirat jelenik meg a főoldalon, ebben az esetben további rendeléseket nem tudunk fogadni. Ezt követően dolgozzuk fel a beérkezett adatokat és készítjük a kutyusoknak a "kutyaszemélyiségre" szabott Goodiebox-okat. Körülbelül 10 napos határidővel csomagolunk, a dobozok ezt követően kerülnek kiszállításra, ingyenesen. A bolt a csomagszállítást követően értékeli az adott hónapot, picit szusszan, majd újra indul a rendelési időszak. A webshop nyitvatartási szakaszairól értesítést posztolunk a Facebook-on is, ahol érdemes tehát követni bennünket! Ha szeretnél minden nyitáskor automatikus üzenetet kapni tőlünk, hogy nehogy lemaradj és időben le tudd adni a rendelésedet, iratkozz fel az értesítőre a weboldalunkon a visszaszámláló alatt!
+                <?php echo __('A webshopunk minden hónap elején nyílik és pár napig tart nyitva. A főoldali számláló ez idő alatt folyamatosan visszaszámlál. Ekkor tudsz rendeléseket leadni az adott időszakra. Ha a rendelési szakasz lezárul, a "Hamarosan nyitunk!" felirat jelenik meg a főoldalon, ebben az esetben további rendeléseket nem tudunk fogadni. Ezt követően dolgozzuk fel a beérkezett adatokat és készítjük a kutyusoknak a "kutyaszemélyiségre" szabott Goodiebox-okat. Körülbelül 10 napos határidővel csomagolunk, a dobozok ezt követően kerülnek kiszállításra, ingyenesen. A bolt a csomagszállítást követően értékeli az adott hónapot, picit szusszan, majd újra indul a rendelési időszak. A webshop nyitvatartási szakaszairól értesítést posztolunk a Facebook-on is, ahol érdemes tehát követni bennünket! Ha szeretnél minden nyitáskor automatikus üzenetet kapni tőlünk, hogy nehogy lemaradj és időben le tudd adni a rendelésedet, iratkozz fel az értesítőre a weboldalunkon a visszaszámláló alatt!'); ?>
             </div>
         </div>
 
-        <h3>6. Hogyan kapom meg a dobozom?</h3>
+        <h3><?php echo __('6. Hogyan kapom meg a dobozom?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban.
+                <?php echo __(''); ?>Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban.
 A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körülbelül 10-15 munkanapon belül kapod kézhez, a házhozszállítás ingyenes.
             </div>
         </div>
 
-        <h3>7. Meg lehet tudni, hogy mi lesz a következő havi dobozban? Választhatok?</h3>
+        <h3><?php echo __('7. Meg lehet tudni, hogy mi lesz a következő havi dobozban? Választhatok?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad! Kreatívak vagyunk, imádunk csapatban dolgozni, így biztosan minden alkalommal édes lesz a meglepetés! 
+                <?php echo __(''); ?>A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad! Kreatívak vagyunk, imádunk csapatban dolgozni, így biztosan minden alkalommal édes lesz a meglepetés! 
 				<br /><br />
 				Ne aggódj, szuper a rendszerünk is, ami tökéletesen követi az egyedi rendeléseket, így biztos lehetsz benne, hogy nem kapod ugyanazt a termék összeállítást egy éven belül! 
 				<br /><br />
@@ -95,24 +95,24 @@ A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körül
             </div>
         </div>
 
-        <h3>8. Van bármilyen rejtett költség?</h3>
+        <h3><?php echo __('8. Van bármilyen rejtett költség?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                A doboz ára adott, azon kívül semmilyen rejtett költség nincsen. A házhozszállítás ingyenes, amennyiben a bankkártyás fizetési lehetőséget választod. Utánvételes fizetés esetén többlet költséget számolunk fel, melyet a fizetési lehetőség kiválasztásakor jelzünk is neked!
+                <?php echo __('A doboz ára adott, azon kívül semmilyen rejtett költség nincsen. A házhozszállítás ingyenes, amennyiben a bankkártyás fizetési lehetőséget választod. Utánvételes fizetés esetén többlet költséget számolunk fel, melyet a fizetési lehetőség kiválasztásakor jelzünk is neked!'); ?>
             </div>
         </div>
 
-        <h3>9. Nem érkezett meg a Goodiebox, pedig regsztráltam, vagyis megrendeltem.</h3>
+        <h3><?php echo __('9. Nem érkezett meg a Goodiebox, pedig regsztráltam, vagyis megrendeltem.'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-              Amennyiben nem érkezett meg a megrendelést visszaigazoló e-mail a rendelést követően azonnal vagy legfeljebb 24 órán belül, mindenképpen jelezd azt ügyfélszolgálati e-mail címünkön, hogy utána tudjunk nézni: <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a>
+              <?php echo __('Amennyiben nem érkezett meg a megrendelést visszaigazoló e-mail a rendelést követően azonnal vagy legfeljebb 24 órán belül, mindenképpen jelezd azt ügyfélszolgálati e-mail címünkön, hogy utána tudjunk nézni: <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a>'); ?>
             </div>
         </div>
 
-        <h3>10. Van-e mód a visszaküldésre, ha elégedetlen vagyok?</h3>
+        <h3><?php echo __('10. Van-e mód a visszaküldésre, ha elégedetlen vagyok?'); ?></h3>
         <div>
             <div class="content" style="text-align:justify;">
-                Miután kézhez kaptad a Goodiebox-ot, 14 napod van meggondolni magad és visszaküldeni a csomagot. A költségekért felelősséget nem vállalunk. Minden esetben csak bontatlan, eredeti állapotban lévő termékekkel áll módunkban visszavenni a meglepetés dobozt és természetesen ez esetben a vételár visszautalásra kerül. Amennyiben ilyen jellegű problémád lenne, kérlek jelezd az ügyfélszolgálati e-mail címeink egyikén: rendeles@goodiebox.hu vagy info@goodiebox.hu.
+                <?php echo __('Miután kézhez kaptad a Goodiebox-ot, 14 napod van meggondolni magad és visszaküldeni a csomagot. A költségekért felelősséget nem vállalunk. Minden esetben csak bontatlan, eredeti állapotban lévő termékekkel áll módunkban visszavenni a meglepetés dobozt és természetesen ez esetben a vételár visszautalásra kerül. Amennyiben ilyen jellegű problémád lenne, kérlek jelezd az ügyfélszolgálati e-mail címünkön: info@goodiebox.hu.'); ?>
             </div>
         </div>
     </div>
