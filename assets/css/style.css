@@ -186,7 +186,7 @@ header .social-right ul li{margin-top: 6px;}
 #order-place button{padding: 20px;background: #cc0033;color: #ffffff;border: none;font-size: 28px;cursor: pointer;font-family: 'La-chata';}
 #order-place button:hover{background: #e70033;}
 #order-place p{font-family: 'La-chata';font-size: 18px;color: #cc0033; margin-top: 10px;}
-.center-arrows{position: absolute; top: 175px; left: 350px;}
+.center-arrows{position: absolute; top: 175px; left: 360px;}
 #menu{max-width:965px;margin: 0 auto; text-align: center; margin-top: 10px;}
 #menu a {display: inline-block; zoom: 1;text-align: center;width: 317px; height: 317px; cursor: pointer;-webkit-transition: all 0.7s ease;
          transition: all 0.7s ease;}

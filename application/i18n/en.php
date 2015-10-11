@@ -1,7 +1,7 @@
 <?php
 
 return array
-(
+    (
     //Menu
     'Főoldal' => 'Home',
     'Hogyan működik?' => 'How it works?',
@@ -92,103 +92,78 @@ return array
     //End Kutyusaink
     //gyik
     '1. Mi is az a Goodiebox pontosan?' => '1. What exactly is Goodiebox?',
-    'A Goodiebox egy egyedülálló szolgáltatás Magyarországon, igazán egyedi és kreatív meglepetés doboz kifejezetten kutyáknak! Ha szeretnéd meglepni kedvencedet, akkor a lehető legjobb helyen jársz! 
-				<br /><br />
-				Jelenleg két dobozunk elérhető; a Goodiebox Smart és a Goodiebox Plus. A dobozok tartalma minden hónapban változik, így érdemes mindig visszalátogatni hozzánk!
-				<br /><br />
-				<b>Szülinapos a kutyusod?</b><br />
-				Rendelj neki egy szuper Plus Goodiebox-ot, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!' => 'Goodiebox is a creative and unique service in Hungary, specially created for your puppy! If you wish to surprise your puppy, then you are in the right place.
-				<br /><br />
-				At the moment, we have two types of boxes: Goodiebox Smart and Goodiebox Plus. The box content changes every month, this makes it worth buying every single month.
-				<br /><br />
-				<b>Your puppy has a birthday?</b><br />
-				Order a super Goodiebox Plus, because for birthday puppies, we include a special item to mark this important ocassion!',
+    'A Goodiebox egy egyedülálló szolgáltatás Magyarországon, igazán egyedi és kreatív meglepetés doboz kifejezetten kutyáknak! Ha szeretnéd meglepni kedvencedet, akkor a lehető legjobb helyen jársz!' =>
+    'Goodiebox is a creative and unique service in Hungary, specially created for your puppy! If you wish to surprise your puppy, then you are in the right place.',
+    'Jelenleg két dobozunk elérhető; a Goodiebox Smart és a Goodiebox Plus. A dobozok tartalma minden hónapban változik, így érdemes mindig visszalátogatni hozzánk!' =>
+    'At the moment, we have two types of boxes: Goodiebox Smart and Goodiebox Plus. The box content changes every month, this makes it worth buying every single month.',
+    '<b>Szülinapos a kutyusod?</b>' => '<b>Your puppy has a birthday?</b>',
+    'Rendelj neki egy szuper Goodiebox-ot, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!' =>
+    'Order a super Goodiebox Plus, because for birthday puppies, we include a special item to mark this important ocassion!',
     '2. Hogyan tudok rendelni a kutyusomnak?' => '2. How can I order for my puppy?',
-    ' A főoldalon válaszd ki a megfelelő dobozt és a gomb megnyomásával indul is a vásárlás folyamata. <br /><br />
-
-Először a kutyusod méretét kell megadnod és néhány fontos információt kérünk róla. Hogy gondosan tudjunk pakolni, nagyon fontos, hogy helyesen töltsd ki az adatokat, különös figyelmet fordítva az érzékenység kérdésre, hiszen ebben az esetben külön figyelmet kell fordítanunk a megfelelő táp vagy snack beszerzésére. <br /><br />
-
-A második lépésben mégegyszer meggyőződhetsz arról, hogy a megfelelő dobozt választottad-e ki!<br /><br />
-
-A harmadik lépésben pedig a személyes adataidat kell megadnod. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és megfeleljenek a valóságnak. Akkor sikeres a megrendelés, amikor kiválasztottad a fizetési lehetőségek közül a neked szimpatikusabbat és elfogadva az ÁSZF-ben leírtakat a Megrendelem gombra kattintasz!<br /><br />
-
-Azonnali bankkártyás fizetés esetén automatikusan a PayU biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra. <br /><br />
-
-Utánvételes fizetés esetén a Megrendelem gombra kattintva elfogadod, hogy a csomag átvételekor fogsz fizetni készpénzben. Ebben az esetben többlet költséget számolunk fel, melynek összegét minden esetben jelezzük neked, amikor kiválasztod ezt a fizetési lehetőséget. Jelenleg extra 800 Ft-ot számolunk fel neked, ha ezt választod!<br /><br />
-
-A megrendelés egyben regisztráció is, létrejön a saját profilod a weboldalunkon, ahova bármikor visszalátogathatsz, nyomon tudod követni az aktuális rendelésedet vagy szükség esetén később módosíthatod az adataidat, kivéve az email címedet.<br /><br />
-
-A megrendelést követően két email üzenetet kell kapnod. Az egyik a sikeres regisztrációról szól, míg a második a megrendelésed visszaigazolása, mely tartalmazza az előszámlát és azt is, hogy mikor szállítjuk a megrendelésed.<br /><br />
-
-FONTOS! Amennyiben nem kapod meg az üzeneteket 24 órán belül, mindenképpen jelezd felénk a <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a> email címen! Köszönjük!' => ' On the home page, choose the appropriate box type, Smart or Plus. Once your click the button, the order process starts.<br /><br />
-
-In the first step, you will be asked to give your puppy size and some other important details. For us to put the right items in your box, it\'s important that you give us the right information about your puppy. When you are done with the first step, click next to proceed to the second step.<br /><br />
-
-In the second step, you can confirm that you have chosen the right box. If everything is okay, click next to proceed to the next step.<br /><br />
-
-In the third step, you can give your billing and shipping information! Please be sure to check that the information you supply is accurate to prevent any delays in receiving your box! You can complete your order by selecting the appropriate payment method, check the "Terms and Conditions" box and finally clicking the order button.<br /><br />
-
-If you select the credit card payment method, you will be redirected to PayU payment page. Here you will be required to fill in your card details and then finish your order. We do not save your credit card information on our website. For this payment method, there are no hidden charges. <br /><br />
-
-If you select cash on delivery payment method, your order will be completed immediately and this means you have agreed to make payment in cash when the package is delivered to you. In this case, we charge 800 Ft for handling fees.<br /><br />
-
-When you complete your first order on our site, your profile is automatically created. For subsequent orders, you just need to login with your email address and password. You may then access your profile and update your delivery address or make new orders.<br /><br />
-
-After you complete your order, you will receive two email messages. The first email provides information regarding your registration and how your can access your profile on our website. The second email is the order confirmation which contains your invoice and delivery information. <br /><br />
-
-IMPORTANT! If you do not receive both messages within 24 hours after you complete your order, please send us a message at <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a>! Thank you!',
+    'A főoldalon válaszd ki a megfelelő dobozt és a gomb megnyomásával indul is a vásárlás folyamata.' =>
+    'In the first step, you will be asked to give your puppy size and some other important details. For us to put the right items in your box, it\'s important that you give us the right information about your puppy. When you are done with the first step, click next to proceed to the second step.',
+    'Először a kutyusod méretét kell megadnod és néhány fontos információt kérünk róla. Hogy gondosan tudjunk pakolni, nagyon fontos, hogy helyesen töltsd ki az adatokat, különös figyelmet fordítva az érzékenység kérdésre, hiszen ebben az esetben külön figyelmet kell fordítanunk a megfelelő táp vagy snack beszerzésére.' =>
+    'In the second step, you can confirm that you have chosen the right box. If everything is okay, click next to proceed to the next step.',
+    'A második lépésben mégegyszer meggyőződhetsz arról, hogy a megfelelő dobozt választottad-e ki!' =>
+    'In the third step, you can give your billing and shipping information! Please be sure to check that the information you supply is accurate to prevent any delays in receiving your box!',
+    'A harmadik lépésben pedig a személyes adataidat kell megadnod. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és megfeleljenek a valóságnak. Akkor sikeres a megrendelés, amikor kiválasztottad a fizetési lehetőségek közül a neked szimpatikusabbat és elfogadva az ÁSZF-ben leírtakat a Megrendelem gombra kattintasz!' =>
+    'You can complete your order by selecting the appropriate payment method, check the "Terms and Conditions" box and finally clicking the order button.',
+    'Azonnali bankkártyás fizetés esetén automatikusan a PayU biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.' =>
+    'If you select the credit card payment method, you will be redirected to PayU payment page. Here you will be required to fill in your card details and then finish your order. We do not save your credit card information on our website. For this payment method, there are no hidden charges.',
+    'Utánvételes fizetés esetén a Megrendelem gombra kattintva elfogadod, hogy a csomag átvételekor fogsz fizetni készpénzben. Ebben az esetben többlet költséget számolunk fel, melynek összegét minden esetben jelezzük neked, amikor kiválasztod ezt a fizetési lehetőséget. Jelenleg extra 800 Ft-ot számolunk fel neked, ha ezt választod!' =>
+    'If you select cash on delivery payment method, your order will be completed immediately and this means you have agreed to make payment in cash when the package is delivered to you. In this case, we charge 800 Ft for handling fees.',
+    'A megrendelés egyben regisztráció is, létrejön a saját profilod a weboldalunkon, ahova bármikor visszalátogathatsz, nyomon tudod követni az aktuális rendelésedet vagy szükség esetén később módosíthatod az adataidat, kivéve az email címedet.' =>
+    'When you complete your first order on our site, your profile is automatically created. For subsequent orders, you just need to login with your email address and password. You may then access your profile and update your delivery address or make new orders.',
+    'A megrendelést követően két email üzenetet kell kapnod. Az egyik a sikeres regisztrációról szól, míg a második a megrendelésed visszaigazolása, mely tartalmazza az előszámlát és azt is, hogy mikor szállítjuk a megrendelésed.' =>
+    'After you complete your order, you will receive two email messages. The first email provides information regarding your registration and how your can access your profile on our website. The second email is the order confirmation which contains your invoice and delivery information.',
+    'FONTOS! Amennyiben nem kapod meg az üzeneteket 24 órán belül, mindenképpen jelezd felénk a <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a> email címen! Köszönjük!' =>
+    'IMPORTANT! If you do not receive both messages within 24 hours after you complete your order, please send us a message at <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a>! Thank you!',
+    
     '3. Több kutyám is van. Tudok egyszerre több dobozt is rendelni?' => '3. I have more than one dog. Can I order more than a box at once?',
-    'Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.' => 'Yes, you can order multiple boxes, but just one after the other. After your first order, you can login to your profile and create another profile for other puppies if you have more than one puppy. You may also choose to delete profiles you have created for your puppy and create new profiles too!',
+    'Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.' => 
+    'Yes, you can order multiple boxes, but just one after the other. After your first order, you can login to your profile and create another profile for other puppies if you have more than one puppy. You may also choose to delete profiles you have created for your puppy and create new profiles too!',
+    
     '4. Mennyibe kerül és hogyan fizethetek?' => '4. How much and how can I pay?',
-    'Jelenleg kétféle <span style="color:#D931F7;font-weight:bold;">dobozunk</span> elérhető:<br /><br />
+    
 
-Goodiebox Smart 5990 Ft<br />
-Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, jutalomfalat, játék) egy dobozban.<br /><br /> 
+    'Jelenleg kétféle <span style="color:#D931F7;font-weight:bold;">dobozunk</span> elérhető:' => 
+'At the moment, we have two box types available:',
 
-Goodiebox Plus 7990 Ft<br />
-Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, jutalomfalat, játék, kiegészítő, vitamin, higiénés termék) egy dobozban.<br /><br /> 
+'Goodiebox Smart 5990 Ft<br />' => 
+'Goodiebox Smart 5990 Ft<br />',
+'Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, jutalomfalat, játék) egy dobozban.' => 
+'Every month, 3-5 different carefully selected items (food, treats, toys) are in the box.',
 
-Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkártyás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.<br /><br />
+'Goodiebox Plus 7990 Ft<br />' => 
+'Goodiebox Plus 7990 Ft<br />',
+'Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, jutalomfalat, játék, kiegészítő, vitamin, higiénés termék) egy dobozban.' => 
+'Every month, 4-6 unique premium quality products (food, treats, toys, accessories, vitamins, grooming items) are in the box.',
 
-Fizetési lehetőségek:<br />
-Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)<br /><br />
-
-Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)<br /><br />
-
-<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />
-A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' => 'At the moment, we have two box types available:<br /><br />
-
-Goodiebox Smart 5990 Ft<br />
-Every month, 3-5 different carefully selected items (food, treats, toys) are in the box.<br /><br /> 
-
-Goodiebox Plus 7990 Ft<br />
-Every month, 4-6 unique premium quality products (food, treats, toys, accessories, vitamins, grooming items) are in the box.<br /><br /> 
-
-These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.<br /><br />
-
-Payment Options:<br />
-Instant bank card payment method (PayU,this has no additional charges!)<br /><br />
-
-Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)<br /><br />
-
-<span style="display:none;">3 or 6 month orders:<br />
-From the first month you order the 3 or 6 month packages, you will receive the boxes every month until the duration you selected is over. For both bank card and cash on delivery payment methods, payment will be made in advance for the duration of the subscription period. For cash on delivery method, the folowing additional fees apply (3 month order 2400 Ft, 6 month order 4800 Ft). This is more convenient since you don\'t need to order every single month or miss our order periods.</span>',
+'Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkártyás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.' => 
+'These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.',
+'Fizetési lehetőségek:<br />' => 
+'Payment Options:<br />',
+'Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' => 
+'Instant bank card payment method (PayU,this has no additional charges!)',
+'Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)' => 
+'Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)',
+'<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' => 
+'<span style="display:none;">3 or 6 month orders:<br />From the first month you order the 3 or 6 month packages, you will receive the boxes every month until the duration you selected is over. For both bank card and cash on delivery payment methods, payment will be made in advance for the duration of the subscription period. For cash on delivery method, the folowing additional fees apply (3 month order 2400 Ft, 6 month order 4800 Ft). This is more convenient since you don\'t need to order every single month or miss our order periods.</span>',
+    
     '5. Ha megrendeltem, <span style="color:#D931F7;font-weight:bold;">mikor</span> kapom meg?' => '5. If I order now, when will I get the box?',
     'A webshopunk minden hónap elején nyílik és pár napig tart nyitva. A főoldali számláló ez idő alatt folyamatosan visszaszámlál. Ekkor tudsz rendeléseket leadni az adott időszakra. Ha a rendelési szakasz lezárul, a "Hamarosan nyitunk!" felirat jelenik meg a főoldalon, ebben az esetben további rendeléseket nem tudunk fogadni. Ezt követően dolgozzuk fel a beérkezett adatokat és készítjük a kutyusoknak a "kutyaszemélyiségre" szabott Goodiebox-okat. Körülbelül 10 napos határidővel csomagolunk, a dobozok ezt követően kerülnek kiszállításra, ingyenesen. A bolt a csomagszállítást követően értékeli az adott hónapot, picit szusszan, majd újra indul a rendelési időszak. A webshop nyitvatartási szakaszairól értesítést posztolunk a Facebook-on is, ahol érdemes tehát követni bennünket! Ha szeretnél minden nyitáskor automatikus üzenetet kapni tőlünk, hogy nehogy lemaradj és időben le tudd adni a rendelésedet, iratkozz fel az értesítőre a weboldalunkon a visszaszámláló alatt!' => 'The webshop opens at the beginning of each month and is open for a few days. We continue to count down until the order period ends. While open, you can make as many orders as you want. When the ordering period ends, the "We\'re Closed" message is displayed on the home page and we can not accept further orders in this case until the next month. We then start to process your order, preparing a Goodiebox personalized package just for your puppy! Your package will be delivered in about 10 days, free of charge to your doorstep (There is an additional 800 forints charge for cash on delivery orders). We love to hear from you, so be sure to send us your feedback after you receive your package! Also follow us on Facebook and Instagram where we always post our opening times so you never miss out! If you wish to receive an automated message when our webshop opens, please subscribe on our home page. This subscription is only available when the shop is closed for orders.',
     '6. Hogyan kapom meg a dobozom?' => '6. How will I get the box I ordered?',
-    'Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban.
-A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körülbelül 10-15 munkanapon belül kapod kézhez, a házhozszállítás ingyenes.' => 'It\'s very important that you provide us with accurate delivery information to prevent any delays in receving your Goodiebox. Also important is the email address you supply when making your first order - that\'s because all order and delivery notifications will be sent to this email address. 
+    'Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban. A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körülbelül 10-15 munkanapon belül kapod kézhez, a házhozszállítás ingyenes.' => 
+    'It\'s very important that you provide us with accurate delivery information to prevent any delays in receving your Goodiebox. Also important is the email address you supply when making your first order - that\'s because all order and delivery notifications will be sent to this email address. 
 Your Goodiebox will arrive at your doorstep 10-15 days after our order period closes. Remember that delivery is free if you paid with your bank card!',
+    
     '7. Meg lehet tudni, hogy mi lesz a következő havi dobozban? Választhatok?' => '7. Can I somehow know what will be in the next box? Can I choose?',
-    'A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad! Kreatívak vagyunk, imádunk csapatban dolgozni, így biztosan minden alkalommal édes lesz a meglepetés! 
-				<br /><br />
-				Ne aggódj, szuper a rendszerünk is, ami tökéletesen követi az egyedi rendeléseket, így biztos lehetsz benne, hogy nem kapod ugyanazt a termék összeállítást egy éven belül! 
-				<br /><br />
-				Ha mégis kíváncsi vagy, körülbelül mire is számíthatsz, csekkold a weboldalunkon a Goodiebox tulajdonosokról készült fotókat és videókat! Szerintünk nem kell ennél jobb referencia! ' => 'Goodiebox is a super secret surprise box kept closely to us, we only decide what will be in the box every month. We\'re creative, we love teamwork - this guarantees that every box you receive will consistently bring you and your puppy pleasant surprises :-)
-				<br /><br />
-				Don\'t worry, we\'re always tracking items you have received - this makes it impossible for you to receive the same combination of items within a 1 year period.  
-				<br /><br />
-				If you\'re really curious about the box content or want to see the content of previous boxes, click <a href="http://goodiebox.hu/kutyusaink#doboz">here</a>! ',
+    'A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad! Kreatívak vagyunk, imádunk csapatban dolgozni, így biztosan minden alkalommal édes lesz a meglepetés!' => 
+'Goodiebox is a super secret surprise box kept closely to us, we only decide what will be in the box every month. We\'re creative, we love teamwork - this guarantees that every box you receive will consistently bring you and your puppy pleasant surprises :-)',
+'Ne aggódj, szuper a rendszerünk is, ami tökéletesen követi az egyedi rendeléseket, így biztos lehetsz benne, hogy nem kapod ugyanazt a termék összeállítást egy éven belül!' => 
+'Don\'t worry, we\'re always tracking items you have received - this makes it impossible for you to receive the same combination of items within a 1 year period.',
+'Ha mégis kíváncsi vagy, körülbelül mire is számíthatsz, csekkold a weboldalunkon a Goodiebox tulajdonosokról készült fotókat és videókat! Szerintünk nem kell ennél jobb referencia!' => 
+'If you\'re really curious about the box content or want to see the content of previous boxes, click <a href="http://goodiebox.hu/kutyusaink#doboz">here</a>!',
     '8. Van bármilyen rejtett költség?' => '8. Are there any hidden costs?',
     'A doboz ára adott, azon kívül semmilyen rejtett költség nincsen. A házhozszállítás ingyenes, amennyiben a bankkártyás fizetési lehetőséget választod. Utánvételes fizetés esetén többlet költséget számolunk fel, melyet a fizetési lehetőség kiválasztásakor jelzünk is neked!' => 'The box price is fixed and there are no hidden costs. Delivery to your doostep is free if you choose the instant bank card payment method. If you choose cash on delivery payment method, there is an additional charge which is displayed on your order summary. At the moment, there is an extra charge of 800 forints for cash on delivery orders.',
     '9. Nem érkezett meg a Goodiebox, pedig regsztráltam, vagyis megrendeltem.' => '9. I have ordered my goodiebox, but did not receive it.',
@@ -226,6 +201,7 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Belépés' => 'Login',
     'Elfelejtetted a jelszavadat?' => 'Forgot your password?',
     //End User login
+
     //User account
     'ez az információ szükséges' => 'this information is required',
     'Kérjük, adja ugyanazt az értéket újra' => 'Please, give the same information again',
@@ -294,9 +270,10 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Kupon használat követése' => 'Coupon code tracking',
     'Kupon kód:' => 'Coupon code:',
     'Megrendelések a kupon kóddal:' => 'Orders with coupon code:',
+    'ADATAIM MENTÉSE' => 'UPDATE INFORMATION',
     //End User account
     //Order Step1
-    'Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!' => 'It seems you\'re already registered! Sign in and complete your order quicker!',
+    'Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!' => 'It seems you are already registered! Sign in and complete your order quicker!',
     'ez az információ szükséges' => 'required information',
     'Kérjük, adja ugyanazt az értéket újra' => 'Please give the same information again',
     'Rendelés' => 'Order',
@@ -325,14 +302,14 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Biztosan a kiválasztott doboznál maradsz?' => 'Is this the box you really want?',
     'VISSZA' => 'BACK',
     '<p>A <span style="color:red"><b>Goodiebox Smart</b></span> dobozt választottad! Ha kutyusod játékos és szereti a hasát, akkor ez a doboz biztosan nagy örömöt okoz majd nektek!</p>' => '<p>You have chosen <span style="color:red"><b>Goodiebox Smart</b></span>! If your puppy likes to play or snack, this is just perfect!</p>',
-    '<p>Tartalom: 3-5 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet!</p>' => '<p>Contents: 3-5 items (depending on the value)! Here, you\'ll find tasty snacks and fun toys to keep your puppy busy for a while!</p>',
-    '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>' => '<p>You\'re just one step away from finishing your order! If this is your choice, click "Next" and give your billing and delivery details!</p>',
-    '<p>A <span style="color:red"><b>Goodiebox Plus</b></span> dobozt választottad! Ha kutyusod játékos, szereti a hasát és az extra meglepiket is, akkor ez a doboz egészen biztosan nagy örömöt okoz majd nektek!</p>' => '<p>You have chosen <span style="color:red"><b>Goodiebox Plus</b></span>! It\'s the perfect choice if your puppy is playful, loves his/her tummy and you want an extra surprise!</p>',
-    '<p>Tartalom: 4-6 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet! A Plus doboz a legjobb választás ha valamilyen extra kényeztetésre vágynátok! Mi több, a szülinapos kutyusok Plus meglepidoboz vásárlásakor ajándékot is kapnak tőlünk a doboz értékén felül!</p>' => '<p>Contents: 4-6 items (depending on the value)! Here, you\'ll surely find tasty snacks and fun toys to keep your puppy busy for a while! The Plus box is the better choice if your puppy needs extra care. Best of all, your puppy gets an extra birthday gift which is not calculated as part of the box value!</p>',
-    '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>' => '<p>You\'re just one step away from finishing your order! If this is your choice, click "Next" and give your billing and delivery details!</p>',
+    '<p>Tartalom: 3-5 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet!</p>' => '<p>Contents: 3-5 items (depending on the value)! Here, you will find tasty snacks and fun toys to keep your puppy busy for a while!</p>',
+    '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>' => '<p>You are just one step away from finishing your order! If this is your choice, click "Next" and give your billing and delivery details!</p>',
+    '<p>A <span style="color:red"><b>Goodiebox Plus</b></span> dobozt választottad! Ha kutyusod játékos, szereti a hasát és az extra meglepiket is, akkor ez a doboz egészen biztosan nagy örömöt okoz majd nektek!</p>' => '<p>You have chosen <span style="color:red"><b>Goodiebox Plus</b></span>! It is the perfect choice if your puppy is playful, loves his/her tummy and you want an extra surprise!</p>',
+    '<p>Tartalom: 4-6 termék (értékfüggő)! Biztosan találsz a dobozban jutalomfalatot és játékot, mert tudjuk, hogy ezek a legfontosabbak, ha szuper ajándékkal szeretnéd meglepni kis kedvencedet! A Plus doboz a legjobb választás ha valamilyen extra kényeztetésre vágynátok! Mi több, a szülinapos kutyusok Plus meglepidoboz vásárlásakor ajándékot is kapnak tőlünk a doboz értékén felül!</p>' => '<p>Contents: 4-6 items (depending on the value)! Here, you will surely find tasty snacks and fun toys to keep your puppy busy for a while! The Plus box is the better choice if your puppy needs extra care. Best of all, your puppy gets an extra birthday gift which is not calculated as part of the box value!</p>',
+    '<p>Már csak egy lépésnyire vagy a megrendelés befejezésétől! Ha ennél a meglepidoboznál maradsz, akkor nincs más dolgod, csak kattints a Tovább gombra és add meg a személyes adataidat!</p>' => '<p>You are just one step away from finishing your order! If this is your choice, click "Next" and give your billing and delivery details!</p>',
     //End order step2
     //Order step3
-    'Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!' => 'It seems you\'re already registered! Sign in and complete your order quicker!',
+    'Úgy tűnik, már van regisztrált Goodiebox felhasználói fiókod! Jelentkezz be és onnan sokkal gyorsabb lesz!' => 'It seems you are already registered! Sign in and complete your order quicker!',
     'Ingyenes' => 'Free',
     'ez az információ szükséges' => 'required information',
     'Kérjük, adja ugyanazt az értéket újra' => 'Please give the same information again',
@@ -351,7 +328,7 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Város*' => 'City*',
     'E-mail cím*' => 'E-mail address*',
     'Telefonszám*' => 'Phone number*',
-    'Korrekt e-mail cím és jelszó megadása szükséges ahhoz, hogy később bejelentkezhess a Goodiebox fiókodba, követhesd aktuális rendelésed vagy módosíthasd a már meglévő adataidat.' => 'Providing a correct e-mail address and password is required to access your Goodiebox account, track your orders or modify your account details.',
+    'Korrekt e-mail cím és jelszó megadása szükséges ahhoz, hogy később bejelentkezhess a Goodiebox fiókodba, követhesd aktuális rendelésed, módosíthasd a már meglévő adataidat vagy ha nincs rá szükséged, törölhesd.' => 'Providing a correct e-mail address and password is required to access your Goodiebox account, track your orders or modify your account details.',
     'Jelszó*' => 'Password*',
     'Jelszó megerősítése*' => 'Password again*',
     'ÁFÁS számlát szeretnék' => 'I would like a VAT invoice',
@@ -394,9 +371,9 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'E-mail címedre visszaigazolást küldtünk.' => 'We have sent you a confirmation email.',
     'Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu' => 'Hooray, I have just ordered the latest Goodiebox for my pup! If you would like to get some cool surprise for your pup, click here: http://goodiebox.hu',
     //End success
-    '' => '',
-    '' => '',
-    '' => '',
+    '/assets/img/pricedogs_hun.jpg' => '/assets/img/pricedogs_eng.jpg',
+    '/assets/img/hogyanmukodik_hun.jpg' => '/assets/img/hogyanmukodik_eng.jpg',
+    '/assets/img/arrows.png' => '/assets/img/arrows_eng.jpg',
     '' => '',
     '' => '',
     '' => '',

@@ -95,8 +95,8 @@
         });
         $("#telephone").mask("+36 99 999-99-99");
         $.extend($.validator.messages, {
-            required: "ez az információ szükséges",
-            equalTo: "Kérjük, adja ugyanazt az értéket újra"
+            required: "<?php echo __('ez az információ szükséges'); ?>",
+            equalTo: "<?php echo __('Kérjük, adja ugyanazt az értéket újra'); ?>"
         });
         $.validator.addMethod("myCustomRule", function (value, element) {
             return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
@@ -109,16 +109,16 @@
     </script>
     <div class="claim-form2">
         <form class="process-form" name="order" method="POST" action="/user_account/addDog">
-            <label for="">Kutyus neve</label>
+            <label for=""><?php echo __('Kutyus neve'); ?></label>
             <input type="text" name="puppy_name" class="rounded" id="" required>
             <div class="radio-list">
-                <label for="last-name">Válaszd ki mekkora a kutyus!*</label>
-                <input type="radio" name="size" value="1" class="" checked> Icipici (max 9kg) <input name="size" value="2" type="radio" class=""> Éppen jó(10-24kg)
-                <input name="size" value="3" type="radio" class=""> Igazi óriás(25kg+)
+                <label for="last-name"><?php echo __('Válaszd ki mekkora a kutyus!*'); ?></label>
+                <input type="radio" name="size" value="1" class="" checked> <?php echo __('Icipici (max 9kg)'); ?> <input name="size" value="2" type="radio" class=""> <?php echo __('Éppen jó(10-24kg)'); ?>
+                <input name="size" value="3" type="radio" class=""> <?php echo __('Igazi óriás(25kg+)'); ?>
             </div>
             <div class="radio-list">
-                <label for="last-name">Kutyus neme*</label>
-                <input type="radio" name="gender" value="0" class="" checked> Lány <input name="gender" value="1" type="radio" class=""> Fiú
+                <label for="last-name"><?php echo __('Kutyus neme*'); ?></label>
+                <input type="radio" name="gender" value="0" class="" checked> <?php echo __('Lány'); ?> <input name="gender" value="1" type="radio" class=""> <?php echo __('Fiú'); ?>
             </div>
             <?php
             for ($i = 1994; $i <= date('Y'); $i++)
@@ -127,7 +127,7 @@
             for ($i = 1; $i <= 12; $i++)
                 $months[$i] = $i;
             ?>
-            <label for="last-name">Kutyus születésnapja*</label>
+            <label for="last-name"><?php echo __('Kutyus születésnapja*'); ?></label>
             <div class="text-shor1 fl" style="margin-right:10px">
                 <?php
                 echo Form::select('years', $years, '', array('required', 'class' => 'rounded option-name'));
@@ -141,18 +141,18 @@
             <br/>
             <br/>
             <div class="radio-list">
-                <label for="Igen">Allergiás a kutyusod?*</label>
-                <input type="radio" class="alerg_yes" value="1" name="alerg"> Igen <input type="radio" value="0" name="alerg" class="alerg_no" checked> Nem
+                <label for="Igen"><?php echo __('Allergiás a kutyusod?*'); ?></label>
+                <input type="radio" class="alerg_yes" value="1" name="alerg"> <?php echo __('Igen'); ?> <input type="radio" value="0" name="alerg" class="alerg_no" checked> <?php echo __('Nem'); ?>
             </div>
 
-            <label style="display:none" for="last-name" id="al_label">Ha igen, mire?</label>
+            <label style="display:none" for="last-name" id="al_label"><?php echo __('Ha igen, mire?'); ?></label>
             <input style="display:none" type="text" name="alerg_descr" class="rounded" id="alerg_descr">
 
-            <p style="padding-top:20px;">*Kötelező adatok</p>
+            <p style="padding-top:20px;"><?php echo __('*Kötelező adatok'); ?></p>
             <input type="hidden" name="order1" value="1">
             <input type="hidden" name="selected_size" class="selected_size">
             <div>
-                <input type="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded">
+                <input type="submit" value="<?php echo __('GYERÜNK'); ?>" class="dark-btn dog-prof-btn rounded">
             </div>
         </form>
         <a id="popupBoxClose"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
@@ -173,7 +173,7 @@ $time = explode(':', $date_array[1]);
 <div class="clear"></div>
 <section class="claim-gift" class="rounded" id="container">
     <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/profile-icon.png" class="badge" style="top:-65px;">
-    <h1>Saját profilom</h1>
+    <h1><?php echo __('Saját profilom'); ?></h1>
     <br/><br/>
     <?php
     $invites = ORM::factory('Invites')
@@ -214,62 +214,62 @@ $time = explode(':', $date_array[1]);
     </div>
     <div id="collapse-content">
 
-        <h3>Személyes adataim<p class="sub-heading">Amennyiben szeretnéd, bármikor megváltoztathatod az adataidat.</p><p class="sub-heading">Új rendelés előtt kérjük mindig ellenőrizd a számlázási és a szállítási címet is!</p></h3>
+        <h3><?php echo __('Személyes adataim<p class="sub-heading">Amennyiben szeretnéd, bármikor megváltoztathatod az adataidat.</p><p class="sub-heading">Új rendelés előtt kérjük mindig ellenőrizd a számlázási és a szállítási címet is!</p>'); ?></h3>
         <div>
             <div class="content">
                 <div class="claim-form-container">
                     <div class="claim-form">
-                        <h2>Szállítási adatok</h2>
-                        <p>Ország</p>
-                        <h4>Magyarország</h4>
+                        <h2><?php echo __('Szállítási adatok'); ?></h2>
+                        <p><?php echo __('Ország'); ?></p>
+                        <h4><?php echo __('Magyarország'); ?></h4>
 
 
                         <form method="POST" action="/user_account/editShipping" id="shipping">
                             <div style="margin-right:6px;" class="fl">
-                                <label for="last-name">Vezetéknév*</label>
+                                <label for="last-name"><?php echo __('Vezetéknév*'); ?></label>
                                 <input id="last-name" type="text" name="last-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_lastname : $current_user->customer_lastname ?>" required>
                             </div>
 
                             <div style="overflow:hidden;">
-                                <label for="first-name">Keresztnév*</label>
+                                <label for="first-name"><?php echo __('Keresztnév*'); ?></label>
                                 <input id="" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
                             </div>
                             <div class="clear"></div>
                             <div class="add">
-                                <label for="address">Cím*</label>
+                                <label for="address"><?php echo __('Cím*'); ?></label>
                                 <input type="text" name="address" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_address : $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
                                 <input type="text" name="address2" class="rounded" id="">
                             </div>
 
                             <div>
-                                <label for="zip">Irányítószám*</label>
+                                <label for="zip"><?php echo __('Irányítószám*'); ?></label>
                                 <input type="text" name="zip" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_zip : $current_user->customer_zip ?>" required>
                             </div>
                             <div class="add">
-                                <label for="">Város*</label>
+                                <label for=""><?php echo __('Város*'); ?></label>
                                 <input type="text" name="city" value="<?= ($shipping) ? $shipping->customer_city : $current_user->customer_city ?>" class="rounded" id="" required>
                             </div>
                             <div>
-                                <label for="message">Megjegyzés</label>
+                                <label for="message"><?php echo __('Megjegyzés'); ?></label>
                                 <textarea name="message" class="rounded client-acct-msg"></textarea>
                             </div>
                     </div> <!--End claim form-->
                     <div class="clear"></div>
                     <div class="bottom-text-field">
                         <div>
-                            <label for="">E-mail cím*</label>
+                            <label for=""><?php echo __('E-mail cím*'); ?></label>
                             <input type="text" name="email" class="rounded" id="" value="<?= $current_user->email ?>" readonly>
                         </div>
                         <div>
-                            <label for="last-name">Jelszó*</label>
+                            <label for="last-name"><?php echo __('Jelszó*'); ?></label>
                             <input type="password" name="password" class="rounded" id="password">
                         </div>
                         <div style="margin-right:0;">
-                            <label for="">Telefonszám*</label>
+                            <label for=""><?php echo __('Telefonszám*'); ?></label>
                             <input type="text" name="telephone" class="rounded" id="telephone" value="<?= ($shipping) ? $shipping->customer_telephone : $current_user->customer_telephone ?>" required>
                         </div>
                         <div style="margin-top:50px;">
-                            <input type="submit" name="edit_shipping" value="ADATAIM MENTÉSE" class="dark-btn Szemelyes-btn rounded">
+                            <input type="submit" name="edit_shipping" value="<?php echo __('ADATAIM MENTÉSE'); ?>" class="dark-btn Szemelyes-btn rounded">
                         </div>
                     </div>
                     </form>
@@ -280,7 +280,7 @@ $time = explode(':', $date_array[1]);
                                     myCustomRule: true
                                 },
                                 messages: {
-                                    email: "Helytelen e-mail cím!",
+                                    email: "<?php echo __('Helytelen e-mail cím!'); ?>",
                                 }
                             }
                         });
@@ -289,8 +289,8 @@ $time = explode(':', $date_array[1]);
             </div>
         </div>
 
-        <h3>Kutyusaim<p class="sub-heading">Kuponbeváltás</p>
-            <p class="sub-heading">Ajándékbeváltás</p></h3>
+        <h3><?php echo __('Kutyusaim<p class="sub-heading">Kuponbeváltás</p>
+            <p class="sub-heading">Ajándékbeváltás</p>'); ?></h3>
         <div>
             <div class="content" style="overflow:hidden;">
                 <?php
@@ -325,23 +325,23 @@ $time = explode(':', $date_array[1]);
                                 <p>
                                     <?php
                                     if ($puppy->selected_size == 1)
-                                        echo 'Icipici';
+                                        echo __('Icipici');
                                     if ($puppy->selected_size == 2)
-                                        echo 'Éppen jó';
+                                        echo __('Éppen jó');
                                     if ($puppy->selected_size == 3)
-                                        echo 'Igazi óriás';
+                                        echo __('Igazi óriás');
                                     ?>
                                 </p>
-                                <p><?= ($puppy->gender == 0) ? 'Lány' : 'Fiú' ?></p>
+                                <p><?= ($puppy->gender == 0) ? __('Lány') : __('Fiú') ?></p>
                                 <p><?= $puppy->years . '.' . $puppy->months ?></p>
                                 <?php if ($puppy->alerg == 1) { ?>
-                                    <p>Allergiás:</p>
+                                    <p><?php echo __('Allergiás:'); ?></p>
                                     <p><?= $puppy->alerg_descr ?></p>
                                 <?php } ?>
                                 <div class="delete-dog" style="display: none">
-                                    <div class="delete-box1 rounded">Törölni szeretnéda kutyus profilját?</div>
-                                    <div class="delete-box2 rounded"><a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?= $puppy->id ?>">Igen</a></div>
-                                    <div class="delete-box3 rounded"><a class="cancel" style="cursor:pointer">Mégse</a></div>
+                                    <div class="delete-box1 rounded"><?php echo __('Törölni szeretnéda kutyus profilját?'); ?></div>
+                                    <div class="delete-box2 rounded"><a href="<?= URL::base(TRUE, FALSE) ?>user_account/removeDog/<?= $puppy->id ?>"><?php echo __('Igen'); ?></a></div>
+                                    <div class="delete-box3 rounded"><a class="cancel" style="cursor:pointer"><?php echo __('Mégse'); ?></a></div>
                                 </div>
                             </div> <!--End dog profile-->
 
@@ -351,12 +351,12 @@ $time = explode(':', $date_array[1]);
                              </div> -->
                             <form action="/user_account/order" method="POST">
                                 <div>
-                                    <label for="">Ajándékbeváltás</label>
+                                    <label for=""><?php echo __('Ajándékbeváltás'); ?></label>
                                     <input type="text" name="gift" class="rounded" id="">
                                 </div>
                                 <input type="hidden" name="puppy_id" value="<?= $puppy->id ?>">
                                 <div>
-                                    <input type="submit" name="submit" value="GYERÜNK" class="dark-btn dog-prof-btn rounded" <?= ($status == 0) ? 'disabled' : '' ?>>
+                                    <input type="submit" name="submit" value="<?php echo __('GYERÜNK'); ?>" class="dark-btn dog-prof-btn rounded" <?= ($status == 0) ? 'disabled' : '' ?>>
                                 </div>
                             </form>
                         </div>  <!--End dog profile container-->
@@ -366,12 +366,12 @@ $time = explode(':', $date_array[1]);
                 endif;
                 ?>
                 <div class="dog-profile-container" style="margin-right:0;">
-                    <a href="#" id="create-dog" class="rounded dog-btn dark-btn">Van egy új kutyusom!<p>Új kutyus profil létrehozása</p></a>
+                    <a href="#" id="create-dog" class="rounded dog-btn dark-btn"><?php echo __('Van egy új kutyusom!<p>Új kutyus profil létrehozása</p>'); ?></a>
                 </div>
             </div>
         </div>
 
-        <h3>Ajándékozok egy barátnak<p class="sub-heading">Ha korábban már ajándékoztam, itt megismételhetem!</p></h3>
+        <h3><?php echo __('Ajándékozok egy barátnak<p class="sub-heading">Ha korábban már ajándékoztam, itt megismételhetem!</p>'); ?></h3>
         <div>
             <div class="content">
                 <div class="support">
@@ -391,14 +391,14 @@ $time = explode(':', $date_array[1]);
                                         <li><input type="radio" name="gift" value="<?= $friend->id ?>"></li>
                                         <li class="option-text1"><?= $friend->friends_lastname . ' ' . $friend->friends_firstname; ?></li>
                                         <li class="option-text2"><?= $friend->friends_email; ?></li>
-                                        <li class="option-text3"><input type="radio" value="1" name="delay"> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!</li>
+                                        <li class="option-text3"><input type="radio" value="1" name="delay"><?php echo __('A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!'); ?></li>
                                     </ul>
                                 </div>
                                 <?php
                             endforeach;
                             ?>
                             <div style="margin-top:35px; float:none;">
-                                <input <?= ($status == 0) ? 'disabled' : '' ?> type="button" name="submit_form" id="submit_form_f" value="MEGRENDELEM" class="dark-btn claim-btn rounded">
+                                <input <?= ($status == 0) ? 'disabled' : '' ?> type="button" name="submit_form" id="submit_form_f" value="<?php echo __('MEGRENDELEM');?>" class="dark-btn claim-btn rounded">
                             </div>
                         </form>
                         <hr/>
@@ -411,28 +411,28 @@ $time = explode(':', $date_array[1]);
                             <div class="process-form-container2">
                                 <form class="process-form1" name="order" action="/order/index" method="POST">
                                     <div>
-                                        <label for="last-name">Barátod vezetéknév*</label>
+                                        <label for="last-name"><?php echo __('Barátod vezetéknév*'); ?></label>
                                         <input id="lastname" type="text" value="" name="lastname" class="rounded" required>
                                     </div>
                                     <div>
-                                        <label for="last-name">Barátod keresztnév*</label>
+                                        <label for="last-name"><?php echo __('Barátod keresztnév*'); ?></label>
                                         <input id="firstname" type="text" value="" name="firstname" class="rounded" required>
                                     </div>
                                     <div>
-                                        <label for="first-name">Barátod e-mail címe*</label>
+                                        <label for="first-name"><?php echo __('Barátod e-mail címe*'); ?></label>
                                         <input id="" type="text" value="" name="friend_email"  class="rounded" required>
                                     </div>
                                     <div>
-                                        <input type="checkbox" value="1" name="delay" checked> A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!
+                                        <input type="checkbox" value="1" name="delay" checked> <?php echo __('A barátomnak ne küldd ki az ajándék kódot! Csak én kérem és majd később meglepem vele!'); ?>
                                     </div>
-                                    <p style="padding-top:20px;">*Kötelező mezők adategyeztetés miatt</p>
+                                    <p style="padding-top:20px;"><?php echo __('*Kötelező mezők adategyeztetés miatt'); ?></p>
                                     <input type="hidden" name="order2" value="1">
                                     <input type="hidden" name="selected_size" class="selected_size">
                                 </form>
                                 <script>
                                     $.extend($.validator.messages, {
-                                        required: "ez az információ szükséges",
-                                        equalTo: "A jelszó nem egyezik"
+                                        required: "<?php echo __('ez az információ szükséges'); ?>",
+                                        equalTo: "<?php echo __('A jelszó nem egyezik'); ?>"
                                     });
                                     $(".process-form1").validate({
                                         rules: {
@@ -441,14 +441,14 @@ $time = explode(':', $date_array[1]);
                                             }
                                         },
                                         messages: {
-                                            'friend_email': "Helytelen e-mail cím!"
+                                            'friend_email': "<?php echo __('Helytelen e-mail cím!'); ?>"
                                         }
                                     });
                                 </script>
                             </div>
                         </div>
                         <div class="claim-form-btn">
-                            <input <?= ($status == 0) ? 'disabled' : '' ?> type="submit" name="tovabb" value="TOVÁBB" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
+                            <input <?= ($status == 0) ? 'disabled' : '' ?> type="submit" name="tovabb" value="<?php echo __('TOVÁBB'); ?>" id="submit_form" class="dark-btn claim-btn rounded" style="margin-right:20px;">
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -532,13 +532,13 @@ $time = explode(':', $date_array[1]);
                     </div>
                 </div>
         -->
-        <h3>Hívj meg egy barátot!<p class="sub-heading">Szerezz 5% kedvezményt!</p></h3>
+        <h3><?php echo __('Hívj meg egy barátot!<p class="sub-heading">Szerezz 5% kedvezményt!</p>'); ?></h3>
         <div>
             <div class="content">
                 <div class="support">
                     <div class="process-form-container2">
                         <form class="process-form3" name="invite" method="POST" action="/user_account/invite">
-                            <label for="">Barátod e-mail címe*</label>
+                            <label for=""><?php echo __('Barátod e-mail címe*'); ?></label>
                             <input type="text" name="friend_email" class="rounded" id="friend_email" required>
                         </form>
                         <script>
@@ -549,19 +549,19 @@ $time = explode(':', $date_array[1]);
                                     }
                                 },
                                 messages: {
-                                    'friend_email': "Helytelen e-mail cím!"
+                                    'friend_email': "<?php echo __('Helytelen e-mail cím!'); ?>"
                                 }
                             });
                         </script>
                     </div>
                     <div class="claim-form-btn">
-                        <input type="submit" name="tovabb" value="TOVÁBB" id="submit_form_invite" class="dark-btn claim-btn rounded" style="margin-right:20px;">
+                        <input type="submit" name="tovabb" value="<?php echo __('TOVÁBB'); ?>" id="submit_form_invite" class="dark-btn claim-btn rounded" style="margin-right:20px;">
                     </div>
                     <div class="clear"></div>
                 </div> <!--End support-->
             </div>
         </div>
-        <h3>Megrendelés<p class="sub-heading">Rendelési adataid</p></h3>
+        <h3><?php echo __('Megrendelés<p class="sub-heading">Rendelési adataid</p>'); ?></h3>
         <div>
             <div class="content">
                 <div class="support">
@@ -575,17 +575,17 @@ $time = explode(':', $date_array[1]);
                             <?php
                             foreach ($orders as $order) {
                                 if ($order->orders_status == 1) {
-                                    $status = 'Függőben';
+                                    $status = __('Függőben');
                                 } elseif ($order->orders_status == 2) {
-                                    $status = 'Feldolgozva';
+                                    $status = __('Feldolgozva');
                                 } elseif ($order->orders_status == 3) {
-                                    $status = 'Szállítva';
+                                    $status = __('Szállítva');
                                 } elseif ($order->orders_status == 4) {
-                                    $status = 'Kész';
+                                    $status = __('Kész');
                                 } elseif ($order->orders_status == 6) {
-                                    $status = 'Elutasított';
+                                    $status = __('Elutasított');
                                 }
-                                echo 'Rendelés száma: ' . $order->id . '<br/><br/>Rendelés dátuma: ' . $order->date_purchased . '<br/><br/>Rendelés állapota: ' . $status.'<br/><hr>';
+                                echo __('Rendelés száma:') . $order->id . '<br/><br/>'.__('Rendelés dátuma:') . $order->date_purchased . '<br/><br/>'.__('Rendelés állapota:') . $status.'<br/><hr>';
                             }
 
                         endif;
@@ -596,7 +596,7 @@ $time = explode(':', $date_array[1]);
             </div>
 
         </div>
-        <h3>Kupon használat követése</h3>
+        <h3><?php echo __('Kupon használat követése'); ?></h3>
         <div>
             <div class="content">
                 <div class="support">
@@ -609,7 +609,7 @@ $time = explode(':', $date_array[1]);
                             ?>
                             <?php
                             foreach ($discounts as $discount) {
-                                echo 'Kupon kód: ' . $discount->coupon_code . ' <br/>Megrendelések a kupon kóddal: '.$discount->count;
+                                echo __('Kupon kód: ') . $discount->coupon_code . ' <br/>'.__('Megrendelések a kupon kóddal:').$discount->count;
                             }
 
                         endif;

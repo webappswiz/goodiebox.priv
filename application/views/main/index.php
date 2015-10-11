@@ -146,8 +146,7 @@ $menus = array(
         </div> 
     </div> 
     <div class="dog-img">
-        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/5990-2.png" alt="" width="100" height="100"><br/>
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog">
+        <img width="110"  src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/pricedogs_hun.jpg');?>" alt="Dog">
     </div>
 
 
@@ -165,19 +164,19 @@ $menus = array(
     <h2><?php echo __('Legyen kutyusodnak is'); ?><span><?php echo __('saját'); ?></span> <?php echo __('doboza'); ?></h2>
     <div class="order-btnleft">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;">SMART</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">SMART</button>
         </a>
-        <p><?php echo __('Haspók kutyusoknak'); ?><br/>
+        <p style="<?php echo ($status == 1)?'color:green;':''?>"><?php echo __('Haspók kutyusoknak'); ?><br/>
             <?php echo __('már 5990 Ft-tól!'); ?></p>
     </div>
     <div class="center-arrows">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png">
+        <img width="250" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/arrows.png');?>">
     </div>
     <div class="order-btnright">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?plus' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;">PLUS</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">PLUS</button>
         </a>
-        <p><?php echo __('Kivételes kutyusoknak'); ?><br/>
+        <p style="<?php echo ($status == 1)?'color:green;':''?>"><?php echo __('Kivételes kutyusoknak'); ?><br/>
             <?php echo __('már 7990 Ft-tól!'); ?></p>
     </div>
 </section> <!--End order place-->

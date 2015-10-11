@@ -94,25 +94,24 @@ $time = explode(':', $date_array[1]);
 <body>
     <div class="container">
         <header>
-
-            <?php
-            if (Cookie::get('lang', 'hu') == 'hu') {
-                ?>
-                <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hu_bw.jpg" width="48"> <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/gb.jpg" width="48"></a>
-                <?php
-            } else {
-                ?>
-                <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/hu.jpg" width="48"></a> <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/gb_bw.jpg" width="48">
-                <?php
-            }
-            ?>
-
-
             <div class="logo">
                 <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" width="374" height="102" alt="goodybox"></a>
             </div> <!--End logo-->
             <div class="social-right">
                 <ul>
+                    <li>
+                        <?php
+                        if (Cookie::get('lang', 'hu') == 'hu') {
+                            ?>
+                            <strong>HU</strong> | <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>">EN</a>
+                            <?php
+                        } else {
+                            ?>
+                            <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>">HU</a> | <strong>EN</strong>
+                            <?php
+                        }
+                        ?>
+                    </li>
                     <li style="text-align: center"><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" width="32" height="32" alt="facebook"></a>
                         <a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" width="32" height="32" alt="twitter"></a>
                         <a href="https://instagram.com/goodieboxhu" data-title="Goodie" data-desc="Goodie" target="blank"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/instagram.jpg" width="30" height="30" alt="facebook"></a>
@@ -241,7 +240,7 @@ $time = explode(':', $date_array[1]);
             ?>
             <div>
                 <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?o' : '#' ?>">
-                    <button type="button" class="greenbutton"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
+                    <button type="button" class="greenbutton" style="<?php echo ($status == 0) ? 'background:#cc0033;' : '' ?>"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
                 </a>
             </div>
