@@ -8,7 +8,7 @@ class Controller_User_Account extends Controller_Core {
 
     public function before() {
         parent::before();
-        $this->set_title('Profilom');
+        $this->set_title(__('Profilom'));
         $this->template->active_menu = 'arcél';
         $this->check_access();
     }
