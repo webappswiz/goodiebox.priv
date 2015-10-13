@@ -289,7 +289,7 @@ $time = explode(':', $date_array[1]);
             </div>
         </div>
 
-        <h3><?php echo __('Kutyusaim<p class="sub-heading">Kuponbeváltás</p>
+        <h3 class="<?php echo (isset($_GET['new']))?'open':''?>"><?php echo __('Kutyusaim<p class="sub-heading">Kuponbeváltás</p>
             <p class="sub-heading">Ajándékbeváltás</p>'); ?></h3>
         <div>
             <div class="content" style="overflow:hidden;">
