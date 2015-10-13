@@ -377,8 +377,8 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     '' => '',
     '' => '',
     '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
+    'Hogyan' => 'How it works?',
+    'Gyik' => 'FAQ',
+    'Partnerek' => 'Partners',
     'Gyakran Ismételt Kérdések' => 'Frequently Asked Questions',
 );
