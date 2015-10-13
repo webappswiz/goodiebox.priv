@@ -205,12 +205,22 @@ class Controller_Order extends Controller_Core {
 
         if ($order->payment_status == 5) {
             $template = ORM::factory('Templates', 6);
-            $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
-            $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body);
+            if (Cookie::get('lang', 'hu') == 'hu') {
+                $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
+                $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body);
+            } else {
+                $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text_eng);
+                $this->send($user->email, 'info@goodiebox.hu', 'Order has been received', $body);
+            }
         } else {
             $template = ORM::factory('Templates', 2);
-            $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
-            $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
+            if (Cookie::get('lang', 'hu') == 'hu') {
+                $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
+                $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
+            } else {
+                $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text_eng);
+                $this->send($user->email, 'info@goodiebox.hu', 'Order has been received', $body, 'order_' . $order->id . '.pdf');
+            }
         }
     }
 
@@ -293,9 +303,16 @@ class Controller_Order extends Controller_Core {
             $current_user = Auth::instance()->login($_POST['customer_email'], $_POST['customer_password']);
             $template = ORM::factory('Templates', 1);
             $this->current_user = Auth::instance()->get_user();
-            $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
-            $body = str_replace('[login]', $this->current_user->email, $body);
-            $this->send($this->current_user->email, 'info@goodiebox.hu', 'Sikeres regisztráció', $body);
+
+            if (Cookie::get('lang', 'hu') == 'hu') {
+                $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+                $body = str_replace('[login]', $this->current_user->email, $body);
+                $this->send($this->current_user->email, 'info@goodiebox.hu', 'Sikeres regisztráció', $body);
+            } else {
+                $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+                $body = str_replace('[login]', $this->current_user->email, $body);
+                $this->send($this->current_user->email, 'info@goodiebox.hu', 'Successful registration', $body);
+            }
         }
     }
 

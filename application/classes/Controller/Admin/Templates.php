@@ -39,6 +39,7 @@ class Controller_Admin_Templates extends Controller_Admin {
             $this->redirect('/admin/templates/');
         }
         $this->model->template_text = $_REQUEST['template_text'];
+        $this->model->template_text_eng = $_REQUEST['template_text_eng'];
         $this->model->save();
         $this->redirect('/admin/templates/');
     }

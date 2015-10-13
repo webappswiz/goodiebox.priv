@@ -42,8 +42,13 @@ tinyMCE.init({
 
             <form class="form-horizontal" style="display:inline-block;" method="POST" autocomplete='off'>
                 <fieldset>
+                    <h3>Hungarian text:</h3>
                     <div class="control-group">
                         <textarea class ="input-xxlarge" rows="10" id="template_text" name="template_text"><?= $model->template_text ?></textarea>
+                    </div>
+                    <h3>English text:</h3>
+                    <div class="control-group">
+                        <textarea class ="input-xxlarge" rows="10" id="template_text_eng" name="template_text_eng"><?= $model->template_text_eng ?></textarea>
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Submit</button>
