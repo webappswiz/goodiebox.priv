@@ -6,7 +6,7 @@ class Controller_Privacy extends Controller_Core {
     public function before()
     {
         parent::before();
-        $this->set_title('Adatvédelem');
+        $this->set_title(__('Adatvédelem'));
     }
     public function action_index()
     {

@@ -6,7 +6,7 @@ class Controller_Tos extends Controller_Core {
     public function before()
     {
         parent::before();
-        $this->set_title('ÁSZF');
+        $this->set_title(__('ÁSZF'));
     }
     public function action_index()
     {

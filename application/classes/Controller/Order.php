@@ -6,7 +6,7 @@ class Controller_Order extends Controller_Core {
 
     public function before() {
         parent::before();
-        $this->set_title('Order');
+        $this->set_title(__('Order'));
         $this->template->active_menu = 'order';
     }
 

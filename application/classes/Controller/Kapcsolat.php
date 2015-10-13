@@ -6,7 +6,7 @@ class Controller_Kapcsolat extends Controller_Core {
 
     public function before() {
         parent::before();
-        $this->set_title('Kapcsolat');
+        $this->set_title(__('Kapcsolat'));
         $this->template->active_menu = 'kapcsolat';
     }
 

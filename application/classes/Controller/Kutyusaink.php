@@ -6,7 +6,7 @@ class Controller_Kutyusaink extends Controller_Core {
 
     public function before() {
         parent::before();
-        $this->set_title('Kutyusaink');
+        $this->set_title(__('Kutyusaink'));
         $this->template->active_menu = 'kutyusaink';
     }
 

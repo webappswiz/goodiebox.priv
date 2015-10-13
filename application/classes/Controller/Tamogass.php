@@ -6,7 +6,7 @@ class Controller_Tamogass extends Controller_Core {
 public function before()
     {
         parent::before();
-        $this->set_title('Tamogass');
+        $this->set_title(__('Tamogass'));
         $this->template->active_menu = 'tamogass';
     }
     public function action_index()

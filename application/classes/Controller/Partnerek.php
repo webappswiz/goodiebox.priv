@@ -7,7 +7,7 @@ class Controller_Partnerek extends Controller_Core {
     public function before()
     {
         parent::before();
-        $this->set_title('Partnerek');
+        $this->set_title(__('Partnerek'));
         $this->template->active_menu = 'partnerek';
     }
 

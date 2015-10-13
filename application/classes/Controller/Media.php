@@ -7,7 +7,7 @@ class Controller_Media extends Controller_Core {
     public function before()
     {
         parent::before();
-        $this->set_title('Média');
+        $this->set_title(__('Média'));
         $this->template->active_menu = 'media';
     }
 
