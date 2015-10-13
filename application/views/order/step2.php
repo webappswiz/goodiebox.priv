@@ -87,7 +87,7 @@
             } 
             $box1 = (Session::instance()->get('package') == 'plus') ? 'checked' : '';
             $box2 = (Session::instance()->get('package') == 'smart') ? 'checked' : '';
-            $box2 = (Session::instance()->get('package')<>'')? 'checked':'';
+            $box2 = (Session::instance()->get('package')=='')? 'checked':'';
 
             echo '<div class="boxes">';
             echo $image1;
