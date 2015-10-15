@@ -161,7 +161,7 @@ $menus = array(
     </ul>
 </nav>
 <section id="order-place" class="rounded">
-    <h2><?php echo __('Legyen kutyusodnak is'); ?><span><?php echo __('saját'); ?></span> <?php echo __('doboza'); ?></h2>
+    <h2><?php echo __('Legyen kutyusodnak is'); ?><span> <?php echo __('saját'); ?></span> <?php echo __('doboza'); ?></h2>
     <div class="order-btnleft">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
             <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">SMART</button>

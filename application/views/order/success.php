@@ -48,8 +48,8 @@ window._fbq.push(['track', '6015691752322', {'value':'0.00','currency':'GBP'}]);
             <a href="<?php echo URL::base(TRUE, FALSE) . 'user_account/?new' ?>"><?php echo __('Make another order');?></a>
             <br/>
             <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/bark.jpg" alt="Thank you"><br/><br/><br/>
-            <a href="<?= URL::base(TRUE, FALSE) ?>order/success" class="btnShare" data-title="goodiebox" data-desc="Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img style="margin-top: 0px;padding: 0px;margin-right:5px;" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" width="64" height="64" alt="facebook"></a>
-            <a class="popup"  href="https://twitter.com/intent/tweet?text=Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/twitter-btn.jpg" style="margin-top: 0px;padding: 0px;" width="64" height="" alt="twitter"></a>
+            <a href="<?= URL::base(TRUE, FALSE) ?>order/success" class="btnShare" data-title="goodiebox" data-desc="Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img style="margin-top: 0px;padding: 0px;margin-right:5px;" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/share_fb.png" width="64" height="64" alt="facebook"></a>
+            <a class="popup"  href="https://twitter.com/intent/tweet?text=Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/share_tw.png" style="margin-top: 0px;padding: 0px;" width="64" height="" alt="twitter"></a>
             
             
             

@@ -282,7 +282,11 @@ class Controller_Order extends Controller_Core {
                 $user->customer_company_city = $_POST['company_city'];
                 $user->customer_taxcode = $_POST['tax_code'];
             }
-
+            if (Cookie::get('lang', 'hu') == 'hu') {
+                $user->lang = 1;
+            } else {
+                $user->lang = 2;
+            }
             $user->save();
             $user->add('roles', ORM::factory('Role')->where('name', '=', 'login')->find());
             $invites = ORM::factory('Invites')
