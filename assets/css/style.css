@@ -124,7 +124,6 @@ body
 a
 {
     text-decoration:none;
-    color: #330000;
 
 }
 a:active
@@ -169,7 +168,7 @@ header{overflow: hidden;}
 header .logo{padding-top: 35px; float: left;}
 header .social-right{margin-top: 25px; float: right;}
 header .social-right ul li{margin-top: 6px;}
-#counting-back .count-image img {margin-left: -40px; float: left; position: relative;z-index: 999;}
+#counting-back .count-image img {/*margin-left: -40px;*/ float: left; position: relative;z-index: 999;}
 #counting-back .siess{float: left; padding-right: 30px;padding-top: 70px;}
 #counting-back .count-text {max-width:715px;float:left !important;padding-top: 70px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; padding-left: 50px}
 #counting-back .count-text p span{color: #cc0033;}
@@ -187,7 +186,7 @@ header .social-right ul li{margin-top: 6px;}
 #order-place button{padding: 20px;background: #cc0033;color: #ffffff;border: none;font-size: 28px;cursor: pointer;font-family: 'La-chata';}
 #order-place button:hover{background: #e70033;}
 #order-place p{font-family: 'La-chata';font-size: 18px;color: #cc0033; margin-top: 10px;}
-.center-arrows{position: absolute; top: 175px; left: 360px;}
+.center-arrows{position: absolute; top: 175px; left: 350px;}
 #menu{max-width:965px;margin: 0 auto; text-align: center; margin-top: 10px;}
 #menu a {display: inline-block; zoom: 1;text-align: center;width: 317px; height: 317px; cursor: pointer;-webkit-transition: all 0.7s ease;
          transition: all 0.7s ease;}
@@ -729,16 +728,16 @@ label.tooltip span
 #map{
     width:893px;
 }
-#nov,#dec,#jan,#feb,#mar,#apr,#may,#jun{
+#nov,#dec,#jan,#feb,#mar,#apr,#may,#jun,#jul,#aug{
     font-family: 'La-chata';font-size: 20px;
     color: #330000;
     margin-left: 22px;
 }
-#nov:hover,#dec:hover,#jan:hover,#feb:hover,#mar:hover,#apr:hover,#may:hover,#jun:hover{
+#nov:hover,#dec:hover,#jan:hover,#feb:hover,#mar:hover,#apr:hover,#may:hover,#jun:hover,#jul:hover,#aug:hover{
     color: #268949;
 
 }
-#nov.active,#dec.active,#jan.active,#feb.active,#mar.active,#apr.active,#may.active,#jun.active{
+#nov.active,#dec.active,#jan.active,#feb.active,#mar.active,#apr.active,#may.active,#jun.active,#jul.active,#aug.active{
     color: #268949;
 }
 
@@ -834,7 +833,7 @@ label.tooltip span
     .container{padding-left: 15px; padding-right: 15px;}
     .siess{padding-left:70px;}
     .center-arrows {left: 340px;}
-    #counting-back .count-image img,.badge{display: none;}
+    #counting-back .count-image img,.badge{/*display: none;*/}
     .count-text,.post-img,.post-text{float:none !important;text-align: center;}
     .post-img,.post-text{width: 100%; padding-left: 15px; padding-right: 15px;}
     .star-img{ left: 250px;}
@@ -879,7 +878,7 @@ label.tooltip span
         text-align: center;
     }
     #propose{
-        display:none;
+        /*display:none;*/
     }
 }
 
@@ -920,12 +919,13 @@ label.tooltip span
 
 @media only screen and (max-width: 800px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
     }
     .counting-back{
         margin-bottom: 15px;
     }
+	#counting-back .count-image img,.badge{display:none;}
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
     .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
@@ -976,7 +976,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 768px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
         margin: 2px;
     }
@@ -1031,7 +1031,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 767px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
         margin: 2px;
     }
@@ -1088,7 +1088,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 640px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
         margin: 2px;
     }
@@ -1103,7 +1103,7 @@ label.tooltip span
     .count-text p{
         text-align: center;
     }
-    header .social-right,.copy-write p {float: none;text-align: center; display:none;}
+    header .social-right,.copy-write p {float: none;text-align: center; /*display:none;*/}
     .logo{margin-bottom: 30px; float: none!important;text-align: center;}
     .star-img{display: none;}
     .opinion-form form input{width: 100% !important; }
@@ -1203,7 +1203,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 460px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
         margin: 2px;
     }
@@ -1342,7 +1342,7 @@ label.tooltip span
         cursor: pointer;
     }
 
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
         margin: 2px;
     }
@@ -1447,7 +1447,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     #dialog-form1 .dark-btn{
 
     }
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 10px;
         margin: 2px;
     }
@@ -1531,7 +1531,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
     .medialinks img{
         width: 200px;
     }
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
         font-size: 12px;
         margin: 2px;
     }
