@@ -42,17 +42,11 @@ window._fbq.push(['track', '6015691752322', {'value':'0.00','currency':'GBP'}]);
     
 <div class="clear"></div>
         <section class="thanku" class="rounded">
-            <h1><?php echo __('Köszönjük a rendelésedet!'); ?></h1>
-            <h2><?php echo __('E-mail címedre visszaigazolást küldtünk.'); ?></h2>
-            <br/><br/>
-            <a href="<?php echo URL::base(TRUE, FALSE) . 'user_account/?new' ?>"><?php echo __('Make another order');?></a>
-            <br/>
-            <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/bark.jpg" alt="Thank you"><br/><br/><br/>
-            <a href="<?= URL::base(TRUE, FALSE) ?>order/success" class="btnShare" data-title="goodiebox" data-desc="Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img style="margin-top: 0px;padding: 0px;margin-right:5px;" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/share_fb.png" width="64" height="64" alt="facebook"></a>
-            <a class="popup"  href="https://twitter.com/intent/tweet?text=Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/share_tw.png" style="margin-top: 0px;padding: 0px;" width="64" height="" alt="twitter"></a>
-            
-            
-            
+            <h1>Köszönjük a rendelésedet!</h1>
+            <h2>E-mail címedre visszaigazolást küldtünk.</h2>
+            <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/bark.jpg" alt="Thank you" width="551px"><br/><br/><br/>
+            <a href="<?= URL::base(TRUE, FALSE) ?>order/success" class="btnShare" data-title="goodiebox" data-desc="Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img style="margin-top: 0px;padding: 0px;margin-right:5px;" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-share-icon.png" width="64" height="64" alt="facebook"></a>
+            <a class="popup"  href="https://twitter.com/intent/tweet?text=Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/twitter-share-icon.png" style="margin-top: 0px;padding: 0px;" width="64" height="" alt="twitter"></a>
         </section>
 <script>
                     $('.btnShare').click(function () {
