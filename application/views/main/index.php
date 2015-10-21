@@ -43,10 +43,10 @@ $time = explode(':', $date_array[1]);
         hours = (hours) < 10 ? '0' + hours : hours;
         if (status == 0) {
             $('li', '.lock').css('background', 'url("/assets/img/lock-close.png") no-repeat left center');
-            $('li', '.lock').html('&nbsp;&nbsp;Hamarosan nyitunk!');
+            $('li', '.lock').html("<?php echo __('Hamarosan nyitunk!'); ?>");
         } else {
             $('li', '.lock').css('background', 'url("/assets/img/lock-open.png") no-repeat left center');
-            $('li', '.lock').html('Nyitva vagyunk!');
+            $('li', '.lock').html("<?php echo __('Nyitva vagyunk!'); ?>");
         }
         $('#hours').html(hours + ':' + minutes + ':' + seconds);
         countIt('<?= $date[0] ?>', '<?= $date[1] - 1 ?>', '<?= $date[2] ?>', '<?= $time[0] ?>', '<?= $time[1] ?>', '00', '<?= $status ?>');
@@ -78,7 +78,7 @@ $menus = array(
             }
         });
         $('#tab-container').easytabs();
-        
+
         function unloadPopupBox() {    // TO Unload the Popupbox
             $('#dialog-form1').fadeOut("slow");
             $("#container").css({// this is just for style
@@ -87,26 +87,26 @@ $menus = array(
         }
 
         function loadPopupBox() {    // To Load the Popupbox
-            $('#dialog-form1').slideDown( "slow");
-            
+            $('#dialog-form1').slideDown("slow");
+
             $("#container").css({// this is just for style
                 "opacity": "0.3"
             });
         }
-        
-        $('#popupBoxClose1').on('click', function(){
+
+        $('#popupBoxClose1').on('click', function () {
             unloadPopupBox();
         });
-        
-        $('#subscribe').on('click', function(){
+
+        $('#subscribe').on('click', function () {
             loadPopupBox();
         });
-        
-        
+
+
     });
 </script>
 
-<div id="dialog-form1" title="Kérem az értesítést!" style="display:none;">
+<div id="dialog-form1" title="Add a new dog" style="display:none;">
     <script>
         $(".process-form").validate();
     </script>
@@ -114,47 +114,46 @@ $menus = array(
         <a id="popupBoxClose1"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
-                <label>Keresztneved:</label> <input type="text" name="name" value="" size="20" class="" required/>
+                <label><?php echo __('Keresztneved:'); ?></label> <input type="text" name="name" value="" size="20" class="" required/>
             </div>
-            <div style="padding-bottom:10px;">
-                <label>Email címed:</label> <input type="email" name="email" value="" size="20" class="" required/>
+            <div>
+                <label><?php echo __('Email címed:'); ?></label> <input type="email" name="email" value="" size="20" class="" required/>
             </div>
             <div style="text-align: center;">
-                <input type="submit" value="Kérem az értesítést!" class="dark-btn dog-prof-btn rounded">
+                <input type="submit" value="<?php echo __('Kérem az értesítést!'); ?>" class="dark-btn dog-prof-btn rounded">
             </div>
         </form>
-        
+
     </div>
 </div>
 
 <section id="counting-back" style="margin-bottom: 5px;margin-top: 25px;vertical-align: middle;position: relative">
     <div class="count-image">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality" width="150px">
+        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
     </div> 
-    <!-- div class="siess">
+    <div class="siess">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </div -->
+    </div>
     <div class="count-text">
         <p><?= $text ?></p>
         <div class="counter">
-            <p>Hátralévő idő: <span id="days" class="count-btn rounded">12</span> nap <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
+            <p><?php echo __('Hátralévő idő:'); ?> <span id="days" class="count-btn rounded">12</span> <?php echo __('nap'); ?> <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
         </div> 
         <div class="lock">
             <ul>
-                <li><a href="#">Nyitva vagyunk!</a></li>
+                <li><a href="#"><?php echo __('Nyitva vagyunk!'); ?></a></li>
             </ul>
         </div> 
     </div> 
     <div class="dog-img">
-        <img id="propose" style="position: absolute;right: 40px;bottom:-85px" src="<?= URL::base(TRUE, TRUE) ?>/assets/img/5990-2.png" alt="" width="100" height="100"><br/>
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/dog.png" alt="Dog" width="134px" height="77px">
+        <img width="110"  src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/pricedogs_hun.jpg');?>" alt="Dog">
     </div>
-    
-    
+
+
 </section>
 <div class="clear"></div>
 <br/>
-    <?php if($status==0):?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#">Szeretnél értesítést, amikor rendelhető a következő Goodiebox?</a></center><?php endif;?>
+<?php if ($status == 0): ?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold" href="#"><?php echo __('Szeretnél értesítést, amikor rendelhető a következő Goodiebox?'); ?></a></center><?php endif; ?>
 <div class="clear"></div>
 <nav style="margin-top: 10px">
     <ul>
@@ -162,67 +161,67 @@ $menus = array(
     </ul>
 </nav>
 <section id="order-place" class="rounded">
-    <h2>Legyen kutyusodnak is <span>saját</span> doboza</h2>
+    <h2><?php echo __('Legyen kutyusodnak is'); ?><span> <?php echo __('saját'); ?></span> <?php echo __('doboza'); ?></h2>
     <div class="order-btnleft">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;">SMART</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">SMART</button>
         </a>
-        <p>Haspók kutyusoknak<br/>
-már 5990 Ft-tól!</p>
+        <p style="<?php echo ($status == 1)?'color:green;':''?>"><?php echo __('Haspók kutyusoknak'); ?><br/>
+            <?php echo __('már 5990 Ft-tól!'); ?></p>
     </div>
     <div class="center-arrows">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/arrows.png" width="254px">
+        <img width="250" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/arrows.png');?>">
     </div>
     <div class="order-btnright">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?plus' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;">PLUS</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">PLUS</button>
         </a>
-        <p>Kivételes kutyusoknak<br/>
-már 7990 Ft-tól!</p>
+        <p style="<?php echo ($status == 1)?'color:green;':''?>"><?php echo __('Kivételes kutyusoknak'); ?><br/>
+            <?php echo __('már 7990 Ft-tól!'); ?></p>
     </div>
 </section> <!--End order place-->
 
 <div class='clear'></div>
 <div id="tab-container" class="tab-container">
     <ul class='etabs'>
-        <li class='tab'><a href="#miert" style="font-family: 'La-chata'">Miért jó a Goodiebox?</a></li>
-        <li class='tab'><a href="#fotok" style="font-family: 'La-chata'">Goodiebox fotók</a></li>
-        <li class='tab'><a href="#videok" style="font-family: 'La-chata'">Goodiebox videók</a></li>
+        <li class='tab'><a href="#miert" style="font-family: 'La-chata'"><?php echo __('Miért jó a Goodiebox?'); ?></a></li>
+        <li class='tab'><a href="#fotok" style="font-family: 'La-chata'"><?php echo __('Goodiebox fotók'); ?></a></li>
+        <li class='tab'><a href="#videok" style="font-family: 'La-chata'"><?php echo __('Goodiebox videók'); ?></a></li>
     </ul>
     <div id="miert">
         <div class="container" id="text" style="padding: 0 30px 0 30px;margin-top: 0px;">
-            <h2 style="font-family: La-Chata;padding-top: 10px;">Mit is találtok majd a dobozban?</h2><br/>
-            <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Havonta változó, 3-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.<br/>
-                <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold">Tovább olvasom</span>
+            <h2 style="font-family: La-Chata;padding-top: 10px;"><?php echo __('Mit is találtok majd a dobozban?'); ?></h2><br/>
+            <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong><?php echo __('Havonta változó, 3-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.'); ?><br/>
+                <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold"><?php echo __('Tovább olvasom'); ?></span>
             </p>
             <div id="tovab1" style="display:none;">
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Jelenleg kétféle dobozunk elérhető:
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Jelenleg kétféle dobozunk elérhető:'); ?>
                     <br /><br />
-                    <strong>Goodiebox Smart 5990 Ft</strong><br />
-                    Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, snack, játék, kiegészítő, vitamin) egy dobozban.
+                    <strong><?php echo __('Goodiebox Smart 5990 Ft'); ?></strong><br />
+                    <?php echo __('Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, snack, játék, kiegészítő, vitamin) egy dobozban.'); ?>
                     <br /><br />
-                    <strong>Goodiebox Plus 7990 Ft</strong><br />
-                    Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, snack, játék, kiegészítő, higiéniás termék, vitamin) egy dobozban.</p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Olyan dolgokat rejtünk a Goodiebox-ba, amit kedvenced garantáltan imádni fog! Kis szeretet-csomag, hogy érezze, mennyire fontos neked!</p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Jó szervezők vagyunk, ezért ha hosszabb távra maradsz, vagyis több dobozt is rendelsz tőlünk, sohasem kapod kétszer ugyanazt <span style="color:#D931F7;font-weight:bold;">az</span> összeállítást egy éven belül!</p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;display:none;">Gyere és rendelj elő 3, vagy akár 6 dobozt is, így nem kell online lenned és figyelni nehogy kifuss a időből amikor nyitva vagyunk! Így amellett, hogy még több pénzt tudsz megtakarítani, mi a megrendelt dobozokat elkészítjük nektek és ingyenesen kiszállítjuk a megfelelő időben (3 vagy 6 egymást követő hónapban)! Bizony, kényelmesek és megbízhatóan is vagyunk! Tegyél egy próbát! :-)</p><br /><br />
+                    <strong><?php echo __('Goodiebox Plus 7990 Ft'); ?></strong><br />
+                    <?php echo __('Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, snack, játék, kiegészítő, higiéniás termék, vitamin) egy dobozban.'); ?></p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Olyan dolgokat rejtünk a Goodiebox-ba, amit kedvenced garantáltan imádni fog! Kis szeretet-csomag, hogy érezze, mennyire fontos neked!'); ?></p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Jó szervezők vagyunk, ezért ha hosszabb távra maradsz, vagyis több dobozt is rendelsz tőlünk, sohasem kapod kétszer ugyanazt <span style="color:#D931F7;font-weight:bold;">az</span> összeállítást egy éven belül!'); ?></p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;display:none;"><?php echo __('Gyere és rendelj elő 3, vagy akár 6 dobozt is, így nem kell online lenned és figyelni nehogy kifuss a időből amikor nyitva vagyunk! Így amellett, hogy még több pénzt tudsz megtakarítani, mi a megrendelt dobozokat elkészítjük nektek és ingyenesen kiszállítjuk a megfelelő időben (3 vagy 6 egymást követő hónapban)! Bizony, kényelmesek és megbízhatóan is vagyunk! Tegyél egy próbát! :-)'); ?></p><br /><br />
             </div>
-            <h2 style="font-family: La-Chata;padding-top: 10px;">Miért érdemes megrendelned?</h2><br/>
+            <h2 style="font-family: La-Chata;padding-top: 10px;"><?php echo __('Miért érdemes megrendelned?'); ?></h2><br/>
             <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">
-            <p style="font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Időt és pénzt spórolunk neked!</strong></p><br/>
-            <p style="font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Minden egyes doboz kedvezményesen jut el hozzátok:</p>
+            <p style="font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong><?php echo __('Időt és pénzt spórolunk neked!'); ?></strong></p><br/>
+            <p style="font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Minden egyes doboz kedvezményesen jut el hozzátok:'); ?></p>
             <ul style="list-style: disc;padding-left: 30px;">
-                <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;">Goodiebox ára < ugyanazon termékek együttes bolti ára</li>
-                <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;">Dobozolás, csomagolás = 0 Ft</li>
-                <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;">Házhozszállítás = 0 Ft</li>
+                <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;"><?php echo __('Goodiebox ára < ugyanazon termékek együttes bolti ára'); ?></li>
+                <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;"><?php echo __('Dobozolás, csomagolás = 0 Ft'); ?></li>
+                <li style="font-weight:600;line-height: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;"><?php echo __('Házhozszállítás = 0 Ft'); ?></li>
 
             </ul><br/>
-            <span id="show_t2" style="font-weight: bold;color:green;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;cursor: pointer">Tovább olvasom</span>
+            <span id="show_t2" style="font-weight: bold;color:green;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;cursor: pointer"><?php echo __('Tovább olvasom'); ?></span>
             </p>
             <div id="tovab2" style="display:none">
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Emellett nem kell havonta a boltokat járnod, hogy új és érdekes dolgokkal lepd meg kutyusod, erről mi gondoskodunk! Kreatívak vagyunk, imádjuk a kutyusokat és szeretünk csapatban dolgozni! Mi más sülhet ki egy ilyen együttállásból, mint csupa pozitív energia, boldogság és élet!</p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong>Nektek a kutyusoddal csak ki kell bontanotok a Goodiebox-ot és máris indulhat a móka!</strong></p>
-                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">Ha van kedved hozzá, küldj be fényképet és videót, miközben bontjátok a csomagot, mutasd meg nekünk, mennyire boldog a kutyusod! Csatlakozz Facebook, Twitter, Instagram és Youtube oldalunkhoz és légy tagja egy szuper csapatnak!</p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Emellett nem kell havonta a boltokat járnod, hogy új és érdekes dolgokkal lepd meg kutyusod, erről mi gondoskodunk! Kreatívak vagyunk, imádjuk a kutyusokat és szeretünk csapatban dolgozni! Mi más sülhet ki egy ilyen együttállásból, mint csupa pozitív energia, boldogság és élet!'); ?></p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong><?php echo __('Nektek a kutyusoddal csak ki kell bontanotok a Goodiebox-ot és máris indulhat a móka!'); ?></strong></p>
+                <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Ha van kedved hozzá, küldj be fényképet és videót, miközben bontjátok a csomagot, mutasd meg nekünk, mennyire boldog a kutyusod! Csatlakozz Facebook, Twitter, Instagram és Youtube oldalunkhoz és légy tagja egy szuper csapatnak!'); ?></p>
             </div>
         </div>
     </div>
@@ -230,67 +229,72 @@ már 7990 Ft-tól!</p>
     <div id="fotok">
         <div class="image-row" style="text-align: center;" id="jan_photos">
             <div class="image-set">
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-245.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-245.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-246.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-246.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-247.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-247.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-248.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-248.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-249.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-249.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-250.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-250.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-251.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-251.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-252.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-252.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-253.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-253.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-254.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-254.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-255.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-255.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-256.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-256.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-257.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-257.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-258.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-258.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-259.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-259.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-207.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-207.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-208.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-208.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-209.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-209.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-210.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-210.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-211.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-211.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-212.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-212.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-213.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-213.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-214.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-214.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-215.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-215.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-216.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-216.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-217.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-217.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-219.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-219.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-221.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-221.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-222.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-222.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-223.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-223.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-224.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-224.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-225.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-225.jpg" alt=""/></a>
+                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-226.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
+                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-226.jpg" alt=""/></a>
             </div>
             <br/>
-            <a href="<?= URL::base(TRUE, FALSE) ?>kutyusaink" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi kutyusért!</a>
-            
+            <a href="<?= URL::base(TRUE, FALSE) ?>kutyusaink" style="color:green;cursor: pointer;font-weight: bold"><?php echo __('Klikkelj a többi kutyusért!'); ?></a>
+
         </div>
         <div style="margin:30px;"></div>
 
     </div>
     <div id="videok" style="text-align: center">
         <?php
-        /*$xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads?max-results=3');
-        $xml = simplexml_load_string($xml_data) or die("Error: Cannot create object");
-        foreach ($xml->entry as $entry) {
-            $link = $entry->id;
-            $link_array = explode('/', $link);
-            $video_id = array_pop($link_array);
-            echo '<iframe width="315" height="315" src="//www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe> ';
-        }*/
-		echo '<iframe width="315" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4ZnDVm3eIp0fjo7W2dGCdirkuboJ_kzt&loop=1" frameborder="0" allowfullscreen></iframe> ';
+        /* $xml_data = file_get_contents('http://gdata.youtube.com/feeds/api/users/UCAnqUKt9dkY7Tw2kndO9JAA/uploads?max-results=3');
+          $xml = simplexml_load_string($xml_data) or die("Error: Cannot create object");
+          foreach ($xml->entry as $entry) {
+          $link = $entry->id;
+          $link_array = explode('/', $link);
+          $video_id = array_pop($link_array);
+          echo '<iframe width="315" height="315" src="//www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe> ';
+          } */
+        echo '<iframe width="315" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4ZnDVm3eIp0fjo7W2dGCdirkuboJ_kzt&loop=1" frameborder="0" allowfullscreen></iframe> ';
         ?>
-		<br/><br/>
-            <a href="https://www.youtube.com/channel/UCAnqUKt9dkY7Tw2kndO9JAA/videos" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi videóért!</a>
+        <br/><br/>
+        <a href="https://www.youtube.com/channel/UCAnqUKt9dkY7Tw2kndO9JAA/videos" style="color:green;cursor: pointer;font-weight: bold">Klikkelj a többi videóért!</a>
 
 
     </div>
-	<div style="margin:30px;"></div>
+    <div style="margin:30px;"></div>
 </div>
 
 <div class='clear'></div>
 
-<h2 style="font-family: La-Chata;padding-top: 10px;padding-bottom: 25px;">Megrendelőink véleménye a Goodiebox-ról...</h2>
+<h2 style="font-family: La-Chata;padding-top: 10px;padding-bottom: 25px;"><?php echo __('Megrendelőink véleménye a Goodiebox-ról...'); ?></h2>
 
 <div class="bxslider">
     <div class="slide">
@@ -327,9 +331,9 @@ már 7990 Ft-tól!</p>
         <div class="slide-item">
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 30px">
                 Mindig is imádtam az ilyen meglepetés dobozokat, és örülök hogy a kutyusomat is meglephetem vele! :)
-				Szerintem az áprilisi doboz lesz a következő amit megrendelek, remélem az valami Húsvéti témájú lesz! :) Nagyon cuki volt a Goodiebox kártya, meg mellé a kis muffinos üdvözlőkártya vagy micsoda ♥ Külön imádtam hogy kézzel írtátok rá! :)
-				A kutyapékséges jutalomfalat is nagyon tetszik, meg a szórólapnak is örültem, lehet meglepem a kutyusom egy szülinapi tortával majd! :P
-				További sok sikert kívánok nektek, remélem ilyenek maradtok!!! :)
+                Szerintem az áprilisi doboz lesz a következő amit megrendelek, remélem az valami Húsvéti témájú lesz! :) Nagyon cuki volt a Goodiebox kártya, meg mellé a kis muffinos üdvözlőkártya vagy micsoda ♥ Külön imádtam hogy kézzel írtátok rá! :)
+                A kutyapékséges jutalomfalat is nagyon tetszik, meg a szórólapnak is örültem, lehet meglepem a kutyusom egy szülinapi tortával majd! :P
+                További sok sikert kívánok nektek, remélem ilyenek maradtok!!! :)
             </div>
             <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;margin-top:5px;">Bernadett, Székesfehérvár</div>    
         </div>
@@ -351,7 +355,7 @@ már 7990 Ft-tól!</p>
             <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Viktória, Tiszaszentimre</div>    
         </div>
         <div class="slide-item">
-			<img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-76.jpg" alt="" style="float: right;margin: 10px;"/>
+            <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-76.jpg" alt="" style="float: right;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Továbbra is odavagyunk a Goodiebox-ért, a Valentin-napi csomagolásért pedig még egy piros pont Nektek :-)"
             </div>
@@ -404,11 +408,11 @@ már 7990 Ft-tól!</p>
             </div>
             <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>    
         </div>
-		<div class="slide-item bordered rounded">
+        <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-68.jpg" alt="" style="float: left;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Nagyon nagy örömöt okozott a meglepetés doboz nekem is és a kutyusomnak, Hercegnek is. Nagyon ízlett neki a Valentin napi keksz, a halas rizses táp pedig egyenesen telitalálat volt, mivel nagyon szereti a halas tápot.
-				A csomagolás nagyon ízléses volt."
+                A csomagolás nagyon ízléses volt."
             </div>
             <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Erika, Budapest</div>    
         </div>
@@ -430,6 +434,6 @@ már 7990 Ft-tól!</p>
 
 <div class="clear"></div>
 <section id="portfolio">
-    <p>“Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.”</p>
+    <p>“<?php echo __('Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.'); ?>”</p>
     <i>Anatole France</i>
 </section> <!--End portfolio-->
