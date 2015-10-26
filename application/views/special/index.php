@@ -9,30 +9,32 @@
     <center><img style="margin: 0 auto;width:600px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/ok-main-page-pink.jpg"></center>
     <div id="collapse-content">
         <h3><?php echo __('NEKED') ?></h3>
-        <div>
+        <div class="main-collapse1">
             <div class="content" style="text-align:justify;">
-                <h3 class="collapse_content"><?php echo __('1. Kávézók'); ?></h3>
-                <div class="cnt">
-                    <div class="content" style="text-align:justify;">
-                        ssss
+                <div class="collapse_content1">
+                    <h3 class="collapse_content2"><?php echo __('1. Kávézók'); ?></h3>
+                    <div class="cnt">
+                        <div class="content" style="text-align:justify;">
+                            ssss
+                        </div>
                     </div>
-                </div>
-                <h3 class="collapse_content"><?php echo __('2. Éttermek'); ?></h3>
-                <div class="cnt">
-                    <div class="content" style="text-align:justify;">
+                    <h3 class="collapse_content2"><?php echo __('2. Éttermek'); ?></h3>
+                    <div class="cnt">
+                        <div class="content" style="text-align:justify;">
 
+                        </div>
                     </div>
-                </div>
-                <h3 class="collapse_content"><?php echo __('3. Sütizők'); ?></h3>
-                <div class="cnt">
-                    <div class="content" style="text-align:justify;">
+                    <h3 class="collapse_content2"><?php echo __('3. Sütizők'); ?></h3>
+                    <div class="cnt">
+                        <div class="content" style="text-align:justify;">
 
+                        </div>
                     </div>
-                </div>
-                <h3 class="collapse_content"><?php echo __('4. Boltok'); ?></h3>
-                <div class="cnt">
-                    <div class="content" style="text-align:justify;">
+                    <h3 class="collapse_content2"><?php echo __('4. Boltok'); ?></h3>
+                    <div class="cnt">
+                        <div class="content" style="text-align:justify;">
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,14 +104,40 @@
             }
         });
         $('.collapse_content').on('click', function () {
-            new_height = $('.main-collapse.open').outerHeight() - $('.cnt.open').outerHeight();
-            $('.main-collapse.open').outerHeight(new_height);
-            $('.cnt').css({height: "0px"});
-            $('.cnt').removeClass('open');
-            $(this).next().addClass("open");
-            $(this).next().outerHeight($(this).next().children().outerHeight());
-            height = $('.main-collapse.open').outerHeight() + $(this).next().children().outerHeight();
-            $('.main-collapse.open').outerHeight(height);
+            if ($(this).next().hasClass('open')) {
+                $('.main-collapse.open').outerHeight($('.main-collapse.open').outerHeight() - $('.cnt.open').outerHeight());
+                $('.cnt.open').outerHeight(0);
+                $('.cnt.open').removeClass('open');
+            } else if ($('.cnt.open').outerHeight() > 0) {
+                $('.main-collapse.open').outerHeight($('.main-collapse.open').outerHeight() - $('.cnt.open').outerHeight());
+                $('.cnt.open').outerHeight(0);
+                $('.cnt.open').removeClass('open');
+                $(this).next().addClass("open");
+                $(this).next().outerHeight($(this).next().children().outerHeight());
+                $('.main-collapse.open').outerHeight($('.main-collapse.open').outerHeight() + $(this).next().outerHeight());
+            } else {
+                $(this).next().addClass("open");
+                $(this).next().outerHeight($(this).next().children().outerHeight());
+                $('.main-collapse.open').outerHeight($('.main-collapse.open').outerHeight() + $(this).next().children().outerHeight());
+            }
+        });
+        $('.collapse_content2').on('click', function () {
+            if ($(this).next().hasClass('open')) {
+                $('.main-collapse1.open').outerHeight($('.main-collapse1.open').outerHeight() - $('.cnt.open').outerHeight());
+                $('.cnt.open').outerHeight(0);
+                $('.cnt.open').removeClass('open');
+            } else if ($('.cnt.open').outerHeight() > 0) {
+                $('.main-collapse1.open').outerHeight($('.main-collapse1.open').outerHeight() - $('.cnt.open').outerHeight());
+                $('.cnt.open').outerHeight(0);
+                $('.cnt.open').removeClass('open');
+                $(this).next().addClass("open");
+                $(this).next().outerHeight($(this).next().children().outerHeight());
+                $('.main-collapse1.open').outerHeight($('.main-collapse1.open').outerHeight() + $(this).next().outerHeight());
+            } else {
+                $(this).next().addClass("open");
+                $(this).next().outerHeight($(this).next().children().outerHeight());
+                $('.main-collapse1.open').outerHeight($('.main-collapse1.open').outerHeight() + $(this).next().children().outerHeight());
+            }
         });
     </script>
 </section>
