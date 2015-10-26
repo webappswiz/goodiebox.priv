@@ -413,15 +413,16 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'HOGYAN MŰKÖDIK?' => 'How it Works?',
     'Minden megrendelt Goodiebox tartalmaz egy direkt erre a célra gyártott kedvezmény kártyát. Ha kinézted a listából, hogy melyik szolgáltató ajánlata a legszimpatikusabb az adott hónapban, nincs más dolog, mint kezedbe venni a kedvezmény kártyát, öledbe kapni a kutyusodat és már indulhattok is beváltani! Mivel a kártyát le kell adnod az általad választott szolgáltatónál, így minden megrendelt Goodiebox meglepidobozzal csak egy szolgáltatás vehető kedvezményesen igénybe egy adott hónapban. De ne aggódjatok, mindig lesz újabb hónap, újabb Goodiebox és újabb speciális ajánlatokra beváltható kedvezmény kártya is! :)' =>
     'Each Goodiebox you purchase comes with a <span style="color:#ec2366">discount card</span> for this purpose. This card can only be used once in every month that you purchase Goodiebox. Once you have your card, you can check the list of services on our website that is most useful for you in the current month. After deciding which service to use, take your card with your puppy tagging along to enjoy your discount! Please note that you will need to hand over the card to the service provider to redeem the discount so don\'t forget your discount card at home! And don\'t worry, you will receive another discount card with the next Goodiebox your purchase :)',
-    'NEKED' => 'For You offers:',
+    'NEKED' => 'For You offers',
     '1. Kávézók' => 'Coffee Shops',
     '2. Éttermek' => 'Restaurants',
     '3. Sütizők' => 'Pastry Shops',
     '4. Boltok' => 'Shops',
-    'NEKI' => 'For Pups offers:',
+    'NEKI' => 'For Pups offers',
     '1. Sütizők' => 'Pastry Shops',
     '2. Kozmetikák' => 'Dog Salons',
     '3. Doktorbácsik/nénik' => 'Vet Clincs',
     '4. Panziók' => 'Pet Sitters',
     '4. Egyéb szolgáltatások' => 'Other Services',
+    'ok-main-page-pink.jpg' => 'ok-main-page-pink_eng.jpg'
 );
