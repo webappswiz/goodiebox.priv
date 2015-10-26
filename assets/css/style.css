@@ -558,6 +558,15 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .Szemelyes-btn{padding: 15px 30px;}
 .sub-heading{font-family: 'franklin_gothic_bookregular';font-size: 14px; margin-top: 5px;}
 
+/**********************************
+				SPECIALS PAGE CSS
+**********************************/
+.neki-neked_container{width: 100%;}
+.neked {cursor:pointer;position: relative;display: inline;top:-60px;}
+.neki{cursor:pointer;display: inline;position: relative;display: inline;top:-60px;}
+.specials-image{margin: 0 auto;width:250px;display: inline}
+.specials-cats{padding-left: 160px}
+
 /*******************************
                 MEDIA QUERIES CSS
 ********************************/
