@@ -60,7 +60,22 @@
                     <h3 class="collapse_content"><?php echo __('Kozmetikák'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
-
+                            <table>
+                                <tr>
+                                    <td>
+                                        Dogmopolite Kutyakozmetika (Buda és Pest)<br/>
+                                        1116 Budapest Mesterházi utca 6-8.<br/>
+                                        1103 Budapest Cserkesz utca 49.<br/>
+                                        1024 Budapest Fillér utca 16.<br/>
+                                        1064 Budapest Rózsa utca 94/B.<br/>
+                                        +36 1 246 2306<br/>
+                                        info@dogmopolite.hu
+                                    </td>
+                                    <td>
+                                        <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <h3 class="collapse_content"><?php echo __('Doktorbácsik/nénik'); ?></h3>
@@ -72,13 +87,40 @@
                     <h3 class="collapse_content"><?php echo __('Panziók'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
-
+                            <table>
+                                <tr>
+                                    <td>
+                                        Dogmopolite Kutyapanzió és Kutyanapközi (Buda és Pest)<br/>
+                                        1116 Budapest Mesterházi utca 6-8.<br/>
+                                        1103 Budapest Cserkesz utca 49.<br/>
+                                        1024 Budapest Fillér utca 16.<br/>
+                                        1064 Budapest Rózsa utca 94/B.<br/>
+                                        +36 1 246 2306<br/>
+                                        info@dogmopolite.hu
+                                    </td>
+                                    <td>
+                                        <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <h3 class="collapse_content"><?php echo __('Egyéb szolgáltatások'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
-
+                            <table>
+                                <tr>
+                                    <td>
+                                        Ebfizio - kisállat-fizioterápia és hidroterápia, kutya-fitness<br/>
+                                        1048 Budapest Falemez utca 18.<br/>
+                                        +36 70 386 6285<br/>
+                                        info@ebfizio.hu
+                                    </td>
+                                    <td>
+                                        <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/20-icon.jpg">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -89,17 +131,17 @@
 
 
     <script>
-        $('#neked').on('click',function(){
+        $('#neked').on('click', function () {
             $('.main-collapse1').toggle();
             $('.main-collapse').hide();
-            $('#neked').css('color','#ec2366');
-            $('#neki').css('color','#330000');
+            $('#neked').css('color', '#ec2366');
+            $('#neki').css('color', '#330000');
         });
-        $('#neki').on('click',function(){
+        $('#neki').on('click', function () {
             $('.main-collapse').toggle();
             $('.main-collapse1').hide();
-            $('#neki').css('color','#ec2366');
-            $('#neked').css('color','#330000');
+            $('#neki').css('color', '#ec2366');
+            $('#neked').css('color', '#330000');
         });
         $('.collapse_content').on('click', function () {
             if ($(this).next().hasClass('open')) {
