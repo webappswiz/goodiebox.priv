@@ -131,11 +131,11 @@ $time = explode(':', $date_array[1]);
 <?php
 if (Cookie::get('lang', 'hu') == 'hu') {
     ?>
-                               <!-- <strong>HU</strong> |--> <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>">English</a>
+                               <!-- <strong>HU</strong> |--> <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>">english</a>
     <?php
 } else {
     ?>
-                                <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>">Magyar</a> <!-- | <strong>EN</strong> -->
+                                <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>">magyar</a> <!-- | <strong>EN</strong> -->
     <?php
 }
 ?>
