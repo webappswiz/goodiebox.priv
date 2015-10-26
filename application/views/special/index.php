@@ -11,24 +11,24 @@
         <div class="main-collapse1" style="display: none">
             <div class="content" style="text-align:justify;">
                 <div class="collapse_content1">
-                    <h3 class="collapse_content2"><?php echo __('+ Kávézók'); ?></h3>
+                    <h3 class="collapse_content2"><?php echo __('Kávézók'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
                         </div>
                     </div>
-                    <h3 class="collapse_content2"><?php echo __('+ Éttermek'); ?></h3>
-                    <div class="cnt">
-                        <div class="content" style="text-align:justify;">
-
-                        </div>
-                    </div>
-                    <h3 class="collapse_content2"><?php echo __('+ Sütizők'); ?></h3>
+                    <h3 class="collapse_content2"><?php echo __('Éttermek'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
 
                         </div>
                     </div>
-                    <h3 class="collapse_content2"><?php echo __('+ Boltok'); ?></h3>
+                    <h3 class="collapse_content2"><?php echo __('Sütizők'); ?></h3>
+                    <div class="cnt">
+                        <div class="content" style="text-align:justify;">
+
+                        </div>
+                    </div>
+                    <h3 class="collapse_content2"><?php echo __('Boltok'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
 
@@ -40,7 +40,7 @@
         <div class="main-collapse" style="display: none">
             <div class="content" style="text-align:justify;">
                 <div class="collapse_content1">
-                    <h3 class="collapse_content"><?php echo __('+ Sütizők'); ?></h3>
+                    <h3 class="collapse_content"><?php echo __('Sütizők'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
                             <table>
@@ -57,25 +57,25 @@
                             </table>
                         </div>
                     </div>
-                    <h3 class="collapse_content"><?php echo __('+ Kozmetikák'); ?></h3>
+                    <h3 class="collapse_content"><?php echo __('Kozmetikák'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
 
                         </div>
                     </div>
-                    <h3 class="collapse_content"><?php echo __('+ Doktorbácsik/nénik'); ?></h3>
+                    <h3 class="collapse_content"><?php echo __('Doktorbácsik/nénik'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
 
                         </div>
                     </div>
-                    <h3 class="collapse_content"><?php echo __('+ Panziók'); ?></h3>
+                    <h3 class="collapse_content"><?php echo __('Panziók'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
 
                         </div>
                     </div>
-                    <h3 class="collapse_content"><?php echo __('+ Egyéb szolgáltatások'); ?></h3>
+                    <h3 class="collapse_content"><?php echo __('Egyéb szolgáltatások'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
 
