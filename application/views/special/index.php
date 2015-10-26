@@ -6,8 +6,8 @@
     </p>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('HOGYAN MŰKÖDIK?'); ?></p>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Minden megrendelt Goodiebox tartalmaz egy direkt erre a célra gyártott <span style="color:#ec2366">kedvezmény kártyát</span>. Ha kinézted a listából, hogy melyik szolgáltató ajánlata a legszimpatikusabb az adott hónapban, nincs más dolog, mint kezedbe venni a kedvezmény kártyát, öledbe kapni a kutyusodat és már indulhattok is beváltani! Mivel a kártyát le kell adnod az általad választott szolgáltatónál, így minden megrendelt Goodiebox meglepidobozzal csak egy szolgáltatás vehető kedvezményesen igénybe egy adott hónapban. De ne aggódjatok, mindig lesz újabb hónap, újabb Goodiebox és újabb speciális ajánlatokra beváltható kedvezmény kártya is! :)'); ?></p>
-    <div style="width: 100%"><center><h1 id="neked" style="cursor:pointer;position: relative;display: inline;top:-60px;"><?php echo __('NEKED') ?></h1><img style="margin: 0 auto;width:250px;display: inline" src="<?= URL::base(TRUE, FALSE) ?>assets/img/<?php echo __('ok-main-page-pink.jpg'); ?>"><h1 id="neki" style="cursor:pointer;display: inline;position: relative;display: inline;top:-60px;"><?php echo __('NEKI'); ?></h1></center></div>
-    <div id="collapse-content" style="padding-left: 160px">
+    <div class="neki-neked_container"><center><h1 id="neked" class="neked"><?php echo __('NEKED') ?></h1><img class="specials-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/<?php echo __('ok-main-page-pink.jpg'); ?>"><h1 id="neki" class="neki"><?php echo __('NEKI'); ?></h1></center></div>
+    <div id="collapse-content" class="specials-cats">
         <div class="main-collapse1" style="display: none">
             <div class="content" style="text-align:justify;">
                 <div class="collapse_content1">
