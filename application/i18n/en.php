@@ -52,7 +52,8 @@ return array
     'Klikkelj a többi kutyusért!' => 'Click here to see our puppies!',
     'Megrendelőink véleménye a Goodiebox-ról...' => 'Recent feedbacks...',
     'Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.' => 'Until one has loved an animal, a part of one\'s soul remains unawakened.',
-    //End Main
+    'nap' => 'days',
+//End Main
     //Hogyan
     'Hogyan működik?' => 'How it works?',
     'Mi van a dobozban?' => 'What\'s in the box?',
