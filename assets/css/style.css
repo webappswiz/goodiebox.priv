@@ -1011,7 +1011,7 @@ label.tooltip span
         font-size: 12px;
         margin: 2px;
     }
-    .specials-image{/*margin: 0 auto;*/width:150px;display: inline;}
+    .specials-image{margin: 0 auto;width:150px;display: inline!important;}
     .neked {cursor:pointer;position: relative;display: inline;top:-60px;}
     .neki{cursor:pointer;display: inline;position: relative;display: inline;top:-60px;}
     .center-arrows,.dog-img,.siess{display: none;}
