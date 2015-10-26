@@ -29,25 +29,31 @@
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="counting_text">Counting text English</label>
+                <div class="controls">
+                    <input type="text" name="counting_text_eng" value="<?= $model->text_eng ?>">
+                </div>
+            </div>
+            <div class="control-group">
                 <label class="control-label" for="enddate">End date</label>
                 <div class="controls">
                     <input type="text" id="enddate" name="end_date" placeholder="00:00" value="<?=$model->end_date?>" required>
                 </div>
             </div>
-            
-                
+
+
                 <div class="controls">
                 <label class="control-label" for="enddate">Enabled?</label>
-                <input type="checkbox" id="status" name="status" <?=($model->status==1)?'checked':''?> value="1">    
+                <input type="checkbox" id="status" name="status" <?=($model->status==1)?'checked':''?> value="1">
                 </div>
-            
+
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn cancel">Cancel</button>
             </div>
-        </fieldset>  
+        </fieldset>
 		<?php	$total_subscribers = ORM::factory('Subscribers')->count_all();
 				echo 'An email will be sent to all <span style="color:red;font-weight:bold;">' . $total_subscribers . '</span> subscribers!';
-		?>			 
+		?>
     </form>
 </div>

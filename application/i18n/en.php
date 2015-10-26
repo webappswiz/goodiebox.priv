@@ -118,52 +118,43 @@ return array
     'After you complete your order, you will receive two email messages. The first email provides information regarding your registration and how your can access your profile on our website. The second email is the order confirmation which contains your invoice and delivery information.',
     'FONTOS! Amennyiben nem kapod meg az üzeneteket 24 órán belül, mindenképpen jelezd felénk a <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a> email címen! Köszönjük!' =>
     'IMPORTANT! If you do not receive both messages within 24 hours after you complete your order, please send us a message at <a href="mailto:info@goodiebox.hu">info@goodiebox.hu</a>! Thank you!',
-    
     '3. Több kutyám is van. Tudok egyszerre több dobozt is rendelni?' => '3. I have more than one dog. Can I order more than a box at once?',
-    'Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.' => 
+    'Egyszerre csak egy Goodiebox-ot tudsz rendelni, de egymás után többet is, ha szeretnél. Ha rendeltél, az adott kutyus profilja létrejön. Ha ugyanazt a kutyust ajándékoznád meg minden hónapban, a profilodból indíthatod is a megrendelést, ha viszont újnak szeretnél, akkor ott találod az "ÚJ KUTYUS HOZZÁADÁSA" gombot, így minden adatot tudsz újra módosítani.' =>
     'Yes, you can order multiple boxes, but just one after the other. After your first order, you can login to your profile and create another profile for other puppies if you have more than one puppy. You may also choose to delete profiles you have created for your puppy and create new profiles too!',
-    
     '4. Mennyibe kerül és hogyan fizethetek?' => '4. How much and how can I pay?',
-    
-
-    'Jelenleg kétféle <span style="color:#D931F7;font-weight:bold;">dobozunk</span> elérhető:' => 
-'At the moment, we have two box types available:',
-
-'Goodiebox Smart 5990 Ft<br />' => 
-'Goodiebox Smart 5990 Ft<br />',
-'Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, jutalomfalat, játék) egy dobozban.' => 
-'Every month, 3-5 different carefully selected items (food, treats, toys) are in the box.',
-
-'Goodiebox Plus 7990 Ft<br />' => 
-'Goodiebox Plus 7990 Ft<br />',
-'Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, jutalomfalat, játék, kiegészítő, vitamin, higiénés termék) egy dobozban.' => 
-'Every month, 4-6 unique premium quality products (food, treats, toys, accessories, vitamins, grooming items) are in the box.',
-
-'Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkártyás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.' => 
-'These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.',
-'Fizetési lehetőségek:<br />' => 
-'Payment Options:<br />',
-'Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' => 
-'Instant bank card payment method (PayU,this has no additional charges!)',
-'Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)' => 
-'Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)',
-'<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' => 
-'<span style="display:none;">3 or 6 month orders:<br />From the first month you order the 3 or 6 month packages, you will receive the boxes every month until the duration you selected is over. For both bank card and cash on delivery payment methods, payment will be made in advance for the duration of the subscription period. For cash on delivery method, the folowing additional fees apply (3 month order 2400 Ft, 6 month order 4800 Ft). This is more convenient since you don\'t need to order every single month or miss our order periods.</span>',
-    
+    'Jelenleg kétféle <span style="color:#D931F7;font-weight:bold;">dobozunk</span> elérhető:' =>
+    'At the moment, we have two box types available:',
+    'Goodiebox Smart 5990 Ft<br />' =>
+    'Goodiebox Smart 5990 Ft<br />',
+    'Havonta változó, 3-5 különböző, gondosan válogatott termék (táp, jutalomfalat, játék) egy dobozban.' =>
+    'Every month, 3-5 different carefully selected items (food, treats, toys) are in the box.',
+    'Goodiebox Plus 7990 Ft<br />' =>
+    'Goodiebox Plus 7990 Ft<br />',
+    'Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, jutalomfalat, játék, kiegészítő, vitamin, higiénés termék) egy dobozban.' =>
+    'Every month, 4-6 unique premium quality products (food, treats, toys, accessories, vitamins, grooming items) are in the box.',
+    'Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkártyás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.' =>
+    'These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.',
+    'Fizetési lehetőségek:<br />' =>
+    'Payment Options:<br />',
+    'Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' =>
+    'Instant bank card payment method (PayU,this has no additional charges!)',
+    'Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)' =>
+    'Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)',
+    '<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' =>
+    '<span style="display:none;">3 or 6 month orders:<br />From the first month you order the 3 or 6 month packages, you will receive the boxes every month until the duration you selected is over. For both bank card and cash on delivery payment methods, payment will be made in advance for the duration of the subscription period. For cash on delivery method, the folowing additional fees apply (3 month order 2400 Ft, 6 month order 4800 Ft). This is more convenient since you don\'t need to order every single month or miss our order periods.</span>',
     '5. Ha megrendeltem, <span style="color:#D931F7;font-weight:bold;">mikor</span> kapom meg?' => '5. If I order now, when will I get the box?',
     'A webshopunk minden hónap elején nyílik és pár napig tart nyitva. A főoldali számláló ez idő alatt folyamatosan visszaszámlál. Ekkor tudsz rendeléseket leadni az adott időszakra. Ha a rendelési szakasz lezárul, a "Hamarosan nyitunk!" felirat jelenik meg a főoldalon, ebben az esetben további rendeléseket nem tudunk fogadni. Ezt követően dolgozzuk fel a beérkezett adatokat és készítjük a kutyusoknak a "kutyaszemélyiségre" szabott Goodiebox-okat. Körülbelül 10 napos határidővel csomagolunk, a dobozok ezt követően kerülnek kiszállításra, ingyenesen. A bolt a csomagszállítást követően értékeli az adott hónapot, picit szusszan, majd újra indul a rendelési időszak. A webshop nyitvatartási szakaszairól értesítést posztolunk a Facebook-on is, ahol érdemes tehát követni bennünket! Ha szeretnél minden nyitáskor automatikus üzenetet kapni tőlünk, hogy nehogy lemaradj és időben le tudd adni a rendelésedet, iratkozz fel az értesítőre a weboldalunkon a visszaszámláló alatt!' => 'The webshop opens at the beginning of each month and is open for a few days. We continue to count down until the order period ends. While open, you can make as many orders as you want. When the ordering period ends, the "We\'re Closed" message is displayed on the home page and we can not accept further orders in this case until the next month. We then start to process your order, preparing a Goodiebox personalized package just for your puppy! Your package will be delivered in about 10 days, free of charge to your doorstep (There is an additional 800 forints charge for cash on delivery orders). We love to hear from you, so be sure to send us your feedback after you receive your package! Also follow us on Facebook and Instagram where we always post our opening times so you never miss out! If you wish to receive an automated message when our webshop opens, please subscribe on our home page. This subscription is only available when the shop is closed for orders.',
     '6. Hogyan kapom meg a dobozom?' => '6. How will I get the box I ordered?',
-    'Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban. A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körülbelül 10-15 munkanapon belül kapod kézhez, a házhozszállítás ingyenes.' => 
-    'It\'s very important that you provide us with accurate delivery information to prevent any delays in receving your Goodiebox. Also important is the email address you supply when making your first order - that\'s because all order and delivery notifications will be sent to this email address. 
+    'Rendeléskor fontos, hogy a számlázási és szállítási adatokat is pontosan töltsd ki, hiszen ez alapján küldjük neked a megrendelt csomagot. Fontos, hogy valós e-mail címmel regisztrálj, hiszen arra kapsz tőlünk minden visszajelzést és követheted nyomon a rendelésed állapotát is, illetve a profilodban. A megrendelt Goodiebox-ot a rendelési időszak lezárását követően, körülbelül 10-15 munkanapon belül kapod kézhez, a házhozszállítás ingyenes.' =>
+    'It\'s very important that you provide us with accurate delivery information to prevent any delays in receving your Goodiebox. Also important is the email address you supply when making your first order - that\'s because all order and delivery notifications will be sent to this email address.
 Your Goodiebox will arrive at your doorstep 10-15 days after our order period closes. Remember that delivery is free if you paid with your bank card!',
-    
     '7. Meg lehet tudni, hogy mi lesz a következő havi dobozban? Választhatok?' => '7. Can I somehow know what will be in the next box? Can I choose?',
-    'A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad! Kreatívak vagyunk, imádunk csapatban dolgozni, így biztosan minden alkalommal édes lesz a meglepetés!' => 
-'Goodiebox is a super secret surprise box kept closely to us, we only decide what will be in the box every month. We\'re creative, we love teamwork - this guarantees that every box you receive will consistently bring you and your puppy pleasant surprises :-)',
-'Ne aggódj, szuper a rendszerünk is, ami tökéletesen követi az egyedi rendeléseket, így biztos lehetsz benne, hogy nem kapod ugyanazt a termék összeállítást egy éven belül!' => 
-'Don\'t worry, we\'re always tracking items you have received - this makes it impossible for you to receive the same combination of items within a 1 year period.',
-'Ha mégis kíváncsi vagy, körülbelül mire is számíthatsz, csekkold a weboldalunkon a Goodiebox tulajdonosokról készült fotókat és videókat! Szerintünk nem kell ennél jobb referencia!' => 
-'If you\'re really curious about the box content or want to see the content of previous boxes, click <a href="http://goodiebox.hu/kutyusaink#doboz">here</a>!',
+    'A Goodiebox egy szupertitkos meglepetés doboz, tartalmáról mi gondoskodunk, kutyusodnak csak a játék és a falatozás marad! Kreatívak vagyunk, imádunk csapatban dolgozni, így biztosan minden alkalommal édes lesz a meglepetés!' =>
+    'Goodiebox is a super secret surprise box kept closely to us, we only decide what will be in the box every month. We\'re creative, we love teamwork - this guarantees that every box you receive will consistently bring you and your puppy pleasant surprises :-)',
+    'Ne aggódj, szuper a rendszerünk is, ami tökéletesen követi az egyedi rendeléseket, így biztos lehetsz benne, hogy nem kapod ugyanazt a termék összeállítást egy éven belül!' =>
+    'Don\'t worry, we\'re always tracking items you have received - this makes it impossible for you to receive the same combination of items within a 1 year period.',
+    'Ha mégis kíváncsi vagy, körülbelül mire is számíthatsz, csekkold a weboldalunkon a Goodiebox tulajdonosokról készült fotókat és videókat! Szerintünk nem kell ennél jobb referencia!' =>
+    'If you\'re really curious about the box content or want to see the content of previous boxes, click <a href="http://goodiebox.hu/kutyusaink#doboz">here</a>!',
     '8. Van bármilyen rejtett költség?' => '8. Are there any hidden costs?',
     'A doboz ára adott, azon kívül semmilyen rejtett költség nincsen. A házhozszállítás ingyenes, amennyiben a bankkártyás fizetési lehetőséget választod. Utánvételes fizetés esetén többlet költséget számolunk fel, melyet a fizetési lehetőség kiválasztásakor jelzünk is neked!' => 'The box price is fixed and there are no hidden costs. Delivery to your doostep is free if you choose the instant bank card payment method. If you choose cash on delivery payment method, there is an additional charge which is displayed on your order summary. At the moment, there is an extra charge of 800 forints for cash on delivery orders.',
     '9. Nem érkezett meg a Goodiebox, pedig regsztráltam, vagyis megrendeltem.' => '9. I have ordered my goodiebox, but did not receive it.',
@@ -201,7 +192,6 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Belépés' => 'Login',
     'Elfelejtetted a jelszavadat?' => 'Forgot your password?',
     //End User login
-
     //User account
     'ez az információ szükséges' => 'this information is required',
     'Kérjük, adja ugyanazt az értéket újra' => 'Please, give the same information again',
@@ -344,7 +334,7 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Ország' => 'Country',
     'Fizetési lehetőségek:' => 'Payment methods:',
     'Bankkártyával azonnal (PayU biztonságos felületen keresztül)' => 'Instant Online Payment (PayU secure payment)',
-    'Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. 
+    'Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz.
                         A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!' => 'When you click the "ORDER" button, you will be automatically redirected to the secure PayU payment page, where you can supply your bank card details and complete your order. We do not store your bank card details on our website!',
     'Utánvét (Extra költséget számolunk fel:' => 'Cash on Delivery (An extra fee is charged:',
     'Amint a "Megrendelem" gombra kattintasz, automatikusan elfogadod a szabályzatunkat és átvételkor tudsz fizetni készpénzzel az otthonodban.' => 'When you click the "Order" button, you accept our terms and conditions of service and can make payment when the package is delivered to you.',
@@ -381,4 +371,56 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Gyik' => 'FAQ',
     'Partnerek' => 'Partners',
     'Gyakran Ismételt Kérdések' => 'Frequently Asked Questions',
+    'Szállító' => 'Company',
+    'Név:' => 'Name:',
+    'Cím:' => 'Address:',
+    'Adószám:' => 'Tax Number:',
+    'Bankszámla:' => 'Bank Account Number:',
+    'Telefon:' => 'Phone #',
+    'Vevo' => 'Customer',
+    'Név:' => 'Name:',
+    'Cím:' => 'Address:',
+    'Telefon:' => 'Phone #',
+    'Fizetési mód' => 'Payment Method',
+    'Készpénz' => 'Cash',
+    'Átutalás' => 'Credit Card',
+    'Számla kelte' => 'Invoice Date',
+    'Teljesítés dátuma' => 'Completion Date',
+    'Esedékesség Dátuma' => 'Due Date',
+    'Számla sorszáma' => 'Invoice #',
+    'Termék kód' => 'Product Code',
+    'Termék leírása' => 'Prduct Desc.',
+    'Menny.' => 'Quantity',
+    'Menny. egys.' => 'Unit',
+    'Egységár <br/>(ÁFA nélkül)<br/> Forint' => 'Unit Price (ex. VAT)<br/> Forint',
+    'Érték <br/>(ÁFA nélkül)<br/> Forint' => 'Price (ex. VAT)<br/> Forint',
+    'ÁFA kulcsa' => 'Tax Key',
+    'Áthárított <br/>ÁFA összege Forint' => 'VAT (Forint)',
+    'Érték <br/> (ÁFA-val együtt) <br/> Forint' => 'Price (incl. VAT)<br/> Forint',
+    'Kedvezmény:' => 'Discount:',
+    'Házhozszállítás:' => 'Handling & Delivery:',
+    'Összesen:' => 'Total:',
+    'Az ÁFA kulcs: AM (alanyi mentes)' => 'Tax Key: AM (Tax Exempt)',
+    'MEGJEGYZÉS' => 'NOTE',
+    'Ez a stornó számla a {invoice #} számú számla helyesbítése.' => 'This cancellation invoice is a correction of the order with invoice number {#}.',
+    'A számla 2 példányban került kinyomtatásra.' => 'The invoice is printed in two copies.',
+    'SZÁMLA' => 'Invoice',
+    'Köszönjük a vásárlást!' => 'Thanks for ordering!',
+    'Speciális ajánlatok' => 'Special Offers',
+    'Ha Goodiebox meglepidobozt vásárolsz, akkor ezentúl extra kedvezménnyel jutalmazunk! Összegyűjtöttük azokat a partnereinket, akik speciális ajánlatokkal csábítanak, hogy kipróbáljátok őket! A lista folyamatosan bővül, így érdemes gyakran visszalátogatni erre az oldalra!' =>
+    'If you have bought a <strong>Goodiebox</strong>, you are now rewarded with extra discounts! We have collected special partners with enticing special offers that you can try! This list is continuously updated, so check back often to see our latest offerings!',
+    'HOGYAN MŰKÖDIK?' => 'How it Works?',
+    'Minden megrendelt Goodiebox tartalmaz egy direkt erre a célra gyártott kedvezmény kártyát. Ha kinézted a listából, hogy melyik szolgáltató ajánlata a legszimpatikusabb az adott hónapban, nincs más dolog, mint kezedbe venni a kedvezmény kártyát, öledbe kapni a kutyusodat és már indulhattok is beváltani! Mivel a kártyát le kell adnod az általad választott szolgáltatónál, így minden megrendelt Goodiebox meglepidobozzal csak egy szolgáltatás vehető kedvezményesen igénybe egy adott hónapban. De ne aggódjatok, mindig lesz újabb hónap, újabb Goodiebox és újabb speciális ajánlatokra beváltható kedvezmény kártya is! :)' =>
+    'Each Goodiebox you purchase comes with a <strong>discount card</strong> for this purpose. This card can only be used once in every month that you purchase Goodiebox. Once you have your card, you can check the list of services on our website that is most useful for you in the current month. After deciding which service to use, take your card with your puppy tagging along to enjoy your discount! Please note that you will need to hand over the card to the service provider to redeem the discount so don\'t forget your discount card at home! And don\'t worry, you will receive another discount card with the next Goodiebox your purchase :)',
+    'NEKED' => 'For You offers:',
+    '1. Kávézók' => 'Coffee Shops',
+    '2. Éttermek' => 'Restaurants',
+    '3. Sütizők' => 'Pastry Shops',
+    '4. Boltok' => 'Shops',
+    'NEKI' => 'For Pups offers:',
+    '1. Sütizők' => 'Pastry Shops',
+    '2. Kozmetikák' => 'Dog Salons',
+    '3. Doktorbácsik/nénik' => 'Vet Clincs',
+    '4. Panziók' => 'Pet Sitters',
+    '4. Egyéb szolgáltatások' => 'Other Services',
 );

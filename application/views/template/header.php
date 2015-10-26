@@ -90,27 +90,55 @@ $time = explode(':', $date_array[1]);
     </script>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <!--<script src="//load.sumome.com/" data-sumo-site-id="13f38ebb1d7ae2e9b0cf60d4e0fdd9eca282dd8682115a92cfe65269a474d136" async></script> -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq)
+                return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq)
+                f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '676982215724170');
+        fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=676982215724170&ev=PageView&noscript=1"
+                   /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" width="374" height="102" alt="goodybox"></a>
+                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/logo.png" height="102" alt="goodybox"></a>
             </div> <!--End logo-->
-            <div class="social-right">
+            <div class="social-right" style="text-align:center;font-family:'La-Chata';">
                 <ul>
                     <li>
-                        <?php
-                        if (Cookie::get('lang', 'hu') == 'hu') {
-                            ?>
-                            <strong>HU</strong> | <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>">EN</a>
-                            <?php
-                        } else {
-                            ?>
-                            <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>">HU</a> | <strong>EN</strong>
-                            <?php
-                        }
-                        ?>
+<?php
+if (Cookie::get('lang', 'hu') == 'hu') {
+    ?>
+                               <!-- <strong>HU</strong> |--> <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/en' ?>">English</a>
+    <?php
+} else {
+    ?>
+                                <a href="<?php echo URL::base(TRUE, FALSE) . 'main/chg_lang/hu' ?>">Magyar</a> <!-- | <strong>EN</strong> -->
+    <?php
+}
+?>
                     </li>
                     <li style="text-align: center"><a href="<?= URL::base(TRUE, FALSE) ?>" class="btnShare" data-title="Goodie" data-desc="Goodie"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/facebook-btn.jpg" width="32" height="32" alt="facebook"></a>
                         <a class="popup"  href="http://twitter.com/share"><img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/twitter-btn.jpg" width="32" height="32" alt="twitter"></a>
@@ -180,17 +208,17 @@ $time = explode(':', $date_array[1]);
             </div> <!--End social-right-->
         </header>
         <div class="clear"></div>
-        <?php
-        if ($active_menu != 'home') {
-            ?>
+<?php
+if ($active_menu != 'home') {
+    ?>
             <nav class="nav-right">
                 <ul>
-                    <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
+    <?php echo View::factory('template/menu', get_defined_vars())->render(); ?>
                 </ul>
             </nav>
-            <?php
-        }
-        ?>
+    <?php
+}
+?>
         <style type="text/css">
             .greenbutton {
                 position: fixed;
@@ -235,14 +263,14 @@ $time = explode(':', $date_array[1]);
                 text-align: left;
             }
         </style>
-        <?php
-        if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
-            ?>
+<?php
+if ($active_menu != 'home' && $active_menu != 'arcél' && $active_menu != 'order') {
+    ?>
             <div>
                 <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?o' : '#' ?>">
                     <button type="button" class="greenbutton" style="<?php echo ($status == 0) ? 'background:#cc0033;' : '' ?>"><span class="label_button">M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M</span>
                     </button>
                 </a>
             </div>
-            <?php
-        }?>
+    <?php
+}?>

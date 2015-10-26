@@ -8,7 +8,7 @@ class Controller_Admin_Counter extends Controller_Admin {
         parent::before();
         $this->template->active_menu = 'counter';
     }
-    
+
     private function send($to, $from, $subject, $body, $file = '') {
         $email = new PHPMailer();
         $email->ContentType = 'text/plain';
@@ -40,6 +40,7 @@ class Controller_Admin_Counter extends Controller_Admin {
 
     public function update() {
         $this->model->text = arr::get($_REQUEST, 'counting_text');
+        $this->model->text_eng = arr::get($_REQUEST, 'counting_text_eng');
         $this->model->end_date = arr::get($_REQUEST, 'end_date');
         $this->model->status = arr::get($_REQUEST, 'status');
         $this->model->save();

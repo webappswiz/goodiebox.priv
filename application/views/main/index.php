@@ -1,6 +1,12 @@
 <?php
 $options = ORM::factory('Options', 1);
-$text = $options->text;
+if (Cookie::get('lang', 'hu') == 'hu') {
+    $text = $options->text;
+} else {
+    $text = $options->text_eng;
+}
+
+
 $end_date = $options->end_date;
 $status = $options->status;
 $date_array = explode(' ', $end_date);
@@ -43,10 +49,10 @@ $time = explode(':', $date_array[1]);
         hours = (hours) < 10 ? '0' + hours : hours;
         if (status == 0) {
             $('li', '.lock').css('background', 'url("/assets/img/lock-close.png") no-repeat left center');
-            $('li', '.lock').html("<?php echo __('Hamarosan nyitunk!'); ?>");
+            $('li', '.lock').html("<?php echo '&nbsp;&nbsp;' . __('Hamarosan nyitunk!'); ?>");
         } else {
             $('li', '.lock').css('background', 'url("/assets/img/lock-open.png") no-repeat left center');
-            $('li', '.lock').html("<?php echo __('Nyitva vagyunk!'); ?>");
+            $('li', '.lock').html("<?php echo '&nbsp;&nbsp;' . __('Nyitva vagyunk!'); ?>");
         }
         $('#hours').html(hours + ':' + minutes + ':' + seconds);
         countIt('<?= $date[0] ?>', '<?= $date[1] - 1 ?>', '<?= $date[2] ?>', '<?= $time[0] ?>', '<?= $time[1] ?>', '00', '<?= $status ?>');
@@ -106,7 +112,7 @@ $menus = array(
     });
 </script>
 
-<div id="dialog-form1" title="Add a new dog" style="display:none;">
+<div id="dialog-form1" title="Kérem az értesítést!" style="display:none;">
     <script>
         $(".process-form").validate();
     </script>
@@ -116,7 +122,7 @@ $menus = array(
             <div>
                 <label><?php echo __('Keresztneved:'); ?></label> <input type="text" name="name" value="" size="20" class="" required/>
             </div>
-            <div>
+            <div style="padding-bottom:10px;">
                 <label><?php echo __('Email címed:'); ?></label> <input type="email" name="email" value="" size="20" class="" required/>
             </div>
             <div style="text-align: center;">
@@ -128,25 +134,27 @@ $menus = array(
 </div>
 
 <section id="counting-back" style="margin-bottom: 5px;margin-top: 25px;vertical-align: middle;position: relative">
-    <div class="count-image">
-        <img src="<?= URL::base(TRUE, FALSE) ?>/assets/img/quality.png" alt="Premium 100% Quality">
-    </div> 
-    <div class="siess">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div id="cf" class="count-image"><a href="<?= URL::base(TRUE, FALSE) ?>special">
+            <img class="bottom" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-hover.png" alt="Goodiebox Offers" width="150px" />
+            <img class="top" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-normal.png" alt="Goodiebox Offers" width="150px" /></a>
     </div>
+    <!-- div class="siess">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div -->
     <div class="count-text">
+
         <p><?= $text ?></p>
         <div class="counter">
             <p><?php echo __('Hátralévő idő:'); ?> <span id="days" class="count-btn rounded">12</span> <?php echo __('nap'); ?> <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
-        </div> 
+        </div>
         <div class="lock">
             <ul>
                 <li><a href="#"><?php echo __('Nyitva vagyunk!'); ?></a></li>
             </ul>
-        </div> 
-    </div> 
+        </div>
+    </div>
     <div class="dog-img">
-        <img width="110"  src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/pricedogs_hun.jpg');?>" alt="Dog">
+        <img width="134"  src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/dog.jpg'); ?>" alt="Dog">
     </div>
 
 
@@ -164,21 +172,22 @@ $menus = array(
     <h2><?php echo __('Legyen kutyusodnak is'); ?><span> <?php echo __('saját'); ?></span> <?php echo __('doboza'); ?></h2>
     <div class="order-btnleft">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">SMART</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1) ? 'background:green;' : '' ?>">SMART</button>
         </a>
-        <p style="<?php echo ($status == 1)?'color:green;':''?>"><?php echo __('Haspók kutyusoknak'); ?><br/>
+        <p style="<?php echo ($status == 1) ? 'color:green;' : '' ?>"><?php echo __('Haspók kutyusoknak'); ?><br/>
             <?php echo __('már 5990 Ft-tól!'); ?></p>
     </div>
     <div class="center-arrows">
-        <img width="250" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/arrows.png');?>">
+        <img width="254" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/arrows.png'); ?>">
     </div>
     <div class="order-btnright">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?plus' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1)?'background:green;':''?>">PLUS</button>
+            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1) ? 'background:green;' : '' ?>">PLUS</button>
         </a>
-        <p style="<?php echo ($status == 1)?'color:green;':''?>"><?php echo __('Kivételes kutyusoknak'); ?><br/>
+        <p style="<?php echo ($status == 1) ? 'color:green;' : '' ?>"><?php echo __('Kivételes kutyusoknak'); ?><br/>
             <?php echo __('már 7990 Ft-tól!'); ?></p>
     </div>
+    <div id="cf-2"><p><a href="#"><img class="top" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-normal.png" alt="Goodiebox Offers" width="150px" /></a></p></div>
 </section> <!--End order place-->
 
 <div class='clear'></div>
@@ -192,7 +201,7 @@ $menus = array(
         <div class="container" id="text" style="padding: 0 30px 0 30px;margin-top: 0px;">
             <h2 style="font-family: La-Chata;padding-top: 10px;"><?php echo __('Mit is találtok majd a dobozban?'); ?></h2><br/>
             <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong><?php echo __('Havonta változó, 3-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.'); ?><br/>
-                <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold"><?php echo __('Tovább olvasom'); ?></span>
+                    <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold"><?php echo __('Tovább olvasom'); ?></span>
             </p>
             <div id="tovab1" style="display:none;">
                 <p style="padding-top: 20px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Jelenleg kétféle dobozunk elérhető:'); ?>
@@ -303,20 +312,20 @@ $menus = array(
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 Szuper ötlet, szuperül kivitelezve! :)
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsófia, Szigetmonostor</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsófia, Szigetmonostor</div>
         </div>
         <div class="slide-item">
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Kedves Goodiebox-os Csapat, Megszeretném mégegyszer köszönni a kedvességetek, mind a többszöri egyeztetés, mind amiatt, hogy tényleg minden szempontból odafigyeltetek a kutyusom gyomorbetegségére. A játékok pedig egyszerűen fantasztikusak, nagy volt az öröm. Továbbra is maradunk hű vásárlótok :-)"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsanett, Kozármisleny</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Zsanett, Kozármisleny</div>
         </div>
         <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/IMG_0065.JPG" alt="" style="float: left;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Ismét nagyon tetszett a doboz tartalma. Ez a száraztáp igazi újdonság volt számomra, mert ezt a márkát eddig még nem ismertem, de Rustynak nagyon ízlik, ahogy természetesen a jutalomfalatok is."
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Nikolett, Budapest</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Nikolett, Budapest</div>
         </div>
     </div>
 
@@ -326,7 +335,7 @@ $menus = array(
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Nagyszerű dolognak tartom, és hihetetlen nagy meglepetést okozott Tóbiásnak, minden nagyszerű a csomagban! Ami nagyon tetszett, hogy szinte személyre szóló <span style="color:#D931F7;font-weight:900;">volt</span> benne minden, főleg, hogy mi allergiások vagyunk! A játék nagy kedvenc, a táp szuper, a takarót imádjuk, a névre szóló biléta és a csomagolás pazar! KÖSZÖNJÜK"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ancsa, Sümeg</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ancsa, Sümeg</div>
         </div>
         <div class="slide-item">
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 30px">
@@ -335,14 +344,14 @@ $menus = array(
                 A kutyapékséges jutalomfalat is nagyon tetszik, meg a szórólapnak is örültem, lehet meglepem a kutyusom egy szülinapi tortával majd! :P
                 További sok sikert kívánok nektek, remélem ilyenek maradtok!!! :)
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;margin-top:5px;">Bernadett, Székesfehérvár</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;margin-top:5px;">Bernadett, Székesfehérvár</div>
         </div>
         <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/20141224_173208.jpg" alt="" style="float: left;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Nagyon jónak tartom. Tényleg személyre szabott odafigyeléssel állítottátok össze a csomagot, még telefonon is egyeztettetek, hogy a táp megfelel­e Oszkárnak. A rénszarvast azonnal kivette és azóta is cipeli. Köszönjük!"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Rita, Budapest</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Rita, Budapest</div>
         </div>
     </div>
 
@@ -352,14 +361,14 @@ $menus = array(
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Nagy örömmel vettük át és bontottuk ki az általatok küldött csomagot. Izgatottan fedtük fel a titkot rejtő dobozt. "
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Viktória, Tiszaszentimre</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Viktória, Tiszaszentimre</div>
         </div>
         <div class="slide-item">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-76.jpg" alt="" style="float: right;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Továbbra is odavagyunk a Goodiebox-ért, a Valentin-napi csomagolásért pedig még egy piros pont Nektek :-)"
             </div>
-            <div style="position: absolute;bottom: 0;left: 2px;padding: 5px;">Anita, Budapest</div>    
+            <div style="position: absolute;bottom: 0;left: 2px;padding: 5px;">Anita, Budapest</div>
         </div>
         <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/10155858_561404270661711_1556163618799603132_n.jpg" alt="" style="float: left;margin: 10px;"/>
@@ -376,18 +385,18 @@ $menus = array(
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Sziasztok! Megkaptuk a dobozunkat, nagyon szépen köszönjük, mindketten imádjuk a tartalmát :) Küldök pár képet! (A rénszarvas szerelem volt első látásra, rögtön kikapta a dobozból :D) Boldog Karácsonyt Kívánunk Nektek!"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ági, Szeged</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Ági, Szeged</div>
         </div>
         <div class="slide-item">
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 25px">
                 "Most rendeltünk először, de biztos, hogy nem utoljára! A csomagolás nagyon szimpatikus volt. Kicsomagolásnál talán mi izgatottabbak voltunk, mint a kutyusaink. Elsőre csak egy dobozt mertünk rendelni a két kutyának, de legközelebb Pimasznak és Pötyinek is jár a saját doboz! Kutyáink nagyon örültek, nagyon édesek voltak, ahogy izgatottan körbeszimatolták a dobozt. Mindkét kutyának jutott meglepetés, Pimasz a mosolyra csapott le azonnal, Pötyi inkább a hasára gondolt és egyből kiszúrta a Valentin napi kekszet! :) Végül mindenen megosztoztak. Pötyi azóta is lelkesen őrzi az üres dobozt! :) Mindent köszönünk, ami a dobozban volt, nagyon boldoggá tettétek a kutyusainkat és minket is!"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Tibor, Somberek</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Tibor, Somberek</div>
         </div>
         <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/feedbacks/mr-smith.png" alt="" style="float: left;margin: 10px;"/>
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
-                "Köszönjük szépen a csomagot, nagyon nagy az öröm nálunk! 
+                "Köszönjük szépen a csomagot, nagyon nagy az öröm nálunk!
                 Mr. Smith nem bírta kivárni a Szentestét és kibontotta az ajándékot! Órák óta kizárólag az új kis plüss barátjával hajlandó közlekedni a házban - nem ereszti - imádja! :)"
             </div>
             <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Szilvia, Vámosszabadi</div>
@@ -400,13 +409,13 @@ $menus = array(
             <div class="customer_quote_text" style="padding: 2px;padding-bottom: 10px">
                 "Sziasztok! Először is szeretném nektek megköszönni, hogy örömtelivé varázsoltátok Nudlika első karácsonyát! :) Telitalálat volt a box, a plüss bárányt azóta sem lehet kiimádkozni a szájából! A takarót pedig párnának használta éjszaka. :) A kis bilétáért pedig külön köszönet, nagyon aranyos volt tőletek a gravírozás! A folttisztító pedig telitalálat, már ki is szedte a kocsiból a hányásfoltot! Már most alig várom, hogy rendelhessem tőletek Nudlus szülinapi dobozát! :) Nagyon Boldog Karácsonyt kívánunk az egész csapatnak!!!"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Lilla, Tata</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Lilla, Tata</div>
         </div>
         <div class="slide-item">
             <div class="customer_quote_text" style="padding: 2px;">
                 "Imádom! :-) A hozzám hasonló "őrült" gazdiknak kiváló, a kutyusokról nem is beszélve! :­) Csak így tovább, mi biztos Veletek maradunk!"
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;"></div>
         </div>
         <div class="slide-item bordered rounded">
             <img border="2" width="100" height="100" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-68.jpg" alt="" style="float: left;margin: 10px;"/>
@@ -414,7 +423,7 @@ $menus = array(
                 "Nagyon nagy örömöt okozott a meglepetés doboz nekem is és a kutyusomnak, Hercegnek is. Nagyon ízlett neki a Valentin napi keksz, a halas rizses táp pedig egyenesen telitalálat volt, mivel nagyon szereti a halas tápot.
                 A csomagolás nagyon ízléses volt."
             </div>
-            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Erika, Budapest</div>    
+            <div style="position: absolute;bottom: 0;right: 2px;padding: 5px;">Erika, Budapest</div>
         </div>
     </div>
 </div>

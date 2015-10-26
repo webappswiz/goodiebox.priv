@@ -102,13 +102,13 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
   }
 }';
-                    $result = $shipping->send_request($data_string);
-                    $label = json_decode($result, true);
-                    $label = $label['Order']['Labels'][0];
-                    $pdf_decoded = base64_decode($label);
-                    $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
-                    fwrite($pdf, $pdf_decoded);
-                    fclose($pdf);
+                    //$result = $shipping->send_request($data_string);
+                    //$label = json_decode($result, true);
+                    //$label = $label['Order']['Labels'][0];
+                    //$pdf_decoded = base64_decode($label);
+                    //$pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
+                    //fwrite($pdf, $pdf_decoded);
+                    //fclose($pdf);
                 }
             }
             if ($_REQUEST['action'] == 2) {
@@ -468,14 +468,18 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
 
     private function generate_cod_invoice($order, $user) {
+        $lang = I18n::lang();
+        $old_lang = ($lang==1)?'hu':'en';
+        $new_lang = ($user->lang==1)?'hu':'en';
+        I18n::lang($new_lang);
         if ($order->puppy_id > 0) {
             $size = $order->puppy->selected_size;
             if ($size == 1) {
-                $s = 'Icipici';
+                $s = __('Icipici');
             } elseif ($size == 2) {
-                $s = 'Éppen jó';
+                $s = __('Éppen jó');
             } elseif ($size == 3) {
-                $s = 'Igazi óriás';
+                $s = __('Igazi óriás');
             } else {
                 $s = '';
             }
@@ -497,21 +501,20 @@ class Controller_Admin_Orders extends Controller_Admin {
         $order->invoice_num = $o->invoice_num + 1;
         $order->save();
         $pr = $cod;
-        $method = 'Készpénz';
+        $method = __('Készpénz');
         $discount = $order->package->price - $order->total_price + $pr;
         $total_price = $order->package->price - $discount;
         if ($order->company_name <> '') {
-            $company = 'Cégnév: ' . $order->company_name . '<br/>
-                    Cím: ' . $order->company_zip . ', ' . $order->company_city . '<br/>
-                        ' . $order->company_address . '<br/>
-                    Adószám: ' . $order->tax_code . '<br/>';
+            $company = __('Cégnév:') .' '. $order->company_name . '<br/>';
+            $company .= __('Cím:') .' '. $order->company_zip . ', ' . $order->company_city . '<br/>
+                        ' . $order->company_address . '<br/>';
+                    $company .= __('Adószám:') .' '. $order->tax_code . '<br/>';
             $user_details = '';
         } else {
             $company = '';
-            $user_details = 'Név:	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>
-                     Cím:	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
+            $user_details = __('Név:').'	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>';
+            $user_details .= __('Cím:') .'	'. $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
         }
-
         if ($order->package->term == 1) {
             $term = '1';
         } elseif ($order->package->term == 2) {
@@ -538,49 +541,49 @@ class Controller_Admin_Orders extends Controller_Admin {
         <table style="border:0 0 2px solid 0;border-top:0px;border-left:0px;border-right:0px;width: 670px;padding: 0px;margin: 0px" cellpadding="0" cellspacing="0" border="0">
             <tr>
                 <td style="width:50%;padding: 5px;border: 0px;border-left: 0px;" colspan="2"><img src="' . URL::base(TRUE, FALSE) . 'assets/img/logo_invoice.png"></td>
-                <td style="padding: 5px;width:50%;text-align: right;vertical-align: top;border: 0px;border-right: 0px; font-size: 22px; font-weight: 600;letter-spacing: 5px;" colspan="2">SZÁMLA</td>
+                <td style="padding: 5px;width:50%;text-align: right;vertical-align: top;border: 0px;border-right: 0px; font-size: 22px; font-weight: 600;letter-spacing: 5px;" colspan="2">'.__('SZÁMLA').'</td>
             </tr>
             <tr>
                 <td style="height: 40px" colspan="4"></td>
             </tr>
             <tr>
-                <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Szállító</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">Vevo</td>
+                <td style="width:50%;border-left: 0px;border-right: 0px; font-size: 12px;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">'.__('Szállító').'</td><td style="width:50%;font-size: 16px;font-weight: 600;text-align: left;vertical-align: bottom;letter-spacing: 5px;padding-left: 15px;" colspan="2">'.__('Vevo').'</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-left: 2px solid;border-top: 2px solid;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;line-height: 2em;" colspan="2">
-                    Név:	Web Apps Consult Kft <br/>
-                    Cím:	1053 Budapest<br/>
+                    '.__('Név:').'	Web Apps Consult Kft <br/>
+                    '.__('Cím:').'	1053 Budapest<br/>
                         Kossuth Lajos utca 7-9.<br/>
-                    Adószám: 25005813-1-41<br/>
-                    Bankszámla: 11707000-20488804<br/>
-                    Telefon: +36 30 233 7401
+                    '.__('Adószám:').' 25005813-1-41<br/>
+                    '.__('Bankszámla:').' 11707000-20488804<br/>
+                    '.__('Telefon:').' +36 30 233 7401
                 </td>
                 <td style="padding: 10px;margin: 0px;width:50%;height: 80px;border-top: 2px solid;line-height: 2em;border-right: 2px solid;font-size: 12px;font-weight: 600;letter-spacing: 3px;" colspan="3">
                     ' . $user_details . '
                     ' . $company . '
-                    Telefon: ' . $user->customer_telephone . '
+                    '.__('Telefon:').' ' . $user->customer_telephone . '
                 </td>
             </tr>
             <tr style="padding: 0px">
-                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>' . $method . '</td>
-                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> ' . $order->invoice_num . '</td>
+                <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">'.__('Fizetési mód') .'<br/>' . $method . '</td>
+                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">'.__('Számla kelte') .'<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
+                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">'.__('Teljesítés dátuma') .'<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
+                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">'.__('Esedékesség Dátuma') .'<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
+                <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">'.__('Számla sorszáma') .'<br/> ' . $order->invoice_num . '</td>
             </tr>
             <tr style="padding: 0px">
                 <td colspan="5">
                     <table style="width: 100%;padding: 0px;margin: 0px" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">Termék kód</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">Termék leírása</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">Menny.</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">Menny. egys.</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">Egységár <br/>(ÁFA nélkül)<br/> Forint</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">Érték <br/>(ÁFA nélkül)<br/> Forint</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">ÁFA kulcsa</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">Áthárított <br/>ÁFA összege Forint</td>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">Érték <br/> (ÁFA-val együtt) <br/> Forint</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">'.__('Termék kód') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('Termék leírása') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('Menny.') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('Menny. egys.') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('Egységár <br/>(ÁFA nélkül)<br/> Forint') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('Érték <br/>(ÁFA nélkül)<br/> Forint') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('ÁFA kulcsa') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">'.__('Áthárított <br/>ÁFA összege Forint') .'</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 1px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-right: 2px solid;">'.__('Érték <br/> (ÁFA-val együtt) <br/> Forint') .'</td>
                         </tr>
                         <tr>
                             <td colspan="9" style="height: 15px; border-left: 2px solid; border-right: 2px solid;"></td>
@@ -606,27 +609,27 @@ class Controller_Admin_Orders extends Controller_Admin {
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
-                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">Kedvezmény:<br/><br/>Házhozszállítás:</td>
+                <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:25%;height: 30px;font-size: 10px;">'.__('Kedvezmény:') .'<br/><br/>'.__('Házhozszállítás:') .'</td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;padding-bottom: 5px;margin: 0px;width:13%;height: 30px;font-size: 10px;border-right: 2px solid;text-align:right;">' . number_format((float) $discount, 2, ',', '') . '&nbsp;&nbsp;<br/><br/>' . number_format((float) $pr, 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="padding: 0px;margin: 0px;width:25%;height: 30px;"></td>
                 <td style="margin: 0px;width:25%;height: 30px;"></td>
-                <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">Összesen:</td>
+                <td style="border-top: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;font-size: 14px;">'.__('Összesen:') .'</td>
                 <td style="border-top: 2px solid;padding: 0px;padding-top: 5px;margin: 0px;width:13%;height: 30px;font-size: 14px;border-right: 2px solid;text-align:right;">' . number_format((float) ($total_price + $pr), 2, ',', '') . '&nbsp;&nbsp;</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">Az ÁFA kulcs: AM (alanyi mentes)</td>
+                <td style="vertical-align: bottom;padding: 0px;margin: 0px;width:50%;height: 65px;border-left: 2px solid;font-size: 10px;border-bottom: 2px solid;border-right: 2px solid;" colspan="5">'.__('Az ÁFA kulcs: AM (alanyi mentes)') .'</td>
             </tr>
             <tr style="padding: 0px">
-                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">Köszönjük a vásárlást!</td>
+                <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 45px;font-weight: 800" colspan="5">'.__('Köszönjük a vásárlást!') .'</td>
             </tr>
             <tr style="padding: 0px">
                 <td style="vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;height: 105px;" colspan="5"></td>
             </tr>
             <tr style="padding: 0px">
-                <td style="height:50px;vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;font-size: 10px;font-weight: 600" colspan="2">A számla 2 példányban került kinyomtatásra.</td>
+                <td style="height:50px;vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;font-size: 10px;font-weight: 600" colspan="2">'.__('A számla 2 példányban került kinyomtatásra.') .'</td>
                 <td style="height:50px;vertical-align: top;padding: 0px;padding-top:5px;padding-left:5px; margin: 0px;width:50%;text-align: right;font-size: 10px;;font-weight: 600" colspan="3"></td>
             </tr>
         </table>
@@ -643,6 +646,23 @@ class Controller_Admin_Orders extends Controller_Admin {
         //$pdf->writeHTML($invoice, true, false, false, false, '');
         //$pdf->Output(DOCROOT . 'orders/order_' . $order->id . '.pdf', 'F');
         file_put_contents(DOCROOT . 'orders/order_' . $order->id . '.pdf', $output);
+        I18n::lang($old_lang);
+    }
+    
+    private function send($to, $from, $subject, $body, $file = '') {
+        $email = new PHPMailer();
+        $email->ContentType = 'text/plain';
+        $email->AddAddress($to);
+        $email->CharSet = 'UTF-8';
+        $email->From = $from;
+        $email->FromName = 'goodiebox';
+        $email->Subject = $subject;
+        $email->Body = $body;
+        $email->IsHTML(true);
+        if (!empty($file)) {
+            $email->AddAttachment(DOCROOT . 'orders/' . $file, $file);
+        }
+        $email->Send();
     }
 
 }
