@@ -377,7 +377,7 @@ h2{font-family: 'franklin_gothic_bookregular'; font-size: 24px; font-weight: bol
 
 /* CSS3 Animation example
 --- */
-#collapse-content{margin-top: 40px;margin-bottom:  80px;}
+#collapse-content{margin-top: 20px;margin-bottom:  80px;}
 #collapse-content a, .content{color:#330000;}
 #collapse-content h3{font-size: 18px; font-family: 'FranklinGothic-Heavy';cursor: pointer; margin-top: 25px;list-style: none;}
 #collapse-content .content{font-family: 'franklin_gothic_bookregular';font-size: 18px; margin-left: 18px;padding: 10px;font-size: 18px;}
