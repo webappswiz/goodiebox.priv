@@ -231,24 +231,24 @@ footer ul li a:hover{color: #cc0033;}
 .copy-write a{color:#330000;}
 .copy-write a:hover{color:#cc0033;}
 #cf {
-  position:relative;
-  /*height:0px;
-  width:0px;*/
-  margin:0 auto;
-  padding-right:50px;
+    position:relative;
+    /*height:0px;
+    width:0px;*/
+    margin:0 auto;
+    padding-right:50px;
 }
 #cf-2{display:none;}
 #cf img {
-  position:absolute;
-  left:0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 #cf img.top:hover {
-  opacity:0;
+    opacity:0;
 }
 
 /*******************************
@@ -854,7 +854,7 @@ label.tooltip span
     .siess{padding-left:70px;}
     .center-arrows {left: 340px;}
     #counting-back .count-image img,.badge{/*display: none;*/}
-	.dog-img{padding-right:30px;}
+    .dog-img{padding-right:30px;}
     .count-text,.post-img,.post-text{float:none !important;text-align: center;}
     .post-img,.post-text{width: 100%; padding-left: 15px; padding-right: 15px;}
     .star-img{ left: 250px;}
@@ -946,8 +946,8 @@ label.tooltip span
     .counting-back{
         margin-bottom: 15px;
     }
-	#counting-back .count-image img,.badge{/*display:none;*/}
-	
+    #counting-back .count-image img,.badge{/*display:none;*/}
+
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
     .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
@@ -1002,7 +1002,7 @@ label.tooltip span
         font-size: 12px;
         margin: 2px;
     }
-	
+
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
     .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
@@ -1061,9 +1061,9 @@ label.tooltip span
     #counting-back .count-text{
         text-align: center;
     }
-	#counting-back .count-text {max-width: 767px;padding-left:40px;}
-	#cf{display:none;}
-	#cf-2{display:block;margin:auto;text-align:center;padding-top:20px;}
+    #counting-back .count-text {max-width: 767px;padding-left:40px;}
+    #cf{display:none;}
+    #cf-2{display:block;margin:auto;text-align:center;padding-top:20px;}
     .star-img{ left: 130px;}
     .contact-us-form input[type="submit"]{position: static; width: 100%; margin:20px 0 40px 0;}
     .contact{padding: 55px 20px 35px 20px;}
