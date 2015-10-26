@@ -1014,6 +1014,7 @@ label.tooltip span
     .specials-image{margin: 0 auto!important;width:100px;display: inline!important;}
     .neked {cursor:pointer;position: relative;display: inline;top:-20px;font-size:18px;margin-right:20px;}
     .neki{cursor:pointer;display: inline;position: relative;display: inline;top:-20px;font-size:18px;margin-left:25px;}
+    .specials-cats{padding-left:0;}
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
     .order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
