@@ -2,14 +2,13 @@
     <h1><?php echo __('Speciális ajánlatok'); ?></h1>
     <br/><br/>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">
-        <?php echo __('Ha Goodiebox meglepidobozt vásárolsz, akkor ezentúl extra kedvezménnyel jutalmazunk! Összegyűjtöttük azokat a partnereinket, akik speciális ajánlatokkal csábítanak, hogy kipróbáljátok őket! A lista folyamatosan bővül, így érdemes gyakran visszalátogatni erre az oldalra!'); ?>
+        <?php echo __('Ha <span style="color:#ec2366">Goodiebox meglepidobozt</span> vásárolsz, akkor ezentúl extra kedvezménnyel jutalmazunk! Összegyűjtöttük azokat a partnereinket, akik speciális ajánlatokkal csábítanak, hogy kipróbáljátok őket! A lista folyamatosan bővül, így érdemes gyakran visszalátogatni erre az oldalra!'); ?>
     </p>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('HOGYAN MŰKÖDIK?'); ?></p>
-    <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Minden megrendelt Goodiebox tartalmaz egy direkt erre a célra gyártott kedvezmény kártyát. Ha kinézted a listából, hogy melyik szolgáltató ajánlata a legszimpatikusabb az adott hónapban, nincs más dolog, mint kezedbe venni a kedvezmény kártyát, öledbe kapni a kutyusodat és már indulhattok is beváltani! Mivel a kártyát le kell adnod az általad választott szolgáltatónál, így minden megrendelt Goodiebox meglepidobozzal csak egy szolgáltatás vehető kedvezményesen igénybe egy adott hónapban. De ne aggódjatok, mindig lesz újabb hónap, újabb Goodiebox és újabb speciális ajánlatokra beváltható kedvezmény kártya is! :)'); ?></p>
-    <center><img style="margin: 0 auto;width:300px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/ok-main-page-pink.jpg"></center>
+    <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Minden megrendelt Goodiebox tartalmaz egy direkt erre a célra gyártott <span style="color:#ec2366">kedvezmény kártyát</span>. Ha kinézted a listából, hogy melyik szolgáltató ajánlata a legszimpatikusabb az adott hónapban, nincs más dolog, mint kezedbe venni a kedvezmény kártyát, öledbe kapni a kutyusodat és már indulhattok is beváltani! Mivel a kártyát le kell adnod az általad választott szolgáltatónál, így minden megrendelt Goodiebox meglepidobozzal csak egy szolgáltatás vehető kedvezményesen igénybe egy adott hónapban. De ne aggódjatok, mindig lesz újabb hónap, újabb Goodiebox és újabb speciális ajánlatokra beváltható kedvezmény kártya is! :)'); ?></p>
+    <div style="width: 100%"><center><h1 id="neked" style="cursor:pointer;position: relative;display: inline;top:-60px;letter-spacing: 10px;"><?php echo __('NEKED') ?></h1><img style="margin: 0 auto;width:250px;display: inline" src="<?= URL::base(TRUE, FALSE) ?>assets/img/ok-main-page-pink.jpg"><h1 id="neki" style="cursor:pointer;display: inline;position: relative;display: inline;top:-60px;letter-spacing: 10px;"><?php echo __('NEKI'); ?></h1></center></div>
     <div id="collapse-content">
-        <h3><?php echo __('NEKED') ?></h3>
-        <div class="main-collapse1">
+        <div class="main-collapse1" style="display: none">
             <div class="content" style="text-align:justify;">
                 <div class="collapse_content1">
                     <h3 class="collapse_content2"><?php echo __('1. Kávézók'); ?></h3>
@@ -38,8 +37,7 @@
                 </div>
             </div>
         </div>
-        <h3><?php echo __('NEKI'); ?></h3>
-        <div class="main-collapse">
+        <div class="main-collapse" style="display: none">
             <div class="content" style="text-align:justify;">
                 <div class="collapse_content1">
                     <h3 class="collapse_content"><?php echo __('1. Sütizők'); ?></h3>
@@ -91,16 +89,17 @@
 
 
     <script>
-        $("#collapse-content").collapse({
-            accordion: true,
-            open: function () {
-                this.addClass("open");
-                this.css({height: this.children().outerHeight()});
-            },
-            close: function () {
-                this.css({height: "0px"});
-                this.removeClass("open");
-            }
+        $('#neked').on('click',function(){
+            $('.main-collapse1').toggle();
+            $('.main-collapse').hide();
+            $('#neked').css('color','#ec2366');
+            $('#neki').css('color','#330000');
+        });
+        $('#neki').on('click',function(){
+            $('.main-collapse').toggle();
+            $('.main-collapse1').hide();
+            $('#neki').css('color','#ec2366');
+            $('#neked').css('color','#330000');
         });
         $('.collapse_content').on('click', function () {
             if ($(this).next().hasClass('open')) {

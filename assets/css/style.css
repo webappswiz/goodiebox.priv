@@ -1605,3 +1605,9 @@ and (max-device-width : 593px)  and (orientation : landscape)
 .medialinks img{
     border:3px solid #330000;
 }
+.pink{
+    color:#ec2366;
+}
+.norma{
+    color:#330000;
+}
