@@ -15,7 +15,6 @@
                     <h3 class="collapse_content2"><?php echo __('1. Kávézók'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;">
-                            ssss
                         </div>
                     </div>
                     <h3 class="collapse_content2"><?php echo __('2. Éttermek'); ?></h3>
