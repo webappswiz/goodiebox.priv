@@ -187,7 +187,7 @@ $menus = array(
         <p style="<?php echo ($status == 1) ? 'color:green;' : '' ?>"><?php echo __('Kivételes kutyusoknak'); ?><br/>
             <?php echo __('már 7990 Ft-tól!'); ?></p>
     </div>
-    <div id="cf-2"><p><a href="<?= URL::base(TRUE, FALSE) ?>special/"><img class="top" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-normal.png" alt="Goodiebox Offers" width="150px" /></a></p></div>
+    <div id="cf-2"><p><a href="<?= URL::base(TRUE, FALSE) ?>specials/"><img class="top" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-normal.png" alt="Goodiebox Offers" width="150px" /></a></p></div>
 </section> <!--End order place-->
 
 <div class='clear'></div>
