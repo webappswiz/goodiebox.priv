@@ -102,13 +102,13 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
   }
 }';
-                    //$result = $shipping->send_request($data_string);
-                    //$label = json_decode($result, true);
-                    //$label = $label['Order']['Labels'][0];
-                    //$pdf_decoded = base64_decode($label);
-                    //$pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
-                    //fwrite($pdf, $pdf_decoded);
-                    //fclose($pdf);
+                    $result = $shipping->send_request($data_string);
+                    $label = json_decode($result, true);
+                    $label = $label['Order']['Labels'][0];
+                    $pdf_decoded = base64_decode($label);
+                    $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
+                    fwrite($pdf, $pdf_decoded);
+                    fclose($pdf);
                 }
             }
             if ($_REQUEST['action'] == 2) {
@@ -208,13 +208,13 @@ class Controller_Admin_Orders extends Controller_Admin {
     }
   }
 }';
-            /*$result = $shipping->send_request($data_string);
+            $result = $shipping->send_request($data_string);
             $label = json_decode($result, true);
             $label = $label['Order']['Labels'][0];
             $pdf_decoded = base64_decode($label);
             $pdf = fopen(DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w');
             fwrite($pdf, $pdf_decoded);
-            fclose($pdf);*/
+            fclose($pdf);
         }
 
         if ($_REQUEST['status_name'] == 7) {

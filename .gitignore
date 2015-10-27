@@ -3,5 +3,5 @@
 /application/cache
 /orders
 /shipping
-/application/config/database.php
+/application/config/*
 /application/logs
