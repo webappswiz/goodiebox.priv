@@ -200,7 +200,7 @@ $menus = array(
     <div id="miert">
         <div class="container" id="text" style="padding: 0 30px 0 30px;margin-top: 0px;">
             <h2 style="font-family: La-Chata;padding-top: 10px;"><?php echo __('Mit is találtok majd a dobozban?'); ?></h2><br/>
-            <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong><?php echo __('Havonta változó, 3-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.'); ?><br/>
+            <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><strong><?php echo __('Havonta változó, 4-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.'); ?><br/>
                     <span id="show_t1" style="color:green;cursor: pointer;font-weight: bold"><?php echo __('Tovább olvasom'); ?></span>
             </p>
             <div id="tovab1" style="display:none;">
