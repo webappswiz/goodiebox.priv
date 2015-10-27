@@ -24,9 +24,9 @@ class Controller_Kapcsolat extends Controller_Core {
         $this->user = ($this->current_user)?$this->current_user:'';
         if($this->is_post()){
             $contact = ORM::factory('Contacts');
-            $contact->firstname = $_POST['firstname'];
-            $contact->lastname = $_POST['lastname'];
-            $contact->email = $_POST['email'];
+            $contact->firstname = $_POST['customer_firstname'];
+            $contact->lastname = $_POST['customer_lastname'];
+            $contact->email = $_POST['customer_email'];
             $contact->subject = $_POST['subject'];
             $contact->message = $_POST['message'];
             $contact->date = date('Y-m-d H:i');
