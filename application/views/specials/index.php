@@ -47,7 +47,7 @@
                                 <tr>
                                     <td>Flash kutyapékség<br/>
                                         1094 Budapest Páva utca 17.<br/>
-                                        +36 70 328 0870<br/>
+                                        <a href="tel:+36703280870">+36 70 328 0870</a><br/>
                                         info@flashkutyapekseg.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
@@ -69,7 +69,7 @@
                                         1103 Budapest Cserkesz utca 49.<br/>
                                         1024 Budapest Fillér utca 16.<br/>
                                         1064 Budapest Rózsa utca 94/B.<br/>
-                                        +36 1 246 2306<br/>
+                                        <a href="tel:+3612462306">+36 1 246 2306</a><br/>
                                         info@dogmopolite.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
@@ -97,7 +97,7 @@
                                         1103 Budapest Cserkesz utca 49.<br/>
                                         1024 Budapest Fillér utca 16.<br/>
                                         1064 Budapest Rózsa utca 94/B.<br/>
-                                        +36 1 246 2306<br/>
+                                        <a href="+3612462306">+36 1 246 2306</a><br/>
                                         info@dogmopolite.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
@@ -116,8 +116,8 @@
                                     <td>
                                         Ebfizio<br/>
                                         Kisállat-fizioterápia és hidroterápia, kutya-fitness<br/>
-                                        1048 Budapest Falemez utca 18.<br/>
-                                        +36 70 386 6285<br/>
+                                        1048 Budapest Falemez utca 18.<a href="https://goo.gl/maps/tuiH8qPNub62" target="_blank"><img width="32" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        <a href="+36703866285">+36 70 386 6285</a><br/>
                                         info@ebfizio.hu<br/>
                                         <span class="kedvezmeny">20% <?php echo __('kedvezmény'); ?></span>
                                     </td>
