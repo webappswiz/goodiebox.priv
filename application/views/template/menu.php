@@ -7,9 +7,9 @@ $menus = array(
     '/kutyusaink' => array( __('Kutyusaink'), 'kutyusaink'),
     'http://blog.goodiebox.hu' => array( __('Blog'), 'blog'),
     '/gyik' => array( __('GYIK'), 'gyik'),
-    '/kapcsolat' => array( __('Kapcsolat'), 'kapcsolat'),
     'http://forum.goodiebox.hu' => array( __('Forum'), 'forum'),
     '/partnerek' => array( __('Partnereink'), 'partnerek'),
+    '/kapcsolat' => array( __('Kapcsolat'), 'kapcsolat'),
 );
 if($auth->logged_in()){
     $menus['user_account'] = array( __('Profilom'),'arcél');
