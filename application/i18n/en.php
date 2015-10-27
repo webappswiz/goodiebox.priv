@@ -365,7 +365,7 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     '/assets/img/pricedogs_hun.jpg' => '/assets/img/pricedogs_eng.jpg',
     '/assets/img/hogyanmukodik_hun.jpg' => '/assets/img/hogyanmukodik_eng.jpg',
     '/assets/img/arrows.png' => '/assets/img/arrows_eng.jpg',
-    '' => '',
+    'Rendelnél még másik dobozt is?' => 'Want to order another box?',
     '' => '',
     '' => '',
     'Hogyan' => 'How it works?',
