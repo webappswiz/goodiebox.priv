@@ -116,7 +116,7 @@
                                     <td>
                                         Ebfizio<br/>
                                         Kisállat-fizioterápia és hidroterápia, kutya-fitness<br/>
-                                        1048 Budapest Falemez utca 18.<a href="https://goo.gl/maps/tuiH8qPNub62" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align;top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1048 Budapest Falemez utca 18.<a href="https://goo.gl/maps/tuiH8qPNub62" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
                                         <a href="tel:+36703866285">+36 70 386 6285<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@ebfizio.hu<br/>
                                         <span class="kedvezmeny">20% <?php echo __('kedvezmény'); ?></span>
