@@ -148,7 +148,7 @@ return array
     'Fizetési lehetőségek:<br />' =>
     'Payment Options:<br />',
     'Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' =>
-    'Instant bank card payment method (PayU,this has no additional charges!)',
+    'Instant bank card payment method (PayU, this has no additional charges!)',
     'Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)' =>
     'Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)',
     '<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' =>
