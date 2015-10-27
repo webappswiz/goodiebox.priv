@@ -371,7 +371,7 @@ $time = explode(':', $date_array[1]);
             </div>
         </div>
 
-        <h3><?php echo __('Ajándékozok egy barátnak<p class="sub-heading">Ha korábban már ajándékoztam, itt megismételhetem!</p>'); ?></h3>
+       <!-- <h3><?php echo __('Ajándékozok egy barátnak<p class="sub-heading">Ha korábban már ajándékoztam, itt megismételhetem!</p>'); ?></h3>
         <div>
             <div class="content">
                 <div class="support">
@@ -452,9 +452,9 @@ $time = explode(':', $date_array[1]);
                         </div>
                         <div class="clear"></div>
                     </div>
-                </div> <!--End support-->
+                </div> 
             </div>
-        </div>
+        </div> <!--End support-->
         <!--
                 <h3>Támogatok menhelyi kutyust<p class="sub-heading">Ha korábban már támogattam, itt megismételhetem!</p></h3>
                 <div>
