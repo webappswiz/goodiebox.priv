@@ -16,7 +16,7 @@
         </div>
     </div>
 
-<div class="medialinks" style="text-align: center">
+<div class="medialinks" style="text-align: center;margin-top:40px;">
     <h1><?php echo __('Média'); ?></h1>
     <br/>
     <br/>
