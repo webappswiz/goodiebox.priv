@@ -176,7 +176,7 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     //Kapcsolat
     'Köszönjük az üzenetedet!<br/>Hamarosan válaszolunk!<br/>Szép napot!' => 'Thanks for your message!<br/>We will answer as soon as possible!<br/>Have a nice day!',
     'Írj nekünk!' => 'Write Us!',
-    'Mindig örülünk, ha üzenetet kapunk! </br>Van egy jó ötleted? Valami nem tetszett vagy nagyon is? </br>Vannak kérdéseid és a választ nem találod a GYIK menü pontban?</br>Ne rejtegesd a véleményed, oszd meg velünk és mi válaszolunk neked!' => 'We\'re always happy to read from you! </br>Do you have a good idea? Is there something you really liked or didn\'t like? </br>Do you have questions and you can\'t find answers in the FAQ?</br>Share them with us, and we will get back to you as soon as possible!',
+    'Mindig örülünk, ha üzenetet kapunk! </br>Van egy jó ötleted? Valami nem tetszett vagy nagyon is? </br>Vannak kérdéseid és a választ nem találod a GYIK menü pontban?</br>Ne rejtegesd a véleményed, oszd meg velünk és mi válaszolunk neked!' => 'We\'re always happy to read your messages! </br>Do you have a good idea? Is there something you really liked or didn\'t like? </br>Do you have questions and you can\'t find answers in the FAQ?</br>Share them with us, and we will get back to you as soon as possible!',
     'Kapcsolat információ:' => 'Contact Information:',
     'E-mail cím:' => 'E-mail Address:',
     'Vezetéknév*' => 'Lastname*',
