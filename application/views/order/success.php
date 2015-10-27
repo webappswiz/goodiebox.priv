@@ -45,7 +45,7 @@
     <h1><?php echo __('Köszönjük a rendelésedet!'); ?></h1>
     <h2><?php echo __('E-mail címedre visszaigazolást küldtünk.'); ?></h2>
     <br/><br/>
-    <a href="<?php echo URL::base(TRUE, FALSE) . 'user_account/?new' ?>"><?php echo __('Make another order'); ?></a>
+    <span style="font-size:18px;font-family:'FranklinGothic-Heavy';"><a href="<?php echo URL::base(TRUE, FALSE) . 'user_account/?new' ?>"><?php echo __('Rendelnél még másik dobozt is?'); ?></a>
     <br/>
     <img width="551" src="<?= URL::base(TRUE, FALSE) ?>assets/img/bark.jpg" alt="Thank you"><br/><br/><br/>
     <a href="<?= URL::base(TRUE, FALSE) ?>order/success" class="btnShare" data-title="goodiebox" data-desc="Hurrá, megrendeltem a legújabb Goodiebox-ot a kutyámnak! Ha Te is szeretnéd megajándékozni kis kedvencedet a legszuperebb meglepidobozzal, akkor kattints a weboldalukra http://goodiebox.hu"><img style="margin-top: 0px;padding: 0px;margin-right:5px;" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/share_fb.png" width="64" height="64" alt="facebook"></a>
