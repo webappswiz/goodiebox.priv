@@ -442,5 +442,22 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Törölni szeretnéd a kutyus profilját?' => 'You really want to delete your puppy\'s profile?',
     'A meghívót sikeresen elküldtük!' => 'Your Invitation has been successfully sent',
     'Ezzel az e-mail címmel már regisztráltak!' => 'This email address is already registered',
-    'Meghívó: gyere és te is lepd meg a kutyusodat!' => 'Invite has been received'
+    'Meghívó: gyere és te is lepd meg a kutyusodat!' => 'Invite has been received',
+    'A szállítási címedet sikeresen megváltoztattad!' => 'Your delivery address was successfully changed!',
+    'A jelszavadat sikeresen megváltoztattad!' => 'Your password was successfully changed!',
+    'A kutyust sikeresen törölted a profilodból!' => 'The puppy profile has been successfully deleted!',
+    'Sikeresen hozzáadtad a kutyust a profilodhoz!' => 'You have successfully added a puppy to your profile!',
+    'Helytelen kupon kód. Kérlek, próbáld meg mégegyszer!' => 'Incorrect coupon code. Please try again!',
+    'Nem küldhetsz meghívót saját magadnak!' => 'You cannot send an invitation for yourself!',
+    'Ezzel az e-mail címmel már regisztráltak!' => 'This e-mail address is already registered!',
+    'Már küldtél korábban meghívót erre az e-mail címre!' => 'You had already sent an invitation to this e-mail address!',
+    'Meghívó: gyere és te is lepd meg a kutyusodat!' => 'Invitation: Come and you could surprise your puppy!',
+    'A meghívót sikeresen elküldtük!' => 'Your invitation was successfully sent!',
+    'Elküldtük az jelszó emlékeztetőt az e-mail címedre.' => 'The password reminder has been sent to your e-mail address.',
+    'Helytelen felhasználónév vagy jelszó!' => 'Incorrect username or password!',
+    'Ez az e-mail cím nincs a rendszerünkben' => 'This e-mail address is not in our system!',
+    'Jelszó helyreállítás' => 'Password Recovery',
+    'Elküldtük az jelszó emlékeztetőt az e-mail címedre.' => 'The password reminder has been sent to your e-mail address.',
+    'A jelszó nem egyezik' => 'The passwords do not match',
+    'A jelszavadat sikeresen megváltoztattad!' => 'Your password was successfully changed!'
 );
