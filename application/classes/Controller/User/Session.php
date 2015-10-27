@@ -8,7 +8,7 @@ class Controller_User_Session extends Controller_Core {
 
     public function before() {
         parent::before();
-        $this->set_title('Belépés');
+        $this->set_title(__('Belépés'));
         $this->template->active_menu = 'login';
     }
 
