@@ -143,7 +143,7 @@ return array
     'Goodiebox Plus 7990 Ft<br />',
     'Havonta változó, 4-6 különböző, gondosan válogatott, prémium minőségi termék (táp, jutalomfalat, játék, kiegészítő, vitamin, higiénés termék) egy dobozban.' =>
     'Every month, 4-6 unique premium quality products (food, treats, toys, accessories, vitamins, grooming items) are in the box.',
-    'Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkártyás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.' =>
+    'Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkárytás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.' =>
     'These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.',
     'Fizetési lehetőségek:<br />' =>
     'Payment Options:<br />',
