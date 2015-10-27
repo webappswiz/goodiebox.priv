@@ -2,7 +2,7 @@
 
 defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Special extends Controller_Core {
+class Controller_Specials extends Controller_Core {
     public function before()
     {
         parent::before();

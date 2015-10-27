@@ -134,7 +134,7 @@ $menus = array(
 </div>
 
 <section id="counting-back" style="margin-bottom: 5px;margin-top: 25px;vertical-align: middle;position: relative">
-    <div id="cf" class="count-image"><a href="<?= URL::base(TRUE, FALSE) ?>special">
+    <div id="cf" class="count-image"><a href="<?= URL::base(TRUE, FALSE) ?>specials">
             <img class="bottom" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-hover.png" alt="Goodiebox Offers" width="150px" />
             <img class="top" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-normal.png" alt="Goodiebox Offers" width="150px" /></a>
     </div>
