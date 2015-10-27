@@ -1,7 +1,7 @@
 <div class="clear"></div>
 <section class="how-it-works" class="rounded">
     <h1><?php echo __('Hogyan működik?'); ?></h1>
-    <img width="772" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/how-it-works-img.jpg'); ?>" alt="How it works">
+    <img width="772" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/hogyanmukodik.png'); ?>" alt="How it works">
     <div class="how-list">
         <h1><?php echo __('Mi van a dobozban?'); ?></h1>
         <p><?php echo __('Havonta változó, 3-6 különböző terméket teszünk a meglepetés dobozba.*'); ?></p>
