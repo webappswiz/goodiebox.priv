@@ -22,7 +22,7 @@ return array
     'Szeretnél értesítést, amikor rendelhető a következő Goodiebox?' => 'Want to know when the next Goodiebox will be available?',
     'saját' => 'unique',
     'doboza' => 'box',
-    'Haspók kutyusoknak' => 'For pups who love to snack',
+    'Haspók kutyusoknak' => 'For snack loving pups',
     'már 5990 Ft-tól!' => 'from 5990 Ft!',
     'Kivételes kutyusoknak' => 'For special dogs',
     'már 7990 Ft-tól!' => 'from 7990 Ft!',
