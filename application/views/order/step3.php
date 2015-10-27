@@ -201,7 +201,7 @@ if (isset($session['step2'])) {
 
     </div>
     <div class="clear"></div>
-    <h2><?php echo __('Válaszd ki </br>milyen periódust szeretnél!'); ?></h2>
+    <h2><?php echo __('Fejezd be a rendelésedet!'); ?></h2>
     <div class="claim-box1">
         <div class="box rounded">
             <img src="<?= URL::base(TRUE, FALSE) ?>assets/img/claim-i.png">
