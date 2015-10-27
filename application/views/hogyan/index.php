@@ -4,7 +4,7 @@
     <img width="772" src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/how-it-works-img.jpg'); ?>" alt="How it works">
     <div class="how-list">
         <h1><?php echo __('Mi van a dobozban?'); ?></h1>
-        <p><?php echo __('Havonta változó, 4-5 különböző terméket teszünk a meglepetés dobozba.*'); ?></p>
+        <p><?php echo __('Havonta változó, 4-6 különböző terméket teszünk a meglepetés dobozba.*'); ?></p>
 
         <ul class="how-list-left">
             <li class="how-list1">
