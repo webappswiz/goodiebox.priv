@@ -57,7 +57,7 @@ return array
     //Hogyan
     'Hogyan működik?' => 'How it works?',
     'Mi van a dobozban?' => 'What\'s in the box?',
-    'Havonta változó, 4-6 különböző terméket teszünk a meglepetés dobozba.*' => 'Every month, 4-6 different items are in the box.*',
+    'Havonta változó, 3-6 különböző terméket teszünk a meglepetés dobozba.*' => 'Every month, 3-6 different items are in the box.*',
     'Jutalomfalat' => 'Treats',
     'Bármi legyen is a feladat, egy kis ösztönző mindig jól jön.' => 'A great reward for every ocassion.',
     'Eledel' => 'Food',
