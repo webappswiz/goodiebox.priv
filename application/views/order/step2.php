@@ -85,8 +85,8 @@
                 $image = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/plus-2nd-order-page.png"><br/>';
                 $image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base(TRUE, FALSE) . 'assets/img/smart-2nd-order-page.png"><br/>';
             } 
-            echo '1'. $box1 = (trim(Session::instance()->get('package')) == 'plus') ? 'checked' : '';
-            echo '2'. $box2 = (trim(Session::instance()->get('package')) == 'smart') ? 'checked' : '';
+            $box1 = (trim(Session::instance()->get('package')) == 'plus') ? 'checked' : '';
+            $box2 = (trim(Session::instance()->get('package')) == 'smart') ? 'checked' : '';
             if(trim(Session::instance()->get('package')=='')){
                 $box2 = 'checked';
             }
