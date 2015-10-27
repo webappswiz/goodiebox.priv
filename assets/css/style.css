@@ -566,6 +566,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .neki{cursor:pointer;display: inline;position: relative;display: inline;top:-60px;}
 .specials-image{margin: 0 auto;width:250px;display: inline;margin-top:50px!important;}
 .specials-cats{padding-left: 160px}
+.kedvezmeny {font-weight:bold;color:#ec2366;}
 
 /*******************************
                 MEDIA QUERIES CSS
