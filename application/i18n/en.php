@@ -424,5 +424,6 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Doktorbácsik/nénik' => 'Vet Clincs',
     'Panziók' => 'Pet Sitters',
     'Egyéb szolgáltatások' => 'Other Services',
-    'ok-main-page-pink.jpg' => 'ok-main-page-pink_eng.jpg'
+    'ok-main-page-pink.jpg' => 'ok-main-page-pink_eng.jpg',
+    'kedvezmény' => 'discount'
 );
