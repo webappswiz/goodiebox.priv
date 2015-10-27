@@ -119,7 +119,7 @@
                                         1048 Budapest Falemez utca 18.<br/>
                                         +36 70 386 6285<br/>
                                         info@ebfizio.hu<br/>
-                                        20% kedvezmény
+                                        20% <?php echo __('kedvezmény'); ?>
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/20-icon.jpg">
