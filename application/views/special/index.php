@@ -48,7 +48,8 @@
                                     <td>Flash kutyapékség<br/>
                                         1094 Budapest Páva utca 17.<br/>
                                         +36 70 328 0870<br/>
-                                        info@flashkutyapekseg.hu
+                                        info@flashkutyapekseg.hu<br/>
+                                        5% kedvezmény
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
@@ -69,7 +70,8 @@
                                         1024 Budapest Fillér utca 16.<br/>
                                         1064 Budapest Rózsa utca 94/B.<br/>
                                         +36 1 246 2306<br/>
-                                        info@dogmopolite.hu
+                                        info@dogmopolite.hu<br/>
+                                        5% kedvezmény
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
@@ -96,7 +98,8 @@
                                         1024 Budapest Fillér utca 16.<br/>
                                         1064 Budapest Rózsa utca 94/B.<br/>
                                         +36 1 246 2306<br/>
-                                        info@dogmopolite.hu
+                                        info@dogmopolite.hu<br/>
+                                        5% kedvezmény
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
@@ -111,10 +114,12 @@
                             <table>
                                 <tr>
                                     <td>
-                                        Ebfizio - kisállat-fizioterápia és hidroterápia, kutya-fitness<br/>
+                                        Ebfizio<br/>
+                                        Kisállat-fizioterápia és hidroterápia, kutya-fitness<br/>
                                         1048 Budapest Falemez utca 18.<br/>
                                         +36 70 386 6285<br/>
-                                        info@ebfizio.hu
+                                        info@ebfizio.hu<br/>
+                                        20% kedvezmény
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/20-icon.jpg">
