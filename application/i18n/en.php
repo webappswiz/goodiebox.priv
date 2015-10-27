@@ -30,7 +30,7 @@ return array
     'Goodiebox fotók' => 'Goodiebox Photos',
     'Goodiebox videók' => 'Goodiebox Videos',
     'Mit is találtok majd a dobozban?' => 'What can you find in a Goodiebox?',
-    'Havonta változó, 3-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.' => 'Every month, 3-6 different items are in the box (food, snacks, toys, accessories, grooming items, vitamins)</strong>. This is a highly personalized service. Based on your pup\'s size, age and allergies, we carefully select premium products which will be delivered to your doorstep.',
+    'Havonta változó, 4-6 különböző izgalmat csempészünk bele (táp, snack, játék, kiegészítő, higiénés termék, vitamin)</strong>. A termékek válogatásánál figyelembe vesszük kutyusod méretét és életkorát, ennek megfelelően gondosan válogatott, prémium termékeket juttatunk el otthonodba.' => 'Every month, 3-6 different items are in the box (food, snacks, toys, accessories, grooming items, vitamins)</strong>. This is a highly personalized service. Based on your pup\'s size, age and allergies, we carefully select premium products which will be delivered to your doorstep.',
     'Tovább olvasom' => 'Read more',
     'Jelenleg kétféle dobozunk elérhető:' => 'At the moment, 2 box types are available:',
     'Goodiebox Smart 5990 Ft' => 'Goodiebox Smart 5990 Ft',
@@ -57,7 +57,7 @@ return array
     //Hogyan
     'Hogyan működik?' => 'How it works?',
     'Mi van a dobozban?' => 'What\'s in the box?',
-    'Havonta változó, 4-5 különböző terméket teszünk a meglepetés dobozba.*' => 'Every month, 4-5 different items are in the box.*',
+    'Havonta változó, 4-6 különböző terméket teszünk a meglepetés dobozba.*' => 'Every month, 4-6 different items are in the box.*',
     'Jutalomfalat' => 'Treats',
     'Bármi legyen is a feladat, egy kis ösztönző mindig jól jön.' => 'A great reward for every ocassion.',
     'Eledel' => 'Food',
