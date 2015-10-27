@@ -1,0 +1,2 @@
+[27-Oct-2015 11:27:57 America/Denver] PHP Fatal error:  require(): Failed opening required '/classes/Kohana/Core.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home2/goodieb1/public_html/application/bootstrap.php on line 7
+[27-Oct-2015 11:27:58 America/Denver] PHP Fatal error:  require(): Failed opening required '/classes/Kohana/Core.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home2/goodieb1/public_html/application/bootstrap.php on line 7
