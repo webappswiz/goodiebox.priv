@@ -464,6 +464,6 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Igen' => 'Yes',
     'Mégse' => 'Cancel',
     'Most' => 'Now!',
-    'M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M' => 'O<br/>R&nbsp;&nbsp;&nbsp;N<br/>D&nbsp;&nbsp;&nbsp;O<br/>E&nbsp;&nbsp;&nbsp;W</br>R',
+    'M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M' => 'O<br/>R&nbsp;&nbsp;&nbsp;N<br/>D&nbsp;&nbsp;&nbsp;O<br/>E&nbsp;&nbsp;&nbsp;W</br>R&nbsp;&nbsp;&nbsp;&nbsp;!',
     'Fejezd be a rendelésedet!' => 'Complete your order!'
 );
