@@ -1012,8 +1012,8 @@ label.tooltip span
         margin: 2px;
     }
     .specials-image{margin: 0 auto!important;width:100px;display: inline!important;}
-    .neked {cursor:pointer;position: relative;display: inline;top:-20px;font-size:18px;margin-right:20px;}
-    .neki{cursor:pointer;display: inline;position: relative;display: inline;top:-20px;font-size:18px;margin-left:25px;}
+    .neked {cursor:pointer;position: relative;display: inline;top:-20px;font-size:18px;margin-right:10px;}
+    .neki{cursor:pointer;display: inline;position: relative;display: inline;top:-20px;font-size:18px;margin-left:15px;}
     .specials-cats{padding-left:2px;}
     .center-arrows,.dog-img,.siess{display: none;}
     .count-text{margin: 0 auto; padding-left: 70px;}
