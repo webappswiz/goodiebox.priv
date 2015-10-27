@@ -16,12 +16,10 @@
         </div>
     </div>
 
-<div class="medialinks" style="text-align: center;margin-top:40px;">
+<div class="medialinks" style="text-align: center;margin-top:60px;">
     <h1><?php echo __('Média'); ?></h1>
     <br/>
-    <br/>
-    <br/>
-    <div style="display: inline-block">
+   <div style="display: inline-block">
         <br/>
         <img width="350" class="rounded" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/media/joymagazinmarch_400.png" alt=""/><br/>
         <br/>
