@@ -24,7 +24,7 @@ return array
     'doboza' => 'box',
     'Haspók kutyusoknak' => 'For snack loving pups',
     'már 5990 Ft-tól!' => 'from 5990 Ft!',
-    'Kivételes kutyusoknak' => 'For special dogs',
+    'Kivételes kutyusoknak' => 'For extra special pups',
     'már 7990 Ft-tól!' => 'from 7990 Ft!',
     'Miért jó a Goodiebox?' => 'Why get a Goodiebox?',
     'Goodiebox fotók' => 'Goodiebox Photos',
