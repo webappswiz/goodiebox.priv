@@ -56,6 +56,7 @@ return array
 //End Main
     //Hogyan
     'Hogyan működik?' => 'How it works?',
+    '/assets/img/hogyanmukodik.png' => '/assets/img/hogyanmukodik-eng.png',
     'Mi van a dobozban?' => 'What\'s in the box?',
     'Havonta változó, 3-6 különböző terméket teszünk a meglepetés dobozba.*' => 'Every month, 3-6 different items are in the box.*',
     'Jutalomfalat' => 'Treats',
