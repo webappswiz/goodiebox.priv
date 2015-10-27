@@ -399,8 +399,7 @@ if (isset($session['step2'])) {
                 <br/>
                 <input id="cc" checked type="radio" name="cc" class="pay"><?php echo __('Bankkártyával azonnal (PayU biztonságos felületen keresztül)'); ?><br/>
                 <div class="cc_instruct">
-                    <p><?php echo __('Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. 
-                        A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!'); ?></p>
+                    <p><?php echo __('Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!'); ?></p>
                 </div>
                 <input id="cod" type="radio" name="cc" class="pay"><?php echo __('Utánvét (Extra költséget számolunk fel:'); ?> +<?= $cost ?> Ft)
                 <div class="cc_instruct" style="display: none;">
