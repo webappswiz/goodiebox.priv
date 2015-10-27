@@ -15,8 +15,8 @@
             <a href="http://beagle-club.hu/" target="blank"><img class="" height="100" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/img_0305_300.jpg" alt="" /></a>
         </div>
     </div>
-</section>
-<section class="how-it-works rounded medialinks" style="text-align: center">
+
+<div class="medialinks" style="text-align: center">
     <h1><?php echo __('Média'); ?></h1>
     <br/>
     <br/>
