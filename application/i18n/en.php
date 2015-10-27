@@ -459,5 +459,8 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Jelszó helyreállítás' => 'Password Recovery',
     'Elküldtük az jelszó emlékeztetőt az e-mail címedre.' => 'The password reminder has been sent to your e-mail address.',
     'A jelszó nem egyezik' => 'The passwords do not match',
-    'A jelszavadat sikeresen megváltoztattad!' => 'Your password was successfully changed!'
+    'A jelszavadat sikeresen megváltoztattad!' => 'Your password was successfully changed!',
+    'Törölni szeretnéda kutyus profilját?' => 'You really want to delete this profile?',
+    'Igen' => 'Yes',
+    'Mégse' => 'Cancel'
 );
