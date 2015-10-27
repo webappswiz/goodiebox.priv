@@ -4,7 +4,7 @@
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;">
         <?php echo __('Ha <span style="color:#ec2366">Goodiebox meglepidobozt</span> vásárolsz, akkor ezentúl extra kedvezménnyel jutalmazunk! Összegyűjtöttük azokat a partnereinket, akik speciális ajánlatokkal csábítanak, hogy kipróbáljátok őket! A lista folyamatosan bővül, így érdemes gyakran visszalátogatni erre az oldalra!'); ?>
     </p>
-    <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('HOGYAN MŰKÖDIK?'); ?></p>
+    <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;margin-top:10px;font-weight:bold;"><?php echo __('HOGYAN MŰKÖDIK?'); ?></p>
     <p style="padding-top: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 18px; line-height: 30px;"><?php echo __('Minden megrendelt Goodiebox tartalmaz egy direkt erre a célra gyártott <span style="color:#ec2366">kedvezmény kártyát</span>. Ha kinézted a listából, hogy melyik szolgáltató ajánlata a legszimpatikusabb az adott hónapban, nincs más dolog, mint kezedbe venni a kedvezmény kártyát, öledbe kapni a kutyusodat és már indulhattok is beváltani! Mivel a kártyát le kell adnod az általad választott szolgáltatónál, így minden megrendelt Goodiebox meglepidobozzal csak egy szolgáltatás vehető kedvezményesen igénybe egy adott hónapban. De ne aggódjatok, mindig lesz újabb hónap, újabb Goodiebox és újabb speciális ajánlatokra beváltható kedvezmény kártya is! :)'); ?></p>
     <div class="neki-neked_container"><center><h1 id="neked" class="neked"><?php echo __('NEKED') ?></h1><img class="specials-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/<?php echo __('ok-main-page-pink.jpg'); ?>"><h1 id="neki" class="neki"><?php echo __('NEKI'); ?></h1></center></div>
     <div id="collapse-content" class="specials-cats">
@@ -49,7 +49,7 @@
                                         1094 Budapest Páva utca 17.<br/>
                                         +36 70 328 0870<br/>
                                         info@flashkutyapekseg.hu<br/>
-                                        5% kedvezmény
+                                        5% <?php echo __('kedvezmény'); ?>
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
@@ -71,7 +71,7 @@
                                         1064 Budapest Rózsa utca 94/B.<br/>
                                         +36 1 246 2306<br/>
                                         info@dogmopolite.hu<br/>
-                                        5% kedvezmény
+                                        5% <?php echo __('kedvezmény'); ?>
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
@@ -99,7 +99,7 @@
                                         1064 Budapest Rózsa utca 94/B.<br/>
                                         +36 1 246 2306<br/>
                                         info@dogmopolite.hu<br/>
-                                        5% kedvezmény
+                                        5% <?php echo __('kedvezmény'); ?>
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
