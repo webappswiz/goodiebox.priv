@@ -402,7 +402,7 @@ class Controller_Order extends Controller_Core {
             $order->message = $_POST['msg'];
         } elseif (isset($_POST['shipping'])) {
             if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])) {
-                Flash::set('alert', 'Please the shipping form');
+                Flash::set('alert', 'Please fill the shipping form');
                 $this->redirect('order/step3');
             }
             $order->delivery_firstname = $_POST['delivery_firstname'];

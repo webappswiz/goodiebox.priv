@@ -228,7 +228,7 @@ class Controller_User_Account extends Controller_Core {
         }
         
         $this->send($email, 'info@goodiebox.hu', __('Meghívó: gyere és te is lepd meg a kutyusodat!'), $body);
-        Flash::set('notice', 'A meghívót sikeresen elküldtük!');
+        Flash::set('notice', __('A meghívót sikeresen elküldtük!'));
         $this->redirect('/user_account');
     }
     
