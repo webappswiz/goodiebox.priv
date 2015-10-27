@@ -54,11 +54,11 @@ class Controller_User_Account extends Controller_Core {
             $this->shipping->customer_address = $_POST['address'] . ' ' . $_POST['address2'];
 
             $this->shipping->save();
-            Flash::set('notice', 'A szállítási címedet sikeresen megváltoztattad!');
+            Flash::set('notice', __('A szállítási címedet sikeresen megváltoztattad!'));
             if (isset($_POST['password']) && !empty($_POST['password'])) {
                 $user->password = $_POST['password'];
                 $user->save();
-                Flash::set('notice', 'A jelszavadat sikeresen megváltoztattad!');
+                Flash::set('notice',  __('A jelszavadat sikeresen megváltoztattad!'));
             }
             $this->redirect('/user_account');
         } else
@@ -76,7 +76,7 @@ class Controller_User_Account extends Controller_Core {
                 ->find();
         if ($puppy->loaded()) {
             $puppy->delete();
-            Flash::set('notice', 'A kutyust sikeresen törölted a profilodból!');
+            Flash::set('notice',  __('A kutyust sikeresen törölted a profilodból!'));
         }
         $this->redirect('/user_account');
     }
@@ -94,7 +94,7 @@ class Controller_User_Account extends Controller_Core {
             $puppy->alerg_descr = $_POST['alerg_descr'];
             $puppy->selected_size = $_POST['size'];
             $puppy->save();
-            Flash::set('notice', 'Sikeresen hozzáadtad a kutyust a profilodhoz!');
+            Flash::set('notice',  __('Sikeresen hozzáadtad a kutyust a profilodhoz!'));
             $this->redirect('/user_account');
         }
     }
@@ -123,7 +123,7 @@ class Controller_User_Account extends Controller_Core {
                     ->where('coupon_code', '=', $coupon_code)
                     ->find();
             if (!$friend->loaded()) {
-                Flash::set('alert', 'Helytelen kupon kód. Kérlek, próbáld meg mégegyszer!');
+                Flash::set('alert',  __('Helytelen kupon kód. Kérlek, próbáld meg mégegyszer!'));
                 $this->redirect('/user_account');
             }
             $puppy = ORM::factory('Puppy', (int) $_POST['puppy_id']);
@@ -196,7 +196,7 @@ class Controller_User_Account extends Controller_Core {
         if (!$this->request->post() || empty($_POST['friend_email']))
             $this->redirect('/user_account');
         if ($_POST['friend_email'] == $this->current_user->email) {
-            Flash::set('alert', 'Nem küldhetsz meghívót saját magadnak!');
+            Flash::set('alert',  __('Nem küldhetsz meghívót saját magadnak!'));
             $this->redirect('/user_account');
         }
         $email = $_POST['friend_email'];
@@ -204,7 +204,7 @@ class Controller_User_Account extends Controller_Core {
                 ->where('email', '=', $email)
                 ->find();
         if ($user->loaded()) {
-            Flash::set('alert', 'Ezzel az e-mail címmel már regisztráltak!');
+            Flash::set('alert',  __('Ezzel az e-mail címmel már regisztráltak!'));
             $this->redirect('/user_account');
         }
         $email = $_POST['friend_email'];
@@ -213,7 +213,7 @@ class Controller_User_Account extends Controller_Core {
                 ->and_where('email', '=', $email)
                 ->find();
         if ($invites->loaded()) {
-            Flash::set('alert', 'Már küldtél korábban meghívót erre az e-mail címre!');
+            Flash::set('alert',  __('Már küldtél korábban meghívót erre az e-mail címre!'));
             $this->redirect('/user_account');
         }
         $invites = ORM::factory('Invites');
@@ -221,8 +221,13 @@ class Controller_User_Account extends Controller_Core {
         $invites->email = $email;
         $invites->save();
         $body = ORM::factory('Templates', 4);
-        $body = str_replace('[friend]', $this->current_user->customer_firstname . ' ' . $this->current_user->customer_lastname, $body->template_text);
-        $this->send($email, 'info@goodiebox.hu', 'Meghívó: gyere és te is lepd meg a kutyusodat!', $body);
+        if (Cookie::get('lang', 'hu') == 'hu') {
+            $body = str_replace('[friend]', $this->current_user->customer_firstname . ' ' . $this->current_user->customer_lastname, $body->template_text);
+        } else {
+            $body = str_replace('[friend]', $this->current_user->customer_firstname . ' ' . $this->current_user->customer_lastname, $body->template_text_eng);
+        }
+        
+        $this->send($email, 'info@goodiebox.hu', __('Meghívó: gyere és te is lepd meg a kutyusodat!'), $body);
         Flash::set('notice', 'A meghívót sikeresen elküldtük!');
         $this->redirect('/user_account');
     }

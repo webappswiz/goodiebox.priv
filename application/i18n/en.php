@@ -434,5 +434,13 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Panziók' => 'Pet Sitters',
     'Egyéb szolgáltatások' => 'Other Services',
     'ok-main-page-pink.jpg' => 'ok-main-page-pink_eng.jpg',
-    'kedvezmény' => 'discount'
+    'kedvezmény' => 'discount',
+    'Elfogad' => 'Submit',
+    'Elküldtük az jelszó emlékeztetőt az e-mail címedre.' => 'We have sent you instructions on how to reset your password.',
+    'érvénytelen link' => 'invalid link',
+    'Sikeresen hozzáadtad a kutyust a profilodhoz!' => 'Your puppy\'s profile has been successfully created!',
+    'Törölni szeretnéd a kutyus profilját?' => 'You really want to delete your puppy\'s profile?',
+    'A meghívót sikeresen elküldtük!' => 'Your Invitation has been successfully sent',
+    'Ezzel az e-mail címmel már regisztráltak!' => 'This email address is already registered',
+    'Meghívó: gyere és te is lepd meg a kutyusodat!' => 'Invite has been received'
 );

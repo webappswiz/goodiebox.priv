@@ -37,7 +37,7 @@ class Controller_User_Session extends Controller_Core {
                 $this->redirect($requested_url? : Kohana::$base_url . '/user_account');
             }
         } else {
-            Flash::set('alert', 'Helytelen felhasználónév vagy jelszó!');
+            Flash::set('alert', __('Helytelen felhasználónév vagy jelszó!'));
         }
     }
 
@@ -49,7 +49,7 @@ class Controller_User_Session extends Controller_Core {
                 ->where('email', '=', $email)
                 ->find();
         if (!$email_model->loaded()) {
-            Flash::set('alert', 'Ez az e-mail cím nincs a rendszerünkben');
+            Flash::set('alert', __('Ez az e-mail cím nincs a rendszerünkben'));
             $this->redirect('/user_session/reset');
         }
         $link = md5(2014 * 10 * 20 + $email_model->id);
@@ -59,23 +59,28 @@ class Controller_User_Session extends Controller_Core {
         $token->save();
         $email_template = ORM::factory('Templates', 5);
         $http_link = HTML::anchor(URL::base(TRUE, TRUE) . 'user_session/reset2/?hash=' . $token->token);
-        $email_template = str_replace('[link]', $http_link, $email_template->template_text);
+        if (Cookie::get('lang', 'hu') == 'hu') {
+            $email_template = str_replace('[link]', $http_link, $email_template->template_text);
+        } else {
+            $email_template = str_replace('[link]', $http_link, $email_template->template_text_eng);
+        }
+        
         $this->send($email_model->email, 'info@goodiebox.hu', 'Jelszó helyreállítás', $email_template);
-        Flash::set('notice', 'Elküldtük az jelszó emlékeztetőt az e-mail címedre.');
+        Flash::set('notice', __('Elküldtük az jelszó emlékeztetőt az e-mail címedre.'));
         $this->redirect('/user_session/login');
     }
 
     public function action_reset2() {
         $hash = Arr::get($_REQUEST, 'hash');
         if (!$hash) {
-            Flash::set('alert', 'érvénytelen link');
+            Flash::set('alert', __('érvénytelen link'));
             $this->redirect('/user_session/login');
         }
         $user = ORM::factory('User_Token')
                 ->where('token', '=', $hash)
                 ->find();
         if (!$user->loaded()) {
-            Flash::set('alert', 'érvénytelen link');
+            Flash::set('alert', __('érvénytelen link'));
             $this->redirect('/user_session/login');
         }
         if (!$this->is_post()) {
@@ -84,7 +89,7 @@ class Controller_User_Session extends Controller_Core {
             $password = Arr::get($_REQUEST, 'customer_password');
             $password_confirm = Arr::get($_REQUEST, 'password_confirm');
             if ($password != $password_confirm) {
-                Flash::set('alert', 'A jelszó nem egyezik');
+                Flash::set('alert', __('A jelszó nem egyezik'));
                 $this->redirect('/user_session/reset/?hash' . $hash);
             }
             $user_id = $user->user_id;
@@ -92,7 +97,7 @@ class Controller_User_Session extends Controller_Core {
             $usr->password = $password;
             $usr->save();
             $user->delete();
-            Flash::set('notice', 'A jelszavadat sikeresen megváltoztattad!');
+            Flash::set('notice', __('A jelszavadat sikeresen megváltoztattad!'));
             $this->redirect('/user_session/login');
         }
     }
