@@ -49,7 +49,7 @@
                                         1094 Budapest Páva utca 17.<br/>
                                         +36 70 328 0870<br/>
                                         info@flashkutyapekseg.hu<br/>
-                                        5% <?php echo __('kedvezmény'); ?>
+                                        <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
                                     <td>
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/5-icon.jpg">
