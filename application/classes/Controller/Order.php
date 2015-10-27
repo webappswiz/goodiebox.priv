@@ -313,7 +313,7 @@ class Controller_Order extends Controller_Core {
                 $body = str_replace('[login]', $this->current_user->email, $body);
                 $this->send($this->current_user->email, 'info@goodiebox.hu', 'Sikeres regisztráció', $body);
             } else {
-                $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text);
+                $body = str_replace('[firstname]', $this->current_user->customer_firstname, $template->template_text_eng);
                 $body = str_replace('[login]', $this->current_user->email, $body);
                 $this->send($this->current_user->email, 'info@goodiebox.hu', 'Successful registration', $body);
             }
