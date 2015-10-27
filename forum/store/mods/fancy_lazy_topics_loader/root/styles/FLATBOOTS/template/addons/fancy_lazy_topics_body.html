@@ -1,0 +1,38 @@
+<!-- IF .rtrow -->
+	<!-- BEGIN rtrow -->
+		<!-- IF rtrow.S_COUNT ne 0 and rtrow.S_NEW_BLOCK --></div><!-- ENDIF -->
+		<!-- IF rtrow.S_NEW_BLOCK --><div id="rtblock_{rtrow.S_BLOCK}" class="rtrow row text-center<!-- IF rtrow.S_COUNT eq 0 --> rtdisprow<!-- ENDIF -->"><!-- ENDIF -->
+		<div class="col-md-3 col-sm-6">
+			<div class="panel panel-post">
+				<div class="blog-meta">
+				 <time datetime="{rtrow.TOPIC_YEAR}-{rtrow.TOPIC_MONTH_DIGIT}-{rtrow.TOPIC_DAY_DIGIT}" class="entry-date">
+					<span class="day">{rtrow.TOPIC_DAY_DIGIT}</span>
+					<span class="month">{rtrow.TOPIC_MONTH}</span>
+				 </time>
+				</div>
+				<div class="title">
+				 <header class="entry-header">
+				  <h6 class="inverse-font"><a href="{rtrow.U_TOPIC}">{rtrow.TOPIC_TITLE}</a></h6>
+					<div class="entry-meta">
+					 <span class="jp-views">&nbsp;-&nbsp;{L_BY}&nbsp;{rtrow.TOPIC_AUTHOR}</span>
+					</div>
+				 </header>
+			    </div>
+				<div class="content-post">
+				  <p>{rtrow.FP_EXCERPT}</p>  
+				</div>
+				<div class="panel-bottom">
+				 <a href="{rtrow.U_LAST_POST}" class="btn btn-xs btn-link" title="">{L_RT_READ_MORE}</a>
+				</div>               
+			</div>
+		</div>
+	<!-- END rtrow -->
+	</div>
+	<!-- IF not S_ONE_ROW -->
+	<div id="rtbtnrow" class="row text-center">
+	<div class="col-md-12">
+      <button id="rtbutton" class="btn btn-default btn-block btn-lazy">{L_VIEW_MORE_TOPICS}</button>
+    </div>
+	</div>
+	<!-- ENDIF -->
+<!-- ENDIF -->

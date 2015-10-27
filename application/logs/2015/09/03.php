@@ -1,0 +1,86 @@
+<?php defined('SYSPATH') OR die('No direct script access.'); ?>
+
+2015-09-03 07:59:26 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: step1 ~ APPPATH/views/order/step3.php [ 9 ] in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 07:59:26 --- DEBUG: #0 /home2/goodieb1/public_html/application/views/order/step3.php(9): Kohana_Core::error_handler(8, 'Undefined index...', '/home2/goodieb1...', 9, Array)
+#1 /home2/goodieb1/public_html/system/classes/Kohana/View.php(61): include('/home2/goodieb1...')
+#2 /home2/goodieb1/public_html/system/classes/Kohana/View.php(348): Kohana_View::capture('/home2/goodieb1...', Array)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Base/Core.php(517): Kohana_View->render()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 11:50:53 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: step1 ~ APPPATH/views/order/step3.php [ 9 ] in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 11:50:53 --- DEBUG: #0 /home2/goodieb1/public_html/application/views/order/step3.php(9): Kohana_Core::error_handler(8, 'Undefined index...', '/home2/goodieb1...', 9, Array)
+#1 /home2/goodieb1/public_html/system/classes/Kohana/View.php(61): include('/home2/goodieb1...')
+#2 /home2/goodieb1/public_html/system/classes/Kohana/View.php(348): Kohana_View::capture('/home2/goodieb1...', Array)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Base/Core.php(517): Kohana_View->render()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 11:52:04 --- EMERGENCY: ErrorException [ 8 ]: Undefined variable: order ~ APPPATH/views/order/payment.php [ 9 ] in /home2/goodieb1/public_html/application/views/order/payment.php:9
+2015-09-03 11:52:04 --- DEBUG: #0 /home2/goodieb1/public_html/application/views/order/payment.php(9): Kohana_Core::error_handler(8, 'Undefined varia...', '/home2/goodieb1...', 9, Array)
+#1 /home2/goodieb1/public_html/system/classes/Kohana/View.php(61): include('/home2/goodieb1...')
+#2 /home2/goodieb1/public_html/system/classes/Kohana/View.php(348): Kohana_View::capture('/home2/goodieb1...', Array)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Base/Core.php(517): Kohana_View->render()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/application/views/order/payment.php:9
+2015-09-03 12:39:56 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: step1 ~ APPPATH/views/order/step3.php [ 9 ] in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 12:39:56 --- DEBUG: #0 /home2/goodieb1/public_html/application/views/order/step3.php(9): Kohana_Core::error_handler(8, 'Undefined index...', '/home2/goodieb1...', 9, Array)
+#1 /home2/goodieb1/public_html/system/classes/Kohana/View.php(61): include('/home2/goodieb1...')
+#2 /home2/goodieb1/public_html/system/classes/Kohana/View.php(348): Kohana_View::capture('/home2/goodieb1...', Array)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Base/Core.php(517): Kohana_View->render()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 18:31:27 --- EMERGENCY: ErrorException [ 8 ]: Undefined index: step1 ~ APPPATH/views/order/step3.php [ 9 ] in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 18:31:27 --- DEBUG: #0 /home2/goodieb1/public_html/application/views/order/step3.php(9): Kohana_Core::error_handler(8, 'Undefined index...', '/home2/goodieb1...', 9, Array)
+#1 /home2/goodieb1/public_html/system/classes/Kohana/View.php(61): include('/home2/goodieb1...')
+#2 /home2/goodieb1/public_html/system/classes/Kohana/View.php(348): Kohana_View::capture('/home2/goodieb1...', Array)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Base/Core.php(517): Kohana_View->render()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(87): Controller_Base_Core->after()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Order))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/application/views/order/step3.php:9
+2015-09-03 19:24:18 --- EMERGENCY: Database_Exception [ 1267 ]: Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '=' [ SELECT `couponcodes`.`id` AS `id`, `couponcodes`.`user_id` AS `user_id`, `couponcodes`.`coupon_code` AS `coupon_code`, `couponcodes`.`count` AS `count` FROM `coupon_codes` AS `couponcodes` WHERE `coupon_code` = 'mkdű' LIMIT 1 ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /home2/goodieb1/public_html/modules/database/classes/Kohana/Database/Query.php:251
+2015-09-03 19:24:18 --- DEBUG: #0 /home2/goodieb1/public_html/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `couponc...', false, Array)
+#1 /home2/goodieb1/public_html/modules/orm/classes/Kohana/ORM.php(1072): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /home2/goodieb1/public_html/modules/orm/classes/Kohana/ORM.php(979): Kohana_ORM->_load_result(false)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Api.php(38): Kohana_ORM->find()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(84): Controller_API->action_checkCode()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/modules/database/classes/Kohana/Database/Query.php:251
+2015-09-03 19:24:22 --- EMERGENCY: Database_Exception [ 1267 ]: Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '=' [ SELECT `couponcodes`.`id` AS `id`, `couponcodes`.`user_id` AS `user_id`, `couponcodes`.`coupon_code` AS `coupon_code`, `couponcodes`.`count` AS `count` FROM `coupon_codes` AS `couponcodes` WHERE `coupon_code` = 'mkdű' LIMIT 1 ] ~ MODPATH/database/classes/Database/MySQLi.php [ 172 ] in /home2/goodieb1/public_html/modules/database/classes/Kohana/Database/Query.php:251
+2015-09-03 19:24:22 --- DEBUG: #0 /home2/goodieb1/public_html/modules/database/classes/Kohana/Database/Query.php(251): Database_MySQLi->query(1, 'SELECT `couponc...', false, Array)
+#1 /home2/goodieb1/public_html/modules/orm/classes/Kohana/ORM.php(1072): Kohana_Database_Query->execute(Object(Database_MySQLi))
+#2 /home2/goodieb1/public_html/modules/orm/classes/Kohana/ORM.php(979): Kohana_ORM->_load_result(false)
+#3 /home2/goodieb1/public_html/application/classes/Controller/Api.php(38): Kohana_ORM->find()
+#4 /home2/goodieb1/public_html/system/classes/Kohana/Controller.php(84): Controller_API->action_checkCode()
+#5 [internal function]: Kohana_Controller->execute()
+#6 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_API))
+#7 /home2/goodieb1/public_html/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 /home2/goodieb1/public_html/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 /home2/goodieb1/public_html/index.php(118): Kohana_Request->execute()
+#10 {main} in /home2/goodieb1/public_html/modules/database/classes/Kohana/Database/Query.php:251

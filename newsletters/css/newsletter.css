@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Petit Formal Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Petit Formal Script'), local('PetitFormalScript-Regular'), url(https://fonts.gstatic.com/s/petitformalscript/v3/OEZwr2-ovBsq2n3ACCKoEjUe2wjZSDd4ua_dT9VBiU4.woff2) format('woff2'), url(https://fonts.gstatic.com/s/petitformalscript/v3/OEZwr2-ovBsq2n3ACCKoEtgdb3q9Ts3XkY9bkaxM24g.woff) format('woff');
+}
+h1.page-title {
+	font-style: italic;
+	font-size: 36px;
+	font-family: 'Petit Formal Script';
+}
+.header span{ width:280px; text-align:center; margin-top:60px; margin-left:70px; display:block; font-weight:bold;}
+table td {
+	font-size:18px;
+}
+.rows-1 { padding-left:90px;}
+.rows-2 { padding-left:40px;}
+.rows-2 img { vertical-align: middle;}
+.rows-3 { padding-left:44px; vertical-align:top;}
+.red {
+	color: #cc0033;
+}
+td.footer { padding-left:20px; color:#333; font-family: 'Petit Formal Script'; font-size:13px;}
+.footer a { color:#333; text-decoration:none;  font-family: 'Petit Formal Script';}
+.footer a:hover { text-decoration:underline; }

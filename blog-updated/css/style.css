@@ -1,0 +1,295 @@
+/* CSS RESET */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+	margin:0;
+	padding:0;
+	border:0;
+	font:inherit;
+	font-size:100%;
+	vertical-align:baseline
+}
+	html{
+	line-height:1
+}
+	ol,ul
+{
+	list-style:none
+}
+	table
+{
+	border-collapse:collapse;
+	border-spacing:0
+}
+	caption,th,td
+{
+	text-align:left;
+	font-weight:normal;
+	vertical-align:middle
+}
+	q,blockquote
+{
+	quotes:none
+}
+	q:before,q:after,blockquote:before,blockquote:after
+{
+	content:"";
+	content:none
+}
+	a img
+{
+	border:none
+}
+	article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary
+{
+	display:block
+}
+strong{font-weight: bold;}	
+
+/*******************************
+			FONTS
+********************************/
+@font-face {
+    font-family: 'franklin_gothic_bookregular';
+    src: url('../fonts/franklin_gothic_book_regular-webfont.eot');
+    src: url('../fonts/franklin_gothic_book_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/franklin_gothic_book_regular-webfont.woff') format('woff'),
+         url('../fonts/franklin_gothic_book_regular-webfont.ttf') format('truetype'),
+         url('../fonts/franklin_gothic_book_regular-webfont.svg#franklin_gothic_bookregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+  font-family: 'FranklinGothic-Heavy';
+  src: url('../fonts/FranklinGothic-Heavy.eot');
+  src: url('../fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/FranklinGothic-Heavy.woff') format('woff'),
+  	   url('../fonts/FranklinGothic-Heavy.ttf')  format('truetype'),
+  	   url('../fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+	font-family: 'La-chata';
+	src: url('../fonts/La-chata-normal.eot');
+	src: local('☺'), url('../fonts/La-chata-normal.woff') format('woff'),
+	url('../fonts/La-chata-normal.ttf') format('truetype'),
+	url('../fonts/La-chata-normal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_mediumregular';
+    src: url('../fonts/franklin-gothic-medium-webfont.eot');
+    src: url('../fonts/franklin-gothic-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/franklin-gothic-medium-webfont.woff') format('woff'),
+         url('../fonts/franklin-gothic-medium-webfont.ttf') format('truetype'),
+         url('../fonts/franklin-gothic-medium-webfont.svg#franklin_gothic_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*******************************
+			GENERAL CSS
+********************************/
+	*,*:before,*:after
+{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box
+}
+	html
+{
+	margin:0;
+	min-height:100%;
+}
+	body
+{
+	margin:0;
+	min-height:100%;
+	background: #ffffff;
+	color: #330000;
+	-webkit-font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+	a
+{
+	text-decoration:none;
+
+}
+	a:active
+{
+	outline:none
+}
+
+.container{
+	max-width: 960px;
+	margin: 0 auto;
+}
+.clear{clear: both;}
+.rounded{
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+}
+
+/*******************************
+	BUTTONS
+********************************/
+.top-btn{
+	padding: 10px 12px;
+	background: #cc0033;
+	color: #ffffff;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	font-family: 'La-chata';
+}
+.top-btn:hover{background: #e70033;}
+
+
+
+/*******************************
+	HEADER AND NAV AREA CSS
+********************************/
+header{overflow: hidden;}
+header .logo{padding-top: 42px; float: left;}
+header .social-right{margin-top: 52px; float: right;}
+header .social-right ul li{margin-top: 6px;}
+nav{ text-align: center; padding-top: 12px;}
+nav ul li{display: inline; margin-right: 15px;}
+nav ul li a{display:inline-block;font-family: 'FranklinGothic-Heavy';font-size:22.7px; text-align: center;color: #330000;}
+nav ul li a:hover,nav ul li a.selected{color:#cc0033;transition: all 0.2s ease-in-out;}
+
+/*******************************
+	FOOTER CSS
+********************************/
+#footer-wrapper{max-width: 960px; margin: 0 auto;  background: url(../img/footer-bg.jpg); margin-top: 35px;}
+footer{max-width: 880px; margin: 0 auto; padding-top: 20px;}
+footer ul li{ float:left; padding-left: 35px; height:32px; margin-top: 35px;}
+footer ul li a{font-family: 'La-chata'; font-size: 16px; line-height: 32px; color:#330000;}
+footer ul li#post{background: url(../img/post.png) no-repeat left;margin-left: 0; }
+footer ul li#telephone{background: url(../img/telephone.png) no-repeat left; margin-left: 120px; }
+footer ul li#email{background: url(../img/email.png) no-repeat left;margin-left: 100px; }
+footer ul li#rss{background: url(../img/rss.png) no-repeat left; margin-left: 35px; }
+footer ul li#fb{background: url(../img/fb-thumb.png) no-repeat left; margin-left: 0;}
+footer ul li#twt{background: url(../img/twt.png) no-repeat left; margin-left: 30px;  }
+footer ul li#aszf{background: url(../img/aszf.png) no-repeat left; margin-left: 40px; }
+footer ul li#adat{background: url(../img/adatvedelem.png) no-repeat left;margin-left: 50px; }
+footer ul li a:hover{color: #cc0033;}
+.copy-write{padding-bottom:15px; overflow: hidden;}
+.copy-write p{font-family: 'La-chata'; font-size:14px; margin-top: 30px; float: left; margin-right: 80px;}
+
+/*******************************
+	MAIN BLOG PAGE CSS
+********************************/
+.nav-right{font-size: 22.7px; text-align: right; margin-top: 20px;}
+.blog{max-width: 960px; margin:0 auto; border: 3px dotted #330000; padding: 38px 70px 90px 70px; overflow: hidden;margin-top: 10px;}
+ h1{font-family: 'FranklinGothic-Heavy'; font-size:36px; text-align: center;}
+ h2{padding-bottom:55px;font-family: 'franklin_gothic_bookregular'; font-size: 28px; font-weight: bold; text-align: center; padding-top: 40px;}
+ .post{max-width: 1000px; margin: 0 auto;}
+ .post-img{width: 42.7%; float: left; margin-right: 8%; position: relative;}
+ .star-img{position: absolute; top: -45px; left: -45px;}
+ .post-text{width: 49%; float: left; padding-top: 25px;}
+ .post-text> h1{font-family: 'FranklinGothic-Heavy'; font-size:24px; text-align: left;}
+ .post-text h3{font-family: 'franklin_gothic_bookregular'; font-size: 16px; padding-top: 15px;}
+ .post-text p{font-family: 'franklin_gothic_bookregular'; font-size: 14px; line-height: 30px; padding-top: 20px;}
+ .post-text p a{font-family: 'FranklinGothic-Heavy';color: #330000; font-size: 16px;}
+.pager{font-family: 'FranklinGothic-Heavy';color: #330000;text-align: right; padding-right: 100px; padding-top: 70px;}
+
+/*******************************
+	SINGLE POST PAGE CSS
+********************************/
+
+.blog-page {padding:38px 60px 25px 60px;border: 3px dotted #330000; margin-top: 10px;}
+.blog-page-post-img img{float: left; padding: 20px 60px 15px 0;}
+.back a{font-family: 'franklin_gothic_mediumregular'; color: #330000;}
+.blog-page-post-text > p {font-family: 'franklin_gothic_mediumregular';font-size: 14px; line-height: 30px;text-indent: 50px;}
+.blog-page-post-text > h1{font-family: 'FranklinGothic-Heavy'; font-size:30px; text-align: left; padding-top: 10px;}
+.blog-page-post-text > h3{font-family: 'franklin_gothic_mediumregular'; font-size: 24px; padding-top: 25px;}     				
+.date{font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 15px;}
+.posted{font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 15px; padding-bottom: 20px;}
+.smiles{max-width: 690px;margin-left: 90px;}
+.smiles-text{float: left;padding-top: 25px;font-family: 'FranklinGothic-Heavy';}
+.smiles-img{float: right;}
+.smiles-img ul li{display: inline; margin-left: 20px;}
+.opinion{padding-top: 20px;}
+.opinion-send{ text-align: center; margin-top: 25px; margin-left: 55px; overflow: hidden;}
+.opinion-form{max-width: 345px; float: left; margin-left: 50px;position: relative;}
+.opinion-form form textarea {width: 100%; height:65px;border: 3px solid #ff0099; outline: none; padding: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 14px; color: #330000; }
+.opinion-form form .name {width: 155px;}
+.opinion-form form .e-mail{width: 185px;}
+.opinion-form form input[type="text"]{border: 3px solid #ff0099; outline: none;padding:5px;font-family: 'franklin_gothic_bookregular'; font-size: 14px; color: #330000; }
+.opinion-form form .submit-btn{position: absolute; right: -155px; top:40px;font-family: 'franklin_gothic_bookregular'; font-size: 24px;padding: 15px; background: #ff0099; color: #ffffff; cursor: pointer; border: 0;}
+.opinion-form form .submit-btn:hover{background: #ed0491;}
+.opinion-form-text{margin-left: 220px; margin-top:30px;text-align: left;overflow: hidden;font-family: 'franklin_gothic_bookregular'; font-size: 14px; color: #330000;}
+.opinion-form-text .text-left {float: left;margin-right: 25px; }
+.opinion-form-text .text-left span {color: #ff0099;}
+
+
+      				/*******************************
+									MEDIA QUERIES CSS
+							********************************/
+
+	@media only screen and (max-width: 1040px)
+{
+	.container{padding-left: 15px; padding-right: 15px;}
+	#counting-back .count-image img,.dog-img,.siess,.center-arrows{display: none;}
+	.count-text,.post-img,.post-text{float:none !important;text-align: center;}
+	.lock{margin-right: 0;}
+	.post-img,.post-text{width: 100%; padding-left: 15px; padding-right: 15px;}
+	.star-img{ left: 250px;}
+	.nav-right{text-align: center;}
+	.blog-page {padding-left:15px; padding-right:15px;}
+	.blog-page-post-img img{padding: 30px 20px 10px 0;}
+	.smiles,.opinion-send{margin-left: 0px;}
+	.opinion-form{margin-top: 20px; float: none;margin-left: 0;}
+	.opinion-form form textarea{margin-top: 20px;}
+	.opinion-form-text {margin-left: 0;}
+	footer{padding-left: 15px; padding-right: 15px;}
+	footer ul li{margin-left: 30px !important; }
+	.post-text> h1{text-align: center;}
+}
+
+ 	@media only screen and (max-width: 800px)
+{
+	.order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
+	.opinion-form form .submit-btn{position: static; margin-top: 20px;}
+	.blog-page-post-img img{float: none;padding-right: 0; }
+	.blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
+
+}
+	@media only screen and (max-width: 767px)
+{
+	.star-img{ left: 130px;}
+}
+	@media only screen and (max-width: 640px)
+{
+	header .social-right,.copy-write p {float: none;text-align: center;}
+	.logo{margin-bottom: 30px; float: none!important;text-align: center;}
+	.star-img{display: none;}
+	.opinion-form form input{width: 100% !important; }
+	.smiles-img{margin-top: 20px;}
+	.copy-write p{margin-right: 0;}
+	.blog {padding-left: 10px; padding-right: 10px;}
+
+}
+	@media only screen and (max-width: 460px)
+{
+	.logo img{width: 100%; height: auto;}
+	#order-place h2{font-size: 38px;}
+	#order-place h2 span{ font-size:48px;}
+	#order-place button{padding: 12px;font-size: 24px;}
+	.post-img img,.blog-page-post-img img{width: 100%; height:auto;}
+	.post-text{text-align: left;}
+
+
+}
+	@media only screen and (max-width: 360px)
+{
+	
+}
+	

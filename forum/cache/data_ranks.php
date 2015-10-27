@@ -1,0 +1,4 @@
+<?php exit; ?>
+1476736605
+633
+a:2:{s:6:"normal";a:5:{i:0;a:3:{s:10:"rank_title";s:11:"Matuzsálem";s:8:"rank_min";s:3:"100";s:10:"rank_image";s:11:"felnott.png";}i:1;a:3:{s:10:"rank_title";s:8:"Felnőtt";s:8:"rank_min";s:2:"50";s:10:"rank_image";s:10:"kamasz.png";}i:2;a:3:{s:10:"rank_title";s:6:"Kamasz";s:8:"rank_min";s:2:"10";s:10:"rank_image";s:10:"kolyok.png";}i:3;a:3:{s:10:"rank_title";s:8:"Kölyök";s:8:"rank_min";s:1:"5";s:10:"rank_image";s:7:"new.png";}i:4;a:3:{s:10:"rank_title";s:10:"Csöppség";s:8:"rank_min";s:1:"0";s:10:"rank_image";s:0:"";}}s:7:"special";a:1:{i:1;a:2:{s:10:"rank_title";s:6:"Mester";s:10:"rank_image";s:16:"ranks-mester.png";}}}

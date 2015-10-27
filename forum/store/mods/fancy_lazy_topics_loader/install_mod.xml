@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpbb.com/mods/xml/modx-1.2.6.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[Fancy Lazy Topics loader]]></title>
+		<description lang="en"><![CDATA[This MOD will add the last topics to a board running the style FLATBOOTS. (SiteSplat-BBcore must be installed first!) Refer to the Theme documentation for additional options, like poster avatar, forum exclusion, post content, blocks number etc.]]></description>
+		<author-notes lang="en"><![CDATA[Under no circumstances you are authorized to share/sell this Addon/MOD unless Specific written authorization by the Owner of the product @ www.sitesplat.com - 2014 all rights reserved]]></author-notes>
+		<author-group>
+			<author>
+				<realname><![CDATA[Dave]]></realname>
+				<username><![CDATA[ThemeSplat (SiteSplat)]]></username>
+				<homepage><![CDATA[www.sitesplat.com]]></homepage>
+				<email><![CDATA[info@sitesplat.com]]></email>
+			</author>
+		</author-group>
+		<mod-version>1.0.2</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>300</time>
+			<target-version>3.0.12</target-version>
+		</installation>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/*.*" to="*.*"/>
+		</copy>
+		<open src="includes/functions.php">
+			<edit>
+				<find><![CDATA[if (in_array($user->theme['template_path'], $sitesplat_themes)) {
+    if ( !function_exists('get_user_avatar')) {
+    	include_once($phpbb_root_path . 'includes/functions_display.' . $phpEx);
+    }]]></find>
+				<action type="replace-with"><![CDATA[if (!defined('IN_ADMIN') && in_array($user->theme['template_path'], $sitesplat_themes)) {
+
+    if ( !function_exists('get_user_avatar')) {
+    	include_once($phpbb_root_path . 'includes/functions_display.' . $phpEx);
+    }
+
+//	excluded forums should be added to the empty array, as follows:
+//	$excluded = array(2,4,6);
+	$excluded = array();
+
+//	number of post "blocks" to display -- $limit must be a multiple of 4
+	$limit = 20;
+
+//	first-post or last-post avatar/post-text -- must be 'first' or 'last'
+	$type = 'last';
+
+	$pid = ($type == 'last') ? 't.topic_last_poster_id' : 't.topic_poster';
+
+	$forums = array_keys($auth->acl_getf('!f_read', true));
+	if (!empty($excluded)) {
+		$forums = array_unique(array_merge($excluded, $forums));
+	}
+	if (!empty($forums)) {
+		$sql_where = 'WHERE ' . $db->sql_in_set('t.forum_id', $forums, true) . ' AND p.topic_id = t.topic_id ';
+	}
+	else {
+		$sql_where = 'WHERE p.topic_id = t.topic_id ';
+	}
+
+	$sql = 'SELECT u.username, u.user_avatar, u.user_avatar_type, u.user_avatar_width, u.user_avatar_height, p.post_text, t.topic_id, t.forum_id, t.topic_title, t.topic_last_post_time, t.topic_replies_real, t.topic_first_poster_colour, t.topic_last_post_id, t.topic_last_poster_name, t.topic_last_poster_colour
+		FROM ' . TOPICS_TABLE . ' t, ' . POSTS_TABLE . ' p, ' . USERS_TABLE . " u $sql_where
+		AND p.post_approved = 1
+		AND u.user_id = $pid
+		AND p.post_id = t.topic_{$type}_post_id
+		ORDER BY t.topic_last_post_time DESC
+		LIMIT 0,{$limit}";
+	$result = $db->sql_query($sql);
+	$i = $block = $bcount = 0;
+
+	while ($row = $db->sql_fetchrow($result)) {
+		$bcount = $block;
+
+		strip_bbcode($row['post_text']);
+
+/*
+		// use this code to truncate to a fixed number of words (default: 10)
+		$excerpt = explode(' ', censor_text($row['post_text']), 11);
+		if (sizeof($excerpt) == 11) {
+			$excerpt[10] =  '&hellip;';
+		}
+		$row['post_text'] = implode(' ', $excerpt);
+		// end word_trunc
+*/
+
+		// use this code to truncate to a fixed number of characters (default: 50)
+		$row['post_text'] = censor_text($row['post_text']);
+		if (utf8_strlen($row['post_text']) > 50) {
+			$row['post_text'] = utf8_substr($row['post_text'], 0, 50) . '&#91;&hellip;&#93;';
+		}
+		// end char_trunc
+
+		$template->assign_block_vars('rtrow', array(
+			'S_COUNT'			=> $i,
+			'S_BLOCK'			=> $block,
+			'S_NEW_BLOCK'		=> ($i % 4 == 0) ? true : false,
+			'U_TOPIC'			=> append_sid("{$phpbb_root_path}viewtopic.$phpEx", 'f=' . $row['forum_id'] . '&amp;t=' . $row['topic_id']),
+			'AUTHOR_AVATAR'		=> get_user_avatar($row['user_avatar'], $row['user_avatar_type'], $row['user_avatar_width'], $row['user_avatar_height']),
+			'TOPIC_AUTHOR'		=> ($row["topic_{$type}_poster_colour"]) ? ('<strong style="color:#' . $row["topic_{$type}_poster_colour"] . '">' . $row['username'] . '</strong>') : $row['username'],
+			'TOPIC_DATE'        => $user->format_date($row['topic_last_post_time']),
+            'TOPIC_YEAR'        => $user->format_date($row['topic_last_post_time'], 'Y'),
+            'TOPIC_MONTH'       => $user->format_date($row['topic_last_post_time'], 'M'),
+			'TOPIC_MONTH_DIGIT' => $user->format_date($row['topic_last_post_time'], 'm'),
+            'TOPIC_DAY'         => $user->format_date($row['topic_last_post_time'], 'D'),
+			'TOPIC_DAY_DIGIT'   => $user->format_date($row['topic_last_post_time'], 'd'),
+			'TOPIC_TITLE'		=> censor_text($row['topic_title']),
+			'TOPIC_REPLIES'		=> intval($row['topic_replies_real']),
+			'FP_EXCERPT'		=> $row['post_text'],
+			'U_LAST_POST'		=> append_sid("{$phpbb_root_path}viewtopic.$phpEx", 'p=' . $row['topic_last_post_id']) . '#p' . $row['topic_last_post_id'],
+			'LP_NAME'			=> ($row['topic_last_poster_colour']) ? ('<strong style="color:#' . $row['topic_last_poster_colour'] . '">' . $row['topic_last_poster_name'] . '</strong>') : $row['topic_last_poster_name'],
+		));
+		$i++;
+		if ($i % 4 == 0) {
+			$block++;
+		}
+	}
+	$db->sql_freeresult($result);
+	$template->assign_vars(array(
+		'RT_BLOCKCOUNT'		=> $bcount,
+		'S_ONE_ROW'			=> ($limit <= 4) ? true : false,
+	));]]></action>
+			</edit>
+		</open>
+		<open src="styles/FLATBOOTS/template/overall_footer.html">
+			<edit>
+				<find><![CDATA[<!-- INCLUDE addons/recent_topics_body.html -->]]></find>
+				<action type="replace-with"><![CDATA[<!-- Recent Lazy Topics Loader Section -->
+ <!-- INCLUDE addons/fancy_lazy_topics_body.html -->
+<!-- Recent Lazy Topics Loader Section -->]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[</body>]]></find>
+				<action type="before-add"><![CDATA[<!-- IF .rtrow -->
+<script>
+	var curblock = 0;
+	document.getElementById('rtbutton').onclick = function() {
+		$('#rtblock_' + String(curblock)).removeClass('rtdisprow');
+		if (curblock == {RT_BLOCKCOUNT}) {
+			curblock = 0;
+			document.getElementById('rtbutton').innerHTML = '{L_VIEW_MORE_TOPICS}';
+		}
+		else {
+			curblock++;
+			if (curblock == {RT_BLOCKCOUNT}) {
+				document.getElementById('rtbutton').innerHTML = '{L_BACK_TO_START}';
+			}
+		}
+		$('#rtblock_' + String(curblock)).addClass('rtdisprow');
+	};
+</script>
+<!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+	</action-group>
+</mod>

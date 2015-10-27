@@ -1,0 +1,382 @@
+/*
+Theme Name: Twenty Twelve
+Theme URI: http://wordpress.org/themes/twentytwelve
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: twentytwelve
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* CSS RESET */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+	margin:0;
+	padding:0;
+	border:0;
+	font:inherit;
+	font-size:100%;
+	vertical-align:baseline
+}
+	html{
+	line-height:1
+}
+	ol,ul
+{
+	list-style:none
+}
+	table
+{
+	border-collapse:collapse;
+	border-spacing:0
+}
+	caption,th,td
+{
+	text-align:left;
+	font-weight:normal;
+	vertical-align:middle
+}
+	q,blockquote
+{
+	quotes:none
+}
+	q:before,q:after,blockquote:before,blockquote:after
+{
+	content:"";
+	content:none
+}
+	a img
+{
+	border:none
+}
+	article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary
+{
+	display:block
+}
+strong{font-weight: bold;}	
+
+/*******************************
+			FONTS
+********************************/
+@font-face {
+    font-family: 'franklin_gothic_bookregular';
+    src: url('fonts/franklin_gothic_book_regular-webfont.eot');
+    src: url('fonts/franklin_gothic_book_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/franklin_gothic_book_regular-webfont.woff') format('woff'),
+         url('fonts/franklin_gothic_book_regular-webfont.ttf') format('truetype'),
+         url('fonts/franklin_gothic_book_regular-webfont.svg#franklin_gothic_bookregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+  font-family: 'FranklinGothic-Heavy';
+  src: url('fonts/FranklinGothic-Heavy.eot');
+  src: url('fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'),  
+  	   url('fonts/FranklinGothic-Heavy.woff') format('woff'),
+  	   url('fonts/FranklinGothic-Heavy.ttf')  format('truetype'),
+  	   url('fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+	font-family: 'La-chata';
+	src: url('fonts/La-chata-normal.eot');
+	src: local('☺'), url('fonts/La-chata-normal.woff') format('woff'),
+	url('fonts/La-chata-normal.ttf') format('truetype'),
+	url('fonts/La-chata-normal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_mediumregular';
+    src: url('fonts/franklin-gothic-medium-webfont.eot');
+    src: url('fonts/franklin-gothic-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/franklin-gothic-medium-webfont.woff') format('woff'),
+         url('fonts/franklin-gothic-medium-webfont.ttf') format('truetype'),
+         url('fonts/franklin-gothic-medium-webfont.svg#franklin_gothic_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*******************************
+			GENERAL CSS
+********************************/
+	*,*:before,*:after
+{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box
+}
+	html
+{
+	margin:0;
+	min-height:100%;
+}
+	body
+{
+	margin:0;
+	min-height:100%;
+	background: #ffffff;
+	color: #330000;
+	-webkit-font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+	a
+{
+	text-decoration:none;
+
+}
+	a:active
+{
+	outline:none
+}
+
+.container{
+	max-width: 960px;
+	margin: 0 auto;
+}
+.clear{clear: both;}
+.rounded{
+	-webkit-border-radius:5px!important;
+	-moz-border-radius:5px!important;
+	-ms-border-radius:5px!important;
+	-o-border-radius:5px!important;
+	border-radius:5px!important;
+}
+
+/*******************************
+	BUTTONS
+********************************/
+.top-btn{
+	padding: 8px 12px;
+	background: #cc0033;
+	color: #ffffff;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	font-family: 'La-chata';
+}
+.top-btn:hover{background: #e70033;}
+
+.dark-btn {font-size: 24px; text-align:center;color:#ffffff;background: #330000; border: 0; cursor: pointer;}
+.dark-btn:hover{background-color: #760000;}
+
+/*******************************
+	HEADER AND NAV AREA CSS
+********************************/
+.premenu{display: inline-block;font-family: 'FranklinGothic-Heavy';font-size: 18px;text-align: center;color: #330000;}
+header{overflow: hidden;}
+header .logo{padding-top: 35px; float: left;}
+header .social-right{margin-top: 25px; float: right;}
+header .social-right ul li{margin-top: 6px;}
+nav{ text-align: center; padding-top: 12px;}
+nav ul li{display: inline; margin-right: 15px;}
+nav ul li a{display:inline-block;font-family: 'FranklinGothic-Heavy';font-size:18px; text-align: center;color: #330000;}
+nav ul li a:hover,nav ul li a.selected{color:#cc0033;transition: all 0.2s ease-in-out;}
+
+/*******************************
+	FOOTER CSS
+********************************/
+#footer-wrapper{max-width: 960px; margin: 0 auto;  background: url(img/footer-bg.jpg); margin-top: 35px;}
+footer{max-width: 880px; margin: 0 auto; /*padding-top: 20px;*/}
+footer ul li{ float:left; padding-left: 35px; height:32px; margin-top: 35px;}
+footer ul li a{font-family: 'La-chata'; font-size: 16px; line-height: 32px; color:#330000;}
+footer ul li#post{background: url(img/post.png) no-repeat left;margin-left: 0; }
+footer ul li#telephone{background: url(img/telephone.png) no-repeat left; margin-left: 120px; }
+footer ul li#email{background: url(img/email.png) no-repeat left;margin-left: 40px; }
+footer ul li#rss{background: url(img/rss.png) no-repeat left; margin-left: 35px; }
+footer ul li#fb{background: url(img/fb-thumb.png) no-repeat left; margin-left: 30px;}
+footer ul li#twt{background: url(img/twt.png) no-repeat left; margin-left: 80px;  }
+footer ul li#aszf{background: url(img/aszf.png) no-repeat left; margin-left: 0px; }
+footer ul li#adat{background: url(img/adatvedelem.png) no-repeat left;margin-left: 270px; }
+footer ul li a:hover{color: #cc0033;}
+.copy-write{padding-bottom:15px; overflow: hidden;}
+.copy-write p{font-family: 'La-chata'; font-size:14px; margin-top: 30px; float: left; margin-right: 80px;}
+.copy-write a{color:#330000;}
+.copy-write a:hover{color:#cc0033;}
+
+/*******************************
+	MAIN BLOG PAGE CSS
+********************************/
+.nav-right{font-size: 18px; text-align: right; margin-top: 20px;}
+.blog{max-width: 960px; margin:0 auto; border: 3px dotted #330000; padding: 38px 70px 90px 70px; overflow: hidden;margin-top: 10px;}
+ h1{font-family: 'FranklinGothic-Heavy'; font-size:36px; text-align: center;}
+ h2{padding-bottom:5px;font-family: 'franklin_gothic_bookregular'; font-size: 28px; font-weight: bold; text-align: center; padding-top: 40px;}
+ .post{max-width: 780px; margin: 0 auto; margin-top: 75px; }
+ .post-img{width: 305px; float: left; margin-right: 60px; position: relative;}
+ .ribbon{width:86px;height: 85px;  position: absolute; top: -30px; left: -40px; background: url(img/blog-img-star.png) no-repeat;}
+ .ribbon p{line-height: 85px; text-align: center; position: relative; z-index: 1;font-family: 'FranklinGothic-Heavy';color: #ffffff;}
+ .post-text{width: 49%; float: left; }
+ .post-text> h1{font-family: 'FranklinGothic-Heavy'; font-size:24px; text-align: left;}
+ h1 a{font-family: 'FranklinGothic-Heavy'; font-size:24px; text-align: left; color:#330000}
+ .post-text h3{font-family: 'franklin_gothic_bookregular'; font-size: 16px; padding-top: 15px;}
+ .post-text p{font-family: 'franklin_gothic_bookregular'; font-size: 14px; line-height: 30px; padding-top: 20px;}
+ .post-text p a{font-family: 'FranklinGothic-Heavy';color: #330000; font-size: 16px;}
+.pager{font-family: 'FranklinGothic-Heavy';color: #330000;text-align: right; padding-right: 100px; padding-top: 70px;}
+.no-margin{margin-top: 0 !important;}
+/*******************************
+	SINGLE POST PAGE CSS
+********************************/
+
+.blog-page {padding:38px 60px 25px 60px;border: 3px dotted #330000; margin-top: 10px;}
+.blog-page-post-img img{float: left; padding: 20px 60px 15px 0;}
+.back a{font-family: 'franklin_gothic_mediumregular'; color: #330000;}
+.blog-page-post-text > p {font-family: 'franklin_gothic_bookregular';font-size: 17px; line-height: 30px;/*text-indent: 50px;*/text-align:justify;}
+.blog-page-post-text > h1{font-family: 'FranklinGothic-Heavy'; font-size:30px; text-align: left; padding-top: 10px;}
+.blog-page-post-text > h3{font-family: 'franklin_gothic_mediumregular'; font-size: 24px; padding-top: 25px;}     				
+.date{font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 15px;}
+.posted{font-family: 'franklin_gothic_mediumregular'; font-size: 14px; padding-top: 15px; padding-bottom: 20px; font-weight:bold; text-transform:uppercase;}
+.smiles{max-width: 690px;margin-left: 90px;}
+.smiles-img{float: left;overflow: hidden; margin-left: 55px;margin-bottom:20px;}
+.smiles ul li{width: 56px;height: 56px; float: left; margin-left: 20px; cursor: pointer; display: block;-webkit-transition: all 0.3s ease;
+transition: all 0.3s ease;}
+#smiles-1{background: url(img/smiles-img1.jpg) no-repeat;}
+#smiles-2{background: url(img/smiles-img2.jpg) no-repeat;}
+#smiles-3{background: url(img/smiles-img3.jpg) no-repeat;}
+#smiles-4{background: url(img/smiles-img4.jpg) no-repeat;}
+#smiles-5{background: url(img/smiles-img5.jpg) no-repeat;}
+.smiles-img ul li:hover{-webkit-transition: all 0.3s ease;
+transition: all 0.3s ease;}
+#smiles-1:hover{background: url(img/smiles-img1-hover.jpg) no-repeat;}
+#smiles-2:hover{background: url(img/smiles-img2-hover.jpg) no-repeat;}
+#smiles-3:hover{background: url(img/smiles-img3-hover.jpg) no-repeat;}
+#smiles-4:hover{background: url(img/smiles-img4-hover.jpg) no-repeat;}
+#smiles-5:hover{background: url(img/smiles-img5-hover.jpg) no-repeat;}
+
+.smiles-text{float: left;padding-top: 25px;font-family: 'FranklinGothic-Heavy';}
+.opinion{padding-top: 20px;}
+.opinion-send{ text-align: center; margin-top: 25px; margin-left: 55px; overflow: hidden;}
+.opinion-form{max-width: 345px; float: left; margin-left: 50px;position: relative;}
+.opinion-form form textarea {width: 100%; height:65px;border: 3px solid #ff0099; outline: none; padding: 5px;font-family: 'franklin_gothic_bookregular'; font-size: 14px; color: #330000; }
+.opinion-form form .name {width: 155px;}
+.opinion-form form .e-mail{width: 185px;}
+input, textarea {  -webkit-appearance: none;  -webkit-border-radius: 0;}
+.opinion-form form input[type="text"]{border: 3px solid #ff0099; outline: none;padding:5px;font-family: 'franklin_gothic_bookregular'; font-size: 14px; color: #330000; }
+.opinion-form form .submit-btn{position: absolute; right: -155px; top:40px;font-family: 'franklin_gothic_bookregular'; font-size: 24px;padding: 15px; background: #ff0099; color: #ffffff; cursor: pointer; border: 0;}
+.opinion-form form .submit-btn:hover{background: #ed0491;}
+.opinion-form-text{margin-left: 220px; margin-top:30px;text-align: left;overflow: hidden;font-family: 'franklin_gothic_bookregular'; font-size: 14px; color: #330000;}
+.opinion-form-text .text-left {float: left;margin-right: 25px; }
+.opinion-form-text .text-left span {color: #ff0099;}
+
+
+      				/*******************************
+									MEDIA QUERIES CSS
+							********************************/
+
+	@media only screen and (max-width: 1040px)
+{
+	.container{padding-left: 15px; padding-right: 15px;}
+	#counting-back .count-image img,.dog-img,.siess,.center-arrows{display: none;}
+	.count-text,.post-img,.post-text{float:none !important;text-align: center;}
+	.lock{margin-right: 0;}
+	.post-img,.post-text{width: 100%; padding-left: 15px; padding-right: 15px;}
+	.star-img{ left: 250px;}
+	.nav-right{text-align: center;}
+	.blog-page {padding-left:15px; padding-right:15px;}
+	.blog-page-post-img img{padding: 30px 20px 10px 0;}
+	.smiles,.opinion-send{margin-left: 0px;}
+	.opinion-form{margin-top: 20px; float: none;margin-left: 0;}
+	.opinion-form form textarea{margin-top: 0px;}
+	.opinion-form-text {margin-left: 0;}
+	footer{padding-left: 15px; padding-right: 15px;}
+	footer ul li{margin-left: 30px !important; }
+	.post{margin-top: 65px;}
+	.post-text> h1{text-align: center; padding-top: 35px;}
+	.ribbon{top: -35px; left: 210px;}
+	footer ul li a{font-size: 14px;}
+}
+
+ 	@media only screen and (max-width: 800px)
+{
+	.order-btnleft,.order-btnright {float: none;text-align: center; margin-left: 0;margin-right: 0;}
+	.opinion-form form .submit-btn{position: static; margin-top: 20px;}
+	.blog-page-post-img img{float: none;padding-right: 0; }
+	.blog-page-post-img,.blog-page-post-text >h1,.blog-page-post-text >h3,.blog-page-post-text >h4,.blog-page-post-text >h5{text-align: center;}
+	footer ul li a{font-size: 14px;}
+}
+	@media only screen and (max-width: 767px)
+{
+	.star-img{ left: 130px;}
+	.ribbon{left: 90px;}
+	footer ul li a{font-size: 14px;}
+}
+	@media only screen and (max-width: 640px)
+{
+	header .social-right,.copy-write p {float: none;text-align: center; display: none !important;}
+	.logo{margin-bottom: 30px; float: none!important;text-align: center;}
+	.star-img{display: none;}
+	.opinion-form form input{width: 100% !important; }
+	.smiles-img{margin-top: 20px; margin-left: 0;}
+	.copy-write p{margin-right: 0;}
+	.blog {padding-left: 10px; padding-right: 10px;}
+	footer ul li a{font-size: 14px;}
+}
+@media only screen and (max-width: 568px)
+{
+	.ribbon{left: 30px;}
+	footer ul li a{font-size: 14px;}
+	
+}
+	@media only screen and (max-width: 460px)
+{
+	.logo img{width: 100%; height: auto;}
+	#order-place h2{font-size: 38px;}
+	#order-place h2 span{ font-size:48px;}
+	#order-place button{padding: 12px;font-size: 24px;}
+	.post-img img,.blog-page-post-img img{width: 100%; height:auto;}
+	.post-text{text-align: left;}
+	.ribbon{top:-35px;left: -10px;}
+	footer ul li a{font-size: 14px;}
+}
+	@media only screen and (max-width: 360px)
+{
+	
+	
+}
+/*******************************
+									COMMENTS STYLE
+							********************************/
+.comment-author{
+	margin: 0 0 5px;
+	overflow: hidden;
+	position: relative;
+	background-color:#330000;
+	color:#FFFFFF;
+	padding: 10px;
+        font-weight: bold;
+}
+.fn{
+    vertical-align: text-top;
+}
+.commentmetadata{
+    margin-bottom: 15px;
+}
+.commentmetadata a{
+    font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 5px; font-weight: bold;color: #330000;
+}
+.commentmetadata a:hover{
+    color:#cc0033;transition: all 0.2s ease-in-out;
+}
+.comment-edit-link a:hover{
+    
+}
+.comment-author img{
+    margin-right: 10px;
+}
+.commentlist p{
+    font-family: 'franklin_gothic_mediumregular';font-size: 16px; line-height: 30px; color: #000;margin-bottom: 10px;
+}
+.comment-reply-link{
+    font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 5px; font-weight: bold;color: #330000;
+}
+.comment-reply-link:hover{
+    color:#cc0033;transition: all 0.2s ease-in-out;
+}
+.votes{font-family: 'franklin_gothic_mediumregular';font-size: 14px;display:inline-block;width: 56px;height: 56px;text-align: center;margin-top:5px;}
