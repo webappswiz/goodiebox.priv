@@ -16,6 +16,7 @@ $time = explode(':', $date_array[1]);
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <meta name="p:domain_verify" content="b74aa75479f58d13024eabfe1419c0aa"/>
+        <meta property="og:image" content="<?= URL::base(TRUE, FALSE) ?>/assets/img/goodiebox-offers-normal.png" />
         <?php
         foreach (Media::styles() as $file => $type) {
             echo HTML::style($file, array('media' => $type)), PHP_EOL;
