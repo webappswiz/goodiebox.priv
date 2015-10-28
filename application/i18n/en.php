@@ -111,7 +111,7 @@ return array
     'Jelenleg két dobozunk elérhető; a Goodiebox Smart és a Goodiebox Plus. A dobozok tartalma minden hónapban változik, így érdemes mindig visszalátogatni hozzánk!' =>
     'At the moment, we have two types of boxes: Goodiebox Smart and Goodiebox Plus. The box content changes every month, this makes it worth buying every single month.',
     '<b>Szülinapos a kutyusod?</b>' => '<b>Your puppy has a birthday?</b>',
-    'Rendelj neki egy szuper Goodiebox-ot, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!' =>
+    'Rendelj neki egy szuper Goodiebox Plus meglepidobozt, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!' =>
     'Order a super Goodiebox Plus, because for birthday puppies, we include a special item to mark this important ocassion!',
     '2. Hogyan tudok rendelni a kutyusomnak?' => '2. How can I order for my puppy?',
     'A főoldalon válaszd ki a megfelelő dobozt és a gomb megnyomásával indul is a vásárlás folyamata.' =>
