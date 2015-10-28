@@ -14,7 +14,7 @@
                 echo '<br /><br />';
                 echo __('<b>Szülinapos a kutyusod?</b>');
                 echo '<br /><br/>';
-                echo __('Rendelj neki egy szuper Goodiebox-ot, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!');
+                echo __('Rendelj neki egy szuper Goodiebox Plus meglepidobozt, hiszen ebben az esetben mi is megajándékozzuk őt valamilyen kis aprósággal, hogy még ünnepibb legyen a hangulat!');
                 ?>
             </div>
         </div>
