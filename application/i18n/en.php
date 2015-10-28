@@ -53,6 +53,9 @@ return array
     'Megrendelőink véleménye a Goodiebox-ról...' => 'Recent feedbacks...',
     'Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.' => 'Until one has loved an animal, a part of one\'s soul remains unawakened.',
     'nap' => 'days',
+    'Keresztneved:' => 'Your Firstname',
+    'Email címed:' => 'Your Email Address',
+    'Kérem az értesítést!' => 'Please Notify Me!',
 //End Main
     //Hogyan
     'Hogyan működik?' => 'How it works?',
