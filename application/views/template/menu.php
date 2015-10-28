@@ -7,7 +7,7 @@ $menus = array(
     '/kutyusaink' => array( __('Kutyusaink'), 'kutyusaink'),
     'http://blog.goodiebox.hu' => array( __('Blog'), 'blog'),
     '/gyik' => array( __('GYIK'), 'gyik'),
-    'http://forum.goodiebox.hu' => array( __('Forum'), 'forum'),
+    'http://forum.goodiebox.hu' => array( __('Placc'), 'forum'),
     '/partnerek' => array( __('Partnereink'), 'partnerek'),
     '/kapcsolat' => array( __('Kapcsolat'), 'kapcsolat'),
 );
