@@ -45,8 +45,8 @@
                         <div class="content" style="text-align:justify;margin-left:0!important;padding-left:0!important;">
                             <table>
                                 <tr>
-                                    <td><a href="https://goo.gl/maps/eMiThgPtKwk" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>Flash kutyapékség<br/>
-                                        1094 Budapest Páva utca 17.<br/>
+                                    <td>Flash kutyapékség<br/>
+                                        <a href="https://goo.gl/maps/eMiThgPtKwk" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1094 Budapest Páva utca 17.<br/>
                                         <a href="tel:+36703280870"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 70 328 0870</a><br/>
                                         info@flashkutyapekseg.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
