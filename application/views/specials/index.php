@@ -65,7 +65,7 @@
                                 <tr>
                                     <td>
                                         Dogmopolite Kutyakozmetika (Buda és Pest)<br/>
-                                        <a href="https://goo.gl/maps/saU8LKQfJEv" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1116 Budapest Mesterházi utca 6-8.<br/>
+                                        <a href="https://goo.gl/maps/saU8LKQfJEv" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><span style="dispaly:block;">1116 Budapest Mesterházi utca 6-8.</span><br/>
                                         <a href="https://goo.gl/maps/zd9WnvY1xXz" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1103 Budapest Cserkesz utca 49.<br/>
                                         <a href="https://goo.gl/maps/gv9666h9oY42" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1024 Budapest Fillér utca 16.<br/>
                                         <a href="https://goo.gl/maps/v9BvnhEfxrK2" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1064 Budapest Rózsa utca 94/B.<br/>
