@@ -16,7 +16,7 @@ return array
     'Belépés' => 'Login',
     //Main page
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
-    'Hamarosan nyitunk!' => 'We\'re reopening for orders soon!',
+    'Hamarosan nyitunk!' => 'We\'re reopening soon!',
     'Nyitva vagyunk!' => 'We\'re Open!',
     'Hátralévő idő:' => 'Countdown:',
     'Szeretnél értesítést, amikor rendelhető a következő Goodiebox?' => 'Want to know when the next Goodiebox will be available?',
