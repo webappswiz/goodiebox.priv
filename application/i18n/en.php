@@ -15,6 +15,7 @@ return array
     'Kilépés' => 'Logout',
     'Belépés' => 'Login',
     //Main page
+    '/assets/img/logo.png' => '/assets/img/logo-eng.jpg',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
     'Hamarosan nyitunk!' => 'We\'re reopening soon!',
     'Nyitva vagyunk!' => 'We\'re Open!',
