@@ -47,7 +47,7 @@
                                 <tr>
                                     <td>Flash kutyapékség<br/>
                                         1094 Budapest Páva utca 17.<br/>
-                                        <a href="tel:+36703280870">+36 70 328 0870</a><br/>
+                                        <a href="tel:+36703280870">+36 70 328 0870<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@flashkutyapekseg.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
@@ -69,7 +69,7 @@
                                         1103 Budapest Cserkesz utca 49.<br/>
                                         1024 Budapest Fillér utca 16.<br/>
                                         1064 Budapest Rózsa utca 94/B.<br/>
-                                        <a href="tel:+3612462306">+36 1 246 2306</a><br/>
+                                        <a href="tel:+3612462306">+36 1 246 2306<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@dogmopolite.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
@@ -97,7 +97,7 @@
                                         1103 Budapest Cserkesz utca 49.<br/>
                                         1024 Budapest Fillér utca 16.<br/>
                                         1064 Budapest Rózsa utca 94/B.<br/>
-                                        <a href="+3612462306">+36 1 246 2306</a><br/>
+                                        <a href="tel:+3612462306">+36 1 246 2306<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@dogmopolite.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
                                     </td>
