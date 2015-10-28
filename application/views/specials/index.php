@@ -46,7 +46,7 @@
                             <table>
                                 <tr>
                                     <td>Flash kutyapékség<br/>
-                                        1094 Budapest Páva utca 17.<br/>
+                                        1094 Budapest Páva utca 17.<a href="https://goo.gl/maps/eMiThgPtKwk" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
                                         <a href="tel:+36703280870">+36 70 328 0870<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@flashkutyapekseg.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
@@ -65,10 +65,10 @@
                                 <tr>
                                     <td>
                                         Dogmopolite Kutyakozmetika (Buda és Pest)<br/>
-                                        1116 Budapest Mesterházi utca 6-8.<br/>
-                                        1103 Budapest Cserkesz utca 49.<br/>
-                                        1024 Budapest Fillér utca 16.<br/>
-                                        1064 Budapest Rózsa utca 94/B.<br/>
+                                        1116 Budapest Mesterházi utca 6-8.<a href="https://goo.gl/maps/saU8LKQfJEv" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1103 Budapest Cserkesz utca 49.<a href="https://goo.gl/maps/zd9WnvY1xXz" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1024 Budapest Fillér utca 16.<a href="https://goo.gl/maps/gv9666h9oY42" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1064 Budapest Rózsa utca 94/B.<a href="https://goo.gl/maps/v9BvnhEfxrK2" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
                                         <a href="tel:+3612462306">+36 1 246 2306<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@dogmopolite.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
@@ -93,10 +93,10 @@
                                 <tr>
                                     <td>
                                         Dogmopolite Kutyapanzió és Kutyanapközi (Buda és Pest)<br/>
-                                        1116 Budapest Mesterházi utca 6-8.<br/>
-                                        1103 Budapest Cserkesz utca 49.<br/>
-                                        1024 Budapest Fillér utca 16.<br/>
-                                        1064 Budapest Rózsa utca 94/B.<br/>
+                                        1116 Budapest Mesterházi utca 6-8.<a href="https://goo.gl/maps/saU8LKQfJEv" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1103 Budapest Cserkesz utca 49.<a href="https://goo.gl/maps/zd9WnvY1xXz" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1024 Budapest Fillér utca 16.<a href="https://goo.gl/maps/gv9666h9oY42" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
+                                        1064 Budapest Rózsa utca 94/B.<a href="https://goo.gl/maps/v9BvnhEfxrK2" target="_blank"><img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><br/>
                                         <a href="tel:+3612462306">+36 1 246 2306<img width="16" style="margin-top:0;margin-left:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/></a><br/>
                                         info@dogmopolite.hu<br/>
                                         <span class="kedvezmeny">5% <?php echo __('kedvezmény'); ?></span>
