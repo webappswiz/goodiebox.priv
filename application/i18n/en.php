@@ -50,7 +50,7 @@ return array
     'Emellett nem kell havonta a boltokat járnod, hogy új és érdekes dolgokkal lepd meg kutyusod, erről mi gondoskodunk! Kreatívak vagyunk, imádjuk a kutyusokat és szeretünk csapatban dolgozni! Mi más sülhet ki egy ilyen együttállásból, mint csupa pozitív energia, boldogság és élet!' => 'In addition to these, we do all the hard work for you, you just need to sit back and enjoy Goodiebox with your puppy!',
     'Nektek a kutyusoddal csak ki kell bontanotok a Goodiebox-ot és máris indulhat a móka!' => 'We love to hear from you, so don\'t forget to send us your feedback!',
     'Ha van kedved hozzá, küldj be fényképet és videót, miközben bontjátok a csomagot, mutasd meg nekünk, mennyire boldog a kutyusod! Csatlakozz Facebook, Twitter, Instagram és Youtube oldalunkhoz és légy tagja egy szuper csapatnak!' => 'Connect with us on Facebook, Twitter, Instagram and our Youtube channel to share your Goodiebox experience with our wonderful community.',
-    'Klikkelj a többi kutyusért!' => 'Click here to see our puppies!',
+    'Klikkelj a többi kutyusért!' => 'Click here to see more puppies!',
     'Megrendelőink véleménye a Goodiebox-ról...' => 'Recent feedbacks...',
     'Amíg meg nem tapasztaljuk, milyen érzés szeretni egy állatot, lelkünk egy része mélyen alszik.' => 'Until one has loved an animal, a part of one\'s soul remains unawakened.',
     'nap' => 'days',
