@@ -758,16 +758,16 @@ label.tooltip span
 #map{
     width:893px;
 }
-#nov,#dec,#jan,#feb,#mar,#apr,#may,#jun,#jul,#aug{
+#nov,#dec,#jan,#feb,#mar,#apr,#may,#jun,#jul,#aug,#sep{
     font-family: 'La-chata';font-size: 20px;
     color: #330000;
     margin-left: 22px;
 }
-#nov:hover,#dec:hover,#jan:hover,#feb:hover,#mar:hover,#apr:hover,#may:hover,#jun:hover,#jul:hover,#aug:hover{
+#nov:hover,#dec:hover,#jan:hover,#feb:hover,#mar:hover,#apr:hover,#may:hover,#jun:hover,#jul:hover,#aug:hover,#sep:hover{
     color: #268949;
 
 }
-#nov.active,#dec.active,#jan.active,#feb.active,#mar.active,#apr.active,#may.active,#jun.active,#jul.active,#aug.active{
+#nov.active,#dec.active,#jan.active,#feb.active,#mar.active,#apr.active,#may.active,#jun.active,#jul.active,#aug.active,#sep.active{
     color: #268949;
 }
 
@@ -950,7 +950,7 @@ label.tooltip span
 
 @media only screen and (max-width: 800px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
     }
     .counting-back{
@@ -1008,7 +1008,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 768px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
         margin: 2px;
     }
@@ -1067,7 +1067,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 767px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
         margin: 2px;
     }
@@ -1127,7 +1127,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 640px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
         margin: 2px;
     }
@@ -1242,7 +1242,7 @@ label.tooltip span
 }
 @media only screen and (max-width: 460px)
 {
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
         margin: 2px;
     }
@@ -1381,7 +1381,7 @@ label.tooltip span
         cursor: pointer;
     }
 
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
         margin: 2px;
     }
@@ -1486,7 +1486,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     #dialog-form1 .dark-btn{
 
     }
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 10px;
         margin: 2px;
     }
@@ -1570,7 +1570,7 @@ and (max-device-width : 593px)  and (orientation : landscape)
     .medialinks img{
         width: 200px;
     }
-    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug{
+    #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 12px;
         margin: 2px;
     }
