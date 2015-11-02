@@ -18,7 +18,7 @@ return array
     '/assets/img/logo.png' => '/assets/img/logo-eng.jpg',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
     'Hamarosan nyitunk!' => 'We\'re reopening soon!',
-    'Nyitva vagyunk!' => 'We\'re Open!',
+    'Nyitva vagyunk!' => 'Orders start 1st December!',
     'Hátralévő idő:' => 'Countdown:',
     'Szeretnél értesítést, amikor rendelhető a következő Goodiebox?' => 'Want to know when the next Goodiebox will be available?',
     'saját' => 'unique',
