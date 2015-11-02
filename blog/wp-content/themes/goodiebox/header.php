@@ -145,9 +145,9 @@ _atrk_opts = { atrk_acct:"JajCk1a4eFf24B", domain:"goodiebox.hu",dynamic: true};
                 <li><a href="http://goodiebox.hu/kutyusaink" >Kutyusaink</a></li>
                 <li><a class="selected">Blog</a></li>
                 <li><a href="http://goodiebox.hu/gyik" >GYIK</a></li>
-                <li><a href="http://goodiebox.hu/kapcsolat" >Kapcsolat</a></li>
-				<li><a href="http://goodiebox.hu/media" >Média</a></li>
-				<li><a href="http://goodiebox.hu/partnerek" >Partnereink</a></li>
+                <li><a href="http://forum.goodiebox.hu" >Placc</a></li>
+		<li><a href="http://goodiebox.hu/partnerek" >Partnereink</a></li>
+		<li><a href="http://goodiebox.hu/kapcsolat" >Kapcsolat</a></li>
                 <li><a href="http://goodiebox.hu/user_session/login" >Belépés</a></li>
             </ul>
         </nav>
