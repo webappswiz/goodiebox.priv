@@ -149,7 +149,7 @@ $menus = array(
         </div>
         <div class="lock">
             <ul>
-                <li><a href="#"><?php echo __('Nyitva vagyunk!'); ?></a></li>
+                <li><a href="#"><?php echo __('December 1-jén nyitunk!'); ?></a></li>
             </ul>
         </div>
     </div>
@@ -161,7 +161,7 @@ $menus = array(
 </section>
 <div class="clear"></div>
 <br/>
-<?php if ($status == 0): ?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold;font-family:franklin_gothic_bookregular';" href="#"><?php echo __('Szeretnél értesítést, amikor rendelhető a következő Goodiebox?'); ?></a></center><?php endif; ?>
+<?php if ($status == 0): ?><center><a id="subscribe" style="color:green;cursor: pointer;font-weight: bold;font-family:franklin_gothic_bookregular';" href="#"><?php echo __('Kattins ide, hogy értesítsünk nyitás előtt!'); ?></a></center><?php endif; ?>
 <div class="clear"></div>
 <nav style="margin-top: 10px">
     <ul>
