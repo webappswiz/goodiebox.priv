@@ -20,7 +20,7 @@ return array
     'December 1-jén nyitunk!' => 'Orders start 1st December!',
     'Nyitva vagyunk!' => 'We\'re open!',
     'Hátralévő idő:' => 'Countdown:',
-    'Kattins ide, hogy értesítsünk nyitás előtt!' => 'Click here to receive a notification when we open!',
+    'Kattints ide, hogy értesítsünk nyitás előtt!' => 'Click here to receive a notification when we open!',
     'saját' => 'unique',
     'doboza' => 'box',
     'Haspók kutyusoknak' => 'For snack loving pups',
