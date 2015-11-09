@@ -14,6 +14,19 @@
                     <h3 class="collapse_content2"><?php echo __('Kávézók'); ?></h3>
                     <div class="cnt">
                         <div class="content" style="text-align:justify;margin-left:0!important;padding-left:5px!important;">
+                        <table>
+                                <tr>
+                                    <td><a href="http://alapcafe.hu/" target="_blank">ALAP Café</a><br/>
+                                        <a href="https://goo.gl/maps/BmYbZYikFuQ2" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1065 Budapest, Bajcsy-Zsilinszky út 35.<br/>
+                                        <a href="tel:+36309553319"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 30 955 3319</a><br/>
+                                        alapcafe@gmail.com<br/>
+                                        <span class="kedvezmeny">10% <?php echo __('kedvezmény'); ?></span>
+                                    </td>
+                                    <td>
+                                        <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/10-icon.jpg">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <h3 class="collapse_content2"><?php echo __('Éttermek'); ?></h3>
@@ -45,7 +58,7 @@
                         <div class="content" style="text-align:justify;margin-left:0!important;padding-left:0!important;">
                             <table>
                                 <tr>
-                                    <td>Flash kutyapékség<br/>
+                                    <td><a href="www.flashkutyapekseg.hu" target="_blank">Flash kutyapékség</a><br/>
                                         <a href="https://goo.gl/maps/eMiThgPtKwk" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1094 Budapest Páva utca 17.<br/>
                                         <a href="tel:+36703280870"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 70 328 0870</a><br/>
                                         info@flashkutyapekseg.hu<br/>
@@ -64,7 +77,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        Dogmopolite Kutyakozmetika (Buda és Pest)<br/>
+                                        <a href="http://www.dogmopolite.hu" target="_blank">Dogmopolite Kutyakozmetika (Buda és Pest)</a><br/>
                                         <a href="https://goo.gl/maps/saU8LKQfJEv" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><span style="dispaly:block;">1116 Budapest Mesterházi utca 6-8.</span><br/>
                                         <a href="https://goo.gl/maps/zd9WnvY1xXz" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1103 Budapest Cserkesz utca 49.<br/>
                                         <a href="https://goo.gl/maps/gv9666h9oY42" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1024 Budapest Fillér utca 16.<br/>
@@ -92,7 +105,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        Dogmopolite Kutyapanzió és Kutyanapközi (Buda és Pest)<br/>
+                                        <a href="http://www.dogmopolite.hu" target="_blank">Dogmopolite Kutyapanzió és Kutyanapközi (Buda és Pest)</a><br/>
                                        <a href="https://goo.gl/maps/saU8LKQfJEv" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1116 Budapest Mesterházi utca 6-8.<br/>
                                         <a href="https://goo.gl/maps/zd9WnvY1xXz" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1103 Budapest Cserkesz utca 49.<br/>
                                         <a href="https://goo.gl/maps/gv9666h9oY42" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1024 Budapest Fillér utca 16.<br/>
@@ -114,7 +127,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        Ebfizio<br/>
+                                        <a href="http://ebfizio.hu/" target="_blank">Ebfizio</a><br/>
                                         Kisállat-fizioterápia és hidroterápia, kutya-fitness<br/>
                                         <a href="https://goo.gl/maps/tuiH8qPNub62" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1048 Budapest Falemez utca 18.<br/>
                                         <a href="tel:+36703866285"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 70 386 6285</a><br/>
