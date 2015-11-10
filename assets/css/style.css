@@ -1351,6 +1351,13 @@ label.tooltip span
         width: 250px;
     }
 
+    #dialog-form1 input[type="email"]{
+        font-size: 12px;
+        margin: 1px;
+        padding: 1px;
+        width: 250px;
+    }
+
     #dialog-form1 label{
         margin-top: 1px;
     }
@@ -1484,6 +1491,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
         padding-left: 10px;
         font-size: 14px;
         margin-left: 10px;
+        padding-bottom: 2px;
     }
     #dialog-form1 input[type="text"]{
         font-size: 12px;
@@ -1503,7 +1511,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     }
 
     #dialog-form1 .dark-btn{
-
+        margin-bottom: 0px;
     }
     #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep{
         font-size: 10px;
@@ -1620,6 +1628,12 @@ and (max-device-width : 593px)  and (orientation : landscape)
     }
     .slide-item{
         font-size: 12px;
+    }
+    #dialog-form1 input[type="submit"]{
+        margin: 1px;
+    }
+    #dialog-form1{
+        height: 200px;
     }
 }
 
