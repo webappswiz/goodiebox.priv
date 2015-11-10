@@ -44,7 +44,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,su
 {
     display:block
 }
-strong{font-weight: bold;}	
+strong{font-weight: bold;}
 
 /*******************************
                         FONTS
@@ -63,7 +63,7 @@ strong{font-weight: bold;}
 @font-face {
     font-family: 'FranklinGothic-Heavy';
     src: url('/assets/fonts/FranklinGothic-Heavy.eot');
-    src: url('/assets/fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'),  
+    src: url('/assets/fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'),
         url('/assets/fonts/FranklinGothic-Heavy.woff') format('woff'),
         url('/assets/fonts/FranklinGothic-Heavy.ttf')  format('truetype'),
         url('/assets/fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
@@ -273,7 +273,7 @@ h2{font-family: 'franklin_gothic_bookregular'; font-size: 24px; font-weight: bol
 .back a{font-family: 'franklin_gothic_mediumregular'; color: #330000;}
 .blog-page-post-text > p {font-family: 'franklin_gothic_mediumregular';font-size: 14px; line-height: 30px;text-indent: 50px;}
 .blog-page-post-text > h1{font-family: 'FranklinGothic-Heavy'; font-size:30px; text-align: left; padding-top: 30px;}
-.blog-page-post-text > h3{font-family: 'franklin_gothic_mediumregular'; font-size: 24px; padding-top: 25px;}     				
+.blog-page-post-text > h3{font-family: 'franklin_gothic_mediumregular'; font-size: 24px; padding-top: 25px;}
 .date{font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 15px;}
 .posted{font-family: 'franklin_gothic_bookregular'; font-size: 14px; padding-top: 15px; padding-bottom: 50px;}
 .smiles{max-width: 690px;margin-left: 90px;}
@@ -319,12 +319,12 @@ h2{font-family: 'franklin_gothic_bookregular'; font-size: 24px; font-weight: bol
 .circles ul li{margin-top: 35px; background: url(/assets/img/circle.png) no-repeat left center; padding-left: 30px;font-family: 'franklin_gothic_bookregular'; font-size: 18px;}
 .circles ul li span{color: #ed0491;}
 .circles img{position: absolute; top: 65px; right: 0;}
-.donations-btn{text-align: center;} 
+.donations-btn{text-align: center;}
 .donations-btn p{line-height: 36px;font-family: 'La-chata';}
 .donations-btn button{font-size: 24px; border-top: 1px solid #eb99ad;border-bottom: 1px solid #eb99ad; padding: 15px 20px;display: block;
                       margin-left: auto;margin-right: auto;margin-top: -30px;}
 .donations-btn img{margin-left: -300px;}
-.donation-bottom-p{padding-top: 0 !important; color: #cc0033; }      				
+.donation-bottom-p{padding-top: 0 !important; color: #cc0033; }
 .donations-bottom-text p{font-size: 18px; overflow: hidden;}
 /*******************************
         CONTACT PAGE CSS
@@ -477,8 +477,8 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .process-circles ul{max-width: 420px ;margin:0 auto;}
 .process-circles ul li {float:left;}
 .circle{width: 55px; height: 55px;border-radius:50px;font-family: 'FranklinGothic-Heavy';font-size:18px;color:#ff3333;border:5px solid #ff3333;line-height:50px;text-align:center;background:#ffffff;}
-.circle-line{height: 55px; line-height: 55px;margin: 0 25px;color:#ff3333;}     			
-.c-grey {color: #cccccc; border-color: #cccccc;} 
+.circle-line{height: 55px; line-height: 55px;margin: 0 25px;color:#ff3333;}
+.c-grey {color: #cccccc; border-color: #cccccc;}
 .process-form label{display: block; margin: 10px 0 3px 0;}
 .process-form-container2 input[type="text"]{width: 100%;}
 .process-form-container2{width: 435px;}
@@ -487,7 +487,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 
 /*******************************
       PROCESS PAGE 2 CSS
-********************************/    				
+********************************/
 .option-name{width: 100%;border: 3px solid #330000; padding: 5px; outline: none;}
 .process-2{position: relative; border: 3px dotted #330000;margin-top: 10px; padding: 30px 90px 45px 90px;}
 .step2-text{margin-top: 10px;}
@@ -616,14 +616,14 @@ input.error{
 }
 label.tooltip {outline:none; }
 label.tooltip strong {line-height:30px;}
-label.tooltip:hover {text-decoration:none;} 
+label.tooltip:hover {text-decoration:none;}
 label.tooltip span {
     z-index:10;display:none; padding:14px 20px;
     margin-top:60px; margin-left:-160px;
     width:300px; line-height:16px;
 }
 label.tooltip:hover span{
-    display:inline; position:absolute; 
+    display:inline; position:absolute;
     border:2px solid #FFF;  color:#EEE;
     background:#333 url(cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
 }
@@ -632,14 +632,14 @@ label.tooltip:hover span{
 /*CSS3 extras*/
 label.tooltip span
 {
-    border-radius:2px;        
+    border-radius:2px;
     box-shadow: 0px 0px 8px 4px #666;
     /*opacity: 0.8;*/
 }
 
-.etabs { 
-    margin: 0px; 
-    padding: 0px; 
+.etabs {
+    margin: 0px;
+    padding: 0px;
     font-size: 0;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -649,9 +649,9 @@ label.tooltip span
     font-size: 20px;
     width: 319px;
     font-weight: bolder;
-    display: inline-block; 
-    zoom:1; 
-    *display:inline; 
+    display: inline-block;
+    zoom:1;
+    *display:inline;
     text-align: center;
     border-bottom: 4px solid #330000;
     margin: 0px;
@@ -661,30 +661,30 @@ label.tooltip span
 }
 .tab a {
 
-    line-height: 2em; 
-    display: block; 
+    line-height: 2em;
+    display: block;
 
-    outline: none; 
+    outline: none;
     color: #268949;
 }
-.tab a:hover { 
-    text-decoration: none; 
+.tab a:hover {
+    text-decoration: none;
 }
-.tab.active { 
-    background: #fff; 
-    position: relative; 
-    border-color: #330000; 
+.tab.active {
+    background: #fff;
+    position: relative;
+    border-color: #330000;
     border: 4px solid #330000;
-    border-right: 4px solid #330000; 
-    border-left: 4px solid #330000; 
+    border-right: 4px solid #330000;
+    border-left: 4px solid #330000;
     border-bottom: 0px;
     padding-bottom: 4px;
     padding-right: 0px;
     margin: 0px;
 
 }
-.tab a.active { 
-    font-weight: bold; 
+.tab a.active {
+    font-weight: bold;
     font-size: 20px;
     color: #330000;
 }
@@ -696,9 +696,9 @@ label.tooltip span
     font-size: 20px;
     width: 259px;
     font-weight: bolder;
-    display: inline-block; 
-    zoom:1; 
-    *display:inline; 
+    display: inline-block;
+    zoom:1;
+    *display:inline;
     text-align: center;
     border-bottom: 4px solid #330000;
     margin: 0px;
@@ -708,30 +708,30 @@ label.tooltip span
 }
 .tab2 a {
 
-    line-height: 2em; 
-    display: block; 
+    line-height: 2em;
+    display: block;
 
-    outline: none; 
+    outline: none;
     color: #268949;
 }
-.tab2 a:hover { 
-    text-decoration: none; 
+.tab2 a:hover {
+    text-decoration: none;
 }
-.tab2.active { 
-    background: #fff; 
-    position: relative; 
-    border-color: #330000; 
+.tab2.active {
+    background: #fff;
+    position: relative;
+    border-color: #330000;
     border: 4px solid #330000;
-    border-right: 4px solid #330000; 
-    border-left: 4px solid #330000; 
+    border-right: 4px solid #330000;
+    border-left: 4px solid #330000;
     border-bottom: 0px;
     padding-bottom: 4px;
     padding-right: 0px;
     margin: 0px;
 
 }
-.tab2 a.active { 
-    font-weight: bold; 
+.tab2 a.active {
+    font-weight: bold;
     font-size: 20px;
     color: #330000;
 }
@@ -740,15 +740,15 @@ label.tooltip span
 }
 /* End new styles added by Yemi */
 
-.tab-container .panel-container { 
-    background: #fff; 
-    border: solid #666 1px; 
+.tab-container .panel-container {
+    background: #fff;
+    border: solid #666 1px;
     padding: 10px;
     padding-left: 0px;
     padding-right: 0px;
     margin: 0px;
-    -moz-border-radius: 0 4px 4px 4px; 
-    -webkit-border-radius: 0 4px 4px 4px; 
+    -moz-border-radius: 0 4px 4px 4px;
+    -webkit-border-radius: 0 4px 4px 4px;
 }
 
 #text{
@@ -797,7 +797,7 @@ label.tooltip span
 #dialog-form1{
     display:none; /* Hide the DIV */
     position:fixed;
-    height:255px;
+    min-height:255px;
     width:350px;
     background:#FFFFFF;
     margin: 0 auto;
@@ -900,8 +900,8 @@ label.tooltip span
         width: 308px;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -927,8 +927,8 @@ label.tooltip span
         width: 198px;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -980,8 +980,8 @@ label.tooltip span
         width: 198px;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -1040,8 +1040,8 @@ label.tooltip span
         width: 198px;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -1100,8 +1100,8 @@ label.tooltip span
         width: 25%;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -1170,8 +1170,8 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -1273,7 +1273,7 @@ label.tooltip span
     .post-img img,.blog-page-post-img img,.circles img{width: 100%; height:auto;}
     .post-text{text-align: left;}
     .donations-btn img {display: none;}
-    .donations-btn button{margin-top: 30px; font-size: 28px;padding: 10px 15px;}	
+    .donations-btn button{margin-top: 30px; font-size: 28px;padding: 10px 15px;}
     .claim-gift,.process-3,.process-2,#faq{padding-left:15px; padding-right:15px;}
     #menu{overflow: hidden;}
     #menu ul li,#menu ul li:hover{background-size: 83%; margin-top: 0;}
@@ -1289,8 +1289,8 @@ label.tooltip span
         width: 30%;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -1422,13 +1422,13 @@ label.tooltip span
         width: 20%;
         font-size: 16px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
-    .tab2 a.active { 
-        font-weight: bold; 
+    .tab2 a.active {
+        font-weight: bold;
         font-size: 16px;
         color: #330000;
     }
@@ -1455,7 +1455,7 @@ label.tooltip span
         width: 200px;
     }
 }
-@media only screen and (min-device-width : 320px) 
+@media only screen and (min-device-width : 320px)
 and (max-device-width : 592px)  and (orientation : portrait)
 {
     #dialog-form1{
@@ -1519,13 +1519,13 @@ and (max-device-width : 592px)  and (orientation : portrait)
         font-size: 8px;
     }
 
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 8px;
         color: #330000;
     }
-    .tab2 a.active { 
-        font-weight: bold; 
+    .tab2 a.active {
+        font-weight: bold;
         font-size: 8px;
         color: #330000;
     }
@@ -1564,7 +1564,7 @@ and (max-device-width : 592px)  and (orientation : portrait)
     }
 }
 
-@media only screen and (min-device-width : 320px) 
+@media only screen and (min-device-width : 320px)
 and (max-device-width : 593px)  and (orientation : landscape)
 {
     .medialinks img{
@@ -1578,8 +1578,8 @@ and (max-device-width : 593px)  and (orientation : landscape)
         width: 30%;
         font-size: 8px;
     }
-    .tab a.active { 
-        font-weight: bold; 
+    .tab a.active {
+        font-weight: bold;
         font-size: 8px;
         color: #330000;
     }

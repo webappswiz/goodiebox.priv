@@ -102,12 +102,17 @@ $menus = array(
 
         $('#popupBoxClose1').on('click', function () {
             unloadPopupBox();
+			$('p.text_message').html('');
         });
 
         $('#subscribe').on('click', function () {
             loadPopupBox();
         });
 
+		$('.disabled').on('click', function () {
+			$('p.text_message').html("<?php echo __('Jelenleg nincs rendelési időszakunk! Iratkozz fel a nyitási értesítőre és mi figyelmeztetünk, ha eljött az idő! :)')?>");
+			loadPopupBox();
+		});
 
     });
 </script>
@@ -118,6 +123,7 @@ $menus = array(
     </script>
     <div class="claim-form2">
         <a id="popupBoxClose1"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/delete.png"></a>
+		<p class="text_message"></p>
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
                 <label><?php echo __('Keresztneved:'); ?></label> <input type="text" name="name" value="" size="20" class="" required/>
@@ -172,7 +178,7 @@ $menus = array(
     <h2><?php echo __('Legyen kutyusodnak is'); ?><span> <?php echo __('saját'); ?></span> <?php echo __('doboza'); ?></h2>
     <div class="order-btnleft">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?smart' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1) ? 'background:green;' : '' ?>">SMART</button>
+            <button type="button" class="rounded <?= ($status == 1) ? URL::base(TRUE, FALSE) . '' : 'disabled' ?>" style="font-weight: bolder;width: 250px;<?php echo ($status == 1) ? 'background:green;' : '' ?>">SMART</button>
         </a>
         <p style="<?php echo ($status == 1) ? 'color:green;' : '' ?>"><?php echo __('Haspók kutyusoknak'); ?><br/>
             <?php echo __('már 5990 Ft-tól!'); ?></p>
@@ -182,7 +188,7 @@ $menus = array(
     </div>
     <div class="order-btnright">
         <a href="<?= ($status == 1) ? URL::base(TRUE, FALSE) . 'order/?plus' : '#' ?>">
-            <button type="button" class="rounded" style="font-weight: bolder;width: 250px;<?php echo ($status == 1) ? 'background:green;' : '' ?>">PLUS</button>
+            <button type="button" class="rounded <?= ($status == 1) ? URL::base(TRUE, FALSE) . '' : 'disabled' ?>" style="font-weight: bolder;width: 250px;<?php echo ($status == 1) ? 'background:green;' : '' ?>">PLUS</button>
         </a>
         <p style="<?php echo ($status == 1) ? 'color:green;' : '' ?>"><?php echo __('Kivételes kutyusoknak'); ?><br/>
             <?php echo __('már 7990 Ft-tól!'); ?></p>

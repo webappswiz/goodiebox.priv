@@ -469,5 +469,6 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Mégse' => 'Cancel',
     'Most' => 'Now!',
     'M<br/> E<br/> G<br/> R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O<br/> N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br/> D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T<br/> E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!<br/> L<br/> E<br/> M' => 'O<br/>R&nbsp;&nbsp;&nbsp;N<br/>D&nbsp;&nbsp;&nbsp;O<br/>E&nbsp;&nbsp;&nbsp;W</br>R&nbsp;&nbsp;&nbsp;&nbsp;!',
-    'Fejezd be a rendelésedet!' => 'Complete your order!'
+    'Fejezd be a rendelésedet!' => 'Complete your order!',
+	'Jelenleg nincs rendelési időszakunk! Iratkozz fel a nyitási értesítőre és mi figyelmeztetünk, ha eljött az idő! :)' => "Sorry, we're not receiving orders at the moment but we can notify you when we start receiving orders if you subscribe below! :)"
 );

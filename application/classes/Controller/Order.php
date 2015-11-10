@@ -225,6 +225,11 @@ class Controller_Order extends Controller_Core {
     }
 
     public function action_index() {
+		$options = ORM::factory('Options', 1);
+		$status = $options->status;
+		if($status!=1){
+			$this->redirect('/');
+		}
         $session = Session::instance()->as_array();
         $this->set_title('Order - Step 1');
         if (isset($_GET['smart'])) {
@@ -242,6 +247,11 @@ class Controller_Order extends Controller_Core {
     }
 
     public function action_step2() {
+		$options = ORM::factory('Options', 1);
+		$status = $options->status;
+		if($status!=1){
+			$this->redirect('/');
+		}
         $session = Session::instance()->as_array();
         $this->set_title('Order - Step 2');
         if (isset($_POST['order']) && isset($session['step1'])) {
@@ -716,6 +726,11 @@ class Controller_Order extends Controller_Core {
     }
 
     public function action_step3() {
+		$options = ORM::factory('Options', 1);
+		$status = $options->status;
+		if($status!=1){
+			$this->redirect('/');
+		}
         $session = Session::instance();
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');
@@ -1015,7 +1030,7 @@ class Controller_Order extends Controller_Core {
         <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
-        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->	
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <style>
             @font-face {
                 font-family: \'gillsansmt\';
@@ -1037,9 +1052,9 @@ class Controller_Order extends Controller_Core {
                     url(\'' . URL::base(TRUE, FALSE) . 'assets/fonts/GilgongoMutombo_latin+latin-ext_gdi.svg#GilgongoMutombo-Regular\') format(\'svg\');}
             .box{width:290px; height:145px; float:left;font-family: \'gillsansmt\';letter-spacing:2px;}
             @media only screen and (max-width:480px){ img{width: 100%; height: auto;}.box-row td{padding: 10px !important;}h2{font-size: 24px!important;} h2 span{font-size: 16px!important;}}
-        </style>	
+        </style>
     </head>
-    <body>				
+    <body>
         <table border="0" cellpadding="0" cellspacing="0"  align="center" style="max-width:600;background-color:#ffffc1;text-align:center;">
             <tr Style="background-color:#e12258;width:100%;">
                 <td colspan="2"><img src="' . URL::base(TRUE, FALSE) . 'assets/img/logo_gift.png" style="text-align:center;"></td>
