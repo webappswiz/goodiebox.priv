@@ -797,7 +797,7 @@ label.tooltip span
 #dialog-form1{
     display:none; /* Hide the DIV */
     position:fixed;
-    min-height:255px;
+    /*min-height:255px;*/
     width:350px;
     background:#FFFFFF;
     margin: 0 auto;
