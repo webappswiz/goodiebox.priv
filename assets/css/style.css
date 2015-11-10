@@ -829,8 +829,11 @@ label.tooltip span
     margin: 5px;
 }
 #dialog-form1 label{
-    font-size: 18px;
+    font-size: 14px;
     margin: 5px;
+}
+#dialog-form1 p.text_message{
+    font-size: 14px;
 }
 #popupBoxClose1 {
     font-size:20px;

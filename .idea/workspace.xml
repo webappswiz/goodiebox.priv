@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5582060-0fe8-459e-9eb2-36da64496fa2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/Controller/Order.php" afterPath="$PROJECT_DIR$/application/classes/Controller/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/i18n/en.php" afterPath="$PROJECT_DIR$/application/i18n/en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/index.php" afterPath="$PROJECT_DIR$/application/views/main/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
     </list>
     <ignored path="public_html.iws" />
@@ -31,7 +28,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="191" selection-end="218" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="8028">
+            <state line="125" column="30" selection-start="4565" selection-end="4577" vertical-scroll-proportion="-13.333333" vertical-offset="1890" max-vertical-offset="8028">
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -124,19 +121,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Order.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="732" column="9" selection-start="40194" selection-end="40194" vertical-scroll-proportion="0.44096386" vertical-offset="12810" max-vertical-offset="20160">
+            <state line="732" column="9" selection-start="40194" selection-end="40194" vertical-scroll-proportion="-6.4210525" vertical-offset="12810" max-vertical-offset="20160">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Orders.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="130.0" vertical-offset="3510" max-vertical-offset="12114">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="799" column="16" selection-start="35006" selection-end="35006" vertical-scroll-proportion="-9.5" vertical-offset="14097" max-vertical-offset="29376">
+            <state line="834" column="29" selection-start="35808" selection-end="35808" vertical-scroll-proportion="0.75262547" vertical-offset="14367" max-vertical-offset="29430">
               <folding />
             </state>
           </provider>
@@ -180,8 +186,8 @@
       <list>
         <option value="$PROJECT_DIR$/application/i18n/en.php" />
         <option value="$PROJECT_DIR$/application/views/main/index.php" />
-        <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/application/classes/Controller/Order.php" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
       </list>
     </option>
   </component>
@@ -380,6 +386,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -461,16 +493,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="799" column="16" selection-start="35006" selection-end="35006" vertical-scroll-proportion="-9.5" vertical-offset="14097" max-vertical-offset="29376">
+        <state line="732" column="9" selection-start="40194" selection-end="40194" vertical-scroll-proportion="-6.4210525" vertical-offset="12810" max-vertical-offset="20160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="130.0" vertical-offset="3510" max-vertical-offset="12114">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="191" selection-end="218" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="8028">
+        <state line="125" column="30" selection-start="4565" selection-end="4577" vertical-scroll-proportion="-13.333333" vertical-offset="1890" max-vertical-offset="8028">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -562,9 +601,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="732" column="9" selection-start="40194" selection-end="40194" vertical-scroll-proportion="0.44096386" vertical-offset="12810" max-vertical-offset="20160">
+        <state line="834" column="29" selection-start="35808" selection-end="35808" vertical-scroll-proportion="0.75262547" vertical-offset="14367" max-vertical-offset="29430">
           <folding />
         </state>
       </provider>
