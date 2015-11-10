@@ -126,7 +126,7 @@ $menus = array(
 		<p class="text_message"></p>
         <form class="process-form" name="order" method="POST" action="/subscribe">
             <div>
-                <label><?php echo __('Keresztneved:'); ?></label> <input type="text" name="name" value="" size="20" class="" required style="margin-bottom:20px;"/>
+                <label><?php echo __('Keresztneved:'); ?></label> <input type="text" name="name" value="" size="20" class="" required style="margin-bottom:20px;margin-top:10px;"/>
             </div>
             <div style="padding-bottom:10px;">
                 <label><?php echo __('Email címed:'); ?></label> <input type="email" name="email" value="" size="20" class="" required margin-bottom:10px;/>
