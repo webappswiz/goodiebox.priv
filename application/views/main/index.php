@@ -117,7 +117,7 @@ $menus = array(
     });
 </script>
 
-<div id="dialog-form1" title="<?php echo __('Kérem az értesítést!'); ?>" style="display:none;">
+<div id="dialog-form1" title="<?php echo __('Kérem az értesítést!'); ?>" style="display:none;min-height:180px;">
     <script>
         $(".process-form").validate();
     </script>
