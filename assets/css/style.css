@@ -816,14 +816,14 @@ label.tooltip span
     margin: 5px;
     border:1px solid #330000;
     padding: 2px;
-    width:300px;
+    width:250px;
 }
 #dialog-form1 input[type="email"]{
     font-size: 18px;
     margin: 5px;
     border:1px solid #330000;
     padding: 2px;
-    width:300px;
+    width:250px;
 }
 #dialog-form1 input[type="submit"]{
     margin: 5px;
