@@ -827,6 +827,8 @@ label.tooltip span
 }
 #dialog-form1 input[type="submit"]{
     margin: 5px;
+    -webkit-appearance: none;
+     border-radius: 0;
 }
 #dialog-form1 label{
     font-size: 14px;
