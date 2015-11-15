@@ -454,7 +454,7 @@ input[type="checkbox"]{border: 3px solid #330000; width: 18px; height: 18px; bac
 .claim-option-list li:last-child{margin-right: 0;}
 .claim-option-list li img{vertical-align: baseline;display: block; margin-bottom: 20px;}
 .claim-option-list li input[type="radio"]{border: 3px solid #330000; width: 21px; height: 21px; background: none; outline:none; 	vertical-align: middle;}
-.claim-form2 {margin-top: 20px; width: 300px;}
+.claim-form2 {margin-top: 20px; width: 263px;}
 .claim-form2 input[type="text"]{width: 100%;}
 .radio-list input[type="radio"]{margin-left: 70px; width: 28px; }
 .claim-form-btn{float: right;}
