@@ -798,7 +798,7 @@ label.tooltip span
     display:none; /* Hide the DIV */
     position:fixed;
     min-height:255px;
-    width:350px;
+    width:300px;
     background:#FFFFFF;
     margin: 0 auto;
     z-index:9999; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
