@@ -131,7 +131,7 @@ $menus = array(
             <div style="padding-bottom:10px;">
                 <label><?php echo __('Email címed:'); ?></label> <input type="email" name="email" value="" size="20" class="" required margin-bottom:10px;/>
             </div>
-            <div style="text-align: center;">
+            <div style="text-align: center;margin-bottom:10px;">
                 <input type="submit" value="<?php echo __('Kérem az értesítést!'); ?>" class="dark-btn dog-prof-btn rounded style="margin-bottom:10px;">
             </div>
         </form>
