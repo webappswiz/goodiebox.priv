@@ -801,7 +801,7 @@ label.tooltip span
     width:350px;
     background:#FFFFFF;
     margin: 0 auto;
-    z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+    z-index:9999; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
     left: 50%;
     top: 60px;
     margin-left: -125px;
