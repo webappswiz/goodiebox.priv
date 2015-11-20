@@ -308,7 +308,7 @@ class Controller_Admin_Orders extends Controller_Admin {
                 $cod = $cost->cost * 6;
             }
             $pr = $cod;
-            $method = 'Készpénz';
+            $method = 'Utánvét';
         } else {
             $pr = 0;
             $method = 'Átutalás';
