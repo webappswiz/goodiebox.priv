@@ -502,7 +502,7 @@ class Controller_Admin_Orders extends Controller_Admin {
         $order->date_purchased = date('Y-m-d');
         $order->save();
         $pr = $cod;
-        $method = __('Készpénz');
+        $method = __('Utánvét');
         $discount = $order->package->price - $order->total_price + $pr;
         $total_price = $order->package->price - $discount;
         if ($order->company_name <> '') {
