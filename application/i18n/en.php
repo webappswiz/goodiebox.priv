@@ -397,6 +397,7 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'Telefon:' => 'Phone #',
     'Fizetési mód' => 'Payment Method',
     'Készpénz' => 'Cash',
+    'Utánvét' => 'Cash',
     'Átutalás' => 'Credit Card',
     'Számla kelte' => 'Invoice Date',
     'Teljesítés dátuma' => 'Completion Date',
