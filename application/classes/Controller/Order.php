@@ -50,7 +50,7 @@ class Controller_Order extends Controller_Core {
                 $cod = $cost->cost * 6;
             }
             $pr = $cod;
-            $method = __('Készpénz');
+            $method = __('Utánvét');
         } else {
             $pr = 0;
             $method = __('Átutalás');
