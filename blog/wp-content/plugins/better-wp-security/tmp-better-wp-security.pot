@@ -3,19 +3,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: iThemes Security 5.1.0\n"
-"Report-Msgid-Bugs-To: http://ithemes.com/support/\n"
-"POT-Creation-Date: 2015-10-15 13:59:17+00:00\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/better-wp-"
+"security\n"
+"POT-Creation-Date: 2015-10-15 14:08:19+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#. #-#-#-#-#  better-wp-security.pot (iThemes Security 5.1.0)  #-#-#-#-#
+#. #-#-#-#-#  tmp-better-wp-security.pot (iThemes Security 5.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: better-wp-security.php:26
+#: better-wp-security.php:28
 msgid "iThemes Security"
 msgstr ""
 
