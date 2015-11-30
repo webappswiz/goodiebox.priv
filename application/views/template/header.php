@@ -207,6 +207,7 @@ if (Cookie::get('lang', 'hu') == 'hu') {
                     });
                 </script>
             </div> <!--End social-right-->
+			<script src="snowstorm-min.js"></script>
         </header>
         <div class="clear"></div>
 <?php
