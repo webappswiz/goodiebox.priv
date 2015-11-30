@@ -11,6 +11,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#dec_photos').hide();
             $('#jan_photos').hide();
@@ -23,6 +24,7 @@
 			$('#aug_photos').hide();
             $('#nov_photos').show();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
         $('#dec').on('click', function () {
             $('#nov').removeClass('active');
@@ -35,6 +37,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
 			$('#dec_photos').show();
@@ -47,6 +50,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
         $('#jan').on('click', function () {
             $('#nov').removeClass('active');
@@ -59,6 +63,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -71,6 +76,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#feb').on('click', function () {
             $('#nov').removeClass('active');
@@ -83,6 +89,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -95,6 +102,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#mar').on('click', function () {
             $('#nov').removeClass('active');
@@ -107,6 +115,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -119,6 +128,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#apr').on('click', function () {
             $('#nov').removeClass('active');
@@ -131,6 +141,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -143,6 +154,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#may').on('click', function () {
             $('#nov').removeClass('active');
@@ -155,6 +167,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -167,6 +180,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#jun').on('click', function () {
             $('#nov').removeClass('active');
@@ -179,6 +193,7 @@
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
             $(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -191,6 +206,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#jul').on('click', function () {
             $('#nov').removeClass('active');
@@ -202,6 +218,7 @@
 			$('#may').removeClass('active');
 			$('#aug').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
 			$(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -214,6 +231,7 @@
 			$('#jul_photos').show();
 			$('#aug_photos').hide();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#aug').on('click', function () {
             $('#nov').removeClass('active');
@@ -225,6 +243,7 @@
 			$('#may').removeClass('active');
 			$('#jul').removeClass('active');
 			$('#sep').removeClass('active');
+			$('#oct').removeClass('active');
 			$(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -237,6 +256,7 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').show();
 			$('#sep_photos').hide();
+			$('#oct_photos').hide();
         });
 		$('#sep').on('click', function () {
             $('#nov').removeClass('active');
@@ -248,6 +268,7 @@
 			$('#may').removeClass('active');
 			$('#jul').removeClass('active');
 			$('#aug').removeClass('active');
+			$('#oct').removeClass('active');
 			$(this).addClass('active');
             $('#nov_photos').hide();
             $('#dec_photos').hide();
@@ -260,6 +281,32 @@
 			$('#jul_photos').hide();
 			$('#aug_photos').hide();
 			$('#sep_photos').show();
+			$('#oct_photos').hide();
+        });
+		$('#oct').on('click', function () {
+            $('#nov').removeClass('active');
+            $('#dec').removeClass('active');
+			$('#jan').removeClass('active');
+			$('#feb').removeClass('active');
+			$('#mar').removeClass('active');
+			$('#apr').removeClass('active');
+			$('#may').removeClass('active');
+			$('#jul').removeClass('active');
+			$('#aug').removeClass('active');
+			$('#sep').removeClass('active');
+			$(this).addClass('active');
+            $('#nov_photos').hide();
+            $('#dec_photos').hide();
+			$('#jan_photos').hide();
+            $('#feb_photos').hide();
+			$('#mar_photos').hide();
+			$('#apr_photos').hide();
+			$('#may_photos').hide();
+			$('#jun_photos').hide();
+			$('#jul_photos').hide();
+			$('#aug_photos').hide();
+			$('#sep_photos').hide();
+			$('#oct_photos').show();
         });
         $('#tab-container').easytabs();
     });
@@ -277,13 +324,15 @@
         
         <div id="fotok">
             <div id="navs">
-			<a style="cursor: pointer" id="sep" class="active" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Szeptember');?></a>
+			<a style="cursor: pointer" id="oct" class="active" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Oktober');?></a>
+            &nbsp;&nbsp;&nbsp
+			<a style="cursor: pointer" id="sep" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Szeptember');?></a>
             &nbsp;&nbsp;&nbsp
 			<a style="cursor: pointer" id="aug" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Augusztus');?></a>
             &nbsp;&nbsp;&nbsp
 			<a style="cursor: pointer" id="jul" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Július');?></a>
             &nbsp;&nbsp;&nbsp;
-			<a style="cursor: pointer" id="jun" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Június');?></a>
+			<!-- a style="cursor: pointer" id="jun" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Június');?></a -->
             &nbsp;&nbsp;&nbsp;
             <!-- a style="cursor: pointer" id="feb" style="font-family: 'La-chata';font-size: 18px">2015 Február</a -->
             &nbsp;&nbsp;&nbsp;
@@ -374,57 +423,11 @@
                    "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-226.jpg" alt=""/></a>
             </div>
         </div>
-		  <div class="image-row" style="text-align: center;display:none;" id="jun_photos">
+		  <!-- div class="image-row" style="text-align: center;display:none;" id="jun_photos">
             <div class="image-set">
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-182.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-182.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-183.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-183.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-184.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-184.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-185.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-185.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-186.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-186.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-187.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-187.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-188.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-188.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-189.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-189.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-190.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-190.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-191.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-191.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-192.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-192.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-193.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-193.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-194.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-194.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-195.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-195.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-196.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-196.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-197.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-197.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-198.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-198.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-199.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-199.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-200.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-200.jpg" alt=""/></a>
-                <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-201.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-201.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-202.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-202.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-203.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-203.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-204.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-204.jpg" alt=""/></a>
-				   <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/img-205.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
-                   "><img class="example-image" style="width:150px;height:150px" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/thumb_img-205.jpg" alt=""/></a>
+               
             </div>
-            </div>
+            </div -->
 			 <div class="image-row" style="text-align: center;display:none;" id="aug_photos">
             <div class="image-set">
                 <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-227.jpg" data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!
@@ -467,7 +470,7 @@
                        
         </div>
 		
-		<div class="image-row" style="text-align: center;" id="sep_photos">
+		<div class="image-row" style="text-align: center;display:none;" id="sep_photos">
                 <div class="image-set">
 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-245.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-245.jpg" alt=""/></a>
 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-246.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-246.jpg" alt=""/></a>
@@ -486,6 +489,38 @@
 				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-259.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-259.jpg" alt=""/></a>  
                 </div>
             </div>
+		<div class="image-row" style="text-align: center;" id="oct_photos">	
+			<div class="image-set">
+               <a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-260.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-260.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-261.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-261.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-262.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-262.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-263.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-263.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-264.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-264.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-265.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-265.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-266.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-266.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-267.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-267.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-268.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-268.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-269.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-269.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-270.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-270.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-271.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-271.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-272.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-272.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-273.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-273.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-274.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-274.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-275.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-275.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-276.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-276.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-277.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-277.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-278.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-278.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-279.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-279.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-280.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-280.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-281.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-281.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-282.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-282.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-283.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-283.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-284.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-284.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-285.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-285.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-286.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-286.jpg" alt=""/></a>
+				<a class="example-image-link" href="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-img-287.jpg"data-lightbox="example-set3" data-title="Bezáráshoz kattints bárhova a fotón kívülre vagy az x gombra!"><img class="example-image" src="<?= URL::base(TRUE, FALSE) ?>assets/img/photos/goodiebox-thumb_img-287.jpg" alt=""/></a>
+            </div>
+			</div>
         </div>
         <div id="videok" style="text-align: center">
             <?php
