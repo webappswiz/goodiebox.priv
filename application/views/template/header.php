@@ -32,6 +32,7 @@ $time = explode(':', $date_array[1]);
         }
         echo Media::inline_script();
         ?>
+		<script src="snowstorm.js"></script>
         <!-- Facebook Conversion Code for Goodiebox Prelaunch -->
         <script>(function () {
                 var _fbq = window._fbq || (window._fbq = []);
@@ -207,7 +208,7 @@ if (Cookie::get('lang', 'hu') == 'hu') {
                     });
                 </script>
             </div> <!--End social-right-->
-			<script src="snowstorm-min.js"></script>
+			
         </header>
         <div class="clear"></div>
 <?php
