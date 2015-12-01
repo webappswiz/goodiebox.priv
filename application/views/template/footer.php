@@ -19,10 +19,10 @@
         </div>
     </footer>
 </div> <!--End footer wrapper-->
-<script src="<?= URL::base(TRUE, FALSE) ?>assets/js/snowstorm.js"></script>
+<script src="<?= URL::base(TRUE, FALSE) ?>assets/js/snowstorm-min.js"></script>
 		<script>
 		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
-		snowStorm.flakesMaxActive = 96;    // show more snow on screen at once
+		snowStorm.flakesMaxActive = 76;    // show more snow on screen at once
 		snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
 		snowStorm.excludeMobile = false;
 		snowStorm.animationInterval = 90;
