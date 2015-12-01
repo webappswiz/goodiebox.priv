@@ -19,11 +19,12 @@
         </div>
     </footer>
 </div> <!--End footer wrapper-->
-<!-- Pure Chat Snippet -->
-<!--
-<script type='text/javascript'>
-(function () {	var done = false;	var script = document.createElement('script'); script.async = true;	script.type = 'text/javascript';	script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) {	if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'b40484b9-45b5-4055-bacc-9674bf9f70a2', f: true }); done = true;	}	};	})();
-</script>
-<!-- End Pure Chat Snippet -->
+<script src="<?= URL::base(TRUE, FALSE) ?>assets/js/snowstorm.js"></script>
+		<script>
+		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
+		snowStorm.flakesMaxActive = 36;    // show more snow on screen at once
+		snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
+		snowStorm.excludeMobile = false;
+		</script>
 </body>
 </html>
