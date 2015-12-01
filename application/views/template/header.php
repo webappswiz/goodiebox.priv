@@ -124,7 +124,7 @@ $time = explode(':', $date_array[1]);
     <div class="container">
         <header>
             <div class="logo">
-                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/logo.png'); ?>" height="102" alt="goodiebox"></a>
+                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/christmas-logo-hun.png'); ?>" height="102" alt="goodiebox"></a>
             </div> <!--End logo-->
             <div class="social-right" style="text-align:center;font-family:'La-Chata';">
                 <ul>
