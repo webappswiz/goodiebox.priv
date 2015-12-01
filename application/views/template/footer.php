@@ -23,9 +23,8 @@
 		<script>
 		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
 		snowStorm.flakesMaxActive = 76;    // show more snow on screen at once
-		snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
 		snowStorm.excludeMobile = false;
-		snowStorm.animationInterval = 90;
+		snowStorm.animationInterval = 5;
 		</script>
 </body>
 </html>
