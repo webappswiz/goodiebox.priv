@@ -22,9 +22,10 @@
 <script src="<?= URL::base(TRUE, FALSE) ?>assets/js/snowstorm.js"></script>
 		<script>
 		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
-		snowStorm.flakesMaxActive = 10;    // show more snow on screen at once
+		snowStorm.flakesMaxActive = 96;    // show more snow on screen at once
 		snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
 		snowStorm.excludeMobile = false;
+		snowStorm.animationInterval = 90;
 		</script>
 </body>
 </html>
