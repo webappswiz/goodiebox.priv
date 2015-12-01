@@ -19,12 +19,5 @@
         </div>
     </footer>
 </div> <!--End footer wrapper-->
-<script src="<?= URL::base(TRUE, FALSE) ?>assets/js/snowstorm-min.js"></script>
-		<script>
-		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
-		snowStorm.flakesMaxActive = 10;    // show more snow on screen at once
-		snowStorm.excludeMobile = false;
-		snowStorm.animationInterval = 90;
-		</script>
 </body>
 </html>
