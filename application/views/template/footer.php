@@ -24,7 +24,7 @@
 		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
 		snowStorm.flakesMaxActive = 76;    // show more snow on screen at once
 		snowStorm.excludeMobile = false;
-		snowStorm.animationInterval = 5;
+		snowStorm.animationInterval = 50;
 		</script>
 </body>
 </html>
