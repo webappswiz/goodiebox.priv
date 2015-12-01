@@ -15,7 +15,7 @@ return array
     'Kilépés' => 'Logout',
     'Belépés' => 'Login',
     //Main page
-    '/assets/img/christmas-logo-hun.png' => '/assets/img/christmas-logo-eng.jpg',
+    '/assets/img/christmas-logo-hun.png' => '/assets/img/christmas-logo-eng.png',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
     'December 1-jén nyitunk!' => 'Orders start 1st December!',
     'Nyitva vagyunk!' => 'We\'re open!',
