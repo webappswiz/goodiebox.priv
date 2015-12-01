@@ -32,7 +32,7 @@ $time = explode(':', $date_array[1]);
         }
         echo Media::inline_script();
         ?>
-		<script src="<?= URL::base(TRUE, FALSE) ?>/assets/js/snowstorm.js"></script>
+		<script src="<?= URL::base(TRUE, FALSE) ?>assets/js/snowstorm.js"></script>
 		<script>
 		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
 		snowStorm.flakesMaxActive = 96;    // show more snow on screen at once
