@@ -91,7 +91,7 @@
                                     </td>
                                 </tr>
 								<tr>
-								<td><a href="http://ohmydogspa.hu" target="_blank">ohmyDOG Boutique & Spa</a><br/>
+								<td style="padding-top:20px;"><a href="http://ohmydogspa.hu" target="_blank">ohmyDOG Boutique & Spa</a><br/>
 								<a href="https://goo.gl/maps/wunTmNzN2JE2" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><span style="dispaly:block;">1146 Budapest, Dózsa György út 15.</span><br/>
 								<a href="tel:+36301990711"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 30 199 0711</a><br/>
 								info@ohmydogspa.hu<br/>
