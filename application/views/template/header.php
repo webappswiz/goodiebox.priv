@@ -32,7 +32,7 @@ $time = explode(':', $date_array[1]);
         }
         echo Media::inline_script();
         ?>
-		<script src="snowstorm.js"></script>
+		<script src="<?= URL::base(TRUE, FALSE) ?>/assets/js/snowstorm.js"></script>
 		<script>
 		snowStorm.snowColor = '#99ccff';   // blue-ish snow!?
 		snowStorm.flakesMaxActive = 96;    // show more snow on screen at once
@@ -130,7 +130,7 @@ $time = explode(':', $date_array[1]);
     <div class="container">
         <header>
             <div class="logo">
-                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/logo.png'); ?>" height="102" alt="goodybox"></a>
+                <a href="<?= URL::base(TRUE, FALSE) ?>"><img src="<?= URL::base(TRUE, FALSE) ?><?php echo __('/assets/img/logo.png'); ?>" height="102" alt="goodiebox"></a>
             </div> <!--End logo-->
             <div class="social-right" style="text-align:center;font-family:'La-Chata';">
                 <ul>
