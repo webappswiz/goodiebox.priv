@@ -46,7 +46,7 @@
     $hash['PAY_METHOD'] = 'CCVISAMC';
     $hash_string = $payment->createHashString($hash);
     ?>
-    <form action='https://secure.payu.hu/order/lu.php' method='POST' id='PayUForm'>
+    <form action='https://sandbox.simplepay.hu/payment/order/lu.php' method='POST' id='PayUForm'>
         <input type='hidden' name='MERCHANT' id='MERCHANT' value='<?= $payment->merchantId ?>' />
         <input type='hidden' name='ORDER_REF' id='ORDER_REF' value='<?= $o->id ?>' />
         <input type='hidden' name='ORDER_DATE' id='ORDER_DATE' value='<?= $o->date_purchased ?>' />

@@ -397,9 +397,10 @@ if (isset($session['step2'])) {
             <div class="order-form" style="padding-top: 60px !important;">
                 <h2><?php echo __('Fizetési lehetőségek:'); ?></h2>
                 <br/>
-                <input id="cc" checked type="radio" name="cc" class="pay"><?php echo __('Bankkártyával azonnal (PayU biztonságos felületen keresztül)'); ?><br/>
+                <input id="cc" checked type="radio" name="cc" class="pay"><?php echo __('Bankkártyával azonnal (OTPMobil biztonságos felületen keresztül)'); ?><br/>
                 <div class="cc_instruct">
-                    <p><?php echo __('Amint a "Megrendelem" gombra kattintasz, automatikusan a PayU biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!'); ?></p>
+                    <p><?php echo __('Azonnali bankkártyás fizetés esetén automatikusan a OTPMobil biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.'); ?></p>
+                    <p><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/simple_bankcard_logos_right.jpg" height="40"></p>
                 </div>
                 <input id="cod" type="radio" name="cc" class="pay"><?php echo __('Utánvét (Extra költséget számolunk fel:'); ?> +<?= $cost ?> Ft)
                 <div class="cc_instruct" style="display: none;">
