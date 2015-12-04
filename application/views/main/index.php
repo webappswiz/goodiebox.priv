@@ -155,7 +155,7 @@ $menus = array(
         </div>
         <div class="lock">
             <ul>
-                <li><a href="#"><?php echo __('December 1-jén nyitunk!'); ?></a></li>
+                <li><a href="#"><?php echo __('Január 7-én nyitunk!'); ?></a></li>
             </ul>
         </div>
     </div>

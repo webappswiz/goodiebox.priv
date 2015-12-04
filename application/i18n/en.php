@@ -17,7 +17,7 @@ return array
     //Main page
     '/assets/img/christmas-logo-hun.png' => '/assets/img/christmas-logo-eng.png',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
-    'December 1-jén nyitunk!' => 'Orders start 1st December!',
+    'Január 7-én nyitunk!' => 'Orders start 7th January!',
     'Nyitva vagyunk!' => 'We\'re open!',
     'Hátralévő idő:' => 'Countdown:',
     'Kattints ide, hogy értesítsünk nyitás előtt!' => 'Click here to receive a notification when we open!',
