@@ -205,7 +205,7 @@ class Controller_Order extends Controller_Core {
 
         if ($order->payment_status == 5) {
             $template = ORM::factory('Templates', 6);
-            if (Cookie::get('lang', 'hu') == 'hu') {
+            if ($user->lang == 1) {
                 $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
                 $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body);
             } else {
@@ -214,7 +214,7 @@ class Controller_Order extends Controller_Core {
             }
         } else {
             $template = ORM::factory('Templates', 2);
-            if (Cookie::get('lang', 'hu') == 'hu') {
+            if ($user->lang == 1) {
                 $body = str_replace('[firstname]', $user->customer_firstname, $template->template_text);
                 $this->send($user->email, 'info@goodiebox.hu', 'Sikeres megrendelés', $body, 'order_' . $order->id . '.pdf');
             } else {
