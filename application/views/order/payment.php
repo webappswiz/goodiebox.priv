@@ -60,7 +60,7 @@
         <input type='hidden' name='ORDER_SHIPPING' id='ORDER_SHIPPING' value='0' />
         <input type='hidden' name='DISCOUNT' id='DISCOUNT' value='<?=$discount?>' />
         <input type='hidden' name='PAY_METHOD' id='PAY_METHOD' value='CCVISAMC' />
-        <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='HU' />
+        <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='<?php echo ( $current_user->lang==1)?'HU':'EN'?>' />
         <input type='hidden' name='AUTOMODE' id='AUTOMODE' value='1' />
         <input type='hidden' name='ORDER_TIMEOUT' id='ORDER_TIMEOUT' value='3600' />
         <input type='hidden' name='TIMEOUT_URL' id='TIMEOUT_URL' value='<?= URL::base(TRUE, FALSE) ?>order/timeout/' />
