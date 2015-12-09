@@ -40,7 +40,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		if ( isset( $_REQUEST['status_name'] ) && $_REQUEST['action'] == 0 && $_REQUEST['status_name'] != 0 ) {
 			$this->orders->and_where( 'orders_status', '=', $_REQUEST['status_name'] );
 		}
-		if(isset($_REQUEST['payment_type']) && $_REQUEST['payment_type']!=0 && $_REQUEST['action'] == 0){
+		if ( isset( $_REQUEST['payment_type'] ) && $_REQUEST['payment_type'] != 0 && $_REQUEST['action'] == 0 ) {
 			$this->orders->and_where( 'payment_status', '=', $_REQUEST['payment_type'] );
 		}
 		$count            = $this->orders->count_all();
@@ -688,7 +688,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 	private function mass_generate_cod_invoice( $orders ) {
 		$invoice = '';
 		foreach ( $orders as $order ):
-			$user = $order->user;
+			$user     = $order->user;
 			$lang     = I18n::lang();
 			$old_lang = ( $lang == 1 ) ? 'hu' : 'en';
 			$new_lang = ( $user->lang == 1 ) ? 'hu' : 'en';
@@ -745,7 +745,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 			} else {
 				$term = '6';
 			}
-			$invoice .='<!DOCTYPE html>
+			$invoice .= '<!DOCTYPE html>
 <html lang="hu">
     <head>
         <title>TODO supply a title</title>
@@ -861,7 +861,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 
 			I18n::lang( $old_lang );
 		endforeach;
-		$invoice .='</body></html>';
+		$invoice .= '</body></html>';
 		$pdf     = new DOMPDF();
 		$invoice = str_replace( 'ő', 'o', $invoice );
 		$invoice = str_replace( 'Ő', 'O', $invoice );
