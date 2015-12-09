@@ -40,6 +40,9 @@ class Controller_Admin_Orders extends Controller_Admin {
 		if ( isset( $_REQUEST['status_name'] ) && $_REQUEST['action'] == 0 && $_REQUEST['status_name'] != 0 ) {
 			$this->orders->and_where( 'orders_status', '=', $_REQUEST['status_name'] );
 		}
+		if(isset($_REQUEST['payment_type']) && $_REQUEST['payment_type']!=0 && $_REQUEST['action'] == 0){
+			$this->orders->and_where( 'payment_status', '=', $_REQUEST['payment_type'] );
+		}
 		$count            = $this->orders->count_all();
 		$this->pagination = Pagination::factory( array(
 			'total_items'    => $count,

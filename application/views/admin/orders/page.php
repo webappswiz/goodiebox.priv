@@ -46,6 +46,11 @@ if (count($data) > 0) {
                         <?php echo Form::select('status_name', $st, '', array('required', 'class' => 'rounded option-name')); ?>
                         <input type="text" name="filter_by_lname" placeholder="Last Name" value="<?php echo (isset($_REQUEST['filter_by_lname'])) ? $_REQUEST['filter_by_lname'] : ''; ?>">
                         <input type="text" class="datet" name="date_to" placeholder="Date To" value="<?php echo (isset($_REQUEST['date_to'])) ? $_REQUEST['date_to'] : ''; ?>"><br/>
+                        <select name="payment_type">
+                            <option value="0">- Please payment type</option>
+                            <option value="1">Credit card</option>
+                            <option value="5">Cash on delivery</option>
+                        </select><br/>
                         <input type="submit" class="btn btn-primary" value="Go">
                     </td>
                 </tr>
