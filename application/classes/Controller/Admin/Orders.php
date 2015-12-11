@@ -145,7 +145,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 			'controller' => $this->request->controller(),
 			'action'     => $this->request->action()
 		) );
-		$this->data = $this->orders->offset( $this->pagination->offset )->limit( $this->pagination->items_per_page )->order_by( 'date_purchased', 'DESC' )->find_all()->as_array();
+		$this->data = $this->orders->offset( $this->pagination->offset )->limit( $this->pagination->items_per_page )->order_by( 'id', 'DESC' )->find_all()->as_array();
 	}
 
 	public function action_edit() {
