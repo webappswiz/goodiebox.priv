@@ -71,7 +71,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 					}
 					$date        = strtotime( date( 'Y.m.d' ) );
 					$pickup      = date( 'Y.m.d', $date + 86400 );
-					$shipping    = new Shipping();
+		/*			$shipping    = new Shipping();
 					$data_string = '{"REQUEST": {"flDebug": "false","cdLang": "HU","txEmail": "info@goodiebox.hu","txPassword": "D!ngd0ng","ORDER": {"dtPickup": "' . $pickup . '.",
       "flCOD": "' . $flcode . '",
 	  "nmRecipientCOD": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
@@ -112,8 +112,12 @@ class Controller_Admin_Orders extends Controller_Admin {
 					$pdf_decoded = base64_decode( $label );
 					$pdf         = fopen( DOCROOT . 'shipping/label_order_' . $this->model->id . '.pdf', 'w' );
 					fwrite( $pdf, $pdf_decoded );
-					fclose( $pdf );
+					fclose( $pdf );*/
 				}
+
+				unset($_GET['orders']);
+				$url = "?" . http_build_query($_GET);
+				echo '<script type="text/javascript">history.pushState(null, null,"'.$url.'");</script>';
 			}
 			if ( $_REQUEST['action'] == 2 ) {
 				foreach ( $_REQUEST['orders'] as $ord ) {
@@ -129,13 +133,16 @@ class Controller_Admin_Orders extends Controller_Admin {
 					$o                = ORM::factory( 'Order', $ord );
 					$o->orders_status = $_REQUEST['status_name'];
 					$o->save();
-					if ( $o->payment_status == 5 ) {
+					if ( $o->payment_status == 5 && $_REQUEST['status_name']==2) {
 						$ords[] = $o;
 					}
 
 				}
 				if(sizeof($ords)>0)
 					$this->mass_generate_cod_invoice( $ords );
+				unset($_GET['orders']);
+				$url = "?" . http_build_query($_GET);
+				echo '<script type="text/javascript">history.pushState(null, null,"'.$url.'");</script>';
 			}
 			if ( $_REQUEST['action'] == 4 ) {
 
@@ -145,6 +152,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 			'controller' => $this->request->controller(),
 			'action'     => $this->request->action()
 		) );
+
 		$this->data = $this->orders->offset( $this->pagination->offset )->limit( $this->pagination->items_per_page )->order_by( 'id', 'DESC' )->find_all()->as_array();
 	}
 
