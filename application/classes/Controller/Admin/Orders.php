@@ -134,7 +134,8 @@ class Controller_Admin_Orders extends Controller_Admin {
 					}
 
 				}
-				$this->mass_generate_cod_invoice( $ords );
+				if(sizeof($ords)>0)
+					$this->mass_generate_cod_invoice( $ords );
 			}
 			if ( $_REQUEST['action'] == 4 ) {
 
