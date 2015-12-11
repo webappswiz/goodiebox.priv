@@ -720,8 +720,10 @@ class Controller_Admin_Orders extends Controller_Admin {
 			                            ->where( 'invoice_num', '<>', '' )
 			                            ->order_by( 'invoice_num', 'DESC' )
 			                            ->find();
-			$order->invoice_num    = $o->invoice_num + 1;
-			$order->date_purchased = date( 'Y-m-d' );
+			if($order->invoice_num==''){
+				$order->invoice_num    = $o->invoice_num + 1;
+			}
+			$order->date_purchased = date( 'Y-m-d H:i:s' );
 			$order->save();
 			$pr          = $cod;
 			$method      = __( 'Utánvét' );
