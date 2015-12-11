@@ -690,6 +690,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		$invoice = '';
 		foreach ( $orders as $order ):
 			$user     = $order->user;
+			$this->generate_cod_invoice( $order, $order->user );
 			$lang     = I18n::lang();
 			$old_lang = ( $lang == 1 ) ? 'hu' : 'en';
 			$new_lang = ( $user->lang == 1 ) ? 'hu' : 'en';
