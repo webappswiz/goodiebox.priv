@@ -129,6 +129,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 				}
 			}
 			if ( $_REQUEST['action'] == 3 ) {
+				$ords = array();
 				foreach ( $_REQUEST['orders'] as $ord ) {
 					$o                = ORM::factory( 'Order', $ord );
 					$o->orders_status = $_REQUEST['status_name'];
