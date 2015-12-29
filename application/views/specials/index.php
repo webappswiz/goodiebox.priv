@@ -26,6 +26,17 @@
                                         <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/10-icon.jpg">
                                     </td>
                                 </tr>
+								<tr>
+                                    <td><a href="https://www.facebook.com/Java-Caff%C3%A9-108834405864383/" target="_blank">Java Kávézó</a><br/>
+                                        <a href="https://goo.gl/maps/Tqqz62cm6at" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1054 Budapest, Aulich u. 7<br/>
+                                        <a href="tel:+36309553319"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 1 311 2251</a><br/>
+                                        javacaffe@gmail.com<br/>
+                                        <span class="kedvezmeny">10% <?php echo __('kedvezmény'); ?></span>
+                                    </td>
+                                    <td>
+                                        <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/10-icon.jpg">
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -97,6 +108,13 @@
 								info@ohmydogspa.hu<br/>
 								<span class="kedvezmeny">8% <?php echo __('kedvezmény'); ?></span></td>
 								<td> <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/8-icon.jpg"></td>
+								</tr>
+								<tr>
+								<td style="padding-top:20px;"><a href="http://www.mancsolo-kutyakozmetika.hu" target="_blank">Mancsoló kutyakozmetika</a><br/>
+								<a href="https://goo.gl/maps/EHiQXhbMqhS2" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><span style="dispaly:block;">8200 Veszprém, Liliom utca 10.</span><br/>
+								<a href="tel:+36301990711"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 70 560 5543</a><br/>
+								<span class="kedvezmeny">6% <?php echo __('kedvezmény'); ?></span></td>
+								<td> <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/6-icon.jpg"></td>
 								</tr>
                             </table>
                         </div>
