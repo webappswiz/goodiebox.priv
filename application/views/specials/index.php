@@ -114,7 +114,7 @@
 								<a href="https://goo.gl/maps/EHiQXhbMqhS2" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a><span style="dispaly:block;">8200 Veszprém, Liliom utca 10.</span><br/>
 								<a href="tel:+36301990711"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 70 560 5543</a><br/>
 								<span class="kedvezmeny">6% <?php echo __('kedvezmény'); ?></span></td>
-								<td> <img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/6-icon.jpg"></td>
+								<td> <!--img style="margin: 0px 0px 0px 45px;" width="72" height="72" src="<?= URL::base(TRUE, FALSE) ?>assets/img/6-icon.jpg" --></td>
 								</tr>
                             </table>
                         </div>
