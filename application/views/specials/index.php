@@ -27,7 +27,7 @@
                                     </td>
                                 </tr>
 								<tr>
-                                    <td><a href="https://www.facebook.com/Java-Caff%C3%A9-108834405864383/" target="_blank">Java Kávézó</a><br/>
+                                    <td style="padding-top:20px;"><a href="https://www.facebook.com/Java-Caff%C3%A9-108834405864383/" target="_blank">Java Kávézó</a><br/>
                                         <a href="https://goo.gl/maps/Tqqz62cm6at" target="_blank"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/pin.png"></a>1054 Budapest, Aulich u. 7<br/>
                                         <a href="tel:+36309553319"><img width="16" style="margin-top:0;margin-right:5px;display:inline-block;vertical-align:top;" src="<?= URL::base(TRUE, FALSE) ?>assets/img/phone.png"/>+36 1 311 2251</a><br/>
                                         javacaffe@gmail.com<br/>
