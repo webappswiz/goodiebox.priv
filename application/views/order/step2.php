@@ -99,13 +99,13 @@
 				if ( $limits->smart == $limits->current_smart ) {
 					$box2 = 'disabled';
 					$box1 = 'checked';
-					$image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/step2-img2.jpg"><br/>';
+					$image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/smart-2nd-order-page-overok.png"><br/>';
 				}
 
 				if ( $limits->plus == $limits->current_plus ) {
 					$box1 = 'disabled';
 					$box2 = 'checked';
-					$image  = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/step2-img2.jpg"><br/>';
+					$image  = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/plus-2nd-order-page-overok.png"><br/>';
 				}
 				if ( $econ->id <> '' ) {
 					echo '<div class="boxes">';
