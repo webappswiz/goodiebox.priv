@@ -230,6 +230,11 @@ class Controller_Order extends Controller_Core {
 		if($status!=1){
 			$this->redirect('/');
 		}
+        if ($options->smart == $options->current_smart && $options->plus == $options->current_plus) {
+            $options->status = 0;
+            $options->save();
+            $this->redirect('/');
+        }
         $session = Session::instance()->as_array();
         $this->set_title('Order - Step 1');
         if (isset($_GET['smart'])) {
@@ -252,6 +257,11 @@ class Controller_Order extends Controller_Core {
 		if($status!=1){
 			$this->redirect('/');
 		}
+        if ($options->smart == $options->current_smart && $options->plus == $options->current_plus) {
+            $options->status = 0;
+            $options->save();
+            $this->redirect('/');
+        }
         $session = Session::instance()->as_array();
         $this->set_title('Order - Step 2');
         if (isset($_POST['order']) && isset($session['step1'])) {
@@ -502,6 +512,13 @@ class Controller_Order extends Controller_Core {
             }
         }
         $order->save();
+        $limits = ORM::factory('Options',1);
+        if($order->selected_box==4){
+            $limits->current_smart = $limits->current_smart + 1;
+        } elseif($order->selected_box==1) {
+            $limits->current_plus = $limits->current_plus + 1;
+        }
+        $limits->save();
         return $order;
     }
 
@@ -731,6 +748,11 @@ class Controller_Order extends Controller_Core {
 		if($status!=1){
 			$this->redirect('/');
 		}
+        if ($options->smart == $options->current_smart && $options->plus == $options->current_plus) {
+            $options->status = 0;
+            $options->save();
+            $this->redirect('/');
+        }
         $session = Session::instance();
         $step1 = $session->get('step1');
         $step2 = $session->get('step2');

@@ -75,40 +75,54 @@
 		               ->where( 'type', '=', 1 )
 		               ->and_where( 'enabled', '=', '1' )
 		               ->find_all();
-		foreach ( $products as $product ) {
-			$img   = ( $product->enabled == 1 ) ? 1 : 2;
-			$price = ( $product->price != 0 && $product->enabled == 1 ) ? $product->price . ' HUF' : '';
-			$econ  = ORM::factory( 'Packages' )
-			            ->where( 'type', '=', 2 )
-			            ->and_where( 'term', '=', $product->term )
-			            ->and_where( 'enabled', '=', 1 )
-			            ->find();
-			if ( $product->term == 1 ) {
-				$image  = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/plus-2nd-order-page.png"><br/>';
-				$image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/smart-2nd-order-page.png"><br/>';
-			}
-			$box1 = ( trim( Session::instance()->get( 'package' ) ) == 'plus' ) ? 'checked' : '';
-			$box2 = ( trim( Session::instance()->get( 'package' ) ) == 'smart' ) ? 'checked' : '';
-			if ( trim( Session::instance()->get( 'package' ) == '' ) ) {
-				$box2 = 'checked';
-			}
-			if ( $econ->id <> '' ) {
+		$limits   = ORM::factory( 'Options', 1 );
+		if ($limits->smart == $limits->current_smart && $limits->plus == $limits->current_plus) {
+			echo __('<h2>The ordering is closed now</h2>');
+		} else {
+			foreach ( $products as $product ) {
+				$img   = ( $product->enabled == 1 ) ? 1 : 2;
+				$price = ( $product->price != 0 && $product->enabled == 1 ) ? $product->price . ' HUF' : '';
+				$econ  = ORM::factory( 'Packages' )
+				            ->where( 'type', '=', 2 )
+				            ->and_where( 'term', '=', $product->term )
+				            ->and_where( 'enabled', '=', 1 )
+				            ->find();
+				if ( $product->term == 1 ) {
+					$image  = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/plus-2nd-order-page.png"><br/>';
+					$image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/smart-2nd-order-page.png"><br/>';
+				}
+				$box1 = ( trim( Session::instance()->get( 'package' ) ) == 'plus' ) ? 'checked' : '';
+				$box2 = ( trim( Session::instance()->get( 'package' ) ) == 'smart' ) ? 'checked' : '';
+				if ( trim( Session::instance()->get( 'package' ) == '' ) ) {
+					$box2 = 'checked';
+				}
+				if ( $limits->smart == $limits->current_smart ) {
+					$box2 = 'disabled';
+					$box1 = 'checked';
+				}
+
+				if ( $limits->plus == $limits->current_plus ) {
+					$box1 = 'disabled';
+					$box2 = 'checked';
+				}
+				if ( $econ->id <> '' ) {
+					echo '<div class="boxes">';
+					echo $image1;
+					echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="box" name="box" id="box_smart" value="' . $econ->id . '" required>';
+					echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
+					echo '<br/><br/>';
+					echo '<span class="price" style="margin-left:20px;">' . $econ->price . ' HUF</span>';
+					echo '</div>';
+				}
+
 				echo '<div class="boxes">';
-				echo $image1;
-				echo '<input ' . $box2 . ' style="padding-left:0px;cursor: pointer" type="radio" class="box" name="box" id="box_smart" value="' . $econ->id . '" required>';
-				echo '<label class="tooltip">' . $econ->package_name . '<span>' . $econ->description . '</span></label>';
+				echo $image;
+				echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="box" name="box" id="box_plus" value="' . $product->id . '" required>';
+				echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
 				echo '<br/><br/>';
-				echo '<span class="price" style="margin-left:20px;">' . $econ->price . ' HUF</span>';
+				echo '<span class="price" style="margin-left:20px;">' . $price . '</span>';
 				echo '</div>';
 			}
-
-			echo '<div class="boxes">';
-			echo $image;
-			echo '<input ' . $box1 . ' style="cursor: pointer" type="radio" class="box" name="box" id="box_plus" value="' . $product->id . '" required>';
-			echo '<label class="tooltip">' . $product->package_name . '<span>' . $product->description . '</span></label>';
-			echo '<br/><br/>';
-			echo '<span class="price" style="margin-left:20px;">' . $price . '</span>';
-			echo '</div>';
 		}
 		?>
 	</section>

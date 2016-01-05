@@ -18,7 +18,6 @@ if ($package->term == 1) {
 } else {
     $term = '6';
 }
-
 ?>
 <script type="text/javascript">
     $(document).ready(function () {

@@ -43,8 +43,13 @@ class Controller_Admin_Counter extends Controller_Admin {
         $this->model->text_eng = arr::get($_REQUEST, 'counting_text_eng');
         $this->model->end_date = arr::get($_REQUEST, 'end_date');
         $this->model->status = arr::get($_REQUEST, 'status');
+        $this->model->smart = arr::get($_REQUEST, 'smart_limit');
+        $this->model->plus = arr::get($_REQUEST, 'plus_limit');
         $this->model->save();
         if ($this->model->status == 1) {
+            $this->model->current_smart = 0;
+            $this->model->current_plus = 0;
+            $this->model->save();
             $text = 'Successfully enabled';
         } else {
             $text = 'Successfully disabled';
