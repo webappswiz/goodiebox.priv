@@ -68,8 +68,10 @@
 				<button type="button" class="btn cancel">Cancel</button>
 			</div>
 		</fieldset>
-		<?php $total_subscribers = ORM::factory( 'Subscribers' )->count_all();
-		echo 'An email will be sent to all <span style="color:red;font-weight:bold;">' . $total_subscribers . '</span> subscribers!';
+		<?php
+		echo 'Smart orders left: <span style="color:red;font-weight:bold;">' . ($model->smart - $model->current_smart) . '</span> ';
+		echo '<br/>';
+		echo 'Plus orders left: <span style="color:red;font-weight:bold;">' . ($model->plus - $model->current_plus) . '</span>';
 		?>
 	</form>
 </div>

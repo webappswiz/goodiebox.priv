@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d74ae53b-b475-4bb9-bd07-e8da7faa8b39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php" afterPath="$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/Controller/Order.php" afterPath="$PROJECT_DIR$/application/classes/Controller/Order.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/counter/index.php" afterPath="$PROJECT_DIR$/application/views/admin/counter/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/order/step2.php" afterPath="$PROJECT_DIR$/application/views/order/step2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/order/step3.php" afterPath="$PROJECT_DIR$/application/views/order/step3.php" />
     </list>
     <ignored path="public_html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -298,8 +293,8 @@
       <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.908046">
-              <caret line="520" column="24" selection-start-line="520" selection-start-column="24" selection-end-line="520" selection-end-column="24" />
+            <state vertical-scroll-proportion="-6.206897">
+              <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
               <folding>
                 <marker date="1451988236119" expanded="true" signature="2848:15283" placeholder="..." />
                 <marker date="1451988236119" expanded="true" signature="2859:3259" placeholder="..." />
@@ -428,10 +423,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Counter.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Counter.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7113402">
+            <state vertical-scroll-proportion="-11.089286">
               <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
               <folding />
             </state>
@@ -465,13 +460,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin/counter/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.74074">
-              <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.84035474">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
-                <marker date="1451986347455" expanded="true" signature="2339:2366" placeholder="..." />
+                <marker date="1451989889647" expanded="true" signature="2264:2291" placeholder="..." />
+                <marker date="1451989889647" expanded="true" signature="2406:2433" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -497,11 +493,11 @@
       <list>
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/counter/index.php" />
         <option value="$PROJECT_DIR$/application/views/order/step2.php" />
         <option value="$PROJECT_DIR$/application/views/order/step3.php" />
         <option value="$PROJECT_DIR$/application/classes/Controller/Order.php" />
         <option value="$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/counter/index.php" />
       </list>
     </option>
   </component>
@@ -1642,16 +1638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/counter/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.74074">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-          <folding>
-            <marker date="1451986347455" expanded="true" signature="2339:2366" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/order/step2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.0">
@@ -1939,10 +1925,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.089286">
+          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.908046">
-          <caret line="520" column="24" selection-start-line="520" selection-start-column="24" selection-end-line="520" selection-end-column="24" />
+        <state vertical-scroll-proportion="-6.206897">
+          <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
           <folding>
             <marker date="1451988236119" expanded="true" signature="2848:15283" placeholder="..." />
             <marker date="1451988236119" expanded="true" signature="2859:3259" placeholder="..." />
@@ -2070,11 +2064,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php">
+    <entry file="file://$PROJECT_DIR$/application/views/admin/counter/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7113402">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="0.84035474">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+          <folding>
+            <marker date="1451989889647" expanded="true" signature="2264:2291" placeholder="..." />
+            <marker date="1451989889647" expanded="true" signature="2406:2433" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
