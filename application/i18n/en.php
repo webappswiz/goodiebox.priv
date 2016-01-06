@@ -151,8 +151,8 @@ return array
     'These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.',
     'Fizetési lehetőségek:<br />' =>
     'Payment Options:<br />',
-    'Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' =>
-    'Instant bank card payment method (PayU, this has no additional charges!)',
+    'Azonnali bankkártyás fizetés (OTPMobil biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' =>
+    'Instant bank card payment method (OTPMobil, this has no additional charges!)',
     'Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)' =>
     'Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)',
     '<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' =>

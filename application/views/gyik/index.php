@@ -31,7 +31,7 @@
                 echo '<br /><br />';
                 echo __('A harmadik lépésben pedig a személyes adataidat kell megadnod. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és megfeleljenek a valóságnak. Akkor sikeres a megrendelés, amikor kiválasztottad a fizetési lehetőségek közül a neked szimpatikusabbat és elfogadva az ÁSZF-ben leírtakat a Megrendelem gombra kattintasz!');
                 echo '<br /><br />';
-                echo __('Azonnali bankkártyás fizetés esetén automatikusan a PayU biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.');
+                echo __('Azonnali bankkártyás fizetés esetén automatikusan a OTPMobil biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.');
                 echo '<br /><br />';
                 echo __('Utánvételes fizetés esetén a Megrendelem gombra kattintva elfogadod, hogy a csomag átvételekor fogsz fizetni készpénzben. Ebben az esetben többlet költséget számolunk fel, melynek összegét minden esetben jelezzük neked, amikor kiválasztod ezt a fizetési lehetőséget. Jelenleg extra 800 Ft-ot számolunk fel neked, ha ezt választod!');
                 echo '<br /><br />';
@@ -66,7 +66,7 @@
                 echo __('Ez az ár fix, nincs rejtett költség, hiszen mind a csomagolás, mind pedig a házhozszállítás ingyenes (azonnali bankkárytás fizetés esetén). Ha van kedvezmény kuponod, természetesen azt a rendelés során fel tudod használni.');
                 echo '<br /><br />';
                 echo __('Fizetési lehetőségek:<br />');
-                echo __('Azonnali bankkártyás fizetés (PayU biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)');
+                echo __('Azonnali bankkártyás fizetés (OTPMobil biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)');
                 echo '<br /><br />';
                 echo __('Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)');
                 echo '<br /><br />';
