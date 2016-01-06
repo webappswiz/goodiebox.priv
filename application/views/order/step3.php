@@ -396,9 +396,9 @@ if (isset($session['step2'])) {
             <div class="order-form" style="padding-top: 60px !important;">
                 <h2><?php echo __('Fizetési lehetőségek:'); ?></h2>
                 <br/>
-                <input id="cc" checked type="radio" name="cc" class="pay"><?php echo __('Bankkártyával azonnal (OTPMobil biztonságos felületen keresztül)'); ?><br/>
+                <input id="cc" checked type="radio" name="cc" class="pay"><?php echo __('Bankkártyával azonnal (SIMPLE Online Fizetési Rendszer)'); ?><br/>
                 <div class="cc_instruct">
-                    <p><?php echo __('Azonnali bankkártyás fizetés esetén automatikusan a OTPMobil biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.'); ?></p>
+                    <p><?php echo __('Azonnali bankkártyás fizetés esetén automatikusan a SIMPLE Online Fizetési Rendszer felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra. '); ?></p>
                     <p><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/simple_bankcard_logos_right.jpg" height="40"></p>
                 </div>
                 <input id="cod" type="radio" name="cc" class="pay"><?php echo __('Utánvét (Extra költséget számolunk fel:'); ?> +<?= $cost ?> Ft)
@@ -407,7 +407,7 @@ if (isset($session['step2'])) {
                 </div>
                 <br/><br/><br/><br/>
                 <p style="line-height: 20px;">
-                    <?php echo __('Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:rendeles@goodiebox.hu Köszönjük!'); ?>
+                    <?php echo __('Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:info@goodiebox.hu Köszönjük!'); ?>
                 </p>
             </div>
             <script>

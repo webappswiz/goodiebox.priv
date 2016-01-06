@@ -123,8 +123,8 @@ return array
     'In the third step, you can give your billing and shipping information! Please be sure to check that the information you supply is accurate to prevent any delays in receiving your box!',
     'A harmadik lépésben pedig a személyes adataidat kell megadnod. Mindig ellenőrizd a kitöltött adatokat, hogy azok helyesek legyenek és megfeleljenek a valóságnak. Akkor sikeres a megrendelés, amikor kiválasztottad a fizetési lehetőségek közül a neked szimpatikusabbat és elfogadva az ÁSZF-ben leírtakat a Megrendelem gombra kattintasz!' =>
     'You can complete your order by selecting the appropriate payment method, check the "Terms and Conditions" box and finally clicking the order button.',
-    'Azonnali bankkártyás fizetés esetén automatikusan a OTPMobil biztonságos felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.' =>
-    'If you select the credit card payment method, you will be redirected to OTPMobil payment page. Here you will be required to fill in your card details and then finish your order. We do not save your credit card information on our website. For this payment method, there are no hidden charges.',
+    'Azonnali bankkártyás fizetés esetén automatikusan a SIMPLE Online Fizetési Rendszer felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra.' =>
+    'If you select the credit card payment method, you will be redirected to SIMPLE online payment page. Here you will be required to fill in your card details and then finish your order. We do not save your credit card information on our website. For this payment method, there are no hidden charges.',
     'Utánvételes fizetés esetén a Megrendelem gombra kattintva elfogadod, hogy a csomag átvételekor fogsz fizetni készpénzben. Ebben az esetben többlet költséget számolunk fel, melynek összegét minden esetben jelezzük neked, amikor kiválasztod ezt a fizetési lehetőséget. Jelenleg extra 800 Ft-ot számolunk fel neked, ha ezt választod!' =>
     'If you select cash on delivery payment method, your order will be completed immediately and this means you have agreed to make payment in cash when the package is delivered to you. In this case, we charge 800 Ft for handling fees.',
     'A megrendelés egyben regisztráció is, létrejön a saját profilod a weboldalunkon, ahova bármikor visszalátogathatsz, nyomon tudod követni az aktuális rendelésedet vagy szükség esetén később módosíthatod az adataidat, kivéve az email címedet.' =>
@@ -151,8 +151,8 @@ return array
     'These prices are fixed and there are no hidden charges because the packaging, handling and delivery are free (just if you pay with bank card). If you have a discount coupon code, of course you can use this during the order process.',
     'Fizetési lehetőségek:<br />' =>
     'Payment Options:<br />',
-    'Azonnali bankkártyás fizetés (OTPMobil biztonságos felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' =>
-    'Instant bank card payment method (OTPMobil, this has no additional charges!)',
+    'Azonnali bankkártyás fizetés (SIMPLE Online Fizetési Rendszer felületen keresztül, ekkor többlet költség nem kerül felszámolásra!)' =>
+    'Instant bank card payment method (SIMPLE online payment system, this has no additional charges!)',
     'Utánvételes fizetés (Átvétekor a futárnak tudsz fizetni készpénzzel. Ebben az esetben többlet költség kerül felszámolásra, melyet a megrendeléskor jelezni is fogunk neked és összege jelenleg 800 Ft)' =>
     'Cash on delivery payment method (You can pay in cash to the delivery man. In this case, there is an additional fee of 800 forints.)',
     '<span style="display:none;">3, vagy 6 hónapos előrendeléskor:<br />A meglepetés dobozokat a megrendelés hónapjától havonta küldjük az adott hónap várható szállítási időszakában 3 vagy 6 hónapig automatikusan. Azonnali bankkártyás megrendelésnél online fizethetsz egyösszegben, míg utánvételes rendeléskor az első meglepetés doboz átvételekor tudsz egyösszegben készpénzzel teljesíteni a futárunknak. Utánvételes rendelés esetén a házhozszállítás díja (3 hónap esetén 2400 Ft, 6 hónap esetén pedig 4800 Ft) is hozzáadódik a végösszeghez! Így természetesen a fennmaradó hónapokban már semmit sem kell fizetned a futárunknak! :)</span>' =>
@@ -348,11 +348,11 @@ Your Goodiebox will arrive at your doorstep 10-15 days after our order period cl
     'A szállítási cím nem egyezik?' => 'Your delivery address is different?',
     'Ország' => 'Country',
     'Fizetési lehetőségek:' => 'Payment methods:',
-    'Bankkártyával azonnal (OTPMobil biztonságos felületen keresztül)' => 'Instant Online Payment (OTPMobil secure payment)',
+    'Bankkártyával azonnal (SIMPLE Online Fizetési Rendszer)' => 'Instant Online Payment (SIMPLE online payment system)',
     'Amint a "Megrendelem" gombra kattintasz, automatikusan a OTPMobil biztonságos felületre érkezel, ahol a bankkártyád adatainak megadásával fizethetsz. A weboldalunkon semmilyen a bankkártyádra vonatkozó adatot nem tárolunk!' => 'When you click the "ORDER" button, you will be automatically redirected to the secure OTPMobil payment page, where you can supply your bank card details and complete your order. We do not store your bank card details on our website!',
     'Utánvét (Extra költséget számolunk fel:' => 'Cash on Delivery (An extra fee is charged:',
     'Amint a "Megrendelem" gombra kattintasz, automatikusan elfogadod a szabályzatunkat és átvételkor tudsz fizetni készpénzzel az otthonodban.' => 'When you click the "Order" button, you accept our terms and conditions of service and can make payment when the package is delivered to you.',
-    'Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:rendeles@goodiebox.hu Köszönjük!' => 'After you complete your order, you will receive two e-mail messages: the first about your Goodiebox account registration and the second is your order confirmation. If you do not receive both of these message within 24 hours, please send a message to info@goodiebox.hu. Thanks!',
+    'Megrendelést követően két email üzenetet fogsz kapni: egyik a Goodiebox regisztrációról szól, a másik pedig a rendelésed megerősítése. Ha 24 órán belül nem érkezik meg mindkét üzenet, kérlek vedd fel velünk a kapcsolatot az alábbi email címen:info@goodiebox.hu Köszönjük!' => 'After you complete your order, you will receive two e-mail messages: the first about your Goodiebox account registration and the second is your order confirmation. If you do not receive both of these message within 24 hours, please send a message to info@goodiebox.hu. Thanks!',
     'Rendelésem' => 'My order',
     'Termék' => 'Items',
     'Icipici' => 'Tiny',
