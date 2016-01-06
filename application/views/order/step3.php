@@ -399,7 +399,7 @@ if (isset($session['step2'])) {
                 <input id="cc" checked type="radio" name="cc" class="pay"><?php echo __('Bankkártyával azonnal (SIMPLE Online Fizetési Rendszer)'); ?><br/>
                 <div class="cc_instruct">
                     <p><?php echo __('Azonnali bankkártyás fizetés esetén automatikusan a SIMPLE Online Fizetési Rendszer felületre navigálunk és a bankkártya adataid kitöltésével rendelhetsz. Mint szolgáltató, mi semmilyen a bankkártyádra vonatkozó adatot nem tárolunk. Ilyen esetben többlet költség nem kerül felszámításra. '); ?></p>
-                    <p><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/simple_bankcard_logos_right.jpg" height="40"></p>
+                    <p><a href="<?= URL::base(TRUE, FALSE) ?>SIMPLE.pdf" target="_blank"><img src="<?= URL::base(TRUE, FALSE) ?>assets/img/simple_bankcard_logos_right.jpg" height="40"></a></p>
                 </div>
                 <input id="cod" type="radio" name="cc" class="pay"><?php echo __('Utánvét (Extra költséget számolunk fel:'); ?> +<?= $cost ?> Ft)
                 <div class="cc_instruct" style="display: none;">
