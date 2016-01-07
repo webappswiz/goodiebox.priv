@@ -74,4 +74,5 @@
 		echo 'Plus orders left: <span style="color:red;font-weight:bold;">' . ($model->plus - $model->current_plus) . '</span>';
 		?>
 	</form>
+
 </div>

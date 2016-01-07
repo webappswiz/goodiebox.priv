@@ -42,11 +42,11 @@
     $hash['ORDER_VAT'] = '0';
     $hash['ORDER_SHIPPING'] = '0';
     $hash['PRICES_CURRENCY'] = 'HUF';
-    $hash['DISCOUNT'] = $discount;
+    $hash['DISCOUNT'] = 0;
     $hash['PAY_METHOD'] = 'CCVISAMC';
     $hash_string = $payment->createHashString($hash);
     ?>
-    <form action='https://secure.simplepay.hu/payment/order/lu.php' method='POST' id='PayUForm'>
+    <form action='https://sandbox.simplepay.hu/payment/order/lu.php' method='POST' id='PayUForm'>
         <input type='hidden' name='MERCHANT' id='MERCHANT' value='<?= $payment->merchantId ?>' />
         <input type='hidden' name='ORDER_REF' id='ORDER_REF' value='<?= $o->id ?>' />
         <input type='hidden' name='ORDER_DATE' id='ORDER_DATE' value='<?= $o->date_purchased ?>' />
@@ -58,7 +58,7 @@
         <input type='hidden' name='ORDER_VAT[]' id='ORDER_VAT' value='0' />
         <input type='hidden' name='PRICES_CURRENCY' id='PRICES_CURRENCY' value='HUF' />
         <input type='hidden' name='ORDER_SHIPPING' id='ORDER_SHIPPING' value='0' />
-        <input type='hidden' name='DISCOUNT' id='DISCOUNT' value='<?=$discount?>' />
+        <input type='hidden' name='DISCOUNT' id='DISCOUNT' value='0' />
         <input type='hidden' name='PAY_METHOD' id='PAY_METHOD' value='CCVISAMC' />
         <input type='hidden' name='LANGUAGE' id='LANGUAGE' value='<?php echo ( $current_user->lang==1)?'HU':'EN'?>' />
         <input type='hidden' name='AUTOMODE' id='AUTOMODE' value='1' />

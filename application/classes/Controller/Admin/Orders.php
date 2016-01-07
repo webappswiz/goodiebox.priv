@@ -255,6 +255,8 @@ class Controller_Admin_Orders extends Controller_Admin {
 		$this->redirect( '/admin/orders/' );
 	}
 
+
+
 	public function action_receipt() {
 		$id = (int) $this->request->param( 'id' );
 		if ( file_exists( DOCROOT . 'orders/order_' . $id . '.pdf' ) ) {
