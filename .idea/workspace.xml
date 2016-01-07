@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d74ae53b-b475-4bb9-bd07-e8da7faa8b39" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/counter/test" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php" afterPath="$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/counter/index.php" afterPath="$PROJECT_DIR$/application/views/admin/counter/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/order/payment.php" afterPath="$PROJECT_DIR$/application/views/order/payment.php" />
     </list>
     <ignored path="public_html.iws" />
@@ -28,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Orders.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Orders.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.36763236">
+              <caret line="272" column="48" selection-start-line="272" selection-start-column="48" selection-end-line="272" selection-end-column="48" />
               <folding>
                 <marker date="1452128403179" expanded="true" signature="13788:25933" placeholder="..." />
                 <marker date="1452128403179" expanded="true" signature="13799:14199" placeholder="..." />
@@ -465,11 +461,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payment.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="payment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/order/payment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5284715">
-              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -3820,10 +3816,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php">
+    <entry file="file://$PROJECT_DIR$/application/views/order/payment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36763236">
+          <caret line="272" column="48" selection-start-line="272" selection-start-column="48" selection-end-line="272" selection-end-column="48" />
           <folding>
             <marker date="1452128403179" expanded="true" signature="13788:25933" placeholder="..." />
             <marker date="1452128403179" expanded="true" signature="13799:14199" placeholder="..." />
@@ -4081,14 +4085,6 @@
             <marker date="1452128403179" expanded="false" signature="56692:56844" placeholder="..." />
             <marker date="1452128403179" expanded="false" signature="56919:56944" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/order/payment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5284715">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
