@@ -230,7 +230,7 @@ class Controller_Order extends Controller_Core {
 		if($status!=1){
 			$this->redirect('/');
 		}
-        if ($options->smart == $options->current_smart && $options->plus == $options->current_plus) {
+        if ($options->current_smart >= $options->smart  && $options->current_plus >= $options->plus) {
             $options->status = 0;
             $options->save();
             $this->redirect('/');
@@ -257,7 +257,7 @@ class Controller_Order extends Controller_Core {
 		if($status!=1){
 			$this->redirect('/');
 		}
-        if ($options->smart == $options->current_smart && $options->plus == $options->current_plus) {
+        if ($options->current_smart >= $options->smart  && $options->current_plus >= $options->plus) {
             $options->status = 0;
             $options->save();
             $this->redirect('/');
@@ -748,7 +748,7 @@ class Controller_Order extends Controller_Core {
 		if($status!=1){
 			$this->redirect('/');
 		}
-        if ($options->smart == $options->current_smart && $options->plus == $options->current_plus) {
+        if ($options->current_smart >= $options->smart  && $options->current_plus >= $options->plus) {
             $options->status = 0;
             $options->save();
             $this->redirect('/');
