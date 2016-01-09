@@ -76,8 +76,8 @@
 		               ->and_where( 'enabled', '=', '1' )
 		               ->find_all();
 		$limits   = ORM::factory( 'Options', 1 );
-		if ($limits->smart == $limits->current_smart && $limits->plus == $limits->current_plus) {
-			echo __('<h2>The ordering is closed now</h2>');
+		if ( $limits->smart == $limits->current_smart && $limits->plus == $limits->current_plus ) {
+			echo __( '<h2>The ordering is closed now</h2>' );
 		} else {
 			foreach ( $products as $product ) {
 				$img   = ( $product->enabled == 1 ) ? 1 : 2;
@@ -96,16 +96,16 @@
 				if ( trim( Session::instance()->get( 'package' ) == '' ) ) {
 					$box2 = 'checked';
 				}
-				if ( $limits->smart == $limits->current_smart ) {
-					$box2 = 'disabled';
-					$box1 = 'checked';
+				if ( $limits->current_smart >= $limits->smart ) {
+					$box2   = 'disabled';
+					$box1   = 'checked';
 					$image1 = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/smart-2nd-order-page-overok.png"><br/>';
 				}
 
-				if ( $limits->plus == $limits->current_plus ) {
-					$box1 = 'disabled';
-					$box2 = 'checked';
-					$image  = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/plus-2nd-order-page-overok.png"><br/>';
+				if ( $limits->current_plus >= $limits->plus ) {
+					$box1  = 'disabled';
+					$box2  = 'checked';
+					$image = '<img style="height:100px;margin-bottom:10px;"  src="' . URL::base( true, false ) . 'assets/img/plus-2nd-order-page-overok.png"><br/>';
 				}
 				if ( $econ->id <> '' ) {
 					echo '<div class="boxes">';
