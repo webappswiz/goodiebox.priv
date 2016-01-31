@@ -15,7 +15,7 @@ return array
     'Kilépés' => 'Logout',
     'Belépés' => 'Login',
     //Main page
-    '/assets/img/christmas-logo-hun.png' => '/assets/img/christmas-logo-eng.png',
+    '/assets/img/logo-valentine.png' => '/assets/img/logo-valentine-eng.png',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
     'Február 4-én nyitunk!' => 'Orders start 4th February!&nbsp;&nbsp;',
     'Nyitva vagyunk!' => 'We\'re open!',
