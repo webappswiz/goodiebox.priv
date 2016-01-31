@@ -74,8 +74,8 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->tax_code = Arr::get($_REQUEST, 'tax_code');
         $this->model->total_price = Arr::get($_REQUEST, 'total_price') + $ship_cost;
         $this->model->user_id = $this->current_user->id;
-        $this->model->last_modified = date('Y-m-d H:i:s');
-        $this->model->date_purchased = date('Y-m-d H:i:s');
+        $this->model->last_modified = Arr::get($_REQUEST,'invoice_date');
+        $this->model->date_purchased = Arr::get($_REQUEST,'invoice_date');
         $this->model->type = 4;
         $o = ORM::factory('Order')
                 ->where('invoice_num', '<>', '')
@@ -84,11 +84,11 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $this->model->invoice_num = $o->invoice_num + 1;
         $this->model->payment_status = (Arr::get($_REQUEST, 'pmethod')==1)?'0':'5';
         $this->model->save();
-        $this->receipt_email($this->model, Arr::get($_REQUEST, 'size'), $ship_cost, Arr::get($_REQUEST, 'pmethod'));
+        $this->receipt_email($this->model, Arr::get($_REQUEST, 'size'), $ship_cost, Arr::get($_REQUEST, 'pmethod'),Arr::get($_REQUEST, 'completion_date'),Arr::get($_REQUEST, 'due_date'));
         $this->redirect('/admin/invoice/');
     }
 
-    private function receipt_email($order, $size, $shipping, $pmethod) {
+    private function receipt_email($order, $size, $shipping, $pmethod,$completion_date,$due_date) {
         if ($size == 1) {
             $s = 'GOODIEBOX Icipici' . '<br/>' . $order->package->package_name;
         } elseif ($size == 2) {
@@ -175,8 +175,8 @@ class Controller_Admin_Invoice extends Controller_Admin {
             <tr style="padding: 0px">
                 <td style="border-left: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;letter-spacing:2px;text-align: center">Fizetési mód <br/>' . $method . '</td>
                 <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla kelte<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
-                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($order->date_purchased)) . '</td>
+                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Teljesítés dátuma<br/> ' . date('Y-m-d', strtotime($completion_date)) . '</td>
+                <td style="border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;border-right: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Esedékesség Dátuma<br/> ' . date('Y-m-d', strtotime($due_date)) . '</td>
                 <td style="border-right: 2px solid;border-bottom: 2px solid;padding: 0px;margin: 0px;width:25%;height: 30px;border-top: 2px solid;font-size: 10px;font-weight: 800;line-height: 15px;text-align: center;letter-spacing:2px">Számla sorszáma<br/> ' . $order->invoice_num . '</td>
             </tr>
             <tr style="padding: 0px">

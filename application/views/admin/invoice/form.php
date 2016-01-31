@@ -15,6 +15,24 @@
            }
         });
 
+        $('#invoice_date,#completion_date,#due_date').datetimepicker({
+            'minTime': 0,
+            'minDate': 0,
+            'step': 30,
+            'onSelectDate': function (selected) {
+                var today = new Date();
+                if (selected.getTime() / 1000 > today.getTime() / 1000) {
+                    $('#enddate').datetimepicker({
+                        'minTime': '00:00'
+                    });
+                } else {
+                    $('#enddate').datetimepicker({
+                        'minTime': 0
+                    });
+                }
+            }
+        });
+
     });
 </script>
 <?php $products = ORM::factory('Packages')->where('enabled','=',1)->find_all();?>
@@ -100,6 +118,24 @@
                 <label class="control-label" for="company_city">Company city</label>
                 <div class="controls">
                     <input type="text" id="company_city" name="company_city" placeholder="" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="invoice_date">Invoice Date</label>
+                <div class="controls">
+                    <input type="text" id="invoice_date" name="invoice_date" placeholder="" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="completion_date">Completion Date</label>
+                <div class="controls">
+                    <input type="text" id="completion_date" name="completion_date" placeholder="" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="due_date">Due Date</label>
+                <div class="controls">
+                    <input type="text" id="due_date" name="due_date" placeholder="" value="">
                 </div>
             </div>
             <div class="control-group">
