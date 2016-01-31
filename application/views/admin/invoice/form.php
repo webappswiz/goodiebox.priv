@@ -107,19 +107,19 @@
             <div class="control-group">
                 <label class="control-label" for="invoice_date">Invoice Date</label>
                 <div class="controls">
-                    <input type="text" id="invoice_date" name="invoice_date" placeholder="" value="">
+                    <input type="text" id="invoice_date" name="invoice_date" placeholder="" value="<?php echo date('Y-m-d H:i:s'); ?>">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="completion_date">Completion Date</label>
                 <div class="controls">
-                    <input type="text" id="completion_date" name="completion_date" placeholder="" value="">
+                    <input type="text" id="completion_date" name="completion_date" placeholder="" value="<?php echo date('Y-m-d H:i:s'); ?>">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="due_date">Due Date</label>
                 <div class="controls">
-                    <input type="text" id="due_date" name="due_date" placeholder="" value="">
+                    <input type="text" id="due_date" name="due_date" placeholder="" value="<?php echo date('Y-m-d H:i:s'); ?>">
                 </div>
             </div>
             <div class="control-group">
