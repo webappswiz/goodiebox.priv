@@ -15,23 +15,7 @@
            }
         });
 
-        $('#invoice_date,#completion_date,#due_date').datetimepicker({
-            'minTime': 0,
-            'minDate': 0,
-            'step': 30,
-            'onSelectDate': function (selected) {
-                var today = new Date();
-                if (selected.getTime() / 1000 > today.getTime() / 1000) {
-                    $('#enddate').datetimepicker({
-                        'minTime': '00:00'
-                    });
-                } else {
-                    $('#enddate').datetimepicker({
-                        'minTime': 0
-                    });
-                }
-            }
-        });
+        $('#invoice_date,#completion_date,#due_date').datetimepicker();
 
     });
 </script>
