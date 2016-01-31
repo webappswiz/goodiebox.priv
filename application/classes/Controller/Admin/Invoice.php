@@ -134,7 +134,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
         $invoice = '<!DOCTYPE html>
 <html lang="hu">
     <head>
-        <title>TODO supply a title</title>
+        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
