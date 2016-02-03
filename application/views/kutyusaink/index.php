@@ -326,7 +326,7 @@
             <div id="navs">
 			<a style="cursor: pointer" id="dec" class ="active" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('December');?></a>
             &nbsp;&nbsp;&nbsp;
-			<a style="cursor: pointer" id="jan" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('November');?></a>
+			<a style="cursor: pointer" id="nov" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('November');?></a>
             &nbsp;&nbsp;&nbsp;
 			<a style="cursor: pointer" id="oct" style="font-family: 'La-chata';font-size: 18px">2015 <?php echo __('Október');?></a>
             &nbsp;&nbsp;&nbsp
