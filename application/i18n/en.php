@@ -15,6 +15,7 @@ return array
     'Kilépés' => 'Logout',
     'Belépés' => 'Login',
     //Main page
+	'Rendelj most és vedd át a csomagod már pénteken!' => 'Order now and get your package on Friday!',
     '/assets/img/logo-valentine.png' => '/assets/img/logo-valentine-eng.png',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
     'Február 4-én nyitunk!' => 'Orders start 4th February!&nbsp;&nbsp;',
