@@ -150,7 +150,7 @@ $menus = array(
     <div class="count-text">
 
         <p><?= $text ?></p>
-		<div class="counter">
+		<div class="counter" style="font-size:0.88em;font-weight:bold;line-height:1.2em;">
             <p><?php echo __('Rendelj most és vedd át a csomagod már pénteken!'); ?></p>
         </div>
         <div class="counter" style="display:none;">
