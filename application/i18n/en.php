@@ -18,7 +18,7 @@ return array
 	'Rendelj most és vedd át a csomagod már pénteken!' => 'Order now and get your package on Friday!',
     '/assets/img/logo-valentine.png' => '/assets/img/logo-valentine-eng.png',
     'Legyen kutyusodnak is' => 'Get your puppy\'s',
-    'Február 4-én nyitunk!' => 'Orders start 4th February!&nbsp;&nbsp;',
+    'Március 7-én nyitunk!' => 'Orders start 7th March!&nbsp;&nbsp;',
     'Nyitva vagyunk!' => 'We\'re open!',
     'Hátralévő idő:' => 'Countdown:',
     'Kattints ide, hogy értesítsünk nyitás előtt!' => 'Click here to receive a notification when we open!',

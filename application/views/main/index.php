@@ -49,7 +49,7 @@ $time = explode(':', $date_array[1]);
         hours = (hours) < 10 ? '0' + hours : hours;
         if (status == 0) {
             $('li', '.lock').css('background', 'url("/assets/img/lock-close.png") no-repeat left center');
-            $('li', '.lock').html("<?php echo '&nbsp;&nbsp;' . __('Február 4-én nyitunk!'); ?>");
+            $('li', '.lock').html("<?php echo '&nbsp;&nbsp;' . __('Március 7-én nyitunk!'); ?>");
         } else {
             $('li', '.lock').css('background', 'url("/assets/img/lock-open.png") no-repeat left center');
             $('li', '.lock').html("<?php echo '&nbsp;&nbsp;' . __('Nyitva vagyunk!'); ?>");
