@@ -150,10 +150,10 @@ $menus = array(
     <div class="count-text">
 
         <p><?= $text ?></p>
-		<div class="counter" style="font-size:0.88em;font-weight:bold;line-height:1.2em;">
+		<div class="counter" style="font-size:0.88em;font-weight:bold;line-height:1.2em;display:none;">
             <p><?php echo __('Rendelj most és vedd át a csomagod már pénteken!'); ?></p>
         </div>
-        <div class="counter" style="display:none;">
+        <div class="counter">
             <p><?php echo __('Hátralévő idő:'); ?> <span id="days" class="count-btn rounded">12</span> <?php echo __('nap'); ?> <span id="hours" style="margin-right: 10px;">15:37:55</span></p>
         </div>
         <div class="lock">
