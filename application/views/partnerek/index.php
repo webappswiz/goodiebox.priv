@@ -16,7 +16,7 @@
             <a href="http://www.ebfizio.hu/" target="blank"><img class="" height="100" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/ebfizio.jpg" alt="" /></a>
             <a href="http://www.dogmopolite.hu/" target="blank"><img class="" height="70" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/dogmopolite.jpg" alt="" /></a>
 			 <a href="http://www.ohmydogspa.hu/" target="blank"><img class="" height="70" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/ohmydog.jpg" alt="" /></a>
-			  <a href="http://www.kutyanaturkozmetikum.hu/" target="blank"><img class="" height="70" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/Hund&Herrchen(300dpi).jpg" alt="" /></a>
+			  <a href="http://www.kutyanaturkozmetikum.hu/" target="blank"><img style="margin-left:20px;" class="" height="90" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/partners/Hund&Herrchen(300dpi).jpg" alt="" /></a>
         </div>
     </div>
 
