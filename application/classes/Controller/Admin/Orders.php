@@ -83,7 +83,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 	  "DESTINATIONADDRESS": {
 		"nmCompanyOrPerson": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
 		"cdCountry": "HU",
-		"txAddress": "' . $this->model->delivery_address . '",
+		"txAddress": "' . $this->model->delivery_street . ' ' . $this->model->delivery_house . '",
 		"txAddressNumber": "",
 		"txPost": "' . $this->model->delivery_postcode . '",
 		"txCity": "' . $this->model->delivery_city . '",
@@ -209,7 +209,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 	  "DESTINATIONADDRESS": {
 		"nmCompanyOrPerson": "' . $this->model->delivery_firstname . ' ' . $this->model->delivery_lastname . '",
 		"cdCountry": "HU",
-		"txAddress": "' . $this->model->delivery_address . '",
+		"txAddress": "' . $this->model->delivery_street . ' ' . $this->model->delivery_house . '",
 		"txAddressNumber": "",
 		"txPost": "' . $this->model->delivery_postcode . '",
 		"txCity": "' . $this->model->delivery_city . '",
@@ -364,7 +364,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		} else {
 			$company      = '';
 			$user_details = 'Név:	' . $order->delivery_lastname . ' ' . $order->delivery_firstname . '<br/>
-                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_address . '<br/>';
+                     Cím:	' . $order->delivery_postcode . ', ' . $order->delivery_city . '<br/>' . $order->delivery_street . ' ' . $order->delivery_house . '<br/>';
 		}
 
 		if ( $order->package->term == 1 ) {
@@ -546,7 +546,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		} else {
 			$company      = '';
 			$user_details = __( 'Név:' ) . '	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>';
-			$user_details .= __( 'Cím:' ) . '	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
+			$user_details .= __( 'Cím:' ) . '	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_street . ' ' .$user->customer_house.'<br/>';
 		}
 		if ( $order->package->term == 1 ) {
 			$term = '1';
@@ -753,7 +753,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 			} else {
 				$company      = '';
 				$user_details = __( 'Név:' ) . '	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>';
-				$user_details .= __( 'Cím:' ) . '	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
+				$user_details .= __( 'Cím:' ) . '	' . $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_street . ' ' . $user->customer_house . '<br/>';
 			}
 			if ( $order->package->term == 1 ) {
 				$term = '1';

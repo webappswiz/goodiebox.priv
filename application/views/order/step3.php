@@ -248,10 +248,13 @@ if (isset($session['step2'])) {
                         <input type="text" value="<?= ($current_user) ? $current_user->customer_firstname : ''; ?>" name="customer_firstname" id="customer_firstname" class="rounded" required>
                     </div>
                     <div class="clear"></div>
-                    <div class="add">
-                        <label for="customer_address"><?php echo __('Cím*'); ?></label>
-                        <input type="text" name="customer_address" value="<?= ($current_user) ? $current_user->customer_address : ''; ?>" class="rounded" id="customer_address" placeholder="Utca, házszám, ajtó, emelet" required>
-                        <input type="text" name="customer_address2" value="<?= ($current_user) ? $current_user->customer_address2 : ''; ?>" class="rounded" id="customer_address2">
+                    <div style="margin-right:5px;" class="fl">
+                        <label for="customer_street"><?php echo __('Street*'); ?></label>
+                        <input type="text" name="customer_street" value="<?= ($current_user) ? $current_user->customer_street : ''; ?>" class="rounded" id="customer_street" placeholder="" required>
+                    </div>
+                    <div style="overflow: hidden">
+                        <label for="customer_house"><?php echo __('House*'); ?></label>
+                        <input type="text" name="customer_house" value="<?= ($current_user) ? $current_user->customer_house : ''; ?>" class="rounded" id="customer_house" required>
                     </div>
 
                     <div>
@@ -363,10 +366,13 @@ if (isset($session['step2'])) {
                         <input id="delivery_firstname" type="text" value="" name="delivery_firstname" class="rounded" required>
                     </div>
                     <div class="clear"></div>
-                    <div class="add">
-                        <label for="delivery_address"><?php echo __('Cím*'); ?></label>
-                        <input type="text" name="delivery_address" class="rounded" id="delivery_address" value="" placeholder="Utca, házszám, ajtó, emelet" required>
-                        <input type="text" name="delivery_address2" class="rounded" id="delivery_address2" value="">
+                    <div style="margin-right:5px;" class="fl">
+                        <label for="delivery_street"><?php echo __('Street*'); ?></label>
+                        <input type="text" name="delivery_street" value="" class="rounded" id="delivery_street" placeholder="" required>
+                    </div>
+                    <div style="overflow: hidden">
+                        <label for="delivery_house"><?php echo __('House*'); ?></label>
+                        <input type="text" name="delivery_house" value="" class="rounded" id="delivery_house" required>
                     </div>
 
                     <div>

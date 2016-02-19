@@ -68,7 +68,7 @@ class Controller_Order extends Controller_Core {
         } else {
             $company = '';
             $user_details = __('Név:'). '	' . $user->customer_lastname . ' ' . $user->customer_firstname . '<br/>';
-            $user_details .= __('Cím:') .'	'. $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_address . '<br/>';
+            $user_details .= __('Cím:') .'	'. $user->customer_zip . ', ' . $user->customer_city . '<br/>' . $user->customer_street.' '. $user->customer_house . '<br/>';
         }
 
         if ($order->package->term == 1) {
@@ -290,8 +290,8 @@ class Controller_Order extends Controller_Core {
             $user->password = $_POST['customer_password'];
             $user->customer_firstname = $_POST['customer_firstname'];
             $user->customer_lastname = $_POST['customer_lastname'];
-            $user->customer_address = $_POST['customer_address'];
-            $user->customer_address2 = $_POST['customer_address2'];
+            $user->customer_street = $_POST['customer_street'];
+            $user->customer_house = $_POST['customer_house'];
             $user->customer_city = $_POST['customer_city'];
             $user->customer_zip = $_POST['customer_zip'];
             $user->customer_telephone = $_POST['customer_telephone'];
@@ -409,8 +409,8 @@ class Controller_Order extends Controller_Core {
         if (isset($_POST['customer_firstname']) && !isset($_POST['shipping'])) {
             $order->delivery_firstname = ($address->loaded()) ? $address->customer_firstname : $_POST['customer_firstname'];
             $order->delivery_lastname = ($address->loaded()) ? $address->customer_lastname : $_POST['customer_lastname'];
-            $order->delivery_address = ($address->loaded()) ? $address->customer_address : $_POST['customer_address'];
-            $order->delivery_address2 = ($address->loaded()) ? $address->customer_address2 : $_POST['customer_address2'];
+            $order->delivery_street = ($address->loaded()) ? $address->customer_street : $_POST['customer_street'];
+            $order->delivery_house = ($address->loaded()) ? $address->customer_house : $_POST['customer_house'];
             $order->delivery_city = ($address->loaded()) ? $address->customer_city : $_POST['customer_city'];
             $order->delivery_postcode = ($address->loaded()) ? $address->customer_zip : $_POST['customer_zip'];
             $order->delivery_telephone = ($address->loaded()) ? $address->customer_telephone : $_POST['customer_telephone'];
@@ -421,14 +421,14 @@ class Controller_Order extends Controller_Core {
             $order->tax_code = $_POST['tax_code'];
             $order->message = $_POST['msg'];
         } elseif (isset($_POST['shipping'])) {
-            if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_address']) || empty($_POST['delivery_zip'])) {
+            if (empty($_POST['delivery_firstname']) || empty($_POST['delivery_lastname']) || empty($_POST['delivery_city']) || empty($_POST['delivery_street']) || empty($_POST['delivery_house']) || empty($_POST['delivery_zip'])) {
                 Flash::set('alert', 'Please fill the shipping form');
                 $this->redirect('order/step3');
             }
             $order->delivery_firstname = $_POST['delivery_firstname'];
             $order->delivery_lastname = $_POST['delivery_lastname'];
-            $order->delivery_address = $_POST['delivery_address'];
-            $order->delivery_address2 = $_POST['delivery_address2'];
+            $order->delivery_street = $_POST['delivery_street'];
+            $order->delivery_house = $_POST['delivery_house'];
             $order->delivery_city = $_POST['delivery_city'];
             $order->delivery_postcode = $_POST['delivery_zip'];
             $order->delivery_telephone = $_POST['delivery_telephone'];
@@ -447,8 +447,8 @@ class Controller_Order extends Controller_Core {
             $address->customer_lastname = $_POST['delivery_lastname'];
             $address->customer_zip = $_POST['delivery_zip'];
             $address->customer_city = $_POST['delivery_city'];
-            $address->customer_address = $_POST['delivery_address'];
-            $address->customer_address2 = $_POST['delivery_address2'];
+            $address->customer_street = $_POST['delivery_street'];
+            $address->customer_house = $_POST['delivery_house'];
             $address->customer_telephone = $_POST['delivery_telephone'];
             $address->save();
         }
@@ -591,8 +591,8 @@ class Controller_Order extends Controller_Core {
         $order->type = 2;
         $order->delivery_firstname = $_POST['customer_firstname'];
         $order->delivery_lastname = $_POST['customer_lastname'];
-        $order->delivery_address = $_POST['customer_address'];
-        $order->delivery_address2 = $_POST['customer_address2'];
+        $order->delivery_street = $_POST['customer_street'];
+        $order->delivery_house = $_POST['customer_house'];
         $order->delivery_city = $_POST['customer_city'];
         $order->delivery_postcode = $_POST['customer_zip'];
         $order->delivery_telephone = $_POST['customer_telephone'];
@@ -874,8 +874,8 @@ class Controller_Order extends Controller_Core {
             $user->password = $_POST['customer_password'];
             $user->customer_firstname = $_POST['customer_firstname'];
             $user->customer_lastname = $_POST['customer_lastname'];
-            $user->customer_address = $_POST['customer_address'];
-            $user->customer_address2 = $_POST['customer_address2'];
+            $user->customer_street = $_POST['customer_street'];
+            $user->customer_house = $_POST['customer_house'];
             $user->customer_city = $_POST['customer_city'];
             $user->customer_zip = $_POST['customer_zip'];
             $user->customer_telephone = $_POST['customer_telephone'];
@@ -903,8 +903,8 @@ class Controller_Order extends Controller_Core {
             $order->date_purchased = date('Y-m-d H:i:s');
             $order->delivery_firstname = $_POST['customer_firstname'];
             $order->delivery_lastname = $_POST['customer_lastname'];
-            $order->delivery_address = $_POST['customer_address'];
-            $order->delivery_address2 = $_POST['customer_address2'];
+            $order->delivery_street = $_POST['customer_street'];
+            $order->delivery_house = $_POST['customer_house'];
             $order->delivery_city = $_POST['customer_city'];
             $order->delivery_postcode = $_POST['customer_zip'];
             $order->delivery_telephone = $_POST['customer_telephone'];

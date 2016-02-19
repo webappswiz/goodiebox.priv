@@ -27,10 +27,10 @@
             </tr>
             <tr>
                 <td><strong>Customer address</strong></td>
-                <td><?=$current_user->customer_address?></td>
+                <td><?=$current_user->customer_street.' '.$current_user->customer_house?></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><strong>Delivery address</strong></td>
-                <td><?=$model->delivery_address?></td>
+                <td><?=$model->delivery_street.' '.$model->delivery_house?></td>
             </tr>
             <tr>
                 <td><strong>Customer postcode</strong></td>

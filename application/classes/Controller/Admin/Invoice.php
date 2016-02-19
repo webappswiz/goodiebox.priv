@@ -58,12 +58,14 @@ class Controller_Admin_Invoice extends Controller_Admin {
         } else {
             $this->model->selected_box = 0;
             $this->model->prod_name = Arr::get($_REQUEST, 'prod_name');
+            $this->model->prod_code = Arr::get($_REQUEST, 'prod_code');
             $ship_cost = Arr::get($_REQUEST, 'shipping_cost');
         }
         
         $this->model->delivery_firstname = Arr::get($_REQUEST, 'firstname');
         $this->model->delivery_lastname = Arr::get($_REQUEST, 'lastname');
-        $this->model->delivery_address = Arr::get($_REQUEST, 'address');
+        $this->model->delivery_street = Arr::get($_REQUEST, 'street');
+        $this->model->delivery_house = Arr::get($_REQUEST, 'house');
         $this->model->delivery_city = Arr::get($_REQUEST, 'city');
         $this->model->delivery_postcode = Arr::get($_REQUEST, 'postcode');
         $this->model->delivery_telephone = Arr::get($_REQUEST, 'telephone');
@@ -91,12 +93,16 @@ class Controller_Admin_Invoice extends Controller_Admin {
     private function receipt_email($order, $size, $shipping, $pmethod,$completion_date,$due_date) {
         if ($size == 1) {
             $s = 'GOODIEBOX Icipici' . '<br/>' . $order->package->package_name;
+            $code = $order->package->product_number;
         } elseif ($size == 2) {
             $s = 'GOODIEBOX Éppen jó' . '<br/>' . $order->package->package_name;
+            $code = $order->package->product_number;
         } elseif ($size == 3) {
             $s = 'GOODIEBOX Igazi óriás' . '<br/>' . $order->package->package_name;
+            $code = $order->package->product_number;
         } else {
             $s = $order->prod_name;
+            $code = $order->prod_code;
         }
         if ($pmethod == 1) {
             $method = 'Átutalás';
@@ -197,7 +203,7 @@ class Controller_Admin_Invoice extends Controller_Admin {
                             <td colspan="9" style="height: 15px; border-left: 2px solid; border-right: 2px solid;"></td>
                         </tr>
                         <tr>
-                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">' . $order->package->product_number . '</td>
+                            <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px; border-left: 2px solid;">' . $code . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . $s . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">' . $term . '</td>
                             <td style="font-size: 10px;font-weight: 600;text-align: center;vertical-align: central;letter-spacing: 2px;padding-top: 15px;padding-left: 3px;padding-right: 0px;line-height: 15px;">db</td>

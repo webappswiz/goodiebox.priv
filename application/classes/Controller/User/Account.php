@@ -51,7 +51,8 @@ class Controller_User_Account extends Controller_Core {
             $this->shipping->customer_telephone = $_POST['telephone'];
             $this->shipping->customer_zip = $_POST['zip'];
             $this->shipping->customer_city = $_POST['city'];
-            $this->shipping->customer_address = $_POST['address'] . ' ' . $_POST['address2'];
+            $this->shipping->customer_street = $_POST['street'];
+            $this->shipping->customer_house = $_POST['house'];
 
             $this->shipping->save();
             Flash::set('notice', __('A szállítási címedet sikeresen megváltoztattad!'));

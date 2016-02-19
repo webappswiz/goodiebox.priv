@@ -7,7 +7,7 @@
            if($(this).val()==="0"){
                $('#size').attr('disabled','disabled');
                $('#sizediv').hide('slow');
-               $('#sizediv').after('<div class="control-group" id="custom_prod"><label class="control-label" for="prod_name">Custom product name</label><div class="controls"><input type="text" id="prod_name" name="prod_name" placeholder="" value=""></div></div>');
+               $('#sizediv').after('<div class="control-group" id="custom_prod"><label class="control-label" for="prod_name">Custom product name</label><div class="controls"><input type="text" id="prod_name" name="prod_name" placeholder="" value=""></div></div><div class="control-group" id="custom_prod"><label class="control-label" for="prod_code">Custom product code</label><div class="controls"><input type="text" id="prod_code" name="prod_code" placeholder="" value=""></div></div>');
            } else {
                $('#size').removeAttr('disabled');
                $('#sizediv').show('slow');
@@ -57,9 +57,15 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="address">Delivery address</label>
+                <label class="control-label" for="address">Delivery street</label>
                 <div class="controls">
-                    <input type="text" id="address" name="address" placeholder="" value="">
+                    <input type="text" id="street" name="street" placeholder="" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="address">Delivery house</label>
+                <div class="controls">
+                    <input type="text" id="house" name="house" placeholder="" value="">
                 </div>
             </div>
             <div class="control-group">

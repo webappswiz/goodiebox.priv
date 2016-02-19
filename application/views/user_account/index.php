@@ -235,12 +235,14 @@ $time = explode(':', $date_array[1]);
                                 <input id="" type="text" name="first-name" class="rounded" value="<?= ($shipping) ? $shipping->customer_firstname : $current_user->customer_firstname ?>" required>
                             </div>
                             <div class="clear"></div>
-                            <div class="add">
-                                <label for="address"><?php echo __('Cím*'); ?></label>
-                                <input type="text" name="address" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_address : $current_user->customer_address ?>" placeholder="Utca, házszám, ajtó, emelet" required>
-                                <input type="text" name="address2" class="rounded" id="">
+                            <div class="fl" style="margin-right:6px;">
+                                <label for="address"><?php echo __('Street*'); ?></label>
+                                <input type="text" name="street" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_street : $current_user->customer_street ?>" placeholder="" required>
                             </div>
-
+                            <div style="overflow:hidden;">
+                                <label for="address"><?php echo __('House*'); ?></label>
+                                <input type="text" name="house" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_house : $current_user->customer_house ?>" placeholder="" required>
+                            </div>
                             <div>
                                 <label for="zip"><?php echo __('Irányítószám*'); ?></label>
                                 <input type="text" name="zip" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_zip : $current_user->customer_zip ?>" required>

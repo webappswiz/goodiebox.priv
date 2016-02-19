@@ -34,15 +34,15 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="customer_address">Customer's address</label>
+                <label class="control-label" for="customer_address">Customer's street</label>
                 <div class="controls">
-                    <input type="text" id="customer_address" name="customer_address" placeholder="Customer's address" value="<?= $model->customer_address ?>" readonly>
+                    <input type="text" id="customer_street" name="customer_street" placeholder="Customer's street" value="<?= $model->customer_street ?>" readonly>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="customer_address2">Customer's address2</label>
+                <label class="control-label" for="customer_address">Customer's house</label>
                 <div class="controls">
-                    <input type="text" id="customer_address2" name="customer_address2" placeholder="Customer's address2" value="<?= $model->customer_address2 ?>" readonly>
+                    <input type="text" id="customer_house" name="customer_house" placeholder="Customer's house" value="<?= $model->customer_house ?>" readonly>
                 </div>
             </div>
             <div class="control-group">
