@@ -62,7 +62,7 @@ class Controller_Order extends Controller_Core {
         if ($order->company_name <> '') {
             $company = __('Cégnév:') .' '. $order->company_name . '<br/>';
             $company .= __('Cím:') .' '. $order->company_zip . ', ' . $order->company_city . '<br/>
-                        ' . $order->company_address . '<br/>';
+                        ' . $order->company_street. ' ' . $order->company_house . '<br/>';
                     $company .= __('Adószám:') .' '. $order->tax_code . '<br/>';
             $user_details = '';
         } else {
@@ -297,7 +297,8 @@ class Controller_Order extends Controller_Core {
             $user->customer_telephone = $_POST['customer_telephone'];
             if (isset($_POST['company'])) {
                 $user->customer_company = $_POST['company_name'];
-                $user->customer_company_address = $_POST['company_address'];
+                $user->customer_company_street = $_POST['company_street'];
+                $user->customer_company_house = $_POST['company_house'];
                 $user->customer_company_zip = $_POST['company_zip'];
                 $user->customer_company_city = $_POST['company_city'];
                 $user->customer_taxcode = $_POST['tax_code'];
@@ -415,7 +416,8 @@ class Controller_Order extends Controller_Core {
             $order->delivery_postcode = ($address->loaded()) ? $address->customer_zip : $_POST['customer_zip'];
             $order->delivery_telephone = ($address->loaded()) ? $address->customer_telephone : $_POST['customer_telephone'];
             $order->company_name = $_POST['company_name'];
-            $order->company_address = $_POST['company_address'];
+            $order->company_street = $_POST['company_street'];
+            $order->company_house = $_POST['company_house'];
             $order->company_zip = $_POST['company_zip'];
             $order->company_city = $_POST['company_city'];
             $order->tax_code = $_POST['tax_code'];
@@ -433,7 +435,8 @@ class Controller_Order extends Controller_Core {
             $order->delivery_postcode = $_POST['delivery_zip'];
             $order->delivery_telephone = $_POST['delivery_telephone'];
             $order->company_name = $_POST['company_name'];
-            $order->company_address = $_POST['company_address'];
+            $order->company_street = $_POST['company_street'];
+            $order->company_house = $_POST['company_house'];
             $order->company_zip = $_POST['company_zip'];
             $order->company_city = $_POST['company_city'];
             $order->tax_code = $_POST['tax_code'];
@@ -599,7 +602,8 @@ class Controller_Order extends Controller_Core {
         $order->message = $_POST['msg'];
         $order->orders_status = 1;
         $order->company_name = $_POST['company_name'];
-        $order->company_address = $_POST['company_address'];
+        $order->company_street = $_POST['company_street'];
+        $order->company_house = $_POST['company_house'];
         $order->company_zip = $_POST['company_zip'];
         $order->company_city = $_POST['company_city'];
         $order->tax_code = $_POST['tax_code'];

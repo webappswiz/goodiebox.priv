@@ -358,7 +358,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		if ( $order->company_name <> '' ) {
 			$company      = 'Cégnév: ' . $order->company_name . '<br/>
                     Cím: ' . $order->company_zip . ', ' . $order->company_city . '<br/>
-                        ' . $order->company_address . '<br/>
+                        ' . $order->company_street .' '. $order->company_house . '<br/>
                     Adószám: ' . $order->tax_code . '<br/>';
 			$user_details = '';
 		} else {
@@ -540,7 +540,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 		if ( $order->company_name <> '' ) {
 			$company = __( 'Cégnév:' ) . ' ' . $order->company_name . '<br/>';
 			$company .= __( 'Cím:' ) . ' ' . $order->company_zip . ', ' . $order->company_city . '<br/>
-                        ' . $order->company_address . '<br/>';
+                        ' . $order->company_street .' '. $order->company_house . '<br/>';
 			$company .= __( 'Adószám:' ) . ' ' . $order->tax_code . '<br/>';
 			$user_details = '';
 		} else {
@@ -747,7 +747,7 @@ class Controller_Admin_Orders extends Controller_Admin {
 			if ( $order->company_name <> '' ) {
 				$company = __( 'Cégnév:' ) . ' ' . $order->company_name . '<br/>';
 				$company .= __( 'Cím:' ) . ' ' . $order->company_zip . ', ' . $order->company_city . '<br/>
-                        ' . $order->company_address . '<br/>';
+                        ' . $order->company_street . ' ' . $order->company_house . '<br/>';
 				$company .= __( 'Adószám:' ) . ' ' . $order->tax_code . '<br/>';
 				$user_details = '';
 			} else {

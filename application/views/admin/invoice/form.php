@@ -93,9 +93,15 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="company_address">Company address</label>
+                <label class="control-label" for="company_street">Company street</label>
                 <div class="controls">
-                    <input type="text" id="company_address" name="company_address" placeholder="" value="">
+                    <input type="text" id="company_street" name="company_street" placeholder="" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="company_house">Company house</label>
+                <div class="controls">
+                    <input type="text" id="company_house" name="company_house" placeholder="" value="">
                 </div>
             </div>
             <div class="control-group">
