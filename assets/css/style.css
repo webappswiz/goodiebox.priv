@@ -596,7 +596,7 @@ input.error{
     background-color: #eb99ad;
 }
 .boxes{
-    width: 300px;
+    /*width: 300px;*/
     float: left;
     text-align: center;
     padding: 0px 0px 0px 0px;
@@ -1180,6 +1180,17 @@ label.tooltip span
     .how-list ul.how-list-right{float: none; width: 100%;}
     .claim-form,.claim-form2,.process-form-container2{width: 100%;}
     /*.process-circles ul li{float: none;}*/
+    div.circle{
+        width: 35px;
+        height: 35px;
+    }
+    .circle{
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .process-circles ul{
+        padding-left: 40px;
+    }
     .process-circles ul li div.circle{display: block; margin: 0 auto;}
     .process-circles ul li div.circle-line{
         display: block;
@@ -1188,7 +1199,15 @@ label.tooltip span
         -o-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);*/
+        width: 35px;
+
         margin: 0px 15px;
+    }
+    .boxes{
+        padding-left: 20px;
+    }
+    .boxes img{
+        width: 172px;
     }
     .claim-btn{float: none;}
     .step2-btn-container{text-align: center;}
@@ -1274,6 +1293,9 @@ label.tooltip span
 }
 @media only screen and (max-width: 460px)
 {
+    .process-circles ul{
+        padding-left: 10px;
+    }
     #feb,#jan,#dec,#nov,#mar,#apr,#may,#jun,#jul,#aug,#sep,#oct{
         font-size: 12px;
         margin: 2px;
@@ -1316,7 +1338,7 @@ label.tooltip span
     .count-text {/*display:none;*/ padding-top:0px !important;}
     #faq img{display:none;}
     #menu{display:none;}
-    .boxes img{width: 70px;height: 40px;}
+    .boxes img{width: 172px;}
     .tab {
         width: 30%;
         font-size: 16px;
@@ -1452,7 +1474,7 @@ label.tooltip span
     .count-text {/*display:none;*/ padding-top:0px !important; text-align:center;}
     #faq img{display:none;}
     #menu{display:none;}
-    .boxes img{width: 70px;height: 40px;}
+    /*.boxes img{width: 70px;height: 40px;}*/
     .tab {
         width: 30%;
         font-size: 16px;
