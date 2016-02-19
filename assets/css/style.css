@@ -1105,7 +1105,10 @@ label.tooltip span
     .count-text {/*display:none;*/ padding-top:0px !important;}
     #faq img{display:none;}
     #menu{display:none;}
-    .boxes img{width: 70px;height: 40px;}
+    .boxes{
+        padding-left: 0px;
+    }
+    /*.boxes img{width: 70px;height: 40px;}*/
     .tab {
         width: 30%;
         font-size: 16px;
@@ -1176,10 +1179,17 @@ label.tooltip span
     .how-list ul.how-list-left{float: none; width: 100%;}
     .how-list ul.how-list-right{float: none; width: 100%;}
     .claim-form,.claim-form2,.process-form-container2{width: 100%;}
-    .process-circles ul li{float: none;}
+    /*.process-circles ul li{float: none;}*/
     .process-circles ul li div.circle{display: block; margin: 0 auto;}
-    .process-circles ul li div.circle-line{display: block;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);
-                                           transform: rotate(90deg); margin: 25px 0;}
+    .process-circles ul li div.circle-line{
+        display: block;
+       /* -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);*/
+        margin: 0px 15px;
+    }
     .claim-btn{float: none;}
     .step2-btn-container{text-align: center;}
     .claim-gift{padding: 55px 60px 45px 60px;}
@@ -1187,7 +1197,7 @@ label.tooltip span
     .count-text {/*display:none;*/ padding-top:0px !important;}
     #faq img{display:none;}
     #menu{display:none;}
-    .boxes img{width: 70px;height: 40px;}
+    /*.boxes img{width: 70px;height: 40px;}*/
     .tab {
         width: 30%;
         font-size: 16px;

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d74ae53b-b475-4bb9-bd07-e8da7faa8b39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/i18n/en.php" afterPath="$PROJECT_DIR$/application/i18n/en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/order/step3.php" afterPath="$PROJECT_DIR$/application/views/order/step3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_account/index.php" afterPath="$PROJECT_DIR$/application/views/user_account/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
     </list>
     <ignored path="public_html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,149 +36,6 @@
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#1;n#div#2;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#form#0;n#div#1;n#div#1;n#div#2;n#section#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="100.48276">
-              <caret line="605" column="56" selection-start-line="605" selection-start-column="56" selection-end-line="605" selection-end-column="56" />
-              <folding>
-                <marker date="1455886744043" expanded="true" signature="2902:15337" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="2913:3313" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="3067:3301" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="3086:3285" placeholder="{...}" />
-                <marker date="1455886744043" expanded="true" signature="3324:15329" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="3348:3456" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="3500:15317" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="3517:3912" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="3546:3598" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="3714:3860" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="3929:4006" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="3958:3970" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="4023:4446" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="4052:4226" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="4274:4396" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="4471:4483" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="4484:5482" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="4513:4701" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="4714:5083" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="5112:5277" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="5290:5464" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="5507:5519" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="5520:7121" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="5549:5761" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="5839:6046" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="6166:6373" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="6498:6705" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="6831:7038" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="7146:7158" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="7159:12274" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="7192:12256" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="7228:7264" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="7297:12234" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="7326:9648" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="7367:7560" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="7628:7797" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="7869:8038" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="8102:8271" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="8341:8510" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="8606:8775" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="8868:9037" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="9105:9274" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="9366:9560" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="9677:9828" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="9730:9792" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="9857:12205" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="9898:10091" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="10177:10346" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="10455:10624" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="10684:10853" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="10902:11071" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="11191:11360" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="11472:11641" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="11690:11859" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="11910:12104" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12299:12311" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="12312:12473" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12341:12437" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12498:12510" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="12511:13336" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12540:12611" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12646:12694" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12729:12764" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="12799:12922" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13016:13180" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13361:13373" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="13374:14046" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13403:13474" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13509:13557" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13592:13627" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13662:13748" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="13803:13947" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14071:14083" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="14084:14351" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14113:14272" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14376:14388" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="14389:14605" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14418:14536" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14630:14642" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="14643:14811" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14672:14775" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14836:14848" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="14849:15300" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="14878:15011" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="15112:15264" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="53958:59805" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="53969:56532" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="54275:56520" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="54300:54698" placeholder="{...}" />
-                <marker date="1455886744043" expanded="true" signature="54722:55443" placeholder="{...}" />
-                <marker date="1455886744043" expanded="true" signature="55467:56209" placeholder="{...}" />
-                <marker date="1455886744043" expanded="true" signature="56543:59797" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="56626:56683" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="56684:59785" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="56709:56745" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="56746:56895" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="56853:56871" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="56920:56956" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="56957:57244" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="57002:57126" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="57148:57203" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="57285:57298" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="57326:57481" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="57506:57517" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="57534:57982" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="57563:57716" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="57760:57949" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58007:58018" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="58035:58504" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58064:58188" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58291:58452" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58529:58540" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="58557:58949" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58586:58712" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58755:58916" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="58974:58985" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="59002:59538" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="59031:59191" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="59308:59500" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="59563:59575" placeholder="..." />
-                <marker date="1455886744043" expanded="true" signature="59576:59768" placeholder="..." />
-                <marker date="1455886744043" expanded="false" signature="59618:59655" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/invoice/form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="46.310345">
-              <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -508,10 +363,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="en.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="en.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/i18n/en.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5553214">
+            <state vertical-scroll-proportion="0.0">
               <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
               <folding>
                 <marker date="1455888580847" expanded="true" signature="3162:3193" placeholder="..." />
@@ -528,6 +383,26 @@
                 <marker date="1455888580847" expanded="true" signature="44097:44110" placeholder="..." />
                 <marker date="1455888580847" expanded="true" signature="44919:44932" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.77149075">
+              <caret line="1108" column="26" selection-start-line="1108" selection-start-column="26" selection-end-line="1108" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -556,6 +431,7 @@
         <option value="$PROJECT_DIR$/application/views/order/step3.php" />
         <option value="$PROJECT_DIR$/application/views/user_account/index.php" />
         <option value="$PROJECT_DIR$/application/i18n/en.php" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
       </list>
     </option>
   </component>
@@ -569,10 +445,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
+    <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1920" />
-    <option name="height" value="1032" />
+    <option name="width" value="1922" />
+    <option name="height" value="1033" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -627,7 +503,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Goodiebox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -642,194 +536,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invoice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="i18n" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="User" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Goodiebox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -890,11 +596,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="24" width="1920" height="1032" extended-state="4" />
+    <frame x="-1" y="24" width="1922" height="1033" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15589155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -929,20 +635,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/classes/Controller/Admin/Counter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/order/step2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1770,7 +1462,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/i18n/en.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5553214">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
           <folding>
             <marker date="1455888580847" expanded="true" signature="3162:3193" placeholder="..." />
@@ -1787,6 +1479,22 @@
             <marker date="1455888580847" expanded="true" signature="44097:44110" placeholder="..." />
             <marker date="1455888580847" expanded="true" signature="44919:44932" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77149075">
+          <caret line="1108" column="26" selection-start-line="1108" selection-start-column="26" selection-end-line="1108" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
