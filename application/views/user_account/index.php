@@ -236,11 +236,11 @@ $time = explode(':', $date_array[1]);
                             </div>
                             <div class="clear"></div>
                             <div class="fl" style="margin-right:6px;">
-                                <label for="address"><?php echo __('Street*'); ?></label>
+                                <label for="address"><?php echo __('Utca*'); ?></label>
                                 <input type="text" name="street" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_street : $current_user->customer_street ?>" placeholder="" required>
                             </div>
                             <div style="overflow:hidden;">
-                                <label for="address"><?php echo __('House*'); ?></label>
+                                <label for="address"><?php echo __('Házszám/Emelet, ajtó*'); ?></label>
                                 <input type="text" name="house" class="rounded" id="" value="<?= ($shipping) ? $shipping->customer_house : $current_user->customer_house ?>" placeholder="" required>
                             </div>
                             <div>

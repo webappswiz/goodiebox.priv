@@ -14,6 +14,8 @@ return array
     'Profilom' => 'My Profile',
     'Kilépés' => 'Logout',
     'Belépés' => 'Login',
+	'Utca*' => 'Street name*',
+	'Házszám/Emelet, ajtó*' => 'House number/Floor, door number*',
     //Main page
 	'Rendelj most és vedd át a csomagod már pénteken!' => 'Order now and get your package on Friday!',
     '/assets/img/logo-valentine.png' => '/assets/img/logo-valentine-eng.png',

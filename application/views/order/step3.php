@@ -251,11 +251,11 @@ if (isset($session['step2'])) {
                     </div>
                     <div class="clear"></div>
                     <div style="margin-right:5px;" class="fl">
-                        <label for="customer_street"><?php echo __('Street*'); ?></label>
+                        <label for="customer_street"><?php echo __('Utca*'); ?></label>
                         <input type="text" name="customer_street" value="<?= ($current_user) ? $current_user->customer_street : ''; ?>" class="rounded" id="customer_street" placeholder="" required>
                     </div>
                     <div style="overflow: hidden">
-                        <label for="customer_house"><?php echo __('House*'); ?></label>
+                        <label for="customer_house"><?php echo __('Házszám/Emelet, ajtó*'); ?></label>
                         <input type="text" name="customer_house" value="<?= ($current_user) ? $current_user->customer_house : ''; ?>" class="rounded" id="customer_house" required>
                     </div>
 
@@ -303,11 +303,11 @@ if (isset($session['step2'])) {
                             <input type="text" name="company_name" class="rounded" id="company_name" value="<?= ($current_user) ? $current_user->customer_company : ''; ?>">
                         </div>
                         <div class="add">
-                            <label for="company_street"><?php echo __('Street*'); ?></label>
+                            <label for="company_street"><?php echo __('Utca*'); ?></label>
                             <input type="text" name="company_street" class="rounded" id="company_street" value="<?= ($current_user) ? $current_user->customer_company_street : ''; ?>">
                         </div>
                         <div class="add">
-                            <label for="company_house"><?php echo __('House*'); ?></label>
+                            <label for="company_house"><?php echo __('Házszám/Emelet, ajtó*'); ?></label>
                             <input type="text" name="company_house" class="rounded" id="company_house" value="<?= ($current_user) ? $current_user->customer_company_house : ''; ?>">
                         </div>
                         <div class="fl" style="margin-right:5px;">
@@ -373,11 +373,11 @@ if (isset($session['step2'])) {
                     </div>
                     <div class="clear"></div>
                     <div style="margin-right:5px;" class="fl">
-                        <label for="delivery_street"><?php echo __('Street*'); ?></label>
+                        <label for="delivery_street"><?php echo __('Utca*'); ?></label>
                         <input type="text" name="delivery_street" value="" class="rounded" id="delivery_street" placeholder="" required>
                     </div>
                     <div style="overflow: hidden">
-                        <label for="delivery_house"><?php echo __('House*'); ?></label>
+                        <label for="delivery_house"><?php echo __('Házszám/Emelet, ajtó*'); ?></label>
                         <input type="text" name="delivery_house" value="" class="rounded" id="delivery_house" required>
                     </div>
 
