@@ -61,4 +61,22 @@
         <br/>
         <span style="font-size: 18px;font-weight: bold"><a style="color: #cc0033" href="http://kutyabarat.hu/hirek/1194/goodiebox_nyitva_vagyunk" target="blank">Kutyabarát.hu</a></span>
     </div>
+	 <div style="display: inline-block">
+        <br/>
+        <a href="https://www.joy.hu/eletmod/44688_Karacsonyi_ajandekotletek%3A_mit_vegyel_a" target="blank"><img width="350" class="rounded" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/media/goodiebox_joy_hu_december.jpg" alt=""/></a><br/>
+        <br/>
+        <span style="font-size: 18px;font-weight: bold"><a style="color: #cc0033" href="https://www.joy.hu/eletmod/44688_Karacsonyi_ajandekotletek%3A_mit_vegyel_a" target="blank">JOY.HU Karácsonyi ajándék ajánló 2015</a></span>
+    </div>
+	<div style="display: inline-block">
+        <br/>
+        <a href="http://www.made-in-beauty.com/2016/01/random-goodiebox-december.html" target="blank"><img width="350" class="rounded" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/media/made_in_beauty_goodiebox_dec_2015.jpg" alt=""/></a><br/>
+        <br/>
+        <span style="font-size: 18px;font-weight: bold"><a style="color: #cc0033" href="http://www.made-in-beauty.com/2016/01/random-goodiebox-december.html" target="blank">Made in Beauty blog 2015 december </a></span>
+    </div>
+	<div style="display: inline-block">
+        <br/>
+        <a href="http://www.made-in-beauty.com/2016/02/random-goodiebox-februar.html" target="blank"><img width="350" class="rounded" src="<?= URL::base(TRUE, FALSE) ?>/assets/img/media/made_in_beauty_goodiebox_feb_2016.jpg" alt=""/></a><br/>
+        <br/>
+        <span style="font-size: 18px;font-weight: bold"><a style="color: #cc0033" href="http://www.made-in-beauty.com/2016/02/random-goodiebox-februar.html" target="blank">Made in Beauty blog 2016 február </a></span>
+    </div>
 </section>
